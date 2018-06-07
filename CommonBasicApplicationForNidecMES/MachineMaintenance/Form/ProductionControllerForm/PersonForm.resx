@@ -286,7 +286,7 @@
     <value>NoControl</value>
   </data>
   <data name="delete_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>531, 109</value>
+    <value>486, 109</value>
   </data>
   <data name="delete_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 25</value>
@@ -1600,7 +1600,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;setting_gbc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="timeto_dtp.CustomFormat" xml:space="preserve">
     <value>yyyy/MM/dd 23:59:59</value>
@@ -1981,7 +1981,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;person_dgv.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="linksave_txt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -2092,7 +2092,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBoxCommon2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="groupBoxCommon3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -2116,7 +2116,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBoxCommon3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

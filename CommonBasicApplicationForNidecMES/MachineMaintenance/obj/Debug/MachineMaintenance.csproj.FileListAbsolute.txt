@@ -64,4 +64,6 @@ D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\o
 D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.OvenBarcodeForm.vi.resources
 D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.AddRangeForm.resources
 D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.RangeForm.resources
+D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddPersonForm.resources
+D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddPersonForm.vi.resources
 D:\NIDEC MES\common_basic\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache

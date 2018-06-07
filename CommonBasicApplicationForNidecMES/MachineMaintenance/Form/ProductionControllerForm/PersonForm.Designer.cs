@@ -624,6 +624,8 @@
             this.person_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.person_dgv.RowHeadersVisible = false;
             this.person_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.person_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.person_dgv_CellClick);
+            this.person_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.person_dgv_CellDoubleClick);
             // 
             // colPersonId
             // 
@@ -858,6 +860,7 @@
             this.Name = "PersonForm";
             this.TitleText = "Leader Form";
             this.Load += new System.EventHandler(this.PersonForm_Load);
+            this.DoubleClick += new System.EventHandler(this.PersonForm_DoubleClick);
             this.Controls.SetChildIndex(this.person_dgv, 0);
             this.Controls.SetChildIndex(this.setting_gbc, 0);
             this.Controls.SetChildIndex(this.groupBoxCommon2, 0);

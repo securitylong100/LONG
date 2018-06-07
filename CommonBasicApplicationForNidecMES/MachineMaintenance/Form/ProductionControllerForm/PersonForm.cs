@@ -30,7 +30,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             shift_cmb.Text = "1";
             timefrom_dtp.Value = timefrom_dtp.Value.Date.AddDays(-7);
             timeto_dtp.Value = timeto_dtp.Value.Date.AddDays(3);
-              
+
 
         }
 
@@ -127,7 +127,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             outputthucte();
             if (output_cmb.Text != "0")
             {
-                st_actual_txt.Text = Math.Round(double.Parse(totaltime_txt.Text) / double.Parse(output_cmb.Text),3).ToString();
+                st_actual_txt.Text = Math.Round(double.Parse(totaltime_txt.Text) / double.Parse(output_cmb.Text), 3).ToString();
             }
         }
         void outputthucte()
@@ -328,6 +328,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 model_cmb.Focus();
                 return false;
             }
+            PersonVo check = (PersonVo)DefaultCbmInvoker.Invoke(new CheckPerson_DuplicateCbm(), new PersonVo() { DateTimes = datetime_dtp.Value, Model = model_cmb.Text, Line = line_cmb.Text, Shift = int.Parse(shift_cmb.Text) });
+            if (check.AffectedCount >= 1 && add_btn.Text == "Cập Nhật")
+            {
+                messageData = new MessageData("mmcc00005", "Dữ liệu ca " + shift_cmb.Text + " Line " + line_cmb.Text + " ngày " + datetime_dtp.Text + " đã tồn tại !", leader_lbl.Text);
+                popUpMessage.Warning(messageData, Text);
+                leader_txt.Focus();
+                return false;
+            }
+
             if (leader_txt.Text == "")
             {
                 messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, leader_lbl.Text);
@@ -344,39 +353,77 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (Checkdata())
             {
                 PersonVo outvo = new PersonVo();
-                PersonVo invo = new PersonVo
-                {
-                    Model = model_cmb.Text,
-                    Line = line_cmb.Text,
-                    DateTimes = datetime_dtp.Value,
-                    FactoryCode = UserData.GetUserData().FactoryCode,
-                    BuildingCode = "2A",
-                    LotNumber = lot_txt.Text,
-                    LeaderName = leader_txt.Text,
-                    Shift = int.Parse(shift_cmb.Text),
-                    PlanPro = int.Parse(plan_txt.Text),
-                    PlanST = double.Parse(st_plan_txt.Text),
-                    ActualSt = double.Parse(st_actual_txt.Text),
-                    DoCo = double.Parse(actual_co_txt.Text),
-                    DoRa = double.Parse(actual_ra_txt.Text),
-                    DoCa = double.Parse(actual_ca_txt.Text),
-                    DoBa = double.Parse(actual_ba_txt.Text),
-                    DoMa = double.Parse(actual_ma_txt.Text),
-                    AbsentCo = double.Parse(absent_co_txt.Text),
-                    AbsentRa = double.Parse(absent_ra_txt.Text),
-                    AbsentCa = double.Parse(absent_ca_txt.Text),
-                    AbsentBa = double.Parse(absent_ba_txt.Text),
-                    AbsentMa = double.Parse(absent_ma_txt.Text),
-                    TimeOver = double.Parse(overtime_txt.Text),
-                    TimeOffset = double.Parse(offsettime_txt.Text),
-                    TimeTotal = double.Parse(totaltime_txt.Text),
-                    RegistrationUserCode = UserData.GetUserData().UserCode,
-
-                };
                 try
                 {
+                    if(add_btn.Text == "Cập Nhật")
+                    {
+                        PersonVo invo = new PersonVo
+                        {
+                            Model = model_cmb.Text,
+                            Line = line_cmb.Text,
+                            DateTimes = datetime_dtp.Value,
+                            FactoryCode = UserData.GetUserData().FactoryCode,
+                            BuildingCode = "2A",
+                            LotNumber = lot_txt.Text,
+                            LeaderName = leader_txt.Text,
+                            Shift = int.Parse(shift_cmb.Text),
+                            PlanPro = int.Parse(plan_txt.Text),
+                            PlanST = double.Parse(st_plan_txt.Text),
+                            ActualSt = double.Parse(st_actual_txt.Text),
+                            DoCo = double.Parse(actual_co_txt.Text),
+                            DoRa = double.Parse(actual_ra_txt.Text),
+                            DoCa = double.Parse(actual_ca_txt.Text),
+                            DoBa = double.Parse(actual_ba_txt.Text),
+                            DoMa = double.Parse(actual_ma_txt.Text),
+                            AbsentCo = double.Parse(absent_co_txt.Text),
+                            AbsentRa = double.Parse(absent_ra_txt.Text),
+                            AbsentCa = double.Parse(absent_ca_txt.Text),
+                            AbsentBa = double.Parse(absent_ba_txt.Text),
+                            AbsentMa = double.Parse(absent_ma_txt.Text),
+                            TimeOver = double.Parse(overtime_txt.Text),
+                            TimeOffset = double.Parse(offsettime_txt.Text),
+                            TimeTotal = double.Parse(totaltime_txt.Text),
+                            RegistrationUserCode = UserData.GetUserData().UserCode,
 
-                    outvo = (PersonVo)DefaultCbmInvoker.Invoke(new AddPersonProCbm(), invo);
+                        };
+                        outvo = (PersonVo)DefaultCbmInvoker.Invoke(new AddPersonProCbm(), invo);
+                    }
+                    else if(add_btn.Text == "Chỉnh Sửa")
+                    {
+                        PersonVo invoUpdate = new PersonVo
+                        {
+                            PersonId = vo.PersonId,
+                            Model = model_cmb.Text,
+                            Line = line_cmb.Text,
+                            DateTimes = datetime_dtp.Value,
+                            FactoryCode = UserData.GetUserData().FactoryCode,
+                            BuildingCode = "2A",
+                            LotNumber = lot_txt.Text,
+                            LeaderName = leader_txt.Text,
+                            Shift = int.Parse(shift_cmb.Text),
+                            PlanPro = int.Parse(plan_txt.Text),
+                            PlanST = double.Parse(st_plan_txt.Text),
+                            ActualSt = double.Parse(st_actual_txt.Text),
+                            DoCo = double.Parse(actual_co_txt.Text),
+                            DoRa = double.Parse(actual_ra_txt.Text),
+                            DoCa = double.Parse(actual_ca_txt.Text),
+                            DoBa = double.Parse(actual_ba_txt.Text),
+                            DoMa = double.Parse(actual_ma_txt.Text),
+                            AbsentCo = double.Parse(absent_co_txt.Text),
+                            AbsentRa = double.Parse(absent_ra_txt.Text),
+                            AbsentCa = double.Parse(absent_ca_txt.Text),
+                            AbsentBa = double.Parse(absent_ba_txt.Text),
+                            AbsentMa = double.Parse(absent_ma_txt.Text),
+                            TimeOver = double.Parse(overtime_txt.Text),
+                            TimeOffset = double.Parse(offsettime_txt.Text),
+                            TimeTotal = double.Parse(totaltime_txt.Text),
+                            RegistrationUserCode = UserData.GetUserData().UserCode
+                        };
+                        outvo = (PersonVo)DefaultCbmInvoker.Invoke(new UpdatePersonProCbm(), invoUpdate);
+                        add_btn.Text = "Cập Nhật";
+                        add_btn.BackColor = Color.Green;
+                        setting_gbc.Text = "Info";
+                    }                 
 
                     messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, leader_lbl.Text + " : " + leader_txt.Text);
                     logger.Info(messageData);
@@ -432,11 +479,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 int selectedrowindex = person_dgv.SelectedCells[0].RowIndex;
 
                 PersonVo vo = (PersonVo)person_dgv.Rows[selectedrowindex].DataBoundItem;
-
+                 
                 messageData = new MessageData("mmcc00004", Properties.Resources.mmcc00004, vo.DateTimes.ToString());
                 logger.Info(messageData);
                 DialogResult dialogResult = popUpMessage.ConfirmationOkCancel(messageData, Text);
-                PersonVo checkPerson = (PersonVo)DefaultCbmInvoker.Invoke(new CheckPersonCbm(), new PersonVo(){ PersonId = vo.PersonId, RegistrationUserCode = UserData.GetUserData().UserCode });
+                PersonVo checkPerson = (PersonVo)DefaultCbmInvoker.Invoke(new CheckPersonCbm(), new PersonVo() { PersonId = vo.PersonId, RegistrationUserCode = UserData.GetUserData().UserCode });
 
                 if (dialogResult == DialogResult.OK)
                 {
@@ -451,6 +498,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 messageData = new MessageData("mmci00003", Properties.Resources.mmci00003, null);
                                 logger.Info(messageData);
                                 popUpMessage.Information(messageData, Text);
+                                clearcmb();
+                                add_btn.Text = "Cập Nhật";
+                                add_btn.BackColor = Color.Green;
+                                setting_gbc.Text = "Info";
 
                                 GridBind();
                             }
@@ -475,7 +526,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                
             }
         }
         private string directorySave = "";
@@ -519,6 +569,124 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void lot_txt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            if (person_dgv.RowCount > 0)
+            {
+                if (Checkdata())
+                {
+                    PersonVo invo = new PersonVo
+                    {
+                        PersonId = vo.PersonId,
+                        Model = model_cmb.Text,
+                        Line = line_cmb.Text,
+                        DateTimes = datetime_dtp.Value,
+                        FactoryCode = UserData.GetUserData().FactoryCode,
+                        BuildingCode = "2A",
+                        LotNumber = lot_txt.Text,
+                        LeaderName = leader_txt.Text,
+                        Shift = int.Parse(shift_cmb.Text),
+                        PlanPro = int.Parse(plan_txt.Text),
+                        PlanST = double.Parse(st_plan_txt.Text),
+                        ActualSt = double.Parse(st_actual_txt.Text),
+                        DoCo = double.Parse(actual_co_txt.Text),
+                        DoRa = double.Parse(actual_ra_txt.Text),
+                        DoCa = double.Parse(actual_ca_txt.Text),
+                        DoBa = double.Parse(actual_ba_txt.Text),
+                        DoMa = double.Parse(actual_ma_txt.Text),
+                        AbsentCo = double.Parse(absent_co_txt.Text),
+                        AbsentRa = double.Parse(absent_ra_txt.Text),
+                        AbsentCa = double.Parse(absent_ca_txt.Text),
+                        AbsentBa = double.Parse(absent_ba_txt.Text),
+                        AbsentMa = double.Parse(absent_ma_txt.Text),
+                        TimeOver = double.Parse(overtime_txt.Text),
+                        TimeOffset = double.Parse(offsettime_txt.Text),
+                        TimeTotal = double.Parse(totaltime_txt.Text),
+                        RegistrationUserCode = UserData.GetUserData().UserCode,
+                    };
+
+                    try
+                    {
+                        PersonVo updatePerson = (PersonVo)DefaultCbmInvoker.Invoke(new UpdatePersonProCbm(), invo);
+
+                        messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, leader_lbl.Text + " : " + leader_txt.Text);
+                        logger.Info(messageData);
+                        popUpMessage.Information(messageData, Text);
+                    }
+                    catch (Com.Nidec.Mes.Framework.ApplicationException exception)
+                    {
+                        popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                        logger.Error(exception.GetMessageData());
+                    }
+                }
+            }
+        }
+
+        private void person_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+        PersonVo vo;
+        private void PersonForm_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void person_dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (person_dgv.RowCount > 0)
+            {
+                int selectedrowindex = person_dgv.SelectedCells[0].RowIndex;
+
+                vo = (PersonVo)person_dgv.Rows[selectedrowindex].DataBoundItem;
+                PersonVo checkPerson = (PersonVo)DefaultCbmInvoker.Invoke(new CheckPersonCbm(), new PersonVo() { PersonId = vo.PersonId, RegistrationUserCode = UserData.GetUserData().UserCode });
+                if (checkPerson.AffectedCount > 0)
+                {
+                    try
+                    {
+                        model_cmb.Text = vo.Model;
+                        line_cmb.Text = vo.Line;
+                        datetime_dtp.Value = vo.DateTimes;
+                        shift_cmb.Text = vo.Shift.ToString();
+                        lot_txt.Text = vo.LotNumber;
+                        plan_txt.Text = vo.PlanPro.ToString();
+                        st_plan_txt.Text = vo.PlanST.ToString();
+                        st_actual_txt.Text = vo.ActualSt.ToString();
+                        actual_co_txt.Text = vo.DoCo.ToString();
+                        actual_ra_txt.Text = vo.DoRa.ToString();
+                        actual_ca_txt.Text = vo.DoCa.ToString();
+                        actual_ba_txt.Text = vo.DoBa.ToString();
+                        actual_ma_txt.Text = vo.DoMa.ToString();
+                        absent_co_txt.Text = vo.AbsentCo.ToString();
+                        absent_ra_txt.Text = vo.AbsentRa.ToString();
+                        absent_ca_txt.Text = vo.AbsentCa.ToString();
+                        absent_ba_txt.Text = vo.AbsentBa.ToString();
+                        absent_ma_txt.Text = vo.AbsentMa.ToString();
+                        overtime_txt.Text = vo.TimeOver.ToString();
+                        offsettime_txt.Text = vo.TimeOffset.ToString();
+                        totaltime_txt.Text = vo.TimeTotal.ToString();
+
+                        add_btn.Text = "Chỉnh Sửa";
+                        add_btn.BackColor = Color.Yellow;
+                        actual_co_txt_Click(sender, e);
+                        setting_gbc.Text = "Update Info";
+
+                    }
+                    catch (Com.Nidec.Mes.Framework.ApplicationException exception)
+                    {
+                        popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                        logger.Error(exception.GetMessageData());
+                    }
+                }
+                else if (checkPerson.AffectedCount == 0)
+                {
+                    messageData = new MessageData("mmci00003", "Bạn không có quyền chỉnh sửa dòng này ! ", null);
+                    logger.Warn(messageData);
+                    popUpMessage.Information(messageData, Text);
+                }
+            }
         }
     }
 }

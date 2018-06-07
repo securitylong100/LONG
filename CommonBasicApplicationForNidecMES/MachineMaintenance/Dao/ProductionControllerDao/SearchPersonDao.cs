@@ -49,8 +49,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and shift =:shift");
                 sqlParameter.AddParameterInteger("shift", inVo.Shift);
             }
-
-
+            
             //sql.Append(" order by datetimes");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 

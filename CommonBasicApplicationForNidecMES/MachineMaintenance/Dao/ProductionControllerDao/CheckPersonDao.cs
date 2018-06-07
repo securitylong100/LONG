@@ -45,11 +45,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 PersonVo outVo = new PersonVo
                 {
                     AffectedCount = int.Parse(dataReader),
-                    //AffectedCount
                 };
-                //voList.add(outVo);
-            
-            //dataReader.Close();
             return outVo;
         }
     }

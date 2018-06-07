@@ -163,6 +163,8 @@
     <Compile Include="Cbm\OvenBarcodeCbm\RangeCbm\GetProcessRangeCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\RangeCbm\SearchRangeCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\RangeCbm\UpdateRangeCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerCbm\UpdatePersonProCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerCbm\CheckPerson_DuplicateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\DeletePersonCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\AddPersonProCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\CheckPersonCbm.cs" />
@@ -309,7 +311,9 @@
     <Compile Include="Dao\OvenBarcodeDao\RangeDao\GetProcessRangeDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\RangeDao\SearchRangeDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\RangeDao\UpdateRangeDao.cs" />
+    <Compile Include="Dao\ProductionControllerDao\UpdatePersonProDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\AddPersonProDao.cs" />
+    <Compile Include="Dao\ProductionControllerDao\CheckPerson_DuplicateDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\DeletePersonDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\CheckPersonDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\GetLineProDao.cs" />
@@ -528,6 +532,12 @@
     <Compile Include="Form\OvenBarcodeMachine\Range\RangeForm.Designer.cs">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\ProductionControllerForm\AddPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerForm\AddPersonForm.Designer.cs">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\ProductionControllerForm\ProductionControllerChart_CForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -740,6 +750,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\OvenBarcodeMachine\Range\RangeForm.resx">
       <DependentUpon>RangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerForm\AddPersonForm.resx">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerForm\AddPersonForm.vi.resx">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerChart_CForm.resx">
       <DependentUpon>ProductionControllerChart_CForm.cs</DependentUpon>

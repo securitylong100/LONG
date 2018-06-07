@@ -782,7 +782,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void chart_ng_Click(object sender, EventArgs e)
         {
-            int confirm_status_C = 3;//vao bieu do tron main
+            int confirm_status_C = 4;//vao bieu do tron main
             ProductionControllerChart_CForm form = new ProductionControllerChart_CForm(ref  production_controller_detail_dgv ,model_txt.Text, line_txt.Text, process_txt.Text, confirm_status_C);
             form.ShowDialog(this);
         }
