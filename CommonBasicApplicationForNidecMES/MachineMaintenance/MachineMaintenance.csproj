@@ -50,17 +50,17 @@
   <ItemGroup>
     <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\fw\NidecMES\Dll\Framework.dll</HintPath>
+      <HintPath>..\..\..\FW\NidecMES\Dll\Framework.dll</HintPath>
     </Reference>
     <Reference Include="GlobalMasterMaintenance, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\fw\NidecMES\Dll\GlobalMasterMaintenance.dll</HintPath>
+      <HintPath>..\..\..\FW\NidecMES\Dll\GlobalMasterMaintenance.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\fw\NidecMES\Dll\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="npgsql, Version=2.0.14.3, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+    <Reference Include="npgsql, Version=3.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\fw\NidecMES\Dll\npgsql.dll</HintPath>
     </Reference>
@@ -87,6 +87,33 @@
     <Compile Include="Cbm\Account-WhCbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\AccountCodeCbm\UpdateAccountCodeCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\AccountMainCbm\UpdateAccountMainDGVCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\GetAccountMainIdCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\SearchInvertoryCheckCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\UpdateACCInvertoryRankCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\UpdateWHInvertoryRankCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\UpdateACCInvertoryCheckCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\UpdateWHInvertoryCheckCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\AddInvertoryCheckCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\CheckInvertoryRowCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\GetWarehouseMainIdCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryTimeCbm\AddInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryTimeCbm\CheckInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryTimeCbm\DeleteInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryTimeCbm\GetInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryTimeCbm\UpdateInvertoryTimeCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\GetUserDeptCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\LoadAllTransferListCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\UpdateStatusTransferListCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\AddListRequestCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\CheckAssetTransferCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\DeleteTransferDetailCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\GetRoleCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\GetTransferCodeCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\GetDeptCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\AddDetailRequestCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\LoadAfterTransCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\LoadTransferListCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\TransferCbm\LoadBeforeTransCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\UnitMasterCbm\AddUnitCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\UnitMasterCbm\CheckUnitCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\UnitMasterCbm\DeleteUnitCbm.cs" />
@@ -112,6 +139,7 @@
     <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\AddWareHouseMainCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\GetAssetInvoiceCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\GetAssetModelCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\GetAssetPOCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\GetAssetNameCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\GetAssetTypeCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\WareHouseMainCbm\SearchListWareHouseMainCbm.cs" />
@@ -163,6 +191,20 @@
     <Compile Include="Cbm\OvenBarcodeCbm\RangeCbm\GetProcessRangeCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\RangeCbm\SearchRangeCbm.cs" />
     <Compile Include="Cbm\OvenBarcodeCbm\RangeCbm\UpdateRangeCbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\GetBarcodeOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\GetLineOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\GetLowerOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\GetModelOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\GetpProcessOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\GetUpperOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\OvenLS12Cbm\SearchOvenLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\AddRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\CheckBarcodeRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\DeleteRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\GetModelRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\GetProcessRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\SearchRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\UpdateRangeLS12Cbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\UpdatePersonProCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\CheckPerson_DuplicateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\DeletePersonCbm.cs" />
@@ -223,6 +265,7 @@
     <Compile Include="Cbm\WorkingStatusCbm\SearchSTWorkingStatusCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\CallPlanCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\AddPlanWorkingStatusCbm.cs" />
+    <Compile Include="Common\CSV Class.cs" />
     <Compile Include="Common\ExcelClass_ProductionControl.cs" />
     <Compile Include="Common\Excel Class.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\AddAccountLocationDao.cs" />
@@ -235,6 +278,33 @@
     <Compile Include="Dao\Account-WhDao\AccountCodeDao\GetAccountCodeDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountCodeDao\UpdateAccountCodeDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountMainDao\UpdateAccountMainDGVDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\GetAccountMainIdDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\SearchInvertoryCheckDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\UpdateACCInvertoryRankDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\UpdateWHInvertoryRankDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\UpdateACCInvertoryCheckDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\UpdateWHInvertoryCheckDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\AddInvertoryCheckDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\CheckInvertoryRowDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\GetWarehouseMainIdDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryTimeDao\AddInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryTimeDao\CheckInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryTimeDao\DeleteInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryTimeDao\GetInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryTimeDao\UpdateInvertoryTimeDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\AddListRequestDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\AddDetailRequestDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\CheckAssetTransferDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\DeleteTransferDetailDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\GetUserDeptDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\GetRoleDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\GetTransferCodeDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\GetDeptDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\LoadAfterTransDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\LoadAllTransferListDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\LoadTransferListDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\LoadBeforeTransDao.cs" />
+    <Compile Include="Dao\Account-WhDao\TransferDao\UpdateStatusTransferListDao.cs" />
     <Compile Include="Dao\Account-WhDao\UnitMasterDao\AddUnitDao.cs" />
     <Compile Include="Dao\Account-WhDao\UnitMasterDao\CheckUnitDao.cs" />
     <Compile Include="Dao\Account-WhDao\UnitMasterDao\DeleteUnitDao.cs" />
@@ -244,6 +314,7 @@
     <Compile Include="Dao\Account-WhDao\WareHouseMainDao\AddWareHouseMainDao.cs" />
     <Compile Include="Dao\Account-WhDao\WareHouseMainDao\GetAssetInvoiceDao.cs" />
     <Compile Include="Dao\Account-WhDao\WareHouseMainDao\GetAssetModelDao.cs" />
+    <Compile Include="Dao\Account-WhDao\WareHouseMainDao\GetAssetPODao.cs" />
     <Compile Include="Dao\Account-WhDao\WareHouseMainDao\GetAssetNameDao.cs" />
     <Compile Include="Dao\Account-WhDao\WareHouseMainDao\GetAssetTypeDao.cs" />
     <Compile Include="Dao\Account-WhDao\WareHouseMainDao\SearchListWareHouseMainDao.cs" />
@@ -311,6 +382,20 @@
     <Compile Include="Dao\OvenBarcodeDao\RangeDao\GetProcessRangeDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\RangeDao\SearchRangeDao.cs" />
     <Compile Include="Dao\OvenBarcodeDao\RangeDao\UpdateRangeDao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\GetBarcodeOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\GetLineOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\GetLowerOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\GetModelOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\GetProcessOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\GetUpperOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\OvenLS12Dao\SearchOvenLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\AddRangeLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\CheckBarcodeRangeLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\DeleteRangeLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\GetModelRangeLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\GetProcessRangeLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\SearchRangeLS12Dao.cs" />
+    <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\UpdateRangeLS12Dao.cs" />
     <Compile Include="Dao\ProductionControllerDao\UpdatePersonProDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\AddPersonProDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\CheckPerson_DuplicateDao.cs" />
@@ -430,6 +515,36 @@
     <Compile Include="Form\Account-WhForm\DetailPositionForm\DetailPositionForm.Designer.cs">
       <DependentUpon>DetailPositionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Account-WhForm\InventoryForm\AddInvertoryTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\InventoryForm\AddInvertoryTimeForm.Designer.cs">
+      <DependentUpon>AddInvertoryTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\InventoryForm\InvertoryCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\InventoryForm\InvertoryCheckForm.Designer.cs">
+      <DependentUpon>InvertoryCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\InventoryForm\InvertoryTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\InventoryForm\InvertoryTimeForm.Designer.cs">
+      <DependentUpon>InvertoryTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\TranferInfoForm\TranferRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\TranferInfoForm\TranferRequestForm.Designer.cs">
+      <DependentUpon>TranferRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\TranferInfoForm\TranferInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Account-WhForm\TranferInfoForm\TranferInfoForm.Designer.cs">
+      <DependentUpon>TranferInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Account-WhForm\Units\AddUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +628,24 @@
     </Compile>
     <Compile Include="Form\Account-WhForm\Rank\RankForm.Designer.cs">
       <DependentUpon>RankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.Designer.cs">
+      <DependentUpon>OvenBarcodeLS12Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.Designer.cs">
+      <DependentUpon>AddRangeLS12Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\RangeLS12Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\OvenBarcodeLS12\RangeLS12\RangeLS12Form.Designer.cs">
+      <DependentUpon>RangeLS12Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\OvenBarcodeMachine\OvenBarcodeForm.cs">
       <SubType>Form</SubType>
@@ -624,9 +757,11 @@
     <Compile Include="Vo\Account-WhVo\AccountLocationVo.cs" />
     <Compile Include="Vo\Account-WhVo\AccountCodeVo.cs" />
     <Compile Include="Vo\Account-WhVo\DetailPositionVo.cs" />
+    <Compile Include="Vo\Account-WhVo\InvertoryVo.cs" />
     <Compile Include="Vo\Account-WhVo\UnitVo.cs" />
     <Compile Include="Vo\Account-WhVo\WareHouseMainVo.cs" />
     <Compile Include="Vo\Account-WhVo\AccountMainVo.cs" />
+    <Compile Include="Vo\Account-WhVo\TransferVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
@@ -673,6 +808,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Account-WhForm\DetailPositionForm\DetailPositionForm.resx">
       <DependentUpon>DetailPositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Account-WhForm\InventoryForm\AddInvertoryTimeForm.resx">
+      <DependentUpon>AddInvertoryTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Account-WhForm\InventoryForm\InvertoryCheckForm.resx">
+      <DependentUpon>InvertoryCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Account-WhForm\InventoryForm\InvertoryTimeForm.resx">
+      <DependentUpon>InvertoryTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Account-WhForm\TranferInfoForm\TranferRequestForm.resx">
+      <DependentUpon>TranferRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Account-WhForm\TranferInfoForm\TranferInfoForm.resx">
+      <DependentUpon>TranferInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Account-WhForm\Units\AddUnitForm.resx">
       <DependentUpon>AddUnitForm.cs</DependentUpon>
@@ -738,6 +888,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Account-WhForm\Rank\RankForm.resx">
       <DependentUpon>RankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.resx">
+      <DependentUpon>OvenBarcodeLS12Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OvenBarcodeLS12\OvenBarcodeLS12Form.vi.resx">
+      <DependentUpon>OvenBarcodeLS12Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OvenBarcodeLS12\RangeLS12\AddRangeLS12Form.resx">
+      <DependentUpon>AddRangeLS12Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OvenBarcodeLS12\RangeLS12\RangeLS12Form.resx">
+      <DependentUpon>RangeLS12Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\OvenBarcodeMachine\OvenBarcodeForm.resx">
       <DependentUpon>OvenBarcodeForm.cs</DependentUpon>
@@ -815,7 +977,7 @@
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -830,6 +992,35 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -842,34 +1033,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>4</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>6</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
+    <None Include="Images\approved.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\rejected.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

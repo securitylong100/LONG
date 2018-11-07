@@ -35,12 +35,27 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                 AssetSupplier_txt.Text = vo.AssetSuppiler;
                 AssetType_txt.Text = vo.AssetType;
                 AssetInvoice_txt.Text = vo.AssetInvoice;
+                Asset_PO_txt.Text = vo.AssetPO;
                 AssetSerial_txt.Text = vo.AssetSerial;
                 (AssetLife_txt.Text) = vo.AssetLife.ToString();
                 Asset_Acquistion_Cost_txt.Text = vo.AcquistionCost.ToString();
                 Asset_Acquistion_Date_dtp.Value = vo.AcquistionDate;
                 AssetCode_txt.Enabled = false;
                 AssetType_txt.Enabled = false;
+                
+                switch (vo.LabelStatus)
+                {
+                    case "Pasted":
+                        Pasted_rdb.Checked = true;
+                        break;
+                    case "Not Paste":
+                        NotPaste_rdb.Checked = true;
+                        break;
+                    default:
+                        CannotPaste_rdb.Checked = true;
+                        break;
+                }
+                    
                 this.TitleText = Com.Nidec.Mes.GlobalMasterMaintenance.CommonConstants.MODE_UPDATE;
 
             }
@@ -56,6 +71,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                 if (checkdate())
                 {
                     AssetVo outvo = new AssetVo();
+                    string lbStatus;
+                    if (Pasted_rdb.Checked == true)
+                    {
+                        lbStatus = Pasted_rdb.Text;
+                    }
+                    else if (NotPaste_rdb.Checked == true)
+                    {
+                        lbStatus = NotPaste_rdb.Text;
+                    }
+                    else lbStatus = CannotPaste_rdb.Text;
+
                     AssetVo invo = new AssetVo
                     {
                         AssetId = vo.AssetId,
@@ -65,14 +91,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                         AssetModel = AssetModel_txt.Text,
                         AssetSerial = AssetInvoice_txt.Text,
                         AssetInvoice = AssetInvoice_txt.Text,
+                        AssetPO = Asset_PO_txt.Text,
                         AssetLife = double.Parse(AssetLife_txt.Text),
                         AcquistionDate = Asset_Acquistion_Date_dtp.Value,
                         AcquistionCost = double.Parse(Asset_Acquistion_Cost_txt.Text),
                         AssetSuppiler = AssetSupplier_txt.Text,
                         AssetType = AssetType_txt.Text,
                         FactoryCode = UserData.GetUserData().FactoryCode,
-                        RegistrationUserCode = UserData.GetUserData().UserCode
-
+                        RegistrationUserCode = UserData.GetUserData().UserCode,
+                        LabelStatus = lbStatus                        
                     };
                     try
                     {

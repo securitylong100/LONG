@@ -50,10 +50,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             datetimeto_lbl.Text = dateto.ToString();
             if (confirm_status == 0) //=0 la date, =1 la time
             {
-
-                chartdata_cmb.Items.Add("Input");
-                chartdata_cmb.Items.Add("Output");
-                chartdata_cmb.Items.Add("Total NG");
+                chartIONG.ResetAutoValues();
+                chartIONG.ResumeLayout();
+                chartIONG.Series.Clear();
+                ShowChartTotalNG();
+                chartdata_cmb.Visible = false;
+                //combox hided
+                //chartdata_cmb.Items.Add("Input");
+                //chartdata_cmb.Items.Add("Output");
+                //chartdata_cmb.Items.Add("Total NG");
             }
             else if (confirm_status == 1)
             {
@@ -148,6 +153,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             DrawChart("Rate NG_Line06", "L06", "colRateNG", 192, 192, 0);
             DrawChart("Rate NG_Line07", "L07", "colRateNG", 255, 192, 128);
 
+
+
         }
         public void DrawChart(string nameChart, string nameLine, string colYvalue, int red, int green, int blue)
         {
@@ -174,18 +181,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.Series.Clear();
             // chartIONG.ChartAreas.Clear();
 
-            if (chartdata_cmb.Text == "Input" && confirm_status == 0)
-            {
-                ShowChartInput();
-            }
-            if (chartdata_cmb.Text == "Output" && confirm_status == 0)
-            {
-                ShowChartOutput();
-            }
-            if (chartdata_cmb.Text == "Total NG" && confirm_status == 0)
-            {
-                ShowChartTotalNG();
-            }
+            
             if (chartdata_cmb.Text == "Input" && confirm_status == 2)
             {
                 showchartNGTimeAllLine_Input();
@@ -201,51 +197,79 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         }
 
-        public void ShowChartInput()
+        
+        public void ShowChartTotalNG()
         {
-
-
-            chartIONG.Titles[0].Text = "CHART SHOW INPUT DATA";
+            chartIONG.Titles[0].Text = "CHART SHOW PROGRESS DATA"; //ten
             chartIONG.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
             chartIONG.ChartAreas[0].AxisX.LabelStyle.Format = "dd-MM";
             chartIONG.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chartIONG.ChartAreas[0].AxisX2.MajorGrid.Enabled = false;
+            chartIONG.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            chartIONG.ChartAreas[0].AxisY2.MajorGrid.Enabled = false;
             chartIONG.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-            chartIONG.ChartAreas[0].AxisX.LabelStyle.Angle = -60;
-            chartIONG.ChartAreas[0].AxisY.Title = "INPUT [PCS]";
+            chartIONG.ChartAreas[0].AxisY.Title = "TOTAL[PCS]"; //sua ten truc
+
+            chartIONG.Series.Add("Output");
+            chartIONG.Series["Output"].XValueType = ChartValueType.Date;
+            chartIONG.Series["Output"].ChartType = SeriesChartType.Line;
+            chartIONG.Series["Output"].Color = Color.FromArgb(0, 192, 0); //green
+            chartIONG.Series["Output"].XValueMember = "StartDay";
+            chartIONG.Series["Output"].YValueMembers = "ProOutput";
+            chartIONG.Series["Output"].BorderWidth = 5;
+            chartIONG.Series["Output"].CustomProperties = "LabelStyle=Bottom"; //chua nhu chó
+            chartIONG.Series["Output"].IsValueShownAsLabel = true;
 
             chartIONG.Series.Add("Input");
             chartIONG.Series["Input"].XValueType = ChartValueType.Date;
-            chartIONG.Series["Input"].ChartType = SeriesChartType.Column;
+            chartIONG.Series["Input"].ChartType = SeriesChartType.Line;
             chartIONG.Series["Input"].Color = Color.FromArgb(9, 9, 226); //blue
             chartIONG.Series["Input"].XValueMember = "StartDay";
+            chartIONG.Series["Input"].CustomProperties = "LabelStyle=Top";
             chartIONG.Series["Input"].YValueMembers = "ProInput";
+            chartIONG.Series["Input"].BorderWidth = 5;
             chartIONG.Series["Input"].IsValueShownAsLabel = true;
 
+            chartIONG.Series.Add("NG");
+            chartIONG.Series["NG"].ChartType = SeriesChartType.Line;
+            chartIONG.Series["NG"].Color = Color.FromArgb(226, 0, 0); //red    
+            chartIONG.Series["NG"].BorderWidth = 3;
+            chartIONG.Series["NG"].IsValueShownAsLabel = true;
+            chartIONG.Series["NG"].CustomProperties = "LabelStyle=Top";
+
+            chartIONG.ChartAreas[0].AxisY2.Enabled = AxisEnabled.True;
+            chartIONG.Series["NG"].YAxisType = AxisType.Secondary;
+            chartIONG.ChartAreas[0].AxisX2.Enabled = AxisEnabled.True;
+            chartIONG.Series["NG"].XAxisType = AxisType.Secondary;
+            chartIONG.Series["NG"].XValueType = ChartValueType.DateTime;
+            chartIONG.ChartAreas[0].AxisX2.LabelStyle.Format = "HH:mm";
+            chartIONG.ChartAreas[0].AxisX2.LabelStyle.Angle = 0;
+            chartIONG.ChartAreas[0].AxisY2.Maximum = 100;
+            chartIONG.ChartAreas[0].AxisY2.Title = "NG [%]"; //nG . 
+
+            int max = 0;
+            for (int i = 1; i < dgv.RowCount; i++)
+            {
+                
+                if (i > 0)
+                {
+                    if (double.Parse(dgv.Rows[i].Cells["colInput"].Value.ToString()) > double.Parse(dgv.Rows[i-1].Cells["colInput"].Value.ToString()))
+                    {
+                        max = i;
+                    }
+                }
+                double yvalue = double.Parse(dgv.Rows[i].Cells["colRateNG"].Value.ToString());
+                DateTime xvalue = DateTime.Parse(dgv.Rows[i].Cells["colStarDay"].Value.ToString());
+                chartIONG.Series["NG"].Points.AddXY(xvalue, yvalue); // = yvalue
+
+            }
+
+            chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[max].Cells["colInput"].Value.ToString()) + 5000;
+                if (line_lbl.Text == "All Line") { chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[max].Cells["colInput"].Value.ToString()) + 15000; }
+         
+
             chartIONG.DataSource = dgv.DataSource;
             chartIONG.DataBind();
-            //end chart
-        }
-        public void ShowChartTotalNG()
-        {
-            chartIONG.Titles[0].Text = "CHART SHOW TOTAL NG DATA";
-            chartIONG.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
-            chartIONG.ChartAreas[0].AxisX.LabelStyle.Format = "dd-MM";
-            chartIONG.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chartIONG.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-            chartIONG.ChartAreas[0].AxisX.LabelStyle.Angle = -60;
-            chartIONG.ChartAreas[0].AxisY.Title = "NG TOTAL[PCS]";
-
-            chartIONG.Series.Add("TotalNG");
-            chartIONG.Series["TotalNG"].XValueType = ChartValueType.Date;
-            chartIONG.Series["TotalNG"].ChartType = SeriesChartType.Column;
-            chartIONG.Series["TotalNG"].Color = Color.FromArgb(226, 9, 9); //red
-            chartIONG.Series["TotalNG"].XValueMember = "StartDay";
-            chartIONG.Series["TotalNG"].YValueMembers = "TotalNG";
-            chartIONG.Series["TotalNG"].IsValueShownAsLabel = true;
-
-            chartIONG.DataSource = dgv.DataSource;
-            chartIONG.DataBind();
-            //end chart
         }
         public void ShowChartOutput()
         {
@@ -259,7 +283,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             chartIONG.Series.Add("Output");
             chartIONG.Series["Output"].XValueType = ChartValueType.Date;
-            chartIONG.Series["Output"].ChartType = SeriesChartType.Column;
+            chartIONG.Series["Output"].ChartType = SeriesChartType.Line;
             chartIONG.Series["Output"].Color = Color.FromArgb(0, 192, 0); //blue
             chartIONG.Series["Output"].XValueMember = "StartDay";
             chartIONG.Series["Output"].YValueMembers = "ProOutput";
@@ -289,7 +313,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.Series["Output"].YValueMembers = "ProOutput";
             chartIONG.Series["Output"].BorderWidth = 5;
             chartIONG.Series["Output"].IsValueShownAsLabel = true;
-
+            chartIONG.Series["Output"].CustomProperties = "LabelStyle=Bottom";
 
 
             chartIONG.Series.Add("Input");
@@ -299,8 +323,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.Series["Input"].YValueMembers = "ProInput";
             chartIONG.Series["Input"].XValueMember = "TimeHour";
             chartIONG.Series["Input"].BorderWidth = 4;
-
-
+            //chartIONG.Series["Input"].IsValueShownAsLabel = true;
 
 
             chartIONG.Series.Add("YEILD");
@@ -308,8 +331,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.Series["YEILD"].Color = Color.FromArgb(192, 100, 0); //yellow    
             chartIONG.Series["YEILD"].BorderWidth = 1;
             chartIONG.Series["YEILD"].IsValueShownAsLabel = true;
-            chartIONG.Series["YEILD"].SmartLabelStyle.Enabled = true;
-            chartIONG.Series["YEILD"].SmartLabelStyle.MovingDirection = LabelAlignmentStyles.Bottom;
 
             chartIONG.ChartAreas[0].AxisY2.Enabled = AxisEnabled.True;
             chartIONG.Series["YEILD"].YAxisType = AxisType.Secondary;
@@ -329,6 +350,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 chartIONG.Series["YEILD"].Points.AddXY(xvalue, 100 - yvalue);
                 chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[i].Cells["colInput"].Value.ToString()) + 5000;
             }
+            chartIONG.Series["YEILD"].CustomProperties = "LabelStyle=Bottom";
             chartIONG.DataSource = dgv.DataSource;
             chartIONG.DataBind();
 

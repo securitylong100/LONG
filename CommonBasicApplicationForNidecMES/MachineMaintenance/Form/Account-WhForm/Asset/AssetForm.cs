@@ -6,16 +6,16 @@ using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form;
+using System.Drawing;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
 {
     public partial class AssetForm : FormCommonNCVP
     {
-
-
         public AssetForm()
         {
             InitializeComponent();
+            AssetDetails_dgv.AutoGenerateColumns = false;
         }
 
         private void Exit_btn_Click(object sender, EventArgs e)
@@ -43,14 +43,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                     AssetCode = AssetCode_txt.Text,
                     AssetName = AssetName_txt.Text,
                     AssetNo = 10000, //ne vao trong gia tri o, nen chuyen database lai voi asset_no string  Long
-                   
-                   
+                  
                 };
 
                 ValueObjectList<AssetVo> volist = (ValueObjectList<AssetVo>)DefaultCbmInvoker.Invoke(new GetAssetCbm(), vo);
                 if (volist.GetList() != null && volist.GetList().Count > 0)
                 {
-                    AssetDetails_dgv.AutoGenerateColumns = false;
                     BindingSource bindingsource = new BindingSource(volist.GetList(), null);
                     AssetDetails_dgv.DataSource = bindingsource;
                 }
@@ -61,6 +59,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                     popUpMessage.Information(messageData, Text);
                 }
                 AssetDetails_dgv.ClearSelection();
+                setColor();
                 Update_btn.Enabled = false;
                 Delete_btn.Enabled = false;
             }
@@ -160,7 +159,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
 
         private void Search_btn_Click(object sender, EventArgs e)
         {
-            
             if (AssetCode_txt.TextLength >10)
             {
                 string str = AssetCode_txt.Text;
@@ -183,7 +181,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                 BindUpdateCavityData();
             }
         }
-
+        
+        private void setColor()
+        {
+            string lblStatus;
+            for (int i = 0; i < AssetDetails_dgv.RowCount; i++)
+            {
+                lblStatus = AssetDetails_dgv["colLabelStatus", i].Value.ToString();
+                switch (lblStatus)
+                {
+                    case "Not Paste":
+                        AssetDetails_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Violet;
+                        break;
+                    case "Cannot Paste":
+                        AssetDetails_dgv.Rows[i].DefaultCellStyle.BackColor = Color.LightCoral;
+                        break;
+                }
+            }
+        }
         private void AssetForm_Load(object sender, EventArgs e)
         {
             AcceptButton = Search_btn;

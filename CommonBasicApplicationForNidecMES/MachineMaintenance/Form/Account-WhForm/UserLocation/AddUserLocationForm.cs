@@ -30,6 +30,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                 UserLocationCode_txt.Text = vo.UserLocationCode;
                 UserLocationName_txt.Text = vo.UserLocationName;
             }
+            LocationVo Locationvo = (LocationVo)DefaultCbmInvoker.Invoke(new GetLocationMasterMntCbm(), new LocationVo());
+            locationcode_cmb.DataSource = Locationvo.LocationListVo;
+            locationcode_cmb.DisplayMember = "LocationCode";
+            locationcode_cmb.Text = "";
         }
 
         private void Ok_btn_Click(object sender, EventArgs e)
@@ -42,7 +46,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                     UserLocationId = vo.UserLocationId,
                     UserLocationCode = UserLocationCode_txt.Text,
                     UserLocationName = UserLocationName_txt.Text,
-                    DeptCode = UserLocationDeptCode_txt.Text,
+                    DeptCode = locationcode_cmb.Text,
                     FactoryCode = UserData.GetUserData().FactoryCode,
                     RegistrationUserCode = UserData.GetUserData().UserCode
                 };
@@ -56,6 +60,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                     {
                         outvo = (UserLocationVo)DefaultCbmInvoker.Invoke(new AddUserLocationCbm(), invo);
                     }
+                    messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, UserLocationCode_lbl.Text + " : " + UserLocationCode_txt.Text);
+                    logger.Info(messageData);
+                    popUpMessage.Information(messageData, Text);
                 }
                 catch (Framework.ApplicationException exception)
                 {

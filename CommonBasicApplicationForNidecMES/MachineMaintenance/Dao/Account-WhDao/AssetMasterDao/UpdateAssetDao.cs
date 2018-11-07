@@ -16,7 +16,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             AssetVo inVo = (AssetVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append("update m_asset set asset_cd=:asset_cd,asset_no=:asset_no,asset_name=:asset_name, asset_model=:asset_model, asset_invoice =:asset_invoice,  asset_serial =:asset_serial, asset_supplier=:asset_supplier,asset_life =:asset_life, acquistion_date=:acquistion_date, acquistion_cost=:acquistion_cost, asset_type=:asset_type");
+            sql.Append("update m_asset set asset_cd=:asset_cd,asset_no=:asset_no,asset_name=:asset_name, asset_model=:asset_model, asset_invoice =:asset_invoice,  asset_serial =:asset_serial, asset_supplier=:asset_supplier,asset_life =:asset_life, acquistion_date=:acquistion_date, acquistion_cost=:acquistion_cost, asset_type=:asset_type, label_status=:label_status, asset_po = :asset_po");
             sql.Append(" where asset_id =:asset_id");
             
             //create command
@@ -38,6 +38,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameterString("asset_type", inVo.AssetType);
             sqlParameter.AddParameterString("factory_cd", inVo.FactoryCode);
             sqlParameter.AddParameterString("registration_user_cd", inVo.RegistrationUserCode);
+            sqlParameter.AddParameterString("label_status", inVo.LabelStatus);
+            sqlParameter.AddParameterString("asset_po", inVo.AssetPO);
             //execute SQL
 
             AssetVo outVo = new AssetVo

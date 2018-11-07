@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             ValueObjectList<AssetVo> voList = new ValueObjectList<AssetVo>();
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, string.Empty);
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select asset_id,asset_no,asset_cd,asset_name, asset_model,  asset_supplier, asset_type, asset_serial, asset_invoice, asset_life, acquistion_date, acquistion_cost, registration_user_cd,registration_date_time,factory_cd from  m_asset");
+            sql.Append("select asset_id,asset_no,asset_cd,asset_name, asset_model,  asset_supplier, asset_type, asset_serial, asset_invoice, asset_life, acquistion_date, acquistion_cost, registration_user_cd,registration_date_time,factory_cd, label_status, asset_po from m_asset");
             sql.Append(" Where 1=1 ");
             if (!String.IsNullOrEmpty(inVo.FactoryCode))
             {
@@ -76,7 +76,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     AcquistionDate = DateTime.Parse(dataReader["acquistion_date"].ToString()),
                     RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
                     RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
-                    FactoryCode = dataReader["factory_cd"].ToString()
+                    FactoryCode = dataReader["factory_cd"].ToString(),
+                    LabelStatus = dataReader["label_status"].ToString(),
+                    AssetPO = dataReader["asset_po"].ToString()
                 };
                 voList.add(outVo);
             }

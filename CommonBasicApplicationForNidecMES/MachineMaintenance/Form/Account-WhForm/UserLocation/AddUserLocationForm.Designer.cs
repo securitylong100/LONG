@@ -34,12 +34,12 @@
             this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.Exit_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Ok_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.UserLocationDeptCode_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.UserLocationDeptCode_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.UserLocationName_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.UserLocationName_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.UserLocationCode_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.UserLocationCode_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.locationcode_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.SuspendLayout();
             // 
             // UpdateText_lbl
@@ -125,17 +125,6 @@
             this.Ok_btn.UseVisualStyleBackColor = true;
             this.Ok_btn.Click += new System.EventHandler(this.Ok_btn_Click);
             // 
-            // UserLocationDeptCode_txt
-            // 
-            this.UserLocationDeptCode_txt.ControlId = null;
-            this.UserLocationDeptCode_txt.Font = new System.Drawing.Font("Arial", 9F);
-            this.UserLocationDeptCode_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.UserLocationDeptCode_txt.Location = new System.Drawing.Point(241, 226);
-            this.UserLocationDeptCode_txt.MaxLength = 32;
-            this.UserLocationDeptCode_txt.Name = "UserLocationDeptCode_txt";
-            this.UserLocationDeptCode_txt.Size = new System.Drawing.Size(187, 21);
-            this.UserLocationDeptCode_txt.TabIndex = 28;
-            // 
             // UserLocationDeptCode_lbl
             // 
             this.UserLocationDeptCode_lbl.AutoSize = true;
@@ -194,17 +183,27 @@
             this.UserLocationCode_lbl.TabIndex = 24;
             this.UserLocationCode_lbl.Text = "UserLocation Code";
             // 
+            // locationcode_cmb
+            // 
+            this.locationcode_cmb.ControlId = null;
+            this.locationcode_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationcode_cmb.FormattingEnabled = true;
+            this.locationcode_cmb.Location = new System.Drawing.Point(241, 226);
+            this.locationcode_cmb.Name = "locationcode_cmb";
+            this.locationcode_cmb.Size = new System.Drawing.Size(187, 23);
+            this.locationcode_cmb.TabIndex = 36;
+            // 
             // AddUserLocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(512, 369);
+            this.Controls.Add(this.locationcode_cmb);
             this.Controls.Add(this.UpdateText_lbl);
             this.Controls.Add(this.labelCommon4);
             this.Controls.Add(this.labelCommon1);
             this.Controls.Add(this.labelCommon2);
             this.Controls.Add(this.Exit_btn);
             this.Controls.Add(this.Ok_btn);
-            this.Controls.Add(this.UserLocationDeptCode_txt);
             this.Controls.Add(this.UserLocationDeptCode_lbl);
             this.Controls.Add(this.UserLocationName_txt);
             this.Controls.Add(this.UserLocationName_lbl);
@@ -218,13 +217,13 @@
             this.Controls.SetChildIndex(this.UserLocationName_lbl, 0);
             this.Controls.SetChildIndex(this.UserLocationName_txt, 0);
             this.Controls.SetChildIndex(this.UserLocationDeptCode_lbl, 0);
-            this.Controls.SetChildIndex(this.UserLocationDeptCode_txt, 0);
             this.Controls.SetChildIndex(this.Ok_btn, 0);
             this.Controls.SetChildIndex(this.Exit_btn, 0);
             this.Controls.SetChildIndex(this.labelCommon2, 0);
             this.Controls.SetChildIndex(this.labelCommon1, 0);
             this.Controls.SetChildIndex(this.labelCommon4, 0);
             this.Controls.SetChildIndex(this.UpdateText_lbl, 0);
+            this.Controls.SetChildIndex(this.locationcode_cmb, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,11 +237,11 @@
         private Framework.LabelCommon labelCommon2;
         private Framework.ButtonCommon Exit_btn;
         private Framework.ButtonCommon Ok_btn;
-        private Framework.TextBoxCommon UserLocationDeptCode_txt;
         private Framework.LabelCommon UserLocationDeptCode_lbl;
         private Framework.TextBoxCommon UserLocationName_txt;
         private Framework.LabelCommon UserLocationName_lbl;
         private Framework.TextBoxCommon UserLocationCode_txt;
         private Framework.LabelCommon UserLocationCode_lbl;
+        private Framework.ComboBoxCommon locationcode_cmb;
     }
 }

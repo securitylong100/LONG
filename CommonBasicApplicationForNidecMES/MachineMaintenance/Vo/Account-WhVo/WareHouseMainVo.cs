@@ -23,6 +23,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
 
         public string CommnetsData { get; set; }
 
+        public string Net_Value { get; set; }
+        public string LabelStatus { get; set; }
+
         public DateTime StartDepreciation { get; set; }
         public DateTime EndDepreciation { get; set; }
 
@@ -35,6 +38,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
 
         public int UnitId { get; set; }
         public string UnitName { get; set; }
+        public string Invertory { get; set; }
+        public int InvertoryId { get; set; }
+        
 
         //bien
         public int MonthCounter { get; set; }
@@ -58,6 +64,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string BeforeLocationCd { get; set; }
         public int DetailPositionId { get; set; }
         public string DetailPositionCd { get; set; }
+        public string AssetPO { get; set; }
 
         //end
 

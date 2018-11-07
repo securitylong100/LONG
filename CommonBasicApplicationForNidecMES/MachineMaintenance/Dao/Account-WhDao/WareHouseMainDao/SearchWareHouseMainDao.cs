@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
-            sql.Append(@"select k.unit_name,c.location_cd as before, j.location_cd as after, h.detail_postion_cd, d.user_location_name ,g.warehouse_main_history_id,c.location_cd,e.asset_cd, e.asset_no, e.asset_name, e.asset_model, e.asset_serial, e.asset_supplier, g.qty, a.account_code_cd, b.account_location_cd, f.rank_cd, b.account_location_name, g.comment_data, e.asset_life, e.acquistion_date, e.acquistion_cost, g.depreciation_start, g.depreciation_end, g.current_depreciation,g.monthly_depreciation, g.accum_depreciation_now, g.net_value, e.asset_invoice, g.registration_date_time, g.registration_user_cd from t_warehouse_main_history g
+            sql.Append(@"select k.unit_name,c.location_cd as before, j.location_cd as after, h.detail_postion_cd, d.user_location_name ,g.warehouse_main_history_id,c.location_cd,e.asset_cd, e.asset_no, e.asset_name, e.asset_model, e.asset_serial, e.asset_supplier,e.asset_po, e.asset_invoice,e.label_status, g.qty, a.account_code_cd, b.account_location_cd, f.rank_cd, b.account_location_name, g.comment_data, e.asset_life, e.acquistion_date, e.acquistion_cost, e.asset_type, g.depreciation_start, g.depreciation_end, g.current_depreciation,g.monthly_depreciation, g.accum_depreciation_now, g.net_value, g.registration_date_time, g.registration_user_cd from t_warehouse_main_history g
                            left join m_account_code a on a.account_code_id = g.account_code_id
                            left join m_account_location b on b.account_location_id = g.account_location_id
                             left join m_location c on c.location_id = g.before_location_id
@@ -77,7 +77,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and h.detail_postion_cd =:detail_postion_cd");
                 sqlParameter.AddParameterString("detail_postion_cd", inVo.DetailPositionCd);
             }
-         
+            if (!String.IsNullOrEmpty(inVo.LabelStatus))//label status
+            {
+                sql.Append(" and e.label_status =:label_status");
+                sqlParameter.AddParameterString("label_status", inVo.LabelStatus);
+            }
+            if (!String.IsNullOrEmpty(inVo.AssetPO))//label status
+            {
+                sql.Append(" and e.asset_po =:asset_po");
+                sqlParameter.AddParameterString("asset_po", inVo.AssetPO);
+            }
+            //if (!String.IsNullOrEmpty(inVo.Net_Value))//search theo net value
+            //{
+            //    if (inVo.Net_Value == "0$")
+            //    {
+            //        sql.Append(" and g.net_value = 0");
+            //    }
+            //    else if (inVo.Net_Value == "1$")
+            //    {
+            //        sql.Append(" and g.net_value > 0 and g.net_value <2 ");
+            //    }
+            //}
+
             sql.Append(" order by  g.registration_date_time desc");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
@@ -117,10 +138,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     MonthlyDepreciation = double.Parse(dataReader["monthly_depreciation"].ToString()),
                     AccumDepreciation = double.Parse(dataReader["accum_depreciation_now"].ToString()),
                     NetValue = double.Parse(dataReader["net_value"].ToString()),
+                    AssetType = dataReader["asset_type"].ToString(),
                     AssetInvoice = (dataReader["asset_invoice"].ToString()),
+                    LabelStatus = (dataReader["label_status"].ToString()),
+                    AssetPO = dataReader["asset_po"].ToString(),
                     RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                     RegistrationUserCode = (dataReader["registration_user_cd"].ToString()),
-
+                   
 
                 };
                 voList.add(outVo);

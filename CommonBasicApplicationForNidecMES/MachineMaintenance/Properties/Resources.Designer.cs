@@ -22,7 +22,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap approved {
+            get {
+                object obj = ResourceManager.GetObject("approved", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}.
         /// </summary>
-        internal static string cpcc00001 {
+        public static string cpcc00001 {
             get {
                 return ResourceManager.GetString("cpcc00001", resourceCulture);
             }
@@ -72,7 +82,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to delete : [{0}] ?.
         /// </summary>
-        internal static string cpcc00002 {
+        public static string cpcc00002 {
             get {
                 return ResourceManager.GetString("cpcc00002", resourceCulture);
             }
@@ -81,7 +91,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Different lot is existing..
         /// </summary>
-        internal static string cpce00001 {
+        public static string cpce00001 {
             get {
                 return ResourceManager.GetString("cpce00001", resourceCulture);
             }
@@ -90,7 +100,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Duplicate..
         /// </summary>
-        internal static string cpce00002 {
+        public static string cpce00002 {
             get {
                 return ResourceManager.GetString("cpce00002", resourceCulture);
             }
@@ -99,7 +109,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please read correct lot no for the process..
         /// </summary>
-        internal static string cpce00003 {
+        public static string cpce00003 {
             get {
                 return ResourceManager.GetString("cpce00003", resourceCulture);
             }
@@ -108,7 +118,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Scanned tray count mismatch with registered lot data..
         /// </summary>
-        internal static string cpce00004 {
+        public static string cpce00004 {
             get {
                 return ResourceManager.GetString("cpce00004", resourceCulture);
             }
@@ -117,7 +127,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Split operation had already been done for the scanned lot..
         /// </summary>
-        internal static string cpce00005 {
+        public static string cpce00005 {
             get {
                 return ResourceManager.GetString("cpce00005", resourceCulture);
             }
@@ -126,7 +136,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please select the record..
         /// </summary>
-        internal static string cpce00006 {
+        public static string cpce00006 {
             get {
                 return ResourceManager.GetString("cpce00006", resourceCulture);
             }
@@ -135,7 +145,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please input [{0}].
         /// </summary>
-        internal static string cpce00007 {
+        public static string cpce00007 {
             get {
                 return ResourceManager.GetString("cpce00007", resourceCulture);
             }
@@ -145,7 +155,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         ///   Looks up a localized string similar to Record is already registered
         ///[{0}].
         /// </summary>
-        internal static string cpce00008 {
+        public static string cpce00008 {
             get {
                 return ResourceManager.GetString("cpce00008", resourceCulture);
             }
@@ -154,7 +164,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Lot No has been locked..
         /// </summary>
-        internal static string cpce00009 {
+        public static string cpce00009 {
             get {
                 return ResourceManager.GetString("cpce00009", resourceCulture);
             }
@@ -164,7 +174,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         ///   Looks up a localized string similar to Do you want to issue below label?
         ///{0}.
         /// </summary>
-        internal static string cpci00001 {
+        public static string cpci00001 {
             get {
                 return ResourceManager.GetString("cpci00001", resourceCulture);
             }
@@ -173,7 +183,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been printed successfully..
         /// </summary>
-        internal static string cpci00002 {
+        public static string cpci00002 {
             get {
                 return ResourceManager.GetString("cpci00002", resourceCulture);
             }
@@ -182,7 +192,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been added successfully..
         /// </summary>
-        internal static string cpci00003 {
+        public static string cpci00003 {
             get {
                 return ResourceManager.GetString("cpci00003", resourceCulture);
             }
@@ -191,7 +201,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been updated successfully..
         /// </summary>
-        internal static string cpci00004 {
+        public static string cpci00004 {
             get {
                 return ResourceManager.GetString("cpci00004", resourceCulture);
             }
@@ -200,7 +210,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been deleted successfully..
         /// </summary>
-        internal static string cpci00005 {
+        public static string cpci00005 {
             get {
                 return ResourceManager.GetString("cpci00005", resourceCulture);
             }
@@ -209,7 +219,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to No data found!.
         /// </summary>
-        internal static string cpci00006 {
+        public static string cpci00006 {
             get {
                 return ResourceManager.GetString("cpci00006", resourceCulture);
             }
@@ -218,7 +228,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Are you sure to update : [{0}] ?.
         /// </summary>
-        internal static string mmcc00003 {
+        public static string mmcc00003 {
             get {
                 return ResourceManager.GetString("mmcc00003", resourceCulture);
             }
@@ -227,7 +237,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to delete : [{0}] ?.
         /// </summary>
-        internal static string mmcc00004 {
+        public static string mmcc00004 {
             get {
                 return ResourceManager.GetString("mmcc00004", resourceCulture);
             }
@@ -236,7 +246,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Incomplete Data [{0}].
         /// </summary>
-        internal static string mmcc00005 {
+        public static string mmcc00005 {
             get {
                 return ResourceManager.GetString("mmcc00005", resourceCulture);
             }
@@ -245,7 +255,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Data already exists [{0}].
         /// </summary>
-        internal static string mmcc00006 {
+        public static string mmcc00006 {
             get {
                 return ResourceManager.GetString("mmcc00006", resourceCulture);
             }
@@ -254,7 +264,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to reload : [{0}] ?.
         /// </summary>
-        internal static string mmcc00007 {
+        public static string mmcc00007 {
             get {
                 return ResourceManager.GetString("mmcc00007", resourceCulture);
             }
@@ -263,7 +273,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record is already registered.
         /// </summary>
-        internal static string mmce00001 {
+        public static string mmce00001 {
             get {
                 return ResourceManager.GetString("mmce00001", resourceCulture);
             }
@@ -272,7 +282,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please input [{0}].
         /// </summary>
-        internal static string mmce00002 {
+        public static string mmce00002 {
             get {
                 return ResourceManager.GetString("mmce00002", resourceCulture);
             }
@@ -281,7 +291,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Only one byte characters can be used..
         /// </summary>
-        internal static string mmce00003 {
+        public static string mmce00003 {
             get {
                 return ResourceManager.GetString("mmce00003", resourceCulture);
             }
@@ -290,7 +300,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Country code is not correct..
         /// </summary>
-        internal static string mmce00004 {
+        public static string mmce00004 {
             get {
                 return ResourceManager.GetString("mmce00004", resourceCulture);
             }
@@ -299,7 +309,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Language code is not correct..
         /// </summary>
-        internal static string mmce00005 {
+        public static string mmce00005 {
             get {
                 return ResourceManager.GetString("mmce00005", resourceCulture);
             }
@@ -308,7 +318,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Only lowercase letter or numbers can be used in  [{0}].
         /// </summary>
-        internal static string mmce00006 {
+        public static string mmce00006 {
             get {
                 return ResourceManager.GetString("mmce00006", resourceCulture);
             }
@@ -317,7 +327,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Only numbers can be used in  [{0}].
         /// </summary>
-        internal static string mmce00007 {
+        public static string mmce00007 {
             get {
                 return ResourceManager.GetString("mmce00007", resourceCulture);
             }
@@ -326,7 +336,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been changed by others [{0}].
         /// </summary>
-        internal static string mmce00008 {
+        public static string mmce00008 {
             get {
                 return ResourceManager.GetString("mmce00008", resourceCulture);
             }
@@ -335,7 +345,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been added successfully..
         /// </summary>
-        internal static string mmci00001 {
+        public static string mmci00001 {
             get {
                 return ResourceManager.GetString("mmci00001", resourceCulture);
             }
@@ -344,7 +354,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been updated successfully..
         /// </summary>
-        internal static string mmci00002 {
+        public static string mmci00002 {
             get {
                 return ResourceManager.GetString("mmci00002", resourceCulture);
             }
@@ -353,7 +363,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Record has been deleted successfully..
         /// </summary>
-        internal static string mmci00003 {
+        public static string mmci00003 {
             get {
                 return ResourceManager.GetString("mmci00003", resourceCulture);
             }
@@ -362,7 +372,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [{0}].[FormName : {1}].[LoginUser : {2}] Start..
         /// </summary>
-        internal static string mmci00004 {
+        public static string mmci00004 {
             get {
                 return ResourceManager.GetString("mmci00004", resourceCulture);
             }
@@ -371,7 +381,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [{0}].[FormName : {1}].[LoginUser : {2}] End..
         /// </summary>
-        internal static string mmci00005 {
+        public static string mmci00005 {
             get {
                 return ResourceManager.GetString("mmci00005", resourceCulture);
             }
@@ -380,7 +390,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to No data found!.
         /// </summary>
-        internal static string mmci00006 {
+        public static string mmci00006 {
             get {
                 return ResourceManager.GetString("mmci00006", resourceCulture);
             }
@@ -389,16 +399,26 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [{0}] successfully..
         /// </summary>
-        internal static string mmci00007 {
+        public static string mmci00007 {
             get {
                 return ResourceManager.GetString("mmci00007", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rejected {
+            get {
+                object obj = ResourceManager.GetObject("rejected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [{0}].
         /// </summary>
-        internal static string String {
+        public static string String {
             get {
                 return ResourceManager.GetString("String", resourceCulture);
             }
@@ -407,9 +427,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Value Object is null [{0}]..
         /// </summary>
-        internal static string vnce00001 {
+        public static string vnce00001 {
             get {
                 return ResourceManager.GetString("vnce00001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This record is waiting to confirm or added before.
+        /// </summary>
+        public static string vnce00002 {
+            get {
+                return ResourceManager.GetString("vnce00002", resourceCulture);
             }
         }
     }

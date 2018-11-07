@@ -21,16 +21,42 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             InitializeComponent();
             warehouse_main_dgv.AutoGenerateColumns = false;
             account_depreciation_dgv.AutoGenerateColumns = false;
+            counter_dgv.AutoGenerateColumns = false;
         }
-
         private void search_btn_Click(object sender, EventArgs e)
         {
             account_depreciation_dgv.Visible = false;
             warehouse_main_dgv.Visible = true;
-            warehouse_main_dgv.DataSource = null;
             GridBind();
-            updatedatatodatabase();
+            full_asset_Code_txt.Text = "";
+           // counter();
+            // updatedatatodatabase();
 
+        }
+        void counter()
+        {
+            if (counter_dgv.RowCount >0)
+            {
+                counter_dgv.Rows.RemoveAt(this.counter_dgv.Rows[0].Index);
+            }
+            double AcquisitionCost = 0, CurrentDepreciation = 0, MonthlyDepreciation = 0, AccumDepreciation = 0, NetValue = 0;
+            int TotalMachine = 0, Inventory = 0;
+            int j = 0;
+            for (int i = 0; i < warehouse_main_dgv.RowCount; i++)
+            {
+                AcquisitionCost += double.Parse(warehouse_main_dgv.Rows[i].Cells["colAcquisitionCost"].Value.ToString());
+                CurrentDepreciation +=double.Parse(warehouse_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value.ToString());
+                MonthlyDepreciation += double.Parse(warehouse_main_dgv.Rows[i].Cells["colMonthlyDepreciation"].Value.ToString());
+                AccumDepreciation += double.Parse(warehouse_main_dgv.Rows[i].Cells["colAccumDepreciation"].Value.ToString());
+                NetValue += double.Parse(warehouse_main_dgv.Rows[i].Cells["colNetValue"].Value.ToString());
+                TotalMachine = i+1;
+                if (warehouse_main_dgv.Rows[i].Cells["colIvertory"].Value.ToString() == invertory_cmb.Text)
+                {
+                    Inventory += j+1;
+                }
+            }
+            
+            counter_dgv.Rows.Add(Math.Round( AcquisitionCost,2).ToString(), Math.Round(CurrentDepreciation).ToString(), Math.Round(MonthlyDepreciation).ToString(), Math.Round(AccumDepreciation).ToString(), Math.Round(NetValue).ToString(), Inventory.ToString(), TotalMachine.ToString());
         }
         void updatedatatodatabase()
         {
@@ -51,7 +77,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
-        private void GridBind() 
+        void invertory_alarm()
+        {
+            for (int i = 0; i < warehouse_main_dgv.RowCount; i++)
+            {
+                if (int.Parse(warehouse_main_dgv.Rows[i].Cells["colInvertoryId"].Value.ToString()) >= ((InvertoryVo)this.invertory_cmb.SelectedItem).InvertoryTimeId)
+                {
+                    warehouse_main_dgv.Rows[i].DefaultCellStyle.BackColor = Color.PaleGreen;
+                }
+                else if (int.Parse(warehouse_main_dgv.Rows[i].Cells["colInvertoryId"].Value.ToString()) < ((InvertoryVo)this.invertory_cmb.SelectedItem).InvertoryTimeId)
+                {
+                    warehouse_main_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+        private void GridBind()
         {
             try
             {
@@ -67,21 +107,26 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     AfterLocationCd = location_cbm.Text,
                     AssetName = asset_name_cbm.Text,
                     DetailPositionCd = detail_position_cmb.Text,
-
-                    //AssetNo = 
+                    LabelStatus = labelstatus_cmb.Text,
+                    Net_Value = net_value_cmb.Text,
+                    AssetPO = AssetPO_cmb.Text,
                 };
-
-                if (select_search_cbm.Text == "Search History")
+                if (checkdata())
                 {
-                    ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchWareHouseMainCbm(), whvos);
-                    warehouse_main_dgv.DataSource = listvo.GetList();
+                    if (select_search_cbm.Text == "Search History")
+                    {
+                        ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchWareHouseMainCbm(), whvos);
+                        warehouse_main_dgv.DataSource = listvo.GetList();
+                    }
+                    else if (select_search_cbm.Text == "Search List")
+                    {
+                        ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchListWareHouseMainCbm(), whvos);
+                        warehouse_main_dgv.DataSource = listvo.GetList();
+                        invertory_alarm();
+                        counter();
+                    }
+                    //   calculator();
                 }
-                else if (select_search_cbm.Text == "Search List")
-                {
-                    ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchListWareHouseMainCbm(), whvos);
-                    warehouse_main_dgv.DataSource = listvo.GetList();
-                }
-                calculator();
             }
             catch (Framework.ApplicationException exception)
             {
@@ -89,7 +134,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
-
+        bool checkdata()
+        {
+            if (invertory_cmb.Text == "")
+            {
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, "Invertory");
+                popUpMessage.Warning(messageData, Text);
+                invertory_cmb.Focus();
+                return false;
+            }
+            return true;
+        }
         public void calculator()
         {
             if (warehouse_main_dgv.RowCount > 0)
@@ -104,16 +159,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     int Current_month = DateTime.Now.Month;
 
                     double mothcounter = ((Current_Year - Start_Year) * 12) + (Current_month - Start_month);
-                    double monthlife = double.Parse(warehouse_main_dgv.Rows[i].Cells["colAssetLife"].Value.ToString())*12;
+                    double monthlife = double.Parse(warehouse_main_dgv.Rows[i].Cells["colAssetLife"].Value.ToString()) * 12;
                     double Acquisition = double.Parse(warehouse_main_dgv.Rows[i].Cells["colAcquisitionCost"].Value.ToString());
-                    double monthly_depr = Acquisition/monthlife;
+                    double monthly_depr = Acquisition / monthlife;
 
                     //Monthly
                     warehouse_main_dgv.Rows[i].Cells["colMonthlyDepreciation"].Value = Math.Round(monthly_depr, 3).ToString();
 
                     //Curent Depreciation
                     double current_depr = (mothcounter - 1) * monthly_depr;
-                    warehouse_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value = Math.Round(current_depr,3).ToString();
+                    warehouse_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value = Math.Round(current_depr, 3).ToString();
                     if (current_depr > Acquisition)
                     {
                         warehouse_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value = Acquisition.ToString();
@@ -124,7 +179,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     }
                     //Accum
                     double Accum = (mothcounter * monthly_depr);
-                    warehouse_main_dgv.Rows[i].Cells["colAccumDepreciation"].Value = Math.Round(Accum,3).ToString();
+                    warehouse_main_dgv.Rows[i].Cells["colAccumDepreciation"].Value = Math.Round(Accum, 3).ToString();
                     if (Accum > Acquisition)
                     {
                         warehouse_main_dgv.Rows[i].Cells["colAccumDepreciation"].Value = Acquisition.ToString();
@@ -186,12 +241,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             detail_position_cmb.DataSource = detailposition.GetList();
             detail_position_cmb.Text = "";
 
-          
+
 
             ValueObjectList<AssetVo> assetvoinvoice = (ValueObjectList<AssetVo>)DefaultCbmInvoker.Invoke(new GetAssetInvoiceCbm(), new AssetVo());
             invoice_cbm.DisplayMember = "AssetInvoice";
             invoice_cbm.DataSource = assetvoinvoice.GetList();
             invoice_cbm.Text = "";
+
+            ValueObjectList<AssetVo> assetPO = (ValueObjectList<AssetVo>)DefaultCbmInvoker.Invoke(new GetAssetPOCbm(), new AssetVo());
+            AssetPO_cmb.DisplayMember = "AssetPO";
+            AssetPO_cmb.DataSource = assetPO.GetList();
+            AssetPO_cmb.Text = "";
 
             ValueObjectList<AssetVo> assetvomodel = (ValueObjectList<AssetVo>)DefaultCbmInvoker.Invoke(new GetAssetModelCbm(), new AssetVo());
             asset_model_cbm.DisplayMember = "AssetModel";
@@ -207,6 +267,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             location_cbm.DisplayMember = "LocationCode";
             location_cbm.DataSource = Locationvo.LocationListVo;
             location_cbm.Text = "";
+
+            ValueObjectList<InvertoryVo> invertory = (ValueObjectList<InvertoryVo>)DefaultCbmInvoker.Invoke(new GetInvertoryTimeCbm(), new InvertoryVo());
+            invertory_cmb.DisplayMember = "InvertoryTimeCode";
+            invertory_cmb.DataSource = invertory.GetList();
+
         }
         private void location_cbm_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -246,7 +311,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 if (new AddWareHouseMainForm { WareHouseMainVo = selectedvo, }.ShowDialog() == DialogResult.OK)
                 { GridBind(); }
             }
-          
+
         }
 
         private void depreciation_btn_Click(object sender, EventArgs e)
@@ -263,7 +328,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 { };
                 ValueObjectList<WareHouseMainVo> listvo = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new Cbm.TotalDEPWareHouseMainCbm(), whvos);
                 account_depreciation_dgv.DataSource = listvo.GetList();
-               
+
             }
             catch (Framework.ApplicationException exception)
             {
@@ -299,35 +364,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             if (account_depreciation_dgv.Visible == true)
             {
-                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
-                exportexcel.exportexcel(ref account_depreciation_dgv, linksave_txt.Text, account_depreciation_dgv.Columns[0].HeaderText);
+                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.CSV_Class exportexcel = new Common.CSV_Class();
+                exportexcel.exportcsv(ref account_depreciation_dgv, linksave_txt.Text, account_depreciation_dgv.Columns[0].HeaderText);
             }
             else if (warehouse_main_dgv.Visible == true)
             {
-                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
-                exportexcel.exportexcel(ref warehouse_main_dgv, linksave_txt.Text, this.Text);
+                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.CSV_Class exportexcel = new Common.CSV_Class();
+                exportexcel.exportcsv(ref warehouse_main_dgv, linksave_txt.Text, this.Text);
 
             }
-
-
         }
-        private string directorySave = "";
-        private void browser_btn_Click(object sender, EventArgs e)
-        {
 
-            FolderBrowserDialog fl = new FolderBrowserDialog();
-            fl.SelectedPath = "d:\\";
-            fl.ShowNewFolderButton = true;
-            if (fl.ShowDialog() == DialogResult.OK)
-            {
-                linksave_txt.Text = fl.SelectedPath;
-                directorySave = linksave_txt.Text;
-            }
-        }
 
         private void buttonCommon1_Click(object sender, EventArgs e)
         {
-            
+
             //string text = System.IO.File.ReadAllText(@"D:\testfolder\received.txt");
             //asset_Code_txt.Text = text;
         }
@@ -335,7 +386,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void buttonCommon3_Click(object sender, EventArgs e)
         {
             //string[] text= { "",""};
-          
+
             //int rowcount = warehouse_main_dgv.Rows.Count;
             //int columncount = warehouse_main_dgv.Columns.Count;
 
@@ -354,6 +405,58 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         }
 
-      
+        private void Transfer_btn_Click(object sender, EventArgs e)
+        {
+            TransferVo transOutVo = new TransferVo();
+            TransferVo transVo = new TransferVo()
+            {
+                RegistrationUserCode = UserData.GetUserData().UserCode
+            };
+            try
+            {
+                transOutVo = (TransferVo)DefaultCbmInvoker.Invoke(new GetRoleCbm(), transVo);
+                string role = transOutVo.RegistrationUserCode;
+
+                if (role != "mgr")
+                {
+                    TranferRequestForm transre = new TranferRequestForm();
+                    transre.ShowDialog();
+                }
+                else
+                {
+                    TranferInfoForm transinfo = new TranferInfoForm();
+                    transinfo.ShowDialog();
+                }
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
+        }
+        private string directorySave = "";
+        private void browser_btn_Click(object sender, EventArgs e)
+        {
+
+            FolderBrowserDialog fl = new FolderBrowserDialog();
+            fl.SelectedPath = "d:\\";
+            fl.ShowNewFolderButton = true;
+            if (fl.ShowDialog() == DialogResult.OK)
+            {
+                linksave_txt.Text = fl.SelectedPath;
+                directorySave = linksave_txt.Text;
+            }
+        }
+
+        private void linksave_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportexcel1_btn_Click(object sender, EventArgs e)
+        {
+            Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
+            exportexcel.exportexcel(ref warehouse_main_dgv, linksave_txt.Text, this.Text);
+        }
     }
 }

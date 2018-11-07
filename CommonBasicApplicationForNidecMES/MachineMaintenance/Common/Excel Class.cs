@@ -31,6 +31,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 {
                     for (int j = 0; j < dgv.Columns.Count; j++)
                     {
+                        if (dgv[j, i].Value != null) 
 
                         ws.Cells[(i + 2), (j + 1)] = dgv[j, i].Value.ToString();
 
@@ -41,7 +42,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 ws.SaveAs(link + @"\" + filename + ".xlsx");
 
             }
-            catch
+          catch
             {
                 MessageBox.Show("ERROR. Please create folder " + link + " to save as...");
                 return;

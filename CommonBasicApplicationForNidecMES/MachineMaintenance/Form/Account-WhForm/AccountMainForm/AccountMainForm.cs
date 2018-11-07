@@ -28,7 +28,35 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             account_main_dgv.Visible = true;
             account_main_dgv.DataSource = null;
             GridBind();
-            updatedatatodatabase();
+            full_asset_Code_txt.Text = "";
+            //   updatedatatodatabase();
+            invertory_alarm();
+            counter();
+        }
+        void counter()
+        {
+            if (counter_dgv.RowCount > 0)
+            {
+                counter_dgv.Rows.RemoveAt(this.counter_dgv.Rows[0].Index);
+            }
+            double AcquisitionCost = 0, CurrentDepreciation = 0, MonthlyDepreciation = 0, AccumDepreciation = 0, NetValue = 0;
+            int TotalMachine = 0, Inventory = 0;
+            int j = 0;
+            for (int i = 0; i < account_main_dgv.RowCount; i++)
+            {
+                AcquisitionCost += double.Parse(account_main_dgv.Rows[i].Cells["colAcquisitionCost"].Value.ToString());
+                CurrentDepreciation += double.Parse(account_main_dgv.Rows[i].Cells["colCurrentDepreciation"].Value.ToString());
+                MonthlyDepreciation += double.Parse(account_main_dgv.Rows[i].Cells["colMonthlyDepreciation"].Value.ToString());
+                AccumDepreciation += double.Parse(account_main_dgv.Rows[i].Cells["colAccumDepreciation"].Value.ToString());
+                NetValue += double.Parse(account_main_dgv.Rows[i].Cells["colNetValue"].Value.ToString());
+                TotalMachine = i+1;
+                if (account_main_dgv.Rows[i].Cells["colInvertory"].Value.ToString() == invertory_cmb.Text)
+                {
+                    Inventory += j+ 1;
+                }
+            }
+
+            counter_dgv.Rows.Add(Math.Round(AcquisitionCost, 2).ToString(), Math.Round(CurrentDepreciation).ToString(), Math.Round(MonthlyDepreciation).ToString(), Math.Round(AccumDepreciation).ToString(), Math.Round(NetValue).ToString(), Inventory.ToString(), TotalMachine.ToString());
         }
         void updatedatatodatabase()
         {
@@ -49,6 +77,20 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
+        void invertory_alarm()
+        {
+            for (int i = 0; i < account_main_dgv.RowCount; i++)
+            {
+                if (int.Parse(account_main_dgv.Rows[i].Cells["colInvertoryId"].Value.ToString()) >= ((InvertoryVo)this.invertory_cmb.SelectedItem).InvertoryTimeId)
+                {
+                    account_main_dgv.Rows[i].DefaultCellStyle.BackColor = Color.PaleGreen;
+                }
+                else if (int.Parse(account_main_dgv.Rows[i].Cells["colInvertoryId"].Value.ToString()) < ((InvertoryVo)this.invertory_cmb.SelectedItem).InvertoryTimeId)
+                {
+                    account_main_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }
         private void GridBind()
         {
             try
@@ -64,11 +106,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     AssetModel = asset_model_cbm.Text,
                     LocationCode = location_cbm.Text,
                     AssetName = asset_name_cbm.Text,
+                    LabelStatus = labelstatus_cmb.Text,
+                    Net_Value = net_value_cmb.Text,
+                    AssetPO = AssetPO_cmb.Text,
                     //AssetNo = 
                 };
-                ValueObjectList<AccountMainVo> listvo = (ValueObjectList<AccountMainVo>)DefaultCbmInvoker.Invoke(new Cbm.SeachAccountMainCbm(), whvos);
-                account_main_dgv.DataSource = listvo.GetList();
-                calculator();
+                if (checkdata())
+                {
+                    ValueObjectList<AccountMainVo> listvo = (ValueObjectList<AccountMainVo>)DefaultCbmInvoker.Invoke(new Cbm.SeachAccountMainCbm(), whvos);
+                    account_main_dgv.DataSource = listvo.GetList();
+                //    calculator();
+                    // ReviewStatusLable();
+                }
             }
             catch (Framework.ApplicationException exception)
             {
@@ -76,6 +125,38 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
+        bool checkdata()
+        {
+            if (invertory_cmb.Text == "")
+            {
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, "Invertory");
+                popUpMessage.Warning(messageData, Text);
+                invertory_cmb.Focus();
+                return false;
+            }
+            return true;
+        }
+        //public void ReviewStatusLable()
+        //{
+        //    if(account_main_dgv.RowCount > 0)
+        //    {
+        //        for (int i = 0; i < account_main_dgv.RowCount; i++)
+        //        {
+        //            if(account_main_dgv.Rows[i].Cells["colLabelStatus"].Value.ToString()== "Pasted") //Pasted
+        //            {
+        //                account_main_dgv.Rows[i].Cells["colLabelStatus"].Style.BackColor = Color.White;
+        //            }
+        //            else if (account_main_dgv.Rows[i].Cells["colLabelStatus"].Value.ToString() == "Not Paste") //Not Paste
+        //            {
+        //                account_main_dgv.Rows[i].Cells["colLabelStatus"].Style.BackColor = Color.Violet;
+        //            }
+        //            else if (account_main_dgv.Rows[i].Cells["colLabelStatus"].Value.ToString() == "Cannot Paste") //Cannot Paste
+        //            {
+        //                account_main_dgv.Rows[i].Cells["colLabelStatus"].Style.BackColor = Color.LightCoral;
+        //            }
+        //        }
+        //    }
+        //}
         public void calculator()
         {
             if (account_main_dgv.RowCount > 0)
@@ -178,6 +259,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             invoice_cbm.DataSource = assetvoinvoice.GetList();
             invoice_cbm.Text = "";
 
+            ValueObjectList<AssetVo> assetPO = (ValueObjectList<AssetVo>)DefaultCbmInvoker.Invoke(new GetAssetPOCbm(), new AssetVo());
+            AssetPO_cmb.DisplayMember = "AssetPO";
+            AssetPO_cmb.DataSource = assetPO.GetList();
+            AssetPO_cmb.Text = "";
+
+            ValueObjectList<InvertoryVo> invertory = (ValueObjectList<InvertoryVo>)DefaultCbmInvoker.Invoke(new GetInvertoryTimeCbm(), new InvertoryVo());
+            invertory_cmb.DisplayMember = "InvertoryTimeCode";
+            invertory_cmb.DataSource = invertory.GetList();
+
             ValueObjectList<AssetVo> assetvomodel = (ValueObjectList<AssetVo>)DefaultCbmInvoker.Invoke(new GetAssetModelCbm(), new AssetVo());
             asset_model_cbm.DisplayMember = "AssetModel";
             asset_model_cbm.DataSource = assetvomodel.GetList();
@@ -279,13 +369,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             if (account_depreciation_dgv.Visible == true)
             {
-                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
-                exportexcel.exportexcel(ref account_depreciation_dgv, linksave_txt.Text, account_depreciation_dgv.Columns[0].HeaderText);
+                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.CSV_Class exportexcel = new Common.CSV_Class();
+                exportexcel.exportcsv(ref account_depreciation_dgv, linksave_txt.Text, account_depreciation_dgv.Columns[0].HeaderText);
             }
             else if (account_main_dgv.Visible == true)
             {
-                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
-                exportexcel.exportexcel(ref account_main_dgv, linksave_txt.Text, account_main_dgv.Columns[0].HeaderText);
+                Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.CSV_Class exportexcel = new Common.CSV_Class();
+                exportexcel.exportcsv(ref account_main_dgv, linksave_txt.Text, account_main_dgv.Columns[0].HeaderText);
 
             }
         }
@@ -301,6 +391,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 linksave_txt.Text = fl.SelectedPath;
                 directorySave = linksave_txt.Text;
             }
+        }
+
+        private void Transfer_btn_Click(object sender, EventArgs e)
+        {
+            TranferInfoForm transinfo = new TranferInfoForm();
+            transinfo.ShowDialog();
+        }
+
+        private void exportexcel1_btn_Click(object sender, EventArgs e)
+        {
+            Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
+            exportexcel.exportexcel(ref account_main_dgv, linksave_txt.Text, this.Text);
         }
     }
 }

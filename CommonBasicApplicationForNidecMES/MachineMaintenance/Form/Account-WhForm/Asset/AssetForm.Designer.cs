@@ -52,8 +52,10 @@
             this.colAsquiscost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAcquistionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colassetinvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_asset_po = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLabelStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDetails_dgv)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
@@ -198,9 +200,7 @@
             this.AssetDetails_dgv.AllowUserToDeleteRows = false;
             this.AssetDetails_dgv.AllowUserToOrderColumns = true;
             this.AssetDetails_dgv.AllowUserToResizeRows = false;
-            this.AssetDetails_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AssetDetails_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,8 +221,10 @@
             this.colAsquiscost,
             this.colAcquistionDate,
             this.colassetinvoice,
+            this.col_asset_po,
             this.colAssetSupplier,
-            this.colAssetType});
+            this.colAssetType,
+            this.colLabelStatus});
             this.AssetDetails_dgv.ControlId = null;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -232,6 +234,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.AssetDetails_dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            this.AssetDetails_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AssetDetails_dgv.EnableHeadersVisualStyles = false;
             this.AssetDetails_dgv.Location = new System.Drawing.Point(0, 191);
             this.AssetDetails_dgv.MultiSelect = false;
@@ -248,7 +251,7 @@
             this.AssetDetails_dgv.RowHeadersVisible = false;
             this.AssetDetails_dgv.RowTemplate.Height = 21;
             this.AssetDetails_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AssetDetails_dgv.Size = new System.Drawing.Size(1063, 336);
+            this.AssetDetails_dgv.Size = new System.Drawing.Size(1063, 389);
             this.AssetDetails_dgv.TabIndex = 22;
             this.AssetDetails_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDetails_dgv_CellClick);
             this.AssetDetails_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDetails_dgv_CellDoubleClick);
@@ -260,6 +263,7 @@
             this.colAssetId.Name = "colAssetId";
             this.colAssetId.ReadOnly = true;
             this.colAssetId.Visible = false;
+            this.colAssetId.Width = 57;
             // 
             // colAssetCode
             // 
@@ -275,6 +279,7 @@
             this.colAssetNo.HeaderText = "Asset No";
             this.colAssetNo.Name = "colAssetNo";
             this.colAssetNo.ReadOnly = true;
+            this.colAssetNo.Width = 76;
             // 
             // colAssetName
             // 
@@ -290,6 +295,7 @@
             this.colAssetModel.HeaderText = "Asset Model";
             this.colAssetModel.Name = "colAssetModel";
             this.colAssetModel.ReadOnly = true;
+            this.colAssetModel.Width = 91;
             // 
             // colassetserial
             // 
@@ -297,6 +303,7 @@
             this.colassetserial.HeaderText = "Asset Serial";
             this.colassetserial.Name = "colassetserial";
             this.colassetserial.ReadOnly = true;
+            this.colassetserial.Width = 90;
             // 
             // colLife
             // 
@@ -304,6 +311,7 @@
             this.colLife.HeaderText = "Life";
             this.colLife.Name = "colLife";
             this.colLife.ReadOnly = true;
+            this.colLife.Width = 52;
             // 
             // colAsquiscost
             // 
@@ -311,6 +319,7 @@
             this.colAsquiscost.HeaderText = "Acquisition Cost";
             this.colAsquiscost.Name = "colAsquiscost";
             this.colAsquiscost.ReadOnly = true;
+            this.colAsquiscost.Width = 111;
             // 
             // colAcquistionDate
             // 
@@ -318,13 +327,23 @@
             this.colAcquistionDate.HeaderText = "Acquisition Date";
             this.colAcquistionDate.Name = "colAcquistionDate";
             this.colAcquistionDate.ReadOnly = true;
+            this.colAcquistionDate.Width = 111;
             // 
             // colassetinvoice
             // 
             this.colassetinvoice.DataPropertyName = "AssetInvoice";
-            this.colassetinvoice.HeaderText = "Asset Invoice";
+            this.colassetinvoice.HeaderText = "Invoice";
             this.colassetinvoice.Name = "colassetinvoice";
             this.colassetinvoice.ReadOnly = true;
+            this.colassetinvoice.Width = 70;
+            // 
+            // col_asset_po
+            // 
+            this.col_asset_po.DataPropertyName = "AssetPO";
+            this.col_asset_po.HeaderText = "P/O";
+            this.col_asset_po.Name = "col_asset_po";
+            this.col_asset_po.ReadOnly = true;
+            this.col_asset_po.Width = 52;
             // 
             // colAssetSupplier
             // 
@@ -332,6 +351,7 @@
             this.colAssetSupplier.HeaderText = "Asset Supplier";
             this.colAssetSupplier.Name = "colAssetSupplier";
             this.colAssetSupplier.ReadOnly = true;
+            this.colAssetSupplier.Width = 103;
             // 
             // colAssetType
             // 
@@ -339,6 +359,15 @@
             this.colAssetType.HeaderText = "Asset Type";
             this.colAssetType.Name = "colAssetType";
             this.colAssetType.ReadOnly = true;
+            this.colAssetType.Width = 84;
+            // 
+            // colLabelStatus
+            // 
+            this.colLabelStatus.DataPropertyName = "LabelStatus";
+            this.colLabelStatus.HeaderText = "Label Status";
+            this.colLabelStatus.Name = "colLabelStatus";
+            this.colLabelStatus.ReadOnly = true;
+            this.colLabelStatus.Width = 93;
             // 
             // groupBoxCommon1
             // 
@@ -363,7 +392,7 @@
             // AssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1063, 527);
+            this.ClientSize = new System.Drawing.Size(1063, 580);
             this.Controls.Add(this.groupBoxCommon1);
             this.Controls.Add(this.AssetDetails_dgv);
             this.Name = "AssetForm";
@@ -392,6 +421,7 @@
         private Framework.TextBoxCommon AssetCode_txt;
         private Framework.LabelCommon AssetCode_lbl;
         internal Framework.DataGridViewCommon AssetDetails_dgv;
+        private Framework.GroupBoxCommon groupBoxCommon1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetNo;
@@ -402,8 +432,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAsquiscost;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAcquistionDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colassetinvoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_asset_po;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetSupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetType;
-        private Framework.GroupBoxCommon groupBoxCommon1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLabelStatus;
     }
 }

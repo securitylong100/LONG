@@ -64,6 +64,13 @@
             this.labelCommon6 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.AssetNo_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.AssetNo_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.LabelStatus_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.Pasted_rdb = new Com.Nidec.Mes.Framework.RadioButtonCommon();
+            this.NotPaste_rdb = new Com.Nidec.Mes.Framework.RadioButtonCommon();
+            this.CannotPaste_rdb = new Com.Nidec.Mes.Framework.RadioButtonCommon();
+            this.Asset_PO_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon10 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.Asset_PO_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.SuspendLayout();
             // 
             // UpdateText_lbl
@@ -113,7 +120,7 @@
             this.Exit_btn.ControlId = null;
             this.Exit_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Exit_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Exit_btn.Location = new System.Drawing.Point(284, 521);
+            this.Exit_btn.Location = new System.Drawing.Point(256, 606);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(80, 33);
             this.Exit_btn.TabIndex = 29;
@@ -127,7 +134,7 @@
             this.Ok_btn.ControlId = null;
             this.Ok_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Ok_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Ok_btn.Location = new System.Drawing.Point(177, 521);
+            this.Ok_btn.Location = new System.Drawing.Point(149, 606);
             this.Ok_btn.Name = "Ok_btn";
             this.Ok_btn.Size = new System.Drawing.Size(80, 33);
             this.Ok_btn.TabIndex = 28;
@@ -153,7 +160,7 @@
             this.AssetName_lbl.ControlId = null;
             this.AssetName_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetName_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetName_lbl.Location = new System.Drawing.Point(93, 199);
+            this.AssetName_lbl.Location = new System.Drawing.Point(75, 198);
             this.AssetName_lbl.Name = "AssetName_lbl";
             this.AssetName_lbl.Size = new System.Drawing.Size(75, 15);
             this.AssetName_lbl.TabIndex = 26;
@@ -177,7 +184,7 @@
             this.AssetCode_lbl.ControlId = null;
             this.AssetCode_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetCode_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetCode_lbl.Location = new System.Drawing.Point(93, 130);
+            this.AssetCode_lbl.Location = new System.Drawing.Point(75, 130);
             this.AssetCode_lbl.Name = "AssetCode_lbl";
             this.AssetCode_lbl.Size = new System.Drawing.Size(71, 15);
             this.AssetCode_lbl.TabIndex = 24;
@@ -189,7 +196,7 @@
             this.AssetModel_lbl.ControlId = null;
             this.AssetModel_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetModel_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetModel_lbl.Location = new System.Drawing.Point(93, 235);
+            this.AssetModel_lbl.Location = new System.Drawing.Point(75, 235);
             this.AssetModel_lbl.Name = "AssetModel_lbl";
             this.AssetModel_lbl.Size = new System.Drawing.Size(74, 15);
             this.AssetModel_lbl.TabIndex = 26;
@@ -226,7 +233,7 @@
             this.AssetSupplier_lbl.ControlId = null;
             this.AssetSupplier_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetSupplier_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetSupplier_lbl.Location = new System.Drawing.Point(85, 454);
+            this.AssetSupplier_lbl.Location = new System.Drawing.Point(75, 488);
             this.AssetSupplier_lbl.Name = "AssetSupplier_lbl";
             this.AssetSupplier_lbl.Size = new System.Drawing.Size(87, 15);
             this.AssetSupplier_lbl.TabIndex = 26;
@@ -237,7 +244,7 @@
             this.AssetSupplier_txt.ControlId = null;
             this.AssetSupplier_txt.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetSupplier_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.AssetSupplier_txt.Location = new System.Drawing.Point(177, 451);
+            this.AssetSupplier_txt.Location = new System.Drawing.Point(177, 486);
             this.AssetSupplier_txt.MaxLength = 64;
             this.AssetSupplier_txt.Name = "AssetSupplier_txt";
             this.AssetSupplier_txt.Size = new System.Drawing.Size(187, 21);
@@ -250,7 +257,7 @@
             this.labelCommon5.Font = new System.Drawing.Font("Arial", 9F);
             this.labelCommon5.ForeColor = System.Drawing.Color.DarkRed;
             this.labelCommon5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon5.Location = new System.Drawing.Point(364, 453);
+            this.labelCommon5.Location = new System.Drawing.Point(364, 488);
             this.labelCommon5.Name = "labelCommon5";
             this.labelCommon5.Size = new System.Drawing.Size(27, 15);
             this.labelCommon5.TabIndex = 30;
@@ -264,7 +271,7 @@
             this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F);
             this.labelCommon3.ForeColor = System.Drawing.Color.DarkRed;
             this.labelCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon3.Location = new System.Drawing.Point(364, 489);
+            this.labelCommon3.Location = new System.Drawing.Point(364, 524);
             this.labelCommon3.Name = "labelCommon3";
             this.labelCommon3.Size = new System.Drawing.Size(27, 15);
             this.labelCommon3.TabIndex = 35;
@@ -276,7 +283,7 @@
             this.AssetType_txt.ControlId = null;
             this.AssetType_txt.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetType_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.AssetType_txt.Location = new System.Drawing.Point(177, 487);
+            this.AssetType_txt.Location = new System.Drawing.Point(177, 522);
             this.AssetType_txt.MaxLength = 32;
             this.AssetType_txt.Name = "AssetType_txt";
             this.AssetType_txt.Size = new System.Drawing.Size(187, 21);
@@ -288,7 +295,7 @@
             this.asset_type_lbl.ControlId = null;
             this.asset_type_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.asset_type_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.asset_type_lbl.Location = new System.Drawing.Point(93, 493);
+            this.asset_type_lbl.Location = new System.Drawing.Point(75, 525);
             this.asset_type_lbl.Name = "asset_type_lbl";
             this.asset_type_lbl.Size = new System.Drawing.Size(66, 15);
             this.asset_type_lbl.TabIndex = 33;
@@ -300,7 +307,7 @@
             this.AssetSerial_lbl.ControlId = null;
             this.AssetSerial_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetSerial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetSerial_lbl.Location = new System.Drawing.Point(93, 272);
+            this.AssetSerial_lbl.Location = new System.Drawing.Point(75, 271);
             this.AssetSerial_lbl.Name = "AssetSerial_lbl";
             this.AssetSerial_lbl.Size = new System.Drawing.Size(73, 15);
             this.AssetSerial_lbl.TabIndex = 26;
@@ -337,11 +344,11 @@
             this.AssetInvoice_lbl.ControlId = null;
             this.AssetInvoice_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetInvoice_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetInvoice_lbl.Location = new System.Drawing.Point(93, 308);
+            this.AssetInvoice_lbl.Location = new System.Drawing.Point(75, 307);
             this.AssetInvoice_lbl.Name = "AssetInvoice_lbl";
-            this.AssetInvoice_lbl.Size = new System.Drawing.Size(79, 15);
+            this.AssetInvoice_lbl.Size = new System.Drawing.Size(45, 15);
             this.AssetInvoice_lbl.TabIndex = 26;
-            this.AssetInvoice_lbl.Text = "Asset Invoice";
+            this.AssetInvoice_lbl.Text = "Invoice";
             // 
             // labelCommon8
             // 
@@ -373,7 +380,7 @@
             this.Life_lbl.ControlId = null;
             this.Life_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.Life_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Life_lbl.Location = new System.Drawing.Point(128, 346);
+            this.Life_lbl.Location = new System.Drawing.Point(75, 381);
             this.Life_lbl.Name = "Life_lbl";
             this.Life_lbl.Size = new System.Drawing.Size(27, 15);
             this.Life_lbl.TabIndex = 26;
@@ -384,7 +391,7 @@
             this.AssetLife_txt.ControlId = null;
             this.AssetLife_txt.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetLife_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.AssetLife_txt.Location = new System.Drawing.Point(177, 343);
+            this.AssetLife_txt.Location = new System.Drawing.Point(177, 378);
             this.AssetLife_txt.MaxLength = 32;
             this.AssetLife_txt.Name = "AssetLife_txt";
             this.AssetLife_txt.Size = new System.Drawing.Size(187, 21);
@@ -397,7 +404,7 @@
             this.Acquistion_Date_lbl.ControlId = null;
             this.Acquistion_Date_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.Acquistion_Date_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Acquistion_Date_lbl.Location = new System.Drawing.Point(75, 383);
+            this.Acquistion_Date_lbl.Location = new System.Drawing.Point(75, 417);
             this.Acquistion_Date_lbl.Name = "Acquistion_Date_lbl";
             this.Acquistion_Date_lbl.Size = new System.Drawing.Size(93, 15);
             this.Acquistion_Date_lbl.TabIndex = 26;
@@ -409,7 +416,7 @@
             this.Acquistion_Cost_lbl.ControlId = null;
             this.Acquistion_Cost_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.Acquistion_Cost_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Acquistion_Cost_lbl.Location = new System.Drawing.Point(80, 419);
+            this.Acquistion_Cost_lbl.Location = new System.Drawing.Point(75, 453);
             this.Acquistion_Cost_lbl.Name = "Acquistion_Cost_lbl";
             this.Acquistion_Cost_lbl.Size = new System.Drawing.Size(93, 15);
             this.Acquistion_Cost_lbl.TabIndex = 26;
@@ -422,7 +429,7 @@
             this.labelCommon11.Font = new System.Drawing.Font("Arial", 9F);
             this.labelCommon11.ForeColor = System.Drawing.Color.DarkRed;
             this.labelCommon11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon11.Location = new System.Drawing.Point(364, 345);
+            this.labelCommon11.Location = new System.Drawing.Point(364, 380);
             this.labelCommon11.Name = "labelCommon11";
             this.labelCommon11.Size = new System.Drawing.Size(27, 15);
             this.labelCommon11.TabIndex = 30;
@@ -436,7 +443,7 @@
             this.labelCommon12.Font = new System.Drawing.Font("Arial", 9F);
             this.labelCommon12.ForeColor = System.Drawing.Color.DarkRed;
             this.labelCommon12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon12.Location = new System.Drawing.Point(364, 382);
+            this.labelCommon12.Location = new System.Drawing.Point(364, 417);
             this.labelCommon12.Name = "labelCommon12";
             this.labelCommon12.Size = new System.Drawing.Size(27, 15);
             this.labelCommon12.TabIndex = 30;
@@ -450,7 +457,7 @@
             this.labelCommon13.Font = new System.Drawing.Font("Arial", 9F);
             this.labelCommon13.ForeColor = System.Drawing.Color.DarkRed;
             this.labelCommon13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon13.Location = new System.Drawing.Point(364, 418);
+            this.labelCommon13.Location = new System.Drawing.Point(364, 453);
             this.labelCommon13.Name = "labelCommon13";
             this.labelCommon13.Size = new System.Drawing.Size(27, 15);
             this.labelCommon13.TabIndex = 30;
@@ -462,7 +469,7 @@
             this.Asset_Acquistion_Cost_txt.ControlId = null;
             this.Asset_Acquistion_Cost_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Asset_Acquistion_Cost_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.Asset_Acquistion_Cost_txt.Location = new System.Drawing.Point(177, 415);
+            this.Asset_Acquistion_Cost_txt.Location = new System.Drawing.Point(177, 450);
             this.Asset_Acquistion_Cost_txt.Name = "Asset_Acquistion_Cost_txt";
             this.Asset_Acquistion_Cost_txt.Size = new System.Drawing.Size(187, 21);
             this.Asset_Acquistion_Cost_txt.TabIndex = 36;
@@ -474,7 +481,7 @@
             this.Asset_Acquistion_Date_dtp.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
             this.Asset_Acquistion_Date_dtp.Font = new System.Drawing.Font("Arial", 9F);
             this.Asset_Acquistion_Date_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Asset_Acquistion_Date_dtp.Location = new System.Drawing.Point(177, 378);
+            this.Asset_Acquistion_Date_dtp.Location = new System.Drawing.Point(177, 413);
             this.Asset_Acquistion_Date_dtp.Name = "Asset_Acquistion_Date_dtp";
             this.Asset_Acquistion_Date_dtp.Size = new System.Drawing.Size(187, 21);
             this.Asset_Acquistion_Date_dtp.TabIndex = 37;
@@ -510,27 +517,123 @@
             this.AssetNo_lbl.ControlId = null;
             this.AssetNo_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.AssetNo_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AssetNo_lbl.Location = new System.Drawing.Point(128, 163);
+            this.AssetNo_lbl.Location = new System.Drawing.Point(75, 162);
             this.AssetNo_lbl.Name = "AssetNo_lbl";
             this.AssetNo_lbl.Size = new System.Drawing.Size(23, 15);
             this.AssetNo_lbl.TabIndex = 38;
             this.AssetNo_lbl.Text = "No";
             // 
+            // LabelStatus_lbl
+            // 
+            this.LabelStatus_lbl.AutoSize = true;
+            this.LabelStatus_lbl.ControlId = null;
+            this.LabelStatus_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.LabelStatus_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelStatus_lbl.Location = new System.Drawing.Point(75, 559);
+            this.LabelStatus_lbl.Name = "LabelStatus_lbl";
+            this.LabelStatus_lbl.Size = new System.Drawing.Size(76, 15);
+            this.LabelStatus_lbl.TabIndex = 33;
+            this.LabelStatus_lbl.Text = "Label Status";
+            // 
+            // Pasted_rdb
+            // 
+            this.Pasted_rdb.AutoSize = true;
+            this.Pasted_rdb.BackColor = System.Drawing.Color.White;
+            this.Pasted_rdb.ControlId = null;
+            this.Pasted_rdb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pasted_rdb.Location = new System.Drawing.Point(177, 557);
+            this.Pasted_rdb.Name = "Pasted_rdb";
+            this.Pasted_rdb.Size = new System.Drawing.Size(64, 19);
+            this.Pasted_rdb.TabIndex = 41;
+            this.Pasted_rdb.TabStop = true;
+            this.Pasted_rdb.Text = "Pasted";
+            this.Pasted_rdb.UseVisualStyleBackColor = false;
+            // 
+            // NotPaste_rdb
+            // 
+            this.NotPaste_rdb.AutoSize = true;
+            this.NotPaste_rdb.BackColor = System.Drawing.Color.Violet;
+            this.NotPaste_rdb.ControlId = null;
+            this.NotPaste_rdb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotPaste_rdb.Location = new System.Drawing.Point(247, 557);
+            this.NotPaste_rdb.Name = "NotPaste_rdb";
+            this.NotPaste_rdb.Size = new System.Drawing.Size(79, 19);
+            this.NotPaste_rdb.TabIndex = 42;
+            this.NotPaste_rdb.TabStop = true;
+            this.NotPaste_rdb.Text = "Not Paste";
+            this.NotPaste_rdb.UseVisualStyleBackColor = false;
+            // 
+            // CannotPaste_rdb
+            // 
+            this.CannotPaste_rdb.AutoSize = true;
+            this.CannotPaste_rdb.BackColor = System.Drawing.Color.LightCoral;
+            this.CannotPaste_rdb.ControlId = null;
+            this.CannotPaste_rdb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CannotPaste_rdb.Location = new System.Drawing.Point(332, 557);
+            this.CannotPaste_rdb.Name = "CannotPaste_rdb";
+            this.CannotPaste_rdb.Size = new System.Drawing.Size(100, 19);
+            this.CannotPaste_rdb.TabIndex = 43;
+            this.CannotPaste_rdb.TabStop = true;
+            this.CannotPaste_rdb.Text = "Cannot Paste";
+            this.CannotPaste_rdb.UseVisualStyleBackColor = false;
+            // 
+            // Asset_PO_lbl
+            // 
+            this.Asset_PO_lbl.AutoSize = true;
+            this.Asset_PO_lbl.ControlId = null;
+            this.Asset_PO_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.Asset_PO_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Asset_PO_lbl.Location = new System.Drawing.Point(75, 344);
+            this.Asset_PO_lbl.Name = "Asset_PO_lbl";
+            this.Asset_PO_lbl.Size = new System.Drawing.Size(27, 15);
+            this.Asset_PO_lbl.TabIndex = 26;
+            this.Asset_PO_lbl.Text = "P/O";
+            // 
+            // labelCommon10
+            // 
+            this.labelCommon10.AutoSize = true;
+            this.labelCommon10.ControlId = null;
+            this.labelCommon10.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon10.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelCommon10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelCommon10.Location = new System.Drawing.Point(364, 344);
+            this.labelCommon10.Name = "labelCommon10";
+            this.labelCommon10.Size = new System.Drawing.Size(27, 15);
+            this.labelCommon10.TabIndex = 30;
+            this.labelCommon10.Text = "(＊)";
+            this.labelCommon10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Asset_PO_txt
+            // 
+            this.Asset_PO_txt.ControlId = null;
+            this.Asset_PO_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Asset_PO_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.Asset_PO_txt.Location = new System.Drawing.Point(177, 341);
+            this.Asset_PO_txt.Name = "Asset_PO_txt";
+            this.Asset_PO_txt.Size = new System.Drawing.Size(187, 21);
+            this.Asset_PO_txt.TabIndex = 36;
+            // 
             // AddAssetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(439, 566);
+            this.ClientSize = new System.Drawing.Size(471, 663);
+            this.Controls.Add(this.CannotPaste_rdb);
+            this.Controls.Add(this.NotPaste_rdb);
+            this.Controls.Add(this.Pasted_rdb);
             this.Controls.Add(this.labelCommon6);
             this.Controls.Add(this.AssetNo_txt);
             this.Controls.Add(this.AssetNo_lbl);
             this.Controls.Add(this.Asset_Acquistion_Date_dtp);
             this.Controls.Add(this.Asset_Acquistion_Cost_txt);
+            this.Controls.Add(this.Asset_PO_txt);
             this.Controls.Add(this.AssetInvoice_txt);
             this.Controls.Add(this.labelCommon3);
             this.Controls.Add(this.AssetType_txt);
+            this.Controls.Add(this.LabelStatus_lbl);
             this.Controls.Add(this.asset_type_lbl);
             this.Controls.Add(this.UpdateText_lbl);
             this.Controls.Add(this.labelCommon5);
+            this.Controls.Add(this.labelCommon10);
             this.Controls.Add(this.labelCommon13);
             this.Controls.Add(this.labelCommon8);
             this.Controls.Add(this.labelCommon12);
@@ -543,6 +646,7 @@
             this.Controls.Add(this.Ok_btn);
             this.Controls.Add(this.AssetSupplier_txt);
             this.Controls.Add(this.AssetSupplier_lbl);
+            this.Controls.Add(this.Asset_PO_lbl);
             this.Controls.Add(this.Acquistion_Cost_lbl);
             this.Controls.Add(this.AssetInvoice_lbl);
             this.Controls.Add(this.AssetSerial_txt);
@@ -573,6 +677,7 @@
             this.Controls.SetChildIndex(this.AssetSerial_txt, 0);
             this.Controls.SetChildIndex(this.AssetInvoice_lbl, 0);
             this.Controls.SetChildIndex(this.Acquistion_Cost_lbl, 0);
+            this.Controls.SetChildIndex(this.Asset_PO_lbl, 0);
             this.Controls.SetChildIndex(this.AssetSupplier_lbl, 0);
             this.Controls.SetChildIndex(this.AssetSupplier_txt, 0);
             this.Controls.SetChildIndex(this.Ok_btn, 0);
@@ -585,17 +690,23 @@
             this.Controls.SetChildIndex(this.labelCommon12, 0);
             this.Controls.SetChildIndex(this.labelCommon8, 0);
             this.Controls.SetChildIndex(this.labelCommon13, 0);
+            this.Controls.SetChildIndex(this.labelCommon10, 0);
             this.Controls.SetChildIndex(this.labelCommon5, 0);
             this.Controls.SetChildIndex(this.UpdateText_lbl, 0);
             this.Controls.SetChildIndex(this.asset_type_lbl, 0);
+            this.Controls.SetChildIndex(this.LabelStatus_lbl, 0);
             this.Controls.SetChildIndex(this.AssetType_txt, 0);
             this.Controls.SetChildIndex(this.labelCommon3, 0);
             this.Controls.SetChildIndex(this.AssetInvoice_txt, 0);
+            this.Controls.SetChildIndex(this.Asset_PO_txt, 0);
             this.Controls.SetChildIndex(this.Asset_Acquistion_Cost_txt, 0);
             this.Controls.SetChildIndex(this.Asset_Acquistion_Date_dtp, 0);
             this.Controls.SetChildIndex(this.AssetNo_lbl, 0);
             this.Controls.SetChildIndex(this.AssetNo_txt, 0);
             this.Controls.SetChildIndex(this.labelCommon6, 0);
+            this.Controls.SetChildIndex(this.Pasted_rdb, 0);
+            this.Controls.SetChildIndex(this.NotPaste_rdb, 0);
+            this.Controls.SetChildIndex(this.CannotPaste_rdb, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,5 +750,12 @@
         private Framework.LabelCommon labelCommon6;
         private Framework.TextBoxCommon AssetNo_txt;
         private Framework.LabelCommon AssetNo_lbl;
+        private Framework.LabelCommon LabelStatus_lbl;
+        private Framework.RadioButtonCommon Pasted_rdb;
+        private Framework.RadioButtonCommon NotPaste_rdb;
+        private Framework.RadioButtonCommon CannotPaste_rdb;
+        private Framework.LabelCommon Asset_PO_lbl;
+        private Framework.LabelCommon labelCommon10;
+        private Framework.TextBoxCommon Asset_PO_txt;
     }
 }

@@ -16,9 +16,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             AssetVo inVo = (AssetVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append("insert into m_asset(asset_id, asset_cd,asset_no, asset_name, asset_model, asset_supplier, asset_invoice, asset_life,acquistion_date, acquistion_cost, asset_serial, asset_type,  registration_user_cd, registration_date_time, factory_cd) ");
-            sql.Append(@"values((select max(asset_id)+1 from m_asset),:asset_cd,:asset_no, :asset_name, :asset_model, :asset_supplier,:asset_invoice, :asset_life, :acquistion_date, :acquistion_cost, :asset_serial, :asset_type,
-:registration_user_cd,now(), :factory_cd)");
+            sql.Append("insert into m_asset(asset_id, asset_cd,asset_no, asset_name, asset_model, asset_supplier, asset_invoice, asset_life,acquistion_date, acquistion_cost, asset_serial, asset_type, registration_user_cd, registration_date_time, factory_cd, label_status, asset_po) ");
+            sql.Append(@"values((select max(asset_id)+1 from m_asset),:asset_cd,:asset_no, :asset_name, :asset_model, :asset_supplier,:asset_invoice, :asset_life, :acquistion_date, :acquistion_cost, :asset_serial, :asset_type, :registration_user_cd, now(), :factory_cd, :label_status, :asset_po)");
             
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
@@ -39,6 +38,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameterString("factory_cd", inVo.FactoryCode);
             sqlParameter.AddParameterString("registration_user_cd", inVo.RegistrationUserCode);
             sqlParameter.AddParameterDateTime("registration_date_time", inVo.RegistrationDateTime);
+            sqlParameter.AddParameterString("label_status", inVo.LabelStatus);
+            sqlParameter.AddParameterString("asset_po", inVo.AssetPO);
             //execute SQL
 
             AssetVo outVo = new AssetVo

@@ -19,6 +19,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string AssetType { get; set; }
         public string AssetSerial { get; set; }
         public string AssetInvoice { get; set; }
+        public string LabelStatus { get; set; }
+        public string AssetPO { get; set; }
 
         public double AssetLife { get; set; }
         public double AcquistionCost { get; set; }

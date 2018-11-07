@@ -699,8 +699,8 @@
             this.Controls.Add(this.qty_lbl);
             this.Controls.Add(this.asset_code_lbl);
             this.Name = "AddWareHouseMainForm";
-            this.Text = "Add Equipment Manager";
-            this.TitleText = "Add Equipment Manager";
+            this.Text = "Equipment Management";
+            this.TitleText = "Add Equipment Management";
             this.Load += new System.EventHandler(this.AddWareHouseMainForm_Load);
             this.Controls.SetChildIndex(this.asset_code_lbl, 0);
             this.Controls.SetChildIndex(this.qty_lbl, 0);
