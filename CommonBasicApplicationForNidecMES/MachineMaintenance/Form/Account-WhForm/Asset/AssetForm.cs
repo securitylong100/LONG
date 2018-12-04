@@ -51,6 +51,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                 {
                     BindingSource bindingsource = new BindingSource(volist.GetList(), null);
                     AssetDetails_dgv.DataSource = bindingsource;
+
+                    AssetDetails_dgv.Columns["colAssetCode"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 }
                 else
                 {

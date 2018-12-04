@@ -17,10 +17,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             StringBuilder sql = new StringBuilder();
             sql.Append(@"insert into t_warehouse_main(asset_id, qty, unit_id, account_code_id, account_location_id, rank_id, comment_data, 
                         depreciation_start, depreciation_end, current_depreciation,   monthly_depreciation, 
-                        accum_depreciation_now, net_value, user_location_id,  before_location_id, after_location_id,  detail_position_id, registration_user_cd, registration_date_time, factory_cd)");
+                        accum_depreciation_now, net_value, user_location_id,  before_location_id, after_location_id,  detail_position_id, registration_user_cd, registration_date_time, factory_cd, invertory_time_id)");
             sql.Append(@"values(:asset_id, :qty,:unit_id, :account_code_id, :account_location_id, :rank_id, :comment_data, 
                         :depreciation_start, :depreciation_end, :current_depreciation,   :monthly_depreciation, 
-                        :accum_depreciation_now, :net_value,  :user_location_id, :before_location_id, :after_location_id,:detail_position_id, :registration_user_cd,:registration_date_time, :factory_cd)");
+                        :accum_depreciation_now, :net_value,  :user_location_id, :before_location_id, :after_location_id,:detail_position_id, :registration_user_cd,:registration_date_time, :factory_cd, :invertory_time_id)");
 
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
@@ -49,7 +49,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("registration_user_cd", inVo.RegistrationUserCode);
             sqlParameter.AddParameter("registration_date_time", inVo.RegistrationDateTime);
             sqlParameter.AddParameter("factory_cd", inVo.FactoryCode);
-
+            sqlParameter.AddParameter("invertory_time_id", inVo.InvertoryId);
             //execute SQL
 
             WareHouseMainVo outVo = new WareHouseMainVo

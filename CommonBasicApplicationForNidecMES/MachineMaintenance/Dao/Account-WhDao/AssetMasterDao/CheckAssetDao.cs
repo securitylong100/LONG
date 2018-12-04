@@ -29,8 +29,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             }
             if (!string.IsNullOrEmpty(inVo.AssetCode))
             {
-                sql.Append(" and UPPER(asset_cd) = UPPER(:asset_cd) ");
+                sql.Append(" and asset_cd = :asset_cd ");
                 sqlParameter.AddParameterString("asset_cd", inVo.AssetCode);
+            }
+            if (inVo.AssetNo > -1)
+            {
+                sql.Append(" and asset_no = :asset_no ");
+                sqlParameter.AddParameter("asset_no", inVo.AssetNo);
             }
             if (inVo.AssetId > 0)
             {

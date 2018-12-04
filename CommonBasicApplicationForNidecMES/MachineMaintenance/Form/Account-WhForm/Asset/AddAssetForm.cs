@@ -109,6 +109,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
                         }
                         else
                         {
+
                             outvo = (AssetVo)DefaultCbmInvoker.Invoke(new AddAssetCbm(), invo);
                         }
                         messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, AssetCode_lbl.Text + " : " + AssetCode_txt.Text);
@@ -212,17 +213,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
             AssetSerial_txt.Text = AssetSerial_txt.Text.Trim();
             AssetLife_txt.Text = AssetLife_txt.Text.Trim();
             Asset_Acquistion_Cost_txt.Text = Asset_Acquistion_Cost_txt.Text.Trim();
-            AssetVo outVo = new AssetVo(),
-                inVo = new AssetVo { AssetId = vo.AssetId, AssetCode = AssetCode_txt.Text };
+            AssetVo outVo = new AssetVo(), inVo = new AssetVo { AssetNo = int.Parse(AssetNo_txt.Text), AssetCode = AssetCode_txt.Text };
             try
             {
                 outVo = (AssetVo)DefaultCbmInvoker.Invoke(new CheckAssetCbm(), inVo);
-                if (outVo.AffectedCount > 0)
+                if (outVo.AffectedCount == 1)
                 {
-                    messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, AssetCode_lbl.Text + " : " + AssetCode_txt.Text);
-                    logger.Info(messageData);
+                    messageData = new MessageData("mmce00001", AssetCode_lbl.Text + " : " + AssetCode_txt.Text + " is duplicate !", AssetCode_lbl.Text + " : " + AssetCode_txt.Text);
+                    logger.Warn(messageData);
                     popUpMessage.Information(messageData, Text);
-                  
+                    return false;                  
                 }
             }
             catch (Com.Nidec.Mes.Framework.ApplicationException exception)

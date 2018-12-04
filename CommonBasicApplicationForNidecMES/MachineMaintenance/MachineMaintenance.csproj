@@ -87,6 +87,7 @@
     <Compile Include="Cbm\Account-WhCbm\AccountCodeCbm\GetAccountCodeCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\AccountCodeCbm\UpdateAccountCodeCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\AccountMainCbm\UpdateAccountMainDGVCbm.cs" />
+    <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\GetMaxCheckTimeIdCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\GetAccountMainIdCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\SearchInvertoryCheckCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\InvertoryCheckCbm\UpdateACCInvertoryRankCbm.cs" />
@@ -278,6 +279,7 @@
     <Compile Include="Dao\Account-WhDao\AccountCodeDao\GetAccountCodeDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountCodeDao\UpdateAccountCodeDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountMainDao\UpdateAccountMainDGVDao.cs" />
+    <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\GetMaxCheckTimeIdDao.cs" />
     <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\GetAccountMainIdDao.cs" />
     <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\SearchInvertoryCheckDao.cs" />
     <Compile Include="Dao\Account-WhDao\InvertoryCheckDao\UpdateACCInvertoryRankDao.cs" />

@@ -125,6 +125,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             if (Checkdata())
             {
+                InvertoryVo CheckTimeIdVo = (InvertoryVo)DefaultCbmInvoker.Invoke(new Cbm.GetMaxCheckTimeIdCbm(), new InvertoryVo());
                 WareHouseMainVo outVo1 = new WareHouseMainVo();
                 WareHouseMainVo outVo2 = new WareHouseMainVo();
                 WareHouseMainVo inVo = new WareHouseMainVo()
@@ -153,7 +154,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     UserLocationId = ((UserLocationVo)this.user_location_name_cmb.SelectedItem).UserLocationId,
                     RegistrationDateTime = DateTime.Now,
                     FactoryCode = UserData.GetUserData().FactoryCode,
-                    RegistrationUserCode = UserData.GetUserData().UserCode
+                    RegistrationUserCode = UserData.GetUserData().UserCode,
+                    InvertoryId = CheckTimeIdVo.InvertoryTimeId,
                 };
                 try
                 {
@@ -169,10 +171,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         outVo1 = (WareHouseMainVo)DefaultCbmInvoker.Invoke(new Cbm.AddWareHouseMainCbm(), inVo);
                         outVo2 = (WareHouseMainVo)DefaultCbmInvoker.Invoke(new Cbm.AddWareHouseHistoryMainCbm(), inVo);
 
+                        if (outVo1.AffectedCount > 0)
+                        {
+                            ValueObjectList<WareHouseMainVo> outVoWareHouse = (ValueObjectList<WareHouseMainVo>)DefaultCbmInvoker.Invoke(new GetWarehouseMainIdCbm(), new WareHouseMainVo() { AssetCode = asset_code_txt.Text });
+
+                            InvertoryVo outVoCheckTime = new InvertoryVo();
+                            InvertoryVo inVoCheckTime = new InvertoryVo()
+                            {
+                                WarehouseMainId = outVoWareHouse.GetList()[0].WareHouseMainId,
+                                InvertoryTimeId = CheckTimeIdVo.InvertoryTimeId,
+                                InvertoryValue = true,
+                                RegistrationUserCode = UserData.GetUserData().UserName,
+                                FactoryCode = UserData.GetUserData().FactoryCode,
+                                LocationID = ((LocationVo)this.after_location_cmb.SelectedItem).LocationId,
+                            };
+                            outVoCheckTime = (InvertoryVo)DefaultCbmInvoker.Invoke(new AddInvertoryCheckCbm(), inVoCheckTime);
+                        }
                         unit_cmb.Text = "";
                         asset_code_txt.Text = "";
                     }
-                    //update afterlocation id  into account talbe (location)
                     AccountMainVo accountOutVo = new AccountMainVo();
                     accountOutVo = (AccountMainVo)DefaultCbmInvoker.Invoke(new UpdateItemAccountMainCbm(), new AccountMainVo() { AssetId = inVo.AssetId, LocationId = inVo.AfterLocationId, RankId = inVo.RankId, UserLocationId = inVo.UserLocationId, RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
 

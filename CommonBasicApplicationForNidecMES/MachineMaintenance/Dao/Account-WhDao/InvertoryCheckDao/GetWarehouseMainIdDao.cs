@@ -36,15 +36,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
           
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
-
-            //execute SQL
             IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);
 
             while (dataReader.Read())
             {
                 WareHouseMainVo outVo = new WareHouseMainVo
                 {
-                    //  , h., i., k., o.prodution_work_content_name
                     WareHouseMainId = int.Parse(dataReader["warehouse_main_id"].ToString()),
                 };
                 voList.add(outVo);

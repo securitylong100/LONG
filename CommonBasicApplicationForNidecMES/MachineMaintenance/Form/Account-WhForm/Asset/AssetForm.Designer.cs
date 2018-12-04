@@ -42,6 +42,7 @@
             this.AssetCode_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.AssetCode_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.AssetDetails_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.colAssetId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             this.colAssetSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLabelStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDetails_dgv)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
             this.SuspendLayout();
@@ -256,6 +256,26 @@
             this.AssetDetails_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDetails_dgv_CellClick);
             this.AssetDetails_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDetails_dgv_CellDoubleClick);
             // 
+            // groupBoxCommon1
+            // 
+            this.groupBoxCommon1.ControlId = null;
+            this.groupBoxCommon1.Controls.Add(this.Exit_btn);
+            this.groupBoxCommon1.Controls.Add(this.Search_btn);
+            this.groupBoxCommon1.Controls.Add(this.AssetName_txt);
+            this.groupBoxCommon1.Controls.Add(this.Clear_btn);
+            this.groupBoxCommon1.Controls.Add(this.AssetName_lbl);
+            this.groupBoxCommon1.Controls.Add(this.Add_btn);
+            this.groupBoxCommon1.Controls.Add(this.AssetCode_txt);
+            this.groupBoxCommon1.Controls.Add(this.AssetCode_lbl);
+            this.groupBoxCommon1.Controls.Add(this.Update_btn);
+            this.groupBoxCommon1.Controls.Add(this.Delete_btn);
+            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCommon1.Location = new System.Drawing.Point(12, 113);
+            this.groupBoxCommon1.Name = "groupBoxCommon1";
+            this.groupBoxCommon1.Size = new System.Drawing.Size(963, 72);
+            this.groupBoxCommon1.TabIndex = 23;
+            this.groupBoxCommon1.TabStop = false;
+            // 
             // colAssetId
             // 
             this.colAssetId.DataPropertyName = "AssetId";
@@ -279,11 +299,11 @@
             this.colAssetNo.HeaderText = "Asset No";
             this.colAssetNo.Name = "colAssetNo";
             this.colAssetNo.ReadOnly = true;
-            this.colAssetNo.Width = 76;
+            this.colAssetNo.Width = 82;
             // 
             // colAssetName
             // 
-            this.colAssetName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colAssetName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colAssetName.DataPropertyName = "AssetName";
             this.colAssetName.HeaderText = "Asset Name";
             this.colAssetName.Name = "colAssetName";
@@ -295,7 +315,7 @@
             this.colAssetModel.HeaderText = "Asset Model";
             this.colAssetModel.Name = "colAssetModel";
             this.colAssetModel.ReadOnly = true;
-            this.colAssetModel.Width = 91;
+            this.colAssetModel.Width = 99;
             // 
             // colassetserial
             // 
@@ -303,7 +323,7 @@
             this.colassetserial.HeaderText = "Asset Serial";
             this.colassetserial.Name = "colassetserial";
             this.colassetserial.ReadOnly = true;
-            this.colassetserial.Width = 90;
+            this.colassetserial.Width = 98;
             // 
             // colLife
             // 
@@ -359,7 +379,7 @@
             this.colAssetType.HeaderText = "Asset Type";
             this.colAssetType.Name = "colAssetType";
             this.colAssetType.ReadOnly = true;
-            this.colAssetType.Width = 84;
+            this.colAssetType.Width = 85;
             // 
             // colLabelStatus
             // 
@@ -368,26 +388,6 @@
             this.colLabelStatus.Name = "colLabelStatus";
             this.colLabelStatus.ReadOnly = true;
             this.colLabelStatus.Width = 93;
-            // 
-            // groupBoxCommon1
-            // 
-            this.groupBoxCommon1.ControlId = null;
-            this.groupBoxCommon1.Controls.Add(this.Exit_btn);
-            this.groupBoxCommon1.Controls.Add(this.Search_btn);
-            this.groupBoxCommon1.Controls.Add(this.AssetName_txt);
-            this.groupBoxCommon1.Controls.Add(this.Clear_btn);
-            this.groupBoxCommon1.Controls.Add(this.AssetName_lbl);
-            this.groupBoxCommon1.Controls.Add(this.Add_btn);
-            this.groupBoxCommon1.Controls.Add(this.AssetCode_txt);
-            this.groupBoxCommon1.Controls.Add(this.AssetCode_lbl);
-            this.groupBoxCommon1.Controls.Add(this.Update_btn);
-            this.groupBoxCommon1.Controls.Add(this.Delete_btn);
-            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCommon1.Location = new System.Drawing.Point(12, 113);
-            this.groupBoxCommon1.Name = "groupBoxCommon1";
-            this.groupBoxCommon1.Size = new System.Drawing.Size(963, 72);
-            this.groupBoxCommon1.TabIndex = 23;
-            this.groupBoxCommon1.TabStop = false;
             // 
             // AssetForm
             // 
