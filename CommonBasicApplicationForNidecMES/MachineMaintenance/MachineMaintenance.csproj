@@ -206,6 +206,45 @@
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\GetProcessRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\SearchRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\UpdateRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\AddPersonProNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\CheckPersonNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\CheckPerson_DuplicateNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\DeletePersonNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\GetLineProNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\GetModelProNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineAllProcessNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineAppCheckNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineCoreNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineEn1NCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineEn2NCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineFundouNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineHolderNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineInsertCaseNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineRACaseNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineSolderRingNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineSolderWireNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineWeldingNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailAllLineWingDingNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchDetailAllLineProcessCbm\SearchProDetailEachLineAllProcessNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchMainProByDateAllLineNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchMainProByDateNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchMainProByHourNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchMainProChartAllLineNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchPersonNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchPersonOutputNCVCCbm .cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailAppCheckNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailCoreNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailEn1NCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailEn2NCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailFundouNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailHolderNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailInsertCaseNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailRANCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailSolderRingNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailSolderWireNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailWeldingNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\SearchProDetailWingdingNCVCCbm.cs" />
+    <Compile Include="Cbm\ProductionControllerNCVCCbm\UpdatePersonProNCVCCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\UpdatePersonProCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\CheckPerson_DuplicateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\DeletePersonCbm.cs" />
@@ -398,6 +437,45 @@
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\GetProcessRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\SearchRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\UpdateRangeLS12Dao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\AddPersonProNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\CheckPersonNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\CheckPerson_DuplicateNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\DeletePersonNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\GetLineProNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\GetModelProNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineAllProcessNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineAppCheckNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineCoreNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineEn1NCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineEn2NCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineFundouNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineHolderNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineInsertCaseNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineRACaseNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineSolderRingNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineSolderWireNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineWeldingNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailAllLineWingDingNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchDetailAllLineProcess\SearchProDetailEachLineAllProcessNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchMainProByDateAllLineNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchMainProByDateNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchMainProByHourNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchMainProChartAllLineNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchPersonNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchPersonOutputNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailAppCheckNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailCoreNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailEn1NCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailEn2NCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailFundouNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailHolderNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailInsertCaseNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailRANCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailSolderRingNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailSolderWireNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailWeldingNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\SearchProDetailWingdingNCVCDao.cs" />
+    <Compile Include="Dao\ProductionControllerNCVCDao\UpdatePersonProNCVCDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\UpdatePersonProDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\AddPersonProDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\CheckPerson_DuplicateDao.cs" />
@@ -703,6 +781,42 @@
     <Compile Include="Form\ProductionControllerForm\ProductionControllerForm.Designer.cs">
       <DependentUpon>ProductionControllerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.Designer.cs">
+      <DependentUpon>AddPersonNCVCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.Designer.cs">
+      <DependentUpon>PersonNCVCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.Designer.cs">
+      <DependentUpon>ProductionControllerChartNCVCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.Designer.cs">
+      <DependentUpon>ProductionControllerChart_CNCVCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.Designer.cs">
+      <DependentUpon>ProductionControllerDetailNCVCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.Designer.cs">
+      <DependentUpon>ProductionControllerNCVCForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -768,6 +882,7 @@
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
+    <Compile Include="Vo\ProductionControllerNCVCVo.cs" />
     <Compile Include="Vo\ProductionControllerVo.cs" />
     <Compile Include="Vo\SeachMachineWorkingStatusVo.cs" />
     <Compile Include="Vo\PlanWorkingStatusVo.cs" />
@@ -950,6 +1065,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ProductionControllerForm\ProductionControllerForm.vi.resx">
       <DependentUpon>ProductionControllerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.resx">
+      <DependentUpon>AddPersonNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\AddPersonNCVCForm.vi.resx">
+      <DependentUpon>AddPersonNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.resx">
+      <DependentUpon>PersonNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\PersonNCVCForm.vi.resx">
+      <DependentUpon>PersonNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.resx">
+      <DependentUpon>ProductionControllerChartNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChartNCVCForm.vi.resx">
+      <DependentUpon>ProductionControllerChartNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.resx">
+      <DependentUpon>ProductionControllerChart_CNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerChart_CNCVCForm.vi.resx">
+      <DependentUpon>ProductionControllerChart_CNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.resx">
+      <DependentUpon>ProductionControllerDetailNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerDetailNCVCForm.vi.resx">
+      <DependentUpon>ProductionControllerDetailNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.resx">
+      <DependentUpon>ProductionControllerNCVCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProductionControllerNCVCForm\ProductionControllerNCVCForm.vi.resx">
+      <DependentUpon>ProductionControllerNCVCForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.resx">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>

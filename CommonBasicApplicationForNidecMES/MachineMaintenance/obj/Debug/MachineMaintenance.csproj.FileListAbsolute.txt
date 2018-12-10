@@ -152,3 +152,16 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\vi-VN\MachineMaintenance.resources.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.pdb
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerNCVCForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerNCVCForm.vi.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddPersonNCVCForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.PersonNCVCForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerChartNCVCForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerChart_CNCVCForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerDetailNCVCForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddPersonNCVCForm.vi.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.PersonNCVCForm.vi.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerChartNCVCForm.vi.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerChart_CNCVCForm.vi.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProductionControllerDetailNCVCForm.vi.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
