@@ -10,9 +10,9 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm
 {
-    public class SearchProDetailAllLineWingDingNCVCCbm : CbmController
+    public class SearchProDetailAllLineMGBondingNCVCCbm : CbmController
     {
-        private static readonly DataAccessObject getDao = new SearchProDetailEachLineAllProcessNCVCDao();
+        private static readonly DataAccessObject getDao = new SearchProDetailAllLineMGBondingNCVCDao();
         public ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
             if (vo == null)

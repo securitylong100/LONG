@@ -23,7 +23,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
-            sql.Append(@"select f.dates,f.times,f.model_cd,f.line_cd,(fc_endplay_small + fc_endplay_big + fc_shaft_scracth + fc_terminal_low +
+            sql.Append(@"select tbl.dates,f.dates+f.times endday,f.model_cd,f.line_cd,ba_input, output,
+
+            (fc_endplay_small + fc_endplay_big + fc_shaft_scracth + fc_terminal_low +
+  fc_case_scracth_dirty + fc_pinion_worm_ng + fc_shaft_lock + fc_ba_deform +
+  fc_tape_hole_deform + fc_brush_rust + fc_metal_deform_scracth + fc_washer_tape_hole+ en2_insulation_resistance_ng + en2_cut_coil_wire + en2_no_load_current_hight + en2_ripple + en2_chattering + en2_lock + en2_open + en2_no_load_speed_low + en2_starting_voltage + en2_no_load_speed_high +  en2_rotor_mix + en2_surge_volt_max + en2_wrong_post_of_pole + en2_err + en2_noise + en1_insulation_resistace_ng + en1_cut_coil_wire + en1_lock +
+en1_wareform_ma_abnormal + en1_shaft_bent + en1_ripple + en1_short + en1_chattering + en1_no_load_current_high + en1_vibration_ng + en1_open + en1_rotor_mix + ca_app_metal_dirty + ca_app_tape_hole_deform + ca_app_metal_high + ca_app_case_deform_scracth + ca_app_metal_deform_scratch + ca_app_magnet_broken+ ca_mg_metal_deform_scratch + ca_mg_case_deform_scratch+ca_bonding_metal_deform_scratch +
+ca_bonding_case_deform_scracth + ba_tc_endplay_big + ba_tc_endplay_small + ba_tc_brush_bent + ba_tc_shaft_mix + ba_rto_ng + ba_rto_mix+ ba_app_metal_deform_scracth + ba_app_ba_deform + ba_app_endplate_deform_scracth + ba_app_error_other + ba_bm_brush_deform_scracth + ba_bm_metal_deform_scracth + ba_bm_ba_deform + ba_bm_endplay_deform_scracth) total_ng,
+
+(fc_endplay_small + fc_endplay_big + fc_shaft_scracth + fc_terminal_low +
   fc_case_scracth_dirty + fc_pinion_worm_ng + fc_shaft_lock + fc_ba_deform +
   fc_tape_hole_deform + fc_brush_rust + fc_metal_deform_scracth + fc_washer_tape_hole) final_app,(en2_insulation_resistance_ng + en2_cut_coil_wire + en2_no_load_current_hight + en2_ripple + en2_chattering + en2_lock + en2_open + en2_no_load_speed_low + en2_starting_voltage + en2_no_load_speed_high +
   en2_rotor_mix + en2_surge_volt_max + en2_wrong_post_of_pole + en2_err + en2_noise) en2, (en1_insulation_resistace_ng + en1_cut_coil_wire + en1_lock +
@@ -52,12 +60,12 @@ select t1.dates,case when ca3 is null then ca1 else ca3 end id from
                 {
 
                     StartDay = DateTime.Parse(dataReader["dates"].ToString()),
-                    EndDay = DateTime.Parse(dataReader["times"].ToString()),
+                    EndDay = DateTime.Parse(dataReader["endday"].ToString()),
                     ProModel = dataReader["model_cd"].ToString(),
                     ProLine = dataReader["line_cd"].ToString(),
-                    //TotalNG = int.Parse(dataReader["sum_ng"].ToString()),
-                    //ProInput = int.Parse(dataReader["input_data"].ToString()),
-                    //ProOutput = int.Parse(dataReader["output_data"].ToString()),
+                    TotalNG = int.Parse(dataReader["total_ng"].ToString()),
+                    ProInput = int.Parse(dataReader["ba_input"].ToString()),
+                    ProOutput = int.Parse(dataReader["output"].ToString()),
 
                     Final_App = int.Parse(dataReader["final_app"].ToString()),
                     En2NG = int.Parse(dataReader["en2"].ToString()),

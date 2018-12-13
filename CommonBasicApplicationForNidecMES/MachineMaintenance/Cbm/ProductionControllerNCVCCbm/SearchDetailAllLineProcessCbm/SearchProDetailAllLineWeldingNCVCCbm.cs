@@ -12,7 +12,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm
 {
     public class SearchProDetailAllLineWeldingNCVCCbm : CbmController
     {
-        private static readonly DataAccessObject getDao = new SearchProDetailAllLineWeldingNCVCDao();
+        private static readonly DataAccessObject getDao = new SearchProDetailAllLineAllProcessNCVCDao();
         public ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
             if (vo == null)

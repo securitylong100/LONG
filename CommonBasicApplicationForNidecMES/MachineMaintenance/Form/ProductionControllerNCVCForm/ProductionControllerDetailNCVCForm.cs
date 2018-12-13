@@ -18,7 +18,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         public ProductionControllerDetailNCVCForm()
         {
             InitializeComponent();
-           // reportdowntime_dgv.AutoGenerateColumns = false;
         }
         public string _process;
         public string _model;
@@ -89,228 +88,171 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns.Add("colLine", "Line");
             production_controller_detail_dgv.Columns["colLine"].DataPropertyName = "ProLine";
             
-            if (_process == "Holder")
+            if (_process == "Final_App")
             {
-                production_controller_detail_dgv.Columns.Add("colGapHolder", "Gap Holder");
-                production_controller_detail_dgv.Columns["colGapHolder"].DataPropertyName = "HolGapHolder";
-            }
-            else if (_process == "App Check")
-            {
-                production_controller_detail_dgv.Columns.Add("colApp_stamping_ba", "Stamping Ba");
-                production_controller_detail_dgv.Columns.Add("colApp_case_set", "Case Set");
-                production_controller_detail_dgv.Columns.Add("colApp_tough_shaft", "Tough Shaft");
-                production_controller_detail_dgv.Columns.Add("colApp_case_glue_sticky", "Case Glue Sticky");
-                production_controller_detail_dgv.Columns.Add("colApp_up_low_shabby", "Up Low Shabby");
-                production_controller_detail_dgv.Columns.Add("colApp_hole_shaft", "Hole Shaft");
-                production_controller_detail_dgv.Columns.Add("colApp_no_beat_prone_case", "No Beat Prone Case");
-                production_controller_detail_dgv.Columns.Add("colApp_hole_case", "Hole Case");
-                production_controller_detail_dgv.Columns.Add("colApp_prone_case", "Prone Case");
-                production_controller_detail_dgv.Columns.Add("colApp_lot_ng", "Lot Ng");
-                production_controller_detail_dgv.Columns.Add("colApp_ter_deform", "Ter Deform");
-                production_controller_detail_dgv.Columns.Add("colApp_hole_ter", "Hole Ter");
-                production_controller_detail_dgv.Columns.Add("colApp_soder_hl", "Soder Hl");
-                production_controller_detail_dgv.Columns.Add("colApp_metal_oven_low", "Metal Oven Low");
-                production_controller_detail_dgv.Columns.Add("colApp_fundou_ng", "Fundou Ng");
-                production_controller_detail_dgv.Columns.Add("colApp_ter_glue_sticky", "Ter Glue Sticky");
-                production_controller_detail_dgv.Columns.Add("colApp_lead_glue_sticky", "Lead Glue Sticky");
+                production_controller_detail_dgv.Columns.Add("colFc_endplay_small", "End Play Small");
+                production_controller_detail_dgv.Columns.Add("colFc_endplay_big", "End Play Big");
+                production_controller_detail_dgv.Columns.Add("colFc_shaft_scracth", "Shaft Scracth");
+                production_controller_detail_dgv.Columns.Add("colFc_terminal_low", "Terminal Low");
+                production_controller_detail_dgv.Columns.Add("colFc_case_scracth_dirty", "Case Scracth Dirty");
+                production_controller_detail_dgv.Columns.Add("colFc_pinion_worm_ng", "Pinion Worm NG");
+                production_controller_detail_dgv.Columns.Add("colFc_shaft_lock", "Shaft Lock");
+                production_controller_detail_dgv.Columns.Add("colFc_ba_deform", "Ba Deform");
+                production_controller_detail_dgv.Columns.Add("colFc_tape_hole_deform", "Tape Hole Deform");
+                production_controller_detail_dgv.Columns.Add("colFc_brush_rust", "Brush Rust");
+                production_controller_detail_dgv.Columns.Add("colFc_metal_deform_scracth", "Metal Deform Scracth");
+                production_controller_detail_dgv.Columns.Add("colFc_washer_tape_hole", "Washer Tape Hole");
 
-                production_controller_detail_dgv.Columns["colApp_stamping_ba"].DataPropertyName = "App_stamping_ba";
-                production_controller_detail_dgv.Columns["colApp_case_set"].DataPropertyName = "App_case_set";
-                production_controller_detail_dgv.Columns["colApp_tough_shaft"].DataPropertyName = "App_tough_shaft";
-                production_controller_detail_dgv.Columns["colApp_case_glue_sticky"].DataPropertyName = "App_case_glue_sticky";
-                production_controller_detail_dgv.Columns["colApp_up_low_shabby"].DataPropertyName = "App_up_low_shabby";
-                production_controller_detail_dgv.Columns["colApp_hole_shaft"].DataPropertyName = "App_hole_shaft";
-                production_controller_detail_dgv.Columns["colApp_no_beat_prone_case"].DataPropertyName = "App_no_beat_prone_case";
-                production_controller_detail_dgv.Columns["colApp_hole_case"].DataPropertyName = "App_hole_case";
-                production_controller_detail_dgv.Columns["colApp_prone_case"].DataPropertyName = "App_prone_case";
-                production_controller_detail_dgv.Columns["colApp_lot_ng"].DataPropertyName = "App_lot_ng";
-                production_controller_detail_dgv.Columns["colApp_ter_deform"].DataPropertyName = "App_ter_deform";
-                production_controller_detail_dgv.Columns["colApp_hole_ter"].DataPropertyName = "App_hole_ter";
-                production_controller_detail_dgv.Columns["colApp_soder_hl"].DataPropertyName = "App_soder_hl";
-                production_controller_detail_dgv.Columns["colApp_metal_oven_low"].DataPropertyName = "App_metal_oven_low";
-                production_controller_detail_dgv.Columns["colApp_fundou_ng"].DataPropertyName = "App_fundou_ng";
-                production_controller_detail_dgv.Columns["colApp_ter_glue_sticky"].DataPropertyName = "App_ter_glue_sticky";
-                production_controller_detail_dgv.Columns["colApp_lead_glue_sticky"].DataPropertyName = "App_lead_glue_sticky";
+                production_controller_detail_dgv.Columns["colFc_endplay_small"].DataPropertyName = "FC_endplay_small";
+                production_controller_detail_dgv.Columns["colFc_endplay_big"].DataPropertyName = "FC_endplay_big";
+                production_controller_detail_dgv.Columns["colFc_shaft_scracth"].DataPropertyName = "FC_shaft_scracth";
+                production_controller_detail_dgv.Columns["colFc_terminal_low"].DataPropertyName = "FC_terminal_low";
+                production_controller_detail_dgv.Columns["colFc_case_scracth_dirty"].DataPropertyName = "FC_case_scracth_dirty";
+                production_controller_detail_dgv.Columns["colFc_pinion_worm_ng"].DataPropertyName = "FC_pinion_worm_ng";
+                production_controller_detail_dgv.Columns["colFc_shaft_lock"].DataPropertyName = "FC_shaft_lock";
+                production_controller_detail_dgv.Columns["colFc_ba_deform"].DataPropertyName = "FC_deform";
+                production_controller_detail_dgv.Columns["colFc_tape_hole_deform"].DataPropertyName = "FC_tape_hole_deform";
+                production_controller_detail_dgv.Columns["colFc_brush_rust"].DataPropertyName = "FC_brush_rust";
+                production_controller_detail_dgv.Columns["colFc_metal_deform_scracth"].DataPropertyName = "FC_metal_deform_scracth";
+                production_controller_detail_dgv.Columns["colFc_washer_tape_hole"].DataPropertyName = "FC_washer_tape_hole";
             }
             else if (_process == "En2")
             {
-                production_controller_detail_dgv.Columns.Add("colEn2_lock", "Lock");
-                production_controller_detail_dgv.Columns.Add("colEn2_cut", "Cut");
+                production_controller_detail_dgv.Columns.Add("colEn2_insulation_resistance_ng", "Insulation Resistance Ng");
+                production_controller_detail_dgv.Columns.Add("colEn2_cut_coil_wire", "Cut Coil Wire");
+                production_controller_detail_dgv.Columns.Add("colEn2_no_load_current_hight", "No Load Current Hight");
+                production_controller_detail_dgv.Columns.Add("colEn2_ripple", "Ripple");
                 production_controller_detail_dgv.Columns.Add("colEn2_chattering", "Chattering");
-                production_controller_detail_dgv.Columns.Add("colEn2_insulation", "Insulation");
+                production_controller_detail_dgv.Columns.Add("colEn2_lock", "Lock");
                 production_controller_detail_dgv.Columns.Add("colEn2_open", "Open");
-                production_controller_detail_dgv.Columns.Add("colEn2_short", "Short");
-                production_controller_detail_dgv.Columns.Add("colEn2_duty", "Duty");
-                production_controller_detail_dgv.Columns.Add("colEn2_no", "No");
-                production_controller_detail_dgv.Columns.Add("colEn2_var", "Var");
-                production_controller_detail_dgv.Columns.Add("colEn2_reverse_spinning", "Reverse Spinning");
-                production_controller_detail_dgv.Columns.Add("colEn2_starting_volt", "Starting Volt");
-                production_controller_detail_dgv.Columns.Add("colEn2_io", "IO");
+                production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_low", "No Load Speed Low");
+                production_controller_detail_dgv.Columns.Add("colEn2_starting_voltage", "Starting Voltage");
+                production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_high", "No Load Speep High");
+                production_controller_detail_dgv.Columns.Add("colEn2_rotor_mix", "Rotor Mix");
+                production_controller_detail_dgv.Columns.Add("colEn2_surge_volt_max", "Surge Volt Max");
+                production_controller_detail_dgv.Columns.Add("colEn2_wrong_post_of_pole", "Wrong Post of Pole");
+                production_controller_detail_dgv.Columns.Add("colEn2_err", "Err");
+                production_controller_detail_dgv.Columns.Add("colEn2_noise", "Noise");
 
-                production_controller_detail_dgv.Columns["colEn2_lock"].DataPropertyName = "En2_lock";
-                production_controller_detail_dgv.Columns["colEn2_cut"].DataPropertyName = "En2_cut";
+                production_controller_detail_dgv.Columns["colEn2_insulation_resistance_ng"].DataPropertyName = "En2_insulation_resistance_ng";
+                production_controller_detail_dgv.Columns["colEn2_cut_coil_wire"].DataPropertyName = "En2_cut_coil_wire";
+                production_controller_detail_dgv.Columns["colEn2_no_load_current_hight"].DataPropertyName = "En2_no_load_current_hight";
+                production_controller_detail_dgv.Columns["colEn2_ripple"].DataPropertyName = "En2_ripple";
                 production_controller_detail_dgv.Columns["colEn2_chattering"].DataPropertyName = "En2_chattering";
-                production_controller_detail_dgv.Columns["colEn2_insulation"].DataPropertyName = "En2_insulation";
+                production_controller_detail_dgv.Columns["colEn2_lock"].DataPropertyName = "En2_lock";
                 production_controller_detail_dgv.Columns["colEn2_open"].DataPropertyName = "En2_open";
-                production_controller_detail_dgv.Columns["colEn2_short"].DataPropertyName = "En2_short";
-                production_controller_detail_dgv.Columns["colEn2_duty"].DataPropertyName = "En2_duty";
-                production_controller_detail_dgv.Columns["colEn2_no"].DataPropertyName = "En2_no";
-                production_controller_detail_dgv.Columns["colEn2_var"].DataPropertyName = "En2_var";
-                production_controller_detail_dgv.Columns["colEn2_reverse_spinning"].DataPropertyName = "En2_reverse_spinning";
-                production_controller_detail_dgv.Columns["colEn2_starting_volt"].DataPropertyName = "En2_starting_volt";
-                production_controller_detail_dgv.Columns["colEn2_io"].DataPropertyName = "En2_io";
+                production_controller_detail_dgv.Columns["colEn2_no_load_speed_low"].DataPropertyName = "En2_no_load_speed_low";
+                production_controller_detail_dgv.Columns["colEn2_starting_voltage"].DataPropertyName = "En2_starting_voltage";
+                production_controller_detail_dgv.Columns["colEn2_no_load_speed_high"].DataPropertyName = "En2_no_load_speed_high";
+                production_controller_detail_dgv.Columns["colEn2_rotor_mix"].DataPropertyName = "En2_rotor_mix";
+                production_controller_detail_dgv.Columns["colEn2_surge_volt_max"].DataPropertyName = "En2_surge_volt_max";
+                production_controller_detail_dgv.Columns["colEn2_wrong_post_of_pole"].DataPropertyName = "En2_wrong_post_of_pole";
+                production_controller_detail_dgv.Columns["colEn2_err"].DataPropertyName = "En2_err";
+                production_controller_detail_dgv.Columns["colEn2_noise"].DataPropertyName = "En2_noise";
             }
-            else if (_process == "Fundou")
+            else if (_process == "TrustGap")
             {
-                production_controller_detail_dgv.Columns.Add("colFd_ng_beat_point", "Beat Point");
-                production_controller_detail_dgv.Columns.Add("colFd_fundou_deform", "Deform");
+                production_controller_detail_dgv.Columns.Add("colBa_tc_endplay_big", "Endplay Big");
+                production_controller_detail_dgv.Columns.Add("colBa_tc_endplay_small", "Endplay Small");
+                production_controller_detail_dgv.Columns.Add("colBa_tc_brush_bent", "Brush Bent");
+                production_controller_detail_dgv.Columns.Add("colBa_tc_shaft_mix", "Shaft Mix");
 
-                production_controller_detail_dgv.Columns["colFd_ng_beat_point"].DataPropertyName = "Fd_ng_beat_point";
-                production_controller_detail_dgv.Columns["colFd_fundou_deform"].DataPropertyName = "Fd_fundou_deform";
+                production_controller_detail_dgv.Columns["colBa_tc_endplay_big"].DataPropertyName = "BA_tc_endplay_big";
+                production_controller_detail_dgv.Columns["colBa_tc_endplay_small"].DataPropertyName = "BA_tc_endplay_small";
+                production_controller_detail_dgv.Columns["colBa_tc_brush_bent"].DataPropertyName = "BA_tc_brush_bent";
+                production_controller_detail_dgv.Columns["colBa_tc_shaft_mix"].DataPropertyName = "BA_tc_shaft_mix";
             }
             else if (_process == "En1")
             {
+                production_controller_detail_dgv.Columns.Add("colEn1_insulation_resistace_ng", "Insulation Resistace Ng");
+                production_controller_detail_dgv.Columns.Add("colEn1_cut_coil_wire", "Cut Coil Wire");
                 production_controller_detail_dgv.Columns.Add("colEn1_lock", "Lock");
-                production_controller_detail_dgv.Columns.Add("colEn1_cut", "Cut");
-                production_controller_detail_dgv.Columns.Add("colEn1_chattering", "Chattering");
-                production_controller_detail_dgv.Columns.Add("colEn1_insulation", "Insulation");
-                production_controller_detail_dgv.Columns.Add("colEn1_open", "Open");
-                production_controller_detail_dgv.Columns.Add("colEn1_bad_wave", "Bad Wave");
-                production_controller_detail_dgv.Columns.Add("colEn1_duty", "Duty");
+                production_controller_detail_dgv.Columns.Add("colEn1_wareform_ma_abnormal", "Wareform MA Abnormal");
+                production_controller_detail_dgv.Columns.Add("colEn1_shaft_bent", "Shaft Bent");
+                production_controller_detail_dgv.Columns.Add("colEn1_ripple", "Ripple");
                 production_controller_detail_dgv.Columns.Add("colEn1_short", "Short");
-                production_controller_detail_dgv.Columns.Add("colEn1_beat_case_ng", "Baet Case NG");
-                production_controller_detail_dgv.Columns.Add("colEn1_beat_fundou_ng", "Fundou NG");
+                production_controller_detail_dgv.Columns.Add("colEn1_chattering", "Chattering");
+                production_controller_detail_dgv.Columns.Add("colEn1_no_load_current_high", "No Load Current High");
+                production_controller_detail_dgv.Columns.Add("colEn1_vibration_ng", "Vibration NG");
+                production_controller_detail_dgv.Columns.Add("colEn1_open", "Open");
+                production_controller_detail_dgv.Columns.Add("colEn1_rotor_mix", "Rotor Mix");
 
+                production_controller_detail_dgv.Columns["colEn1_insulation_resistace_ng"].DataPropertyName = "En1_insulation_resistace_ng";
+                production_controller_detail_dgv.Columns["colEn1_cut_coil_wire"].DataPropertyName = "En1_cut_coil_wire";
                 production_controller_detail_dgv.Columns["colEn1_lock"].DataPropertyName = "En1_lock";
-                production_controller_detail_dgv.Columns["colEn1_cut"].DataPropertyName = "En1_cut";
-                production_controller_detail_dgv.Columns["colEn1_chattering"].DataPropertyName = "En1_chattering";
-                production_controller_detail_dgv.Columns["colEn1_insulation"].DataPropertyName = "En1_insulation";
-                production_controller_detail_dgv.Columns["colEn1_open"].DataPropertyName = "En1_open";
-                production_controller_detail_dgv.Columns["colEn1_bad_wave"].DataPropertyName = "En1_bad_wave";
-                production_controller_detail_dgv.Columns["colEn1_duty"].DataPropertyName = "En1_duty";
+                production_controller_detail_dgv.Columns["colEn1_wareform_ma_abnormal"].DataPropertyName = "En1_wareform_ma_abnormal";
+                production_controller_detail_dgv.Columns["colEn1_shaft_bent"].DataPropertyName = "En1_shaft_bent";
+                production_controller_detail_dgv.Columns["colEn1_ripple"].DataPropertyName = "En1_ripple";
                 production_controller_detail_dgv.Columns["colEn1_short"].DataPropertyName = "En1_short";
-                production_controller_detail_dgv.Columns["colEn1_beat_case_ng"].DataPropertyName = "En1_beat_case_ng";
-                production_controller_detail_dgv.Columns["colEn1_beat_fundou_ng"].DataPropertyName = "En1_beat_fundou_ng";
+                production_controller_detail_dgv.Columns["colEn1_chattering"].DataPropertyName = "En1_chattering";
+                production_controller_detail_dgv.Columns["colEn1_no_load_current_high"].DataPropertyName = "En1_no_load_current_high";
+                production_controller_detail_dgv.Columns["colEn1_vibration_ng"].DataPropertyName = "En1_vibration_ng";
+                production_controller_detail_dgv.Columns["colEn1_open"].DataPropertyName = "En1_open";
+                production_controller_detail_dgv.Columns["colEn1_rotor_mix"].DataPropertyName = "En1_rotor_mix";
             }
-            else if (_process == "Insert Case")
+            else if (_process == "Rotor")
             {
-                production_controller_detail_dgv.Columns.Add("colInsc_no_ink_case_mc1", "No Ink Case");
-                production_controller_detail_dgv.Columns.Add("colInsc_ba_deform_mc1", "Ba Deform");
-                production_controller_detail_dgv.Columns.Add("colInsc_break_case_mc1", "Break Case");
-                production_controller_detail_dgv.Columns.Add("colInsc_drop_mc1", "Drop");
-                production_controller_detail_dgv.Columns.Add("colInsc_break_wire_mc1", "Break Wire");
-                production_controller_detail_dgv.Columns.Add("colInsc_break_ring_mc1", "Break Ring");
+                production_controller_detail_dgv.Columns.Add("colBa_rto_ng", "Rotor NG");
+                production_controller_detail_dgv.Columns.Add("colBa_rto_mix", "Rotor Mix");
 
-                production_controller_detail_dgv.Columns["colInsc_no_ink_case_mc1"].DataPropertyName = "Insc_no_ink_case_mc1";
-                production_controller_detail_dgv.Columns["colInsc_ba_deform_mc1"].DataPropertyName = "Insc_ba_deform_mc1";
-                production_controller_detail_dgv.Columns["colInsc_break_case_mc1"].DataPropertyName = "Insc_break_case_mc1";
-                production_controller_detail_dgv.Columns["colInsc_drop_mc1"].DataPropertyName = "Insc_drop_mc1";
-                production_controller_detail_dgv.Columns["colInsc_break_wire_mc1"].DataPropertyName = "Insc_break_wire_mc1";
-                production_controller_detail_dgv.Columns["colInsc_break_ring_mc1"].DataPropertyName = "Insc_break_ring_mc1";
+                production_controller_detail_dgv.Columns["colBa_rto_ng"].DataPropertyName = "BA_rto_ng";
+                production_controller_detail_dgv.Columns["colBa_rto_mix"].DataPropertyName = "BA_rto_mix";
             }
-            else if (_process == "RA")
+            else if (_process == "Bracket")
             {
-                production_controller_detail_dgv.Columns.Add("colRA_com_pb_sticky", "Com Pb Stciky");
-                production_controller_detail_dgv.Columns.Add("colRA_wire_pb_sticky", "Wire Pb Sticky");
-                production_controller_detail_dgv.Columns.Add("colRA_com_slip", "Com Slip");
-                production_controller_detail_dgv.Columns.Add("colRA_renew_ring", "Renew Ring");
-                production_controller_detail_dgv.Columns.Add("colRA_break_wire_final_app", "Break Wire Final App");
-                production_controller_detail_dgv.Columns.Add("colRA_wire_combine_wrong", "Wire Combine Wrong");
-                production_controller_detail_dgv.Columns.Add("colRA_core_ng", "Core NG");
-                production_controller_detail_dgv.Columns.Add("colRA_segment_hole", "Segment Hole");
-                production_controller_detail_dgv.Columns.Add("colRA_glue_sticky", "Glue Sticky");
-                production_controller_detail_dgv.Columns.Add("colRA_loose_wire_final_app", "Loose Wire Final App");
-                production_controller_detail_dgv.Columns.Add("colRA_lead_not_covered", "Lead Not Covered");
-                production_controller_detail_dgv.Columns.Add("colRA_less_lead", "Less Lead");
+                production_controller_detail_dgv.Columns.Add("colBa_app_metal_deform_scracth", "Metal Deform Scracth");
+                production_controller_detail_dgv.Columns.Add("colBa_app_Ba_deform", "Ba Deform");
+                production_controller_detail_dgv.Columns.Add("colBa_app_endplate_deform_scracth", "Endplate Deform Scracth");
+                production_controller_detail_dgv.Columns.Add("colBa_app_error_other", "Error Other");
 
-                production_controller_detail_dgv.Columns["colRA_com_pb_sticky"].DataPropertyName = "RA_com_pb_sticky";
-                production_controller_detail_dgv.Columns["colRA_wire_pb_sticky"].DataPropertyName = "RA_wire_pb_sticky";
-                production_controller_detail_dgv.Columns["colRA_com_slip"].DataPropertyName = "RA_com_slip";
-                production_controller_detail_dgv.Columns["colRA_renew_ring"].DataPropertyName = "RA_renew_ring";
-                production_controller_detail_dgv.Columns["colRA_break_wire_final_app"].DataPropertyName = "RA_break_wire_final_app";
-                production_controller_detail_dgv.Columns["colRA_wire_combine_wrong"].DataPropertyName = "RA_wire_combine_wrong";
-                production_controller_detail_dgv.Columns["colRA_core_ng"].DataPropertyName = "RA_core_ng";
-                production_controller_detail_dgv.Columns["colRA_segment_hole"].DataPropertyName = "RA_segment_hole";
-                production_controller_detail_dgv.Columns["colRA_glue_sticky"].DataPropertyName = "RA_glue_sticky";
-                production_controller_detail_dgv.Columns["colRA_loose_wire_final_app"].DataPropertyName = "RA_loose_wire_final_app";
-                production_controller_detail_dgv.Columns["colRA_lead_not_covered"].DataPropertyName = "RA_lead_not_covered";
-                production_controller_detail_dgv.Columns["colRA_less_lead"].DataPropertyName = "RA_less_lead";
+                production_controller_detail_dgv.Columns["colBa_app_metal_deform_scracth"].DataPropertyName = "BA_app_metal_deform_scracth";
+                production_controller_detail_dgv.Columns["colBa_app_colBa_deform"].DataPropertyName = "BA_app_deform";
+                production_controller_detail_dgv.Columns["colBa_app_endplate_deform_scracth"].DataPropertyName = "BA_app_endplate_deform_scracth";
+                production_controller_detail_dgv.Columns["colBa_app_error_other"].DataPropertyName = "BA_app_error_other";
             }
-            else if (_process == "Solder Ring")
+            else if (_process == "BracketMetal")
             {
-                production_controller_detail_dgv.Columns.Add("colRigs_wire_pb_sticky", "Wire Pb Sticky");
-                production_controller_detail_dgv.Columns.Add("colRigs_com_pb_sticky", "Com Pb Sticky");
-                production_controller_detail_dgv.Columns.Add("colRigs_ring_prone", "Ring Prone");
-                production_controller_detail_dgv.Columns.Add("colRigs_cracked_ring", "Cracked Ring");
+                production_controller_detail_dgv.Columns.Add("colBa_bm_brush_deform_scracth", "Brush Deform Scracth");
+                production_controller_detail_dgv.Columns.Add("colBa_bm_metal_deform_scracth", "Metal Deform Scracth");
+                production_controller_detail_dgv.Columns.Add("colBa_bm_ba_deform", "BA Deform");
+                production_controller_detail_dgv.Columns.Add("colBa_bm_endplay_deform_scracth", "Endplate Deform Scracth");
 
-                production_controller_detail_dgv.Columns["colRigs_wire_pb_sticky"].DataPropertyName = "Rigs_wire_pb_sticky";
-                production_controller_detail_dgv.Columns["colRigs_com_pb_sticky"].DataPropertyName = "Rigs_com_pb_sticky";
-                production_controller_detail_dgv.Columns["colRigs_ring_prone"].DataPropertyName = "Rigs_ring_prone";
-                production_controller_detail_dgv.Columns["colRigs_cracked_ring"].DataPropertyName = "Rigs_cracked_ring";
+                production_controller_detail_dgv.Columns["colBa_bm_brush_deform_scracth"].DataPropertyName = "BA_bm_brush_deform_scracth";
+                production_controller_detail_dgv.Columns["colBa_bm_metal_deform_scracth"].DataPropertyName = "BA_bm_metal_deform_scracth";
+                production_controller_detail_dgv.Columns["colBa_bm_ba_deform"].DataPropertyName = "BA_bm_deform";
+                production_controller_detail_dgv.Columns["colBa_bm_endplay_deform_scracth"].DataPropertyName = "BA_bm_endplay_deform_scracth";
             }
-            else if (_process == "Solder Wire")
+            else if (_process == "CaseAssy")
             {
-                production_controller_detail_dgv.Columns.Add("colPbs_break_copper", "Break Copper");
-                production_controller_detail_dgv.Columns.Add("colPbs_climb_core", "Climb Core");
-                production_controller_detail_dgv.Columns.Add("colPbs_skip_edge", "Skip Edge");
-                production_controller_detail_dgv.Columns.Add("colPbs_wire_combine_wrong", "Wire Combine Wrong");
-                production_controller_detail_dgv.Columns.Add("colPbs_loose_wire", "Loose Wire");
-                production_controller_detail_dgv.Columns.Add("colPbs_rizer_edge_ng", "Rizer Edge NG");
-                production_controller_detail_dgv.Columns.Add("colPbs_core_ng", "Core NG");
-                production_controller_detail_dgv.Columns.Add("colPbs_com_slip", "Com Slip");
-                production_controller_detail_dgv.Columns.Add("colPbs_hole", "Hole");
-                production_controller_detail_dgv.Columns.Add("colPbs_2_sleeve", "2 Sleeve");
-                production_controller_detail_dgv.Columns.Add("colPbs_wire_pb_sticky", "Wire Pb Sticky");
-                production_controller_detail_dgv.Columns.Add("colPbs_com_pb_sticky", "Com Pb Sticky");
-                production_controller_detail_dgv.Columns.Add("colPbs_no_lead", "No Lead");
+                production_controller_detail_dgv.Columns.Add("colCa_app_metal_dirty", "Metal Dirty");
+                production_controller_detail_dgv.Columns.Add("colCa_app_tape_hole_deform", "Tape Hole Deform");
+                production_controller_detail_dgv.Columns.Add("colCa_app_metal_high", "Metal High");
+                production_controller_detail_dgv.Columns.Add("colCa_app_case_deform_scracth", "Case Deform Scracth");
+                production_controller_detail_dgv.Columns.Add("colCa_app_metal_deform_scratch", "Metal Deform Scratch");
+                production_controller_detail_dgv.Columns.Add("colCa_app_magnet_broken", "Magnet Broken");
 
-                production_controller_detail_dgv.Columns["colPbs_break_copper"].DataPropertyName = "Pbs_break_copper";
-                production_controller_detail_dgv.Columns["colPbs_climb_core"].DataPropertyName = "Pbs_climb_core";
-                production_controller_detail_dgv.Columns["colPbs_skip_edge"].DataPropertyName = "Pbs_skip_edge";
-                production_controller_detail_dgv.Columns["colPbs_wire_combine_wrong"].DataPropertyName = "Pbs_wire_combine_wrong";
-                production_controller_detail_dgv.Columns["colPbs_loose_wire"].DataPropertyName = "Pbs_loose_wire";
-                production_controller_detail_dgv.Columns["colPbs_rizer_edge_ng"].DataPropertyName = "Pbs_rizer_edge_ng";
-                production_controller_detail_dgv.Columns["colPbs_core_ng"].DataPropertyName = "Pbs_core_ng";
-                production_controller_detail_dgv.Columns["colPbs_com_slip"].DataPropertyName = "Pbs_com_slip";
-                production_controller_detail_dgv.Columns["colPbs_hole"].DataPropertyName = "Pbs_hole";
-                production_controller_detail_dgv.Columns["colPbs_2_sleeve"].DataPropertyName = "Pbs_2_sleeve";
-                production_controller_detail_dgv.Columns["colPbs_wire_pb_sticky"].DataPropertyName = "Pbs_wire_pb_sticky";
-                production_controller_detail_dgv.Columns["colPbs_com_pb_sticky"].DataPropertyName = "Pbs_com_pb_sticky";
-                production_controller_detail_dgv.Columns["colPbs_no_lead"].DataPropertyName = "Pbs_no_lead";
+                production_controller_detail_dgv.Columns["colCa_app_metal_dirty"].DataPropertyName = "CA_app_metal_dirty";
+                production_controller_detail_dgv.Columns["colCa_app_tape_hole_deform"].DataPropertyName = "CA_app_tape_hole_deform";
+                production_controller_detail_dgv.Columns["colCa_app_metal_high"].DataPropertyName = "CA_app_metal_high";
+                production_controller_detail_dgv.Columns["colCa_app_case_deform_scracth"].DataPropertyName = "CA_app_case_deform_scracth";
+                production_controller_detail_dgv.Columns["colCa_app_metal_deform_scratch"].DataPropertyName = "CA_app_metal_deform_scratch";
+                production_controller_detail_dgv.Columns["colCa_app_magnet_broken"].DataPropertyName = "CA_app_magnet_broken";
             }
-            else if (_process == "Wingding")
+            else if (_process == "CaseMG")
             {
-                production_controller_detail_dgv.Columns.Add("colWi_break_copper_mc", "Break Copper");
-                production_controller_detail_dgv.Columns.Add("colWi_ruffle_copper_mc", "Rufle Copper");
-                production_controller_detail_dgv.Columns.Add("colWi_edge_ng_mc", "Edge NG");
-                production_controller_detail_dgv.Columns.Add("colWi_no_sleeve_mc", "No Sleeve");
+                production_controller_detail_dgv.Columns.Add("colCa_mg_metal_deform_scratch", "Metal Deform Scratch");
+                production_controller_detail_dgv.Columns.Add("colCa_mg_case_deform_scratch", "Case Deform Scratch");
 
-                production_controller_detail_dgv.Columns["colWi_break_copper_mc"].DataPropertyName = "Wi_break_copper_mc";
-                production_controller_detail_dgv.Columns["colWi_ruffle_copper_mc"].DataPropertyName = "Wi_ruffle_copper_mc";
-                production_controller_detail_dgv.Columns["colWi_edge_ng_mc"].DataPropertyName = "Wi_edge_ng_mc";
-                production_controller_detail_dgv.Columns["colWi_no_sleeve_mc"].DataPropertyName = "Wi_no_sleeve_mc";
+                production_controller_detail_dgv.Columns["colCa_mg_metal_deform_scratch"].DataPropertyName = "CA_mg_metal_deform_scratch";
+                production_controller_detail_dgv.Columns["colCa_mg_case_deform_scratch"].DataPropertyName = "CA_mg_case_deform_scratch";
             }
-            else if (_process == "Welding")
+            else if (_process == "MGBonding")
             {
-                production_controller_detail_dgv.Columns.Add("colWe_com_slip", "Com Slip");
-                production_controller_detail_dgv.Columns.Add("colWe_long_shaft", "Long Shaft");
-                production_controller_detail_dgv.Columns.Add("colWe_short_shaft", "Short Shart");
+                production_controller_detail_dgv.Columns.Add("colCa_bonding_metal_deform_scratch", "Com Slip");
+                production_controller_detail_dgv.Columns.Add("colCa_bonding_case_deform_scracth", "Long Shaft");
 
-                production_controller_detail_dgv.Columns["colWe_com_slip"].DataPropertyName = "We_com_slip";
-                production_controller_detail_dgv.Columns["colWe_long_shaft"].DataPropertyName = "We_long_shaft";
-                production_controller_detail_dgv.Columns["colWe_short_shaft"].DataPropertyName = "We_short_shaft";
-            }
-            else if (_process == "Core")
-            {
-                production_controller_detail_dgv.Columns.Add("colCo_beat_core_ng", "Beat Core NG");
-                production_controller_detail_dgv.Columns.Add("colCo_com_wrap", "Com Wrap");
-                production_controller_detail_dgv.Columns.Add("colCo_core_ng", "Core");
-                production_controller_detail_dgv.Columns.Add("colCo_com_glue_sticky", "Com Glue Sticky");
-
-                production_controller_detail_dgv.Columns["colCo_beat_core_ng"].DataPropertyName = "Co_beat_core_ng";
-                production_controller_detail_dgv.Columns["colCo_com_wrap"].DataPropertyName = "Co_com_wrap";
-                production_controller_detail_dgv.Columns["colCo_core_ng"].DataPropertyName = "Co_core_ng";
-                production_controller_detail_dgv.Columns["colCo_com_glue_sticky"].DataPropertyName = "Co_com_glue_sticky";
+                production_controller_detail_dgv.Columns["colCa_bonding_metal_deform_scratch"].DataPropertyName = "We_com_slip";
+                production_controller_detail_dgv.Columns["colCa_bonding_case_deform_scracth"].DataPropertyName = "We_long_shaft";
             }
         }
         private void GridBind()
@@ -319,33 +261,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns.Clear();
             try
             {
-                ProductionControllerVo vo = new ProductionControllerVo
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     ProLine = _line,
                     ProModel = _model,
                     Date = _dates
                 };
                 CreateColumnDGV();
-                if (_process == "Holder")
+                if (_process == "Final_App")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailHolderCbm(), vo);
-
-                    if (volist.GetList() != null && volist.GetList().Count > 0)
-                    {
-                        production_controller_detail_dgv.AutoGenerateColumns = false;
-                        BindingSource bindingsource = new BindingSource(volist.GetList(), null);
-                        production_controller_detail_dgv.DataSource = bindingsource;
-                    }
-                    else
-                    {
-                        messageData = new MessageData("mmci00006", Properties.Resources.mmci00006, null);
-                        logger.Info(messageData);
-                        popUpMessage.Information(messageData, Text);
-                    }
-                }
-                else if (_process == "App Check")
-                {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAppCheckCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailFinalAppNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -362,7 +287,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 else if (_process == "En2")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailEn2Cbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailEn2NCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -377,9 +302,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Fundou")
+                else if (_process == "TrustGap")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailFundouCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailTrustGapNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -396,7 +321,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 else if (_process == "En1")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailEn1Cbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailEn1NCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -411,9 +336,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Insert Case")
+                else if (_process == "Rotor")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailInsertCaseCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailRotorNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -428,9 +353,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "RA")
+                else if (_process == "Bracket")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailRACbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailBracketNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -445,9 +370,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Solder Ring")
+                else if (_process == "BracketMetal")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailSolderRingCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailBracketMetalNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -462,9 +387,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Solder Wire")
+                else if (_process == "CaseAssy")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailSolderWireCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailCaseAssyNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -479,9 +404,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Wingding")
+                else if (_process == "CaseMG")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailWingdingCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailCaseMGNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -496,26 +421,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Welding")
+                else if (_process == "MGBonding")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailWeldingCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailMGBondingNCVCCbm(), vo);
 
-                    if (volist.GetList() != null && volist.GetList().Count > 0)
-                    {
-                        production_controller_detail_dgv.AutoGenerateColumns = false;
-                        BindingSource bindingsource = new BindingSource(volist.GetList(), null);
-                        production_controller_detail_dgv.DataSource = bindingsource;
-                    }
-                    else
-                    {
-                        messageData = new MessageData("mmci00006", Properties.Resources.mmci00006, null);
-                        logger.Info(messageData);
-                        popUpMessage.Information(messageData, Text);
-                    }
-                }
-                else if (_process == "Core")
-                {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailCoreCbm(), vo);
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
                         production_controller_detail_dgv.AutoGenerateColumns = false;
@@ -543,33 +452,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns.Clear();
             try
             {
-                
-                ProductionControllerVo vo = new ProductionControllerVo
+
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     DateFrom = _datefrom,
                     DateTo = _dateto
                 };
                 CreateColumnDGV();
-                if (_process == "Holder")
+                if (_process == "Final_App")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineHolderCbm(), vo);
-
-                    if (volist.GetList() != null && volist.GetList().Count > 0)
-                    {
-                        production_controller_detail_dgv.AutoGenerateColumns = false;
-                        BindingSource bindingsource = new BindingSource(volist.GetList(), null);
-                        production_controller_detail_dgv.DataSource = bindingsource;
-                    }
-                    else
-                    {
-                        messageData = new MessageData("mmci00006", Properties.Resources.mmci00006, null);
-                        logger.Info(messageData);
-                        popUpMessage.Information(messageData, Text);
-                    }
-                }
-                else if (_process == "App Check")
-                {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineAppCheckCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineFinal_AppNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -586,7 +478,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 else if (_process == "En2")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineEn2Cbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineEn2NCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -601,9 +493,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Fundou")
+                else if (_process == "TrustGap")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineFundouCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineTrustGapNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -620,7 +512,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 else if (_process == "En1")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineEn1Cbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineEn1NCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -635,9 +527,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Insert Case")
+                else if (_process == "Rotor")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineInsertCaseCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineRotorNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -652,9 +544,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "RA")
+                else if (_process == "Bracket")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineRACaseCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineBracketNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -669,9 +561,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Solder Ring")
+                else if (_process == "BracketMetal")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineSolderRingCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineBracketMetalNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -686,9 +578,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Solder Wire")
+                else if (_process == "CaseAssy")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineSolderWireCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineCaseAssyNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -703,9 +595,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Wingding")
+                else if (_process == "CaseMG")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineWingDingCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineCaseMGNCVCCbm(), vo);
 
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
@@ -720,26 +612,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         popUpMessage.Information(messageData, Text);
                     }
                 }
-                else if (_process == "Welding")
+                else if (_process == "MGBonding")
                 {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineWeldingCbm(), vo);
+                    ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineMGBondingNCVCCbm(), vo);
 
-                    if (volist.GetList() != null && volist.GetList().Count > 0)
-                    {
-                        production_controller_detail_dgv.AutoGenerateColumns = false;
-                        BindingSource bindingsource = new BindingSource(volist.GetList(), null);
-                        production_controller_detail_dgv.DataSource = bindingsource;
-                    }
-                    else
-                    {
-                        messageData = new MessageData("mmci00006", Properties.Resources.mmci00006, null);
-                        logger.Info(messageData);
-                        popUpMessage.Information(messageData, Text);
-                    }
-                }
-                else if (_process == "Core")
-                {
-                    ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineCoreCbm(), vo);
                     if (volist.GetList() != null && volist.GetList().Count > 0)
                     {
                         production_controller_detail_dgv.AutoGenerateColumns = false;
@@ -783,7 +659,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void chart_ng_Click(object sender, EventArgs e)
         {
             int confirm_status_C = 4;//vao bieu do tron main
-            ProductionControllerChart_CForm form = new ProductionControllerChart_CForm(ref  production_controller_detail_dgv ,model_txt.Text, line_txt.Text, process_txt.Text, confirm_status_C);
+            ProductionControllerChart_CNCVCForm form = new ProductionControllerChart_CNCVCForm(ref  production_controller_detail_dgv ,model_txt.Text, line_txt.Text, process_txt.Text, confirm_status_C);
             form.ShowDialog(this);
         }
 
@@ -812,204 +688,152 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns.Add("colLine", "Line");
             production_controller_detail_dgv.Columns["colLine"].DataPropertyName = "ProLine";
 
-            production_controller_detail_dgv.Columns.Add("colGapHolder", "Gap Holder");
-            production_controller_detail_dgv.Columns["colGapHolder"].DataPropertyName = "HolGapHolder";
+            production_controller_detail_dgv.Columns.Add("colFc_endplay_small", "End Play Small");
+            production_controller_detail_dgv.Columns.Add("colFc_endplay_big", "End Play Big");
+            production_controller_detail_dgv.Columns.Add("colFc_shaft_scracth", "Shaft Scracth");
+            production_controller_detail_dgv.Columns.Add("colFc_terminal_low", "Terminal Low");
+            production_controller_detail_dgv.Columns.Add("colFc_case_scracth_dirty", "Case Scracth Dirty");
+            production_controller_detail_dgv.Columns.Add("colFc_pinion_worm_ng", "Pinion Worm NG");
+            production_controller_detail_dgv.Columns.Add("colFc_shaft_lock", "Shaft Lock");
+            production_controller_detail_dgv.Columns.Add("colFc_ba_deform", "Ba Deform");
+            production_controller_detail_dgv.Columns.Add("colFc_tape_hole_deform", "Tape Hole Deform");
+            production_controller_detail_dgv.Columns.Add("colFc_brush_rust", "Brush Rust");
+            production_controller_detail_dgv.Columns.Add("colFc_metal_deform_scracth", "Metal Deform Scracth");
+            production_controller_detail_dgv.Columns.Add("colFc_washer_tape_hole", "Washer Tape Hole");
 
-            production_controller_detail_dgv.Columns.Add("colApp_stamping_ba", "Stamping Ba");
-            production_controller_detail_dgv.Columns.Add("colApp_case_set", "Case Set");
-            production_controller_detail_dgv.Columns.Add("colApp_tough_shaft", "Tough Shaft");
-            production_controller_detail_dgv.Columns.Add("colApp_case_glue_sticky", "Case Glue Sticky");
-            production_controller_detail_dgv.Columns.Add("colApp_up_low_shabby", "Up Low Shabby");
-            production_controller_detail_dgv.Columns.Add("colApp_hole_shaft", "Hole Shaft");
-            production_controller_detail_dgv.Columns.Add("colApp_no_beat_prone_case", "No Beat Prone Case");
-            production_controller_detail_dgv.Columns.Add("colApp_hole_case", "Hole Case");
-            production_controller_detail_dgv.Columns.Add("colApp_prone_case", "Prone Case");
-            production_controller_detail_dgv.Columns.Add("colApp_lot_ng", "Lot Ng");
-            production_controller_detail_dgv.Columns.Add("colApp_ter_deform", "Ter Deform");
-            production_controller_detail_dgv.Columns.Add("colApp_hole_ter", "Hole Ter");
-            production_controller_detail_dgv.Columns.Add("colApp_soder_hl", "Soder Hl");
-            production_controller_detail_dgv.Columns.Add("colApp_metal_oven_low", "Metal Oven Low");
-            production_controller_detail_dgv.Columns.Add("colApp_fundou_ng", "Fundou Ng");
-            production_controller_detail_dgv.Columns.Add("colApp_ter_glue_sticky", "Ter Glue Sticky");
-            production_controller_detail_dgv.Columns.Add("colApp_lead_glue_sticky", "Lead Glue Sticky");
+            production_controller_detail_dgv.Columns["colFc_endplay_small"].DataPropertyName = "FC_endplay_small";
+            production_controller_detail_dgv.Columns["colFc_endplay_big"].DataPropertyName = "FC_endplay_big";
+            production_controller_detail_dgv.Columns["colFc_shaft_scracth"].DataPropertyName = "FC_shaft_scracth";
+            production_controller_detail_dgv.Columns["colFc_terminal_low"].DataPropertyName = "FC_terminal_low";
+            production_controller_detail_dgv.Columns["colFc_case_scracth_dirty"].DataPropertyName = "FC_case_scracth_dirty";
+            production_controller_detail_dgv.Columns["colFc_pinion_worm_ng"].DataPropertyName = "FC_pinion_worm_ng";
+            production_controller_detail_dgv.Columns["colFc_shaft_lock"].DataPropertyName = "FC_shaft_lock";
+            production_controller_detail_dgv.Columns["colFc_ba_deform"].DataPropertyName = "FC_deform";
+            production_controller_detail_dgv.Columns["colFc_tape_hole_deform"].DataPropertyName = "FC_tape_hole_deform";
+            production_controller_detail_dgv.Columns["colFc_brush_rust"].DataPropertyName = "FC_brush_rust";
+            production_controller_detail_dgv.Columns["colFc_metal_deform_scracth"].DataPropertyName = "FC_metal_deform_scracth";
+            production_controller_detail_dgv.Columns["colFc_washer_tape_hole"].DataPropertyName = "FC_washer_tape_hole";
 
-            production_controller_detail_dgv.Columns["colApp_stamping_ba"].DataPropertyName = "App_stamping_ba";
-            production_controller_detail_dgv.Columns["colApp_case_set"].DataPropertyName = "App_case_set";
-            production_controller_detail_dgv.Columns["colApp_tough_shaft"].DataPropertyName = "App_tough_shaft";
-            production_controller_detail_dgv.Columns["colApp_case_glue_sticky"].DataPropertyName = "App_case_glue_sticky";
-            production_controller_detail_dgv.Columns["colApp_up_low_shabby"].DataPropertyName = "App_up_low_shabby";
-            production_controller_detail_dgv.Columns["colApp_hole_shaft"].DataPropertyName = "App_hole_shaft";
-            production_controller_detail_dgv.Columns["colApp_no_beat_prone_case"].DataPropertyName = "App_no_beat_prone_case";
-            production_controller_detail_dgv.Columns["colApp_hole_case"].DataPropertyName = "App_hole_case";
-            production_controller_detail_dgv.Columns["colApp_prone_case"].DataPropertyName = "App_prone_case";
-            production_controller_detail_dgv.Columns["colApp_lot_ng"].DataPropertyName = "App_lot_ng";
-            production_controller_detail_dgv.Columns["colApp_ter_deform"].DataPropertyName = "App_ter_deform";
-            production_controller_detail_dgv.Columns["colApp_hole_ter"].DataPropertyName = "App_hole_ter";
-            production_controller_detail_dgv.Columns["colApp_soder_hl"].DataPropertyName = "App_soder_hl";
-            production_controller_detail_dgv.Columns["colApp_metal_oven_low"].DataPropertyName = "App_metal_oven_low";
-            production_controller_detail_dgv.Columns["colApp_fundou_ng"].DataPropertyName = "App_fundou_ng";
-            production_controller_detail_dgv.Columns["colApp_ter_glue_sticky"].DataPropertyName = "App_ter_glue_sticky";
-            production_controller_detail_dgv.Columns["colApp_lead_glue_sticky"].DataPropertyName = "App_lead_glue_sticky";
 
-            production_controller_detail_dgv.Columns.Add("colEn2_lock", "Lock");
-            production_controller_detail_dgv.Columns.Add("colEn2_cut", "Cut");
+            production_controller_detail_dgv.Columns.Add("colEn2_insulation_resistance_ng", "Insulation Resistance Ng");
+            production_controller_detail_dgv.Columns.Add("colEn2_cut_coil_wire", "Cut Coil Wire");
+            production_controller_detail_dgv.Columns.Add("colEn2_no_load_current_hight", "No Load Current Hight");
+            production_controller_detail_dgv.Columns.Add("colEn2_ripple", "Ripple");
             production_controller_detail_dgv.Columns.Add("colEn2_chattering", "Chattering");
-            production_controller_detail_dgv.Columns.Add("colEn2_insulation", "Insulation");
+            production_controller_detail_dgv.Columns.Add("colEn2_lock", "Lock");
             production_controller_detail_dgv.Columns.Add("colEn2_open", "Open");
-            production_controller_detail_dgv.Columns.Add("colEn2_short", "Short");
-            production_controller_detail_dgv.Columns.Add("colEn2_duty", "Duty");
-            production_controller_detail_dgv.Columns.Add("colEn2_no", "No");
-            production_controller_detail_dgv.Columns.Add("colEn2_var", "Var");
-            production_controller_detail_dgv.Columns.Add("colEn2_reverse_spinning", "Reverse Spinning");
-            production_controller_detail_dgv.Columns.Add("colEn2_starting_volt", "Starting Volt");
-            production_controller_detail_dgv.Columns.Add("colEn2_io", "IO");
+            production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_low", "No Load Speed Low");
+            production_controller_detail_dgv.Columns.Add("colEn2_starting_voltage", "Starting Voltage");
+            production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_high", "No Load Speep High");
+            production_controller_detail_dgv.Columns.Add("colEn2_rotor_mix", "Rotor Mix");
+            production_controller_detail_dgv.Columns.Add("colEn2_surge_volt_max", "Surge Volt Max");
+            production_controller_detail_dgv.Columns.Add("colEn2_wrong_post_of_pole", "Wrong Post of Pole");
+            production_controller_detail_dgv.Columns.Add("colEn2_err", "Err");
+            production_controller_detail_dgv.Columns.Add("colEn2_noise", "Noise");
 
-            production_controller_detail_dgv.Columns["colEn2_lock"].DataPropertyName = "En2_lock";
-            production_controller_detail_dgv.Columns["colEn2_cut"].DataPropertyName = "En2_cut";
+            production_controller_detail_dgv.Columns["colEn2_insulation_resistance_ng"].DataPropertyName = "En2_insulation_resistance_ng";
+            production_controller_detail_dgv.Columns["colEn2_cut_coil_wire"].DataPropertyName = "En2_cut_coil_wire";
+            production_controller_detail_dgv.Columns["colEn2_no_load_current_hight"].DataPropertyName = "En2_no_load_current_hight";
+            production_controller_detail_dgv.Columns["colEn2_ripple"].DataPropertyName = "En2_ripple";
             production_controller_detail_dgv.Columns["colEn2_chattering"].DataPropertyName = "En2_chattering";
-            production_controller_detail_dgv.Columns["colEn2_insulation"].DataPropertyName = "En2_insulation";
+            production_controller_detail_dgv.Columns["colEn2_lock"].DataPropertyName = "En2_lock";
             production_controller_detail_dgv.Columns["colEn2_open"].DataPropertyName = "En2_open";
-            production_controller_detail_dgv.Columns["colEn2_short"].DataPropertyName = "En2_short";
-            production_controller_detail_dgv.Columns["colEn2_duty"].DataPropertyName = "En2_duty";
-            production_controller_detail_dgv.Columns["colEn2_no"].DataPropertyName = "En2_no";
-            production_controller_detail_dgv.Columns["colEn2_var"].DataPropertyName = "En2_var";
-            production_controller_detail_dgv.Columns["colEn2_reverse_spinning"].DataPropertyName = "En2_reverse_spinning";
-            production_controller_detail_dgv.Columns["colEn2_starting_volt"].DataPropertyName = "En2_starting_volt";
-            production_controller_detail_dgv.Columns["colEn2_io"].DataPropertyName = "En2_io";
+            production_controller_detail_dgv.Columns["colEn2_no_load_speed_low"].DataPropertyName = "En2_no_load_speed_low";
+            production_controller_detail_dgv.Columns["colEn2_starting_voltage"].DataPropertyName = "En2_starting_voltage";
+            production_controller_detail_dgv.Columns["colEn2_no_load_speed_high"].DataPropertyName = "En2_no_load_speed_high";
+            production_controller_detail_dgv.Columns["colEn2_rotor_mix"].DataPropertyName = "En2_rotor_mix";
+            production_controller_detail_dgv.Columns["colEn2_surge_volt_max"].DataPropertyName = "En2_surge_volt_max";
+            production_controller_detail_dgv.Columns["colEn2_wrong_post_of_pole"].DataPropertyName = "En2_wrong_post_of_pole";
+            production_controller_detail_dgv.Columns["colEn2_err"].DataPropertyName = "En2_err";
+            production_controller_detail_dgv.Columns["colEn2_noise"].DataPropertyName = "En2_noise";
 
-            production_controller_detail_dgv.Columns.Add("colFd_ng_beat_point", "Beat Point");
-            production_controller_detail_dgv.Columns.Add("colFd_fundou_deform", "Deform");
+            production_controller_detail_dgv.Columns.Add("colBa_tc_endplay_big", "Endplay Big");
+            production_controller_detail_dgv.Columns.Add("colBa_tc_endplay_small", "Endplay Small");
+            production_controller_detail_dgv.Columns.Add("colBa_tc_brush_bent", "Brush Bent");
+            production_controller_detail_dgv.Columns.Add("colBa_tc_shaft_mix", "Shaft Mix");
 
-            production_controller_detail_dgv.Columns["colFd_ng_beat_point"].DataPropertyName = "Fd_ng_beat_point";
-            production_controller_detail_dgv.Columns["colFd_fundou_deform"].DataPropertyName = "Fd_fundou_deform";
+            production_controller_detail_dgv.Columns["colBa_tc_endplay_big"].DataPropertyName = "BA_tc_endplay_big";
+            production_controller_detail_dgv.Columns["colBa_tc_endplay_small"].DataPropertyName = "BA_tc_endplay_small";
+            production_controller_detail_dgv.Columns["colBa_tc_brush_bent"].DataPropertyName = "BA_tc_brush_bent";
+            production_controller_detail_dgv.Columns["colBa_tc_shaft_mix"].DataPropertyName = "BA_tc_shaft_mix";
 
+            production_controller_detail_dgv.Columns.Add("colEn1_insulation_resistace_ng", "Insulation Resistace Ng");
+            production_controller_detail_dgv.Columns.Add("colEn1_cut_coil_wire", "Cut Coil Wire");
             production_controller_detail_dgv.Columns.Add("colEn1_lock", "Lock");
-            production_controller_detail_dgv.Columns.Add("colEn1_cut", "Cut");
-            production_controller_detail_dgv.Columns.Add("colEn1_chattering", "Chattering");
-            production_controller_detail_dgv.Columns.Add("colEn1_insulation", "Insulation");
-            production_controller_detail_dgv.Columns.Add("colEn1_open", "Open");
-            production_controller_detail_dgv.Columns.Add("colEn1_bad_wave", "Bad Wave");
-            production_controller_detail_dgv.Columns.Add("colEn1_duty", "Duty");
+            production_controller_detail_dgv.Columns.Add("colEn1_wareform_ma_abnormal", "Wareform MA Abnormal");
+            production_controller_detail_dgv.Columns.Add("colEn1_shaft_bent", "Shaft Bent");
+            production_controller_detail_dgv.Columns.Add("colEn1_ripple", "Ripple");
             production_controller_detail_dgv.Columns.Add("colEn1_short", "Short");
-            production_controller_detail_dgv.Columns.Add("colEn1_beat_case_ng", "Baet Case NG");
-            production_controller_detail_dgv.Columns.Add("colEn1_beat_fundou_ng", "Fundou NG");
+            production_controller_detail_dgv.Columns.Add("colEn1_chattering", "Chattering");
+            production_controller_detail_dgv.Columns.Add("colEn1_no_load_current_high", "No Load Current High");
+            production_controller_detail_dgv.Columns.Add("colEn1_vibration_ng", "Vibration NG");
+            production_controller_detail_dgv.Columns.Add("colEn1_open", "Open");
+            production_controller_detail_dgv.Columns.Add("colEn1_rotor_mix", "Rotor Mix");
 
+            production_controller_detail_dgv.Columns["colEn1_insulation_resistace_ng"].DataPropertyName = "En1_insulation_resistace_ng";
+            production_controller_detail_dgv.Columns["colEn1_cut_coil_wire"].DataPropertyName = "En1_cut_coil_wire";
             production_controller_detail_dgv.Columns["colEn1_lock"].DataPropertyName = "En1_lock";
-            production_controller_detail_dgv.Columns["colEn1_cut"].DataPropertyName = "En1_cut";
-            production_controller_detail_dgv.Columns["colEn1_chattering"].DataPropertyName = "En1_chattering";
-            production_controller_detail_dgv.Columns["colEn1_insulation"].DataPropertyName = "En1_insulation";
-            production_controller_detail_dgv.Columns["colEn1_open"].DataPropertyName = "En1_open";
-            production_controller_detail_dgv.Columns["colEn1_bad_wave"].DataPropertyName = "En1_bad_wave";
-            production_controller_detail_dgv.Columns["colEn1_duty"].DataPropertyName = "En1_duty";
+            production_controller_detail_dgv.Columns["colEn1_wareform_ma_abnormal"].DataPropertyName = "En1_wareform_ma_abnormal";
+            production_controller_detail_dgv.Columns["colEn1_shaft_bent"].DataPropertyName = "En1_shaft_bent";
+            production_controller_detail_dgv.Columns["colEn1_ripple"].DataPropertyName = "En1_ripple";
             production_controller_detail_dgv.Columns["colEn1_short"].DataPropertyName = "En1_short";
-            production_controller_detail_dgv.Columns["colEn1_beat_case_ng"].DataPropertyName = "En1_beat_case_ng";
-            production_controller_detail_dgv.Columns["colEn1_beat_fundou_ng"].DataPropertyName = "En1_beat_fundou_ng";
+            production_controller_detail_dgv.Columns["colEn1_chattering"].DataPropertyName = "En1_chattering";
+            production_controller_detail_dgv.Columns["colEn1_no_load_current_high"].DataPropertyName = "En1_no_load_current_high";
+            production_controller_detail_dgv.Columns["colEn1_vibration_ng"].DataPropertyName = "En1_vibration_ng";
+            production_controller_detail_dgv.Columns["colEn1_open"].DataPropertyName = "En1_open";
+            production_controller_detail_dgv.Columns["colEn1_rotor_mix"].DataPropertyName = "En1_rotor_mix";
 
-            production_controller_detail_dgv.Columns.Add("colInsc_no_ink_case_mc1", "No Ink Case");
-            production_controller_detail_dgv.Columns.Add("colInsc_ba_deform_mc1", "Ba Deform");
-            production_controller_detail_dgv.Columns.Add("colInsc_break_case_mc1", "Break Case");
-            production_controller_detail_dgv.Columns.Add("colInsc_drop_mc1", "Drop");
-            production_controller_detail_dgv.Columns.Add("colInsc_break_wire_mc1", "Break Wire");
-            production_controller_detail_dgv.Columns.Add("colInsc_break_ring_mc1", "Break Ring");
+            production_controller_detail_dgv.Columns.Add("colBa_rto_ng", "Rotor NG");
+            production_controller_detail_dgv.Columns.Add("colBa_rto_mix", "Rotor Mix");
 
-            production_controller_detail_dgv.Columns["colInsc_no_ink_case_mc1"].DataPropertyName = "Insc_no_ink_case_mc1";
-            production_controller_detail_dgv.Columns["colInsc_ba_deform_mc1"].DataPropertyName = "Insc_ba_deform_mc1";
-            production_controller_detail_dgv.Columns["colInsc_break_case_mc1"].DataPropertyName = "Insc_break_case_mc1";
-            production_controller_detail_dgv.Columns["colInsc_drop_mc1"].DataPropertyName = "Insc_drop_mc1";
-            production_controller_detail_dgv.Columns["colInsc_break_wire_mc1"].DataPropertyName = "Insc_break_wire_mc1";
-            production_controller_detail_dgv.Columns["colInsc_break_ring_mc1"].DataPropertyName = "Insc_break_ring_mc1";
+            production_controller_detail_dgv.Columns["colBa_rto_ng"].DataPropertyName = "BA_rto_ng";
+            production_controller_detail_dgv.Columns["colBa_rto_mix"].DataPropertyName = "BA_rto_mix";
 
-            production_controller_detail_dgv.Columns.Add("colRA_com_pb_sticky", "Com Pb Stciky");
-            production_controller_detail_dgv.Columns.Add("colRA_wire_pb_sticky", "Wire Pb Sticky");
-            production_controller_detail_dgv.Columns.Add("colRA_com_slip", "Com Slip");
-            production_controller_detail_dgv.Columns.Add("colRA_renew_ring", "Renew Ring");
-            production_controller_detail_dgv.Columns.Add("colRA_break_wire_final_app", "Break Wire Final App");
-            production_controller_detail_dgv.Columns.Add("colRA_wire_combine_wrong", "Wire Combine Wrong");
-            production_controller_detail_dgv.Columns.Add("colRA_core_ng", "Core NG");
-            production_controller_detail_dgv.Columns.Add("colRA_segment_hole", "Segment Hole");
-            production_controller_detail_dgv.Columns.Add("colRA_glue_sticky", "Glue Sticky");
-            production_controller_detail_dgv.Columns.Add("colRA_loose_wire_final_app", "Loose Wire Final App");
-            production_controller_detail_dgv.Columns.Add("colRA_lead_not_covered", "Lead Not Covered");
-            production_controller_detail_dgv.Columns.Add("colRA_less_lead", "Less Lead");
+            production_controller_detail_dgv.Columns.Add("colBa_app_metal_deform_scracth", "Metal Deform Scracth");
+            production_controller_detail_dgv.Columns.Add("colBa_app_Ba_deform", "Ba Deform");
+            production_controller_detail_dgv.Columns.Add("colBa_app_endplate_deform_scracth", "Endplate Deform Scracth");
+            production_controller_detail_dgv.Columns.Add("colBa_app_error_other", "Error Other");
 
-            production_controller_detail_dgv.Columns["colRA_com_pb_sticky"].DataPropertyName = "RA_com_pb_sticky";
-            production_controller_detail_dgv.Columns["colRA_wire_pb_sticky"].DataPropertyName = "RA_wire_pb_sticky";
-            production_controller_detail_dgv.Columns["colRA_com_slip"].DataPropertyName = "RA_com_slip";
-            production_controller_detail_dgv.Columns["colRA_renew_ring"].DataPropertyName = "RA_renew_ring";
-            production_controller_detail_dgv.Columns["colRA_break_wire_final_app"].DataPropertyName = "RA_break_wire_final_app";
-            production_controller_detail_dgv.Columns["colRA_wire_combine_wrong"].DataPropertyName = "RA_wire_combine_wrong";
-            production_controller_detail_dgv.Columns["colRA_core_ng"].DataPropertyName = "RA_core_ng";
-            production_controller_detail_dgv.Columns["colRA_segment_hole"].DataPropertyName = "RA_segment_hole";
-            production_controller_detail_dgv.Columns["colRA_glue_sticky"].DataPropertyName = "RA_glue_sticky";
-            production_controller_detail_dgv.Columns["colRA_loose_wire_final_app"].DataPropertyName = "RA_loose_wire_final_app";
-            production_controller_detail_dgv.Columns["colRA_lead_not_covered"].DataPropertyName = "RA_lead_not_covered";
-            production_controller_detail_dgv.Columns["colRA_less_lead"].DataPropertyName = "RA_less_lead";
+            production_controller_detail_dgv.Columns["colBa_app_metal_deform_scracth"].DataPropertyName = "BA_app_metal_deform_scracth";
+            production_controller_detail_dgv.Columns["colBa_app_colBa_deform"].DataPropertyName = "BA_app_deform";
+            production_controller_detail_dgv.Columns["colBa_app_endplate_deform_scracth"].DataPropertyName = "BA_app_endplate_deform_scracth";
+            production_controller_detail_dgv.Columns["colBa_app_error_other"].DataPropertyName = "BA_app_error_other";
 
-            production_controller_detail_dgv.Columns.Add("colRigs_wire_pb_sticky", "Wire Pb Sticky");
-            production_controller_detail_dgv.Columns.Add("colRigs_com_pb_sticky", "Com Pb Sticky");
-            production_controller_detail_dgv.Columns.Add("colRigs_ring_prone", "Ring Prone");
-            production_controller_detail_dgv.Columns.Add("colRigs_cracked_ring", "Cracked Ring");
+            production_controller_detail_dgv.Columns.Add("colBa_bm_brush_deform_scracth", "Brush Deform Scracth");
+            production_controller_detail_dgv.Columns.Add("colBa_bm_metal_deform_scracth", "Metal Deform Scracth");
+            production_controller_detail_dgv.Columns.Add("colBa_bm_ba_deform", "BA Deform");
+            production_controller_detail_dgv.Columns.Add("colBa_bm_endplay_deform_scracth", "Endplate Deform Scracth");
 
-            production_controller_detail_dgv.Columns["colRigs_wire_pb_sticky"].DataPropertyName = "Rigs_wire_pb_sticky";
-            production_controller_detail_dgv.Columns["colRigs_com_pb_sticky"].DataPropertyName = "Rigs_com_pb_sticky";
-            production_controller_detail_dgv.Columns["colRigs_ring_prone"].DataPropertyName = "Rigs_ring_prone";
-            production_controller_detail_dgv.Columns["colRigs_cracked_ring"].DataPropertyName = "Rigs_cracked_ring";
+            production_controller_detail_dgv.Columns["colBa_bm_brush_deform_scracth"].DataPropertyName = "BA_bm_brush_deform_scracth";
+            production_controller_detail_dgv.Columns["colBa_bm_metal_deform_scracth"].DataPropertyName = "BA_bm_metal_deform_scracth";
+            production_controller_detail_dgv.Columns["colBa_bm_ba_deform"].DataPropertyName = "BA_bm_deform";
+            production_controller_detail_dgv.Columns["colBa_bm_endplay_deform_scracth"].DataPropertyName = "BA_bm_endplay_deform_scracth";
 
-            production_controller_detail_dgv.Columns.Add("colPbs_break_copper", "Break Copper");
-            production_controller_detail_dgv.Columns.Add("colPbs_climb_core", "Climb Core");
-            production_controller_detail_dgv.Columns.Add("colPbs_skip_edge", "Skip Edge");
-            production_controller_detail_dgv.Columns.Add("colPbs_wire_combine_wrong", "Wire Combine Wrong");
-            production_controller_detail_dgv.Columns.Add("colPbs_loose_wire", "Loose Wire");
-            production_controller_detail_dgv.Columns.Add("colPbs_rizer_edge_ng", "Rizer Edge NG");
-            production_controller_detail_dgv.Columns.Add("colPbs_core_ng", "Core NG");
-            production_controller_detail_dgv.Columns.Add("colPbs_com_slip", "Com Slip");
-            production_controller_detail_dgv.Columns.Add("colPbs_hole", "Hole");
-            production_controller_detail_dgv.Columns.Add("colPbs_2_sleeve", "2 Sleeve");
-            production_controller_detail_dgv.Columns.Add("colPbs_wire_pb_sticky", "Wire Pb Sticky");
-            production_controller_detail_dgv.Columns.Add("colPbs_com_pb_sticky", "Com Pb Sticky");
-            production_controller_detail_dgv.Columns.Add("colPbs_no_lead", "No Lead");
+            production_controller_detail_dgv.Columns.Add("colCa_app_metal_dirty", "Metal Dirty");
+            production_controller_detail_dgv.Columns.Add("colCa_app_tape_hole_deform", "Tape Hole Deform");
+            production_controller_detail_dgv.Columns.Add("colCa_app_metal_high", "Metal High");
+            production_controller_detail_dgv.Columns.Add("colCa_app_case_deform_scracth", "Case Deform Scracth");
+            production_controller_detail_dgv.Columns.Add("colCa_app_metal_deform_scratch", "Metal Deform Scratch");
+            production_controller_detail_dgv.Columns.Add("colCa_app_magnet_broken", "Magnet Broken");
 
-            production_controller_detail_dgv.Columns["colPbs_break_copper"].DataPropertyName = "Pbs_break_copper";
-            production_controller_detail_dgv.Columns["colPbs_climb_core"].DataPropertyName = "Pbs_climb_core";
-            production_controller_detail_dgv.Columns["colPbs_skip_edge"].DataPropertyName = "Pbs_skip_edge";
-            production_controller_detail_dgv.Columns["colPbs_wire_combine_wrong"].DataPropertyName = "Pbs_wire_combine_wrong";
-            production_controller_detail_dgv.Columns["colPbs_loose_wire"].DataPropertyName = "Pbs_loose_wire";
-            production_controller_detail_dgv.Columns["colPbs_rizer_edge_ng"].DataPropertyName = "Pbs_rizer_edge_ng";
-            production_controller_detail_dgv.Columns["colPbs_core_ng"].DataPropertyName = "Pbs_core_ng";
-            production_controller_detail_dgv.Columns["colPbs_com_slip"].DataPropertyName = "Pbs_com_slip";
-            production_controller_detail_dgv.Columns["colPbs_hole"].DataPropertyName = "Pbs_hole";
-            production_controller_detail_dgv.Columns["colPbs_2_sleeve"].DataPropertyName = "Pbs_2_sleeve";
-            production_controller_detail_dgv.Columns["colPbs_wire_pb_sticky"].DataPropertyName = "Pbs_wire_pb_sticky";
-            production_controller_detail_dgv.Columns["colPbs_com_pb_sticky"].DataPropertyName = "Pbs_com_pb_sticky";
-            production_controller_detail_dgv.Columns["colPbs_no_lead"].DataPropertyName = "Pbs_no_lead";
+            production_controller_detail_dgv.Columns["colCa_app_metal_dirty"].DataPropertyName = "CA_app_metal_dirty";
+            production_controller_detail_dgv.Columns["colCa_app_tape_hole_deform"].DataPropertyName = "CA_app_tape_hole_deform";
+            production_controller_detail_dgv.Columns["colCa_app_metal_high"].DataPropertyName = "CA_app_metal_high";
+            production_controller_detail_dgv.Columns["colCa_app_case_deform_scracth"].DataPropertyName = "CA_app_case_deform_scracth";
+            production_controller_detail_dgv.Columns["colCa_app_metal_deform_scratch"].DataPropertyName = "CA_app_metal_deform_scratch";
+            production_controller_detail_dgv.Columns["colCa_app_magnet_broken"].DataPropertyName = "CA_app_magnet_broken";
 
-            production_controller_detail_dgv.Columns.Add("colWi_break_copper_mc", "Break Copper");
-            production_controller_detail_dgv.Columns.Add("colWi_ruffle_copper_mc", "Rufle Copper");
-            production_controller_detail_dgv.Columns.Add("colWi_edge_ng_mc", "Edge NG");
-            production_controller_detail_dgv.Columns.Add("colWi_no_sleeve_mc", "No Sleeve");
+            production_controller_detail_dgv.Columns.Add("colCa_mg_metal_deform_scratch", "Metal Deform Scratch");
+            production_controller_detail_dgv.Columns.Add("colCa_mg_case_deform_scratch", "Case Deform Scratch");
 
-            production_controller_detail_dgv.Columns["colWi_break_copper_mc"].DataPropertyName = "Wi_break_copper_mc";
-            production_controller_detail_dgv.Columns["colWi_ruffle_copper_mc"].DataPropertyName = "Wi_ruffle_copper_mc";
-            production_controller_detail_dgv.Columns["colWi_edge_ng_mc"].DataPropertyName = "Wi_edge_ng_mc";
-            production_controller_detail_dgv.Columns["colWi_no_sleeve_mc"].DataPropertyName = "Wi_no_sleeve_mc";
+            production_controller_detail_dgv.Columns["colCa_mg_metal_deform_scratch"].DataPropertyName = "CA_mg_metal_deform_scratch";
+            production_controller_detail_dgv.Columns["colCa_mg_case_deform_scratch"].DataPropertyName = "CA_mg_case_deform_scratch";
 
-            production_controller_detail_dgv.Columns.Add("colWe_com_slip", "Com Slip");
-            production_controller_detail_dgv.Columns.Add("colWe_long_shaft", "Long Shaft");
-            production_controller_detail_dgv.Columns.Add("colWe_short_shaft", "Short Shart");
+            production_controller_detail_dgv.Columns.Add("colCa_bonding_metal_deform_scratch", "Com Slip");
+            production_controller_detail_dgv.Columns.Add("colCa_bonding_case_deform_scracth", "Long Shaft");
 
-            production_controller_detail_dgv.Columns["colWe_com_slip"].DataPropertyName = "We_com_slip";
-            production_controller_detail_dgv.Columns["colWe_long_shaft"].DataPropertyName = "We_long_shaft";
-            production_controller_detail_dgv.Columns["colWe_short_shaft"].DataPropertyName = "We_short_shaft";
-
-            production_controller_detail_dgv.Columns.Add("colCo_beat_core_ng", "Beat Core NG");
-            production_controller_detail_dgv.Columns.Add("colCo_com_wrap", "Com Wrap");
-            production_controller_detail_dgv.Columns.Add("colCo_core_ng", "Core");
-            production_controller_detail_dgv.Columns.Add("colCo_com_glue_sticky", "Com Glue Sticky");
-
-            production_controller_detail_dgv.Columns["colCo_beat_core_ng"].DataPropertyName = "Co_beat_core_ng";
-            production_controller_detail_dgv.Columns["colCo_com_wrap"].DataPropertyName = "Co_com_wrap";
-            production_controller_detail_dgv.Columns["colCo_core_ng"].DataPropertyName = "Co_core_ng";
-            production_controller_detail_dgv.Columns["colCo_com_glue_sticky"].DataPropertyName = "Co_com_glue_sticky";
+            production_controller_detail_dgv.Columns["colCa_bonding_metal_deform_scratch"].DataPropertyName = "We_com_slip";
+            production_controller_detail_dgv.Columns["colCa_bonding_case_deform_scracth"].DataPropertyName = "We_long_shaft";
 
         }
         private void GridBindByAllLineAllprocess(string _datefrom, string _dateto)

@@ -70,6 +70,9 @@
             this.colLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStarday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEndday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInput = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFinal_App = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -190,7 +193,7 @@
             this.production_controller_dgv.AllowUserToOrderColumns = true;
             this.production_controller_dgv.AllowUserToResizeRows = false;
             resources.ApplyResources(this.production_controller_dgv, "production_controller_dgv");
-            this.production_controller_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.production_controller_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,6 +208,9 @@
             this.colLine,
             this.colStarday,
             this.colEndday,
+            this.colInput,
+            this.colOutput,
+            this.colTotalNG,
             this.colFinal_App,
             this.colEn2,
             this.colEn1,
@@ -459,6 +465,27 @@
             this.colEndday.Name = "colEndday";
             this.colEndday.ReadOnly = true;
             // 
+            // colInput
+            // 
+            this.colInput.DataPropertyName = "ProInput";
+            resources.ApplyResources(this.colInput, "colInput");
+            this.colInput.Name = "colInput";
+            this.colInput.ReadOnly = true;
+            // 
+            // colOutput
+            // 
+            this.colOutput.DataPropertyName = "ProOutput";
+            resources.ApplyResources(this.colOutput, "colOutput");
+            this.colOutput.Name = "colOutput";
+            this.colOutput.ReadOnly = true;
+            // 
+            // colTotalNG
+            // 
+            this.colTotalNG.DataPropertyName = "TotalNG";
+            resources.ApplyResources(this.colTotalNG, "colTotalNG");
+            this.colTotalNG.Name = "colTotalNG";
+            this.colTotalNG.ReadOnly = true;
+            // 
             // colFinal_App
             // 
             this.colFinal_App.DataPropertyName = "Final_App";
@@ -496,7 +523,7 @@
             // 
             // colBracket
             // 
-            this.colBracket.DataPropertyName = "Bracket";
+            this.colBracket.DataPropertyName = "Braket";
             resources.ApplyResources(this.colBracket, "colBracket");
             this.colBracket.Name = "colBracket";
             this.colBracket.ReadOnly = true;
@@ -524,7 +551,7 @@
             // 
             // colMGBonding
             // 
-            this.colMGBonding.DataPropertyName = "MG_Bonding";
+            this.colMGBonding.DataPropertyName = "MG_Bongding";
             resources.ApplyResources(this.colMGBonding, "colMGBonding");
             this.colMGBonding.Name = "colMGBonding";
             this.colMGBonding.ReadOnly = true;
@@ -607,6 +634,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLine;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStarday;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEndday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOutput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFinal_App;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEn1;

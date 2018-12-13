@@ -498,6 +498,33 @@
   <data name="colEndday.Width" type="System.Int32, mscorlib">
     <value>73</value>
   </data>
+  <metadata name="colInput.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colInput.HeaderText" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="colInput.Width" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <metadata name="colOutput.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colOutput.HeaderText" xml:space="preserve">
+    <value>OutPut</value>
+  </data>
+  <data name="colOutput.Width" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <metadata name="colTotalNG.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colTotalNG.HeaderText" xml:space="preserve">
+    <value>Total NG</value>
+  </data>
+  <data name="colTotalNG.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
   <metadata name="colFinal_App.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1241,6 +1268,24 @@
     <value>colEndday</value>
   </data>
   <data name="&gt;&gt;colEndday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colInput.Name" xml:space="preserve">
+    <value>colInput</value>
+  </data>
+  <data name="&gt;&gt;colInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colOutput.Name" xml:space="preserve">
+    <value>colOutput</value>
+  </data>
+  <data name="&gt;&gt;colOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colTotalNG.Name" xml:space="preserve">
+    <value>colTotalNG</value>
+  </data>
+  <data name="&gt;&gt;colTotalNG.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colFinal_App.Name" xml:space="preserve">

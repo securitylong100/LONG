@@ -24,29 +24,31 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
             sql.Append("select tbloutput.datesss dates,'LA459' model_cd,'All Line' line_cd,* from ");
-            sql.Append("(select Case When t.timeso4 between '06:00:00' and '23:59:00' then t.dateo4 when ");
-            sql.Append("t.timeso4 between '00:00:00' and '05:59:00' then t.dateo4-1 end datesss, ");
-            sql.Append("sum(fiapp_stamping_ba) fiapp_stamping_ba , sum(fiapp_case_set) fiapp_case_set, ");
-            sql.Append("sum(fiapp_tough_shaft) fiapp_tough_shaft, sum(fiapp_case_glue_sticky) fiapp_case_glue_sticky, ");
-            sql.Append("sum(fiapp_up_low_shabby) fiapp_up_low_shabby ,  sum(fiapp_hole_shaft) fiapp_hole_shaft,  ");
-            sql.Append("sum(fiapp_no_beat_prone_case) fiapp_no_beat_prone_case, sum(fiapp_hole_case) fiapp_hole_case, ");
-            sql.Append("sum(fiapp_prone_case) fiapp_prone_case, sum(fiapp_lot_ng) fiapp_lot_ng, ");
-            sql.Append("sum(fiapp_ter_deform) fiapp_ter_deform, sum(fiapp_hole_ter ) fiapp_hole_ter, ");
-            sql.Append("sum(fiapp_soder_hl) fiapp_soder_hl, ");
-            sql.Append("sum(fiapp_metal_oven_low) fiapp_metal_oven_low, ");
-            sql.Append("sum(fiapp_fundou_ng) fiapp_fundou_ng, ");
-            sql.Append("sum(fiapp_ter_glue_sticky) fiapp_ter_glue_sticky, ");
-            sql.Append("sum(fiapp_lead_glue_sticky) fiapp_lead_glue_sticky, ");
+            sql.Append("(select Case When t.timesfc between '06:00:00' and '23:59:00' then t.datefc when ");
+            sql.Append("t.timesfc between '00:00:00' and '05:59:00' then t.datefc-1 end datesss, ");
 
-            sql.Append("sum(hol_gap_holder) hol_gap_holder, ");
-
-            sql.Append("sum(en2_lock) en2_lock , sum(en2_cut) en2_cut , ");
-            sql.Append("sum(en2_chattering) en2_chattering ,");
-            sql.Append("sum(en2_insulation) en2_insulation,  sum(en2_open) en2_open, ");
-            sql.Append("sum(en2_short) en2_short, sum(en2_duty) en2_duty, ");
-            sql.Append("sum(en2_no) en2_no, sum(en2_var) en2_var, ");
-            sql.Append("sum(en2_reverse_spinning) en2_reverse_spinning, sum(en2_io) en2_io, ");
-            sql.Append("sum(en2_starting_volt) en2_starting_volt, ");
+            sql.Append("sum(fc_endplay_small) fc_endplay_small , sum(fc_endplay_big) fc_endplay_big, ");
+            sql.Append("sum(fc_shaft_scracth) fc_shaft_scracth, sum(fc_terminal_low) fc_terminal_low, ");
+            sql.Append("sum(fc_case_scracth_dirty) fc_case_scracth_dirty ,  sum(fc_pinion_worm_ng) fc_pinion_worm_ng,  ");
+            sql.Append("sum(fc_shaft_lock) fc_shaft_lock, sum(fc_ba_deform) fc_ba_deform, ");
+            sql.Append("sum(fc_tape_hole_deform) fc_tape_hole_deform, sum(fc_brush_rust) fc_brush_rust, ");
+            sql.Append("sum(fc_metal_deform_scracth) fc_metal_deform_scracth, sum(fc_washer_tape_hole ) fc_washer_tape_hole, ");
+            
+            sql.Append("sum(en2_insulation_resistance_ng) en2_insulation_resistance_ng, ");
+            sql.Append("sum(en2_cut_coil_wire) en2_cut_coil_wire ,");
+            sql.Append("sum(en2_no_load_current_hight) en2_no_load_current_hight, ");
+            sql.Append("sum(en2_ripple) en2_ripple, ");
+            sql.Append("sum(en2_chattering) en2_chattering, ");
+            sql.Append("sum(en2_lock) en2_lock, ");
+            sql.Append("sum(en2_open) en2_open, ");
+            sql.Append("sum(en2_no_load_speed_low) en2_no_load_speed_low, ");
+            sql.Append("sum(en2_starting_voltage) en2_starting_voltage, ");
+            sql.Append("sum(en2_no_load_speed_high) en2_no_load_speed_high, ");
+            sql.Append("sum(en2_rotor_mix) en2_rotor_mix, ");
+            sql.Append("sum(en2_surge_volt_max) en2_surge_volt_max, ");
+            sql.Append("sum(en2_wrong_post_of_pole) en2_wrong_post_of_pole, ");
+            sql.Append("sum(en2_err) en2_err, ");
+            sql.Append("sum(en2_noise) en2_noise, ");
 
             sql.Append("sum(fd_ng_beat_point) fd_ng_beat_point , sum(fd_fundou_deform) fd_fundou_deform , ");
             sql.Append("sum(en1_lock) en1_lock, sum(en1_cut) en1_cut, sum(en1_chattering) en1_chattering, ");
@@ -69,63 +71,33 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sql.Append("sum(ra_loose_wire_final_app) ra_loose_wire_final_app, sum(ra_lead_not_covered ) ra_lead_not_covered,");
             sql.Append("sum(ra_less_lead) ra_less_lead ");
             sql.Append("from ");
-            sql.Append("(select o4.dates dateo4,o4.times timeso4,* from t_productioncontroller_output04 o4 left join ");
-            sql.Append("t_productioncontroller_output03 o3 on o4.output04_id = o3.output03_id ");
-            sql.Append("left join t_productioncontroller_output02 o2 on o4.output04_id = o2.output02_id ");
-            sql.Append("left join t_productioncontroller_output01 o1 on o4.output04_id = o1.output01_id ");
+
+            sql.Append("(select fc.dates datefc,fc.times timesfc,* from t_ncvp_pdc_fc fc left join ");
+            sql.Append("t_ncvp_pdc_en2 e2 on fc.fc_id = e2.en2_id ");
+            sql.Append("left join t_ncvp_pdc_en1 e1 on fc.fc_id = e1.en1_id ");
+            sql.Append("left join t_ncvp_pdc_ca ca on fc.fc_id = ca.ca_id ");
+            sql.Append("left join t_ncvp_pdc_ba ba on fc.fc_id = ba.ba_id ");
             sql.Append("left join ");
+
             sql.Append("(select dates date1, line_cd line1, Case when idca3 is null then idca1 else ");
             sql.Append("idca3 end id  from (select tblca1.dates,tblca1.line_cd, idca1, idca3  from ");
-            sql.Append("(select line_cd,o.dates , max(o.output01_id) idca1  from ");
-            sql.Append("t_productioncontroller_output01 o where o.times > '06:00:00' ");
+            sql.Append("(select line_cd,o.dates , max(o.ca_id) idca1  from ");
+            sql.Append("t_ncvp_pdc_ca o where o.times > '06:00:00' ");
             sql.Append("and o.times <= '23:59:00' and o.dates >= :datefrom and o.dates <= :dateto ");
             sql.Append("group by o.dates, line_cd order by dates) tblca1 ");
             sql.Append("left join ");
-            sql.Append("(select line_cd,(o.dates-1) dates , max(o.input01_id) idca3 from t_productioncontroller_input01 o ");
+
+            sql.Append("(select line_cd,(o.dates-1) dates , max(o.ca_id) idca3 from t_ncvp_pdc_ca o ");
             sql.Append("where o.times > '00:00:00' and o.times <= '05:30:00' ");
             sql.Append("and o.dates > :datefrom and o.dates - 1 <= :dateto ");
             sql.Append("group by line_cd,o.dates order by idca3) tblca3 ");
             sql.Append("on tblca1.dates = tblca3.dates and tblca1.line_cd = tblca3.line_cd) tbl ");
-            sql.Append("order by dates,line_cd) l on l.line1 = o4.line_cd ");
-            sql.Append("where o4.output04_id = l.id and l.line1 = o3.line_cd and l.line1 = o2.line_cd ");
-            sql.Append("and l.line1 = o1.line_cd order by o4.dates, o4.line_cd) ");
+            sql.Append("order by dates,line_cd) l on l.line1 = fc.line_cd ");
+            sql.Append("where fc.fc_id = l.id and l.line1 = e2.line_cd and l.line1 = e1.line_cd ");
+            sql.Append("and l.line1 = ca.line_cd order by fc.dates, fc.line_cd) ");
             sql.Append("t group by datesss order by datesss ) tbloutput ");
 
-            sql.Append("left join ");
-
-            sql.Append("(select Case When t.timeso4 between '06:00:00' and '23:59:00' then t.dateo4 when ");
-            sql.Append("t.timeso4 between '00:00:00' and '05:59:00' then t.dateo4-1 end datesss, ");
-            sql.Append("sum(pbs_break_copper) pbs_break_copper, sum(pbs_climb_core) pbs_climb_core, ");
-            sql.Append("sum(pbs_skip_edge) pbs_skip_edge, ");
-            sql.Append("sum(pbs_wire_combine_wrong) pbs_wire_combine_wrong, sum(pbs_loose_wire) pbs_loose_wire,  ");
-            sql.Append("sum(pbs_rizer_edge_ng) pbs_rizer_edge_ng, sum(pbs_core_ng) pbs_core_ng, ");
-            sql.Append("sum(pbs_com_slip) pbs_com_slip, sum(pbs_hole) pbs_hole, ");
-            sql.Append("sum(pbs_2_sleeve) pbs_2_sleeve, sum(pbs_wire_pb_sticky ) pbs_wire_pb_sticky, ");
-            sql.Append("sum(pbs_com_pb_sticky) pbs_com_pb_sticky, sum(pbs_no_lead) pbs_no_lead, ");
-            sql.Append("sum(rigs_cracked_ring) rigs_cracked_ring, sum(rigs_ring_prone) rigs_ring_prone, ");
-            sql.Append("sum(rigs_com_pb_sticky) rigs_com_pb_sticky, sum(rigs_wire_pb_sticky) rigs_wire_pb_sticky, ");
-            sql.Append("sum(wi_no_sleeve_mc) wi_no_sleeve_mc, ");
-            sql.Append("sum(wi_edge_ng_mc) wi_edge_ng_mc, sum(wi_ruffle_copper_mc) wi_ruffle_copper_mc, ");
-            sql.Append("sum(wi_break_copper_mc) wi_break_copper_mc, ");
-            sql.Append("sum(we_short_shaft) we_short_shaft, sum(we_long_shaft) we_long_shaft, sum(we_com_slip) we_com_slip, ");
-            sql.Append("sum(co_com_glue_sticky) co_com_glue_sticky, sum(co_core_ng) co_core_ng, ");
-            sql.Append("sum(co_com_wrap) co_com_wrap, sum(co_beat_core_ng) co_beat_core_ng ");
-            sql.Append("from ");
-            sql.Append("(select i1.dates dateo4,i1.times timeso4,* from t_productioncontroller_input01 i1 ");
-            sql.Append("left join t_productioncontroller_input02 i2 on i2.input02_id = i1.input01_id ");
-            sql.Append("left join ");
-            sql.Append("(select dates date1, line_cd line1, Case when idca3 is null then idca1 else idca3 end id ");
-            sql.Append("from (select tblca1.dates,tblca1.line_cd, idca1, idca3  from ");
-            sql.Append("(select line_cd,o.dates , max(o.input01_id) idca1  from t_productioncontroller_input01 o ");
-            sql.Append("where o.times > '06:00:00' and o.times <= '23:59:00' and o.dates >= :datefrom ");
-            sql.Append("and o.dates <= :dateto group by o.dates, line_cd order by dates) tblca1 ");
-            sql.Append("left join (select line_cd,(o.dates-1) dates , max(o.input01_id) idca3 ");
-            sql.Append("from t_productioncontroller_input01 o ");
-            sql.Append("where o.times > '00:00:00' and o.times <= '05:30:00' ");
-            sql.Append("and o.dates > :datefrom and o.dates - 1 <= :dateto group by line_cd,o.dates order by idca3) tblca3 ");
-            sql.Append("on tblca1.dates = tblca3.dates and tblca1.line_cd = tblca3.line_cd) tbl order by dates,line_cd) ");
-            sql.Append("l on l.line1 = i1.line_cd where l.id = i1.input01_id and l.line1 = i2.line_cd and l.line1 = i1.line_cd order by i1.dates,i1.line_cd ) t group by datesss order by datesss) ");
-            sql.Append("tblinput on tbloutput.datesss = tblinput.datesss ");
+            
 
             sqlParameter.AddParameterDateTime("datefrom", DateTime.Parse(inVo.DateFrom));
             sqlParameter.AddParameterDateTime("dateto", DateTime.Parse(inVo.DateTo));

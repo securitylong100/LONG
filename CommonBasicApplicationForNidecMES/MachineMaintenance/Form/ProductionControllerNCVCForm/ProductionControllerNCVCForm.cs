@@ -120,7 +120,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     production_controller_dgv.Columns["colEndday"].Visible = false;
                     GridBindAllLineByDate();
                 }
-                RateNG();
+                //RateNG();
                 Total_By_Date();
             }
             else if (time_rab.Checked)
@@ -136,7 +136,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     confirm_status = 1;
                     GridBindHour();
-                    RateNG();
+                    //RateNG();
                 }
                 else if (line_cmb.Text == "All Line")
                 {
@@ -146,7 +146,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     //code load all line ve 7 chart.
                     confirm_status = 2;
                     GridBindChartAllLine();
-                    RateNG();
+                    //RateNG();
                 }
                 Total_By_Hour();
             }
@@ -157,14 +157,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_dgv.DataSource = null;
             try
             {
-                ProductionControllerVo vo = new ProductionControllerVo
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     //ProLine = line_cmb.Text,
                     StartDay = DateTime.Parse(timefrom_dtp.Value.ToShortDateString()),
                     //EndDay = timeto_dtp.Value
                 };
 
-                ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchMainProChartAllLineCbm(), vo);
+                ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchMainProChartAllLineNCVCCbm(), vo);
                 if (volist.GetList() != null && volist.GetList().Count > 0)
                 {
                     production_controller_dgv.AutoGenerateColumns = false;
@@ -190,14 +190,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_dgv.DataSource = null;
             try
             {
-                ProductionControllerVo vo = new ProductionControllerVo
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     ProLine = line_cmb.Text,
                     StartDay = timefrom_dtp.Value,
-                    EndDay = timeto_dtp.Value
+                    EndDay = timeto_dtp.Value,
+                    ProModel = model_cmb.Text
                 };
 
-                ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchMainProByDateAllLineCbm(), vo);
+                ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchMainProByDateAllLineNCVCCbm(), vo);
                 if (volist.GetList() != null && volist.GetList().Count > 0)
                 {
                     production_controller_dgv.AutoGenerateColumns = false;
@@ -256,14 +257,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_dgv.DataSource = null;
             try
             {
-                ProductionControllerVo vo = new ProductionControllerVo
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     ProLine = line_cmb.Text,
                     Date = timefrom_dtp.Text,
                     ProModel = model_cmb.Text,
                 };
 
-                ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchMainProByHourCbm(), vo);
+                ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchMainProByHourNCVCCbm(), vo);
                 if (volist.GetList() != null && volist.GetList().Count > 0)
                 {
                     production_controller_dgv.AutoGenerateColumns = false;
@@ -344,56 +345,48 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 process = "All";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colHolderNG"].Selected)//holder
+            else if (production_controller_dgv.Rows[i].Cells["colFinal_App"].Selected)//holder
             {
-                process = "Holder";
-            }
-            else if (production_controller_dgv.Rows[i].Cells["colAppCheck"].Selected)//appcheck
-            {
-                process = "App Check";
+                process = "Final_App";
             }
             else if (production_controller_dgv.Rows[i].Cells["colEn2"].Selected)//En2
             {
                 process = "En2";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colFundou"].Selected)//fundou
-            {
-                process = "Fundou";
-            }
             else if (production_controller_dgv.Rows[i].Cells["colEn1"].Selected)//en1
             {
                 process = "En1";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colInsertCase"].Selected)//insertcase
+            else if (production_controller_dgv.Rows[i].Cells["colTrustGap"].Selected)//insertcase
             {
-                process = "Insert Case";
+                process = "TrustGap";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colRANG"].Selected)//RA
+            else if (production_controller_dgv.Rows[i].Cells["colRotor"].Selected)//RA
             {
-                process = "RA";
+                process = "Rotor";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colSolder"].Selected)//SolderRing
+            else if (production_controller_dgv.Rows[i].Cells["colBracket"].Selected)//SolderRing
             {
-                process = "Solder Ring";
+                process = "Bracket";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colSolderWire"].Selected)//SolderWire
+            else if (production_controller_dgv.Rows[i].Cells["colBracketMetal"].Selected)//SolderWire
             {
-                process = "Solder Wire";
+                process = "BracketMetal";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colWingding"].Selected)//Wingding
+            else if (production_controller_dgv.Rows[i].Cells["colCaseAssy"].Selected)//Wingding
             {
-                process = "Wingding";
+                process = "CaseAssy";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colWelding"].Selected)//Welding
+            else if (production_controller_dgv.Rows[i].Cells["colCaseMG"].Selected)//Welding
             {
-                process = "Welding";
+                process = "CaseMG";
             }
-            else if (production_controller_dgv.Rows[i].Cells["colCore"].Selected)//Core
+            else if (production_controller_dgv.Rows[i].Cells["colMGBonding"].Selected)//Core
             {
-                process = "Core";
+                process = "MGBonding";
             }
             //action
-            if (j > 7 && (date_rab.Checked == true) && j!=9)
+            if (j >= 7 && (date_rab.Checked == true))
             {
                 ProductionControllerDetailNCVCForm pro = new ProductionControllerDetailNCVCForm(process, model_cmb.Text, line_cmb.Text, date);
                 pro.ShowDialog(this);
