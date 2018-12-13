@@ -52,7 +52,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     else if (_process == "All")
                     {
                         chart_ng.Visible = false;
-                        //string now = DateTime.Now.ToShortDateString();
                         GridBindByEachLineAllprocess(_dates, _dates, _line);
                     }
                 }
@@ -66,7 +65,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     else if(_process == "All" && _line == "All Line")
                     {
                         chart_ng.Visible = false;
-                        //string now = DateTime.Now.ToShortDateString();
                         GridBindByAllLineAllprocess(_dates, _dates);
                     }
                     
@@ -456,7 +454,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     DateFrom = _datefrom,
-                    DateTo = _dateto
+                    DateTo = _dateto,
+                    ProModel = _model
                 };
                 CreateColumnDGV();
                 if (_process == "Final_App")
@@ -715,21 +714,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns["colFc_washer_tape_hole"].DataPropertyName = "FC_washer_tape_hole";
 
 
-            production_controller_detail_dgv.Columns.Add("colEn2_insulation_resistance_ng", "Insulation Resistance Ng");
-            production_controller_detail_dgv.Columns.Add("colEn2_cut_coil_wire", "Cut Coil Wire");
-            production_controller_detail_dgv.Columns.Add("colEn2_no_load_current_hight", "No Load Current Hight");
-            production_controller_detail_dgv.Columns.Add("colEn2_ripple", "Ripple");
-            production_controller_detail_dgv.Columns.Add("colEn2_chattering", "Chattering");
-            production_controller_detail_dgv.Columns.Add("colEn2_lock", "Lock");
-            production_controller_detail_dgv.Columns.Add("colEn2_open", "Open");
-            production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_low", "No Load Speed Low");
-            production_controller_detail_dgv.Columns.Add("colEn2_starting_voltage", "Starting Voltage");
-            production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_high", "No Load Speep High");
-            production_controller_detail_dgv.Columns.Add("colEn2_rotor_mix", "Rotor Mix");
-            production_controller_detail_dgv.Columns.Add("colEn2_surge_volt_max", "Surge Volt Max");
-            production_controller_detail_dgv.Columns.Add("colEn2_wrong_post_of_pole", "Wrong Post of Pole");
-            production_controller_detail_dgv.Columns.Add("colEn2_err", "Err");
-            production_controller_detail_dgv.Columns.Add("colEn2_noise", "Noise");
+            production_controller_detail_dgv.Columns.Add("colEn2_insulation_resistance_ng", "En2 Insulation Resistance Ng");
+            production_controller_detail_dgv.Columns.Add("colEn2_cut_coil_wire", "En2 Cut Coil Wire");
+            production_controller_detail_dgv.Columns.Add("colEn2_no_load_current_hight", "En2 No Load Current Hight");
+            production_controller_detail_dgv.Columns.Add("colEn2_ripple", "En2 Ripple");
+            production_controller_detail_dgv.Columns.Add("colEn2_chattering", "En2 Chattering");
+            production_controller_detail_dgv.Columns.Add("colEn2_lock", "En2 Lock");
+            production_controller_detail_dgv.Columns.Add("colEn2_open", "En2 Open");
+            production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_low", "En2 No Load Speed Low");
+            production_controller_detail_dgv.Columns.Add("colEn2_starting_voltage", "En2 Starting Voltage");
+            production_controller_detail_dgv.Columns.Add("colEn2_no_load_speed_high", "En2 No Load Speep High");
+            production_controller_detail_dgv.Columns.Add("colEn2_rotor_mix", "En2 Rotor Mix");
+            production_controller_detail_dgv.Columns.Add("colEn2_surge_volt_max", "En2 Surge Volt Max");
+            production_controller_detail_dgv.Columns.Add("colEn2_wrong_post_of_pole", "En2 Wrong Post of Pole");
+            production_controller_detail_dgv.Columns.Add("colEn2_err", "En2 Err");
+            production_controller_detail_dgv.Columns.Add("colEn2_noise", "En2 Noise");
 
             production_controller_detail_dgv.Columns["colEn2_insulation_resistance_ng"].DataPropertyName = "En2_insulation_resistance_ng";
             production_controller_detail_dgv.Columns["colEn2_cut_coil_wire"].DataPropertyName = "En2_cut_coil_wire";
@@ -757,18 +756,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns["colBa_tc_brush_bent"].DataPropertyName = "BA_tc_brush_bent";
             production_controller_detail_dgv.Columns["colBa_tc_shaft_mix"].DataPropertyName = "BA_tc_shaft_mix";
 
-            production_controller_detail_dgv.Columns.Add("colEn1_insulation_resistace_ng", "Insulation Resistace Ng");
-            production_controller_detail_dgv.Columns.Add("colEn1_cut_coil_wire", "Cut Coil Wire");
-            production_controller_detail_dgv.Columns.Add("colEn1_lock", "Lock");
-            production_controller_detail_dgv.Columns.Add("colEn1_wareform_ma_abnormal", "Wareform MA Abnormal");
-            production_controller_detail_dgv.Columns.Add("colEn1_shaft_bent", "Shaft Bent");
-            production_controller_detail_dgv.Columns.Add("colEn1_ripple", "Ripple");
-            production_controller_detail_dgv.Columns.Add("colEn1_short", "Short");
-            production_controller_detail_dgv.Columns.Add("colEn1_chattering", "Chattering");
-            production_controller_detail_dgv.Columns.Add("colEn1_no_load_current_high", "No Load Current High");
-            production_controller_detail_dgv.Columns.Add("colEn1_vibration_ng", "Vibration NG");
-            production_controller_detail_dgv.Columns.Add("colEn1_open", "Open");
-            production_controller_detail_dgv.Columns.Add("colEn1_rotor_mix", "Rotor Mix");
+            production_controller_detail_dgv.Columns.Add("colEn1_insulation_resistace_ng", "En1 Insulation Resistace Ng");
+            production_controller_detail_dgv.Columns.Add("colEn1_cut_coil_wire", "En1 Cut Coil Wire");
+            production_controller_detail_dgv.Columns.Add("colEn1_lock", "En1 Lock");
+            production_controller_detail_dgv.Columns.Add("colEn1_wareform_ma_abnormal", "En1 Wareform MA Abnormal");
+            production_controller_detail_dgv.Columns.Add("colEn1_shaft_bent", "En1 Shaft Bent");
+            production_controller_detail_dgv.Columns.Add("colEn1_ripple", "En1 Ripple");
+            production_controller_detail_dgv.Columns.Add("colEn1_short", "En1 Short");
+            production_controller_detail_dgv.Columns.Add("colEn1_chattering", "En1 Chattering");
+            production_controller_detail_dgv.Columns.Add("colEn1_no_load_current_high", "En1 No Load Current High");
+            production_controller_detail_dgv.Columns.Add("colEn1_vibration_ng", "En1 Vibration NG");
+            production_controller_detail_dgv.Columns.Add("colEn1_open", "En1 Open");
+            production_controller_detail_dgv.Columns.Add("colEn1_rotor_mix", "En1 Rotor Mix");
 
             production_controller_detail_dgv.Columns["colEn1_insulation_resistace_ng"].DataPropertyName = "En1_insulation_resistace_ng";
             production_controller_detail_dgv.Columns["colEn1_cut_coil_wire"].DataPropertyName = "En1_cut_coil_wire";
@@ -795,7 +794,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             production_controller_detail_dgv.Columns.Add("colBa_app_error_other", "Error Other");
 
             production_controller_detail_dgv.Columns["colBa_app_metal_deform_scracth"].DataPropertyName = "BA_app_metal_deform_scracth";
-            production_controller_detail_dgv.Columns["colBa_app_colBa_deform"].DataPropertyName = "BA_app_deform";
+            production_controller_detail_dgv.Columns["colBa_app_Ba_deform"].DataPropertyName = "BA_app_deform";
             production_controller_detail_dgv.Columns["colBa_app_endplate_deform_scracth"].DataPropertyName = "BA_app_endplate_deform_scracth";
             production_controller_detail_dgv.Columns["colBa_app_error_other"].DataPropertyName = "BA_app_error_other";
 
@@ -843,12 +842,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             try
             {
                 CreateAllColumnDGV();
-                ProductionControllerVo vo = new ProductionControllerVo
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     DateFrom = _datefrom,
-                    DateTo = _dateto
+                    DateTo = _dateto,
+                    ProModel = _model
                 };
-                ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineAllProcessCbm(), vo);
+                ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailAllLineAllProcessNCVCCbm(), vo);
 
                 if (volist.GetList() != null && volist.GetList().Count > 0)
                 {
@@ -877,13 +877,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             try
             {
                 CreateAllColumnDGV();
-                ProductionControllerVo vo = new ProductionControllerVo
+                ProductionControllerNCVCVo vo = new ProductionControllerNCVCVo
                 {
                     DateFrom = _datefrom,
                     DateTo = _dateto,
                     ProLine = _line
                 };
-                ValueObjectList<ProductionControllerVo> volist = (ValueObjectList<ProductionControllerVo>)DefaultCbmInvoker.Invoke(new SearchProDetailEachLineAllProcessCbm(), vo);
+                ValueObjectList<ProductionControllerNCVCVo> volist = (ValueObjectList<ProductionControllerNCVCVo>)DefaultCbmInvoker.Invoke(new SearchProDetailEachLineAllProcessNCVCCbm(), vo);
 
                 if (volist.GetList() != null && volist.GetList().Count > 0)
                 {

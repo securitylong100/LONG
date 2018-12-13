@@ -525,6 +525,15 @@
   <data name="colTotalNG.Width" type="System.Int32, mscorlib">
     <value>75</value>
   </data>
+  <metadata name="colRateNG.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colRateNG.HeaderText" xml:space="preserve">
+    <value>Rate NG</value>
+  </data>
+  <data name="colRateNG.Width" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
   <metadata name="colFinal_App.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1080,6 +1089,9 @@
   <data name="person_btn.Text" xml:space="preserve">
     <value>Person</value>
   </data>
+  <data name="person_btn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;person_btn.Name" xml:space="preserve">
     <value>person_btn</value>
   </data>
@@ -1286,6 +1298,12 @@
     <value>colTotalNG</value>
   </data>
   <data name="&gt;&gt;colTotalNG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colRateNG.Name" xml:space="preserve">
+    <value>colRateNG</value>
+  </data>
+  <data name="&gt;&gt;colRateNG.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colFinal_App.Name" xml:space="preserve">
