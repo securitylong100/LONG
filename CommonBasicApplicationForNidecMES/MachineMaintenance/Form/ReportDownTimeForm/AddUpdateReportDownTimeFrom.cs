@@ -30,6 +30,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             ValueObjectList<LineVo> linevo = (ValueObjectList<LineVo>)DefaultCbmInvoker.Invoke(new GetLineMoCbm(), new LineVo { LineId = mvo.ModelId });
             line_cmb.DisplayMember = "LineCode";
             line_cmb.DataSource = linevo.GetList();
+            line_cmb.ResetText();
+
+            ValueObjectList<ProcessVo> processvo = (ValueObjectList<ProcessVo>)DefaultCbmInvoker.Invoke(new GetProcessMoCbm(), new ProcessVo { ProcessId = mvo.ModelId });
+            process_cmb.DisplayMember = "ProcessCode";
+            process_cmb.DataSource = processvo.GetList();
+            process_cmb.ResetText();
         }
 
         private void machine_cmb_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,11 +61,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             model_cmb.DataSource = b1;
             model_cmb.Text = "";
 
-            ProcessVo processvo = (ProcessVo)DefaultCbmInvoker.Invoke(new GetProcessMasterMntCbm(), new ProcessVo());
-            process_cmb.DisplayMember = "ProcessName";
-            BindingSource b2 = new BindingSource(processvo.ProcessListVo, null);
-            process_cmb.DataSource = b2;
-            process_cmb.Text = "";
+            //ProcessVo processvo = (ProcessVo)DefaultCbmInvoker.Invoke(new GetProcessMasterMntCbm(), new ProcessVo());
+            //process_cmb.DisplayMember = "ProcessName";
+            //BindingSource b2 = new BindingSource(processvo.ProcessListVo, null);
+            //process_cmb.DataSource = b2;
+            //process_cmb.Text = "";
 
             MachineVo machinevo = (MachineVo)DefaultCbmInvoker.Invoke(new GetMachineMasterMntCbm(), new MachineVo());
             machine_cmb.DisplayMember = "MachineName";

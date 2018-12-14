@@ -51,6 +51,7 @@
             this.col_downtime_report_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_model_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_line_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_assy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_process_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_time_from = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -186,6 +187,7 @@
             this.col_downtime_report_id,
             this.col_model_cd,
             this.col_line_cd,
+            this.col_assy,
             this.col_process_name,
             this.col_machine_name,
             this.col_time_from,
@@ -235,6 +237,13 @@
             resources.ApplyResources(this.col_line_cd, "col_line_cd");
             this.col_line_cd.Name = "col_line_cd";
             this.col_line_cd.ReadOnly = true;
+            // 
+            // col_assy
+            // 
+            this.col_assy.DataPropertyName = "ProcessName";
+            resources.ApplyResources(this.col_assy, "col_assy");
+            this.col_assy.Name = "col_assy";
+            this.col_assy.ReadOnly = true;
             // 
             // col_process_name
             // 
@@ -425,6 +434,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_downtime_report_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_model_cd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_line_cd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_assy;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_process_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machine_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_time_from;

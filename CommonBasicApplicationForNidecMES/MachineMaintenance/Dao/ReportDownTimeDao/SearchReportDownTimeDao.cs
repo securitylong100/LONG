@@ -32,7 +32,7 @@ left join m_defective_reason k on k.defective_reason_id = a.defective_reason_id
 left join m_prodution_work_content o on o.prodution_work_content_id = a.prodution_work_content_id where ");
 
 
-            sql.Append(@"time_from >:starttime and  time_from <:endtime");
+            sql.Append(@"time_from >:starttime and time_from <:endtime");
             sqlParameter.AddParameterDateTime("starttime", inVo.TimeFrom);
             sqlParameter.AddParameterDateTime("endtime", inVo.TimeTo.AddDays(1));
 

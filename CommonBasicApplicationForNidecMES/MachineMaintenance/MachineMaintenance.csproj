@@ -286,6 +286,7 @@
     <Compile Include="Cbm\ReportDownTimeCbm\GetActicAndContentCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetCauseAndDefectiveCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetDownTimeDataCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\GetProcessMoCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetLineMoCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\SearchReportDownTimeCbm.cs" />
@@ -513,6 +514,7 @@
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetCauseAndDefectiveDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetDownTimeDataDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\GetProcessMoDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetLineMoDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\SearchReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\UpdateReportDownTimeDao.cs" />

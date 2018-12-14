@@ -6,7 +6,7 @@
       <Value Profile="(Default)">NCVP DEMO MAINTENANCE</Value>
     </Setting>
     <Setting Name="CONNECTION_STRING" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=192.168.145.12;Port=5432;UserId=pqm;Password=dbuser;Database=mesdb;</Value>
+      <Value Profile="(Default)">Server=192.168.193.4;Port=5432;UserId=pqm;Password=dbuser;Database=mesdb;</Value>
     </Setting>
     <Setting Name="ApplicationTypeName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Com.Nidec.Mes.Common.Basic.MachineMaintenance.MainForm</Value>

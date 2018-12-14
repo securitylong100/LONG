@@ -561,6 +561,12 @@
   <data name="col_line_cd.Width" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
+  <metadata name="col_assy.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="col_assy.HeaderText" xml:space="preserve">
+    <value>Assy</value>
+  </data>
   <metadata name="col_process_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -625,7 +631,7 @@
     <value>0, 290</value>
   </data>
   <data name="reportdowntime_dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>751, 281</value>
+    <value>838, 348</value>
   </data>
   <data name="reportdowntime_dgv.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -808,7 +814,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>756, 573</value>
+    <value>843, 640</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -839,6 +845,12 @@
     <value>col_line_cd</value>
   </data>
   <data name="&gt;&gt;col_line_cd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;col_assy.Name" xml:space="preserve">
+    <value>col_assy</value>
+  </data>
+  <data name="&gt;&gt;col_assy.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;col_process_name.Name" xml:space="preserve">
