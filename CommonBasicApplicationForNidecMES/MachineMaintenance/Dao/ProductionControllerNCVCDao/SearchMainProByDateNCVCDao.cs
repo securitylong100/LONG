@@ -43,7 +43,7 @@ ca_bonding_case_deform_scracth) case_bonding, (ba_tc_endplay_big + ba_tc_endplay
     left join (
 select t1.dates,case when ca3 is null then ca1 else ca3 end id from
 (select dates, line_cd, max(fc_id)ca1 from t_ncvp_pdc_fc  where times > '06:00:00' and times <= '23:59:00' group by dates, line_cd) t1 left join
-(select dates - 1 dates, line_cd, max(fc_id) ca3 from t_ncvp_pdc_fc  where times > '00:00:00' and times <= '05:59:00' group by dates, line_cd) t3 on t1.dates = t3.dates where t1.line_cd = :line_cd and  t1.dates between :datesfrom and :datesto) tbl on f.fc_id = tbl.id where f.fc_id = tbl.id ");
+(select dates - 1 dates, line_cd, max(fc_id) ca3 from t_ncvp_pdc_fc  where times > '00:00:00' and times <= '05:59:00' group by dates, line_cd) t3 on t1.dates = t3.dates where t1.line_cd = :line_cd and  t1.dates between :datesfrom and :datesto) tbl on f.fc_id = tbl.id where f.fc_id = tbl.id and f.line_cd = :line_cd ");
 
             sqlParameter.AddParameterString("line_cd", inVo.ProLine);
             sqlParameter.AddParameterDateTime("datesfrom", inVo.StartDay);

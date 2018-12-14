@@ -49,32 +49,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     {
                         int Input = int.Parse(production_controller_dgv.Rows[i].Cells["colInput"].Value.ToString());
                         int Output = int.Parse(production_controller_dgv.Rows[i].Cells["colOutput"].Value.ToString());
-                        int holder = int.Parse(production_controller_dgv.Rows[i].Cells["colHolderNG"].Value.ToString());
-                        int appCheck = int.Parse(production_controller_dgv.Rows[i].Cells["colAppCheck"].Value.ToString());
-                        int En2 = int.Parse(production_controller_dgv.Rows[i].Cells["colEn2"].Value.ToString());
-                        int Fundou = int.Parse(production_controller_dgv.Rows[i].Cells["colFundou"].Value.ToString());
-                        int En1 = int.Parse(production_controller_dgv.Rows[i].Cells["colEn1"].Value.ToString());
-                        int InsertCase = int.Parse(production_controller_dgv.Rows[i].Cells["colInsertCase"].Value.ToString());
-                        int RANG = int.Parse(production_controller_dgv.Rows[i].Cells["colRANG"].Value.ToString());
-                        int SolderRing = int.Parse(production_controller_dgv.Rows[i].Cells["colSolder"].Value.ToString());
-                        int SolderWire = int.Parse(production_controller_dgv.Rows[i].Cells["colSolderWire"].Value.ToString());
-                        int Wingding = int.Parse(production_controller_dgv.Rows[i].Cells["colWingding"].Value.ToString());
-                        int Welding = int.Parse(production_controller_dgv.Rows[i].Cells["colWelding"].Value.ToString());
-                        int Core = int.Parse(production_controller_dgv.Rows[i].Cells["colCore"].Value.ToString());
-
-                        int OutCoreInRotor = Input - (Core + Welding);
-                        int OutRotorInMotor = Output + appCheck + En2 + Fundou + En1 + InsertCase;
-
-                        production_controller_dgv.Rows[i].Cells["colOutCoreInRotor"].Value = OutCoreInRotor.ToString();
-                        production_controller_dgv.Rows[i].Cells["colOutRotorInMotor"].Value = OutRotorInMotor.ToString();
-
-                        int TotalNGCore = Core + Welding;
-                        production_controller_dgv.Rows[i].Cells["colTotalNGCore"].Value = TotalNGCore.ToString();
-                        int TotalNGRotor = Wingding + SolderRing + SolderWire + RANG;
-                        production_controller_dgv.Rows[i].Cells["colTotalNGRotor"].Value = TotalNGRotor.ToString();
-                        int TotalNGMotor = InsertCase + En1 + Fundou + En2 + appCheck;
-                        production_controller_dgv.Rows[i].Cells["colTotalNGMotor"].Value = TotalNGMotor.ToString();
-
                     }
                     if (Output_rate > 200)
                     {
@@ -102,15 +76,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (date_rab.Checked)
             {
                 confirm_status = 0;
-                //production_controller_dgv.Columns["colEndday"].DataPropertyName = "EndDay";
-                //production_controller_dgv.Columns["colStarday"].DataPropertyName = "StartDay";
+                production_controller_dgv.Columns["colEndday"].DataPropertyName = "EndDay";
+                production_controller_dgv.Columns["colStarday"].DataPropertyName = "StartDay";
 
-                //production_controller_dgv.Columns["colStarday"].HeaderText = "Star Day";
-                //production_controller_dgv.Columns["colStarday"].Visible = true;
-                //production_controller_dgv.Columns["colEndday"].HeaderText = "End Day";
+                production_controller_dgv.Columns["colStarday"].HeaderText = "Star Day";
+                production_controller_dgv.Columns["colStarday"].Visible = true;
+                production_controller_dgv.Columns["colEndday"].HeaderText = "End Day";
                 if (line_cmb.Text != "All Line")
                 {
-                    //production_controller_dgv.Columns["colEndday"].Visible = true;
+                    production_controller_dgv.Columns["colEndday"].Visible = true;
 
                     GridBindDate();
 
@@ -120,7 +94,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     production_controller_dgv.Columns["colEndday"].Visible = false;
                     GridBindAllLineByDate();
                 }
-                //RateNG();
+                RateNG();
                 Total_By_Date();
             }
             else if (time_rab.Checked)
@@ -136,7 +110,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     confirm_status = 1;
                     GridBindHour();
-                    //RateNG();
+                    RateNG();
                 }
                 else if (line_cmb.Text == "All Line")
                 {
@@ -146,7 +120,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     //code load all line ve 7 chart.
                     confirm_status = 2;
                     GridBindChartAllLine();
-                    //RateNG();
+                    RateNG();
                 }
                 Total_By_Hour();
             }
@@ -386,7 +360,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 process = "MGBonding";
             }
             //action
-            if (j >= 7 && (date_rab.Checked == true))
+            if (( j >= 6) && (date_rab.Checked == true))
             {
                 ProductionControllerDetailNCVCForm pro = new ProductionControllerDetailNCVCForm(process, model_cmb.Text, line_cmb.Text, date);
                 pro.ShowDialog(this);

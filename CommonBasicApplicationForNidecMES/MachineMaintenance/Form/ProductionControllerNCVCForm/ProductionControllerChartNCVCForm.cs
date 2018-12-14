@@ -96,12 +96,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.ChartAreas[0].AxisY.Maximum = double.NaN;
 
             DrawChart("Input_Line01", "L01", "colInput", 9, 9, 225);
-            //DrawChart("Input_Line02", "L02", "colInput", 128, 64, 64);
-            //DrawChart("Input_Line03", "L03", "colInput", 192, 0, 192);
-            //DrawChart("Input_Line04", "L04", "colInput", 0, 192, 192);
-            //DrawChart("Input_Line05", "L05", "colInput", 0, 192, 0);
-            //DrawChart("Input_Line06", "L06", "colInput", 192, 192, 0);
-            //DrawChart("Input_Line07", "L07", "colInput", 255, 192, 128);
+            DrawChart("Input_Line02", "L02", "colInput", 128, 64, 64);
+            DrawChart("Input_Line03", "L03", "colInput", 192, 0, 192);
+            DrawChart("Input_Line04", "L04", "colInput", 0, 192, 192);
+            DrawChart("Input_Line05", "L05", "colInput", 0, 192, 0);
+            DrawChart("Input_Line06", "L06", "colInput", 192, 192, 0);
+            DrawChart("Input_Line07", "L07", "colInput", 255, 192, 128);
 
         }
 
@@ -119,12 +119,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.ChartAreas[0].AxisY.Maximum = double.NaN;
 
             DrawChart("Output_Line01", "L01", "colOutput", 9, 9, 225);
-            //DrawChart("Output_Line02", "L02", "colOutput", 128, 64, 64);
-            //DrawChart("Output_Line03", "L03", "colOutput", 192, 0, 192);
-            //DrawChart("Output_Line04", "L04", "colOutput", 0, 192, 192);
-            //DrawChart("Output_Line05", "L05", "colOutput", 0, 192, 0);
-            //DrawChart("Output_Line06", "L06", "colOutput", 192, 192, 0);
-            //DrawChart("Output_Line07", "L07", "colOutput", 255, 192, 128);
+            DrawChart("Output_Line02", "L02", "colOutput", 128, 64, 64);
+            DrawChart("Output_Line03", "L03", "colOutput", 192, 0, 192);
+            DrawChart("Output_Line04", "L04", "colOutput", 0, 192, 192);
+            DrawChart("Output_Line05", "L05", "colOutput", 0, 192, 0);
+            DrawChart("Output_Line06", "L06", "colOutput", 192, 192, 0);
+            DrawChart("Output_Line07", "L07", "colOutput", 255, 192, 128);
 
         }
         //colRateNG
@@ -154,6 +154,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         public void DrawChart(string nameChart, string nameLine, string colYvalue, int red, int green, int blue)
         {
+            
             chartIONG.Series.Add(nameChart);
             chartIONG.Series[nameChart].ChartType = SeriesChartType.Line;
             chartIONG.Series[nameChart].XValueType = ChartValueType.DateTime;
@@ -244,7 +245,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.ChartAreas[0].AxisY2.Title = "NG [%]"; //nG . 
 
             int max = 0;
-            for (int i = 1; i < dgv.RowCount; i++)
+            for (int i = 0; i < dgv.RowCount; i++)
             {
                 
                 if (i > 0)
