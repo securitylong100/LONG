@@ -22,7 +22,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select distinct  model_cd from t_ncvp_pdc_fc order by model_cd ");
+            sql.Append(@"select distinct  model_cd from t_ncvc_pdc_fc order by model_cd ");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 

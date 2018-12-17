@@ -36,14 +36,14 @@ ca_bonding_case_deform_scracth + ba_tc_endplay_big + ba_tc_endplay_small + ba_tc
   fc_tape_hole_deform + fc_brush_rust + fc_metal_deform_scracth + fc_washer_tape_hole) final_app,(en2_insulation_resistance_ng + en2_cut_coil_wire + en2_no_load_current_hight + en2_ripple + en2_chattering + en2_lock + en2_open + en2_no_load_speed_low + en2_starting_voltage + en2_no_load_speed_high +
   en2_rotor_mix + en2_surge_volt_max + en2_wrong_post_of_pole + en2_err + en2_noise) en2, (en1_insulation_resistace_ng + en1_cut_coil_wire + en1_lock +
 en1_wareform_ma_abnormal + en1_shaft_bent + en1_ripple + en1_short + en1_chattering + en1_no_load_current_high + en1_vibration_ng + en1_open + en1_rotor_mix) en1, (ca_app_metal_dirty + ca_app_tape_hole_deform + ca_app_metal_high + ca_app_case_deform_scracth + ca_app_metal_deform_scratch + ca_app_magnet_broken) as case_assy,(ca_mg_metal_deform_scratch + ca_mg_case_deform_scratch) as case_mg,(ca_bonding_metal_deform_scratch +
-ca_bonding_case_deform_scracth) case_bonding, (ba_tc_endplay_big + ba_tc_endplay_small + ba_tc_brush_bent + ba_tc_shaft_mix) as trust_gap, (ba_rto_ng + ba_rto_mix) as rotor, (ba_app_metal_deform_scracth + ba_app_ba_deform + ba_app_endplate_deform_scracth + ba_app_error_other) as bracket_assy, (ba_bm_brush_deform_scracth + ba_bm_metal_deform_scracth + ba_bm_ba_deform + ba_bm_endplay_deform_scracth) as bracket_metal from t_ncvp_pdc_fc f left join t_ncvp_pdc_en2 e2 on f.fc_id = e2.en2_id
-  left join t_ncvp_pdc_en1 e1 on f.fc_id = e1.en1_id 
-    left join t_ncvp_pdc_ca ca on f.fc_id = ca.ca_id
-    left join t_ncvp_pdc_ba ba on f.fc_id = ba.ba_id                                                                          
+ca_bonding_case_deform_scracth) case_bonding, (ba_tc_endplay_big + ba_tc_endplay_small + ba_tc_brush_bent + ba_tc_shaft_mix) as trust_gap, (ba_rto_ng + ba_rto_mix) as rotor, (ba_app_metal_deform_scracth + ba_app_ba_deform + ba_app_endplate_deform_scracth + ba_app_error_other) as bracket_assy, (ba_bm_brush_deform_scracth + ba_bm_metal_deform_scracth + ba_bm_ba_deform + ba_bm_endplay_deform_scracth) as bracket_metal from t_ncvc_pdc_fc f left join t_ncvc_pdc_en2 e2 on f.fc_id = e2.en2_id
+  left join t_ncvc_pdc_en1 e1 on f.fc_id = e1.en1_id 
+    left join t_ncvc_pdc_ca ca on f.fc_id = ca.ca_id
+    left join t_ncvc_pdc_ba ba on f.fc_id = ba.ba_id                                                                          
     left join (
 select t1.dates,case when ca3 is null then ca1 else ca3 end id from
-(select dates, line_cd, max(fc_id)ca1 from t_ncvp_pdc_fc  where times > '06:00:00' and times <= '23:59:00' group by dates, line_cd) t1 left join
-(select dates - 1 dates, line_cd, max(fc_id) ca3 from t_ncvp_pdc_fc  where times > '00:00:00' and times <= '05:59:00' group by dates, line_cd) t3 on t1.dates = t3.dates where t1.line_cd = :line_cd and  t1.dates between :datesfrom and :datesto) tbl on f.fc_id = tbl.id where f.fc_id = tbl.id and f.line_cd = :line_cd ");
+(select dates, line_cd, max(fc_id)ca1 from t_ncvc_pdc_fc  where times > '06:00:00' and times <= '23:59:00' group by dates, line_cd) t1 left join
+(select dates - 1 dates, line_cd, max(fc_id) ca3 from t_ncvc_pdc_fc  where times > '00:00:00' and times <= '05:59:00' group by dates, line_cd) t3 on t1.dates = t3.dates where t1.line_cd = :line_cd and  t1.dates between :datesfrom and :datesto) tbl on f.fc_id = tbl.id where f.fc_id = tbl.id and f.line_cd = :line_cd ");
 
             sqlParameter.AddParameterString("line_cd", inVo.ProLine);
             sqlParameter.AddParameterDateTime("datesfrom", inVo.StartDay);
