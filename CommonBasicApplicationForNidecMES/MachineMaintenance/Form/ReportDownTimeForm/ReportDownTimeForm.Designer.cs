@@ -35,7 +35,7 @@
             this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.process_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.assy_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.line_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.line_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.machine_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -89,12 +89,12 @@
             this.model_cmb.Name = "model_cmb";
             this.model_cmb.SelectedIndexChanged += new System.EventHandler(this.model_cmb_SelectedIndexChanged);
             // 
-            // process_cmb
+            // assy_cmb
             // 
-            this.process_cmb.ControlId = null;
-            resources.ApplyResources(this.process_cmb, "process_cmb");
-            this.process_cmb.FormattingEnabled = true;
-            this.process_cmb.Name = "process_cmb";
+            this.assy_cmb.ControlId = null;
+            resources.ApplyResources(this.assy_cmb, "assy_cmb");
+            this.assy_cmb.FormattingEnabled = true;
+            this.assy_cmb.Name = "assy_cmb";
             // 
             // line_lbl
             // 
@@ -175,6 +175,8 @@
             this.reportdowntime_dgv.AllowUserToAddRows = false;
             this.reportdowntime_dgv.AllowUserToDeleteRows = false;
             resources.ApplyResources(this.reportdowntime_dgv, "reportdowntime_dgv");
+            this.reportdowntime_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.reportdowntime_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,7 +250,7 @@
             // col_process_name
             // 
             this.col_process_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.col_process_name.DataPropertyName = "ProcessName";
+            this.col_process_name.DataPropertyName = "ProcessWorkName";
             resources.ApplyResources(this.col_process_name, "col_process_name");
             this.col_process_name.Name = "col_process_name";
             this.col_process_name.ReadOnly = true;
@@ -368,7 +370,7 @@
             this.Controls.Add(this.line_cmb);
             this.Controls.Add(this.cause_cmb);
             this.Controls.Add(this.timeto_dtp);
-            this.Controls.Add(this.process_cmb);
+            this.Controls.Add(this.assy_cmb);
             this.Controls.Add(this.timeto_lbl);
             this.Controls.Add(this.action_cmb);
             this.Controls.Add(this.line_lbl);
@@ -390,7 +392,7 @@
             this.Controls.SetChildIndex(this.line_lbl, 0);
             this.Controls.SetChildIndex(this.action_cmb, 0);
             this.Controls.SetChildIndex(this.timeto_lbl, 0);
-            this.Controls.SetChildIndex(this.process_cmb, 0);
+            this.Controls.SetChildIndex(this.assy_cmb, 0);
             this.Controls.SetChildIndex(this.timeto_dtp, 0);
             this.Controls.SetChildIndex(this.cause_cmb, 0);
             this.Controls.SetChildIndex(this.line_cmb, 0);
@@ -411,7 +413,7 @@
         private Framework.LabelCommon model_lbl;
         private Framework.LabelCommon process_lbl;
         private Framework.ComboBoxCommon model_cmb;
-        private Framework.ComboBoxCommon process_cmb;
+        private Framework.ComboBoxCommon assy_cmb;
         private Framework.LabelCommon line_lbl;
         private Framework.ComboBoxCommon line_cmb;
         private Framework.LabelCommon machine_lbl;

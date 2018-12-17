@@ -30,6 +30,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string ProcessCode { get; set; }
         public string ProcessName { get; set; }
 
+        //From m_process_work
+        public int ProcessWorkId { get; set; }
+        public string ProcessWorkCode { get; set; }
+        public string ProcessWorkName { get; set; }
+
         //From m_line table
         public int LineId { get; set; }
         public string LineCode { get; set; }

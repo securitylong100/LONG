@@ -36,19 +36,21 @@
             this.action_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.line_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.cause_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.process_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.assy_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.action_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.line_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.machine_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.cause_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.machine_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.assy_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.ok_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.remake_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.remake_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.cancel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.process_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.SuspendLayout();
             // 
             // timefrom_lbl
@@ -62,6 +64,7 @@
             this.timefrom_dtp.BackColor = System.Drawing.SystemColors.Control;
             this.timefrom_dtp.ControlId = null;
             resources.ApplyResources(this.timefrom_dtp, "timefrom_dtp");
+            this.timefrom_dtp.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
             this.timefrom_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.timefrom_dtp.Name = "timefrom_dtp";
             // 
@@ -70,6 +73,7 @@
             this.timeto_dtp.BackColor = System.Drawing.SystemColors.Control;
             this.timeto_dtp.ControlId = null;
             resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
+            this.timeto_dtp.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
             this.timeto_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.timeto_dtp.Name = "timeto_dtp";
             // 
@@ -99,12 +103,12 @@
             this.cause_cmb.FormattingEnabled = true;
             this.cause_cmb.Name = "cause_cmb";
             // 
-            // process_cmb
+            // assy_cmb
             // 
-            this.process_cmb.ControlId = null;
-            resources.ApplyResources(this.process_cmb, "process_cmb");
-            this.process_cmb.FormattingEnabled = true;
-            this.process_cmb.Name = "process_cmb";
+            this.assy_cmb.ControlId = null;
+            resources.ApplyResources(this.assy_cmb, "assy_cmb");
+            this.assy_cmb.FormattingEnabled = true;
+            this.assy_cmb.Name = "assy_cmb";
             // 
             // action_cmb
             // 
@@ -147,11 +151,11 @@
             this.machine_lbl.ControlId = null;
             this.machine_lbl.Name = "machine_lbl";
             // 
-            // process_lbl
+            // assy_lbl
             // 
-            resources.ApplyResources(this.process_lbl, "process_lbl");
-            this.process_lbl.ControlId = null;
-            this.process_lbl.Name = "process_lbl";
+            resources.ApplyResources(this.assy_lbl, "assy_lbl");
+            this.assy_lbl.ControlId = null;
+            this.assy_lbl.Name = "assy_lbl";
             // 
             // model_lbl
             // 
@@ -190,6 +194,19 @@
             this.cancel_btn.UseVisualStyleBackColor = false;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
+            // process_lbl
+            // 
+            resources.ApplyResources(this.process_lbl, "process_lbl");
+            this.process_lbl.ControlId = null;
+            this.process_lbl.Name = "process_lbl";
+            // 
+            // process_cmb
+            // 
+            this.process_cmb.ControlId = null;
+            resources.ApplyResources(this.process_cmb, "process_cmb");
+            this.process_cmb.FormattingEnabled = true;
+            this.process_cmb.Name = "process_cmb";
+            // 
             // AddUpdateReportDownTimeFrom
             // 
             resources.ApplyResources(this, "$this");
@@ -205,25 +222,29 @@
             this.Controls.Add(this.line_cmb);
             this.Controls.Add(this.cause_cmb);
             this.Controls.Add(this.process_cmb);
+            this.Controls.Add(this.assy_cmb);
             this.Controls.Add(this.action_cmb);
             this.Controls.Add(this.line_lbl);
             this.Controls.Add(this.machine_cmb);
             this.Controls.Add(this.model_cmb);
             this.Controls.Add(this.cause_lbl);
-            this.Controls.Add(this.machine_lbl);
             this.Controls.Add(this.process_lbl);
+            this.Controls.Add(this.machine_lbl);
+            this.Controls.Add(this.assy_lbl);
             this.Controls.Add(this.model_lbl);
             this.Name = "AddUpdateReportDownTimeFrom";
             this.TitleText = "FormCommon";
             this.Load += new System.EventHandler(this.AddUpdateReportDownTimeFrom_Load);
             this.Controls.SetChildIndex(this.model_lbl, 0);
-            this.Controls.SetChildIndex(this.process_lbl, 0);
+            this.Controls.SetChildIndex(this.assy_lbl, 0);
             this.Controls.SetChildIndex(this.machine_lbl, 0);
+            this.Controls.SetChildIndex(this.process_lbl, 0);
             this.Controls.SetChildIndex(this.cause_lbl, 0);
             this.Controls.SetChildIndex(this.model_cmb, 0);
             this.Controls.SetChildIndex(this.machine_cmb, 0);
             this.Controls.SetChildIndex(this.line_lbl, 0);
             this.Controls.SetChildIndex(this.action_cmb, 0);
+            this.Controls.SetChildIndex(this.assy_cmb, 0);
             this.Controls.SetChildIndex(this.process_cmb, 0);
             this.Controls.SetChildIndex(this.cause_cmb, 0);
             this.Controls.SetChildIndex(this.line_cmb, 0);
@@ -250,18 +271,20 @@
         private Framework.LabelCommon action_lbl;
         private Framework.ComboBoxCommon line_cmb;
         private Framework.ComboBoxCommon cause_cmb;
-        private Framework.ComboBoxCommon process_cmb;
+        private Framework.ComboBoxCommon assy_cmb;
         private Framework.ComboBoxCommon action_cmb;
         private Framework.LabelCommon line_lbl;
         private Framework.ComboBoxCommon machine_cmb;
         private Framework.ComboBoxCommon model_cmb;
         private Framework.LabelCommon cause_lbl;
         private Framework.LabelCommon machine_lbl;
-        private Framework.LabelCommon process_lbl;
+        private Framework.LabelCommon assy_lbl;
         private Framework.LabelCommon model_lbl;
         private Framework.ButtonCommon ok_btn;
         private Framework.TextBoxCommon remake_txt;
         private Framework.LabelCommon remake_lbl;
         private Framework.ButtonCommon cancel_btn;
+        private Framework.LabelCommon process_lbl;
+        private Framework.ComboBoxCommon process_cmb;
     }
 }

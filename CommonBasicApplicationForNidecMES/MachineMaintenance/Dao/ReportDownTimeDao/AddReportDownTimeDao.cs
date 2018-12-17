@@ -15,9 +15,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             ReportDownTimeVo inVo = (ReportDownTimeVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append(@"insert into t_downtime_report(time_from,time_to,prodution_work_content_id,line_id,model_id,process_id,
+            sql.Append(@"insert into t_downtime_report(time_from,time_to,prodution_work_content_id,line_id,model_id,process_id,process_work_id,
                 machine_id,defective_reason_id,remarks,registration_user_cd,registration_date_time,factory_cd)");
-            sql.Append(@" values(:time_from,:time_to,:prodution_work_content_id,:line_id,:model_id,:process_id,
+            sql.Append(@" values(:time_from,:time_to,:prodution_work_content_id,:line_id,:model_id,:process_id,:process_work_id,
                 :machine_id,:defective_reason_id,:remarks,:registration_user_cd,now(),:factory_cd)");
 
 
@@ -37,6 +37,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameterInteger("machine_id", inVo.MachineId);
             sqlParameter.AddParameterInteger("model_id", inVo.ModelId);
             sqlParameter.AddParameterInteger("process_id", inVo.ProcessId);
+            sqlParameter.AddParameterInteger("process_work_id", inVo.ProcessWorkId);
             sqlParameter.AddParameterInteger("prodution_work_content_id", inVo.ProductionWorkContentId);
             sqlParameter.AddParameterInteger("defective_reason_id", inVo.DefectiveReasonId);
 

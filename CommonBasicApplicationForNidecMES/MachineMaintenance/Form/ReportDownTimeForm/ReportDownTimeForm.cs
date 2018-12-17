@@ -33,10 +33,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             model_cmb.Text = "";
 
             ProcessVo processvo = (ProcessVo)DefaultCbmInvoker.Invoke(new GetProcessMasterMntCbm(), new ProcessVo());
-            process_cmb.DisplayMember = "ProcessName";
+            assy_cmb.DisplayMember = "ProcessName";
             BindingSource b2 = new BindingSource(processvo.ProcessListVo, null);
-            process_cmb.DataSource = b2;
-            process_cmb.Text = "";
+            assy_cmb.DataSource = b2;
+            assy_cmb.Text = "";
 
             MachineVo machinevo = (MachineVo)DefaultCbmInvoker.Invoke(new GetMachineMasterMntCbm(), new MachineVo());
             machine_cmb.DisplayMember = "MachineName";
@@ -102,7 +102,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 ModelCode = model_cmb.Text,
                 MachineCode = machine_cmb.Text,
-                ProcessName = process_cmb.Text,
+                ProcessName = assy_cmb.Text,
                 LineCode = line_cmb.Text,
                 DefectiveReasonName = cause_cmb.Text,
                 ProductionWorkContentName = action_cmb.Text,
@@ -116,7 +116,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             if (new AddUpdateReportDownTimeFrom().ShowDialog() == DialogResult.OK)
             {
-                add_btn_Click(null, null);
+                add_btn.PerformClick();
             }
         }
 
@@ -145,7 +145,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void clear_btn_Click(object sender, EventArgs e)
         {
             reportdowntime_dgv.DataSource = null;
-            process_cmb.Text = "";
+            assy_cmb.Text = "";
             line_cmb.Text = "";
             machine_cmb.Text = "";
             cause_cmb.Text = "";

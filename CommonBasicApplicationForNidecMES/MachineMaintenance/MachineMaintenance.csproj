@@ -282,6 +282,7 @@
     <Compile Include="Cbm\ProductionControllerCbm\SearchMainProByHourCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\SearchMainProByDateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\GetModelProCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\GetProcessWorkCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\AddReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetActicAndContentCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetCauseAndDefectiveCbm.cs" />
@@ -514,6 +515,7 @@
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetCauseAndDefectiveDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetDownTimeDataDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\GetProcessWorkDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetProcessMoDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetLineMoDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\SearchReportDownTimeDao.cs" />

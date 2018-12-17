@@ -24,7 +24,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"SELECT b.process_id, b.process_cd from m_process b, m_model_process a where a.process_id = b.process_id and model_id = :model_id order by process_id");
+            sql.Append(@"SELECT b.process_id, b.process_name from m_process b, m_model_process a where a.process_id = b.process_id and model_id = :model_id order by process_id");
 
 
             sqlParameter.AddParameterInteger("model_id", inVo.ProcessId);
@@ -41,7 +41,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 ProcessVo outVo = new ProcessVo
                 {
                      ProcessId = int.Parse(dataReader["process_id"].ToString()),
-                     ProcessCode = dataReader["process_cd"].ToString()
+                     ProcessName = dataReader["process_name"].ToString()
                 };
                 voList.add(outVo);
             }

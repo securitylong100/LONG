@@ -159,13 +159,13 @@
     <value>214, 119</value>
   </data>
   <data name="process_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 15</value>
+    <value>36, 15</value>
   </data>
   <data name="process_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="process_lbl.Text" xml:space="preserve">
-    <value>Process:</value>
+    <value>Assy:</value>
   </data>
   <data name="&gt;&gt;process_lbl.Name" xml:space="preserve">
     <value>process_lbl</value>
@@ -203,28 +203,28 @@
   <data name="&gt;&gt;model_cmb.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="process_cmb.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="assy_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="process_cmb.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="assy_cmb.Location" type="System.Drawing.Point, System.Drawing">
     <value>311, 116</value>
   </data>
-  <data name="process_cmb.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="assy_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
   </data>
-  <data name="process_cmb.TabIndex" type="System.Int32, mscorlib">
+  <data name="assy_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;process_cmb.Name" xml:space="preserve">
-    <value>process_cmb</value>
+  <data name="&gt;&gt;assy_cmb.Name" xml:space="preserve">
+    <value>assy_cmb</value>
   </data>
-  <data name="&gt;&gt;process_cmb.Type" xml:space="preserve">
+  <data name="&gt;&gt;assy_cmb.Type" xml:space="preserve">
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;process_cmb.Parent" xml:space="preserve">
+  <data name="&gt;&gt;assy_cmb.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;process_cmb.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;assy_cmb.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="line_lbl.AutoSize" type="System.Boolean, mscorlib">
@@ -567,6 +567,9 @@
   <data name="col_assy.HeaderText" xml:space="preserve">
     <value>Assy</value>
   </data>
+  <data name="col_assy.Width" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
   <metadata name="col_process_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -626,6 +629,9 @@
   </metadata>
   <data name="col_username.HeaderText" xml:space="preserve">
     <value>Username</value>
+  </data>
+  <data name="col_username.Width" type="System.Int32, mscorlib">
+    <value>91</value>
   </data>
   <data name="reportdowntime_dgv.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 290</value>

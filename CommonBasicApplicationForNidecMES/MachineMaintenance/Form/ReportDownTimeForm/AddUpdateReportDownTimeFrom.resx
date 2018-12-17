@@ -126,7 +126,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timefrom_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 199</value>
+    <value>113, 236</value>
   </data>
   <data name="timefrom_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 15</value>
@@ -156,7 +156,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timefrom_dtp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 194</value>
+    <value>206, 231</value>
   </data>
   <data name="timefrom_dtp.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 21</value>
@@ -183,7 +183,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timeto_dtp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 194</value>
+    <value>448, 231</value>
   </data>
   <data name="timeto_dtp.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 21</value>
@@ -210,7 +210,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timeto_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 199</value>
+    <value>379, 236</value>
   </data>
   <data name="timeto_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 15</value>
@@ -311,29 +311,29 @@
   <data name="&gt;&gt;cause_cmb.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="process_cmb.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="assy_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="process_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 121</value>
+  <data name="assy_cmb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 189</value>
   </data>
-  <data name="process_cmb.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="assy_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 23</value>
   </data>
-  <data name="process_cmb.TabIndex" type="System.Int32, mscorlib">
+  <data name="assy_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="&gt;&gt;process_cmb.Name" xml:space="preserve">
-    <value>process_cmb</value>
+  <data name="&gt;&gt;assy_cmb.Name" xml:space="preserve">
+    <value>assy_cmb</value>
   </data>
-  <data name="&gt;&gt;process_cmb.Type" xml:space="preserve">
+  <data name="&gt;&gt;assy_cmb.Type" xml:space="preserve">
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;process_cmb.Parent" xml:space="preserve">
+  <data name="&gt;&gt;assy_cmb.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;process_cmb.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;assy_cmb.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="action_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -357,7 +357,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;action_cmb.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="line_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -387,13 +387,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;line_lbl.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="machine_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 155</value>
+    <value>316, 121</value>
   </data>
   <data name="machine_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
@@ -411,7 +411,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;machine_cmb.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="model_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -435,7 +435,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;model_cmb.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="cause_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -465,7 +465,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cause_lbl.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="machine_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -474,7 +474,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 158</value>
+    <value>237, 124</value>
   </data>
   <data name="machine_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 15</value>
@@ -495,37 +495,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;machine_lbl.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
-  <data name="process_lbl.AutoSize" type="System.Boolean, mscorlib">
+  <data name="assy_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="process_lbl.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="assy_lbl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="process_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 124</value>
+  <data name="assy_lbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 192</value>
   </data>
-  <data name="process_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 15</value>
+  <data name="assy_lbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 15</value>
   </data>
-  <data name="process_lbl.TabIndex" type="System.Int32, mscorlib">
+  <data name="assy_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="process_lbl.Text" xml:space="preserve">
-    <value>Process:</value>
+  <data name="assy_lbl.Text" xml:space="preserve">
+    <value>Assy:</value>
   </data>
-  <data name="&gt;&gt;process_lbl.Name" xml:space="preserve">
-    <value>process_lbl</value>
+  <data name="&gt;&gt;assy_lbl.Name" xml:space="preserve">
+    <value>assy_lbl</value>
   </data>
-  <data name="&gt;&gt;process_lbl.Type" xml:space="preserve">
+  <data name="&gt;&gt;assy_lbl.Type" xml:space="preserve">
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;process_lbl.Parent" xml:space="preserve">
+  <data name="&gt;&gt;assy_lbl.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;process_lbl.ZOrder" xml:space="preserve">
-    <value>18</value>
+  <data name="&gt;&gt;assy_lbl.ZOrder" xml:space="preserve">
+    <value>20</value>
   </data>
   <data name="model_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -555,13 +555,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;model_lbl.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="ok_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="ok_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 298</value>
+    <value>283, 335</value>
   </data>
   <data name="ok_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -588,7 +588,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="remake_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 235</value>
+    <value>206, 272</value>
   </data>
   <data name="remake_txt.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -618,7 +618,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="remake_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 235</value>
+    <value>113, 272</value>
   </data>
   <data name="remake_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 15</value>
@@ -645,7 +645,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="cancel_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 298</value>
+    <value>448, 335</value>
   </data>
   <data name="cancel_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -668,6 +668,64 @@
   <data name="&gt;&gt;cancel_btn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="process_lbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="process_lbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="process_lbl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="process_lbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 158</value>
+  </data>
+  <data name="process_lbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 15</value>
+  </data>
+  <data name="process_lbl.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="process_lbl.Text" xml:space="preserve">
+    <value>Process:</value>
+  </data>
+  <data name="&gt;&gt;process_lbl.Name" xml:space="preserve">
+    <value>process_lbl</value>
+  </data>
+  <data name="&gt;&gt;process_lbl.Type" xml:space="preserve">
+    <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;process_lbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;process_lbl.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="process_cmb.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="process_cmb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 155</value>
+  </data>
+  <data name="process_cmb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 23</value>
+  </data>
+  <data name="process_cmb.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;process_cmb.Name" xml:space="preserve">
+    <value>process_cmb</value>
+  </data>
+  <data name="&gt;&gt;process_cmb.Type" xml:space="preserve">
+    <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;process_cmb.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;process_cmb.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -675,7 +733,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>719, 343</value>
+    <value>719, 384</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>DownTime Record</value>
