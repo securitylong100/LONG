@@ -658,7 +658,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="search_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 19</value>
+    <value>353, 20</value>
   </data>
   <data name="search_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -679,13 +679,13 @@
     <value>setting_gbc</value>
   </data>
   <data name="&gt;&gt;search_btn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="clear_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="clear_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 19</value>
+    <value>267, 20</value>
   </data>
   <data name="clear_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -706,13 +706,46 @@
     <value>setting_gbc</value>
   </data>
   <data name="&gt;&gt;clear_btn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="export_btn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="export_btn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="export_btn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 20</value>
+  </data>
+  <data name="export_btn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 33</value>
+  </data>
+  <data name="export_btn.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="export_btn.Text" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="&gt;&gt;export_btn.Name" xml:space="preserve">
+    <value>export_btn</value>
+  </data>
+  <data name="&gt;&gt;export_btn.Type" xml:space="preserve">
+    <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;export_btn.Parent" xml:space="preserve">
+    <value>setting_gbc</value>
+  </data>
+  <data name="&gt;&gt;export_btn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="update_btn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="update_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="update_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 19</value>
+    <value>95, 20</value>
   </data>
   <data name="update_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -733,13 +766,13 @@
     <value>setting_gbc</value>
   </data>
   <data name="&gt;&gt;update_btn.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="add_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="add_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 19</value>
+    <value>9, 20</value>
   </data>
   <data name="add_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -760,7 +793,7 @@
     <value>setting_gbc</value>
   </data>
   <data name="&gt;&gt;add_btn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="setting_gbc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>

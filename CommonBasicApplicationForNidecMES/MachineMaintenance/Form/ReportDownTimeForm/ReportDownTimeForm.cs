@@ -13,6 +13,7 @@ using System.Text;
 using System.Windows.Forms;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
@@ -101,13 +102,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             ValueObjectList<ReportDownTimeVo> getList = (ValueObjectList<ReportDownTimeVo>)DefaultCbmInvoker.Invoke(new SearchReportDownTimeCbm(), new ReportDownTimeVo
             {
                 ModelCode = model_cmb.Text,
-                MachineCode = machine_cmb.Text,
+                MachineName = machine_cmb.Text,
                 ProcessName = assy_cmb.Text,
                 LineCode = line_cmb.Text,
                 DefectiveReasonName = cause_cmb.Text,
                 ProductionWorkContentName = action_cmb.Text,
-                TimeFrom = timefrom_dtp.Value,
-                TimeTo = timeto_dtp.Value
+                TimeFrom = DateTime.Parse(timefrom_dtp.Value.ToShortDateString()),
+                TimeTo = DateTime.Parse(timeto_dtp.Value.ToShortDateString())
             });
             reportdowntime_dgv.DataSource = getList.GetList();
         }
@@ -119,7 +120,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 add_btn.PerformClick();
             }
         }
-
         private void update_btn_Click(object sender, EventArgs e)
         {
             if (reportdowntime_dgv.SelectedCells.Count > 0)
@@ -150,6 +150,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             machine_cmb.Text = "";
             cause_cmb.Text = "";
             action_cmb.Text = "";
+        }
+
+        private void export_btn_Click(object sender, EventArgs e)
+        {
+            Excel_Class export = new Excel_Class();
+            export.Export(ref reportdowntime_dgv, "DownTime Data");
         }
     }
 }
