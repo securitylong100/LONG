@@ -24,14 +24,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"SELECT b.process_work_id, b.process_work_name from m_process_work b, m_machine a where a.machine_id = b.machine_id and a.machine_id = :machine_id order by process_work_id");
-
-
-            sqlParameter.AddParameterInteger("machine_id", inVo.ProcessWorkId);
+            sql.Append("SELECT process_work_id, process_work_name from m_process_work order by process_work_id");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
-
-
 
             //execute SQL
             IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);

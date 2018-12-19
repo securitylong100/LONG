@@ -24,14 +24,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"SELECT b.prodution_work_content_id, b.prodution_work_content_name from m_prodution_work_content b, m_response_machine a where a.prodution_work_content_id = b.prodution_work_content_id and machine_id = :machine_id order by display_order");
+            sql.Append(@"SELECT a.prodution_work_content_id, a.prodution_work_content_name from m_prodution_work_content a left join m_response_machine b on b.prodution_work_content_id = a.prodution_work_content_id left join m_machine c on c.machine_id = b.machine_id where machine_cd = :machine_cd order by prodution_work_content_id");
 
 
-            sqlParameter.AddParameterInteger("machine_id", inVo.ProdutionWorkContentId);
+            sqlParameter.AddParameterString("machine_cd", inVo.ProdutionWorkContentCode);
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
-
-
 
             //execute SQL
             IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);

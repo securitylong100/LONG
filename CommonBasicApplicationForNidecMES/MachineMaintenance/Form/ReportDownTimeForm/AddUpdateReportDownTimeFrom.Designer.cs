@@ -30,16 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUpdateReportDownTimeFrom));
             this.timefrom_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.timefrom_dtp = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
-            this.timeto_dtp = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.timeto_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.action_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.line_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.cause_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.assy_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.action_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.line_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.cause_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.machine_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -51,6 +47,15 @@
             this.cancel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.process_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.machine_txt = new System.Windows.Forms.TextBox();
+            this.assy_txt = new System.Windows.Forms.TextBox();
+            this.timefrom_dtp = new System.Windows.Forms.DateTimePicker();
+            this.timeto_dtp = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timefrom_lbl
@@ -58,24 +63,6 @@
             resources.ApplyResources(this.timefrom_lbl, "timefrom_lbl");
             this.timefrom_lbl.ControlId = null;
             this.timefrom_lbl.Name = "timefrom_lbl";
-            // 
-            // timefrom_dtp
-            // 
-            this.timefrom_dtp.BackColor = System.Drawing.SystemColors.Control;
-            this.timefrom_dtp.ControlId = null;
-            resources.ApplyResources(this.timefrom_dtp, "timefrom_dtp");
-            this.timefrom_dtp.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
-            this.timefrom_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timefrom_dtp.Name = "timefrom_dtp";
-            // 
-            // timeto_dtp
-            // 
-            this.timeto_dtp.BackColor = System.Drawing.SystemColors.Control;
-            this.timeto_dtp.ControlId = null;
-            resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
-            this.timeto_dtp.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
-            this.timeto_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timeto_dtp.Name = "timeto_dtp";
             // 
             // timeto_lbl
             // 
@@ -103,13 +90,6 @@
             this.cause_cmb.FormattingEnabled = true;
             this.cause_cmb.Name = "cause_cmb";
             // 
-            // assy_cmb
-            // 
-            this.assy_cmb.ControlId = null;
-            resources.ApplyResources(this.assy_cmb, "assy_cmb");
-            this.assy_cmb.FormattingEnabled = true;
-            this.assy_cmb.Name = "assy_cmb";
-            // 
             // action_cmb
             // 
             this.action_cmb.ControlId = null;
@@ -122,14 +102,6 @@
             resources.ApplyResources(this.line_lbl, "line_lbl");
             this.line_lbl.ControlId = null;
             this.line_lbl.Name = "line_lbl";
-            // 
-            // machine_cmb
-            // 
-            this.machine_cmb.ControlId = null;
-            resources.ApplyResources(this.machine_cmb, "machine_cmb");
-            this.machine_cmb.FormattingEnabled = true;
-            this.machine_cmb.Name = "machine_cmb";
-            this.machine_cmb.SelectedIndexChanged += new System.EventHandler(this.machine_cmb_SelectedIndexChanged);
             // 
             // model_cmb
             // 
@@ -206,75 +178,91 @@
             resources.ApplyResources(this.process_cmb, "process_cmb");
             this.process_cmb.FormattingEnabled = true;
             this.process_cmb.Name = "process_cmb";
+            this.process_cmb.SelectedIndexChanged += new System.EventHandler(this.process_cmb_SelectedIndexChanged);
+            // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.timeto_dtp);
+            this.splitContainer1.Panel1.Controls.Add(this.timefrom_dtp);
+            this.splitContainer1.Panel1.Controls.Add(this.machine_txt);
+            this.splitContainer1.Panel1.Controls.Add(this.assy_txt);
+            this.splitContainer1.Panel1.Controls.Add(this.cancel_btn);
+            this.splitContainer1.Panel1.Controls.Add(this.timefrom_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.ok_btn);
+            this.splitContainer1.Panel1.Controls.Add(this.timeto_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.model_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.assy_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.machine_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.process_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.cause_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.model_cmb);
+            this.splitContainer1.Panel1.Controls.Add(this.line_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.action_cmb);
+            this.splitContainer1.Panel1.Controls.Add(this.action_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.line_cmb);
+            this.splitContainer1.Panel1.Controls.Add(this.process_cmb);
+            this.splitContainer1.Panel1.Controls.Add(this.cause_cmb);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.remake_lbl);
+            this.splitContainer1.Panel2.Controls.Add(this.remake_txt);
+            // 
+            // machine_txt
+            // 
+            resources.ApplyResources(this.machine_txt, "machine_txt");
+            this.machine_txt.Name = "machine_txt";
+            this.machine_txt.TextChanged += new System.EventHandler(this.machine_txt_TextChanged);
+            // 
+            // assy_txt
+            // 
+            resources.ApplyResources(this.assy_txt, "assy_txt");
+            this.assy_txt.Name = "assy_txt";
+            // 
+            // timefrom_dtp
+            // 
+            resources.ApplyResources(this.timefrom_dtp, "timefrom_dtp");
+            this.timefrom_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timefrom_dtp.Name = "timefrom_dtp";
+            // 
+            // timeto_dtp
+            // 
+            resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
+            this.timeto_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timeto_dtp.Name = "timeto_dtp";
             // 
             // AddUpdateReportDownTimeFrom
             // 
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.cancel_btn);
-            this.Controls.Add(this.remake_lbl);
-            this.Controls.Add(this.remake_txt);
-            this.Controls.Add(this.ok_btn);
-            this.Controls.Add(this.timefrom_lbl);
-            this.Controls.Add(this.timefrom_dtp);
-            this.Controls.Add(this.timeto_dtp);
-            this.Controls.Add(this.timeto_lbl);
-            this.Controls.Add(this.action_lbl);
-            this.Controls.Add(this.line_cmb);
-            this.Controls.Add(this.cause_cmb);
-            this.Controls.Add(this.process_cmb);
-            this.Controls.Add(this.assy_cmb);
-            this.Controls.Add(this.action_cmb);
-            this.Controls.Add(this.line_lbl);
-            this.Controls.Add(this.machine_cmb);
-            this.Controls.Add(this.model_cmb);
-            this.Controls.Add(this.cause_lbl);
-            this.Controls.Add(this.process_lbl);
-            this.Controls.Add(this.machine_lbl);
-            this.Controls.Add(this.assy_lbl);
-            this.Controls.Add(this.model_lbl);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "AddUpdateReportDownTimeFrom";
             this.TitleText = "FormCommon";
             this.Load += new System.EventHandler(this.AddUpdateReportDownTimeFrom_Load);
-            this.Controls.SetChildIndex(this.model_lbl, 0);
-            this.Controls.SetChildIndex(this.assy_lbl, 0);
-            this.Controls.SetChildIndex(this.machine_lbl, 0);
-            this.Controls.SetChildIndex(this.process_lbl, 0);
-            this.Controls.SetChildIndex(this.cause_lbl, 0);
-            this.Controls.SetChildIndex(this.model_cmb, 0);
-            this.Controls.SetChildIndex(this.machine_cmb, 0);
-            this.Controls.SetChildIndex(this.line_lbl, 0);
-            this.Controls.SetChildIndex(this.action_cmb, 0);
-            this.Controls.SetChildIndex(this.assy_cmb, 0);
-            this.Controls.SetChildIndex(this.process_cmb, 0);
-            this.Controls.SetChildIndex(this.cause_cmb, 0);
-            this.Controls.SetChildIndex(this.line_cmb, 0);
-            this.Controls.SetChildIndex(this.action_lbl, 0);
-            this.Controls.SetChildIndex(this.timeto_lbl, 0);
-            this.Controls.SetChildIndex(this.timeto_dtp, 0);
-            this.Controls.SetChildIndex(this.timefrom_dtp, 0);
-            this.Controls.SetChildIndex(this.timefrom_lbl, 0);
-            this.Controls.SetChildIndex(this.ok_btn, 0);
-            this.Controls.SetChildIndex(this.remake_txt, 0);
-            this.Controls.SetChildIndex(this.remake_lbl, 0);
-            this.Controls.SetChildIndex(this.cancel_btn, 0);
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Framework.LabelCommon timefrom_lbl;
-        private Framework.DateTimePickerCommon timefrom_dtp;
-        private Framework.DateTimePickerCommon timeto_dtp;
         private Framework.LabelCommon timeto_lbl;
         private Framework.LabelCommon action_lbl;
         private Framework.ComboBoxCommon line_cmb;
         private Framework.ComboBoxCommon cause_cmb;
-        private Framework.ComboBoxCommon assy_cmb;
         private Framework.ComboBoxCommon action_cmb;
         private Framework.LabelCommon line_lbl;
-        private Framework.ComboBoxCommon machine_cmb;
         private Framework.ComboBoxCommon model_cmb;
         private Framework.LabelCommon cause_lbl;
         private Framework.LabelCommon machine_lbl;
@@ -286,5 +274,10 @@
         private Framework.ButtonCommon cancel_btn;
         private Framework.LabelCommon process_lbl;
         private Framework.ComboBoxCommon process_cmb;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox machine_txt;
+        private System.Windows.Forms.TextBox assy_txt;
+        private System.Windows.Forms.DateTimePicker timeto_dtp;
+        private System.Windows.Forms.DateTimePicker timefrom_dtp;
     }
 }

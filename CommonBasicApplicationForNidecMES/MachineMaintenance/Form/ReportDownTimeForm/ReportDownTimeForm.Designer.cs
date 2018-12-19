@@ -62,6 +62,7 @@
             this.search_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.clear_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.setting_gbc = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.export_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.update_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.add_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.timefrom_dtp = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
@@ -323,6 +324,7 @@
             // setting_gbc
             // 
             this.setting_gbc.ControlId = null;
+            this.setting_gbc.Controls.Add(this.export_btn);
             this.setting_gbc.Controls.Add(this.update_btn);
             this.setting_gbc.Controls.Add(this.add_btn);
             this.setting_gbc.Controls.Add(this.clear_btn);
@@ -330,6 +332,15 @@
             resources.ApplyResources(this.setting_gbc, "setting_gbc");
             this.setting_gbc.Name = "setting_gbc";
             this.setting_gbc.TabStop = false;
+            // 
+            // export_btn
+            // 
+            this.export_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.export_btn.ControlId = "mcfb008";
+            resources.ApplyResources(this.export_btn, "export_btn");
+            this.export_btn.Name = "export_btn";
+            this.export_btn.UseVisualStyleBackColor = false;
+            this.export_btn.Click += new System.EventHandler(this.export_btn_Click);
             // 
             // update_btn
             // 
@@ -444,5 +455,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cause;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_action;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_username;
+        private Framework.ButtonCommon export_btn;
     }
 }

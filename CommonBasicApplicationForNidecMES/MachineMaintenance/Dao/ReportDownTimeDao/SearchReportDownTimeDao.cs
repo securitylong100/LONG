@@ -22,16 +22,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"SELECT a.downtime_report_id, d.model_cd, l.process_work_name, f.process_name, h.line_cd, i.machine_name, k.defective_reason_name, o.prodution_work_content_name, a.time_to, a.time_from , a.registration_user_cd,a.remarks
-from t_downtime_report a 
-left join m_model d on a.model_id = d.model_id 
-left join m_process f on a.process_id = f.process_id 
-left join m_line h on a.line_id = h.line_id 
-left join m_machine i on i.machine_id = a.machine_id 
-left join m_defective_reason k on k.defective_reason_id = a.defective_reason_id 
-left join m_process_work l on l.process_work_id = a.process_work_id 
-left join m_prodution_work_content o on o.prodution_work_content_id = a.prodution_work_content_id where ");
-
+            sql.Append("SELECT a.downtime_report_id, d.model_cd, l.process_work_name, a.process_name, h.line_cd, a.machine_name, k.defective_reason_name, o.prodution_work_content_name, a.time_to, a.time_from , a.registration_user_cd,a.remarks from t_downtime_report a left join m_model d on a.model_id = d.model_id left join m_line h on a.line_id = h.line_id left join m_defective_reason k on k.defective_reason_id = a.defective_reason_id left join m_process_work l on l.process_work_id = a.process_work_id left join m_prodution_work_content o on o.prodution_work_content_id = a.prodution_work_content_id where ");
 
             sql.Append(@"time_from >:starttime and time_from <:endtime");
             sqlParameter.AddParameterDateTime("starttime", inVo.TimeFrom);
@@ -69,10 +60,7 @@ left join m_prodution_work_content o on o.prodution_work_content_id = a.produtio
                 sqlParameter.AddParameterString("prodution_work_content_name", inVo.ProductionWorkContentName);
             }
 
-
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
-
-
 
             //execute SQL
             IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);

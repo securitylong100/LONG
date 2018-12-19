@@ -15,10 +15,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             ReportDownTimeVo inVo = (ReportDownTimeVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append(@"insert into t_downtime_report(time_from,time_to,prodution_work_content_id,line_id,model_id,process_id,process_work_id,
-                machine_id,defective_reason_id,remarks,registration_user_cd,registration_date_time,factory_cd)");
-            sql.Append(@" values(:time_from,:time_to,:prodution_work_content_id,:line_id,:model_id,:process_id,:process_work_id,
-                :machine_id,:defective_reason_id,:remarks,:registration_user_cd,now(),:factory_cd)");
+            sql.Append(@"insert into t_downtime_report(time_from,time_to,prodution_work_content_id,line_id,model_id,process_name,process_work_id,
+                machine_name,defective_reason_id,remarks,registration_user_cd,registration_date_time,factory_cd)");
+            sql.Append(@" values(:time_from,:time_to,:prodution_work_content_id,:line_id,:model_id,:process_name,:process_work_id,
+                :machine_name,:defective_reason_id,:remarks,:registration_user_cd,now(),:factory_cd)");
 
 
 
@@ -34,9 +34,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameterString("remarks", inVo.Remakes);
 
             sqlParameter.AddParameterInteger("line_id", inVo.LineId);
-            sqlParameter.AddParameterInteger("machine_id", inVo.MachineId);
+            sqlParameter.AddParameterString("machine_name", inVo.MachineCode);
             sqlParameter.AddParameterInteger("model_id", inVo.ModelId);
-            sqlParameter.AddParameterInteger("process_id", inVo.ProcessId);
+            sqlParameter.AddParameterString("process_name", inVo.ProcessCode);
             sqlParameter.AddParameterInteger("process_work_id", inVo.ProcessWorkId);
             sqlParameter.AddParameterInteger("prodution_work_content_id", inVo.ProductionWorkContentId);
             sqlParameter.AddParameterInteger("defective_reason_id", inVo.DefectiveReasonId);
