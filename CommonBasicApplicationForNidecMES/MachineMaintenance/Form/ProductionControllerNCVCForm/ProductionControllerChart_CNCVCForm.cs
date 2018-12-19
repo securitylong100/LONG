@@ -99,7 +99,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             string header = "";
             int value = 0;
             int a = dgv.ColumnCount;
-            for (int j = 10; j < dgv.ColumnCount; j++)
+            for (int j = 11; j < dgv.ColumnCount; j++)
             {
                 header = dgv.Columns[j].HeaderText;
                 value = int.Parse(dgv.Rows[rowselect].Cells[j].Value.ToString());

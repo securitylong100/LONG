@@ -13,6 +13,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>D:\GIT_HUB\NIDEC\NCVC_MAIN\VCMS\bin\Debug\NCVC Management System.exe</StartProgram>
+    <StartProgram>D:\NCVP_GIT\mes_ncvc\VCMS\bin\Debug\NCVC Management System.exe</StartProgram>
   </PropertyGroup>
 </Project>
