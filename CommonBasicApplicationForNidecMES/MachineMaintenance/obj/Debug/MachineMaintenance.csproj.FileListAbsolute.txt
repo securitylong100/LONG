@@ -343,6 +343,7 @@ D:\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll
 D:\NIDEC\FW\NidecMES\Dll\MachineMaintenance.pdb
 D:\NIDEC\FW\NidecMES\Dll\vi\MachineMaintenance.resources.dll
 D:\NIDEC\FW\NidecMES\Dll\vi-VN\MachineMaintenance.resources.dll
+D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csproj.ResolveComReference.cache
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.AccountCodeForm.resources
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.Account_WhForm.AccountCodeForm.AddAccountCodeForm.resources

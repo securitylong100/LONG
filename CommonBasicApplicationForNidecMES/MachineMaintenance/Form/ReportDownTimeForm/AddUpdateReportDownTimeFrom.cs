@@ -104,6 +104,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             line_cmb.Text = "";
             cause_cmb.Text = "";
             action_cmb.Text = "";
+            process_cmb.ResetText();
+            assy_txt.ResetText();
+            machine_txt.ResetText();
 
             if (reportDownTimeVo.DowntimeReportId > 0)
             {
