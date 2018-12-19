@@ -45,24 +45,6 @@
             this.date_rab = new Com.Nidec.Mes.Framework.RadioButtonCommon();
             this.timefrom_dtp = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.production_controller_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.colModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStarday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEndday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInput = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRateNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFinal_App = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrustGap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBracket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBracketMetal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCaseAssy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCaseMG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMGBonding = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.input_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.ng_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -84,6 +66,27 @@
             this.groupBoxCommon5 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.sum_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.colModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStarday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInput = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInputCase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInputBracket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAppearance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRateNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFinal_App = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrustGap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBracket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBracketMetal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaseAssy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaseMG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMGBonding = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.production_controller_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -210,6 +213,9 @@
             this.colStarday,
             this.colEndday,
             this.colInput,
+            this.colInputCase,
+            this.colInputBracket,
+            this.colAppearance,
             this.colOutput,
             this.colTotalNG,
             this.colRateNG,
@@ -247,131 +253,6 @@
             this.production_controller_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.production_controller_dgv_CellClick);
             this.production_controller_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.production_controller_dgv_CellContentClick);
             this.production_controller_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.production_controller_dgv_CellDoubleClick);
-            // 
-            // colModel
-            // 
-            this.colModel.DataPropertyName = "ProModel";
-            resources.ApplyResources(this.colModel, "colModel");
-            this.colModel.Name = "colModel";
-            this.colModel.ReadOnly = true;
-            // 
-            // colLine
-            // 
-            this.colLine.DataPropertyName = "ProLine";
-            resources.ApplyResources(this.colLine, "colLine");
-            this.colLine.Name = "colLine";
-            this.colLine.ReadOnly = true;
-            // 
-            // colStarday
-            // 
-            this.colStarday.DataPropertyName = "StartDay";
-            resources.ApplyResources(this.colStarday, "colStarday");
-            this.colStarday.Name = "colStarday";
-            this.colStarday.ReadOnly = true;
-            // 
-            // colEndday
-            // 
-            this.colEndday.DataPropertyName = "EndDay";
-            resources.ApplyResources(this.colEndday, "colEndday");
-            this.colEndday.Name = "colEndday";
-            this.colEndday.ReadOnly = true;
-            // 
-            // colInput
-            // 
-            this.colInput.DataPropertyName = "ProInput";
-            resources.ApplyResources(this.colInput, "colInput");
-            this.colInput.Name = "colInput";
-            this.colInput.ReadOnly = true;
-            // 
-            // colOutput
-            // 
-            this.colOutput.DataPropertyName = "ProOutput";
-            resources.ApplyResources(this.colOutput, "colOutput");
-            this.colOutput.Name = "colOutput";
-            this.colOutput.ReadOnly = true;
-            // 
-            // colTotalNG
-            // 
-            this.colTotalNG.DataPropertyName = "TotalNG";
-            resources.ApplyResources(this.colTotalNG, "colTotalNG");
-            this.colTotalNG.Name = "colTotalNG";
-            this.colTotalNG.ReadOnly = true;
-            // 
-            // colRateNG
-            // 
-            resources.ApplyResources(this.colRateNG, "colRateNG");
-            this.colRateNG.Name = "colRateNG";
-            this.colRateNG.ReadOnly = true;
-            // 
-            // colFinal_App
-            // 
-            this.colFinal_App.DataPropertyName = "Final_App";
-            resources.ApplyResources(this.colFinal_App, "colFinal_App");
-            this.colFinal_App.Name = "colFinal_App";
-            this.colFinal_App.ReadOnly = true;
-            // 
-            // colEn2
-            // 
-            this.colEn2.DataPropertyName = "En2NG";
-            resources.ApplyResources(this.colEn2, "colEn2");
-            this.colEn2.Name = "colEn2";
-            this.colEn2.ReadOnly = true;
-            // 
-            // colEn1
-            // 
-            this.colEn1.DataPropertyName = "En1NG";
-            resources.ApplyResources(this.colEn1, "colEn1");
-            this.colEn1.Name = "colEn1";
-            this.colEn1.ReadOnly = true;
-            // 
-            // colTrustGap
-            // 
-            this.colTrustGap.DataPropertyName = "TrustGap";
-            resources.ApplyResources(this.colTrustGap, "colTrustGap");
-            this.colTrustGap.Name = "colTrustGap";
-            this.colTrustGap.ReadOnly = true;
-            // 
-            // colRotor
-            // 
-            this.colRotor.DataPropertyName = "Rotor";
-            resources.ApplyResources(this.colRotor, "colRotor");
-            this.colRotor.Name = "colRotor";
-            this.colRotor.ReadOnly = true;
-            // 
-            // colBracket
-            // 
-            this.colBracket.DataPropertyName = "Braket";
-            resources.ApplyResources(this.colBracket, "colBracket");
-            this.colBracket.Name = "colBracket";
-            this.colBracket.ReadOnly = true;
-            // 
-            // colBracketMetal
-            // 
-            this.colBracketMetal.DataPropertyName = "Bracket_Metal";
-            resources.ApplyResources(this.colBracketMetal, "colBracketMetal");
-            this.colBracketMetal.Name = "colBracketMetal";
-            this.colBracketMetal.ReadOnly = true;
-            // 
-            // colCaseAssy
-            // 
-            this.colCaseAssy.DataPropertyName = "Case_Assy";
-            resources.ApplyResources(this.colCaseAssy, "colCaseAssy");
-            this.colCaseAssy.Name = "colCaseAssy";
-            this.colCaseAssy.ReadOnly = true;
-            // 
-            // colCaseMG
-            // 
-            this.colCaseMG.DataPropertyName = "Case_MG";
-            resources.ApplyResources(this.colCaseMG, "colCaseMG");
-            this.colCaseMG.Name = "colCaseMG";
-            this.colCaseMG.ReadOnly = true;
-            // 
-            // colMGBonding
-            // 
-            this.colMGBonding.DataPropertyName = "MG_Bongding";
-            resources.ApplyResources(this.colMGBonding, "colMGBonding");
-            this.colMGBonding.Name = "colMGBonding";
-            this.colMGBonding.ReadOnly = true;
             // 
             // total_lbl
             // 
@@ -564,6 +445,152 @@
             this.labelCommon1.ControlId = null;
             this.labelCommon1.Name = "labelCommon1";
             // 
+            // colModel
+            // 
+            this.colModel.DataPropertyName = "ProModel";
+            resources.ApplyResources(this.colModel, "colModel");
+            this.colModel.Name = "colModel";
+            this.colModel.ReadOnly = true;
+            // 
+            // colLine
+            // 
+            this.colLine.DataPropertyName = "ProLine";
+            resources.ApplyResources(this.colLine, "colLine");
+            this.colLine.Name = "colLine";
+            this.colLine.ReadOnly = true;
+            // 
+            // colStarday
+            // 
+            this.colStarday.DataPropertyName = "StartDay";
+            resources.ApplyResources(this.colStarday, "colStarday");
+            this.colStarday.Name = "colStarday";
+            this.colStarday.ReadOnly = true;
+            // 
+            // colEndday
+            // 
+            this.colEndday.DataPropertyName = "EndDay";
+            resources.ApplyResources(this.colEndday, "colEndday");
+            this.colEndday.Name = "colEndday";
+            this.colEndday.ReadOnly = true;
+            // 
+            // colInput
+            // 
+            this.colInput.DataPropertyName = "ProInput";
+            resources.ApplyResources(this.colInput, "colInput");
+            this.colInput.Name = "colInput";
+            this.colInput.ReadOnly = true;
+            // 
+            // colInputCase
+            // 
+            this.colInputCase.DataPropertyName = "ProInputCase";
+            resources.ApplyResources(this.colInputCase, "colInputCase");
+            this.colInputCase.Name = "colInputCase";
+            this.colInputCase.ReadOnly = true;
+            // 
+            // colInputBracket
+            // 
+            this.colInputBracket.DataPropertyName = "ProInputBracket";
+            resources.ApplyResources(this.colInputBracket, "colInputBracket");
+            this.colInputBracket.Name = "colInputBracket";
+            this.colInputBracket.ReadOnly = true;
+            // 
+            // colAppearance
+            // 
+            this.colAppearance.DataPropertyName = "ProInputApp";
+            resources.ApplyResources(this.colAppearance, "colAppearance");
+            this.colAppearance.Name = "colAppearance";
+            this.colAppearance.ReadOnly = true;
+            // 
+            // colOutput
+            // 
+            this.colOutput.DataPropertyName = "ProOutput";
+            resources.ApplyResources(this.colOutput, "colOutput");
+            this.colOutput.Name = "colOutput";
+            this.colOutput.ReadOnly = true;
+            // 
+            // colTotalNG
+            // 
+            this.colTotalNG.DataPropertyName = "TotalNG";
+            resources.ApplyResources(this.colTotalNG, "colTotalNG");
+            this.colTotalNG.Name = "colTotalNG";
+            this.colTotalNG.ReadOnly = true;
+            // 
+            // colRateNG
+            // 
+            resources.ApplyResources(this.colRateNG, "colRateNG");
+            this.colRateNG.Name = "colRateNG";
+            this.colRateNG.ReadOnly = true;
+            // 
+            // colFinal_App
+            // 
+            this.colFinal_App.DataPropertyName = "Final_App";
+            resources.ApplyResources(this.colFinal_App, "colFinal_App");
+            this.colFinal_App.Name = "colFinal_App";
+            this.colFinal_App.ReadOnly = true;
+            // 
+            // colEn2
+            // 
+            this.colEn2.DataPropertyName = "En2NG";
+            resources.ApplyResources(this.colEn2, "colEn2");
+            this.colEn2.Name = "colEn2";
+            this.colEn2.ReadOnly = true;
+            // 
+            // colEn1
+            // 
+            this.colEn1.DataPropertyName = "En1NG";
+            resources.ApplyResources(this.colEn1, "colEn1");
+            this.colEn1.Name = "colEn1";
+            this.colEn1.ReadOnly = true;
+            // 
+            // colTrustGap
+            // 
+            this.colTrustGap.DataPropertyName = "TrustGap";
+            resources.ApplyResources(this.colTrustGap, "colTrustGap");
+            this.colTrustGap.Name = "colTrustGap";
+            this.colTrustGap.ReadOnly = true;
+            // 
+            // colRotor
+            // 
+            this.colRotor.DataPropertyName = "Rotor";
+            resources.ApplyResources(this.colRotor, "colRotor");
+            this.colRotor.Name = "colRotor";
+            this.colRotor.ReadOnly = true;
+            // 
+            // colBracket
+            // 
+            this.colBracket.DataPropertyName = "Braket";
+            resources.ApplyResources(this.colBracket, "colBracket");
+            this.colBracket.Name = "colBracket";
+            this.colBracket.ReadOnly = true;
+            // 
+            // colBracketMetal
+            // 
+            this.colBracketMetal.DataPropertyName = "Bracket_Metal";
+            resources.ApplyResources(this.colBracketMetal, "colBracketMetal");
+            this.colBracketMetal.Name = "colBracketMetal";
+            this.colBracketMetal.ReadOnly = true;
+            // 
+            // colCaseAssy
+            // 
+            this.colCaseAssy.DataPropertyName = "Case_Assy";
+            resources.ApplyResources(this.colCaseAssy, "colCaseAssy");
+            this.colCaseAssy.Name = "colCaseAssy";
+            this.colCaseAssy.ReadOnly = true;
+            // 
+            // colCaseMG
+            // 
+            this.colCaseMG.DataPropertyName = "Case_MG";
+            resources.ApplyResources(this.colCaseMG, "colCaseMG");
+            this.colCaseMG.Name = "colCaseMG";
+            this.colCaseMG.ReadOnly = true;
+            // 
+            // colMGBonding
+            // 
+            this.colMGBonding.DataPropertyName = "MG_Bongding";
+            resources.ApplyResources(this.colMGBonding, "colMGBonding");
+            this.colMGBonding.Name = "colMGBonding";
+            this.colMGBonding.ReadOnly = true;
+            // 
             // ProductionControllerNCVCForm
             // 
             resources.ApplyResources(this, "$this");
@@ -643,6 +670,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStarday;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEndday;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInputCase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInputBracket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAppearance;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOutput;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRateNG;

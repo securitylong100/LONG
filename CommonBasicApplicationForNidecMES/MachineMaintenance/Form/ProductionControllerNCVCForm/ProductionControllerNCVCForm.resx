@@ -507,14 +507,41 @@
   <data name="colInput.Width" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
+  <metadata name="colInputCase.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colInputCase.HeaderText" xml:space="preserve">
+    <value>Input Case</value>
+  </data>
+  <data name="colInputCase.Width" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <metadata name="colInputBracket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colInputBracket.HeaderText" xml:space="preserve">
+    <value>Input Bracket</value>
+  </data>
+  <data name="colInputBracket.Width" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <metadata name="colAppearance.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colAppearance.HeaderText" xml:space="preserve">
+    <value>Input App</value>
+  </data>
+  <data name="colAppearance.Width" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
   <metadata name="colOutput.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="colOutput.HeaderText" xml:space="preserve">
-    <value>OutPut</value>
+    <value>OutPut Line</value>
   </data>
   <data name="colOutput.Width" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>88</value>
   </data>
   <metadata name="colTotalNG.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1286,6 +1313,24 @@
     <value>colInput</value>
   </data>
   <data name="&gt;&gt;colInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colInputCase.Name" xml:space="preserve">
+    <value>colInputCase</value>
+  </data>
+  <data name="&gt;&gt;colInputCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colInputBracket.Name" xml:space="preserve">
+    <value>colInputBracket</value>
+  </data>
+  <data name="&gt;&gt;colInputBracket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colAppearance.Name" xml:space="preserve">
+    <value>colAppearance</value>
+  </data>
+  <data name="&gt;&gt;colAppearance.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colOutput.Name" xml:space="preserve">

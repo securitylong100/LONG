@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
-            sql.Append(@"select tbl.dates,f.dates+f.times endday,f.model_cd,f.line_cd,ba_input, output,
+            sql.Append(@"select tbl.dates,f.dates+f.times endday,f.model_cd,f.line_cd,ca_input_line, ca_input, ba_input, fc_input, output,
 
             (fc_endplay_small + fc_endplay_big + fc_shaft_scracth + fc_terminal_low +
   fc_case_scracth_dirty + fc_pinion_worm_ng + fc_shaft_lock + fc_ba_deform +
@@ -64,7 +64,10 @@ select t1.dates,case when ca3 is null then ca1 else ca3 end id from
                     ProModel = dataReader["model_cd"].ToString(),
                     ProLine = dataReader["line_cd"].ToString(),
                     TotalNG = int.Parse(dataReader["total_ng"].ToString()),
-                    ProInput = int.Parse(dataReader["ba_input"].ToString()),
+                    ProInput = int.Parse(dataReader["ca_input_line"].ToString()),
+                    ProInputCase = int.Parse(dataReader["ca_input"].ToString()),
+                    ProInputBracket = int.Parse(dataReader["ba_input"].ToString()),
+                    ProInputApp = int.Parse(dataReader["fc_input"].ToString()),
                     ProOutput = int.Parse(dataReader["output"].ToString()),
 
                     Final_App = int.Parse(dataReader["final_app"].ToString()),

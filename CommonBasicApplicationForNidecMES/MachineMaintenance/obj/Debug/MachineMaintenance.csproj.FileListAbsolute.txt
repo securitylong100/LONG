@@ -164,7 +164,6 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\vi-VN\MachineMaintenance.resources.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.pdb
-D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll.config
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.pdb

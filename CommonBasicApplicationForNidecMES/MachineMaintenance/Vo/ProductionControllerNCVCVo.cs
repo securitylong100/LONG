@@ -15,6 +15,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string ProProcess { get; set; }
         public int ProInput { get; set; }
         public int ProOutput { get; set; }
+        public int ProInputCase { get; set; }
+        public int ProInputBracket { get; set; }
+        public int ProInputApp { get; set; }
 
         //
         public DateTime TimeHour { get; set; }
