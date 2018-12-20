@@ -1,9 +1,6 @@
 ﻿using Com.Nidec.Mes.Framework;
-
-
 using Com.Nidec.Mes.GlobalMasterMaintenance.Cbm;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,17 +123,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 ReportDownTimeVo selectedvo = (ReportDownTimeVo)reportdowntime_dgv.CurrentRow.DataBoundItem;
 
-                //model_cmb.Enabled = false;
-
-                //line_cmb.Enabled = false;
-
-                //machine_cmb.Enabled = false;
-
-                //process_cmb.Enabled = false;
-
                 if (new AddUpdateReportDownTimeFrom { reportDownTimeVo = selectedvo }.ShowDialog() == DialogResult.OK)
                 {
-                    //search_btn_Click(null, null);
                     selectdata();
                 }
             }

@@ -51,9 +51,9 @@
             this.timeto_dtp = new System.Windows.Forms.DateTimePicker();
             this.timefrom_dtp = new System.Windows.Forms.DateTimePicker();
             this.machine_txt = new System.Windows.Forms.TextBox();
+            this.User_txt = new System.Windows.Forms.TextBox();
             this.assy_txt = new System.Windows.Forms.TextBox();
             this.User_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.User_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -176,6 +176,8 @@
             // 
             // process_cmb
             // 
+            this.process_cmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.process_cmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.process_cmb.ControlId = null;
             resources.ApplyResources(this.process_cmb, "process_cmb");
             this.process_cmb.FormattingEnabled = true;
@@ -235,6 +237,12 @@
             this.machine_txt.Name = "machine_txt";
             this.machine_txt.TextChanged += new System.EventHandler(this.machine_txt_TextChanged);
             // 
+            // User_txt
+            // 
+            resources.ApplyResources(this.User_txt, "User_txt");
+            this.User_txt.Name = "User_txt";
+            this.User_txt.Click += new System.EventHandler(this.User_txt_Click);
+            // 
             // assy_txt
             // 
             resources.ApplyResources(this.assy_txt, "assy_txt");
@@ -245,12 +253,6 @@
             resources.ApplyResources(this.User_lbl, "User_lbl");
             this.User_lbl.ControlId = null;
             this.User_lbl.Name = "User_lbl";
-            // 
-            // User_txt
-            // 
-            resources.ApplyResources(this.User_txt, "User_txt");
-            this.User_txt.Name = "User_txt";
-            this.User_txt.Click += new System.EventHandler(this.User_txt_Click);
             // 
             // AddUpdateReportDownTimeFrom
             // 

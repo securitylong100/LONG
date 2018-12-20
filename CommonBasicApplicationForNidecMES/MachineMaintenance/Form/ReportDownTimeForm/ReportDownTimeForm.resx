@@ -156,7 +156,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="process_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 119</value>
+    <value>240, 119</value>
   </data>
   <data name="process_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 15</value>
@@ -186,7 +186,7 @@
     <value>71, 116</value>
   </data>
   <data name="model_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="model_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -207,7 +207,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="assy_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 116</value>
+    <value>322, 116</value>
   </data>
   <data name="assy_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
@@ -234,7 +234,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="line_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 148</value>
+    <value>12, 148</value>
   </data>
   <data name="line_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 15</value>
@@ -264,7 +264,7 @@
     <value>71, 145</value>
   </data>
   <data name="line_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="line_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -288,7 +288,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 148</value>
+    <value>240, 148</value>
   </data>
   <data name="machine_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 15</value>
@@ -318,7 +318,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="cause_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>496, 119</value>
+    <value>509, 119</value>
   </data>
   <data name="cause_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 15</value>
@@ -345,7 +345,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 145</value>
+    <value>322, 145</value>
   </data>
   <data name="machine_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
@@ -369,7 +369,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="action_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 149</value>
+    <value>584, 145</value>
   </data>
   <data name="action_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
@@ -393,7 +393,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="cause_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>571, 116</value>
+    <value>584, 116</value>
   </data>
   <data name="cause_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
@@ -420,7 +420,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="action_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>496, 152</value>
+    <value>509, 148</value>
   </data>
   <data name="action_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 15</value>
@@ -450,7 +450,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timeto_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 215</value>
+    <value>12, 214</value>
   </data>
   <data name="timeto_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 15</value>
@@ -507,7 +507,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timefrom_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 186</value>
+    <value>12, 188</value>
   </data>
   <data name="timefrom_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 15</value>
@@ -738,9 +738,6 @@
   <data name="&gt;&gt;export_btn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="update_btn.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="update_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
@@ -799,7 +796,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="setting_gbc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 212</value>
+    <value>389, 214</value>
   </data>
   <data name="setting_gbc.Size" type="System.Drawing.Size, System.Drawing">
     <value>449, 64</value>
