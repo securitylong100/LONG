@@ -147,7 +147,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;timefrom_lbl.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="timeto_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -177,7 +177,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;timeto_lbl.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="action_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -207,7 +207,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;action_lbl.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="line_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -231,7 +231,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;line_cmb.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="cause_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -255,7 +255,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;cause_cmb.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="action_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -279,7 +279,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;action_cmb.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="line_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -309,7 +309,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;line_lbl.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="model_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -333,7 +333,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;model_cmb.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="cause_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -363,7 +363,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;cause_lbl.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="machine_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -393,7 +393,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;machine_lbl.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="assy_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -423,7 +423,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;assy_lbl.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="model_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -453,13 +453,13 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;model_lbl.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="ok_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="ok_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 330</value>
+    <value>305, 361</value>
   </data>
   <data name="ok_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 45</value>
@@ -480,7 +480,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;ok_btn.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="remake_txt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -543,7 +543,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="cancel_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 330</value>
+    <value>462, 361</value>
   </data>
   <data name="cancel_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 45</value>
@@ -564,7 +564,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;cancel_btn.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="process_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -598,7 +598,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;process_lbl.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="process_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -622,7 +622,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;process_cmb.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -705,6 +705,33 @@
   <data name="&gt;&gt;machine_txt.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="User_txt.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="User_txt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="User_txt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 311</value>
+  </data>
+  <data name="User_txt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 21</value>
+  </data>
+  <data name="User_txt.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;User_txt.Name" xml:space="preserve">
+    <value>User_txt</value>
+  </data>
+  <data name="&gt;&gt;User_txt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;User_txt.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;User_txt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="assy_txt.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -730,7 +757,40 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;assy_txt.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="User_lbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="User_lbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="User_lbl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="User_lbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 313</value>
+  </data>
+  <data name="User_lbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 15</value>
+  </data>
+  <data name="User_lbl.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="User_lbl.Text" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="&gt;&gt;User_lbl.Name" xml:space="preserve">
+    <value>User_lbl</value>
+  </data>
+  <data name="&gt;&gt;User_lbl.Type" xml:space="preserve">
+    <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;User_lbl.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;User_lbl.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -757,7 +817,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>857, 397</value>
+    <value>857, 447</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>632</value>
@@ -784,7 +844,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>857, 504</value>
+    <value>857, 554</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>DownTime Record</value>

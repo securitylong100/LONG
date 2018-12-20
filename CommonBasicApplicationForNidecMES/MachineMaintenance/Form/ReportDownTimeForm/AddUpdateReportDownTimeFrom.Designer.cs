@@ -48,10 +48,12 @@
             this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.process_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.timeto_dtp = new System.Windows.Forms.DateTimePicker();
+            this.timefrom_dtp = new System.Windows.Forms.DateTimePicker();
             this.machine_txt = new System.Windows.Forms.TextBox();
             this.assy_txt = new System.Windows.Forms.TextBox();
-            this.timefrom_dtp = new System.Windows.Forms.DateTimePicker();
-            this.timeto_dtp = new System.Windows.Forms.DateTimePicker();
+            this.User_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.User_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -190,11 +192,13 @@
             this.splitContainer1.Panel1.Controls.Add(this.timeto_dtp);
             this.splitContainer1.Panel1.Controls.Add(this.timefrom_dtp);
             this.splitContainer1.Panel1.Controls.Add(this.machine_txt);
+            this.splitContainer1.Panel1.Controls.Add(this.User_txt);
             this.splitContainer1.Panel1.Controls.Add(this.assy_txt);
             this.splitContainer1.Panel1.Controls.Add(this.cancel_btn);
             this.splitContainer1.Panel1.Controls.Add(this.timefrom_lbl);
             this.splitContainer1.Panel1.Controls.Add(this.ok_btn);
             this.splitContainer1.Panel1.Controls.Add(this.timeto_lbl);
+            this.splitContainer1.Panel1.Controls.Add(this.User_lbl);
             this.splitContainer1.Panel1.Controls.Add(this.model_lbl);
             this.splitContainer1.Panel1.Controls.Add(this.assy_lbl);
             this.splitContainer1.Panel1.Controls.Add(this.machine_lbl);
@@ -213,6 +217,18 @@
             this.splitContainer1.Panel2.Controls.Add(this.remake_lbl);
             this.splitContainer1.Panel2.Controls.Add(this.remake_txt);
             // 
+            // timeto_dtp
+            // 
+            resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
+            this.timeto_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timeto_dtp.Name = "timeto_dtp";
+            // 
+            // timefrom_dtp
+            // 
+            resources.ApplyResources(this.timefrom_dtp, "timefrom_dtp");
+            this.timefrom_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timefrom_dtp.Name = "timefrom_dtp";
+            // 
             // machine_txt
             // 
             resources.ApplyResources(this.machine_txt, "machine_txt");
@@ -224,17 +240,17 @@
             resources.ApplyResources(this.assy_txt, "assy_txt");
             this.assy_txt.Name = "assy_txt";
             // 
-            // timefrom_dtp
+            // User_lbl
             // 
-            resources.ApplyResources(this.timefrom_dtp, "timefrom_dtp");
-            this.timefrom_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timefrom_dtp.Name = "timefrom_dtp";
+            resources.ApplyResources(this.User_lbl, "User_lbl");
+            this.User_lbl.ControlId = null;
+            this.User_lbl.Name = "User_lbl";
             // 
-            // timeto_dtp
+            // User_txt
             // 
-            resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
-            this.timeto_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timeto_dtp.Name = "timeto_dtp";
+            resources.ApplyResources(this.User_txt, "User_txt");
+            this.User_txt.Name = "User_txt";
+            this.User_txt.Click += new System.EventHandler(this.User_txt_Click);
             // 
             // AddUpdateReportDownTimeFrom
             // 
@@ -279,5 +295,7 @@
         private System.Windows.Forms.TextBox assy_txt;
         private System.Windows.Forms.DateTimePicker timeto_dtp;
         private System.Windows.Forms.DateTimePicker timefrom_dtp;
+        private System.Windows.Forms.TextBox User_txt;
+        private Framework.LabelCommon User_lbl;
     }
 }

@@ -192,12 +192,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     ProcessWorkId = ((ProcessWorkVo)this.process_cmb.SelectedItem).ProcessWorkId,
                     ProductionWorkContentId = ((ProdutionWorkContentVo)this.action_cmb.SelectedItem).ProdutionWorkContentId,
                     DefectiveReasonId = ((DefectiveReasonVo)this.cause_cmb.SelectedItem).DefectiveReasonId,
-                    RegistrationUserCode = UserData.GetUserData().UserName,
+                    RegistrationUserCode = User_txt.Text, //UserData.GetUserData().UserName,
                     FactoryCode = UserData.GetUserData().FactoryCode
                 };
                 try
                 {
-
                     if (inVo.DowntimeReportId > 0)
                     {
                         outVo = (ReportDownTimeVo)DefaultCbmInvoker.Invoke(new UpdateReportDownTimeCbm(), inVo);
@@ -218,12 +217,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     this.DialogResult = DialogResult.OK;
                 }
             }
-
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void User_txt_Click(object sender, EventArgs e)
+        {
+            User_txt.Text = UserData.GetUserData().UserName;
         }
     }
 }
