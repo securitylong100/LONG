@@ -24,9 +24,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("SELECT a.defective_reason_id, a.defective_reason_name FROM m_defective_reason a LEFT JOIN m_cause b ON b.defective_reason_id = a.defective_reason_id LEFT JOIN m_machine c ON c.machine_id = b.machine_id WHERE machine_cd = :machine_cd ORDER BY defective_reason_id");
+            sql.Append("SELECT a.defective_reason_id, a.defective_reason_name FROM m_defective_reason a LEFT JOIN m_cause b ON b.defective_reason_id = a.defective_reason_id LEFT JOIN m_machine c ON c.machine_id = b.machine_id WHERE machine_name = :machine_name ORDER BY defective_reason_id");
 
-            sqlParameter.AddParameterString("machine_cd", inVo.DefectiveReasonCode);
+            sqlParameter.AddParameterString("machine_name", inVo.DefectiveReasonCode);
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 

@@ -32,10 +32,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             line_cmb.DataSource = linevo.GetList();
             line_cmb.ResetText();
 
-            //ValueObjectList<ProcessVo> processvo = (ValueObjectList<ProcessVo>)DefaultCbmInvoker.Invoke(new GetProcessMoCbm(), new ProcessVo { ProcessId = mvo.ModelId });
-            //assy_cmb.DisplayMember = "ProcessName";
-            //assy_cmb.DataSource = processvo.GetList();
-            //assy_cmb.ResetText();
+            ValueObjectList<ProcessWorkVo> ProcessWorkvolist = (ValueObjectList<ProcessWorkVo>)DefaultCbmInvoker.Invoke(new GetProcessWorkCbm(), new ProcessWorkVo { ProcessWorkId = mvo.ModelId });
+            process_cmb.DisplayMember = "ProcessWorkName";
+            process_cmb.DataSource = ProcessWorkvolist.GetList();
         }
         private void process_cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -60,14 +59,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             //{
             ReportDownTimeVo inVo = new ReportDownTimeVo
             {
-                MachineCode = machine_txt.Text
+                MachineName = machine_txt.Text
             };
 
-            ValueObjectList<DefectiveReasonVo> defectivereasonvo = (ValueObjectList<DefectiveReasonVo>)DefaultCbmInvoker.Invoke(new GetCauseAndDefectiveCbm(), new DefectiveReasonVo { DefectiveReasonCode = inVo.MachineCode });
+            ValueObjectList<DefectiveReasonVo> defectivereasonvo = (ValueObjectList<DefectiveReasonVo>)DefaultCbmInvoker.Invoke(new GetCauseAndDefectiveCbm(), new DefectiveReasonVo { DefectiveReasonCode = inVo.MachineName });
             cause_cmb.DisplayMember = "DefectiveReasonName";
             cause_cmb.DataSource = defectivereasonvo.GetList();
 
-            ValueObjectList<ProdutionWorkContentVo> respmachinevolist = (ValueObjectList<ProdutionWorkContentVo>)DefaultCbmInvoker.Invoke(new GetActicAndContentCbm(), new ProdutionWorkContentVo { ProdutionWorkContentCode = inVo.MachineCode });
+            ValueObjectList<ProdutionWorkContentVo> respmachinevolist = (ValueObjectList<ProdutionWorkContentVo>)DefaultCbmInvoker.Invoke(new GetActicAndContentCbm(), new ProdutionWorkContentVo { ProdutionWorkContentCode = inVo.MachineName });
             action_cmb.DisplayMember = "ProdutionWorkContentName";
             action_cmb.DataSource = respmachinevolist.GetList();
 
@@ -91,10 +90,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             //process_cmb.DataSource = b2;
             //process_cmb.Text = "";
 
-            ValueObjectList<ProcessWorkVo> ProcessWorkvolist = (ValueObjectList<ProcessWorkVo>)DefaultCbmInvoker.Invoke(new GetProcessWorkCbm(), new ProcessWorkVo());
-            process_cmb.DisplayMember = "ProcessWorkName";
-            process_cmb.DataSource = ProcessWorkvolist.GetList();
-
             //MachineVo machinevo = (MachineVo)DefaultCbmInvoker.Invoke(new GetMachineMasterMntCbm(), new MachineVo());
             //machine_cmb.DisplayMember = "MachineName";
             //BindingSource b4 = new BindingSource(machinevo.MachineListVo, null);
@@ -113,12 +108,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 model_cmb.Enabled = false;
                 line_cmb.Enabled = false;
                 timefrom_dtp.Enabled = false;
+                model_cmb.Text = reportDownTimeVo.ModelCode;
+                line_cmb.Text = reportDownTimeVo.LineCode;
                 cause_cmb.Text = reportDownTimeVo.DefectiveReasonName;
                 action_cmb.Text = reportDownTimeVo.ProductionWorkContentName;
+                process_cmb.Text = reportDownTimeVo.ProcessWorkName;
                 remake_txt.Text = reportDownTimeVo.Remakes;
+                User_txt.Text = reportDownTimeVo.RegistrationUserCode;
             }
         }
-
         bool checkdata()
         {
             if (model_cmb.SelectedItem == null)

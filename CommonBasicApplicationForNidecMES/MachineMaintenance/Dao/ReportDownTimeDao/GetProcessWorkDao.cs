@@ -24,8 +24,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("SELECT process_work_id, process_work_name from m_process_work order by process_work_id");
+            sql.Append("SELECT a.process_work_id, a.process_work_name from m_process_work a LEFT JOIN m_model b ON b.model_id = a.model_id WHERE a.model_id = :model_id ORDER BY process_work_id");
 
+            sqlParameter.AddParameterInteger("model_id", inVo.ProcessWorkId);
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //execute SQL
