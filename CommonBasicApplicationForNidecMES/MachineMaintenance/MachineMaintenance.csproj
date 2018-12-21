@@ -169,6 +169,14 @@
     <Compile Include="Cbm\DrawCbm\GetDrawingModelCbm.cs" />
     <Compile Include="Cbm\DrawCbm\SearchDrawingCbm.cs" />
     <Compile Include="Cbm\DrawCbm\UpdateDrawingCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\AddGA1ModelThurstCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\CheckIBarcodeDuplicateCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\GetLineCodeCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\SearchThurstDGVCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\SearchGA1DGVCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelShippingCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelOQCCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelNoiseCbm.cs" />
     <Compile Include="Cbm\JigRepairInformationCbm\AddJigRepairInformationCbm.cs" />
     <Compile Include="Cbm\JigRepairInformationCbm\SearchJigRepairInformationCbm.cs" />
     <Compile Include="Cbm\JigRepairInformationCbm\UpdateJigRepairInformationCbm.cs" />
@@ -400,6 +408,14 @@
     <Compile Include="Dao\DrawDao\GetDrawingModelDao.cs" />
     <Compile Include="Dao\DrawDao\SearchDrawingDao.cs" />
     <Compile Include="Dao\DrawDao\UpdateDrawingDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\AddGA1ModelThurstDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\CheckIBarcodeDuplicateDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\GetLineCodeDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\SearchGA1DGVDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\SearchThurstDGVDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\UpdateGA1ModelShippingDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\UpdateGA1ModelOQCDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\UpdateGA1ModelNoiseDao.cs" />
     <Compile Include="Dao\JigRepairInformationDao\AddJigRepairInformationDao.cs" />
     <Compile Include="Dao\JigRepairInformationDao\SearchJigRepairInformationDao.cs" />
     <Compile Include="Dao\JigRepairInformationDao\UpdateJigRepairInformationDao.cs" />
@@ -677,6 +693,36 @@
     <Compile Include="Form\DrawRegistForm\DrawForm.Designer.cs">
       <DependentUpon>DrawForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShowCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShowCheckForm.Designer.cs">
+      <DependentUpon>ShowCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShippingCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShippingCheckForm.Designer.cs">
+      <DependentUpon>ShippingCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.Designer.cs">
+      <DependentUpon>NoiseCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.Designer.cs">
+      <DependentUpon>OQCCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.Designer.cs">
+      <DependentUpon>ThurstCheckForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\JigRepairInformationForm\AddJigRepairInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -857,6 +903,9 @@
     <Compile Include="Form\WorkingStatus\WorkingStatusForm.Designer.cs">
       <DependentUpon>WorkingStatusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -877,6 +926,7 @@
     <Compile Include="Vo\Account-WhVo\AccountMainVo.cs" />
     <Compile Include="Vo\Account-WhVo\TransferVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
+    <Compile Include="Vo\GA1ModelVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
@@ -974,6 +1024,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\DrawRegistForm\DrawForm.vi.resx">
       <DependentUpon>DrawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ShowCheckForm.resx">
+      <DependentUpon>ShowCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ShippingCheckForm.resx">
+      <DependentUpon>ShippingCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.resx">
+      <DependentUpon>NoiseCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.resx">
+      <DependentUpon>OQCCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.resx">
+      <DependentUpon>ThurstCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\JigRepairInformationForm\AddJigRepairInformationForm.resx">
       <DependentUpon>AddJigRepairInformationForm.cs</DependentUpon>
@@ -1130,10 +1195,13 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Images\approved.jpg" />
+    <None Include="Images\rejected.jpg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1184,12 +1252,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\approved.jpg" />
+    <Content Include="Images\NG.jpg" />
+    <Content Include="Images\NoDaTa.jpg" />
+    <Content Include="Images\ok.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\rejected.jpg" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
