@@ -43,6 +43,7 @@
             this.timeto_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.timefrom_dtp = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.timefrom_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.textBoxCommon1 = new Com.Nidec.Mes.Framework.TextBoxCommon();
             ((System.ComponentModel.ISupportInitialize)(this.production_controller_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,11 +219,22 @@
             this.timefrom_lbl.TabIndex = 99;
             this.timefrom_lbl.Text = "Time From:";
             // 
+            // textBoxCommon1
+            // 
+            this.textBoxCommon1.ControlId = null;
+            this.textBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCommon1.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.textBoxCommon1.Location = new System.Drawing.Point(504, 144);
+            this.textBoxCommon1.Name = "textBoxCommon1";
+            this.textBoxCommon1.Size = new System.Drawing.Size(187, 21);
+            this.textBoxCommon1.TabIndex = 101;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 466);
+            this.Controls.Add(this.textBoxCommon1);
             this.Controls.Add(this.timeto_dtp);
             this.Controls.Add(this.timeto_lbl);
             this.Controls.Add(this.timefrom_dtp);
@@ -251,6 +263,7 @@
             this.Controls.SetChildIndex(this.timefrom_dtp, 0);
             this.Controls.SetChildIndex(this.timeto_lbl, 0);
             this.Controls.SetChildIndex(this.timeto_dtp, 0);
+            this.Controls.SetChildIndex(this.textBoxCommon1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.production_controller_dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,5 +284,6 @@
         private Framework.LabelCommon timeto_lbl;
         private Framework.DateTimePickerCommon timefrom_dtp;
         private Framework.LabelCommon timefrom_lbl;
+        private Framework.TextBoxCommon textBoxCommon1;
     }
 }
