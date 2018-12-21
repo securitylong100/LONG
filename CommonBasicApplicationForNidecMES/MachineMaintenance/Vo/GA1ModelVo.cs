@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Com.Nidec.Mes.Framework;
+using System.Data;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
 {
@@ -39,6 +40,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
 
         public string STT { get; set; }
         public bool DaTa { get; set; }
+
         //common
         public string RegistrationUserCode { get; set; }
         public DateTime RegistrationDateTime { get; set; }
