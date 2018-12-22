@@ -133,6 +133,9 @@
   <data name="cpce00005" xml:space="preserve">
     <value>Split operation had already been done for the scanned lot.</value>
   </data>
+  <data name="mmcc00003" xml:space="preserve">
+    <value>Are you sure to update : [{0}] ?</value>
+  </data>
   <data name="mmcc00004" xml:space="preserve">
     <value>Do you want to delete : [{0}] ?</value>
   </data>
@@ -164,14 +167,17 @@
   <data name="mmcc00007" xml:space="preserve">
     <value>Do you want to reload : [{0}] ?</value>
   </data>
-  <data name="mmce00001" xml:space="preserve">
-    <value>Record is already registered</value>
+  <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ok.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cpci00004" xml:space="preserve">
     <value>Record has been updated successfully.</value>
   </data>
   <data name="mmci00004" xml:space="preserve">
     <value>[{0}].[FormName : {1}].[LoginUser : {2}] Start.</value>
+  </data>
+  <data name="cpce00003" xml:space="preserve">
+    <value>Please read correct lot no for the process.</value>
   </data>
   <data name="String" xml:space="preserve">
     <value>[{0}]</value>
@@ -191,14 +197,17 @@
   <data name="mmce00008" xml:space="preserve">
     <value>Record has been changed by others [{0}]</value>
   </data>
-  <data name="mmci00007" xml:space="preserve">
-    <value>[{0}] successfully.</value>
+  <data name="NG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vnce00001" xml:space="preserve">
     <value>Value Object is null [{0}].</value>
   </data>
-  <data name="cpce00003" xml:space="preserve">
-    <value>Please read correct lot no for the process.</value>
+  <data name="rejected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\rejected.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mmci00007" xml:space="preserve">
+    <value>[{0}] successfully.</value>
   </data>
   <data name="cpce00004" xml:space="preserve">
     <value>Scanned tray count mismatch with registered lot data.</value>
@@ -236,14 +245,14 @@
   <data name="mmci00002" xml:space="preserve">
     <value>Record has been updated successfully.</value>
   </data>
-  <data name="mmcc00003" xml:space="preserve">
-    <value>Are you sure to update : [{0}] ?</value>
+  <data name="mmce00001" xml:space="preserve">
+    <value>Record is already registered</value>
   </data>
   <data name="cpce00008" xml:space="preserve">
     <value>Record is already registered
 [{0}]</value>
   </data>
-  <data name="rejected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\rejected.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NoDaTa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NoDaTa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
