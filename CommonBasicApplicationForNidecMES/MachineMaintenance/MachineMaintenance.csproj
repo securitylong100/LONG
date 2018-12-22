@@ -290,6 +290,11 @@
     <Compile Include="Cbm\ReportDownTimeCbm\GetProcessMoCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetLineMoCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetReportDownTimeCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\ProcessWork\AddProcessWorkCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\ProcessWork\CheckProcessWorkCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\ProcessWork\DeleteProcessWorkCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\ProcessWork\GetProcessWorkCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\ProcessWork\UpdateProcessWorkCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\SearchReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\UpdateReportDownTimeCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\UserLocationMasterCbm\AddUserLocationCbm.cs" />
@@ -518,6 +523,12 @@
     <Compile Include="Dao\ReportDownTimeDao\GetProcessWorkDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetProcessMoDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetLineMoDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\ProcessWork\AddProcessWorkDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\ProcessWork\CheckProcessWorkDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\ProcessWork\DeleteProcessWorkDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\ProcessWork\GetAllProcessWorkDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\ProcessWork\GetProcessWorkDataDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\ProcessWork\UpdateProcessWorkDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\SearchReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\UpdateReportDownTimeDao.cs" />
     <Compile Include="Dao\Account-WhDao\UserLocationMasterDao\AddUserLocationDao.cs" />
@@ -821,6 +832,18 @@
     <Compile Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.Designer.cs">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.Designer.cs">
+      <DependentUpon>AddProcessWForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ReportDownTimeForm\ProcessWork\ProcessWForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ReportDownTimeForm\ProcessWork\ProcessWForm.Designer.cs">
+      <DependentUpon>ProcessWForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\ReportDownTimeForm\ReportDownTimeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -880,6 +903,7 @@
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
+    <Compile Include="Vo\ProcessWorksVo.cs" />
     <Compile Include="Vo\ProductionControllerNCVCVo.cs" />
     <Compile Include="Vo\ProductionControllerVo.cs" />
     <Compile Include="Vo\SeachMachineWorkingStatusVo.cs" />
@@ -1105,6 +1129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.vi.resx">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.resx">
+      <DependentUpon>AddProcessWForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ReportDownTimeForm\ProcessWork\ProcessWForm.resx">
+      <DependentUpon>ProcessWForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\ReportDownTimeForm.resx">
       <DependentUpon>ReportDownTimeForm.cs</DependentUpon>

@@ -20,9 +20,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sql.Append(@" values(:time_from,:time_to,:prodution_work_content_id,:line_id,:model_id,:process_name,:process_work_id,
                 :machine_name,:defective_reason_id,:remarks,:registration_user_cd,now(),:factory_cd)");
 
-
-
-
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 

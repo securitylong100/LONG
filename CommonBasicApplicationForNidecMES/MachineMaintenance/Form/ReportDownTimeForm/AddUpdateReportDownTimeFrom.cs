@@ -9,8 +9,6 @@ using System.Text;
 using System.Windows.Forms;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Cbm;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
-
-
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
@@ -108,6 +106,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 model_cmb.Enabled = false;
                 line_cmb.Enabled = false;
                 timefrom_dtp.Enabled = false;
+                timefrom_dtp.Value = reportDownTimeVo.TimeFrom;
                 model_cmb.Text = reportDownTimeVo.ModelCode;
                 line_cmb.Text = reportDownTimeVo.LineCode;
                 cause_cmb.Text = reportDownTimeVo.DefectiveReasonName;
@@ -140,13 +139,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 line_cmb.Focus();
                 return false;
             }
-            //if (txt.SelectedItem == null)
-            //{
-            //    messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, machine_lbl.Text);
-            //    popUpMessage.Warning(messageData, Text);
-            //    machine_cmb.Focus();
-            //    return false;
-            //}
+            if (User_txt.Text == null)
+            {
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, User_lbl.Text);
+                popUpMessage.Warning(messageData, Text);
+                User_txt.Focus();
+                return false;
+            }
             if (action_cmb.SelectedItem == null)
             {
                 messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, action_lbl.Text);
@@ -159,7 +158,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, cause_lbl.Text);
                 popUpMessage.Warning(messageData, Text);
                 cause_cmb.Focus();
-                return false;
+                return false; 
             }
             if (timefrom_dtp.Value > timeto_dtp.Value)
             {
@@ -204,7 +203,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         outVo = (ReportDownTimeVo)DefaultCbmInvoker.Invoke(new AddReportDownTimeCbm(), inVo);
                     }
                 }
-                catch (Com.Nidec.Mes.Framework.ApplicationException exception)
+                catch (Framework.ApplicationException exception)
                 {
                     popUpMessage.ApplicationError(exception.GetMessageData(), Text);
                     logger.Error(exception.GetMessageData());
