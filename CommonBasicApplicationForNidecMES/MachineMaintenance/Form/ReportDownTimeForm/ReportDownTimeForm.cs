@@ -24,28 +24,39 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void ReportDownTimeForm_Load(object sender, EventArgs e)
         {
+            int usr_cd;
+
+            //Load ComboBox
             ValueObjectList<ModelVo> modelvolist = (ValueObjectList<ModelVo>)DefaultCbmInvoker.Invoke(new GetModelCbm(), new ModelVo());
             model_cmb.DisplayMember = "ModelCode";
             BindingSource b1 = new BindingSource(modelvolist.GetList(), null);
             model_cmb.DataSource = b1;
-            model_cmb.Text = "";
 
             ProcessVo processvo = (ProcessVo)DefaultCbmInvoker.Invoke(new GetProcessMasterMntCbm(), new ProcessVo());
             assy_cmb.DisplayMember = "ProcessName";
             BindingSource b2 = new BindingSource(processvo.ProcessListVo, null);
             assy_cmb.DataSource = b2;
-            assy_cmb.Text = "";
 
             MachineVo machinevo = (MachineVo)DefaultCbmInvoker.Invoke(new GetMachineMasterMntCbm(), new MachineVo());
             machine_cmb.DisplayMember = "MachineName";
             BindingSource b4 = new BindingSource(machinevo.MachineListVo, null);
             machine_cmb.DataSource = b4;
-            machine_cmb.Text = "";
 
-            line_cmb.Text = "";
+            ResetControlValues.ResetControlValue(Search_tbpnl);
 
-            cause_cmb.Text = "";
-            action_cmb.Text = "";
+            //Check Permission
+            ReportDownTimeVo inVo = new ReportDownTimeVo
+            {
+                RegistrationUserCode = UserData.GetUserData().UserCode
+            };
+
+            ReportDownTimeVo usrvo = (ReportDownTimeVo)DefaultCbmInvoker.Invoke(new CheckPermissionCbm(), new ReportDownTimeVo { RegistrationUserCode = inVo.RegistrationUserCode });
+            usr_cd = usrvo.AffectedCount;
+            if (usr_cd == 1)
+            {
+                update_btn.Enabled = true;
+                Delete_btn.Enabled = true;
+            }
         }
 
         private void model_cmb_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,18 +115,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 LineCode = line_cmb.Text,
                 DefectiveReasonName = cause_cmb.Text,
                 ProductionWorkContentName = action_cmb.Text,
-                TimeFrom = DateTime.Parse(timefrom_dtp.Value.ToShortDateString()),
-                TimeTo = DateTime.Parse(timeto_dtp.Value.ToShortDateString())
+                TimeFrom = timefrom_dtp.Value,
+                TimeTo = timeto_dtp.Value
             });
             reportdowntime_dgv.DataSource = getList.GetList();
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (new AddUpdateReportDownTimeFrom().ShowDialog() == DialogResult.OK)
-            {
-                add_btn.PerformClick();
-            }
+            new AddUpdateReportDownTimeFrom().ShowDialog();
+            selectdata();
         }
         private void update_btn_Click(object sender, EventArgs e)
         {
@@ -129,21 +138,60 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
-
+        
         private void clear_btn_Click(object sender, EventArgs e)
         {
             reportdowntime_dgv.DataSource = null;
-            assy_cmb.Text = "";
-            line_cmb.Text = "";
-            machine_cmb.Text = "";
-            cause_cmb.Text = "";
-            action_cmb.Text = "";
+            ResetControlValues.ResetControlValue(Search_tbpnl);
         }
 
         private void export_btn_Click(object sender, EventArgs e)
         {
             Excel_Class export = new Excel_Class();
             export.Export(ref reportdowntime_dgv, "DownTime Data");
+        }
+
+        private void Delete_btn_Click(object sender, EventArgs e)
+        {
+            if (reportdowntime_dgv.SelectedRows.Count > 0)
+            {
+                int selectedrowindex = reportdowntime_dgv.SelectedCells[0].RowIndex;
+
+                ReportDownTimeVo vo = (ReportDownTimeVo)reportdowntime_dgv.Rows[selectedrowindex].DataBoundItem;
+
+                messageData = new MessageData("mmcc00004", Properties.Resources.mmcc00004, "This Report");
+                logger.Info(messageData);
+                DialogResult dialogResult = popUpMessage.ConfirmationOkCancel(messageData, Text);
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    try
+                    {
+                        ReportDownTimeVo outVo = (ReportDownTimeVo)DefaultCbmInvoker.Invoke(new DeleteReportDownTimeCbm(), vo);
+
+                        if (outVo.AffectedCount > 0)
+                        {
+                            messageData = new MessageData("mmci00003", Properties.Resources.mmci00003, null);
+                            logger.Info(messageData);
+                            popUpMessage.Information(messageData, Text);
+
+                            selectdata();
+                        }
+                        else if (outVo.AffectedCount == 0)
+                        {
+                            messageData = new MessageData("mmci00007", Properties.Resources.mmci00007, null);
+                            logger.Info(messageData);
+                            popUpMessage.Information(messageData, Text);
+                            selectdata();
+                        }
+                    }
+                    catch (Framework.ApplicationException exception)
+                    {
+                        popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                        logger.Error(exception.GetMessageData());
+                    }
+                }
+            }
         }
     }
 }

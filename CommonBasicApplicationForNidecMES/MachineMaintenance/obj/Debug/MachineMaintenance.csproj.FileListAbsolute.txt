@@ -164,7 +164,6 @@ D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.pdb
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\vi\MachineMaintenance.resources.dll
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\vi-VN\MachineMaintenance.resources.dll
-D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csproj.ResolveComReference.cache
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.AccountCodeForm.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.Account_WhForm.AccountCodeForm.AddAccountCodeForm.resources

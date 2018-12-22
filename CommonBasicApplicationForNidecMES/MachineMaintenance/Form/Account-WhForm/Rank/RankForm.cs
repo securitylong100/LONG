@@ -106,7 +106,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance
         }
         private void Delete_btn_Click(object sender, EventArgs e)
         {
-
             if (RankDetails_dgv.SelectedRows.Count > 0)
             {
                 int selectedrowindex = RankDetails_dgv.SelectedCells[0].RowIndex;

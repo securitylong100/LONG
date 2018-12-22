@@ -10,7 +10,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
    public  class ReportDownTimeVo : ValueObject
     {
         public int DowntimeReportId { get; set; }
-        public string DowntimeReportCode { get; set; }
         //public int GroupProcessWorkId { get; set; }
         public DateTime TimeFrom { get; set; }
         public DateTime TimeTo { get; set; }

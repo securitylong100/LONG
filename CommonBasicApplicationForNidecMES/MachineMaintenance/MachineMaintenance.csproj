@@ -293,6 +293,8 @@
     <Compile Include="Cbm\ProductionControllerCbm\SearchMainProByHourCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\SearchMainProByDateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\GetModelProCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\CheckPermissionCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DeleteReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetProcessWorkCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\AddReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetActicAndContentCbm.cs" />
@@ -324,6 +326,7 @@
     <Compile Include="Common\CSV Class.cs" />
     <Compile Include="Common\ExcelClass_ProductionControl.cs" />
     <Compile Include="Common\Excel Class.cs" />
+    <Compile Include="Common\ResetControlValues.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\AddAccountLocationDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\CheckAccountLocationDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\DeleteAccountLocationDao.cs" />
@@ -538,7 +541,9 @@
     <Compile Include="Dao\ProductionControllerDao\SearchMainProByHourDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\SearchMainProByDateDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\GetModelProDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\CheckPermissionDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\AddReportDownTimeDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DeleteReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetCauseAndDefectiveDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetDownTimeDataDao.cs" />

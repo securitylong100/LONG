@@ -126,7 +126,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="model_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 119</value>
+    <value>3, 0</value>
   </data>
   <data name="model_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 15</value>
@@ -144,10 +144,10 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;model_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;model_lbl.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>0</value>
   </data>
   <data name="process_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -156,7 +156,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="process_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 119</value>
+    <value>264, 0</value>
   </data>
   <data name="process_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 15</value>
@@ -174,19 +174,19 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;process_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;process_lbl.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>5</value>
   </data>
   <data name="model_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="model_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 116</value>
+    <value>81, 3</value>
   </data>
   <data name="model_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 23</value>
+    <value>166, 23</value>
   </data>
   <data name="model_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -198,19 +198,19 @@
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;model_cmb.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;model_cmb.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="assy_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="assy_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 116</value>
+    <value>342, 3</value>
   </data>
   <data name="assy_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 23</value>
+    <value>162, 23</value>
   </data>
   <data name="assy_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -222,10 +222,10 @@
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;assy_cmb.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;assy_cmb.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="line_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -234,7 +234,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="line_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 148</value>
+    <value>3, 25</value>
   </data>
   <data name="line_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 15</value>
@@ -252,19 +252,19 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;line_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;line_lbl.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="line_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="line_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 145</value>
+    <value>81, 28</value>
   </data>
   <data name="line_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 23</value>
+    <value>166, 23</value>
   </data>
   <data name="line_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -276,10 +276,10 @@
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;line_cmb.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;line_cmb.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="machine_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -288,7 +288,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 148</value>
+    <value>264, 25</value>
   </data>
   <data name="machine_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 15</value>
@@ -306,10 +306,10 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;machine_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;machine_lbl.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>3</value>
   </data>
   <data name="cause_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -318,7 +318,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="cause_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 119</value>
+    <value>546, 0</value>
   </data>
   <data name="cause_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 15</value>
@@ -336,19 +336,19 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cause_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;cause_lbl.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>1</value>
   </data>
   <data name="machine_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 145</value>
+    <value>342, 28</value>
   </data>
   <data name="machine_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 23</value>
+    <value>162, 23</value>
   </data>
   <data name="machine_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -360,16 +360,16 @@
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;machine_cmb.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;machine_cmb.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>7</value>
   </data>
   <data name="action_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="action_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 145</value>
+    <value>616, 28</value>
   </data>
   <data name="action_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
@@ -384,16 +384,16 @@
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;action_cmb.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;action_cmb.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>2</value>
   </data>
   <data name="cause_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="cause_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 116</value>
+    <value>616, 3</value>
   </data>
   <data name="cause_cmb.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
@@ -408,10 +408,10 @@
     <value>Com.Nidec.Mes.Framework.ComboBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cause_cmb.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;cause_cmb.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="action_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -420,7 +420,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="action_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 148</value>
+    <value>546, 25</value>
   </data>
   <data name="action_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 15</value>
@@ -438,10 +438,10 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;action_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;action_lbl.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="timeto_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -450,7 +450,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timeto_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 214</value>
+    <value>3, 75</value>
   </data>
   <data name="timeto_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 15</value>
@@ -468,37 +468,10 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;timeto_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timeto_lbl.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="timeto_dtp.CustomFormat" xml:space="preserve">
-    <value>yyyy/MM/dd</value>
-  </data>
-  <data name="timeto_dtp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="timeto_dtp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 212</value>
-  </data>
-  <data name="timeto_dtp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 21</value>
-  </data>
-  <data name="timeto_dtp.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;timeto_dtp.Name" xml:space="preserve">
-    <value>timeto_dtp</value>
-  </data>
-  <data name="&gt;&gt;timeto_dtp.Type" xml:space="preserve">
-    <value>Com.Nidec.Mes.Framework.DateTimePickerCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;timeto_dtp.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;timeto_dtp.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="timefrom_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -507,7 +480,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="timefrom_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 188</value>
+    <value>3, 50</value>
   </data>
   <data name="timefrom_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 15</value>
@@ -525,10 +498,10 @@
     <value>Com.Nidec.Mes.Framework.LabelCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;timefrom_lbl.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timefrom_lbl.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>9</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="reportdowntime_dgv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -634,10 +607,10 @@
     <value>91</value>
   </data>
   <data name="reportdowntime_dgv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 290</value>
+    <value>3, 57</value>
   </data>
   <data name="reportdowntime_dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 348</value>
+    <value>845, 450</value>
   </data>
   <data name="reportdowntime_dgv.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -649,19 +622,22 @@
     <value>Com.Nidec.Mes.Framework.DataGridViewCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;reportdowntime_dgv.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;reportdowntime_dgv.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
+  </data>
+  <data name="search_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="search_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="search_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 20</value>
+    <value>335, 11</value>
   </data>
   <data name="search_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 33</value>
+    <value>78, 34</value>
   </data>
   <data name="search_btn.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -676,19 +652,22 @@
     <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;search_btn.Parent" xml:space="preserve">
-    <value>setting_gbc</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;search_btn.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
+  </data>
+  <data name="clear_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="clear_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="clear_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 20</value>
+    <value>755, 11</value>
   </data>
   <data name="clear_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 33</value>
+    <value>78, 34</value>
   </data>
   <data name="clear_btn.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -703,10 +682,13 @@
     <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;clear_btn.Parent" xml:space="preserve">
-    <value>setting_gbc</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;clear_btn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
+  </data>
+  <data name="export_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="export_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -715,10 +697,10 @@
     <value>NoControl</value>
   </data>
   <data name="export_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 20</value>
+    <value>671, 11</value>
   </data>
   <data name="export_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 33</value>
+    <value>78, 34</value>
   </data>
   <data name="export_btn.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -733,19 +715,25 @@
     <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;export_btn.Parent" xml:space="preserve">
-    <value>setting_gbc</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;export_btn.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="update_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="update_btn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="update_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="update_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 20</value>
+    <value>503, 11</value>
   </data>
   <data name="update_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 33</value>
+    <value>78, 34</value>
   </data>
   <data name="update_btn.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -760,19 +748,22 @@
     <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;update_btn.Parent" xml:space="preserve">
-    <value>setting_gbc</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;update_btn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
+  </data>
+  <data name="add_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="add_btn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="add_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 20</value>
+    <value>419, 11</value>
   </data>
   <data name="add_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 33</value>
+    <value>78, 34</value>
   </data>
   <data name="add_btn.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -787,60 +778,180 @@
     <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;add_btn.Parent" xml:space="preserve">
-    <value>setting_gbc</value>
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;add_btn.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="setting_gbc.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="setting_gbc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 214</value>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 107</value>
   </data>
-  <data name="setting_gbc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 64</value>
+  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
   </data>
-  <data name="setting_gbc.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="Search_tbpnl.ColumnCount" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;setting_gbc.Name" xml:space="preserve">
-    <value>setting_gbc</value>
+  <data name="timeto_dtp.CustomFormat" xml:space="preserve">
+    <value>yyyy/MM/dd HH:mm:ss</value>
   </data>
-  <data name="&gt;&gt;setting_gbc.Type" xml:space="preserve">
-    <value>Com.Nidec.Mes.Framework.GroupBoxCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="timeto_dtp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 78</value>
   </data>
-  <data name="&gt;&gt;setting_gbc.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="timeto_dtp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 20</value>
   </data>
-  <data name="&gt;&gt;setting_gbc.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="timeto_dtp.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;timeto_dtp.Name" xml:space="preserve">
+    <value>timeto_dtp</value>
+  </data>
+  <data name="&gt;&gt;timeto_dtp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeto_dtp.Parent" xml:space="preserve">
+    <value>Search_tbpnl</value>
+  </data>
+  <data name="&gt;&gt;timeto_dtp.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="timefrom_dtp.CustomFormat" xml:space="preserve">
-    <value>yyyy/MM/dd</value>
-  </data>
-  <data name="timefrom_dtp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
+    <value>yyyy/MM/dd HH:mm:ss</value>
   </data>
   <data name="timefrom_dtp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 186</value>
+    <value>81, 53</value>
   </data>
   <data name="timefrom_dtp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 21</value>
+    <value>166, 20</value>
   </data>
   <data name="timefrom_dtp.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>34</value>
   </data>
   <data name="&gt;&gt;timefrom_dtp.Name" xml:space="preserve">
     <value>timefrom_dtp</value>
   </data>
   <data name="&gt;&gt;timefrom_dtp.Type" xml:space="preserve">
-    <value>Com.Nidec.Mes.Framework.DateTimePickerCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;timefrom_dtp.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timefrom_dtp.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="Search_tbpnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Search_tbpnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Search_tbpnl.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Search_tbpnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>851, 108</value>
+  </data>
+  <data name="Search_tbpnl.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;Search_tbpnl.Name" xml:space="preserve">
+    <value>Search_tbpnl</value>
+  </data>
+  <data name="&gt;&gt;Search_tbpnl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Search_tbpnl.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;Search_tbpnl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Search_tbpnl.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="model_lbl" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cause_lbl" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="action_cmb" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="machine_lbl" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cause_cmb" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="process_lbl" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="action_lbl" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="machine_cmb" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="line_lbl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="timefrom_lbl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="model_cmb" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="line_cmb" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="assy_cmb" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="timeto_lbl" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="timeto_dtp" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="timefrom_dtp" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,29.88506,Percent,70.11494,Absolute,78,Absolute,204,Absolute,70,Absolute,237" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Delete_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="Delete_btn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Delete_btn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="Delete_btn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Delete_btn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>587, 11</value>
+  </data>
+  <data name="Delete_btn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 34</value>
+  </data>
+  <data name="Delete_btn.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Delete_btn.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;Delete_btn.Name" xml:space="preserve">
+    <value>Delete_btn</value>
+  </data>
+  <data name="&gt;&gt;Delete_btn.Type" xml:space="preserve">
+    <value>Com.Nidec.Mes.Framework.ButtonCommon, Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Delete_btn.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;Delete_btn.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>851, 622</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>108</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -850,7 +961,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>843, 640</value>
+    <value>851, 729</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -862,8 +973,11 @@
         AADjxwAA//8AAP//AAD//wAA
 </value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>WindowsDefaultLocation</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Down Time Report</value>
+    <value>DownTime Report</value>
   </data>
   <data name="&gt;&gt;col_downtime_report_id.Name" xml:space="preserve">
     <value>col_downtime_report_id</value>

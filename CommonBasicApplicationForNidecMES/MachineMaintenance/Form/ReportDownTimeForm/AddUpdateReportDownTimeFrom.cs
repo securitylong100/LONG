@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Cbm;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
@@ -202,16 +203,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     {
                         outVo = (ReportDownTimeVo)DefaultCbmInvoker.Invoke(new AddReportDownTimeCbm(), inVo);
                     }
+
+                    ResetControlValues.ResetControlValue(tableLayoutPanel1);
                 }
                 catch (Framework.ApplicationException exception)
                 {
                     popUpMessage.ApplicationError(exception.GetMessageData(), Text);
                     logger.Error(exception.GetMessageData());
                     return;
-                }
-                if (outVo.AffectedCount > 0)
-                {
-                    this.DialogResult = DialogResult.OK;
                 }
             }
         }

@@ -47,13 +47,17 @@
             this.cancel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.process_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.timeto_dtp = new System.Windows.Forms.DateTimePicker();
             this.timefrom_dtp = new System.Windows.Forms.DateTimePicker();
             this.machine_txt = new System.Windows.Forms.TextBox();
             this.User_txt = new System.Windows.Forms.TextBox();
             this.assy_txt = new System.Windows.Forms.TextBox();
             this.User_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -184,41 +188,6 @@
             this.process_cmb.Name = "process_cmb";
             this.process_cmb.SelectedIndexChanged += new System.EventHandler(this.process_cmb_SelectedIndexChanged);
             // 
-            // splitContainer1
-            // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.timeto_dtp);
-            this.splitContainer1.Panel1.Controls.Add(this.timefrom_dtp);
-            this.splitContainer1.Panel1.Controls.Add(this.machine_txt);
-            this.splitContainer1.Panel1.Controls.Add(this.User_txt);
-            this.splitContainer1.Panel1.Controls.Add(this.assy_txt);
-            this.splitContainer1.Panel1.Controls.Add(this.cancel_btn);
-            this.splitContainer1.Panel1.Controls.Add(this.timefrom_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.ok_btn);
-            this.splitContainer1.Panel1.Controls.Add(this.timeto_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.User_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.model_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.assy_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.machine_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.process_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.cause_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.model_cmb);
-            this.splitContainer1.Panel1.Controls.Add(this.line_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.action_cmb);
-            this.splitContainer1.Panel1.Controls.Add(this.action_lbl);
-            this.splitContainer1.Panel1.Controls.Add(this.line_cmb);
-            this.splitContainer1.Panel1.Controls.Add(this.process_cmb);
-            this.splitContainer1.Panel1.Controls.Add(this.cause_cmb);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.remake_lbl);
-            this.splitContainer1.Panel2.Controls.Add(this.remake_txt);
-            // 
             // timeto_dtp
             // 
             resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
@@ -254,6 +223,53 @@
             this.User_lbl.ControlId = null;
             this.User_lbl.Name = "User_lbl";
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.model_lbl, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.timeto_dtp, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.remake_txt, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.line_lbl, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.process_lbl, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.remake_lbl, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.User_txt, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.assy_lbl, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.timefrom_dtp, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.machine_lbl, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.User_lbl, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.machine_txt, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.action_cmb, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.cause_cmb, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.timeto_lbl, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.model_cmb, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.timefrom_lbl, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.assy_txt, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cause_lbl, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.process_cmb, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.action_lbl, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.line_cmb, 1, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.ok_btn, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cancel_btn, 2, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
+            // 
             // AddUpdateReportDownTimeFrom
             // 
             resources.ApplyResources(this, "$this");
@@ -262,10 +278,11 @@
             this.TitleText = "FormCommon";
             this.Load += new System.EventHandler(this.AddUpdateReportDownTimeFrom_Load);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -292,12 +309,14 @@
         private Framework.ButtonCommon cancel_btn;
         private Framework.LabelCommon process_lbl;
         private Framework.ComboBoxCommon process_cmb;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox machine_txt;
         private System.Windows.Forms.TextBox assy_txt;
         private System.Windows.Forms.DateTimePicker timeto_dtp;
         private System.Windows.Forms.DateTimePicker timefrom_dtp;
         private System.Windows.Forms.TextBox User_txt;
         private Framework.LabelCommon User_lbl;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
