@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportDownTimeForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.process_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
@@ -65,9 +65,9 @@
             this.add_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.Search_tbpnl = new System.Windows.Forms.TableLayoutPanel();
-            this.Delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.timeto_dtp = new System.Windows.Forms.DateTimePicker();
             this.timefrom_dtp = new System.Windows.Forms.DateTimePicker();
+            this.Delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             ((System.ComponentModel.ISupportInitialize)(this.reportdowntime_dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -175,14 +175,14 @@
             resources.ApplyResources(this.reportdowntime_dgv, "reportdowntime_dgv");
             this.reportdowntime_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.reportdowntime_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reportdowntime_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reportdowntime_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.reportdowntime_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_downtime_report_id,
             this.col_model_cd,
@@ -196,23 +196,23 @@
             this.col_action,
             this.col_username});
             this.reportdowntime_dgv.ControlId = null;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reportdowntime_dgv.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reportdowntime_dgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.reportdowntime_dgv.Name = "reportdowntime_dgv";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reportdowntime_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reportdowntime_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.reportdowntime_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // col_downtime_report_id
@@ -385,15 +385,6 @@
             this.Search_tbpnl.Controls.Add(this.timefrom_dtp, 1, 2);
             this.Search_tbpnl.Name = "Search_tbpnl";
             // 
-            // Delete_btn
-            // 
-            resources.ApplyResources(this.Delete_btn, "Delete_btn");
-            this.Delete_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.Delete_btn.ControlId = null;
-            this.Delete_btn.Name = "Delete_btn";
-            this.Delete_btn.UseVisualStyleBackColor = false;
-            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
-            // 
             // timeto_dtp
             // 
             resources.ApplyResources(this.timeto_dtp, "timeto_dtp");
@@ -405,6 +396,15 @@
             resources.ApplyResources(this.timefrom_dtp, "timefrom_dtp");
             this.timefrom_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.timefrom_dtp.Name = "timefrom_dtp";
+            // 
+            // Delete_btn
+            // 
+            resources.ApplyResources(this.Delete_btn, "Delete_btn");
+            this.Delete_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.Delete_btn.ControlId = null;
+            this.Delete_btn.Name = "Delete_btn";
+            this.Delete_btn.UseVisualStyleBackColor = false;
+            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
             // 
             // ReportDownTimeForm
             // 
@@ -448,6 +448,12 @@
         private Framework.ButtonCommon clear_btn;
         private Framework.ButtonCommon add_btn;
         private Framework.ButtonCommon update_btn;
+        private Framework.ButtonCommon export_btn;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TableLayoutPanel Search_tbpnl;
+        private Framework.ButtonCommon Delete_btn;
+        private System.Windows.Forms.DateTimePicker timeto_dtp;
+        private System.Windows.Forms.DateTimePicker timefrom_dtp;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_downtime_report_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_model_cd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_line_cd;
@@ -459,11 +465,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cause;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_action;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_username;
-        private Framework.ButtonCommon export_btn;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TableLayoutPanel Search_tbpnl;
-        private Framework.ButtonCommon Delete_btn;
-        private System.Windows.Forms.DateTimePicker timeto_dtp;
-        private System.Windows.Forms.DateTimePicker timefrom_dtp;
     }
 }

@@ -104,12 +104,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             if (reportDownTimeVo.DowntimeReportId > 0)
             {
-                model_cmb.Enabled = false;
-                line_cmb.Enabled = false;
-                timefrom_dtp.Enabled = false;
+                //model_cmb.Enabled = false;
+                //line_cmb.Enabled = false;
+                //timefrom_dtp.Enabled = false;
                 timefrom_dtp.Value = reportDownTimeVo.TimeFrom;
+                timeto_dtp.Value = reportDownTimeVo.TimeTo;
                 model_cmb.Text = reportDownTimeVo.ModelCode;
                 line_cmb.Text = reportDownTimeVo.LineCode;
+                assy_txt.Text = reportDownTimeVo.ProcessName;
+                machine_txt.Text = reportDownTimeVo.MachineName;
                 cause_cmb.Text = reportDownTimeVo.DefectiveReasonName;
                 action_cmb.Text = reportDownTimeVo.ProductionWorkContentName;
                 process_cmb.Text = reportDownTimeVo.ProcessWorkName;

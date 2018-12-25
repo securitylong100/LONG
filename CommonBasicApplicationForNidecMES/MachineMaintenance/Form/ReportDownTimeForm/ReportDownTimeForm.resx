@@ -511,10 +511,10 @@
     <value>True</value>
   </metadata>
   <data name="col_downtime_report_id.HeaderText" xml:space="preserve">
-    <value>ReportId</value>
+    <value>ID</value>
   </data>
-  <data name="col_downtime_report_id.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="col_downtime_report_id.Width" type="System.Int32, mscorlib">
+    <value>44</value>
   </data>
   <metadata name="col_model_cd.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -610,7 +610,7 @@
     <value>3, 57</value>
   </data>
   <data name="reportdowntime_dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 450</value>
+    <value>845, 459</value>
   </data>
   <data name="reportdowntime_dgv.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -853,7 +853,7 @@
     <value>4</value>
   </data>
   <data name="Search_tbpnl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>851, 108</value>
+    <value>851, 99</value>
   </data>
   <data name="Search_tbpnl.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -937,7 +937,7 @@
     <value>851, 622</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>108</value>
+    <value>99</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
