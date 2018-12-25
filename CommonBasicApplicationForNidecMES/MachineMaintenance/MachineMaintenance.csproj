@@ -298,13 +298,6 @@
     <Compile Include="Cbm\ProductionControllerCbm\SearchMainProByDateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\GetModelProCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\CheckPermissionCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\AddDefectiveReasonMasterMntCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\CheckDefectiveReasonMasterMntCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\CheckDefectiveReasonRelationCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\CheckDisplayRecordMasterMntCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\DeleteDefectiveReasonMasterMntCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\GetDefectiveReasonMasterMntCbm.cs" />
-    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\UpdateDefectiveReasonMasterMntCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\DeleteReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetProcessWorkCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\AddReportDownTimeCbm.cs" />
@@ -558,13 +551,6 @@
     <Compile Include="Dao\ProductionControllerDao\GetModelProDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\CheckPermissionDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\AddReportDownTimeDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\AddDefectiveReasonMasterMntDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\CheckDefectiveReasonMasterMntDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\CheckDefectiveReasonRelationDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\CheckDisplayRecordMasterMntDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\DeleteDefectiveReasonMasterMntDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\GetDefectiveReasonMasterMntDao.cs" />
-    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\UpdateDefectiveReasonMasterMntDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\DeleteReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetCauseAndDefectiveDao.cs" />
@@ -779,12 +765,6 @@
     <Compile Include="Form\JigRepairInformationForm\JigRepairInformationForm.Designer.cs">
       <DependentUpon>JigRepairInformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Account-WhForm\Rank\AddRankForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -921,18 +901,6 @@
     <Compile Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.Designer.cs">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\AddDefectiveReasonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\AddDefectiveReasonForm.Designer.cs">
-      <DependentUpon>AddDefectiveReasonForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\DefectiveReasonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\DefectiveReasonForm.Designer.cs">
-      <DependentUpon>DefectiveReasonForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1004,7 +972,6 @@
     <Compile Include="Vo\Account-WhVo\AccountMainVo.cs" />
     <Compile Include="Vo\Account-WhVo\TransferVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
-    <Compile Include="Vo\DefectiveReasonVo.cs" />
     <Compile Include="Vo\GA1ModelVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
@@ -1134,17 +1101,6 @@
     <EmbeddedResource Include="Form\JigRepairInformationForm\JigRepairInformationForm.vi.resx">
       <DependentUpon>JigRepairInformationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\MainForm.vi-VN.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\MainForm.vi.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\Account-WhForm\Rank\AddRankForm.resx">
       <DependentUpon>AddRankForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1258,12 +1214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.vi.resx">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\DefectiveReason\AddDefectiveReasonForm.resx">
-      <DependentUpon>AddDefectiveReasonForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\ReportDownTimeForm\DefectiveReason\DefectiveReasonForm.resx">
-      <DependentUpon>DefectiveReasonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.resx">
       <DependentUpon>AddProcessWForm.cs</DependentUpon>
