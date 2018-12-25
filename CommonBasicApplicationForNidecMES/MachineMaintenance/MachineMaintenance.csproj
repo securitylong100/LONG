@@ -214,6 +214,10 @@
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\GetProcessRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\SearchRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\UpdateRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionItemCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionLineCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionProcessCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionINPUTCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetLineTestCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetModelTestCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetTestCbm.cs" />
@@ -294,6 +298,13 @@
     <Compile Include="Cbm\ProductionControllerCbm\SearchMainProByDateCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\GetModelProCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\CheckPermissionCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\AddDefectiveReasonMasterMntCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\CheckDefectiveReasonMasterMntCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\CheckDefectiveReasonRelationCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\CheckDisplayRecordMasterMntCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\DeleteDefectiveReasonMasterMntCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\GetDefectiveReasonMasterMntCbm.cs" />
+    <Compile Include="Cbm\ReportDownTimeCbm\DefectiveReason\UpdateDefectiveReasonMasterMntCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\DeleteReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetProcessWorkCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\AddReportDownTimeCbm.cs" />
@@ -464,6 +475,10 @@
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\GetProcessRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\SearchRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\UpdateRangeLS12Dao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionItemDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionLineDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionProcessDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionINPUTDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetLineTestDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetModelTestDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetTestDao.cs" />
@@ -543,6 +558,13 @@
     <Compile Include="Dao\ProductionControllerDao\GetModelProDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\CheckPermissionDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\AddReportDownTimeDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\AddDefectiveReasonMasterMntDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\CheckDefectiveReasonMasterMntDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\CheckDefectiveReasonRelationDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\CheckDisplayRecordMasterMntDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\DeleteDefectiveReasonMasterMntDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\GetDefectiveReasonMasterMntDao.cs" />
+    <Compile Include="Dao\ReportDownTimeDao\DefectiveReason\UpdateDefectiveReasonMasterMntDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\DeleteReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetCauseAndDefectiveDao.cs" />
@@ -811,6 +833,12 @@
     <Compile Include="Form\OvenBarcodeMachine\Range\RangeForm.Designer.cs">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.Designer.cs">
+      <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\PQMConnectForm\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -895,6 +923,18 @@
     <Compile Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.Designer.cs">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\AddDefectiveReasonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\AddDefectiveReasonForm.Designer.cs">
+      <DependentUpon>AddDefectiveReasonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\DefectiveReasonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ReportDownTimeForm\DefectiveReason\DefectiveReasonForm.Designer.cs">
+      <DependentUpon>DefectiveReasonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -966,10 +1006,12 @@
     <Compile Include="Vo\Account-WhVo\AccountMainVo.cs" />
     <Compile Include="Vo\Account-WhVo\TransferVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
+    <Compile Include="Vo\DefectiveReasonVo.cs" />
     <Compile Include="Vo\GA1ModelVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
+    <Compile Include="Vo\PQMConnectVo\ProductionControllerGA1Vo.cs" />
     <Compile Include="Vo\PQMConnectVo\TestVo.cs" />
     <Compile Include="Vo\ProcessWorksVo.cs" />
     <Compile Include="Vo\ProductionControllerNCVCVo.cs" />
@@ -1135,6 +1177,9 @@
     <EmbeddedResource Include="Form\OvenBarcodeMachine\Range\RangeForm.resx">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\PQMConnectForm\ProducionControllerGA1Form.resx">
+      <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\PQMConnectForm\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1215,6 +1260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\AddUpdateReportDownTimeFrom.vi.resx">
       <DependentUpon>AddUpdateReportDownTimeFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ReportDownTimeForm\DefectiveReason\AddDefectiveReasonForm.resx">
+      <DependentUpon>AddDefectiveReasonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ReportDownTimeForm\DefectiveReason\DefectiveReasonForm.resx">
+      <DependentUpon>DefectiveReasonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportDownTimeForm\ProcessWork\AddProcessWForm.resx">
       <DependentUpon>AddProcessWForm.cs</DependentUpon>
