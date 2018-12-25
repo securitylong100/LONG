@@ -214,6 +214,10 @@
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\GetProcessRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\SearchRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\UpdateRangeLS12Cbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionItemCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionLineCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionProcessCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionINPUTCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetLineTestCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetModelTestCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetTestCbm.cs" />
@@ -464,6 +468,10 @@
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\GetProcessRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\SearchRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\UpdateRangeLS12Dao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionItemDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionLineDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionProcessDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionINPUTDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetLineTestDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetModelTestDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetTestDao.cs" />
@@ -811,6 +819,12 @@
     <Compile Include="Form\OvenBarcodeMachine\Range\RangeForm.Designer.cs">
       <DependentUpon>RangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.Designer.cs">
+      <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\PQMConnectForm\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -970,6 +984,7 @@
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
+    <Compile Include="Vo\PQMConnectVo\ProductionControllerGA1Vo.cs" />
     <Compile Include="Vo\PQMConnectVo\TestVo.cs" />
     <Compile Include="Vo\ProcessWorksVo.cs" />
     <Compile Include="Vo\ProductionControllerNCVCVo.cs" />
@@ -1134,6 +1149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\OvenBarcodeMachine\Range\RangeForm.resx">
       <DependentUpon>RangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PQMConnectForm\ProducionControllerGA1Form.resx">
+      <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PQMConnectForm\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
