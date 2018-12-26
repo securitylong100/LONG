@@ -121,10 +121,6 @@
   <data name="model_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="model_lbl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="model_lbl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -133,7 +129,7 @@
     <value>3, 0</value>
   </data>
   <data name="model_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 25</value>
+    <value>43, 15</value>
   </data>
   <data name="model_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -156,6 +152,7 @@
   <data name="process_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="process_lbl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -163,10 +160,10 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="process_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 0</value>
+    <value>275, 0</value>
   </data>
   <data name="process_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 25</value>
+    <value>81, 25</value>
   </data>
   <data name="process_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -184,19 +181,16 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;process_lbl.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="model_cmb.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>12</value>
   </data>
   <data name="model_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="model_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 3</value>
+    <value>76, 3</value>
   </data>
   <data name="model_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 23</value>
+    <value>193, 23</value>
   </data>
   <data name="model_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -211,7 +205,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;model_cmb.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="assy_cmb.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -223,7 +217,7 @@
     <value>362, 3</value>
   </data>
   <data name="assy_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
+    <value>196, 23</value>
   </data>
   <data name="assy_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -238,13 +232,10 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;assy_cmb.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="line_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="line_lbl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="line_lbl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -253,7 +244,7 @@
     <value>3, 25</value>
   </data>
   <data name="line_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 25</value>
+    <value>34, 15</value>
   </data>
   <data name="line_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -271,19 +262,16 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;line_lbl.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="line_cmb.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>5</value>
   </data>
   <data name="line_cmb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="line_cmb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 28</value>
+    <value>76, 28</value>
   </data>
   <data name="line_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 23</value>
+    <value>193, 23</value>
   </data>
   <data name="line_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -298,7 +286,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;line_cmb.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="machine_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -310,10 +298,10 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="machine_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 25</value>
+    <value>275, 25</value>
   </data>
   <data name="machine_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 25</value>
+    <value>81, 25</value>
   </data>
   <data name="machine_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -331,7 +319,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;machine_lbl.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>13</value>
   </data>
   <data name="cause_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -343,10 +331,10 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="cause_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 0</value>
+    <value>564, 0</value>
   </data>
   <data name="cause_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 25</value>
+    <value>73, 25</value>
   </data>
   <data name="cause_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -376,7 +364,7 @@
     <value>362, 28</value>
   </data>
   <data name="machine_cmb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
+    <value>196, 23</value>
   </data>
   <data name="machine_cmb.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -391,7 +379,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;machine_cmb.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>15</value>
   </data>
   <data name="action_cmb.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -445,7 +433,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;cause_cmb.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="action_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -457,10 +445,10 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="action_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 25</value>
+    <value>564, 25</value>
   </data>
   <data name="action_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 25</value>
+    <value>73, 25</value>
   </data>
   <data name="action_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -478,13 +466,10 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;action_lbl.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="timeto_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="timeto_lbl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="timeto_lbl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -493,7 +478,7 @@
     <value>3, 75</value>
   </data>
   <data name="timeto_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 25</value>
+    <value>54, 15</value>
   </data>
   <data name="timeto_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -511,13 +496,10 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timeto_lbl.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>9</value>
   </data>
   <data name="timefrom_lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="timefrom_lbl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="timefrom_lbl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
@@ -526,7 +508,7 @@
     <value>3, 50</value>
   </data>
   <data name="timefrom_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 25</value>
+    <value>39, 25</value>
   </data>
   <data name="timefrom_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -544,7 +526,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timefrom_lbl.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="reportdowntime_dgv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -840,14 +822,11 @@
   <data name="timeto_dtp.CustomFormat" xml:space="preserve">
     <value>yyyy/MM/dd HH:mm:ss</value>
   </data>
-  <data name="timeto_dtp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="timeto_dtp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 78</value>
+    <value>76, 78</value>
   </data>
   <data name="timeto_dtp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="timeto_dtp.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -862,19 +841,16 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timeto_dtp.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>10</value>
   </data>
   <data name="timefrom_dtp.CustomFormat" xml:space="preserve">
     <value>yyyy/MM/dd HH:mm:ss</value>
   </data>
-  <data name="timefrom_dtp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="timefrom_dtp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 53</value>
+    <value>76, 53</value>
   </data>
   <data name="timefrom_dtp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="timefrom_dtp.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -889,7 +865,7 @@
     <value>Search_tbpnl</value>
   </data>
   <data name="&gt;&gt;timefrom_dtp.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>11</value>
   </data>
   <data name="Search_tbpnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -919,7 +895,7 @@
     <value>0</value>
   </data>
   <data name="Search_tbpnl.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="model_lbl" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cause_lbl" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="action_cmb" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="machine_lbl" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cause_cmb" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="process_lbl" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="action_lbl" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="machine_cmb" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="line_lbl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="timefrom_lbl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="model_cmb" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="line_cmb" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="assy_cmb" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="timeto_lbl" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="timeto_dtp" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="timefrom_dtp" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,30.47945,Percent,69.52055,Absolute,67,Absolute,206,Absolute,75,Absolute,210" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="model_lbl" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cause_lbl" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="action_cmb" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="cause_cmb" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="action_lbl" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="line_lbl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="timefrom_lbl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="model_cmb" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="line_cmb" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="timeto_lbl" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="timeto_dtp" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="timefrom_dtp" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="process_lbl" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="machine_lbl" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="assy_cmb" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="machine_cmb" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,27.05479,Percent,72.94521,Absolute,87,Absolute,202,Absolute,79,Absolute,210" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>

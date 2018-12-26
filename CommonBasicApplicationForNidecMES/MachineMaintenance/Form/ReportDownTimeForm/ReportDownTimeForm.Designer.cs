@@ -370,19 +370,19 @@
             this.Search_tbpnl.Controls.Add(this.model_lbl, 0, 0);
             this.Search_tbpnl.Controls.Add(this.cause_lbl, 4, 0);
             this.Search_tbpnl.Controls.Add(this.action_cmb, 5, 1);
-            this.Search_tbpnl.Controls.Add(this.machine_lbl, 2, 1);
             this.Search_tbpnl.Controls.Add(this.cause_cmb, 5, 0);
-            this.Search_tbpnl.Controls.Add(this.process_lbl, 2, 0);
             this.Search_tbpnl.Controls.Add(this.action_lbl, 4, 1);
-            this.Search_tbpnl.Controls.Add(this.machine_cmb, 3, 1);
             this.Search_tbpnl.Controls.Add(this.line_lbl, 0, 1);
             this.Search_tbpnl.Controls.Add(this.timefrom_lbl, 0, 2);
             this.Search_tbpnl.Controls.Add(this.model_cmb, 1, 0);
             this.Search_tbpnl.Controls.Add(this.line_cmb, 1, 1);
-            this.Search_tbpnl.Controls.Add(this.assy_cmb, 3, 0);
             this.Search_tbpnl.Controls.Add(this.timeto_lbl, 0, 3);
             this.Search_tbpnl.Controls.Add(this.timeto_dtp, 1, 3);
             this.Search_tbpnl.Controls.Add(this.timefrom_dtp, 1, 2);
+            this.Search_tbpnl.Controls.Add(this.process_lbl, 2, 0);
+            this.Search_tbpnl.Controls.Add(this.machine_lbl, 2, 1);
+            this.Search_tbpnl.Controls.Add(this.assy_cmb, 3, 0);
+            this.Search_tbpnl.Controls.Add(this.machine_cmb, 3, 1);
             this.Search_tbpnl.Name = "Search_tbpnl";
             // 
             // timeto_dtp
