@@ -978,6 +978,7 @@
     <Compile Include="Vo\OvenBarcodeVo\OvenBarcodeVo.cs" />
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
+    <Compile Include="Vo\PQMConnectVo\ProductionControllerGA1Vo.cs" />
     <Compile Include="Vo\PQMConnectVo\TestVo.cs" />
     <Compile Include="Vo\ProcessWorksVo.cs" />
     <Compile Include="Vo\ProductionControllerNCVCVo.cs" />

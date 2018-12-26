@@ -85,12 +85,15 @@
             // line_cmb
             // 
             this.line_cmb.ControlId = null;
+            this.line_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.line_cmb, "line_cmb");
             this.line_cmb.FormattingEnabled = true;
             this.line_cmb.Name = "line_cmb";
             // 
             // cause_cmb
             // 
+            this.cause_cmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cause_cmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cause_cmb.ControlId = null;
             resources.ApplyResources(this.cause_cmb, "cause_cmb");
             this.cause_cmb.FormattingEnabled = true;
@@ -98,6 +101,8 @@
             // 
             // action_cmb
             // 
+            this.action_cmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.action_cmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.action_cmb.ControlId = null;
             resources.ApplyResources(this.action_cmb, "action_cmb");
             this.action_cmb.FormattingEnabled = true;
@@ -112,6 +117,7 @@
             // model_cmb
             // 
             this.model_cmb.ControlId = null;
+            this.model_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.model_cmb, "model_cmb");
             this.model_cmb.FormattingEnabled = true;
             this.model_cmb.Name = "model_cmb";

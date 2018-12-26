@@ -435,3 +435,10 @@ D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddUpdateReportDownTimeFrom.vi.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ReportDownTimeForm.vi.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csproj.GenerateResource.Cache
+D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll.config
+D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll
+D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.pdb
+D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\vi\MachineMaintenance.resources.dll
+D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\vi\MachineMaintenance.resources.dll
+D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.dll
+D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.pdb

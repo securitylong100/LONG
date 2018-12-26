@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Clear_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Exit_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -60,7 +60,7 @@
             this.Clear_btn.ControlId = null;
             this.Clear_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Clear_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Clear_btn.Location = new System.Drawing.Point(817, 137);
+            this.Clear_btn.Location = new System.Drawing.Point(794, 137);
             this.Clear_btn.Name = "Clear_btn";
             this.Clear_btn.Size = new System.Drawing.Size(80, 33);
             this.Clear_btn.TabIndex = 18;
@@ -75,7 +75,7 @@
             this.Exit_btn.ControlId = null;
             this.Exit_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Exit_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Exit_btn.Location = new System.Drawing.Point(814, 583);
+            this.Exit_btn.Location = new System.Drawing.Point(791, 606);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(80, 33);
             this.Exit_btn.TabIndex = 22;
@@ -90,7 +90,7 @@
             this.Delete_btn.ControlId = null;
             this.Delete_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Delete_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Delete_btn.Location = new System.Drawing.Point(720, 583);
+            this.Delete_btn.Location = new System.Drawing.Point(697, 606);
             this.Delete_btn.Name = "Delete_btn";
             this.Delete_btn.Size = new System.Drawing.Size(80, 33);
             this.Delete_btn.TabIndex = 21;
@@ -105,7 +105,7 @@
             this.Update_btn.ControlId = null;
             this.Update_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Update_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Update_btn.Location = new System.Drawing.Point(626, 583);
+            this.Update_btn.Location = new System.Drawing.Point(603, 606);
             this.Update_btn.Name = "Update_btn";
             this.Update_btn.Size = new System.Drawing.Size(80, 33);
             this.Update_btn.TabIndex = 20;
@@ -124,14 +124,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProcessWDetails_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ProcessWDetails_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProcessWDetails_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProcessWDetails_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProcessWDetails_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProcessWDetails_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProcessWorkId,
@@ -141,31 +141,31 @@
             this.colAssy,
             this.colMachineName});
             this.ProcessWDetails_dgv.ControlId = null;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProcessWDetails_dgv.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProcessWDetails_dgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.ProcessWDetails_dgv.EnableHeadersVisualStyles = false;
             this.ProcessWDetails_dgv.Location = new System.Drawing.Point(0, 176);
             this.ProcessWDetails_dgv.MultiSelect = false;
             this.ProcessWDetails_dgv.Name = "ProcessWDetails_dgv";
             this.ProcessWDetails_dgv.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProcessWDetails_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProcessWDetails_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ProcessWDetails_dgv.RowHeadersVisible = false;
             this.ProcessWDetails_dgv.RowTemplate.Height = 21;
             this.ProcessWDetails_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProcessWDetails_dgv.Size = new System.Drawing.Size(905, 401);
+            this.ProcessWDetails_dgv.Size = new System.Drawing.Size(882, 424);
             this.ProcessWDetails_dgv.TabIndex = 19;
             this.ProcessWDetails_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RankDetails_dgv_CellClick);
             this.ProcessWDetails_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RankDetails_dgv_CellDoubleClick);
@@ -177,7 +177,7 @@
             this.colProcessWorkId.Name = "colProcessWorkId";
             this.colProcessWorkId.ReadOnly = true;
             this.colProcessWorkId.Visible = false;
-            this.colProcessWorkId.Width = 122;
+            this.colProcessWorkId.Width = 103;
             // 
             // colProcessWorkCode
             // 
@@ -226,7 +226,7 @@
             this.Add_btn.ControlId = null;
             this.Add_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Add_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Add_btn.Location = new System.Drawing.Point(723, 137);
+            this.Add_btn.Location = new System.Drawing.Point(700, 137);
             this.Add_btn.Name = "Add_btn";
             this.Add_btn.Size = new System.Drawing.Size(80, 33);
             this.Add_btn.TabIndex = 17;
@@ -241,7 +241,7 @@
             this.Search_btn.ControlId = null;
             this.Search_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.Search_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Search_btn.Location = new System.Drawing.Point(629, 137);
+            this.Search_btn.Location = new System.Drawing.Point(606, 137);
             this.Search_btn.Name = "Search_btn";
             this.Search_btn.Size = new System.Drawing.Size(80, 33);
             this.Search_btn.TabIndex = 16;
@@ -319,7 +319,7 @@
             // ProcessWForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(905, 628);
+            this.ClientSize = new System.Drawing.Size(882, 651);
             this.Controls.Add(this.Machine_cmb);
             this.Controls.Add(this.Machine_lbl);
             this.Controls.Add(this.Clear_btn);
