@@ -92,7 +92,6 @@
             // 
             this.model_cmb.ControlId = null;
             resources.ApplyResources(this.model_cmb, "model_cmb");
-            this.model_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.model_cmb.FormattingEnabled = true;
             this.model_cmb.Name = "model_cmb";
             this.model_cmb.SelectedIndexChanged += new System.EventHandler(this.model_cmb_SelectedIndexChanged);
@@ -101,7 +100,6 @@
             // 
             this.assy_cmb.ControlId = null;
             resources.ApplyResources(this.assy_cmb, "assy_cmb");
-            this.assy_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.assy_cmb.FormattingEnabled = true;
             this.assy_cmb.Name = "assy_cmb";
             // 
@@ -115,7 +113,6 @@
             // 
             this.line_cmb.ControlId = null;
             resources.ApplyResources(this.line_cmb, "line_cmb");
-            this.line_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.line_cmb.FormattingEnabled = true;
             this.line_cmb.Name = "line_cmb";
             // 
@@ -135,7 +132,6 @@
             // 
             this.machine_cmb.ControlId = null;
             resources.ApplyResources(this.machine_cmb, "machine_cmb");
-            this.machine_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.machine_cmb.FormattingEnabled = true;
             this.machine_cmb.Name = "machine_cmb";
             this.machine_cmb.SelectedIndexChanged += new System.EventHandler(this.machine_cmb_SelectedIndexChanged);

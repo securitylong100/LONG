@@ -143,7 +143,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 line_cmb.Focus();
                 return false;
             }
-            if (User_txt.Text == null)
+            if (String.IsNullOrEmpty(User_txt.Text))
             {
                 messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, User_lbl.Text);
                 popUpMessage.Warning(messageData, Text);
@@ -171,7 +171,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 timefrom_dtp.Focus();
                 return false;
             }
-
             return true;
         }
 
