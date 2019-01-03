@@ -169,9 +169,15 @@
     <Compile Include="Cbm\DrawCbm\GetDrawingModelCbm.cs" />
     <Compile Include="Cbm\DrawCbm\SearchDrawingCbm.cs" />
     <Compile Include="Cbm\DrawCbm\UpdateDrawingCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\AddBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\AddGA1ModelThurstCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\CheckIBarcodeDuplicateCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\GetNewBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\GetLineCodeCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\GetBoxIDCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\SearchBoxIDProCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\SearchBoxIDProductCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\SearchBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\SearchThurstDGVCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\SearchGA1DGVCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\UpdateGA1ModelShippingCbm.cs" />
@@ -331,6 +337,7 @@
     <Compile Include="Common\ExcelClass_ProductionControl.cs" />
     <Compile Include="Common\Excel Class.cs" />
     <Compile Include="Common\ResetControlValues.cs" />
+    <Compile Include="Common\VBStrings.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\AddAccountLocationDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\CheckAccountLocationDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\DeleteAccountLocationDao.cs" />
@@ -423,9 +430,15 @@
     <Compile Include="Dao\DrawDao\GetDrawingModelDao.cs" />
     <Compile Include="Dao\DrawDao\SearchDrawingDao.cs" />
     <Compile Include="Dao\DrawDao\UpdateDrawingDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\AddBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\AddGA1ModelThurstDao.cs" />
     <Compile Include="Dao\GA1ModelDao\CheckIBarcodeDuplicateDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\GetNewBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\GetLineCodeDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\GetBoxIDDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\SearchBoxIDProDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\SearchBoxIDDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\SearchBoxIDProductDao.cs" />
     <Compile Include="Dao\GA1ModelDao\SearchGA1DGVDao.cs" />
     <Compile Include="Dao\GA1ModelDao\SearchThurstDGVDao.cs" />
     <Compile Include="Dao\GA1ModelDao\UpdateGA1ModelShippingDao.cs" />
@@ -722,6 +735,12 @@
     </Compile>
     <Compile Include="Form\DrawRegistForm\DrawForm.Designer.cs">
       <DependentUpon>DrawForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShippingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShippingForm.Designer.cs">
+      <DependentUpon>ShippingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ShowCheckForm.cs">
       <SubType>Form</SubType>
@@ -1076,6 +1095,9 @@
     <EmbeddedResource Include="Form\DrawRegistForm\DrawForm.vi.resx">
       <DependentUpon>DrawForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ShippingForm.resx">
+      <DependentUpon>ShippingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ShowCheckForm.resx">
       <DependentUpon>ShowCheckForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1307,6 +1329,9 @@
     <Content Include="Images\NG.jpg" />
     <Content Include="Images\NoDaTa.jpg" />
     <Content Include="Images\ok.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

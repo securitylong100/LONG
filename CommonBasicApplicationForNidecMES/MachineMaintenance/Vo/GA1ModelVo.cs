@@ -18,6 +18,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string ModelCode { get; set; }
         public string ModelName { get; set; }
 
+        /// <summary>
+        /// from BoxID
+        /// </summary>
+        public string BoxID { get; set; }
+        public string User { get; set; }
+        public DateTime PrintDate { get; set; }
+        public DateTime ShipDate { get; set; }
 
         // m_line
         public int LineId { get; set; }
@@ -48,5 +55,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public int AffectedCount { get; set; }
 
         public List<GA1ModelVo> volist = new List<GA1ModelVo>();
+        public DataTable dt { get; set; }
     }
 }
