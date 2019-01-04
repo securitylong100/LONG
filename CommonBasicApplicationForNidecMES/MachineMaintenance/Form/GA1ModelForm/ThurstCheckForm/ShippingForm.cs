@@ -21,6 +21,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             InitializeComponent();
             IsMdiContainer = true;
+            dgvBoxId.AutoGenerateColumns = false;
         }
 
         DataGridViewButtonColumn openBoxId;
@@ -52,10 +53,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void ShippingForm_Load(object sender, EventArgs e)
         {
-            ValueObjectList<GA1ModelVo> getList = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new GetBoxIDCbm(), new GA1ModelVo { PrintDate = DateTime.Today });
-            dgvBoxId.DataSource = getList.GetList();
+            selectdata();
             addButtonsToDataGridView(dgvBoxId);
             ShowRowNumber(dgvBoxId);
+        }
+
+        private void selectdata()
+        {
+            GA1ModelVo getList = null;
+            try
+            {
+                getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new GetBoxIDCbm(), new GA1ModelVo
+                {
+                    PrintDate = DateTime.Today
+                });
+            }
+            catch (Framework.ApplicationException ex)
+            {
+                logger.Error(ex.GetMessageData());
+                popUpMessage.ApplicationError(ex.GetMessageData(), Text);
+                return;
+            }
+            dgvBoxId.DataSource = getList.dt;
         }
 
         private void btnSearchBoxId_Click(object sender, EventArgs e)
@@ -66,33 +85,44 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 return;
             }
 
-            if (rdbPrintDate.Checked == true || rdbShipDate.Checked == true)
+            if (rdbPrintDate.Checked == true)
             {
-                ValueObjectList<GA1ModelVo> getList = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
                 {
-                    PrintDate = dtpPrintDate.Value,
-                    ShipDate = dtpShipDate.Value
+                    PrintDate = dtpPrintDate.Value.Date
                 });
-                dgvBoxId.DataSource = getList.GetList();
+                dgvBoxId.DataSource = getList.dt;
             }
 
+            if (rdbShipDate.Checked == true)
+            {
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
+                {
+                    ShipDate = dtpShipDate.Value.Date
+                });
+                dgvBoxId.DataSource = getList.dt;
+            }
+            
             if (rdbProductSerial.Checked == true)
             {
-                ValueObjectList<GA1ModelVo> getList = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new SearchBoxIDProCbm(), new GA1ModelVo
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProCbm(), new GA1ModelVo
                 {
                     A90Barcode = txtProductSerial.Text
                 });
-                dgvBoxId.DataSource = getList.GetList();
+                dgvBoxId.DataSource = getList.dt;
             }
-            addButtonsToDataGridView(dgvBoxId);
+            //addButtonsToDataGridView(dgvBoxId);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             ResetControlValues.ResetControlValue(tableLayoutPanel2);
             ResetControlValues.ResetControlValue(tableLayoutPanel3);
-            dgvProductSerial.Rows.Clear();
+            dtOverall.Reset();
+            dtOverall.AcceptChanges();
             txtLimit.Text = "100";
+            splMain.Panel2.Enabled = false;
+            splMain.Panel1Collapsed = false;
         }
 
         private void btnChangeLimit_Click(object sender, EventArgs e)
@@ -122,6 +152,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             defineDataTable(ref dtOverall);
             splMain.Panel2.Enabled = true;
+            splMain.Panel1Collapsed = true;
             txtBoxId.Text = getNewBoxId();
             txtUser.Text = UserData.GetUserData().UserCode;
         }
@@ -139,7 +170,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             if (boxIdOld != string.Empty)
             {
-                dateOld = DateTime.ParseExact(VBStrings.Mid(boxIdOld, 4, 6), "yyMMdd", CultureInfo.InvariantCulture);
+                dateOld = DateTime.ParseExact(VBStrings.Mid(boxIdOld, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
                 numberOld = long.Parse(VBStrings.Right(boxIdOld, 2));
             }
 
@@ -186,19 +217,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 // If tester data exists, show it in the datagridview
                 if (dt1.Rows.Count != 0)
                 {
-                    string serial = dt1.Rows[0][0].ToString();
+                    string serial = txtProduct.Text;
                     string model = dt1.Rows[0][1].ToString();
                     string line = dt1.Rows[0][2].ToString();
                     string thurst = dt1.Rows[0][3].ToString();
                     string noise = dt1.Rows[0][4].ToString();
                     string oqc = dt1.Rows[0][5].ToString();
 
-                    newrow["a90_barcode"] = serial;
-                    newrow["a90_model"] = model;
-                    newrow["a90_line"] = line;
-                    newrow["a90_thurst_status"] = thurst;
-                    newrow["a90_noise_status"] = noise;
-                    newrow["a90_oqc_status"] = oqc;
+                    newrow["Serial"] = serial;
+                    newrow["Model"] = model;
+                    newrow["Line"] = line;
+                    newrow["Thurst"] = thurst;
+                    newrow["Noise"] = noise;
+                    newrow["OQC"] = oqc;
                 }
 
                 // Add the row to the datatable
@@ -208,6 +239,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 colorViewForFailAndBlank(ref dgvProductSerial);
                 colorViewForDuplicateSerial(ref dgvProductSerial);
                 colorMixedConfig(dtOverall, ref dgvProductSerial);
+                txtProduct.Enabled = true;
                 txtProduct.Focus();
             }
         }
@@ -248,7 +280,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             for (int i = 0; i < dtOverall.Rows.Count; i++)
             {
                 string serial = dgv[0, i].Value.ToString();
-                DataRow[] dr = dt.Select("a90_barcode = '" + serial + "'");
+                DataRow[] dr = dt.Select("Serial = '" + serial + "'");
                 if (dr.Length >= 2)
                 {
                     dgv[0, i].Style.BackColor = Color.Red;
@@ -265,17 +297,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             if (dt.Rows.Count <= 0) return;
             string line;
-            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "a90_line" });
+            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "Line" });
 
             if (distinct.Rows.Count == 1)
-                line = distinct.Rows[0]["a90_line"].ToString();
+                line = distinct.Rows[0]["Line"].ToString();
 
             if (distinct.Rows.Count >= 2)
             {
-                string A = distinct.Rows[0]["a90_line"].ToString();
-                string B = distinct.Rows[1]["a90_line"].ToString();
-                int a = distinct.Select("a90_line = '" + A + "'").Length;
-                int b = distinct.Select("a90_line = '" + B + "'").Length;
+                string A = distinct.Rows[0]["Line"].ToString();
+                string B = distinct.Rows[1]["Line"].ToString();
+                int a = distinct.Select("Line = '" + A + "'").Length;
+                int b = distinct.Select("Line = '" + B + "'").Length;
 
                 // Œ”‚Ì‘½‚¢ƒRƒ“ƒtƒBƒO‚ðA‚±‚Ì” ‚ÌƒƒCƒ“ƒ‚ƒfƒ‹‚Æ‚·‚é
                 line = a > b ? A : B;
@@ -286,16 +318,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    if (dt.Rows[i]["a90_line"].ToString() == C) { c = i; }
+                    if (dt.Rows[i]["Line"].ToString() == C) { c = i; }
                 }
 
                 if (c != -1)
                 {
-                    dgv["a90_line", c].Style.BackColor = Color.Red;
+                    dgv["Line", c].Style.BackColor = Color.Red;
                 }
                 else
                 {
-                    dgv.Columns["a90_line"].DefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Window);
+                    dgv.Columns["Line"].DefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Window);
                 }
             }
         }
@@ -303,12 +335,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void defineDataTable(ref DataTable dt)
         {
             string boxId = txtBoxId.Text;
-            dt.Columns.Add("a90_barcode", Type.GetType("System.String"));
-            dt.Columns.Add("a90_model", Type.GetType("System.String"));
-            dt.Columns.Add("a90_line", Type.GetType("System.String"));
-            dt.Columns.Add("a90_thurst_status", Type.GetType("System.String"));
-            dt.Columns.Add("a90_noise_status", Type.GetType("System.String"));
-            dt.Columns.Add("a90_oqc_status", Type.GetType("System.String"));
+            dt.Columns.Add("Serial", Type.GetType("System.String"));
+            dt.Columns.Add("Model", Type.GetType("System.String"));
+            dt.Columns.Add("Line", Type.GetType("System.String"));
+            dt.Columns.Add("Thurst", Type.GetType("System.String"));
+            dt.Columns.Add("Noise", Type.GetType("System.String"));
+            dt.Columns.Add("OQC", Type.GetType("System.String"));
         }
 
         public void ShowRowNumber(DataGridView dgv)
@@ -329,9 +361,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     dtOverall.Clear();
                     dtOverall.AcceptChanges();
-                    dgvProductSerial.Rows.Clear();
+                    //dgvProductSerial.Rows.Clear();
                     txtProduct.Focus();
-                    defineDataTable(ref dtOverall);
+                    //defineDataTable(ref dtOverall);
                 }
             }
         }
@@ -346,7 +378,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Do you really want to delete the selected rows?",
+            DialogResult result = MessageBox.Show("Do you really want to delete the selected rows ?",
                 "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (result == DialogResult.Yes)
             {
@@ -356,9 +388,47 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     dtOverall.Rows[i].Delete();
                 }
                 dtOverall.AcceptChanges();
-                dgvProductSerial.Rows.Clear();
+                //dgvProductSerial.Rows.Clear();
                 txtProduct.Focus();
-                defineDataTable(ref dtOverall);
+                //defineDataTable(ref dtOverall);
+            }
+        }
+
+        private void dgvBoxId_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int currentRow = int.Parse(e.RowIndex.ToString());
+
+            // OPEN button generate frmModule by view mode without delegate event
+            if (dgvBoxId.Columns[e.ColumnIndex] == openBoxId && currentRow >= 0)
+            {
+                txtBoxId.Text = dgvBoxId["boxid", currentRow].Value.ToString();
+                dtpPrint.Value = DateTime.Parse(dgvBoxId["printdate", currentRow].Value.ToString());
+                txtUser.Text = dgvBoxId["suser", currentRow].Value.ToString();
+
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new GetSerialBoxCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text
+                });
+                dgvProductSerial.DataSource = getList.dt;
+            }
+
+            // SHIP button edit the shipping date for box id
+            if (dgvBoxId.Columns[e.ColumnIndex] == editShipDate && currentRow >= 0)
+            {
+                string boxId = dgvBoxId["boxid", currentRow].Value.ToString();
+                DateTime shipdate = dtpShipDate.Value;
+
+                DialogResult result1 = MessageBox.Show("Do you want to update the shipping date of as follows:" + System.Environment.NewLine +
+                    boxId + ": " + shipdate, "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (result1 == DialogResult.Yes)
+                {
+                    GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new UpdateShipdateCbm(), new GA1ModelVo
+                    {
+                        BoxID = dgvBoxId["boxid", currentRow].Value.ToString(),
+                        ShipDate = DateTime.Parse(dgvBoxId["shipdate", currentRow].Value.ToString())
+                    });
+                    selectdata();
+                }
             }
         }
     }

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Com.Nidec.Mes.Framework;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
 
 using System.Data;
