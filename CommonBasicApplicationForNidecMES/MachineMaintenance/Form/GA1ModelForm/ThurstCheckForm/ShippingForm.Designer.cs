@@ -44,6 +44,10 @@
             this.btnAddBox = new System.Windows.Forms.Button();
             this.btnSearchBoxId = new System.Windows.Forms.Button();
             this.dgvBoxId = new System.Windows.Forms.DataGridView();
+            this.boxid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.suser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -75,10 +79,6 @@
             this.Thurst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Noise = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OQC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.suser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shipdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splMain)).BeginInit();
             this.splMain.Panel1.SuspendLayout();
             this.splMain.Panel2.SuspendLayout();
@@ -298,7 +298,7 @@
             // dgvBoxId
             // 
             this.dgvBoxId.AllowUserToAddRows = false;
-            this.dgvBoxId.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvBoxId.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvBoxId.BackgroundColor = System.Drawing.Color.Azure;
             this.dgvBoxId.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBoxId.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -310,11 +310,46 @@
             this.dgvBoxId.Location = new System.Drawing.Point(0, 0);
             this.dgvBoxId.Name = "dgvBoxId";
             this.dgvBoxId.ReadOnly = true;
+            this.dgvBoxId.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvBoxId.RowTemplate.Height = 21;
             this.dgvBoxId.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvBoxId.Size = new System.Drawing.Size(333, 589);
             this.dgvBoxId.TabIndex = 10;
             this.dgvBoxId.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoxId_CellContentClick);
+            // 
+            // boxid
+            // 
+            this.boxid.DataPropertyName = "BoxID";
+            this.boxid.HeaderText = "BoxID";
+            this.boxid.Name = "boxid";
+            this.boxid.ReadOnly = true;
+            this.boxid.Width = 61;
+            // 
+            // suser
+            // 
+            this.suser.DataPropertyName = "User";
+            this.suser.HeaderText = "User";
+            this.suser.Name = "suser";
+            this.suser.ReadOnly = true;
+            this.suser.Width = 54;
+            // 
+            // printdate
+            // 
+            this.printdate.DataPropertyName = "PrintDate";
+            this.printdate.HeaderText = "Print Date";
+            this.printdate.Name = "printdate";
+            this.printdate.ReadOnly = true;
+            this.printdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.printdate.Width = 79;
+            // 
+            // shipdate
+            // 
+            this.shipdate.DataPropertyName = "ShipDate";
+            this.shipdate.HeaderText = "Ship Date";
+            this.shipdate.Name = "shipdate";
+            this.shipdate.ReadOnly = true;
+            this.shipdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.shipdate.Width = 79;
             // 
             // splitContainer3
             // 
@@ -454,7 +489,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.74713F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.25288F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtUser, 1, 0);
@@ -493,14 +528,14 @@
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(110, 3);
+            this.txtUser.Location = new System.Drawing.Point(109, 3);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(236, 20);
+            this.txtUser.Size = new System.Drawing.Size(234, 20);
             this.txtUser.TabIndex = 19;
             // 
             // btnChangeLimit
             // 
-            this.btnChangeLimit.Location = new System.Drawing.Point(352, 47);
+            this.btnChangeLimit.Location = new System.Drawing.Point(349, 47);
             this.btnChangeLimit.Name = "btnChangeLimit";
             this.btnChangeLimit.Size = new System.Drawing.Size(100, 24);
             this.btnChangeLimit.TabIndex = 25;
@@ -512,15 +547,15 @@
             // 
             this.txtOkCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOkCount.Enabled = false;
-            this.txtOkCount.Location = new System.Drawing.Point(110, 47);
+            this.txtOkCount.Location = new System.Drawing.Point(109, 47);
             this.txtOkCount.Name = "txtOkCount";
-            this.txtOkCount.Size = new System.Drawing.Size(236, 20);
+            this.txtOkCount.Size = new System.Drawing.Size(234, 20);
             this.txtOkCount.TabIndex = 18;
             // 
             // txtLimit
             // 
             this.txtLimit.Enabled = false;
-            this.txtLimit.Location = new System.Drawing.Point(352, 3);
+            this.txtLimit.Location = new System.Drawing.Point(349, 3);
             this.txtLimit.Name = "txtLimit";
             this.txtLimit.Size = new System.Drawing.Size(100, 20);
             this.txtLimit.TabIndex = 17;
@@ -632,6 +667,7 @@
             this.dgvProductSerial.Location = new System.Drawing.Point(0, 0);
             this.dgvProductSerial.Name = "dgvProductSerial";
             this.dgvProductSerial.ReadOnly = true;
+            this.dgvProductSerial.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvProductSerial.RowTemplate.Height = 21;
             this.dgvProductSerial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvProductSerial.Size = new System.Drawing.Size(867, 645);
@@ -678,40 +714,6 @@
             this.OQC.HeaderText = "OQC";
             this.OQC.Name = "OQC";
             this.OQC.ReadOnly = true;
-            // 
-            // boxid
-            // 
-            this.boxid.DataPropertyName = "BoxID";
-            this.boxid.HeaderText = "BoxID";
-            this.boxid.Name = "boxid";
-            this.boxid.ReadOnly = true;
-            this.boxid.Width = 61;
-            // 
-            // suser
-            // 
-            this.suser.DataPropertyName = "User";
-            this.suser.HeaderText = "User";
-            this.suser.Name = "suser";
-            this.suser.ReadOnly = true;
-            this.suser.Width = 54;
-            // 
-            // printdate
-            // 
-            this.printdate.DataPropertyName = "PrintDate";
-            this.printdate.HeaderText = "Print Date";
-            this.printdate.Name = "printdate";
-            this.printdate.ReadOnly = true;
-            this.printdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.printdate.Width = 79;
-            // 
-            // shipdate
-            // 
-            this.shipdate.DataPropertyName = "ShipDate";
-            this.shipdate.HeaderText = "Ship Date";
-            this.shipdate.Name = "shipdate";
-            this.shipdate.ReadOnly = true;
-            this.shipdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.shipdate.Width = 79;
             // 
             // ShippingForm
             // 

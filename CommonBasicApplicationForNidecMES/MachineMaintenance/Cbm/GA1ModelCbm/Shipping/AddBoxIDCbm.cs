@@ -22,7 +22,5 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm
 
             return getDao.Execute(trxContext, vo);
         }
-    }
-
-    
+    }    
 }

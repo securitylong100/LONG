@@ -26,7 +26,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         DataGridViewButtonColumn openBoxId;
         DataGridViewButtonColumn editShipDate;
-        DataTable dtOverall = new DataTable();     
+        DataTable dtOverall;     
 
         // Sub procedure: Add button to datagridview
         private void addButtonsToDataGridView(DataGridView dgv)
@@ -120,6 +120,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             ResetControlValues.ResetControlValue(tableLayoutPanel3);
             dtOverall.Reset();
             dtOverall.AcceptChanges();
+            dgvProductSerial.DataSource = null;
             txtLimit.Text = "100";
             splMain.Panel2.Enabled = false;
             splMain.Panel1Collapsed = false;
@@ -150,11 +151,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnAddBox_Click(object sender, EventArgs e)
         {
+            dtOverall = new DataTable();
             defineDataTable(ref dtOverall);
             splMain.Panel2.Enabled = true;
             splMain.Panel1Collapsed = true;
+            txtLimit.Text = "100";
             txtBoxId.Text = getNewBoxId();
-            txtUser.Text = UserData.GetUserData().UserCode;
         }
 
         // Sub procedure: Issue new box id
@@ -200,9 +202,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // Disenalbe the extbox to block scanning
-                txtProduct.Enabled = false;
-
+                // Disenalbe the textbox to block scanning
+                //txtProduct.Enabled = false;
                
                 DataTable dt1 = new DataTable();
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProductCbm(), new GA1ModelVo
@@ -235,12 +236,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 // Add the row to the datatable
                 dtOverall.Rows.Add(newrow);
                 dgvProductSerial.DataSource = dtOverall;
+                txtProduct.SelectAll();
                 ShowRowNumber(dgvProductSerial);
                 colorViewForFailAndBlank(ref dgvProductSerial);
                 colorViewForDuplicateSerial(ref dgvProductSerial);
                 colorMixedConfig(dtOverall, ref dgvProductSerial);
-                txtProduct.Enabled = true;
-                txtProduct.Focus();
+
+                // Store the OK record count to the variable and show in the text box
+                int okCount = getOkCount(dtOverall);
+                txtOkCount.Text = okCount + "/" + txtLimit.Text;
             }
         }
 
@@ -279,7 +283,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             for (int i = 0; i < dtOverall.Rows.Count; i++)
             {
-                string serial = dgv[0, i].Value.ToString();
+                string serial = dgv["Serial", i].Value.ToString();
                 DataRow[] dr = dt.Select("Serial = '" + serial + "'");
                 if (dr.Length >= 2)
                 {
@@ -347,6 +351,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             for (int i = 0; i < dgv.Rows.Count; i++)
                 dgv.Rows[i].HeaderCell.Value = (i + 1).ToString();
+
+            // Show the bottom of the datagridview
+            if (dgv.Rows.Count >= 1)
+                dgv.FirstDisplayedScrollingRowIndex = dgv.Rows.Count - 1;
         }
 
         // Delete all records on datagridview, by the user's click on the delete all button
@@ -410,6 +418,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     BoxID = txtBoxId.Text
                 });
                 dgvProductSerial.DataSource = getList.dt;
+                btnClose.Enabled = true;
             }
 
             // SHIP button edit the shipping date for box id
@@ -430,6 +439,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     selectdata();
                 }
             }
+        }
+
+        // Sub procedure: Count the without-duplicate OK records
+        private int getOkCount(DataTable dt)
+        {
+            if (dt.Rows.Count <= 0) return 0;
+            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "Serial", "Thurst", "Noise", "OQC" });
+            DataRow[] dr = distinct.Select("Thurst = 'OK' and Noise = 'OK' and OQC = 'OK'");
+            int dist = dr.Length;
+            return dist;
         }
     }
 }
