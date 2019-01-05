@@ -75,11 +75,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (machine_cmb.SelectedItem != null)
             {
                 MachineVo mvo = (MachineVo)machine_cmb.SelectedItem;
-                ValueObjectList<DefectiveReasonVo> defectivereasonvo = (ValueObjectList<DefectiveReasonVo>)DefaultCbmInvoker.Invoke(new GetCauseAndDefectiveCbm(), new DefectiveReasonVo { DefectiveReasonId = mvo.MachineId });
+                ValueObjectList<DefectiveReasonVo> defectivereasonvo = (ValueObjectList<DefectiveReasonVo>)DefaultCbmInvoker.Invoke(new GetCauseAndDefectiveCbm(), new DefectiveReasonVo { DefectiveReasonCode = mvo.MachineName });
                 cause_cmb.DisplayMember = "DefectiveReasonName";
                 cause_cmb.DataSource = defectivereasonvo.GetList();
 
-                ValueObjectList<ProdutionWorkContentVo> respmachinevolist = (ValueObjectList<ProdutionWorkContentVo>)DefaultCbmInvoker.Invoke(new GetActicAndContentCbm(), new ProdutionWorkContentVo { ProdutionWorkContentId = mvo.MachineId });
+                ValueObjectList<ProdutionWorkContentVo> respmachinevolist = (ValueObjectList<ProdutionWorkContentVo>)DefaultCbmInvoker.Invoke(new GetActicAndContentCbm(), new ProdutionWorkContentVo { ProdutionWorkContentCode = mvo.MachineName });
                 action_cmb.DisplayMember = "ProdutionWorkContentName";
                 action_cmb.DataSource = respmachinevolist.GetList();
             }
