@@ -59,7 +59,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.btnChangeLimit = new System.Windows.Forms.Button();
@@ -128,7 +128,7 @@
             this.splMain.Panel2.Controls.Add(this.splitContainer3);
             this.splMain.Panel2.Enabled = false;
             this.splMain.Size = new System.Drawing.Size(1204, 783);
-            this.splMain.SplitterDistance = 333;
+            this.splMain.SplitterDistance = 394;
             this.splMain.TabIndex = 2;
             // 
             // splitContainer2
@@ -145,7 +145,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgvBoxId);
-            this.splitContainer2.Size = new System.Drawing.Size(333, 783);
+            this.splitContainer2.Size = new System.Drawing.Size(394, 783);
             this.splitContainer2.SplitterDistance = 190;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -164,7 +164,7 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.btnAddBox);
             this.splitContainer4.Panel2.Controls.Add(this.btnSearchBoxId);
-            this.splitContainer4.Size = new System.Drawing.Size(333, 190);
+            this.splitContainer4.Size = new System.Drawing.Size(394, 190);
             this.splitContainer4.SplitterDistance = 134;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -190,7 +190,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(333, 134);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(394, 134);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label12
@@ -207,15 +207,15 @@
             this.dtpPrintDate.CustomFormat = "yyyy/MM/dd";
             this.dtpPrintDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpPrintDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPrintDate.Location = new System.Drawing.Point(90, 3);
+            this.dtpPrintDate.Location = new System.Drawing.Point(107, 3);
             this.dtpPrintDate.Name = "dtpPrintDate";
-            this.dtpPrintDate.Size = new System.Drawing.Size(205, 20);
+            this.dtpPrintDate.Size = new System.Drawing.Size(244, 20);
             this.dtpPrintDate.TabIndex = 18;
             // 
             // rdbPrintDate
             // 
             this.rdbPrintDate.AutoSize = true;
-            this.rdbPrintDate.Location = new System.Drawing.Point(301, 3);
+            this.rdbPrintDate.Location = new System.Drawing.Point(357, 3);
             this.rdbPrintDate.Name = "rdbPrintDate";
             this.rdbPrintDate.Size = new System.Drawing.Size(14, 13);
             this.rdbPrintDate.TabIndex = 15;
@@ -224,15 +224,15 @@
             // txtProductSerial
             // 
             this.txtProductSerial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProductSerial.Location = new System.Drawing.Point(90, 47);
+            this.txtProductSerial.Location = new System.Drawing.Point(107, 47);
             this.txtProductSerial.Name = "txtProductSerial";
-            this.txtProductSerial.Size = new System.Drawing.Size(205, 20);
+            this.txtProductSerial.Size = new System.Drawing.Size(244, 20);
             this.txtProductSerial.TabIndex = 12;
             // 
             // rdbProductSerial
             // 
             this.rdbProductSerial.AutoSize = true;
-            this.rdbProductSerial.Location = new System.Drawing.Point(301, 47);
+            this.rdbProductSerial.Location = new System.Drawing.Point(357, 47);
             this.rdbProductSerial.Name = "rdbProductSerial";
             this.rdbProductSerial.Size = new System.Drawing.Size(14, 13);
             this.rdbProductSerial.TabIndex = 14;
@@ -243,15 +243,15 @@
             this.dtpShipDate.CustomFormat = "yyyy/MM/dd";
             this.dtpShipDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpShipDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpShipDate.Location = new System.Drawing.Point(90, 91);
+            this.dtpShipDate.Location = new System.Drawing.Point(107, 91);
             this.dtpShipDate.Name = "dtpShipDate";
-            this.dtpShipDate.Size = new System.Drawing.Size(205, 20);
+            this.dtpShipDate.Size = new System.Drawing.Size(244, 20);
             this.dtpShipDate.TabIndex = 17;
             // 
             // rdbShipDate
             // 
             this.rdbShipDate.AutoSize = true;
-            this.rdbShipDate.Location = new System.Drawing.Point(301, 91);
+            this.rdbShipDate.Location = new System.Drawing.Point(357, 91);
             this.rdbShipDate.Name = "rdbShipDate";
             this.rdbShipDate.Size = new System.Drawing.Size(14, 13);
             this.rdbShipDate.TabIndex = 13;
@@ -313,7 +313,7 @@
             this.dgvBoxId.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvBoxId.RowTemplate.Height = 21;
             this.dgvBoxId.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvBoxId.Size = new System.Drawing.Size(333, 589);
+            this.dgvBoxId.Size = new System.Drawing.Size(394, 589);
             this.dgvBoxId.TabIndex = 10;
             this.dgvBoxId.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoxId_CellContentClick);
             // 
@@ -365,7 +365,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dgvProductSerial);
-            this.splitContainer3.Size = new System.Drawing.Size(867, 783);
+            this.splitContainer3.Size = new System.Drawing.Size(806, 783);
             this.splitContainer3.SplitterDistance = 134;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -382,8 +382,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(867, 134);
-            this.splitContainer5.SplitterDistance = 357;
+            this.splitContainer5.Size = new System.Drawing.Size(806, 134);
+            this.splitContainer5.SplitterDistance = 319;
             this.splitContainer5.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -405,16 +405,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(357, 134);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(319, 134);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtBoxId
             // 
             this.txtBoxId.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBoxId.Enabled = false;
-            this.txtBoxId.Location = new System.Drawing.Point(103, 3);
+            this.txtBoxId.Location = new System.Drawing.Point(92, 3);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(251, 20);
+            this.txtBoxId.Size = new System.Drawing.Size(224, 20);
             this.txtBoxId.TabIndex = 14;
             // 
             // label1
@@ -423,7 +423,7 @@
             this.label1.Location = new System.Drawing.Point(25, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(25, 5, 20, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Box ID: ";
             // 
@@ -432,17 +432,17 @@
             this.dtpPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpPrint.Enabled = false;
             this.dtpPrint.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPrint.Location = new System.Drawing.Point(103, 47);
+            this.dtpPrint.Location = new System.Drawing.Point(92, 47);
             this.dtpPrint.Name = "dtpPrint";
-            this.dtpPrint.Size = new System.Drawing.Size(251, 20);
+            this.dtpPrint.Size = new System.Drawing.Size(224, 20);
             this.dtpPrint.TabIndex = 15;
             // 
             // txtProduct
             // 
             this.txtProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProduct.Location = new System.Drawing.Point(103, 91);
+            this.txtProduct.Location = new System.Drawing.Point(92, 91);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(251, 20);
+            this.txtProduct.Size = new System.Drawing.Size(224, 20);
             this.txtProduct.TabIndex = 13;
             this.txtProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProduct_KeyDown);
             // 
@@ -462,7 +462,7 @@
             this.label3.Location = new System.Drawing.Point(25, 93);
             this.label3.Margin = new System.Windows.Forms.Padding(25, 5, 20, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 21);
+            this.label3.Size = new System.Drawing.Size(44, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Product Serial: ";
             // 
@@ -480,17 +480,17 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.tableLayoutPanel4);
-            this.splitContainer6.Size = new System.Drawing.Size(506, 134);
+            this.splitContainer6.Size = new System.Drawing.Size(483, 134);
             this.splitContainer6.SplitterDistance = 88;
             this.splitContainer6.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.74713F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.25288F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
-            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.90566F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.09434F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tableLayoutPanel3.Controls.Add(this.lblUser, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtUser, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnChangeLimit, 2, 1);
@@ -502,40 +502,40 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(506, 88);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 88);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // label7
+            // lblUser
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 5);
-            this.label7.Margin = new System.Windows.Forms.Padding(35, 5, 20, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "User: ";
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(35, 5);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(35, 5, 20, 20);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(35, 13);
+            this.lblUser.TabIndex = 21;
+            this.lblUser.Text = "User: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 49);
-            this.label6.Margin = new System.Windows.Forms.Padding(25, 5, 20, 20);
+            this.label6.Location = new System.Drawing.Point(35, 49);
+            this.label6.Margin = new System.Windows.Forms.Padding(35, 5, 20, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.Size = new System.Drawing.Size(41, 19);
             this.label6.TabIndex = 20;
             this.label6.Text = "OK Count: ";
             // 
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(109, 3);
+            this.txtUser.Location = new System.Drawing.Point(113, 3);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(234, 20);
+            this.txtUser.Size = new System.Drawing.Size(199, 20);
             this.txtUser.TabIndex = 19;
             // 
             // btnChangeLimit
             // 
-            this.btnChangeLimit.Location = new System.Drawing.Point(349, 47);
+            this.btnChangeLimit.Location = new System.Drawing.Point(318, 47);
             this.btnChangeLimit.Name = "btnChangeLimit";
             this.btnChangeLimit.Size = new System.Drawing.Size(100, 24);
             this.btnChangeLimit.TabIndex = 25;
@@ -547,19 +547,18 @@
             // 
             this.txtOkCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOkCount.Enabled = false;
-            this.txtOkCount.Location = new System.Drawing.Point(109, 47);
+            this.txtOkCount.Location = new System.Drawing.Point(113, 47);
             this.txtOkCount.Name = "txtOkCount";
-            this.txtOkCount.Size = new System.Drawing.Size(234, 20);
+            this.txtOkCount.Size = new System.Drawing.Size(199, 20);
             this.txtOkCount.TabIndex = 18;
             // 
             // txtLimit
             // 
             this.txtLimit.Enabled = false;
-            this.txtLimit.Location = new System.Drawing.Point(349, 3);
+            this.txtLimit.Location = new System.Drawing.Point(318, 3);
             this.txtLimit.Name = "txtLimit";
             this.txtLimit.Size = new System.Drawing.Size(100, 20);
             this.txtLimit.TabIndex = 17;
-            this.txtLimit.Leave += new System.EventHandler(this.txtLimit_Leave);
             // 
             // tableLayoutPanel4
             // 
@@ -581,15 +580,16 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(506, 42);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(483, 42);
             this.tableLayoutPanel4.TabIndex = 29;
             // 
             // btnRegisterBoxId
             // 
             this.btnRegisterBoxId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRegisterBoxId.Enabled = false;
             this.btnRegisterBoxId.Location = new System.Drawing.Point(3, 3);
             this.btnRegisterBoxId.Name = "btnRegisterBoxId";
-            this.btnRegisterBoxId.Size = new System.Drawing.Size(78, 36);
+            this.btnRegisterBoxId.Size = new System.Drawing.Size(74, 36);
             this.btnRegisterBoxId.TabIndex = 22;
             this.btnRegisterBoxId.Text = "Register Box ID";
             this.btnRegisterBoxId.UseVisualStyleBackColor = true;
@@ -598,9 +598,9 @@
             // btnDeleteAll
             // 
             this.btnDeleteAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteAll.Location = new System.Drawing.Point(339, 3);
+            this.btnDeleteAll.Location = new System.Drawing.Point(323, 3);
             this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.Size = new System.Drawing.Size(78, 36);
+            this.btnDeleteAll.Size = new System.Drawing.Size(74, 36);
             this.btnDeleteAll.TabIndex = 24;
             this.btnDeleteAll.Text = "Delete All";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
@@ -609,9 +609,10 @@
             // btnDeleteBoxId
             // 
             this.btnDeleteBoxId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteBoxId.Location = new System.Drawing.Point(171, 3);
+            this.btnDeleteBoxId.Enabled = false;
+            this.btnDeleteBoxId.Location = new System.Drawing.Point(163, 3);
             this.btnDeleteBoxId.Name = "btnDeleteBoxId";
-            this.btnDeleteBoxId.Size = new System.Drawing.Size(78, 36);
+            this.btnDeleteBoxId.Size = new System.Drawing.Size(74, 36);
             this.btnDeleteBoxId.TabIndex = 28;
             this.btnDeleteBoxId.Text = "Delete Box ID";
             this.btnDeleteBoxId.UseVisualStyleBackColor = true;
@@ -619,19 +620,20 @@
             // btnDeleteSelection
             // 
             this.btnDeleteSelection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteSelection.Location = new System.Drawing.Point(255, 3);
+            this.btnDeleteSelection.Location = new System.Drawing.Point(243, 3);
             this.btnDeleteSelection.Name = "btnDeleteSelection";
-            this.btnDeleteSelection.Size = new System.Drawing.Size(78, 36);
+            this.btnDeleteSelection.Size = new System.Drawing.Size(74, 36);
             this.btnDeleteSelection.TabIndex = 23;
             this.btnDeleteSelection.Text = "Delete Selection";
             this.btnDeleteSelection.UseVisualStyleBackColor = true;
+            this.btnDeleteSelection.Click += new System.EventHandler(this.btnDeleteSelection_Click);
             // 
             // btnReplace
             // 
             this.btnReplace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReplace.Location = new System.Drawing.Point(87, 3);
+            this.btnReplace.Location = new System.Drawing.Point(83, 3);
             this.btnReplace.Name = "btnReplace";
-            this.btnReplace.Size = new System.Drawing.Size(78, 36);
+            this.btnReplace.Size = new System.Drawing.Size(74, 36);
             this.btnReplace.TabIndex = 27;
             this.btnReplace.Text = "Replace a Serial";
             this.btnReplace.UseVisualStyleBackColor = true;
@@ -642,9 +644,9 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(423, 3);
+            this.btnClose.Location = new System.Drawing.Point(403, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(80, 36);
+            this.btnClose.Size = new System.Drawing.Size(77, 36);
             this.btnClose.TabIndex = 24;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -670,7 +672,7 @@
             this.dgvProductSerial.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvProductSerial.RowTemplate.Height = 21;
             this.dgvProductSerial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvProductSerial.Size = new System.Drawing.Size(867, 645);
+            this.dgvProductSerial.Size = new System.Drawing.Size(806, 645);
             this.dgvProductSerial.TabIndex = 10;
             // 
             // Serial
@@ -791,7 +793,7 @@
         private System.Windows.Forms.Button btnDeleteBoxId;
         private System.Windows.Forms.Button btnReplace;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.TextBox txtOkCount;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Button btnRegisterBoxId;

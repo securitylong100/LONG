@@ -26,7 +26,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         DataGridViewButtonColumn openBoxId;
         DataGridViewButtonColumn editShipDate;
-        DataTable dtOverall;     
+        DataTable dtOverall;
+        bool res;
 
         // Sub procedure: Add button to datagridview
         private void addButtonsToDataGridView(DataGridView dgv)
@@ -102,7 +103,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 });
                 dgvBoxId.DataSource = getList.dt;
             }
-            
+
             if (rdbProductSerial.Checked == true)
             {
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProCbm(), new GA1ModelVo
@@ -116,14 +117,26 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            ResetControlValues.ResetControlValue(tableLayoutPanel2);
-            ResetControlValues.ResetControlValue(tableLayoutPanel3);
-            dtOverall.Reset();
-            dtOverall.AcceptChanges();
-            dgvProductSerial.DataSource = null;
-            txtLimit.Text = "100";
-            splMain.Panel2.Enabled = false;
-            splMain.Panel1Collapsed = false;
+            if (res)
+            {
+                ResetControlValues.ResetControlValue(tableLayoutPanel2);
+                ResetControlValues.ResetControlValue(tableLayoutPanel3);
+                dtOverall.Reset();
+                dtOverall.AcceptChanges();
+                dgvProductSerial.DataSource = null;
+                txtLimit.Text = "100";
+                splMain.Panel2.Enabled = false;
+                splMain.Panel1Collapsed = false;
+            }
+            else
+            {
+                ResetControlValues.ResetControlValue(tableLayoutPanel2);
+                ResetControlValues.ResetControlValue(tableLayoutPanel3);
+                dgvProductSerial.DataSource = null;
+                txtLimit.Text = "100";
+                splMain.Panel2.Enabled = false;
+                splMain.Panel1Collapsed = false;
+            }
         }
 
         private void btnChangeLimit_Click(object sender, EventArgs e)
@@ -137,16 +150,27 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 btnChangeLimit.Text = "Change Limit";
                 txtLimit.Enabled = false;
+                limitOkChange();
             }
         }
 
-        private void txtLimit_Leave(object sender, EventArgs e)
+        private void limitOkChange()
         {
-            if (txtLimit.Enabled)
-            {
-                MessageBox.Show("You need to save the limit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtLimit.Focus();
-            }
+            // Store the OK record count to the variable and show in the text box
+            int okCount = getOkCount(dtOverall);
+            txtOkCount.Text = okCount + "/" + txtLimit.Text;
+
+            // If the OK record count has already reached to the capacity, disenable the scan text box
+            if (okCount == int.Parse(txtLimit.Text))
+                txtProduct.Enabled = false;
+            else
+                txtProduct.Enabled = true;
+
+            // If the OK record coutn has already reached to the capacity, enable the register button
+            if (okCount == int.Parse(txtLimit.Text) && dgvProductSerial.Rows.Count == int.Parse(txtLimit.Text))
+                btnRegisterBoxId.Enabled = true;
+            else
+                btnRegisterBoxId.Enabled = false;
         }
 
         private void btnAddBox_Click(object sender, EventArgs e)
@@ -157,6 +181,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             splMain.Panel1Collapsed = true;
             txtLimit.Text = "100";
             txtBoxId.Text = getNewBoxId();
+            res = true;
         }
 
         // Sub procedure: Issue new box id
@@ -190,12 +215,34 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnRegisterBoxId_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtUser.Text))
+            {
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lblUser.Text);
+                popUpMessage.Warning(messageData, Text);
+                txtUser.Focus();
+                return;
+            }
+
             GA1ModelVo outVo = new GA1ModelVo();
             outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddBoxIDCbm(), new GA1ModelVo
             {
                 BoxID = txtBoxId.Text,
                 User = txtUser.Text
             });
+
+            for (int i = 0; i < dgvProductSerial.Rows.Count; i++)
+            {
+                outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddProductCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text,
+                    A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
+                    LineCode = dgvProductSerial["Line", i].Value.ToString(),
+                    ModelCode = dgvProductSerial["Model", i].Value.ToString(),
+                    A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString(),
+                    A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString(),
+                    A90OQCStatus = dgvProductSerial["OQC", i].Value.ToString()
+                });
+            }
         }
 
         private void txtProduct_KeyDown(object sender, KeyEventArgs e)
@@ -204,7 +251,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 // Disenalbe the textbox to block scanning
                 //txtProduct.Enabled = false;
-               
+
                 DataTable dt1 = new DataTable();
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProductCbm(), new GA1ModelVo
                 {
@@ -242,9 +289,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 colorViewForDuplicateSerial(ref dgvProductSerial);
                 colorMixedConfig(dtOverall, ref dgvProductSerial);
 
-                // Store the OK record count to the variable and show in the text box
-                int okCount = getOkCount(dtOverall);
-                txtOkCount.Text = okCount + "/" + txtLimit.Text;
+                limitOkChange();
             }
         }
 
@@ -417,8 +462,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     BoxID = txtBoxId.Text
                 });
-                dgvProductSerial.DataSource = getList.dt;
-                btnClose.Enabled = true;
+                DataTable dt_temp = new DataTable();
+                defineDataTable(ref dt_temp);
+                dt_temp = getList.dt;
+                dgvProductSerial.DataSource = dt_temp;
+                splMain.Panel2.Enabled = true;
+                txtProduct.Enabled = false;
+                txtUser.Enabled = false;
+                btnDeleteAll.Enabled = false;
+                btnDeleteSelection.Enabled = false;
+                btnDeleteBoxId.Enabled = true;
+                res = false;
             }
 
             // SHIP button edit the shipping date for box id

@@ -171,6 +171,7 @@
     <Compile Include="Cbm\DrawCbm\UpdateDrawingCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\AddGA1ModelThurstCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\CheckIBarcodeDuplicateCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\Shipping\AddProductCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\AddBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\GetBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\GetNewBoxIDCbm.cs" />
@@ -434,6 +435,7 @@
     <Compile Include="Dao\DrawDao\UpdateDrawingDao.cs" />
     <Compile Include="Dao\GA1ModelDao\AddGA1ModelThurstDao.cs" />
     <Compile Include="Dao\GA1ModelDao\CheckIBarcodeDuplicateDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\Shipping\AddProductDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\AddBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\GetBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\GetNewBoxIDDao.cs" />
