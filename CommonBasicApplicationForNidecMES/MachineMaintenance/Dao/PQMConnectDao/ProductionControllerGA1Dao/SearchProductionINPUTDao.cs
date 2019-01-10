@@ -13,14 +13,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             ProductionControllerGA1Vo inVo = (ProductionControllerGA1Vo)vo;
             StringBuilder sql = new StringBuilder();
-            ValueObjectList<ProductionControllerGA1Vo> voList = new ValueObjectList<ProductionControllerGA1Vo>();
+            ProductionControllerGA1Vo voList = new ProductionControllerGA1Vo();
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select a.serno,  a.inspectdate, a.process,  b.inspectdata from  " + inVo.TableName);
+            string line = "";
+            string grline = "";
+            if (!string.IsNullOrEmpty(inVo.LineCode))
+            {
+                line = ",a.line";
+                grline = ",a.line";
+            }
+            else { line = ",'All Line' line"; }
+            sql.Append(@"select cast(row_number() over(partition by process order by a.inspectdate) as int ) id,a.model" + line + ", a.process,a.inspectdate, a.serno, sum(inspectdata) inspectdata  from  " + inVo.TableName);
             sql.Append(" a left join " + inVo.TableName + "data b on a.serno = b.serno where a.inspectdate = b.inspectdate ");
+            sql.Append(@" and a.inspectdate >= :datefrom and a.inspectdate <= :dateto");
+            sqlParameter.AddParameter("datefrom", inVo.DateFrom);
+            sqlParameter.AddParameter("dateto", inVo.DateTo);
 
             if (!string.IsNullOrEmpty(inVo.ModelCode))
             {
@@ -38,24 +49,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sqlParameter.AddParameterString("process", inVo.ProcessCode);
             }
 
-            sql.Append(@" order by a.inspectdate");
+            sql.Append(@" group by process,a.model" + grline + ",a.serno,a.inspectdate order by a.inspectdate");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DataSet ds = sqlCommandAdapter.ExecuteDataSet(sqlParameter);
 
             //execute SQL
-            IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);
 
-            while (dataReader.Read())
-            {
-                ProductionControllerGA1Vo outVo = new ProductionControllerGA1Vo
-                {
-                    dt = ds.Tables[0],
-                };
-                voList.add(outVo);
-            }
-            dataReader.Close();
-            TestVo outVo1 = new TestVo
+            ProductionControllerGA1Vo outVo1 = new ProductionControllerGA1Vo
             {
                 dt = ds.Tables[0],
             };

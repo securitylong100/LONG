@@ -35,7 +35,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelCommon6 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.search_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon5 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.cmb_item = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.cmb_process = new Com.Nidec.Mes.Framework.ComboBoxCommon();
@@ -50,16 +55,14 @@
             this.cmb_model = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.lbl_model = new System.Windows.Forms.Label();
             this.dgv_main = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.col_serno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_process = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_inspectdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chr_main = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,6 +70,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.labelCommon6);
+            this.groupBox1.Controls.Add(this.search_cmb);
             this.groupBox1.Controls.Add(this.labelCommon5);
             this.groupBox1.Controls.Add(this.cmb_item);
             this.groupBox1.Controls.Add(this.cmb_process);
@@ -86,6 +91,32 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setting";
+            // 
+            // labelCommon6
+            // 
+            this.labelCommon6.AutoSize = true;
+            this.labelCommon6.ControlId = null;
+            this.labelCommon6.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelCommon6.Location = new System.Drawing.Point(297, 63);
+            this.labelCommon6.Name = "labelCommon6";
+            this.labelCommon6.Size = new System.Drawing.Size(64, 15);
+            this.labelCommon6.TabIndex = 102;
+            this.labelCommon6.Text = "Date/Time";
+            // 
+            // search_cmb
+            // 
+            this.search_cmb.ControlId = null;
+            this.search_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_cmb.FormattingEnabled = true;
+            this.search_cmb.Items.AddRange(new object[] {
+            "Time",
+            "Date"});
+            this.search_cmb.Location = new System.Drawing.Point(300, 81);
+            this.search_cmb.Name = "search_cmb";
+            this.search_cmb.Size = new System.Drawing.Size(121, 23);
+            this.search_cmb.TabIndex = 103;
+            this.search_cmb.SelectedIndexChanged += new System.EventHandler(this.search_cmb_SelectedIndexChanged);
             // 
             // labelCommon5
             // 
@@ -143,6 +174,7 @@
             // 
             // dtp_from
             // 
+            this.dtp_from.Checked = false;
             this.dtp_from.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtp_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_from.Location = new System.Drawing.Point(300, 41);
@@ -180,7 +212,7 @@
             this.labelCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon2.Location = new System.Drawing.Point(473, 23);
             this.labelCommon2.Name = "labelCommon2";
-            this.labelCommon2.Size = new System.Drawing.Size(80, 15);
+            this.labelCommon2.Size = new System.Drawing.Size(81, 15);
             this.labelCommon2.TabIndex = 69;
             this.labelCommon2.Text = "To DateTime:";
             // 
@@ -233,6 +265,7 @@
             // dgv_main
             // 
             this.dgv_main.AllowUserToAddRows = false;
+            this.dgv_main.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,11 +275,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_serno,
-            this.col_process,
-            this.col_inspectdate,
-            this.col_data});
             this.dgv_main.ControlId = null;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -267,32 +295,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_main.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_main.RowHeadersVisible = false;
             this.dgv_main.Size = new System.Drawing.Size(453, 553);
             this.dgv_main.TabIndex = 6;
-            // 
-            // col_serno
-            // 
-            this.col_serno.DataPropertyName = "Serno";
-            this.col_serno.HeaderText = "Serno";
-            this.col_serno.Name = "col_serno";
-            // 
-            // col_process
-            // 
-            this.col_process.DataPropertyName = "ProcessCode";
-            this.col_process.HeaderText = "Process";
-            this.col_process.Name = "col_process";
-            // 
-            // col_inspectdate
-            // 
-            this.col_inspectdate.DataPropertyName = "InspectDate";
-            this.col_inspectdate.HeaderText = "InspectDate";
-            this.col_inspectdate.Name = "col_inspectdate";
-            // 
-            // col_data
-            // 
-            this.col_data.DataPropertyName = "Data";
-            this.col_data.HeaderText = "Data";
-            this.col_data.Name = "col_data";
             // 
             // chr_main
             // 
@@ -328,26 +333,65 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // dgv
+            // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.ControlId = null;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv.Location = new System.Drawing.Point(834, 106);
+            this.dgv.Name = "dgv";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.Size = new System.Drawing.Size(453, 553);
+            this.dgv.TabIndex = 9;
+            // 
             // ProducionControllerGA1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1287, 660);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dgv_main);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgv_main);
+            this.Controls.Add(this.dgv);
             this.Name = "ProducionControllerGA1Form";
             this.Text = "Test";
             this.TitleText = "FormCommon";
             this.Load += new System.EventHandler(this.ProducionControllerGA1Form_Load);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.dgv, 0);
             this.Controls.SetChildIndex(this.dgv_main, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,9 +415,8 @@
         private Framework.ComboBoxCommon cmb_line;
         private Framework.LabelCommon labelCommon5;
         private Framework.ComboBoxCommon cmb_item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_serno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_process;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_inspectdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_data;
+        private Framework.DataGridViewCommon dgv;
+        private Framework.LabelCommon labelCommon6;
+        private Framework.ComboBoxCommon search_cmb;
     }
 }

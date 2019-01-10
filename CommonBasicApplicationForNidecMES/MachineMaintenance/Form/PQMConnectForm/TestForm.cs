@@ -88,5 +88,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             //line_cmb.DataSource = testVo.dt;
             //line_cmb.DisplayMember = "line";
         }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

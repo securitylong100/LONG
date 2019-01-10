@@ -168,6 +168,7 @@
             this.search_btn.TabIndex = 96;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = false;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // timeto_dtp
             // 

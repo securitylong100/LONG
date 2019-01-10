@@ -18,17 +18,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select distinct b.line_cd from m_model_line a
-                        left join m_line b on b.line_id = a.line_id
-                        left join m_model c on c.model_id = a.model_id
-                        where 1=1 ");
+
+            sql.Append("select distinct line from processtbl a left join modeltbl b on a.model = b.model where 1=1 ");
 
             if (!string.IsNullOrEmpty(inVo.ModelCode))
             {
-                sql.Append(@" and c.model_cd  =:model_cd");
+                sql.Append(@" and a.model  =:model_cd");
                 sqlParameter.AddParameterString("model_cd", inVo.ModelCode);
             }
-            sql.Append(@" order by b.line_cd");
+            sql.Append(@" order by line");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
@@ -39,7 +37,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             {
                 ProductionControllerGA1Vo outVo = new ProductionControllerGA1Vo
                 {
-                    LineCode = dataReader["line_cd"].ToString()
+                    LineCode = dataReader["line"].ToString()
                 };
                 voList.add(outVo);
             }

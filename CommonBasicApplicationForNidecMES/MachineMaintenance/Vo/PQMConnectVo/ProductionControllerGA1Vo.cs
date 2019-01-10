@@ -31,6 +31,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
         public string Data { get; set; }
+        public DateTime DateFrom { get; set; }
+        public DateTime DateTo { get; set; }
 
 
         public string TableName { get; set; }

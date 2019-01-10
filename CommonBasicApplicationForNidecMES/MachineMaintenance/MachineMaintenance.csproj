@@ -215,8 +215,12 @@
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\SearchRangeLS12Cbm.cs" />
     <Compile Include="Cbm\OvenBarcodeLS12Cbm\RangeLS12Cbm\UpdateRangeLS12Cbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionItemCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionModelCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionLineCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionProcessCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionInputByDateCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionProcessCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionTotalCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionINPUTCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetLineTestCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetModelTestCbm.cs" />
@@ -469,8 +473,12 @@
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\SearchRangeLS12Dao.cs" />
     <Compile Include="Dao\OvenBarcodeLS12Dao\RangeLS12Dao\UpdateRangeLS12Dao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionItemDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionModelDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionLineDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionProcessDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionInputByDateDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionProcessDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionTotalDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionINPUTDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetLineTestDao.cs" />
     <Compile Include="Dao\PQMConnectDao\TestDao\GetModelTestDao.cs" />
