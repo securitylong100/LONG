@@ -1,27 +1,25 @@
 ﻿using System.Text;
 using Com.Nidec.Mes.Framework;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
-
 using System.Data;
+using System;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 {
-    class GetActicAndContentDao : AbstractDataAccessObject
+    class GetNewBoxIDDao : AbstractDataAccessObject
     {
         public override ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
-            ProdutionWorkContentVo  inVo = (ProdutionWorkContentVo)vo;
+            GA1ModelVo inVo = (GA1ModelVo)vo;
             StringBuilder sql = new StringBuilder();
-            ValueObjectList<ProdutionWorkContentVo> voList = new ValueObjectList<ProdutionWorkContentVo>();
+            ValueObjectList<GA1ModelVo> voList = new ValueObjectList<GA1ModelVo>();
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"SELECT a.prodution_work_content_id, a.prodution_work_content_name from m_prodution_work_content a left join m_response_machine b on b.prodution_work_content_id = a.prodution_work_content_id left join m_machine c on c.machine_id = b.machine_id where machine_name = :machine_name order by prodution_work_content_id");
-
-
-            sqlParameter.AddParameterString("machine_name", inVo.ProdutionWorkContentCode);
+            sql.Append("select MAX(boxid) as boxid FROM t_box_id");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
@@ -30,17 +28,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             while (dataReader.Read())
             {
-                ProdutionWorkContentVo outVo = new ProdutionWorkContentVo
+                GA1ModelVo outVo = new GA1ModelVo
                 {
-                     ProdutionWorkContentId=int.Parse(dataReader["prodution_work_content_id"].ToString()),
-                     ProdutionWorkContentName = dataReader["prodution_work_content_name"].ToString()
+                    BoxID = dataReader["boxid"].ToString(),
                 };
                 voList.add(outVo);
             }
             dataReader.Close();
             return voList;
         }
-
     }
-
 }
