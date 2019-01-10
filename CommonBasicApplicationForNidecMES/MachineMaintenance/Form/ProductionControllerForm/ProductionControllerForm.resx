@@ -237,7 +237,7 @@
     <value>109, 46</value>
   </data>
   <data name="timeto_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>54, 15</value>
   </data>
   <data name="timeto_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -318,7 +318,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="search_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 20</value>
+    <value>6, 15</value>
   </data>
   <data name="search_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 49</value>
@@ -459,9 +459,6 @@
   <data name="&gt;&gt;timefrom_dtp.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="production_controller_dgv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <metadata name="colModel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -490,7 +487,7 @@
     <value>Star Day</value>
   </data>
   <data name="colStarday.Width" type="System.Int32, mscorlib">
-    <value>73</value>
+    <value>51</value>
   </data>
   <metadata name="colEndday.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -499,7 +496,7 @@
     <value>End Day</value>
   </data>
   <data name="colEndday.Width" type="System.Int32, mscorlib">
-    <value>73</value>
+    <value>51</value>
   </data>
   <metadata name="colInput.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -694,7 +691,7 @@
     <value>0, 248</value>
   </data>
   <data name="production_controller_dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1276, 446</value>
+    <value>1248, 446</value>
   </data>
   <data name="production_controller_dgv.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -721,10 +718,10 @@
     <value>NoControl</value>
   </data>
   <data name="total_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 33</value>
+    <value>8, 31</value>
   </data>
   <data name="total_lbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 15</value>
+    <value>34, 15</value>
   </data>
   <data name="total_lbl.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -754,7 +751,7 @@
     <value>NoControl</value>
   </data>
   <data name="input_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 12</value>
+    <value>47, 10</value>
   </data>
   <data name="input_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 15</value>
@@ -787,7 +784,7 @@
     <value>NoControl</value>
   </data>
   <data name="ng_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 12</value>
+    <value>297, 10</value>
   </data>
   <data name="ng_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 15</value>
@@ -820,7 +817,7 @@
     <value>NoControl</value>
   </data>
   <data name="output_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 12</value>
+    <value>170, 10</value>
   </data>
   <data name="output_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 15</value>
@@ -853,7 +850,7 @@
     <value>NoControl</value>
   </data>
   <data name="extant_lbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>439, 13</value>
+    <value>419, 11</value>
   </data>
   <data name="extant_lbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 15</value>
@@ -880,7 +877,7 @@
     <value>Arial, 9pt, style=Bold</value>
   </data>
   <data name="input_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 30</value>
+    <value>47, 28</value>
   </data>
   <data name="input_txt.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 21</value>
@@ -904,7 +901,7 @@
     <value>Arial, 9pt, style=Bold</value>
   </data>
   <data name="output_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="output_txt.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 21</value>
@@ -928,7 +925,7 @@
     <value>Arial, 9pt, style=Bold</value>
   </data>
   <data name="extant_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 31</value>
+    <value>422, 28</value>
   </data>
   <data name="extant_txt.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 21</value>
@@ -952,7 +949,7 @@
     <value>Arial, 9pt, style=Bold</value>
   </data>
   <data name="ng_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 30</value>
+    <value>297, 28</value>
   </data>
   <data name="ng_txt.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 21</value>
@@ -976,7 +973,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="linksave_txt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 34</value>
+    <value>99, 29</value>
   </data>
   <data name="linksave_txt.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 21</value>
@@ -1003,7 +1000,7 @@
     <value>NoControl</value>
   </data>
   <data name="browser_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 28</value>
+    <value>15, 23</value>
   </data>
   <data name="browser_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 33</value>
@@ -1033,7 +1030,7 @@
     <value>NoControl</value>
   </data>
   <data name="exportexcel_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 28</value>
+    <value>306, 23</value>
   </data>
   <data name="exportexcel_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 33</value>
@@ -1060,10 +1057,10 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="groupBoxCommon2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>870, 108</value>
+    <value>832, 113</value>
   </data>
   <data name="groupBoxCommon2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>403, 76</value>
+    <value>403, 67</value>
   </data>
   <data name="groupBoxCommon2.TabIndex" type="System.Int32, mscorlib">
     <value>77</value>
@@ -1090,7 +1087,7 @@
     <value>NoControl</value>
   </data>
   <data name="chart_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 20</value>
+    <value>92, 15</value>
   </data>
   <data name="chart_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 49</value>
@@ -1144,7 +1141,7 @@
     <value>NoControl</value>
   </data>
   <data name="person_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 20</value>
+    <value>178, 15</value>
   </data>
   <data name="person_btn.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 49</value>
@@ -1174,7 +1171,7 @@
     <value>561, 108</value>
   </data>
   <data name="groupBoxCommon3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 76</value>
+    <value>265, 76</value>
   </data>
   <data name="groupBoxCommon3.TabIndex" type="System.Int32, mscorlib">
     <value>80</value>
@@ -1198,7 +1195,7 @@
     <value>3, 183</value>
   </data>
   <data name="groupBoxCommon4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>598, 59</value>
+    <value>582, 59</value>
   </data>
   <data name="groupBoxCommon4.TabIndex" type="System.Int32, mscorlib">
     <value>81</value>
@@ -1279,7 +1276,7 @@
     <value>Arial, 9pt</value>
   </data>
   <data name="groupBoxCommon5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1114, 190</value>
+    <value>1077, 190</value>
   </data>
   <data name="groupBoxCommon5.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 52</value>
@@ -1306,7 +1303,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1276, 694</value>
+    <value>1244, 694</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1317,6 +1314,9 @@
         AAAAAAAAAAAAAAAAAAD//wAA//8AAOPHAADjhwAA44cAAOIHAADiBwAA4AcAAOBHAADgRwAA4ccAAOHH
         AADjxwAA//8AAP//AAD//wAA
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Production Controller</value>

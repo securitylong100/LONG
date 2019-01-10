@@ -45,27 +45,6 @@
             this.date_rab = new Com.Nidec.Mes.Framework.RadioButtonCommon();
             this.timefrom_dtp = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.production_controller_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.total_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.input_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.ng_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.output_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.extant_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.input_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.output_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.extant_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.ng_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.linksave_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.chart_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.groupBoxCommon3 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.person_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.groupBoxCommon4 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.groupBoxCommon5 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.sum_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.colModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStarday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +70,27 @@
             this.colWelding = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalNGCore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.input_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.ng_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.output_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.extant_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.input_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.output_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.extant_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.ng_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.linksave_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.chart_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.groupBoxCommon3 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.person_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.groupBoxCommon4 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.groupBoxCommon5 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.sum_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.production_controller_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -200,7 +200,6 @@
             this.production_controller_dgv.AllowUserToDeleteRows = false;
             this.production_controller_dgv.AllowUserToOrderColumns = true;
             this.production_controller_dgv.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.production_controller_dgv, "production_controller_dgv");
             this.production_controller_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -246,6 +245,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.production_controller_dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.production_controller_dgv, "production_controller_dgv");
             this.production_controller_dgv.Name = "production_controller_dgv";
             this.production_controller_dgv.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -261,6 +261,175 @@
             this.production_controller_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.production_controller_dgv_CellClick);
             this.production_controller_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.production_controller_dgv_CellContentClick);
             this.production_controller_dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.production_controller_dgv_CellDoubleClick);
+            // 
+            // colModel
+            // 
+            this.colModel.DataPropertyName = "ProModel";
+            resources.ApplyResources(this.colModel, "colModel");
+            this.colModel.Name = "colModel";
+            this.colModel.ReadOnly = true;
+            // 
+            // colLine
+            // 
+            this.colLine.DataPropertyName = "ProLine";
+            resources.ApplyResources(this.colLine, "colLine");
+            this.colLine.Name = "colLine";
+            this.colLine.ReadOnly = true;
+            // 
+            // colStarday
+            // 
+            this.colStarday.DataPropertyName = "StartDay";
+            resources.ApplyResources(this.colStarday, "colStarday");
+            this.colStarday.Name = "colStarday";
+            this.colStarday.ReadOnly = true;
+            // 
+            // colEndday
+            // 
+            this.colEndday.DataPropertyName = "EndDay";
+            resources.ApplyResources(this.colEndday, "colEndday");
+            this.colEndday.Name = "colEndday";
+            this.colEndday.ReadOnly = true;
+            // 
+            // colInput
+            // 
+            this.colInput.DataPropertyName = "ProInput";
+            resources.ApplyResources(this.colInput, "colInput");
+            this.colInput.Name = "colInput";
+            this.colInput.ReadOnly = true;
+            // 
+            // colOutCoreInRotor
+            // 
+            resources.ApplyResources(this.colOutCoreInRotor, "colOutCoreInRotor");
+            this.colOutCoreInRotor.Name = "colOutCoreInRotor";
+            this.colOutCoreInRotor.ReadOnly = true;
+            // 
+            // colOutRotorInMotor
+            // 
+            resources.ApplyResources(this.colOutRotorInMotor, "colOutRotorInMotor");
+            this.colOutRotorInMotor.Name = "colOutRotorInMotor";
+            this.colOutRotorInMotor.ReadOnly = true;
+            // 
+            // colOutput
+            // 
+            this.colOutput.DataPropertyName = "ProOutput";
+            resources.ApplyResources(this.colOutput, "colOutput");
+            this.colOutput.Name = "colOutput";
+            this.colOutput.ReadOnly = true;
+            // 
+            // colTotalNG
+            // 
+            this.colTotalNG.DataPropertyName = "TotalNG";
+            resources.ApplyResources(this.colTotalNG, "colTotalNG");
+            this.colTotalNG.Name = "colTotalNG";
+            this.colTotalNG.ReadOnly = true;
+            // 
+            // colRateNG
+            // 
+            resources.ApplyResources(this.colRateNG, "colRateNG");
+            this.colRateNG.Name = "colRateNG";
+            this.colRateNG.ReadOnly = true;
+            // 
+            // colHolderNG
+            // 
+            this.colHolderNG.DataPropertyName = "HolderNG";
+            resources.ApplyResources(this.colHolderNG, "colHolderNG");
+            this.colHolderNG.Name = "colHolderNG";
+            this.colHolderNG.ReadOnly = true;
+            // 
+            // colAppCheck
+            // 
+            this.colAppCheck.DataPropertyName = "AppCheckNG";
+            resources.ApplyResources(this.colAppCheck, "colAppCheck");
+            this.colAppCheck.Name = "colAppCheck";
+            this.colAppCheck.ReadOnly = true;
+            // 
+            // colEn2
+            // 
+            this.colEn2.DataPropertyName = "En2NG";
+            resources.ApplyResources(this.colEn2, "colEn2");
+            this.colEn2.Name = "colEn2";
+            this.colEn2.ReadOnly = true;
+            // 
+            // colFundou
+            // 
+            this.colFundou.DataPropertyName = "FundouNG";
+            resources.ApplyResources(this.colFundou, "colFundou");
+            this.colFundou.Name = "colFundou";
+            this.colFundou.ReadOnly = true;
+            // 
+            // colEn1
+            // 
+            this.colEn1.DataPropertyName = "En1NG";
+            resources.ApplyResources(this.colEn1, "colEn1");
+            this.colEn1.Name = "colEn1";
+            this.colEn1.ReadOnly = true;
+            // 
+            // colInsertCase
+            // 
+            this.colInsertCase.DataPropertyName = "InsertCaseNG";
+            resources.ApplyResources(this.colInsertCase, "colInsertCase");
+            this.colInsertCase.Name = "colInsertCase";
+            this.colInsertCase.ReadOnly = true;
+            // 
+            // colTotalNGMotor
+            // 
+            resources.ApplyResources(this.colTotalNGMotor, "colTotalNGMotor");
+            this.colTotalNGMotor.Name = "colTotalNGMotor";
+            this.colTotalNGMotor.ReadOnly = true;
+            // 
+            // colRANG
+            // 
+            this.colRANG.DataPropertyName = "RANG";
+            resources.ApplyResources(this.colRANG, "colRANG");
+            this.colRANG.Name = "colRANG";
+            this.colRANG.ReadOnly = true;
+            // 
+            // colSolder
+            // 
+            this.colSolder.DataPropertyName = "SolderRingNG";
+            resources.ApplyResources(this.colSolder, "colSolder");
+            this.colSolder.Name = "colSolder";
+            this.colSolder.ReadOnly = true;
+            // 
+            // colSolderWire
+            // 
+            this.colSolderWire.DataPropertyName = "SolderWireNG";
+            resources.ApplyResources(this.colSolderWire, "colSolderWire");
+            this.colSolderWire.Name = "colSolderWire";
+            this.colSolderWire.ReadOnly = true;
+            // 
+            // colWingding
+            // 
+            this.colWingding.DataPropertyName = "WindingNG";
+            resources.ApplyResources(this.colWingding, "colWingding");
+            this.colWingding.Name = "colWingding";
+            this.colWingding.ReadOnly = true;
+            // 
+            // colTotalNGRotor
+            // 
+            resources.ApplyResources(this.colTotalNGRotor, "colTotalNGRotor");
+            this.colTotalNGRotor.Name = "colTotalNGRotor";
+            this.colTotalNGRotor.ReadOnly = true;
+            // 
+            // colWelding
+            // 
+            this.colWelding.DataPropertyName = "WeldingNG";
+            resources.ApplyResources(this.colWelding, "colWelding");
+            this.colWelding.Name = "colWelding";
+            this.colWelding.ReadOnly = true;
+            // 
+            // colCore
+            // 
+            this.colCore.DataPropertyName = "CoreNG";
+            resources.ApplyResources(this.colCore, "colCore");
+            this.colCore.Name = "colCore";
+            this.colCore.ReadOnly = true;
+            // 
+            // colTotalNGCore
+            // 
+            resources.ApplyResources(this.colTotalNGCore, "colTotalNGCore");
+            this.colTotalNGCore.Name = "colTotalNGCore";
+            this.colTotalNGCore.ReadOnly = true;
             // 
             // total_lbl
             // 
@@ -452,175 +621,6 @@
             resources.ApplyResources(this.labelCommon1, "labelCommon1");
             this.labelCommon1.ControlId = null;
             this.labelCommon1.Name = "labelCommon1";
-            // 
-            // colModel
-            // 
-            this.colModel.DataPropertyName = "ProModel";
-            resources.ApplyResources(this.colModel, "colModel");
-            this.colModel.Name = "colModel";
-            this.colModel.ReadOnly = true;
-            // 
-            // colLine
-            // 
-            this.colLine.DataPropertyName = "ProLine";
-            resources.ApplyResources(this.colLine, "colLine");
-            this.colLine.Name = "colLine";
-            this.colLine.ReadOnly = true;
-            // 
-            // colStarday
-            // 
-            this.colStarday.DataPropertyName = "StartDay";
-            resources.ApplyResources(this.colStarday, "colStarday");
-            this.colStarday.Name = "colStarday";
-            this.colStarday.ReadOnly = true;
-            // 
-            // colEndday
-            // 
-            this.colEndday.DataPropertyName = "EndDay";
-            resources.ApplyResources(this.colEndday, "colEndday");
-            this.colEndday.Name = "colEndday";
-            this.colEndday.ReadOnly = true;
-            // 
-            // colInput
-            // 
-            this.colInput.DataPropertyName = "ProInput";
-            resources.ApplyResources(this.colInput, "colInput");
-            this.colInput.Name = "colInput";
-            this.colInput.ReadOnly = true;
-            // 
-            // colOutCoreInRotor
-            // 
-            resources.ApplyResources(this.colOutCoreInRotor, "colOutCoreInRotor");
-            this.colOutCoreInRotor.Name = "colOutCoreInRotor";
-            this.colOutCoreInRotor.ReadOnly = true;
-            // 
-            // colOutRotorInMotor
-            // 
-            resources.ApplyResources(this.colOutRotorInMotor, "colOutRotorInMotor");
-            this.colOutRotorInMotor.Name = "colOutRotorInMotor";
-            this.colOutRotorInMotor.ReadOnly = true;
-            // 
-            // colOutput
-            // 
-            this.colOutput.DataPropertyName = "ProOutput";
-            resources.ApplyResources(this.colOutput, "colOutput");
-            this.colOutput.Name = "colOutput";
-            this.colOutput.ReadOnly = true;
-            // 
-            // colTotalNG
-            // 
-            this.colTotalNG.DataPropertyName = "TotalNG";
-            resources.ApplyResources(this.colTotalNG, "colTotalNG");
-            this.colTotalNG.Name = "colTotalNG";
-            this.colTotalNG.ReadOnly = true;
-            // 
-            // colRateNG
-            // 
-            resources.ApplyResources(this.colRateNG, "colRateNG");
-            this.colRateNG.Name = "colRateNG";
-            this.colRateNG.ReadOnly = true;
-            // 
-            // colHolderNG
-            // 
-            this.colHolderNG.DataPropertyName = "HolderNG";
-            resources.ApplyResources(this.colHolderNG, "colHolderNG");
-            this.colHolderNG.Name = "colHolderNG";
-            this.colHolderNG.ReadOnly = true;
-            // 
-            // colAppCheck
-            // 
-            this.colAppCheck.DataPropertyName = "AppCheckNG";
-            resources.ApplyResources(this.colAppCheck, "colAppCheck");
-            this.colAppCheck.Name = "colAppCheck";
-            this.colAppCheck.ReadOnly = true;
-            // 
-            // colEn2
-            // 
-            this.colEn2.DataPropertyName = "En2NG";
-            resources.ApplyResources(this.colEn2, "colEn2");
-            this.colEn2.Name = "colEn2";
-            this.colEn2.ReadOnly = true;
-            // 
-            // colFundou
-            // 
-            this.colFundou.DataPropertyName = "FundouNG";
-            resources.ApplyResources(this.colFundou, "colFundou");
-            this.colFundou.Name = "colFundou";
-            this.colFundou.ReadOnly = true;
-            // 
-            // colEn1
-            // 
-            this.colEn1.DataPropertyName = "En1NG";
-            resources.ApplyResources(this.colEn1, "colEn1");
-            this.colEn1.Name = "colEn1";
-            this.colEn1.ReadOnly = true;
-            // 
-            // colInsertCase
-            // 
-            this.colInsertCase.DataPropertyName = "InsertCaseNG";
-            resources.ApplyResources(this.colInsertCase, "colInsertCase");
-            this.colInsertCase.Name = "colInsertCase";
-            this.colInsertCase.ReadOnly = true;
-            // 
-            // colTotalNGMotor
-            // 
-            resources.ApplyResources(this.colTotalNGMotor, "colTotalNGMotor");
-            this.colTotalNGMotor.Name = "colTotalNGMotor";
-            this.colTotalNGMotor.ReadOnly = true;
-            // 
-            // colRANG
-            // 
-            this.colRANG.DataPropertyName = "RANG";
-            resources.ApplyResources(this.colRANG, "colRANG");
-            this.colRANG.Name = "colRANG";
-            this.colRANG.ReadOnly = true;
-            // 
-            // colSolder
-            // 
-            this.colSolder.DataPropertyName = "SolderRingNG";
-            resources.ApplyResources(this.colSolder, "colSolder");
-            this.colSolder.Name = "colSolder";
-            this.colSolder.ReadOnly = true;
-            // 
-            // colSolderWire
-            // 
-            this.colSolderWire.DataPropertyName = "SolderWireNG";
-            resources.ApplyResources(this.colSolderWire, "colSolderWire");
-            this.colSolderWire.Name = "colSolderWire";
-            this.colSolderWire.ReadOnly = true;
-            // 
-            // colWingding
-            // 
-            this.colWingding.DataPropertyName = "WindingNG";
-            resources.ApplyResources(this.colWingding, "colWingding");
-            this.colWingding.Name = "colWingding";
-            this.colWingding.ReadOnly = true;
-            // 
-            // colTotalNGRotor
-            // 
-            resources.ApplyResources(this.colTotalNGRotor, "colTotalNGRotor");
-            this.colTotalNGRotor.Name = "colTotalNGRotor";
-            this.colTotalNGRotor.ReadOnly = true;
-            // 
-            // colWelding
-            // 
-            this.colWelding.DataPropertyName = "WeldingNG";
-            resources.ApplyResources(this.colWelding, "colWelding");
-            this.colWelding.Name = "colWelding";
-            this.colWelding.ReadOnly = true;
-            // 
-            // colCore
-            // 
-            this.colCore.DataPropertyName = "CoreNG";
-            resources.ApplyResources(this.colCore, "colCore");
-            this.colCore.Name = "colCore";
-            this.colCore.ReadOnly = true;
-            // 
-            // colTotalNGCore
-            // 
-            resources.ApplyResources(this.colTotalNGCore, "colTotalNGCore");
-            this.colTotalNGCore.Name = "colTotalNGCore";
-            this.colTotalNGCore.ReadOnly = true;
             // 
             // ProductionControllerForm
             // 
