@@ -368,7 +368,6 @@ D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddDrawForm.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.DrawForm.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShowCheckForm.resources
-D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShippingCheckForm.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NoiseCheckForm.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.OQCCheckForm.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ThurstCheckForm.resources

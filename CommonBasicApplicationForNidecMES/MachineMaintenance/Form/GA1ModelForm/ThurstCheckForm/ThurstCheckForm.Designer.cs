@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_model = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_timer = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.txt_barcode = new Com.Nidec.Mes.Framework.TextBoxCommon();
@@ -46,7 +45,6 @@
             this.pb_OK = new System.Windows.Forms.PictureBox();
             this.pb_NG = new System.Windows.Forms.PictureBox();
             this.lbl_status = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_thurst = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.col_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_line = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,48 +57,54 @@
             this.col_datatime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.pnlSetting = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb_OK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_NG)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thurst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.pnlSetting.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_model
             // 
             this.lbl_model.AutoSize = true;
             this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_model.Location = new System.Drawing.Point(8, 19);
+            this.lbl_model.Location = new System.Drawing.Point(3, 5);
+            this.lbl_model.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lbl_model.Name = "lbl_model";
             this.lbl_model.Size = new System.Drawing.Size(56, 20);
             this.lbl_model.TabIndex = 3;
             this.lbl_model.Text = "Model:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_timer);
-            this.groupBox1.Controls.Add(this.txt_barcode);
-            this.groupBox1.Controls.Add(this.cmb_line);
-            this.groupBox1.Controls.Add(this.lbl_timer);
-            this.groupBox1.Controls.Add(this.cmb_model);
-            this.groupBox1.Controls.Add(this.lbl_barcode);
-            this.groupBox1.Controls.Add(this.lbl_line);
-            this.groupBox1.Controls.Add(this.lbl_model);
-            this.groupBox1.Location = new System.Drawing.Point(8, 111);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(522, 87);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Setting";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(409, 56);
+            this.label3.Location = new System.Drawing.Point(104, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 16;
@@ -111,7 +115,7 @@
             this.txt_timer.ControlId = null;
             this.txt_timer.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_timer.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.Numeric;
-            this.txt_timer.Location = new System.Drawing.Point(315, 53);
+            this.txt_timer.Location = new System.Drawing.Point(3, 2);
             this.txt_timer.Name = "txt_timer";
             this.txt_timer.Size = new System.Drawing.Size(95, 29);
             this.txt_timer.TabIndex = 15;
@@ -120,29 +124,32 @@
             // txt_barcode
             // 
             this.txt_barcode.ControlId = null;
+            this.txt_barcode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_barcode.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_barcode.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.txt_barcode.Location = new System.Drawing.Point(315, 14);
+            this.txt_barcode.Location = new System.Drawing.Point(407, 3);
             this.txt_barcode.MaxLength = 8;
             this.txt_barcode.Name = "txt_barcode";
-            this.txt_barcode.Size = new System.Drawing.Size(163, 29);
+            this.txt_barcode.Size = new System.Drawing.Size(214, 29);
             this.txt_barcode.TabIndex = 13;
             // 
             // cmb_line
             // 
             this.cmb_line.ControlId = null;
+            this.cmb_line.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_line.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_line.FormattingEnabled = true;
-            this.cmb_line.Location = new System.Drawing.Point(66, 51);
+            this.cmb_line.Location = new System.Drawing.Point(74, 42);
             this.cmb_line.Name = "cmb_line";
-            this.cmb_line.Size = new System.Drawing.Size(121, 30);
+            this.cmb_line.Size = new System.Drawing.Size(214, 30);
             this.cmb_line.TabIndex = 14;
             // 
             // lbl_timer
             // 
             this.lbl_timer.AutoSize = true;
             this.lbl_timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_timer.Location = new System.Drawing.Point(256, 58);
+            this.lbl_timer.Location = new System.Drawing.Point(294, 44);
+            this.lbl_timer.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lbl_timer.Name = "lbl_timer";
             this.lbl_timer.Size = new System.Drawing.Size(52, 20);
             this.lbl_timer.TabIndex = 10;
@@ -151,11 +158,12 @@
             // cmb_model
             // 
             this.cmb_model.ControlId = null;
+            this.cmb_model.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_model.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_model.FormattingEnabled = true;
-            this.cmb_model.Location = new System.Drawing.Point(66, 16);
+            this.cmb_model.Location = new System.Drawing.Point(74, 3);
             this.cmb_model.Name = "cmb_model";
-            this.cmb_model.Size = new System.Drawing.Size(121, 30);
+            this.cmb_model.Size = new System.Drawing.Size(214, 30);
             this.cmb_model.TabIndex = 12;
             this.cmb_model.SelectedIndexChanged += new System.EventHandler(this.cmb_model_SelectedIndexChanged);
             // 
@@ -163,7 +171,8 @@
             // 
             this.lbl_barcode.AutoSize = true;
             this.lbl_barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_barcode.Location = new System.Drawing.Point(236, 19);
+            this.lbl_barcode.Location = new System.Drawing.Point(294, 5);
+            this.lbl_barcode.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lbl_barcode.Name = "lbl_barcode";
             this.lbl_barcode.Size = new System.Drawing.Size(73, 20);
             this.lbl_barcode.TabIndex = 9;
@@ -173,7 +182,8 @@
             // 
             this.lbl_line.AutoSize = true;
             this.lbl_line.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_line.Location = new System.Drawing.Point(17, 58);
+            this.lbl_line.Location = new System.Drawing.Point(3, 44);
+            this.lbl_line.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lbl_line.Name = "lbl_line";
             this.lbl_line.Size = new System.Drawing.Size(43, 20);
             this.lbl_line.TabIndex = 5;
@@ -185,54 +195,37 @@
             // 
             // pb_OK
             // 
-            this.pb_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_OK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_OK.Image = global::Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources.ok;
-            this.pb_OK.Location = new System.Drawing.Point(733, 17);
+            this.pb_OK.Location = new System.Drawing.Point(0, 0);
             this.pb_OK.Name = "pb_OK";
-            this.pb_OK.Size = new System.Drawing.Size(383, 353);
+            this.pb_OK.Size = new System.Drawing.Size(656, 376);
+            this.pb_OK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_OK.TabIndex = 5;
             this.pb_OK.TabStop = false;
             // 
             // pb_NG
             // 
-            this.pb_NG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_NG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_NG.Image = global::Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources.NG;
-            this.pb_NG.Location = new System.Drawing.Point(733, 17);
+            this.pb_NG.Location = new System.Drawing.Point(0, 0);
             this.pb_NG.Name = "pb_NG";
-            this.pb_NG.Size = new System.Drawing.Size(383, 353);
+            this.pb_NG.Size = new System.Drawing.Size(656, 376);
+            this.pb_NG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_NG.TabIndex = 6;
             this.pb_NG.TabStop = false;
             // 
             // lbl_status
             // 
+            this.lbl_status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_status.AutoSize = true;
             this.lbl_status.ControlId = null;
             this.lbl_status.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_status.Location = new System.Drawing.Point(56, 162);
+            this.lbl_status.Location = new System.Drawing.Point(56, 130);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(513, 107);
             this.lbl_status.TabIndex = 7;
             this.lbl_status.Text = "CHECKED";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dgv_thurst);
-            this.groupBox2.Controls.Add(this.lbl_status);
-            this.groupBox2.Controls.Add(this.pb_OK);
-            this.groupBox2.Controls.Add(this.pb_NG);
-            this.groupBox2.Location = new System.Drawing.Point(0, 214);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1281, 456);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Status";
             // 
             // dgv_thurst
             // 
@@ -267,8 +260,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_thurst.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_thurst.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_thurst.Location = new System.Drawing.Point(3, 376);
+            this.dgv_thurst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_thurst.Location = new System.Drawing.Point(0, 0);
             this.dgv_thurst.Name = "dgv_thurst";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -278,7 +271,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_thurst.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_thurst.Size = new System.Drawing.Size(1275, 77);
+            this.dgv_thurst.Size = new System.Drawing.Size(1284, 101);
             this.dgv_thurst.TabIndex = 8;
             // 
             // col_model
@@ -355,59 +348,175 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pictureBox1.Location = new System.Drawing.Point(547, 113);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources.Capture;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(734, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(656, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // label1
+            // splitContainer1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(813, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 31);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "MOUSE AREA";
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 107);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer1.Size = new System.Drawing.Size(1284, 563);
+            this.splitContainer1.SplitterDistance = 78;
+            this.splitContainer1.TabIndex = 17;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.pnlSetting);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.pictureBox1);
+            this.splitContainer2.Size = new System.Drawing.Size(1284, 78);
+            this.splitContainer2.SplitterDistance = 624;
+            this.splitContainer2.TabIndex = 19;
+            // 
+            // pnlSetting
+            // 
+            this.pnlSetting.ColumnCount = 4;
+            this.pnlSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.29595F));
+            this.pnlSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.27726F));
+            this.pnlSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.411215F));
+            this.pnlSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.1215F));
+            this.pnlSetting.Controls.Add(this.cmb_line, 1, 1);
+            this.pnlSetting.Controls.Add(this.lbl_model, 0, 0);
+            this.pnlSetting.Controls.Add(this.txt_barcode, 3, 0);
+            this.pnlSetting.Controls.Add(this.lbl_line, 0, 1);
+            this.pnlSetting.Controls.Add(this.lbl_timer, 2, 1);
+            this.pnlSetting.Controls.Add(this.cmb_model, 1, 0);
+            this.pnlSetting.Controls.Add(this.lbl_barcode, 2, 0);
+            this.pnlSetting.Controls.Add(this.panel1, 3, 1);
+            this.pnlSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSetting.Location = new System.Drawing.Point(0, 0);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.RowCount = 2;
+            this.pnlSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pnlSetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pnlSetting.Size = new System.Drawing.Size(624, 78);
+            this.pnlSetting.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txt_timer);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(407, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(214, 33);
+            this.panel1.TabIndex = 15;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.splitContainer4);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.dgv_thurst);
+            this.splitContainer3.Size = new System.Drawing.Size(1284, 481);
+            this.splitContainer3.SplitterDistance = 376;
+            this.splitContainer3.TabIndex = 9;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.panel2);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.pb_OK);
+            this.splitContainer4.Panel2.Controls.Add(this.pb_NG);
+            this.splitContainer4.Size = new System.Drawing.Size(1284, 376);
+            this.splitContainer4.SplitterDistance = 624;
+            this.splitContainer4.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbl_status);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(624, 376);
+            this.panel2.TabIndex = 8;
             // 
             // ThurstCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 670);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "ThurstCheckForm";
             this.Text = "ThurstCheckForm";
             this.TitleText = "FormCommon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ThurstCheckForm_Load);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.groupBox2, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pb_OK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_NG)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thurst)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.pnlSetting.ResumeLayout(false);
+            this.pnlSetting.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Label lbl_model;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_line;
         private System.Windows.Forms.Label lbl_barcode;
         private System.Windows.Forms.Label lbl_timer;
@@ -420,9 +529,7 @@
         private System.Windows.Forms.PictureBox pb_OK;
         private System.Windows.Forms.PictureBox pb_NG;
         private Framework.LabelCommon lbl_status;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private Framework.DataGridViewCommon dgv_thurst;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_model;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_line;
@@ -434,5 +541,12 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn col_shipping;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_datatime;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_user;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TableLayoutPanel pnlSetting;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

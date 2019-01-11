@@ -38,7 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelCommon6 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.search_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon5 = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -51,70 +50,51 @@
             this.cmb_line = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.btn_search = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.cmb_model = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.lbl_model = new System.Windows.Forms.Label();
             this.dgv_main = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.chr_main = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.groupBox1.SuspendLayout();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_search = new Com.Nidec.Mes.Framework.ButtonCommon();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.labelCommon6);
-            this.groupBox1.Controls.Add(this.search_cmb);
-            this.groupBox1.Controls.Add(this.labelCommon5);
-            this.groupBox1.Controls.Add(this.cmb_item);
-            this.groupBox1.Controls.Add(this.cmb_process);
-            this.groupBox1.Controls.Add(this.labelCommon3);
-            this.groupBox1.Controls.Add(this.dtp_to);
-            this.groupBox1.Controls.Add(this.dtp_from);
-            this.groupBox1.Controls.Add(this.labelCommon4);
-            this.groupBox1.Controls.Add(this.cmb_line);
-            this.groupBox1.Controls.Add(this.labelCommon2);
-            this.groupBox1.Controls.Add(this.labelCommon1);
-            this.groupBox1.Controls.Add(this.btn_search);
-            this.groupBox1.Controls.Add(this.cmb_model);
-            this.groupBox1.Controls.Add(this.lbl_model);
-            this.groupBox1.Location = new System.Drawing.Point(0, 113);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(828, 112);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Setting";
             // 
             // labelCommon6
             // 
             this.labelCommon6.AutoSize = true;
             this.labelCommon6.ControlId = null;
-            this.labelCommon6.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon6.Location = new System.Drawing.Point(297, 63);
+            this.labelCommon6.Location = new System.Drawing.Point(393, 77);
+            this.labelCommon6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon6.Name = "labelCommon6";
-            this.labelCommon6.Size = new System.Drawing.Size(64, 15);
+            this.labelCommon6.Size = new System.Drawing.Size(58, 13);
             this.labelCommon6.TabIndex = 102;
             this.labelCommon6.Text = "Date/Time";
             // 
             // search_cmb
             // 
             this.search_cmb.ControlId = null;
+            this.search_cmb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.search_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_cmb.FormattingEnabled = true;
             this.search_cmb.Items.AddRange(new object[] {
             "Time",
             "Date"});
-            this.search_cmb.Location = new System.Drawing.Point(300, 81);
+            this.search_cmb.Location = new System.Drawing.Point(393, 111);
             this.search_cmb.Name = "search_cmb";
-            this.search_cmb.Size = new System.Drawing.Size(121, 23);
+            this.search_cmb.Size = new System.Drawing.Size(189, 23);
             this.search_cmb.TabIndex = 103;
             this.search_cmb.SelectedIndexChanged += new System.EventHandler(this.search_cmb_SelectedIndexChanged);
             // 
@@ -122,32 +102,35 @@
             // 
             this.labelCommon5.AutoSize = true;
             this.labelCommon5.ControlId = null;
-            this.labelCommon5.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon5.Location = new System.Drawing.Point(135, 63);
+            this.labelCommon5.Location = new System.Drawing.Point(198, 77);
+            this.labelCommon5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon5.Name = "labelCommon5";
-            this.labelCommon5.Size = new System.Drawing.Size(77, 15);
+            this.labelCommon5.Size = new System.Drawing.Size(68, 13);
             this.labelCommon5.TabIndex = 100;
             this.labelCommon5.Text = "Inspect Item:";
             // 
             // cmb_item
             // 
             this.cmb_item.ControlId = null;
+            this.cmb_item.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_item.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_item.FormattingEnabled = true;
-            this.cmb_item.Location = new System.Drawing.Point(138, 81);
+            this.cmb_item.Location = new System.Drawing.Point(198, 111);
             this.cmb_item.Name = "cmb_item";
-            this.cmb_item.Size = new System.Drawing.Size(121, 23);
+            this.cmb_item.Size = new System.Drawing.Size(189, 23);
             this.cmb_item.TabIndex = 101;
             // 
             // cmb_process
             // 
             this.cmb_process.ControlId = null;
+            this.cmb_process.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_process.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_process.FormattingEnabled = true;
-            this.cmb_process.Location = new System.Drawing.Point(11, 81);
+            this.cmb_process.Location = new System.Drawing.Point(3, 111);
             this.cmb_process.Name = "cmb_process";
-            this.cmb_process.Size = new System.Drawing.Size(121, 23);
+            this.cmb_process.Size = new System.Drawing.Size(189, 23);
             this.cmb_process.TabIndex = 99;
             this.cmb_process.SelectedIndexChanged += new System.EventHandler(this.cmb_process_SelectedIndexChanged);
             // 
@@ -155,53 +138,58 @@
             // 
             this.labelCommon3.AutoSize = true;
             this.labelCommon3.ControlId = null;
-            this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon3.Location = new System.Drawing.Point(8, 67);
+            this.labelCommon3.Location = new System.Drawing.Point(3, 77);
+            this.labelCommon3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon3.Name = "labelCommon3";
-            this.labelCommon3.Size = new System.Drawing.Size(56, 15);
+            this.labelCommon3.Size = new System.Drawing.Size(48, 13);
             this.labelCommon3.TabIndex = 98;
             this.labelCommon3.Text = "Process:";
             // 
             // dtp_to
             // 
             this.dtp_to.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtp_to.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtp_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_to.Location = new System.Drawing.Point(476, 41);
+            this.dtp_to.Location = new System.Drawing.Point(588, 39);
             this.dtp_to.Name = "dtp_to";
-            this.dtp_to.Size = new System.Drawing.Size(151, 20);
+            this.dtp_to.Size = new System.Drawing.Size(189, 20);
             this.dtp_to.TabIndex = 70;
             // 
             // dtp_from
             // 
             this.dtp_from.Checked = false;
             this.dtp_from.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtp_from.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtp_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_from.Location = new System.Drawing.Point(300, 41);
+            this.dtp_from.Location = new System.Drawing.Point(393, 39);
             this.dtp_from.Name = "dtp_from";
-            this.dtp_from.Size = new System.Drawing.Size(142, 20);
+            this.dtp_from.Size = new System.Drawing.Size(189, 20);
             this.dtp_from.TabIndex = 7;
             // 
             // labelCommon4
             // 
             this.labelCommon4.AutoSize = true;
             this.labelCommon4.ControlId = null;
-            this.labelCommon4.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon4.Location = new System.Drawing.Point(135, 20);
+            this.labelCommon4.Location = new System.Drawing.Point(198, 5);
+            this.labelCommon4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon4.Name = "labelCommon4";
-            this.labelCommon4.Size = new System.Drawing.Size(34, 15);
+            this.labelCommon4.Size = new System.Drawing.Size(30, 13);
             this.labelCommon4.TabIndex = 96;
             this.labelCommon4.Text = "Line:";
             // 
             // cmb_line
             // 
             this.cmb_line.ControlId = null;
+            this.cmb_line.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_line.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_line.FormattingEnabled = true;
-            this.cmb_line.Location = new System.Drawing.Point(138, 38);
+            this.cmb_line.Location = new System.Drawing.Point(198, 39);
             this.cmb_line.Name = "cmb_line";
-            this.cmb_line.Size = new System.Drawing.Size(121, 23);
+            this.cmb_line.Size = new System.Drawing.Size(189, 23);
             this.cmb_line.TabIndex = 97;
             this.cmb_line.SelectedIndexChanged += new System.EventHandler(this.cmb_line_SelectedIndexChanged);
             // 
@@ -209,10 +197,11 @@
             // 
             this.labelCommon2.AutoSize = true;
             this.labelCommon2.ControlId = null;
-            this.labelCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon2.Location = new System.Drawing.Point(473, 23);
+            this.labelCommon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon2.Location = new System.Drawing.Point(588, 5);
+            this.labelCommon2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon2.Name = "labelCommon2";
-            this.labelCommon2.Size = new System.Drawing.Size(81, 15);
+            this.labelCommon2.Size = new System.Drawing.Size(72, 13);
             this.labelCommon2.TabIndex = 69;
             this.labelCommon2.Text = "To DateTime:";
             // 
@@ -220,45 +209,34 @@
             // 
             this.labelCommon1.AutoSize = true;
             this.labelCommon1.ControlId = null;
-            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon1.Location = new System.Drawing.Point(297, 23);
+            this.labelCommon1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon1.Location = new System.Drawing.Point(393, 5);
+            this.labelCommon1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon1.Name = "labelCommon1";
-            this.labelCommon1.Size = new System.Drawing.Size(96, 15);
+            this.labelCommon1.Size = new System.Drawing.Size(82, 13);
             this.labelCommon1.TabIndex = 68;
             this.labelCommon1.Text = "From DateTime:";
-            // 
-            // btn_search
-            // 
-            this.btn_search.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_search.ControlId = null;
-            this.btn_search.Font = new System.Drawing.Font("Arial", 9F);
-            this.btn_search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_search.Location = new System.Drawing.Point(649, 31);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(82, 34);
-            this.btn_search.TabIndex = 63;
-            this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // cmb_model
             // 
             this.cmb_model.ControlId = null;
+            this.cmb_model.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_model.FormattingEnabled = true;
-            this.cmb_model.Location = new System.Drawing.Point(11, 37);
+            this.cmb_model.Location = new System.Drawing.Point(3, 39);
             this.cmb_model.Name = "cmb_model";
-            this.cmb_model.Size = new System.Drawing.Size(121, 24);
+            this.cmb_model.Size = new System.Drawing.Size(189, 24);
             this.cmb_model.TabIndex = 12;
             this.cmb_model.SelectedIndexChanged += new System.EventHandler(this.cmb_model_SelectedIndexChanged);
             // 
             // lbl_model
             // 
             this.lbl_model.AutoSize = true;
-            this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_model.Location = new System.Drawing.Point(8, 18);
+            this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_model.Location = new System.Drawing.Point(3, 5);
+            this.lbl_model.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lbl_model.Name = "lbl_model";
-            this.lbl_model.Size = new System.Drawing.Size(49, 16);
+            this.lbl_model.Size = new System.Drawing.Size(39, 13);
             this.lbl_model.TabIndex = 3;
             this.lbl_model.Text = "Model:";
             // 
@@ -284,8 +262,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_main.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_main.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_main.Location = new System.Drawing.Point(834, 107);
+            this.dgv_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_main.Location = new System.Drawing.Point(0, 0);
             this.dgv_main.Name = "dgv_main";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -296,42 +274,27 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_main.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_main.RowHeadersVisible = false;
-            this.dgv_main.Size = new System.Drawing.Size(453, 553);
+            this.dgv_main.Size = new System.Drawing.Size(406, 641);
             this.dgv_main.TabIndex = 6;
             // 
             // chr_main
             // 
-            this.chr_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chr_main.ChartAreas.Add(chartArea1);
+            this.chr_main.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chr_main.Legends.Add(legend1);
-            this.chr_main.Location = new System.Drawing.Point(28, 33);
+            this.chr_main.Location = new System.Drawing.Point(3, 155);
             this.chr_main.Name = "chr_main";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chr_main.Series.Add(series1);
-            this.chr_main.Size = new System.Drawing.Size(779, 374);
+            this.chr_main.Size = new System.Drawing.Size(868, 483);
             this.chr_main.TabIndex = 7;
             this.chr_main.Text = "chart1";
             title1.Name = "Title1";
             this.chr_main.Titles.Add(title1);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.chr_main);
-            this.groupBox2.Location = new System.Drawing.Point(0, 231);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(828, 429);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // dgv
             // 
@@ -355,7 +318,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv.Location = new System.Drawing.Point(834, 106);
+            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv.Location = new System.Drawing.Point(0, 0);
             this.dgv.Name = "dgv";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -366,49 +330,126 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(453, 553);
+            this.dgv.Size = new System.Drawing.Size(406, 641);
             this.dgv.TabIndex = 9;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 107);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_main);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv);
+            this.splitContainer1.Size = new System.Drawing.Size(1284, 641);
+            this.splitContainer1.SplitterDistance = 874;
+            this.splitContainer1.TabIndex = 10;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.chr_main, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.71295F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.28705F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(874, 641);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5513F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5513F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5513F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5513F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.794812F));
+            this.tableLayoutPanel2.Controls.Add(this.btn_search, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.search_cmb, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.labelCommon6, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cmb_item, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.cmb_model, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cmb_process, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_model, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelCommon5, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelCommon4, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelCommon1, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelCommon2, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelCommon3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cmb_line, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtp_to, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtp_from, 2, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(868, 146);
+            this.tableLayoutPanel2.TabIndex = 8;
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_search.ControlId = null;
+            this.btn_search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_search.Font = new System.Drawing.Font("Arial", 9F);
+            this.btn_search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_search.Location = new System.Drawing.Point(783, 3);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(82, 30);
+            this.btn_search.TabIndex = 63;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // ProducionControllerGA1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 660);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgv_main);
-            this.Controls.Add(this.dgv);
+            this.ClientSize = new System.Drawing.Size(1284, 748);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "ProducionControllerGA1Form";
             this.Text = "Test";
             this.TitleText = "FormCommon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProducionControllerGA1Form_Load);
-            this.Controls.SetChildIndex(this.dgv, 0);
-            this.Controls.SetChildIndex(this.dgv_main, 0);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.groupBox2, 0);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private Framework.LabelCommon labelCommon2;
         private Framework.LabelCommon labelCommon1;
-        private Framework.ButtonCommon btn_search;
         private Framework.ComboBoxCommon cmb_model;
         private System.Windows.Forms.Label lbl_model;
         private System.Windows.Forms.DateTimePicker dtp_from;
         private Framework.DataGridViewCommon dgv_main;
         private System.Windows.Forms.DateTimePicker dtp_to;
         private System.Windows.Forms.DataVisualization.Charting.Chart chr_main;
-        private System.Windows.Forms.GroupBox groupBox2;
         private Framework.ComboBoxCommon cmb_process;
         private Framework.LabelCommon labelCommon3;
         private Framework.LabelCommon labelCommon4;
@@ -418,5 +459,9 @@
         private Framework.DataGridViewCommon dgv;
         private Framework.LabelCommon labelCommon6;
         private Framework.ComboBoxCommon search_cmb;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Framework.ButtonCommon btn_search;
     }
 }
