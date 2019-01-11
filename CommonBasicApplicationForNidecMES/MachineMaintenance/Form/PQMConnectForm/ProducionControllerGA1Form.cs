@@ -210,7 +210,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 header = dgv.Columns[j].HeaderText;
                 for (int i = 0; i < dgv.RowCount; i++)
                 {
-                    value += int.Parse(dgv.Rows[i].Cells[j].Value.ToString());
+                    if (dgv.Rows[i].Cells[j].Value.ToString() != "")
+                    {
+                        value += int.Parse(dgv.Rows[i].Cells[j].Value.ToString());
+                    }
                 }
                 chr_main.Series["Pie"].Points.AddXY(header, value);
             }
@@ -347,14 +350,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     int j = 0;
                     for (int i = 0; i < dt.Columns.Count - 4; i++)
                     {
-                        if (dt.Columns[i + 4].ColumnName == inspectdata[j]["process"].ToString())
+                        if (j < inspectdata.Count)
                         {
-                            dr[i + 4] = inspectdata[j]["inspectdata"].ToString();
-                            j++;
-                        }
-                        else
-                        {
-                            dr[i + 4] = "0";
+                            if (dt.Columns[i + 4].ColumnName == inspectdata[j]["process"].ToString())
+                            {
+                                dr[i + 4] = inspectdata[j]["inspectdata"].ToString();
+                                j++;
+                            }
+                            else
+                            {
+                                dr[i + 4] = "0";
+                            }
                         }
                     }
                     dt.Rows.Add(dr);
@@ -368,7 +374,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         string b = dgv[j, i].Value.ToString();
                         if (dgv.Columns[j].HeaderText != "INPUT" && dgv.Columns[j].HeaderText != "OUTPUT")
                         {
-                            a += double.Parse(dgv[j, i].Value.ToString());
+                            if (dgv[j, i].Value.ToString() != "")
+                            {
+                                a += double.Parse(dgv[j, i].Value.ToString());
+                            }
                         }
                     }
                     dgv[3, i].Value = a;
@@ -423,17 +432,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     int j = 0;
                     for (int i = 0; i < dt.Columns.Count - 4; i++)
                     {
-                        if (dt.Columns[i + 4].ColumnName == inspectdata[j]["process"].ToString())
+                        if (j < inspectdata.Count)
                         {
-                            if (j <= inspectdata.Count)
+                            if (dt.Columns[i + 4].ColumnName == inspectdata[j]["process"].ToString())
                             {
                                 dr[i + 4] = inspectdata[j]["inspectdata"].ToString();
                                 j++;
-                            } 
-                        }
-                        else
-                        {
-                            dr[i + 4] = "0";
+                            }
+                            else
+                            {
+                                dr[i + 4] = "0";
+                            }
                         }
                     }
                     dt.Rows.Add(dr);
@@ -447,7 +456,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         string b = dgv[j, i].Value.ToString();
                         if (dgv.Columns[j].HeaderText != "INPUT" && dgv.Columns[j].HeaderText != "OUTPUT")
                         {
-                            a += double.Parse(dgv[j, i].Value.ToString());
+                            if (dgv[j, i].Value.ToString() != "")
+                            {
+                                a += double.Parse(dgv[j, i].Value.ToString());
+                            }
                         }
                     }
                     dgv[3, i].Value = a;
@@ -493,9 +505,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 DataRow dr = dt.NewRow();
 
-                dr[0] = infoSerno[0]["model"].ToString();
-                dr[1] = infoSerno[0]["line"].ToString();
-                dr[2] = infoSerno[0]["process"].ToString();
+                if (inspectdata.Count > 0)
+                {
+                    dr[0] = infoSerno[0]["model"].ToString();
+                    dr[1] = infoSerno[0]["line"].ToString();
+                    dr[2] = infoSerno[0]["process"].ToString();
+                }
 
                 for (int i = 0; i < inspectdata.Count; i++)
                 {
@@ -529,6 +544,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
             else if (search_cmb.Text == "Date")
             {
+                cmb_process.ResetText();
                 dtp_from.CustomFormat = "yyyy-MM-dd 00:00:00";
                 dtp_to.CustomFormat = "yyyy-MM-dd 23:59:59";
             }

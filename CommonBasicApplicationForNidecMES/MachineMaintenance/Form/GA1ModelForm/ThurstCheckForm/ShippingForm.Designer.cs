@@ -277,7 +277,7 @@
             // 
             // btnAddBox
             // 
-            this.btnAddBox.Location = new System.Drawing.Point(54, 12);
+            this.btnAddBox.Location = new System.Drawing.Point(83, 14);
             this.btnAddBox.Name = "btnAddBox";
             this.btnAddBox.Size = new System.Drawing.Size(110, 25);
             this.btnAddBox.TabIndex = 7;
@@ -287,7 +287,7 @@
             // 
             // btnSearchBoxId
             // 
-            this.btnSearchBoxId.Location = new System.Drawing.Point(170, 12);
+            this.btnSearchBoxId.Location = new System.Drawing.Point(199, 14);
             this.btnSearchBoxId.Name = "btnSearchBoxId";
             this.btnSearchBoxId.Size = new System.Drawing.Size(110, 25);
             this.btnSearchBoxId.TabIndex = 7;
@@ -489,7 +489,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.90566F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.09434F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.tableLayoutPanel3.Controls.Add(this.lblUser, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtUser, 1, 0);
@@ -528,14 +528,14 @@
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(112, 3);
+            this.txtUser.Location = new System.Drawing.Point(111, 3);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(197, 20);
+            this.txtUser.Size = new System.Drawing.Size(196, 20);
             this.txtUser.TabIndex = 19;
             // 
             // btnChangeLimit
             // 
-            this.btnChangeLimit.Location = new System.Drawing.Point(315, 47);
+            this.btnChangeLimit.Location = new System.Drawing.Point(313, 47);
             this.btnChangeLimit.Name = "btnChangeLimit";
             this.btnChangeLimit.Size = new System.Drawing.Size(100, 24);
             this.btnChangeLimit.TabIndex = 25;
@@ -547,15 +547,15 @@
             // 
             this.txtOkCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOkCount.Enabled = false;
-            this.txtOkCount.Location = new System.Drawing.Point(112, 47);
+            this.txtOkCount.Location = new System.Drawing.Point(111, 47);
             this.txtOkCount.Name = "txtOkCount";
-            this.txtOkCount.Size = new System.Drawing.Size(197, 20);
+            this.txtOkCount.Size = new System.Drawing.Size(196, 20);
             this.txtOkCount.TabIndex = 18;
             // 
             // txtLimit
             // 
             this.txtLimit.Enabled = false;
-            this.txtLimit.Location = new System.Drawing.Point(315, 3);
+            this.txtLimit.Location = new System.Drawing.Point(313, 3);
             this.txtLimit.Name = "txtLimit";
             this.txtLimit.Size = new System.Drawing.Size(100, 20);
             this.txtLimit.TabIndex = 17;
