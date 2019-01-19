@@ -498,15 +498,6 @@
   <data name="colEndday.Width" type="System.Int32, mscorlib">
     <value>73</value>
   </data>
-  <metadata name="colInputCase.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="colInputCase.HeaderText" xml:space="preserve">
-    <value>Input Case</value>
-  </data>
-  <data name="colInputCase.Width" type="System.Int32, mscorlib">
-    <value>83</value>
-  </data>
   <metadata name="colInputBracket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -515,6 +506,15 @@
   </data>
   <data name="colInputBracket.Width" type="System.Int32, mscorlib">
     <value>96</value>
+  </data>
+  <metadata name="colInputCase.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colInputCase.HeaderText" xml:space="preserve">
+    <value>Input Case</value>
+  </data>
+  <data name="colInputCase.Width" type="System.Int32, mscorlib">
+    <value>83</value>
   </data>
   <metadata name="colOutput.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1291,16 +1291,16 @@
   <data name="&gt;&gt;colEndday.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colInputCase.Name" xml:space="preserve">
-    <value>colInputCase</value>
-  </data>
-  <data name="&gt;&gt;colInputCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;colInputBracket.Name" xml:space="preserve">
     <value>colInputBracket</value>
   </data>
   <data name="&gt;&gt;colInputBracket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colInputCase.Name" xml:space="preserve">
+    <value>colInputCase</value>
+  </data>
+  <data name="&gt;&gt;colInputCase.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colOutput.Name" xml:space="preserve">

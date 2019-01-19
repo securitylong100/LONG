@@ -204,7 +204,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 production_controller_detail_dgv.Columns.Add("colBa_app_error_other", "Error Other");
 
                 production_controller_detail_dgv.Columns["colBa_app_metal_deform_scracth"].DataPropertyName = "BA_app_metal_deform_scracth";
-                production_controller_detail_dgv.Columns["colBa_app_colBa_deform"].DataPropertyName = "BA_app_deform";
+                production_controller_detail_dgv.Columns["colBa_app_Ba_deform"].DataPropertyName = "BA_app_deform";
                 production_controller_detail_dgv.Columns["colBa_app_endplate_deform_scracth"].DataPropertyName = "BA_app_endplate_deform_scracth";
                 production_controller_detail_dgv.Columns["colBa_app_error_other"].DataPropertyName = "BA_app_error_other";
             }
