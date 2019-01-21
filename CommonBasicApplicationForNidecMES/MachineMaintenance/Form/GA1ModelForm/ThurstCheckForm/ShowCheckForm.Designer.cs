@@ -36,8 +36,6 @@
             this.btn_autoview = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.dpt_to = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
-            this.dpt_from = new Com.Nidec.Mes.Framework.DateTimePickerCommon();
             this.btn_search = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.cmb_model = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.btn_exportexcel = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -59,6 +57,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dpt_to = new System.Windows.Forms.DateTimePicker();
+            this.dpt_from = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thurst)).BeginInit();
@@ -109,7 +109,7 @@
             this.labelCommon2.Location = new System.Drawing.Point(306, 5);
             this.labelCommon2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon2.Name = "labelCommon2";
-            this.labelCommon2.Size = new System.Drawing.Size(80, 15);
+            this.labelCommon2.Size = new System.Drawing.Size(81, 15);
             this.labelCommon2.TabIndex = 69;
             this.labelCommon2.Text = "To DateTime:";
             // 
@@ -124,34 +124,6 @@
             this.labelCommon1.Size = new System.Drawing.Size(96, 15);
             this.labelCommon1.TabIndex = 68;
             this.labelCommon1.Text = "From DateTime:";
-            // 
-            // dpt_to
-            // 
-            this.dpt_to.BackColor = System.Drawing.SystemColors.Control;
-            this.dpt_to.ControlId = null;
-            this.dpt_to.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dpt_to.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
-            this.dpt_to.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dpt_to.Font = new System.Drawing.Font("Arial", 9F);
-            this.dpt_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpt_to.Location = new System.Drawing.Point(306, 43);
-            this.dpt_to.Name = "dpt_to";
-            this.dpt_to.Size = new System.Drawing.Size(168, 21);
-            this.dpt_to.TabIndex = 67;
-            // 
-            // dpt_from
-            // 
-            this.dpt_from.BackColor = System.Drawing.SystemColors.Control;
-            this.dpt_from.ControlId = null;
-            this.dpt_from.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dpt_from.DisplayFormat = Com.Nidec.Mes.Framework.DateTimePickerCommon.DisplayFormatList.ShortDatePattern;
-            this.dpt_from.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dpt_from.Font = new System.Drawing.Font("Arial", 9F);
-            this.dpt_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpt_from.Location = new System.Drawing.Point(131, 43);
-            this.dpt_from.Name = "dpt_from";
-            this.dpt_from.Size = new System.Drawing.Size(169, 21);
-            this.dpt_from.TabIndex = 66;
             // 
             // btn_search
             // 
@@ -395,12 +367,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.1875F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.65625F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.8125F));
+            this.tableLayoutPanel1.Controls.Add(this.dpt_to, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dpt_from, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btn_autoview, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_model, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_search, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dpt_to, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelCommon2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dpt_from, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelCommon1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cmb_model, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -411,6 +383,24 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 80);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dpt_to
+            // 
+            this.dpt_to.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dpt_to.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpt_to.Location = new System.Drawing.Point(306, 43);
+            this.dpt_to.Name = "dpt_to";
+            this.dpt_to.Size = new System.Drawing.Size(168, 20);
+            this.dpt_to.TabIndex = 11;
+            // 
+            // dpt_from
+            // 
+            this.dpt_from.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dpt_from.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpt_from.Location = new System.Drawing.Point(131, 43);
+            this.dpt_from.Name = "dpt_from";
+            this.dpt_from.Size = new System.Drawing.Size(169, 20);
+            this.dpt_from.TabIndex = 10;
             // 
             // tableLayoutPanel2
             // 
@@ -478,8 +468,6 @@
         private Framework.ButtonCommon btn_autoview;
         private Framework.LabelCommon labelCommon2;
         private Framework.LabelCommon labelCommon1;
-        private Framework.DateTimePickerCommon dpt_to;
-        private Framework.DateTimePickerCommon dpt_from;
         private Framework.DataGridViewCommon dgv_thurst;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_model;
@@ -498,5 +486,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dpt_to;
+        private System.Windows.Forms.DateTimePicker dpt_from;
     }
 }

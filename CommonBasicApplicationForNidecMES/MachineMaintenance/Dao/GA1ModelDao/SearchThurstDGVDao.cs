@@ -35,7 +35,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sqlParameter.AddParameterString("a90_barcode", inVo.A90Barcode);
             }
 
-            sql.Append(@" order by a90_id desc limit 1");
+            sql.Append(@" order by a90_datetime desc limit 1");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 

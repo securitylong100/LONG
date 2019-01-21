@@ -19,15 +19,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            string line = "";
-            string grline = "";
-            if (!string.IsNullOrEmpty(inVo.LineCode))
-            {
-                line = ",a.line";
-                grline = ",a.line";
-            }
-            else { line = ",'All Line' line"; }
-            sql.Append(@"select cast(row_number() over(partition by process order by a.inspectdate) as int ) id,a.model" + line + ", a.process,a.inspectdate, a.serno, sum(inspectdata) inspectdata  from  " + inVo.TableName);
+            //string date = "";
+            //string grdate = "";
+            //if (inVo.grDate)
+            //{
+            //    date = ",a.line";
+            //    grdate = ",a.line";
+            //}
+            //else { date = ""; grdate = ""; }
+
+            sql.Append(@"select a.model,a.line, a.process, sum(inspectdata) inspectdata from  " + inVo.TableName);
             sql.Append(" a left join " + inVo.TableName + "data b on a.serno = b.serno where a.inspectdate = b.inspectdate ");
             sql.Append(@" and a.inspectdate >= :datefrom and a.inspectdate <= :dateto");
             sqlParameter.AddParameter("datefrom", inVo.DateFrom);
@@ -43,13 +44,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(@" and a.line  =:line");
                 sqlParameter.AddParameterString("line", inVo.LineCode);
             }
-            if (!string.IsNullOrEmpty(inVo.ProcessCode))
-            {
-                sql.Append(@" and a.process  =:process");
-                sqlParameter.AddParameterString("process", inVo.ProcessCode);
-            }
+            //if (!string.IsNullOrEmpty(inVo.ProcessCode))
+            //{
+            //    sql.Append(@" and a.process  =:process");
+            //    sqlParameter.AddParameterString("process", inVo.ProcessCode);
+            //}
 
-            sql.Append(@" group by process,a.model" + grline + ",a.serno,a.inspectdate order by a.inspectdate");
+            sql.Append(@" group by process,a.model,a.line");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DataSet ds = sqlCommandAdapter.ExecuteDataSet(sqlParameter);

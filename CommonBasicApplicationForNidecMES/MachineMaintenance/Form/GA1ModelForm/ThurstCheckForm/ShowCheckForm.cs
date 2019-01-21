@@ -33,7 +33,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
 
 
-        private void GridBind(bool data, DateTimePickerCommon dtpfrom, DateTimePickerCommon dtptto)
+        private void GridBind(bool data, DateTimePicker dtpfrom, DateTimePicker dtptto)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
-            GridBind(false, dpt_from, dpt_to);
+            GridBind(false, dpt_from, dpt_from);
         }
         private void btn_autoview_Click(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            GridBind(true, dpt_from, dpt_to);
+            GridBind(true, dpt_from, dpt_from);
         }
         private string directorySave = "";
         private void btn_browser_Click(object sender, EventArgs e)
