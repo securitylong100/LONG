@@ -239,10 +239,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     LineCode = dgvProductSerial["Line", i].Value.ToString(),
                     ModelCode = dgvProductSerial["Model", i].Value.ToString(),
                     A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString(),
-                    A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString(),
-                    A90OQCStatus = dgvProductSerial["OQC", i].Value.ToString()
+                    A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
                 });
             }
+            MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtProduct_KeyDown(object sender, KeyEventArgs e)
@@ -270,14 +270,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     string line = dt1.Rows[0][2].ToString();
                     string thurst = dt1.Rows[0][3].ToString();
                     string noise = dt1.Rows[0][4].ToString();
-                    string oqc = dt1.Rows[0][5].ToString();
 
                     newrow["Serial"] = serial;
                     newrow["Model"] = model;
                     newrow["Line"] = line;
                     newrow["Thurst"] = thurst;
                     newrow["Noise"] = noise;
-                    newrow["OQC"] = oqc;
                 }
 
                 // Add the row to the datatable
@@ -303,19 +301,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     dgv[3, i].Style.BackColor = Color.Red;
                 }
-                if (dgv[4, i].Value.ToString() == "NG" || dgv[4, i].Value.ToString() == String.Empty)
-                {
-                    dgv[4, i].Style.BackColor = Color.Red;
-                }
-                if (dgv[5, i].Value.ToString() == "NG" || dgv[5, i].Value.ToString() == String.Empty)
-                {
-                    dgv[5, i].Style.BackColor = Color.Red;
-                }
+                //if (dgv[4, i].Value.ToString() == "NG" || dgv[4, i].Value.ToString() == String.Empty)
+                //{
+                //    dgv[4, i].Style.BackColor = Color.Red;
+                //}
+                //if (dgv[5, i].Value.ToString() == "NG" || dgv[5, i].Value.ToString() == String.Empty)
+                //{
+                //    dgv[5, i].Style.BackColor = Color.Red;
+                //}
                 else
                 {
                     dgv[3, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
-                    dgv[4, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
-                    dgv[5, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
+                    //dgv[4, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
+                    //dgv[5, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
                 }
             }
         }
@@ -389,7 +387,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dt.Columns.Add("Line", Type.GetType("System.String"));
             dt.Columns.Add("Thurst", Type.GetType("System.String"));
             dt.Columns.Add("Noise", Type.GetType("System.String"));
-            dt.Columns.Add("OQC", Type.GetType("System.String"));
         }
 
         public void ShowRowNumber(DataGridView dgv)
@@ -499,10 +496,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private int getOkCount(DataTable dt)
         {
             if (dt.Rows.Count <= 0) return 0;
-            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "Serial", "Thurst", "Noise", "OQC" });
-            DataRow[] dr = distinct.Select("Thurst = 'OK' and Noise = 'OK' and OQC = 'OK'");
+            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "Serial", "Thurst" });
+            DataRow[] dr = distinct.Select("Thurst = 'OK'"); //and Noise = 'OK'");
             int dist = dr.Length;
             return dist;
+        }
+
+        private void btnDeleteBoxId_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Do you want to delete this box ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                GA1ModelVo deleteBox = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteBoxIDCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text
+                });
+
+                GA1ModelVo delProduct = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteProductCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text
+                });
+                MessageBox.Show("Delete successful!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

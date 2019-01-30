@@ -78,7 +78,6 @@
             this.Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thurst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Noise = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OQC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splMain)).BeginInit();
             this.splMain.Panel1.SuspendLayout();
             this.splMain.Panel2.SuspendLayout();
@@ -489,7 +488,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.90566F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.09434F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
             this.tableLayoutPanel3.Controls.Add(this.lblUser, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtUser, 1, 0);
@@ -528,14 +527,14 @@
             // txtUser
             // 
             this.txtUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUser.Location = new System.Drawing.Point(111, 3);
+            this.txtUser.Location = new System.Drawing.Point(109, 3);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(195, 20);
+            this.txtUser.Size = new System.Drawing.Size(191, 20);
             this.txtUser.TabIndex = 19;
             // 
             // btnChangeLimit
             // 
-            this.btnChangeLimit.Location = new System.Drawing.Point(312, 47);
+            this.btnChangeLimit.Location = new System.Drawing.Point(306, 47);
             this.btnChangeLimit.Name = "btnChangeLimit";
             this.btnChangeLimit.Size = new System.Drawing.Size(100, 24);
             this.btnChangeLimit.TabIndex = 25;
@@ -547,15 +546,15 @@
             // 
             this.txtOkCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOkCount.Enabled = false;
-            this.txtOkCount.Location = new System.Drawing.Point(111, 47);
+            this.txtOkCount.Location = new System.Drawing.Point(109, 47);
             this.txtOkCount.Name = "txtOkCount";
-            this.txtOkCount.Size = new System.Drawing.Size(195, 20);
+            this.txtOkCount.Size = new System.Drawing.Size(191, 20);
             this.txtOkCount.TabIndex = 18;
             // 
             // txtLimit
             // 
             this.txtLimit.Enabled = false;
-            this.txtLimit.Location = new System.Drawing.Point(312, 3);
+            this.txtLimit.Location = new System.Drawing.Point(306, 3);
             this.txtLimit.Name = "txtLimit";
             this.txtLimit.Size = new System.Drawing.Size(100, 20);
             this.txtLimit.TabIndex = 17;
@@ -616,6 +615,8 @@
             this.btnDeleteBoxId.TabIndex = 28;
             this.btnDeleteBoxId.Text = "Delete Box ID";
             this.btnDeleteBoxId.UseVisualStyleBackColor = true;
+            this.btnDeleteBoxId.Visible = false;
+            this.btnDeleteBoxId.Click += new System.EventHandler(this.btnDeleteBoxId_Click);
             // 
             // btnDeleteSelection
             // 
@@ -663,8 +664,7 @@
             this.Model,
             this.Line,
             this.Thurst,
-            this.Noise,
-            this.OQC});
+            this.Noise});
             this.dgvProductSerial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductSerial.Location = new System.Drawing.Point(0, 0);
             this.dgvProductSerial.Name = "dgvProductSerial";
@@ -709,19 +709,13 @@
             this.Noise.HeaderText = "Noise";
             this.Noise.Name = "Noise";
             this.Noise.ReadOnly = true;
-            // 
-            // OQC
-            // 
-            this.OQC.DataPropertyName = "OQC";
-            this.OQC.HeaderText = "OQC";
-            this.OQC.Name = "OQC";
-            this.OQC.ReadOnly = true;
+            this.Noise.Visible = false;
             // 
             // ShippingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 890);
+            this.ClientSize = new System.Drawing.Size(1204, 750);
             this.Controls.Add(this.splMain);
             this.IsMdiContainer = true;
             this.Name = "ShippingForm";
@@ -811,15 +805,14 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtLimit;
         private System.Windows.Forms.Button btnAddBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn suser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn printdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Serial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Model;
         private System.Windows.Forms.DataGridViewTextBoxColumn Line;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thurst;
         private System.Windows.Forms.DataGridViewTextBoxColumn Noise;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OQC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn suser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn printdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shipdate;
     }
 }

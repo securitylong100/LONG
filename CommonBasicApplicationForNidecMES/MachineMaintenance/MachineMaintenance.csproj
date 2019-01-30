@@ -176,6 +176,8 @@
     <Compile Include="Cbm\GA1ModelCbm\CheckIBarcodeDuplicateCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\AddProductCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\AddBoxIDCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\Shipping\DeleteProductCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\Shipping\DeleteBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\GetBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\GetNewBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\GetSerialBoxCbm.cs" />
@@ -445,9 +447,11 @@
     <Compile Include="Dao\GA1ModelDao\CheckIBarcodeDuplicateDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\AddProductDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\AddBoxIDDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\Shipping\DeleteProductDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\GetBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\GetNewBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\GetSerialBoxDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\Shipping\DeleteBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\SearchBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\SearchBoxIDProDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\SearchBoxIDProductDao.cs" />

@@ -34,7 +34,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             {
                 AffectedCount = sqlCommandAdapter.ExecuteNonQuery(sqlParameter)
             };
-
+            
             return outVo;
         }
     }
