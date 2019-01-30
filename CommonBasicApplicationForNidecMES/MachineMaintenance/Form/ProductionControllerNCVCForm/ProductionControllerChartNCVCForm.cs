@@ -95,13 +95,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chartIONG.ChartAreas[0].AxisY.Title = "INPUT [PCS]";
             chartIONG.ChartAreas[0].AxisY.Maximum = double.NaN;
 
-            DrawChart("Input_Line01", "L01", "colInput", 9, 9, 225);
-            DrawChart("Input_Line02", "L02", "colInput", 128, 64, 64);
-            DrawChart("Input_Line03", "L03", "colInput", 192, 0, 192);
-            DrawChart("Input_Line04", "L04", "colInput", 0, 192, 192);
-            DrawChart("Input_Line05", "L05", "colInput", 0, 192, 0);
-            DrawChart("Input_Line06", "L06", "colInput", 192, 192, 0);
-            DrawChart("Input_Line07", "L07", "colInput", 255, 192, 128);
+            DrawChart("Input_Line01", "L01", "colInputCase", 9, 9, 225);
+            DrawChart("Input_Line02", "L02", "colInputCase", 128, 64, 64);
+            DrawChart("Input_Line03", "L03", "colInputCase", 192, 0, 192);
+            DrawChart("Input_Line04", "L04", "colInputCase", 0, 192, 192);
+            DrawChart("Input_Line05", "L05", "colInputCase", 0, 192, 0);
+            DrawChart("Input_Line06", "L06", "colInputCase", 192, 192, 0);
+            DrawChart("Input_Line07", "L07", "colInputCase", 255, 192, 128);
 
         }
 
@@ -250,7 +250,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 
                 if (i > 0)
                 {
-                    if (double.Parse(dgv.Rows[i].Cells["colInput"].Value.ToString()) > double.Parse(dgv.Rows[i-1].Cells["colInput"].Value.ToString()))
+                    if (double.Parse(dgv.Rows[i].Cells["colInputCase"].Value.ToString()) > double.Parse(dgv.Rows[i-1].Cells["colInputCase"].Value.ToString()))
                     {
                         max = i;
                     }
@@ -261,8 +261,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             }
 
-            chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[max].Cells["colInput"].Value.ToString()) + 5000;
-                if (line_lbl.Text == "All Line") { chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[max].Cells["colInput"].Value.ToString()) + 15000; }
+            chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[max].Cells["colInputCase"].Value.ToString()) + 5000;
+                if (line_lbl.Text == "All Line") { chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[max].Cells["colInputCase"].Value.ToString()) + 15000; }
          
 
             chartIONG.DataSource = dgv.DataSource;
@@ -345,7 +345,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 double yvalue = double.Parse(dgv.Rows[i].Cells["colRateNG"].Value.ToString());
                 DateTime xvalue = DateTime.Parse(dgv.Rows[i].Cells["colEndday"].Value.ToString());
                 chartIONG.Series["YEILD"].Points.AddXY(xvalue, 100 - yvalue);
-                chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[i].Cells["colInput"].Value.ToString()) + 5000;
+                chartIONG.ChartAreas[0].AxisY.Maximum = double.Parse(dgv.Rows[i].Cells["colInputCase"].Value.ToString()) + 5000;
             }
             chartIONG.Series["YEILD"].CustomProperties = "LabelStyle=Bottom";
             chartIONG.DataSource = dgv.DataSource;

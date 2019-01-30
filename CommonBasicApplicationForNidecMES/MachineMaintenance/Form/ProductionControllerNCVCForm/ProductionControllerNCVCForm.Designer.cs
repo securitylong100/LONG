@@ -70,8 +70,8 @@
             this.colLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStarday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEndday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInputCase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInputBracket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInputCase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRateNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,8 +210,8 @@
             this.colLine,
             this.colStarday,
             this.colEndday,
-            this.colInputCase,
             this.colInputBracket,
+            this.colInputCase,
             this.colOutput,
             this.colTotalNG,
             this.colRateNG,
@@ -469,19 +469,19 @@
             this.colEndday.Name = "colEndday";
             this.colEndday.ReadOnly = true;
             // 
-            // colInputCase
-            // 
-            this.colInputCase.DataPropertyName = "ProInputCase";
-            resources.ApplyResources(this.colInputCase, "colInputCase");
-            this.colInputCase.Name = "colInputCase";
-            this.colInputCase.ReadOnly = true;
-            // 
             // colInputBracket
             // 
-            this.colInputBracket.DataPropertyName = "ProInputBracket";
+            this.colInputBracket.DataPropertyName = "ProInputCase";
             resources.ApplyResources(this.colInputBracket, "colInputBracket");
             this.colInputBracket.Name = "colInputBracket";
             this.colInputBracket.ReadOnly = true;
+            // 
+            // colInputCase
+            // 
+            this.colInputCase.DataPropertyName = "ProInputBracket";
+            resources.ApplyResources(this.colInputCase, "colInputCase");
+            this.colInputCase.Name = "colInputCase";
+            this.colInputCase.ReadOnly = true;
             // 
             // colOutput
             // 
@@ -651,8 +651,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLine;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStarday;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEndday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInputCase;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInputBracket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInputCase;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOutput;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRateNG;

@@ -378,14 +378,17 @@
   <data name="&gt;&gt;date_lbl.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="setting_gbc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="setting_gbc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
   <data name="setting_gbc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 108</value>
+    <value>0, 107</value>
   </data>
   <data name="setting_gbc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 49</value>
+    <value>688, 49</value>
   </data>
   <data name="setting_gbc.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -405,11 +408,14 @@
   <data name="&gt;&gt;setting_gbc.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="chartNG.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="chartNG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 155</value>
+    <value>0, 155</value>
   </data>
   <data name="chartNG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 495</value>
+    <value>688, 507</value>
   </data>
   <data name="chartNG.TabIndex" type="System.Int32, mscorlib">
     <value>78</value>
@@ -449,7 +455,7 @@
     <value>Production Controller</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ProductionControllerChart_CForm</value>
+    <value>ProductionControllerChart_CNCVCForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.FormCommonNCVP, MachineMaintenance, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>

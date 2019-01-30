@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionControllerChart_CForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionControllerChart_CNCVCForm));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -129,28 +129,29 @@
             chartArea1.AxisX.MajorGrid.Enabled = false;
             chartArea1.Name = "ChartArea1";
             this.chartNG.ChartAreas.Add(chartArea1);
+            resources.ApplyResources(this.chartNG, "chartNG");
             legend1.Name = "Legend1";
             this.chartNG.Legends.Add(legend1);
-            resources.ApplyResources(this.chartNG, "chartNG");
             this.chartNG.Name = "chartNG";
             this.chartNG.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.BoxPlot;
             series1.IsXValueIndexed = true;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.YValuesPerPoint = 6;
             this.chartNG.Series.Add(series1);
             title1.Name = "Title1";
             this.chartNG.Titles.Add(title1);
             // 
-            // ProductionControllerChart_CForm
+            // ProductionControllerChart_CNCVCForm
             // 
             resources.ApplyResources(this, "$this");
             this.ControlId = "";
             this.Controls.Add(this.chartNG);
             this.Controls.Add(this.setting_gbc);
-            this.Name = "ProductionControllerChart_CForm";
+            this.Name = "ProductionControllerChart_CNCVCForm";
             this.TitleText = "Production Controller";
             this.Load += new System.EventHandler(this.ProductionControllerChart_CForm_Load);
             this.Controls.SetChildIndex(this.setting_gbc, 0);

@@ -45,9 +45,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     double totalNG_rate = int.Parse(production_controller_dgv.Rows[i].Cells["colTotalNG"].Value.ToString());
                     double Output_rate = int.Parse(production_controller_dgv.Rows[i].Cells["colOutput"].Value.ToString());
 
-                    if (production_controller_dgv.Rows[i].Cells["colInput"].Value.ToString().Length > 0 && production_controller_dgv.Rows[i].Cells["colOutput"].Value.ToString().Length > 0)
+                    if (production_controller_dgv.Rows[i].Cells["colInputCase"].Value.ToString().Length > 0 && production_controller_dgv.Rows[i].Cells["colOutput"].Value.ToString().Length > 0)
                     {
-                        int Input = int.Parse(production_controller_dgv.Rows[i].Cells["colInput"].Value.ToString());
+                        int Input = int.Parse(production_controller_dgv.Rows[i].Cells["colInputCase"].Value.ToString());
                         int Output = int.Parse(production_controller_dgv.Rows[i].Cells["colOutput"].Value.ToString());
                     }
                     if (Output_rate > 200)
@@ -272,7 +272,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             int rowCount = production_controller_dgv.RowCount;
             for (int i = 0; i < rowCount; i++)
             {
-                input += float.Parse(production_controller_dgv.Rows[i].Cells["colInput"].Value.ToString());
+                input += float.Parse(production_controller_dgv.Rows[i].Cells["colInputCase"].Value.ToString());
                 ng += float.Parse(production_controller_dgv.Rows[i].Cells["colTotalNG"].Value.ToString());
                 output += float.Parse(production_controller_dgv.Rows[i].Cells["colOutput"].Value.ToString());
                 extant = input - output - ng;
@@ -298,7 +298,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             else
             {
                 ng = float.Parse(production_controller_dgv.Rows[rowCount - 1].Cells["colTotalNG"].Value.ToString());
-                input = float.Parse(production_controller_dgv.Rows[rowCount - 1].Cells["colInput"].Value.ToString());
+                input = float.Parse(production_controller_dgv.Rows[rowCount - 1].Cells["colInputCase"].Value.ToString());
                 output = float.Parse(production_controller_dgv.Rows[rowCount - 1].Cells["colOutput"].Value.ToString());
                 extant = input - output - ng;
             }
