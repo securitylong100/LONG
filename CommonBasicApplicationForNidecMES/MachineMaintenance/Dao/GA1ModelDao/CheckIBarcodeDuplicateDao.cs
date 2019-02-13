@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, string.Empty);
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sql.Append("Select Count(*) as rowcount ");
-            sql.Append(" from  t_checkpusha90main");
+            sql.Append(" from  t_checkpusha90");
             sql.Append(" Where 1=1 ");
             sql.Append(" and a90_barcode =:a90_barcode ");
 

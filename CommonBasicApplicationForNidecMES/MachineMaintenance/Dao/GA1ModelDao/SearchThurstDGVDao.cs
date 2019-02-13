@@ -20,7 +20,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sql.Append(@"select a90_model, a90_line, a90_barcode, a90_thurst_status, a90_noise_status, a90_oqc_status, 
-                                a90_oqc_data, a90_shipping, a90_user_cd, a90_datetime from t_checkpusha90main
+                                a90_oqc_data, a90_shipping, a90_user_cd, a90_datetime from t_checkpusha90
                                 where 1=1 ");
 
             if (!string.IsNullOrEmpty(inVo.A90Model))

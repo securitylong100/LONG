@@ -15,7 +15,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             GA1ModelVo inVo = (GA1ModelVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append("update  t_checkpusha90main set  a90_noise_status=:a90_noise_status");
+            sql.Append("update  t_checkpusha90 set  a90_noise_status=:a90_noise_status");
             //sql.Append("where 1 = 1 and ");
             sql.Append(" where a90_barcode=:a90_barcode");
             

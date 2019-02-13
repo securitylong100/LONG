@@ -123,7 +123,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ResetControlValues.ResetControlValue(tableLayoutPanel3);
                 dtOverall.Reset();
                 dtOverall.AcceptChanges();
-                dgvProductSerial.DataSource = null;
+                //dgvProductSerial.Rows.Clear();
+                btnDeleteAll.PerformClick();
                 txtLimit.Text = "100";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
@@ -132,7 +133,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 ResetControlValues.ResetControlValue(tableLayoutPanel2);
                 ResetControlValues.ResetControlValue(tableLayoutPanel3);
-                dgvProductSerial.DataSource = null;
+                btnDeleteAll.PerformClick();
+                //dgvProductSerial.Rows.Clear();
                 txtLimit.Text = "100";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
@@ -178,6 +180,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dtOverall = new DataTable();
             defineDataTable(ref dtOverall);
             splMain.Panel2.Enabled = true;
+            txtProduct.Enabled = true;
+            txtUser.Enabled = true;
             splMain.Panel1Collapsed = true;
             txtLimit.Text = "100";
             txtBoxId.Text = getNewBoxId();
@@ -238,8 +242,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
                     LineCode = dgvProductSerial["Line", i].Value.ToString(),
                     ModelCode = dgvProductSerial["Model", i].Value.ToString(),
-                    A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString(),
-                    A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
+                    A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString()
+                    //A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
                 });
             }
             MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -269,13 +273,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     string model = dt1.Rows[0][1].ToString();
                     string line = dt1.Rows[0][2].ToString();
                     string thurst = dt1.Rows[0][3].ToString();
-                    string noise = dt1.Rows[0][4].ToString();
+                    //string noise = dt1.Rows[0][4].ToString();
 
                     newrow["Serial"] = serial;
                     newrow["Model"] = model;
                     newrow["Line"] = line;
                     newrow["Thurst"] = thurst;
-                    newrow["Noise"] = noise;
+                    //newrow["Noise"] = noise;
                 }
 
                 // Add the row to the datatable
@@ -386,7 +390,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dt.Columns.Add("Model", Type.GetType("System.String"));
             dt.Columns.Add("Line", Type.GetType("System.String"));
             dt.Columns.Add("Thurst", Type.GetType("System.String"));
-            dt.Columns.Add("Noise", Type.GetType("System.String"));
+            //dt.Columns.Add("Noise", Type.GetType("System.String"));
         }
 
         public void ShowRowNumber(DataGridView dgv)

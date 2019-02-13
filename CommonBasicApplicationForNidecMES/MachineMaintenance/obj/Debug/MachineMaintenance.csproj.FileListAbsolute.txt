@@ -423,7 +423,6 @@ D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ReportDownTimeForm.vi.resources
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csproj.GenerateResource.Cache
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll.config
-D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.dll
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\MachineMaintenance.pdb
 D:\GIT_HUB\NIDEC\FW\NidecMES\Dll\vi\MachineMaintenance.resources.dll
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\vi\MachineMaintenance.resources.dll
@@ -449,3 +448,4 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.AddProcessWForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.ProcessWForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
+D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache

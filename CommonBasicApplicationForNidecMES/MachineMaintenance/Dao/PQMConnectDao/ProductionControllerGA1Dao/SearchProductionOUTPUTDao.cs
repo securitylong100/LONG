@@ -29,7 +29,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             else { date = ""; grdate = ""; }
 
             sql.Append(@"select count(*) output" + date + " from ");
-            sql.Append(@"(select distinct(a90_barcode), cast(a90_datetime as date) datetimes from t_checkpusha90main ");
+            sql.Append(@"(select distinct(a90_barcode), cast(a90_datetime as date) datetimes from t_checkpusha90 ");
             sql.Append(@"where a90_thurst_status = 'OK' ");
             sqlParameter.AddParameter("datefrom", inVo.DateFrom);
             sqlParameter.AddParameter("dateto", inVo.DateTo);
