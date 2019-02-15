@@ -92,37 +92,70 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            if (cmb_model.Text != "" && cmb_line.Text == "" && cmb_process.Text == "")
-            {
-                if (search_cmb.Text == "Time")
-                {
-                    GridBind();
-                    showchartProcess();
-                }
-                else if (search_cmb.Text == "Date")
-                {
-                    GridBindByDate();
-                    showchartLine(false);
-                }
-            }
-            else if (cmb_model.Text != "" && cmb_line.Text != "" && cmb_process.Text == "")
-            {
-                if (search_cmb.Text == "Time")
-                {
-                    GridBind();
-                    showchartProcess();
-                }
-                else if (search_cmb.Text == "Date")
-                {
-                    GridBindByDate();
-                    showchartLine(false);
-                }
-            }
-            else if (cmb_model.Text != "" && cmb_line.Text != "" && cmb_process.Text != "" || cmb_model.Text != "" && cmb_line.Text == "" && cmb_process.Text != "")
-            {
-                GridBindProcess();
-                showchartProcess();
-            }
+            funtion();
+            timer1.Enabled = true;
+            //if (cmb_model.Text != "" && cmb_line.Text == "" && cmb_process.Text == "")
+            //{
+            //    if (search_cmb.Text == "Time")
+            //    {
+            //        GridBind();
+            //        showchartProcess();
+            //    }
+            //    else if (search_cmb.Text == "Date")
+            //    {
+            //        GridBindByDate();
+            //        showchartLine(false);
+            //    }
+            //}
+            //else if (cmb_model.Text != "" && cmb_line.Text != "" && cmb_process.Text == "")
+            //{
+            //    if (search_cmb.Text == "Time")
+            //    {
+            //        GridBind();
+            //        showchartProcess();
+            //    }
+            //    else if (search_cmb.Text == "Date")
+            //    {
+            //        GridBindByDate();
+            //        showchartLine(false);
+            //    }
+            //}
+            //else if (cmb_model.Text != "" && cmb_line.Text != "" && cmb_process.Text != "" || cmb_model.Text != "" && cmb_line.Text == "" && cmb_process.Text != "")
+            //{
+            //    GridBindProcess();
+            //    showchartProcess();
+            //}
+        }
+        private void funtion()
+        {
+            lblInput1.Text = GridBindNew("FA_IP");
+            lblOutput1.Text = GridBindNew("FA_OP");
+            lblF1.Text = GridBindNew("FA_BallB");
+            lblF2.Text = GridBindNew("FA_Caulk");
+            lblF3.Text = GridBindNew("FA_APP");
+            lblNg1.Text = (int.Parse(lblF1.Text) + int.Parse(lblF2.Text) + int.Parse(lblF3.Text)).ToString();
+
+            lblInput2.Text = GridBindNew("GC_IP");
+            lblOutput2.Text = GridBindNew("GC_OP");
+            lblG1.Text = GridBindNew("GC_Bear");
+            lblG2.Text = GridBindNew("GC_OSW");
+            lblG3.Text = GridBindNew("GC_PD");
+            lblG4.Text = GridBindNew("GC_C");
+            lblG5.Text = GridBindNew("GC_PU");
+            lblG6.Text = GridBindNew("GC_FGASS");
+            lblG7.Text = GridBindNew("GC_FGCHK");
+            lblNG2.Text = (int.Parse(lblG1.Text) + int.Parse(lblG2.Text) + int.Parse(lblG3.Text) + int.Parse(lblG4.Text) + int.Parse(lblG5.Text) + int.Parse(lblG6.Text) + int.Parse(lblG7.Text)).ToString();
+
+            lblInput3.Text = GridBindNew("MC_IP");
+            lblOutput3.Text = GridBindOutputMotor(true);
+            lblM1.Text = GridBindNew("MC_FWCHK");
+            lblM2.Text = GridBindNew("MC_STMASS");
+            lblM3.Text = GridBindNew("MC_FPC");
+            lblM4.Text = GridBindNew("MC_Mark");
+            lblM5.Text = GridBindOutputMotor(false);
+            lblM6.Text = GridBindNew("MC_NOICHK");
+            lblM7.Text = GridBindNew("MC_APPCHK");
+            lblNG3.Text = (int.Parse(lblM1.Text) + int.Parse(lblM2.Text) + int.Parse(lblM3.Text) + int.Parse(lblM4.Text) + int.Parse(lblM5.Text) + int.Parse(lblM6.Text) + int.Parse(lblM7.Text)).ToString();
         }
         void showchart()
         {
@@ -203,7 +236,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chr_main.Series.Add("Pie");
             chr_main.Series["Pie"].ChartType = SeriesChartType.Pie;
             chr_main.Series["Pie"].IsValueShownAsLabel = true;
-            
+
             string header = "";
             for (int j = 5; j < dgv.ColumnCount; j++)
             {
@@ -319,6 +352,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
+
+
         private void GridBind()
         {
             tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
@@ -353,7 +388,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 //var distinctId = (from row in listvo.dt.AsEnumerable() select row.Field<int>("id")).Distinct();
                 //foreach (var serno in distinctId)
-                if(listvo.dt.Rows.Count > 0)
+                if (listvo.dt.Rows.Count > 0)
                 {
                     //var infoSerno = (from row in listvo.dt.AsEnumerable() where row.Field<int>("id") == int.Parse(serno.ToString()) select row).ToList();
 
@@ -369,7 +404,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     for (int i = 0; i < dt.Columns.Count - 6; i++)
                     {
                         //dr[5] = outputvo.dt.Rows[0][1].ToString();
-                       if (j < inspectdata.Count)
+                        if (j < inspectdata.Count)
                         {
                             if (dt.Columns[i + 6].ColumnName == inspectdata[j]["process"].ToString())
                             {
@@ -578,5 +613,76 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dtp_to.CustomFormat = "yyyy-MM-dd 23:59:59";
             }
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval = int.Parse(txtTimer.Text);
+            funtion();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label55_Click(object sender, EventArgs e)
+        {
+
+        }
+        private string GridBindNew(string ProcessName_)
+        {
+            try
+            {
+                tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionGA1Cbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_from.Value, DateTo = dtp_to.Value, ProcessName = ProcessName_ }, connection);
+                //cmb_item.DisplayMember = "ItemCode";
+                //cmb_item.DataSource = assetvoinvoice.GetList();
+                //cmb_item.Text = "";
+                if (inspecdata.GetList()[0].InspecData != "")
+                {
+                    return inspecdata.GetList()[0].InspecData;
+                }
+                else return "0";
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+                return "0";
+            }
+        }
+        private string GridBindOutputMotor(bool t)
+        {
+            try
+            {
+                tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_from.Value, DateTo = dtp_to.Value,change =t}, connectionmes);
+                //cmb_item.DisplayMember = "ItemCode";
+                //cmb_item.DataSource = assetvoinvoice.GetList();
+                //cmb_item.Text = "";
+                if (inspecdata.GetList()[0].InspecData != "")
+                {
+                    return inspecdata.GetList()[0].InspecData;
+                }
+                else return "0";
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+                return "0";
+            }
+        }
+
     }
 }

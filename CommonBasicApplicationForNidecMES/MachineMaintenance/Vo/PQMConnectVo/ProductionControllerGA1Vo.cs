@@ -18,6 +18,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string ModelCode { get; set; }
         public string ModelName { get; set; }
 
+        public bool change { get; set; }
 
         // m_line
         public int LineId { get; set; }
@@ -44,6 +45,38 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string FactoryCode { get; set; }
         public int AffectedCount { get; set; }
         public DataTable dt { get; set; }
+
+        public string InspecData { get; set; }
+        //Frame
+        public string InPut1 { get; set; }
+        public string OUtput1 { get; set; }
+        public string TotalNG1 { get; set; }
+        public string NGF1 { get; set; }
+        public string NGF2 { get; set; }
+        public string NGF3 { get; set; }
+
+        //Gear Case
+        public string InPut2 { get; set; }
+        public string OUtput2 { get; set; }
+        public string TotalNG2 { get; set; }
+        public string NGG1 { get; set; }
+        public string NGG2 { get; set; }
+        public string NGG3 { get; set; }
+        public string NGG4 { get; set; }
+        public string NGG5 { get; set; }
+        public string NGG6 { get; set; }
+        public string NGG7 { get; set; }
+        //Motor 
+        public string InPut3 { get; set; }
+        public string OUtput3 { get; set; }
+        public string TotalNG3 { get; set; }
+        public string NGM1 { get; set; }
+        public string NGM2 { get; set; }
+        public string NGM3 { get; set; }
+        public string NGM4 { get; set; }
+        public string NGM5 { get; set; }
+        public string NGM7 { get; set; }
+        public string NGM6 { get; set; }
 
         public List<ProductionControllerGA1Vo> volist = new List<ProductionControllerGA1Vo>();
     }
