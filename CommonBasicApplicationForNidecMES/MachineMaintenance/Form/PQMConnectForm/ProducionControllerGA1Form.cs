@@ -20,7 +20,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         public ProducionControllerGA1Form()
         {
             InitializeComponent();
-            dgv_main.AutoGenerateColumns = false;
         }
         public static readonly string connection = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=mesdb;Database=pqmdb;;";
         public static readonly string connectionmes = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=mesdb;Database=mesdb;;";
@@ -55,24 +54,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             cmb_item.Text = "";
         }
 
-        private void cmb_line_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
-                ValueObjectList<ProductionControllerGA1Vo> assetvoinvoice = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new GetProductionProcessCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename }, connection);
-                cmb_process.DisplayMember = "ProcessCode";
-                cmb_process.DataSource = assetvoinvoice.GetList();
-                cmb_process.Text = "";
-                cmb_item.Text = "";
-            }
-            catch (Framework.ApplicationException exception)
-            {
-                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
-                logger.Error(exception.GetMessageData());
-            }
-        }
-
         private void cmb_process_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -89,43 +70,20 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
-
-        private void btn_search_Click(object sender, EventArgs e)
+        private void btn_SearchData_Click(object sender, EventArgs e)
         {
             funtion();
+            btn_Run.Enabled = false;
+            btnStop.Enabled = true;
             timer1.Enabled = true;
-            //if (cmb_model.Text != "" && cmb_line.Text == "" && cmb_process.Text == "")
-            //{
-            //    if (search_cmb.Text == "Time")
-            //    {
-            //        GridBind();
-            //        showchartProcess();
-            //    }
-            //    else if (search_cmb.Text == "Date")
-            //    {
-            //        GridBindByDate();
-            //        showchartLine(false);
-            //    }
-            //}
-            //else if (cmb_model.Text != "" && cmb_line.Text != "" && cmb_process.Text == "")
-            //{
-            //    if (search_cmb.Text == "Time")
-            //    {
-            //        GridBind();
-            //        showchartProcess();
-            //    }
-            //    else if (search_cmb.Text == "Date")
-            //    {
-            //        GridBindByDate();
-            //        showchartLine(false);
-            //    }
-            //}
-            //else if (cmb_model.Text != "" && cmb_line.Text != "" && cmb_process.Text != "" || cmb_model.Text != "" && cmb_line.Text == "" && cmb_process.Text != "")
-            //{
-            //    GridBindProcess();
-            //    showchartProcess();
-            //}
         }
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            btn_Run.Enabled = true;
+            btnStop.Enabled = false;
+            timer1.Enabled = false;
+        }
+
         private void funtion()
         {
             lblInput1.Text = GridBindNew("FA_IP");
@@ -227,33 +185,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         void showchartProcess()
         {
-            chr_main.ResetAutoValues();
-            chr_main.ResumeLayout();
-            chr_main.Series.Clear();
+            chart_pie.ResetAutoValues();
+            chart_pie.ResumeLayout();
+            chart_pie.Series.Clear();
 
-            chr_main.Titles[0].Text = cmb_process.Text + " Process"; //ten
-            chr_main.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
-            chr_main.Series.Add("Pie");
-            chr_main.Series["Pie"].ChartType = SeriesChartType.Pie;
-            chr_main.Series["Pie"].IsValueShownAsLabel = true;
+            chart_pie.Titles[0].Text = "Process Comparison"; //ten
+            chart_pie.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
+            chart_pie.Series.Add("Pie");
+            chart_pie.Series["Pie"].ChartType = SeriesChartType.Pie;
+            chart_pie.Series["Pie"].IsValueShownAsLabel = true;
 
             string header = "";
-            for (int j = 5; j < dgv.ColumnCount; j++)
+            for (int j = 6; j < dgv.ColumnCount; j++)
             {
                 int value = 0;
-                if (dgv.Columns[j].HeaderText != "INPUT" && dgv.Columns[j].HeaderText != "OUTPUT")
+                if (dgv.Columns[j].HeaderText != "FA_IP" && dgv.Columns[j].HeaderText != "FA_OP" && dgv.Columns[j].HeaderText != "GC_IP" && dgv.Columns[j].HeaderText != "GC_OP" && dgv.Columns[j].HeaderText != "MC_IP" && dgv.Columns[j].HeaderText != "OUTPUT")
                 {
                     header = dgv.Columns[j].HeaderText;
-                    for (int i = 0; i < dgv.RowCount; i++)
+                    if (dgv.Rows[dgv.RowCount - 1].Cells[j].Value.ToString() != "")
                     {
-
-                        if (dgv.Rows[i].Cells[j].Value.ToString() != "")
-                        {
-                            value += int.Parse(dgv.Rows[i].Cells[j].Value.ToString());
-                        }
-
+                        value += int.Parse(dgv.Rows[dgv.RowCount - 1].Cells[j].Value.ToString());
                     }
-                    chr_main.Series["Pie"].Points.AddXY(header, value);
+                    chart_pie.Series["Pie"].Points.AddXY(header, value);
                 }
             }
         }
@@ -333,7 +286,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     double dataOut = 0;
                     double dataIn = 0;
-                    for (int i = 0; i < dgv.RowCount; i++)
+                    for (int i = 0; i < dgv.RowCount-1; i++)
                     {
                         if (dgv.Columns.Contains("OUTPUT"))
                         {
@@ -342,7 +295,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 dataOut += double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString());
                             }
                         }
-                        if (dgv.Columns.Contains("INPUT")) { dataIn += double.Parse(dgv.Rows[i].Cells["INPUT"].Value.ToString()); }
+                        if (dgv.Columns.Contains("FA_IP")) { dataIn += double.Parse(dgv.Rows[i].Cells["FA_IP"].Value.ToString()); }
                         double dataNG = double.Parse(dgv.Rows[i].Cells["Total_NG"].Value.ToString());
                         chr_main.Series["Output"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
                         chr_main.Series["Input"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
@@ -352,8 +305,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
-
-
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            GridBind();
+            showchartLine(false);
+            showchartProcess();
+            //GridBindByDate();
+        }
         private void GridBind()
         {
             tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
@@ -369,6 +327,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     DateFrom = DateTime.Parse(dtp_from.Text),
                     DateTo = DateTime.Parse(dtp_to.Text),
                     grDate = false,
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
                 };
 
                 ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionINPUTCbm(), dgvVo, connection);
@@ -377,156 +336,93 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Model");
                 dt.Columns.Add("Line");
-                dt.Columns.Add("Star");
-                dt.Columns.Add("End");
-                dt.Columns.Add("Total_NG");
-                dt.Columns.Add("OUTPUT");
-                foreach (var a in distinctProcess)
-                {
-                    dt.Columns.Add(a.ToString());
-                }
-
-                //var distinctId = (from row in listvo.dt.AsEnumerable() select row.Field<int>("id")).Distinct();
-                //foreach (var serno in distinctId)
-                if (listvo.dt.Rows.Count > 0)
-                {
-                    //var infoSerno = (from row in listvo.dt.AsEnumerable() where row.Field<int>("id") == int.Parse(serno.ToString()) select row).ToList();
-
-                    var inspectdata = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row).ToList();
-
-                    DataRow dr = dt.NewRow();
-
-                    dr[0] = listvo.dt.Rows[0]["model"].ToString();
-                    dr[1] = listvo.dt.Rows[0]["line"].ToString();
-                    dr[2] = dtp_from.Text;
-                    dr[3] = dtp_to.Text;
-                    int j = 0;
-                    for (int i = 0; i < dt.Columns.Count - 6; i++)
-                    {
-                        //dr[5] = outputvo.dt.Rows[0][1].ToString();
-                        if (j < inspectdata.Count)
-                        {
-                            if (dt.Columns[i + 6].ColumnName == inspectdata[j]["process"].ToString())
-                            {
-                                dr[i + 6] = inspectdata[j]["inspectdata"].ToString();
-                                j++;
-                            }
-                            else
-                            {
-                                dr[i + 6] = "0";
-                            }
-                        }
-                    }
-                    dt.Rows.Add(dr);
-                }
-                dgv.DataSource = dt;
-                for (int i = 0; i < dgv.RowCount; i++)
-                {
-                    double a = 0;
-                    dgv.Rows[i].Cells["OUTPUT"].Value = outputvo.dt.Rows[0]["output"].ToString();
-                    for (int j = 6; j < dgv.ColumnCount; j++)
-                    {
-                        string b = dgv[j, i].Value.ToString();
-                        if (dgv.Columns[j].HeaderText != "INPUT" && dgv.Columns[j].HeaderText != "OUTPUT")
-                        {
-                            if (dgv[j, i].Value.ToString() != "")
-                            {
-                                a += double.Parse(dgv[j, i].Value.ToString());
-                            }
-                        }
-                    }
-                    dgv[4, i].Value = a;
-                }
-            }
-            catch (Framework.ApplicationException exception)
-            {
-                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
-                logger.Error(exception.GetMessageData());
-            }
-        }
-        private void GridBindByDate()
-        {
-            tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
-            try
-            {
-                ProductionControllerGA1Vo dgvVo = new ProductionControllerGA1Vo()
-                {
-                    TableName = tablename,
-                    ModelCode = cmb_model.Text,
-                    LineCode = cmb_line.Text,
-                    ProcessCode = cmb_process.Text,
-                    ItemCode = cmb_item.Text,
-                    DateFrom = DateTime.Parse(dtp_from.Text),
-                    DateTo = DateTime.Parse(dtp_to.Text),
-                    grDate = true,
-                };
-
-                ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionInputByDateCbm(), dgvVo, connection);
-                ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), dgvVo, connectionmes);
-                var distinctProcess = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row.Field<string>("process")).Distinct();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Model");
-                dt.Columns.Add("Line");
                 dt.Columns.Add("Date");
                 dt.Columns.Add("Total_NG");
                 dt.Columns.Add("OUTPUT");
+                dt.Columns.Add("RateNG");
                 foreach (var a in distinctProcess)
                 {
                     dt.Columns.Add(a.ToString());
                 }
 
-                var distinctId = (from row in listvo.dt.AsEnumerable() select row.Field<DateTime>("dates")).Distinct();
-                foreach (var serno in distinctId)
+                var distinctTime = (from row in listvo.dt.AsEnumerable() orderby row["times"] select row.Field<string>("times")).Distinct();
+                foreach (var times in distinctTime)
                 {
-                    var infoSerno = (from row in listvo.dt.AsEnumerable() where row.Field<DateTime>("dates") == DateTime.Parse(serno.ToString()) select row).ToList();
-
-                    var inspectdata = (from row in listvo.dt.AsEnumerable() orderby row["process"] where row.Field<DateTime>("dates") == DateTime.Parse(serno.ToString()) select row).ToList();
-
-                    DataRow dr = dt.NewRow();
-
-                    dr[0] = infoSerno[0]["model"].ToString();
-                    dr[1] = infoSerno[0]["line"].ToString();
-                    dr[2] = DateTime.Parse(infoSerno[0]["dates"].ToString()).ToShortDateString();
-                    int j = 0;
-                    for (int i = 0; i < dt.Columns.Count - 5; i++)
+                    if (listvo.dt.Rows.Count > 0)
                     {
-                        if (j < inspectdata.Count)
+                        var info = (from row in listvo.dt.AsEnumerable() where row.Field<string>("times") == times.ToString() select row).ToList();
+
+                        var inspectdata = (from row in listvo.dt.AsEnumerable() where row.Field<string>("times") == times.ToString() select row).ToList();
+
+                        DataRow dr = dt.NewRow();
+
+                        dr[0] = info[0]["model"].ToString();
+                        dr[1] = info[0]["line"].ToString();
+                        dr[2] = info[0]["times"].ToString();
+                        int j = 0;
+                        for (int i = 0; i < dt.Columns.Count - 6; i++)
                         {
-                            if (dt.Columns[i + 5].ColumnName == inspectdata[j]["process"].ToString())
+                            if (j < inspectdata.Count)
                             {
-                                dr[i + 5] = inspectdata[j]["inspectdata"].ToString();
-                                j++;
+                                if (dt.Columns[i + 6].ColumnName == inspectdata[j]["process"].ToString())
+                                {
+                                    dr[i + 6] = inspectdata[j]["inspectdata"].ToString();
+                                    j++;
+                                }
+                                else
+                                {
+                                    dr[i + 6] = "0";
+                                }
                             }
-                            else
-                            {
-                                dr[i + 5] = "0";
-                            }
+                            else dr[i + 6] = "0";
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                }
+
+                //sum hang cuoi
+                DataRow dr1 = dt.NewRow();
+                for (int i = 6; i < dt.Columns.Count; i++)
+                {
+                    double sum = 0;
+                    for (int j = 0; j < dt.Rows.Count; j++)
+                    {
+                        sum += double.Parse(dt.Rows[j][i].ToString());
+                        dr1[i] = sum;
+                    }
+                }
+                dt.Rows.Add(dr1);
+
+                    dgv.DataSource = dt;
+                //int t = 0;
+                for (int i = 0; i < dgv.RowCount-1; i++)
+                {
+                    double totalNG = 0;
+                    double rateNG = 0;
+                    for (int t = 0; t < outputvo.dt.Rows.Count; t++)
+                    {
+                        if (dgv.Rows[i].Cells["Date"].Value.ToString() == outputvo.dt.Rows[t]["times"].ToString())
+                        {
+                            dgv.Rows[i].Cells["OUTPUT"].Value = outputvo.dt.Rows[t]["count"].ToString();
                         }
                     }
-                    dt.Rows.Add(dr);
-                }
-                dgv.DataSource = dt;
-                int k = 0;
-                for (int i = 0; i < dgv.RowCount; i++)
-                {
-                    if (dgv.Rows[i].Cells["Date"].Value.ToString() == DateTime.Parse(outputvo.dt.Rows[k]["datetimes"].ToString()).ToShortDateString())
-                    {
-                        dgv.Rows[i].Cells["OUTPUT"].Value = outputvo.dt.Rows[k]["output"].ToString();
-                        k++;
-                    }
-                    double a = 0;
-                    for (int j = 5; j < dgv.ColumnCount; j++)
+                    for (int j = 6; j < dgv.ColumnCount; j++)
                     {
                         string b = dgv[j, i].Value.ToString();
-                        if (dgv.Columns[j].HeaderText != "INPUT" && dgv.Columns[j].HeaderText != "OUTPUT")
+                        if (dgv.Columns[j].HeaderText != "FA_IP" && dgv.Columns[j].HeaderText != "FA_OP" && dgv.Columns[j].HeaderText != "GC_IP" && dgv.Columns[j].HeaderText != "GC_OP" && dgv.Columns[j].HeaderText != "MC_IP" && dgv.Columns[j].HeaderText != "OUTPUT")
                         {
                             if (dgv[j, i].Value.ToString() != "")
                             {
-                                a += double.Parse(dgv[j, i].Value.ToString());
+                                totalNG += double.Parse(dgv[j, i].Value.ToString());
                             }
                         }
                     }
-                    dgv[3, i].Value = a;
+
+                    double output = double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString());
+                    if(output == 0) { rateNG = 0; } else rateNG = (totalNG / output) * 100;
+
+                    dgv["RateNG", i].Value = rateNG;
+                    dgv["Total_NG", i].Value = totalNG;
                 }
             }
             catch (Framework.ApplicationException exception)
@@ -535,6 +431,187 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
+        //private void GridBind()
+        //{
+        //    tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+        //    try
+        //    {
+        //        ProductionControllerGA1Vo dgvVo = new ProductionControllerGA1Vo()
+        //        {
+        //            TableName = tablename,
+        //            ModelCode = cmb_model.Text,
+        //            LineCode = cmb_line.Text,
+        //            ProcessCode = cmb_process.Text,
+        //            ItemCode = cmb_item.Text,
+        //            DateFrom = DateTime.Parse(dtp_from.Text),
+        //            DateTo = DateTime.Parse(dtp_to.Text),
+        //            grDate = false,
+        //        };
+
+        //        ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionINPUTCbm(), dgvVo, connection);
+        //        ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), dgvVo, connectionmes);
+        //        var distinctProcess = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row.Field<string>("process")).Distinct();
+        //        DataTable dt = new DataTable();
+        //        dt.Columns.Add("Model");
+        //        dt.Columns.Add("Line");
+        //        dt.Columns.Add("Star");
+        //        dt.Columns.Add("End");
+        //        dt.Columns.Add("Total_NG");
+        //        dt.Columns.Add("OUTPUT");
+        //        foreach (var a in distinctProcess)
+        //        {
+        //            dt.Columns.Add(a.ToString());
+        //        }
+
+        //        //var distinctId = (from row in listvo.dt.AsEnumerable() select row.Field<int>("id")).Distinct();
+        //        //foreach (var serno in distinctId)
+        //        if (listvo.dt.Rows.Count > 0)
+        //        {
+        //            //var infoSerno = (from row in listvo.dt.AsEnumerable() where row.Field<int>("id") == int.Parse(serno.ToString()) select row).ToList();
+
+        //            var inspectdata = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row).ToList();
+
+        //            DataRow dr = dt.NewRow();
+
+        //            dr[0] = listvo.dt.Rows[0]["model"].ToString();
+        //            dr[1] = listvo.dt.Rows[0]["line"].ToString();
+        //            dr[2] = dtp_from.Text;
+        //            dr[3] = dtp_to.Text;
+        //            int j = 0;
+        //            for (int i = 0; i < dt.Columns.Count - 6; i++)
+        //            {
+        //                //dr[5] = outputvo.dt.Rows[0][1].ToString();
+        //                if (j < inspectdata.Count)
+        //                {
+        //                    if (dt.Columns[i + 6].ColumnName == inspectdata[j]["process"].ToString())
+        //                    {
+        //                        dr[i + 6] = inspectdata[j]["inspectdata"].ToString();
+        //                        j++;
+        //                    }
+        //                    else
+        //                    {
+        //                        dr[i + 6] = "0";
+        //                    }
+        //                }
+        //            }
+        //            dt.Rows.Add(dr);
+        //        }
+        //        dgv.DataSource = dt;
+        //        for (int i = 0; i < dgv.RowCount; i++)
+        //        {
+        //            double a = 0;
+        //            dgv.Rows[i].Cells["OUTPUT"].Value = outputvo.dt.Rows[0]["output"].ToString();
+        //            for (int j = 6; j < dgv.ColumnCount; j++)
+        //            {
+        //                string b = dgv[j, i].Value.ToString();
+        //                if (dgv.Columns[j].HeaderText != "INPUT" && dgv.Columns[j].HeaderText != "OUTPUT")
+        //                {
+        //                    if (dgv[j, i].Value.ToString() != "")
+        //                    {
+        //                        a += double.Parse(dgv[j, i].Value.ToString());
+        //                    }
+        //                }
+        //            }
+        //            dgv[4, i].Value = a;
+        //        }
+        //    }
+        //    catch (Framework.ApplicationException exception)
+        //    {
+        //        popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+        //        logger.Error(exception.GetMessageData());
+        //    }
+        //}
+        //private void GridBindByDate()
+        //{
+        //    tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+        //    try
+        //    {
+        //        ProductionControllerGA1Vo dgvVo = new ProductionControllerGA1Vo()
+        //        {
+        //            TableName = tablename,
+        //            ModelCode = cmb_model.Text,
+        //            LineCode = cmb_line.Text,
+        //            ProcessCode = cmb_process.Text,
+        //            ItemCode = cmb_item.Text,
+        //            DateFrom = DateTime.Parse(dtp_from.Text),
+        //            DateTo = DateTime.Parse(dtp_to.Text),
+        //            grDate = true,
+        //        };
+
+        //        ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionInputByDateCbm(), dgvVo, connection);
+        //        ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), dgvVo, connectionmes);
+        //        var distinctProcess = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row.Field<string>("process")).Distinct();
+        //        DataTable dt = new DataTable();
+        //        dt.Columns.Add("Model");
+        //        dt.Columns.Add("Line");
+        //        dt.Columns.Add("Date");
+        //        dt.Columns.Add("Total_NG");
+        //        dt.Columns.Add("OUTPUT");
+        //        foreach (var a in distinctProcess)
+        //        {
+        //            dt.Columns.Add(a.ToString());
+        //        }
+
+        //        var distinctId = (from row in listvo.dt.AsEnumerable() select row.Field<DateTime>("dates")).Distinct();
+        //        foreach (var serno in distinctId)
+        //        {
+        //            var infoSerno = (from row in listvo.dt.AsEnumerable() where row.Field<DateTime>("dates") == DateTime.Parse(serno.ToString()) select row).ToList();
+
+        //            var inspectdata = (from row in listvo.dt.AsEnumerable() orderby row["process"] where row.Field<DateTime>("dates") == DateTime.Parse(serno.ToString()) select row).ToList();
+
+        //            DataRow dr = dt.NewRow();
+
+        //            dr[0] = infoSerno[0]["model"].ToString();
+        //            dr[1] = infoSerno[0]["line"].ToString();
+        //            dr[2] = DateTime.Parse(infoSerno[0]["dates"].ToString()).ToShortDateString();
+        //            int j = 0;
+        //            for (int i = 0; i < dt.Columns.Count - 5; i++)
+        //            {
+        //                if (j < inspectdata.Count)
+        //                {
+        //                    if (dt.Columns[i + 5].ColumnName == inspectdata[j]["process"].ToString())
+        //                    {
+        //                        dr[i + 5] = inspectdata[j]["inspectdata"].ToString();
+        //                        j++;
+        //                    }
+        //                    else
+        //                    {
+        //                        dr[i + 5] = "0";
+        //                    }
+        //                }
+        //            }
+        //            dt.Rows.Add(dr);
+        //        }
+        //        dgv.DataSource = dt;
+        //        int k = 0;
+        //        for (int i = 0; i < dgv_main.RowCount; i++)
+        //        {
+        //            if (dgv_main.Rows[i].Cells["Date"].Value.ToString() == DateTime.Parse(outputvo.dt.Rows[k]["datetimes"].ToString()).ToShortDateString())
+        //            {
+        //                dgv_main.Rows[i].Cells["OUTPUT"].Value = outputvo.dt.Rows[k]["output"].ToString();
+        //                k++;
+        //            }
+        //            double a = 0;
+        //            for (int j = 5; j < dgv_main.ColumnCount; j++)
+        //            {
+        //                string b = dgv_main[j, i].Value.ToString();
+        //                if (dgv_main.Columns[j].HeaderText != "INPUT" && dgv_main.Columns[j].HeaderText != "OUTPUT")
+        //                {
+        //                    if (dgv_main[j, i].Value.ToString() != "")
+        //                    {
+        //                        a += double.Parse(dgv_main[j, i].Value.ToString());
+        //                    }
+        //                }
+        //            }
+        //            dgv_main[3, i].Value = a;
+        //        }
+        //    }
+        //    catch (Framework.ApplicationException exception)
+        //    {
+        //        popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+        //        logger.Error(exception.GetMessageData());
+        //    }
+        //}
         private void GridBindProcess()
         {
             tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
@@ -644,10 +721,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             try
             {
                 tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
-                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionGA1Cbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_from.Value, DateTo = dtp_to.Value, ProcessName = ProcessName_ }, connection);
-                //cmb_item.DisplayMember = "ItemCode";
-                //cmb_item.DataSource = assetvoinvoice.GetList();
-                //cmb_item.Text = "";
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionGA1Cbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_dateFromdata.Value, DateTo = dtp_dateTodata.Value, ProcessName = ProcessName_ }, connection);
                 if (inspecdata.GetList()[0].InspecData != "")
                 {
                     return inspecdata.GetList()[0].InspecData;
@@ -684,5 +758,39 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
         }
 
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_line_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+                ValueObjectList<ProductionControllerGA1Vo> assetvoinvoice = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new GetProductionProcessCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename }, connection);
+                cmb_process.DisplayMember = "ProcessCode";
+                cmb_process.DataSource = assetvoinvoice.GetList();
+                cmb_process.Text = "";
+                cmb_item.Text = "";
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
+        }
+
+        private void cmb_model_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            callLine();
+            cmb_process.Text = "";
+            cmb_item.Text = "";
+        }
+
+        private void btnSearchData_Click(object sender, EventArgs e)
+        {
+            funtion();
+        }
     }
 }

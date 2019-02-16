@@ -35,7 +35,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
         public bool grDate { get; set; }
-
+        public string Date { get; set; }         
 
         public string TableName { get; set; }
 
