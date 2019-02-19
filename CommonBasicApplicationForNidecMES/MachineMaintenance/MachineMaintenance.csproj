@@ -48,6 +48,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetBarcode">
+      <HintPath>Service References\DotNetBarcode.dll</HintPath>
+    </Reference>
     <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\FW\NidecMES\Dll\Framework.dll</HintPath>
@@ -348,10 +351,14 @@
     <Compile Include="Cbm\WorkingStatusCbm\SearchSTWorkingStatusCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\CallPlanCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\AddPlanWorkingStatusCbm.cs" />
+    <Compile Include="Common\Shipping\BitmapCreate.cs" />
     <Compile Include="Common\CSV Class.cs" />
     <Compile Include="Common\ExcelClass_ProductionControl.cs" />
     <Compile Include="Common\Excel Class.cs" />
+    <Compile Include="Common\Shipping\LKBPRINT.cs" />
     <Compile Include="Common\ResetControlValues.cs" />
+    <Compile Include="Common\Shipping\PrintLabel.cs" />
+    <Compile Include="Common\Shipping\PrintLabelTool.cs" />
     <Compile Include="Common\VBStrings.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\AddAccountLocationDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\CheckAccountLocationDao.cs" />

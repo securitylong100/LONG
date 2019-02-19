@@ -17,6 +17,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
     public partial class ShippingForm : FormCommonNCVP
     {
+        string directory = @"C:\Users\mt-qc20\Desktop\print\"; //@"\\192.168.145.7\ncvp\print\";
+
         public ShippingForm()
         {
             InitializeComponent();
@@ -246,7 +248,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     //A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
                 });
             }
+
+            // Print barcode
+            printBarcode(directory, txtBoxId.Text, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
             MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Sub procedure: Print barcode, by generating a text file in shared folder and let another application print it
+        private void printBarcode(string dir, string id, string m_model, DataGridView dgv1, ref DataGridView dgv2, ref TextBox txt)
+        {
+            PrintLabel tf = new PrintLabel();
+            tf.createBoxidFiles(dir, id, m_model, dgv1, ref dgv2, ref txt);
         }
 
         private void txtProduct_KeyDown(object sender, KeyEventArgs e)
@@ -523,5 +535,58 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 MessageBox.Show("Delete successful!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        #region PRINTTING LABEL TOOL
+
+        //string barcodeNumber = String.Empty;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+        //    if (!System.IO.Directory.Exists(directory)) return;
+            
+        //    string[] files = System.IO.Directory.GetFiles(directory, "*", System.IO.SearchOption.AllDirectories);
+
+        //    for (int i = 0; i < files.Length; i++)
+        //    {
+        //        string fname = System.IO.Path.GetFileName(files[i]);
+        //        if (VBStrings.Right(fname.ToLower(), 4) == ".txt")
+        //        {
+        //            string boxid = VBStrings.Left(fname, fname.Length - 4);
+
+        //            PrintLabelTool.printBarCode(boxid);
+        //            PrintLabelTool.printBarCode(boxid);
+        //            if (boxid != String.Empty) barcodeNumber = boxid;
+        //            pnlBarcode.Refresh();
+        //            System.IO.File.Delete(files[i]);
+        //            lblTime.Text = DateTime.Now.ToString();
+        //        }
+        //        else if (VBStrings.Right(fname.ToLower(), 4) == ".bmp")
+        //        {
+        //            string datecdFile = files[i];
+
+        //            PrintLabelTool.printBitmap(datecdFile);
+        //            PrintLabelTool.printBitmap(datecdFile);
+        //            System.IO.File.Delete(files[i]);
+        //        }
+        //    }
+        }
+
+        private void pnlBarcode_Paint(object sender, PaintEventArgs e)
+        {
+        //    DotNetBarcode barCode = new DotNetBarcode();
+        //    Single x1;
+        //    Single y1;
+        //    Single x2;
+        //    Single y2;
+        //    x1 = 0;
+        //    y1 = 0;
+        //    x2 = pnlBarcode.Size.Width;
+        //    y2 = pnlBarcode.Size.Height;
+        //    barCode.Type = DotNetBarcode.Types.Code39;
+
+        //    if (barcodeNumber != String.Empty)
+        //        barCode.WriteBar(barcodeNumber, x1, y1, x2, y2, e.Graphics);
+        }
+        #endregion
     }
 }
