@@ -19,10 +19,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            string sqlChung = " times, model,line, process,sum(inspectdata) inspectdata from (select a.serno,a.model,a.line, a.process,sum(inspectdata) inspectdata,a.inspectdate from ldp_5sg201902 a left join ldp_5sg201902data b on a.serno = b.serno where a.inspectdate = b.inspectdate and a.inspectdate >= :datefrom and a.inspectdate <= :dateto group by a.serno,a.model,a.line, a.process,a.inspectdate order by a.inspectdate) tbl where inspectdate >= ";
-            sql.Append("select '06:00:00'" + sqlChung + " '" + inVo.Date + " 06:00:00' and inspectdate <= '" + inVo.Date + " 06:00:00' group by model,line, process");
+            string sqlChung = " times, model,line, process,sum(inspectdata) inspectdata from (select a.serno,a.model,a.line, a.process,sum(inspectdata) inspectdata,a.inspectdate from ldp_5sg201902 a left join ldp_5sg201902data b on a.serno = b.serno where model = :model and line = :line and a.inspectdate = b.inspectdate and a.inspectdate >= :datefrom and a.inspectdate <= :dateto group by a.serno,a.model,a.line, a.process,a.inspectdate order by a.inspectdate) tbl where inspectdate >= ";
+            sqlParameter.AddParameter("model", inVo.ModelCode);
+            sqlParameter.AddParameter("line", inVo.LineCode);
+
+            sql.Append("select '01:00:00'" + sqlChung + " '" + inVo.Date + " 00:00:01' and inspectdate <= '" + inVo.Date + " 01:00:00' group by model,line, process");
             sql.Append(" union ");
-            sql.Append("select '07:00:00'" + sqlChung + " '" + inVo.Date + " 06:00:00' and inspectdate <= '" + inVo.Date + " 07:00:00' group by model,line, process");
+            sql.Append("select '02:00:00'" + sqlChung + " '" + inVo.Date + " 01:00:01' and inspectdate <= '" + inVo.Date + " 02:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '03:00:00'" + sqlChung + " '" + inVo.Date + " 02:00:01' and inspectdate <= '" + inVo.Date + " 03:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '04:00:00'" + sqlChung + " '" + inVo.Date + " 03:00:01' and inspectdate <= '" + inVo.Date + " 04:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '05:00:00'" + sqlChung + " '" + inVo.Date + " 04:00:01' and inspectdate <= '" + inVo.Date + " 05:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '06:00:00'" + sqlChung + " '" + inVo.Date + " 05:00:01' and inspectdate <= '" + inVo.Date + " 06:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '07:00:00'" + sqlChung + " '" + inVo.Date + " 06:00:01' and inspectdate <= '" + inVo.Date + " 07:00:00' group by model,line, process");
             sql.Append(" union ");
             sql.Append("select '08:00:00'" + sqlChung + " '" + inVo.Date + " 07:00:01' and inspectdate <= '" + inVo.Date + " 08:00:00' group by model,line, process");
             sql.Append(" union ");
@@ -45,6 +58,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sql.Append("select '17:00:00'" + sqlChung + " '" + inVo.Date + " 16:00:01' and inspectdate <= '" + inVo.Date + " 17:00:00' group by model,line, process");
             sql.Append(" union ");
             sql.Append("select '18:00:00'" + sqlChung + " '" + inVo.Date + " 17:00:01' and inspectdate <= '" + inVo.Date + " 18:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '19:00:00'" + sqlChung + " '" + inVo.Date + " 18:00:01' and inspectdate <= '" + inVo.Date + " 19:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '20:00:00'" + sqlChung + " '" + inVo.Date + " 19:00:01' and inspectdate <= '" + inVo.Date + " 20:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '21:00:00'" + sqlChung + " '" + inVo.Date + " 20:00:01' and inspectdate <= '" + inVo.Date + " 21:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '22:00:00'" + sqlChung + " '" + inVo.Date + " 21:00:01' and inspectdate <= '" + inVo.Date + " 22:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '23:00:00'" + sqlChung + " '" + inVo.Date + " 22:00:01' and inspectdate <= '" + inVo.Date + " 23:00:00' group by model,line, process");
+            sql.Append(" union ");
+            sql.Append("select '23:59:59'" + sqlChung + " '" + inVo.Date + " 23:00:01' and inspectdate <= '" + inVo.Date + " 23:59:59' group by model,line, process");
 
             sql.Append(" order by times, process ");
             sqlParameter.AddParameter("datefrom", inVo.DateFrom);

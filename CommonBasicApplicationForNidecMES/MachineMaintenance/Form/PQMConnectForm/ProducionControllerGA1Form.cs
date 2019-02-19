@@ -216,7 +216,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
-        void showchartLine(string input, string output, string rateNG_, Chart chr)
+        void showchartLine(string input, string output, string rateNG_, Chart chr, Label lblinput,Label lbloutput, Label lbltotalNG)
         {
             chr.ResetAutoValues();
             chr.ResumeLayout();
@@ -304,8 +304,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     rateNG = double.Parse(dgv.Rows[i].Cells[rateNG_].Value.ToString());
                     chr.Series["Output (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
                     chr.Series["Input (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
-                    if (rateNG > 100) { rateNG = 0; }
+                    //if (rateNG > 100) { rateNG = 0; }
                     chr.Series["YEILD (%)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), 100 - rateNG);
+                    lblinput.Text = dataIn.ToString();
+                    lbloutput.Text = dataOut.ToString();
+                    lbltotalNG.Text = rateNG.ToString();
                 }
             }
         }
@@ -816,18 +819,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void timerChart_Tick(object sender, EventArgs e)
         {
             GridBind();
-            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main); // frame
-            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear); // gear 
-            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor); // motor
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main,lblInputFrame,lblOutputFrame,lblTotalNGFrame); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
             showchartProcess();
             alarmNG();
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
             GridBind();
-            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main); // frame
-            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear); // gear 
-            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor); // motor
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main, lblInputFrame, lblOutputFrame, lblTotalNGFrame); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
             alarmNG();
             showchartProcess();
         }
@@ -865,48 +868,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 a = 3;
                 led("1", "6", "7");
             }
-
-
-            //if (rateNGGear > rateNGGeartxt)//rateNG > rateNG text box => bao red
-            //{
-            //    MessageBox.Show("red");
-            //    red++;
-            //    led("5", "2", "7");
-            //}
-            //else if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt)//bao vang
-            //{
-            //    MessageBox.Show("vang");
-            //    yellow++;
-            //    led("5", "6", "3");
-            //}
-            //else if (rateNGGear >= 0 && rateNGGear < (rateNGGeartxt * (0.7)))//bao xanh
-            //{
-            //    MessageBox.Show("xanh");
-            //    green++;
-            //    led("1", "6", "7");
-            //}
-
-
-            //if (rateNGMotor > rateNGMotortxt)//rateNG > rateNG text box => bao red
-            //{
-            //    MessageBox.Show("red");
-            //    red++;
-            //    led("5", "2", "7");
-            //}
-            //else if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt)//bao vang
-            //{
-            //    MessageBox.Show("vang");
-            //    yellow++;
-            //    led("5", "6", "3");
-            //}
-            //else if (rateNGMotor >= 0 && rateNGMotortxt < (rateNGMotortxt * (0.7)))//bao xanh
-            //{
-            //    MessageBox.Show("xanh");
-            //    green++;
-            //    led("1", "6", "7");
-            //}
-
-
+            if (rateNGFrame > rateNGFrametxt) { grbFrame.BackColor = Color.Red; }
+            if (rateNGGear > rateNGGeartxt) { grbGear.BackColor = Color.Red; }
+            if (rateNGMotor > rateNGMotortxt) { grbMotor.BackColor = Color.Red; }
+            if ((rateNGFrame >= rateNGFrametxt * (0.7)) && rateNGFrame <= rateNGFrametxt) { grbFrame.BackColor = Color.Yellow; }
+            if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt) { grbGear.BackColor = Color.Yellow; }
+            if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt) { grbMotor.BackColor = Color.Yellow; }
+            if (rateNGFrame >= 0 && (rateNGFrame < rateNGFrametxt * (0.7))) { grbFrame.BackColor = Color.LightGreen; }
+            if (rateNGGear >= 0 && (rateNGGear < rateNGGeartxt * (0.7))) { grbGear.BackColor = Color.LightGreen; }
+            if (rateNGMotor >= 0 && (rateNGMotor < rateNGMotortxt * (0.7))) { grbMotor.BackColor = Color.LightGreen; }
         }
         public void led(string green, string red, string yellow)
         {
@@ -924,9 +894,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             btnStop.Enabled = true;
             timerChart.Enabled = true;
             GridBind();
-            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main); // frame
-            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear); // gear 
-            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor); // motor
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main, lblInputFrame, lblOutputFrame, lblTotalNGFrame); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
             showchartProcess();
         }
 
@@ -935,15 +905,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             btnRunChart.Enabled = true;
             btnStop.Enabled = false;
             timerChart.Enabled = false;
-        }
-
-        private void cmbSeriport_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!serialCom.IsOpen)
-            {
-                serialCom.PortName = cmbSeriport.Text;
-                serialCom.Open();
-            }
         }
 
         private void cmbSeriport_SelectedIndexChanged_1(object sender, EventArgs e)
