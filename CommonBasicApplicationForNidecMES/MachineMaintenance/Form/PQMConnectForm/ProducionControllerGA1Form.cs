@@ -971,6 +971,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 };
 
                 ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionProcessCbm(), dgvVo, connection);
+
             }
             catch (Framework.ApplicationException exception)
             {
