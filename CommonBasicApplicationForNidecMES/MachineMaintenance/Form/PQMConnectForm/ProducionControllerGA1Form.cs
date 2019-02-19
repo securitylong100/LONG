@@ -1011,6 +1011,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             timerChart.Enabled = false;
             timerProcess.Enabled = false;
             timerDateTimeNow.Enabled = false;
+            serialCom.Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -1021,6 +1022,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 tblLayoutData.Dock = DockStyle.Bottom;
             }
             else { grbSearchData.Visible = false; tblLayoutData.Dock = DockStyle.Fill; }
+        }
+
+        private void btnRunProcess_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

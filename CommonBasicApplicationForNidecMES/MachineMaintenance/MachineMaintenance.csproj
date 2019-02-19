@@ -48,9 +48,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotNetBarcode">
-      <HintPath>Service References\DotNetBarcode.dll</HintPath>
-    </Reference>
     <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\FW\NidecMES\Dll\Framework.dll</HintPath>
@@ -242,9 +239,6 @@
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionGA1Cbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionTotalCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionINPUTCbm.cs" />
-    <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetLineTestCbm.cs" />
-    <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetModelTestCbm.cs" />
-    <Compile Include="Cbm\PQMConnectCbm\TestCbm\GetTestCbm.cs" />
     <Compile Include="Cbm\ProductionControllerNCVCCbm\AddPersonProNCVCCbm.cs" />
     <Compile Include="Cbm\ProductionControllerNCVCCbm\CheckPersonNCVCCbm.cs" />
     <Compile Include="Cbm\ProductionControllerNCVCCbm\CheckPerson_DuplicateNCVCCbm.cs" />
@@ -351,12 +345,12 @@
     <Compile Include="Cbm\WorkingStatusCbm\SearchSTWorkingStatusCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\CallPlanCbm.cs" />
     <Compile Include="Cbm\WorkingStatusCbm\AddPlanWorkingStatusCbm.cs" />
-    <Compile Include="Common\Shipping\BitmapCreate.cs" />
     <Compile Include="Common\CSV Class.cs" />
     <Compile Include="Common\ExcelClass_ProductionControl.cs" />
     <Compile Include="Common\Excel Class.cs" />
-    <Compile Include="Common\Shipping\LKBPRINT.cs" />
     <Compile Include="Common\ResetControlValues.cs" />
+    <Compile Include="Common\Shipping\BitmapCreate.cs" />
+    <Compile Include="Common\Shipping\LKBPRINT.cs" />
     <Compile Include="Common\Shipping\PrintLabel.cs" />
     <Compile Include="Common\Shipping\PrintLabelTool.cs" />
     <Compile Include="Common\VBStrings.cs" />
@@ -519,9 +513,6 @@
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionGA1Dao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionTotalDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionINPUTDao.cs" />
-    <Compile Include="Dao\PQMConnectDao\TestDao\GetLineTestDao.cs" />
-    <Compile Include="Dao\PQMConnectDao\TestDao\GetModelTestDao.cs" />
-    <Compile Include="Dao\PQMConnectDao\TestDao\GetTestDao.cs" />
     <Compile Include="Dao\ProductionControllerNCVCDao\AddPersonProNCVCDao.cs" />
     <Compile Include="Dao\ProductionControllerNCVCDao\CheckPersonNCVCDao.cs" />
     <Compile Include="Dao\ProductionControllerNCVCDao\CheckPerson_DuplicateNCVCDao.cs" />
@@ -866,12 +857,6 @@
     <Compile Include="Form\PQMConnectForm\ProducionControllerGA1Form.Designer.cs">
       <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PQMConnectForm\TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\PQMConnectForm\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\ProductionControllerForm\AddPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1026,7 +1011,6 @@
     <Compile Include="Vo\OvenBarcodeVo\RangeVo.cs" />
     <Compile Include="Vo\PersonVo.cs" />
     <Compile Include="Vo\PQMConnectVo\ProductionControllerGA1Vo.cs" />
-    <Compile Include="Vo\PQMConnectVo\TestVo.cs" />
     <Compile Include="Vo\ProcessWorksVo.cs" />
     <Compile Include="Vo\ProductionControllerNCVCVo.cs" />
     <Compile Include="Vo\ProductionControllerVo.cs" />
@@ -1182,9 +1166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PQMConnectForm\ProducionControllerGA1Form.resx">
       <DependentUpon>ProducionControllerGA1Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\PQMConnectForm\TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ProductionControllerForm\AddPersonForm.resx">
       <DependentUpon>AddPersonForm.cs</DependentUpon>

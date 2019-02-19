@@ -95,7 +95,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         A90Line = ((GA1ModelVo)this.cmb_line.SelectedItem).LineCode,
                         A90Barcode = txt_barcode.Text,
                         A90Shipping = false,
-                        RegistrationDateTime = DateTime.Now,
+                        Date = DateTime.Today,
+                        Time = DateTime.Parse(DateTime.Now.ToShortTimeString()),
                         FactoryCode = UserData.GetUserData().FactoryCode,
                         A90ThurstStatus = "OK",
                         RegistrationUserCode = UserData.GetUserData().UserName,
@@ -110,7 +111,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         A90Line = ((GA1ModelVo)this.cmb_line.SelectedItem).LineCode,
                         A90Barcode = txt_barcode.Text,
                         A90Shipping = false,
-                        RegistrationDateTime = DateTime.Now,
+                        Date = DateTime.Today,
+                        Time = DateTime.Parse(DateTime.Now.ToShortTimeString()),
                         FactoryCode = UserData.GetUserData().FactoryCode,
                         A90ThurstStatus = "NG",
                         RegistrationUserCode = UserData.GetUserData().UserName,
@@ -163,6 +165,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 popUpMessage.ApplicationError(exception.GetMessageData(), Text);
                 logger.Error(exception.GetMessageData());
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
