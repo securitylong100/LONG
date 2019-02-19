@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select count(*) datas from (select distinct a90_barcode from t_checkpusha90 where ");
+            sql.Append(@"select count(*) datas from (select distinct a90_barcode,max(a90_date+a90_time) from t_checkpusha90 where ");
             sql.Append(@" a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto  ");
             sqlParameter.AddParameter("datefrom", inVo.DateFrom);
             sqlParameter.AddParameter("dateto", inVo.DateTo);
@@ -31,11 +31,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             }
             if(inVo.change)
             {
-                sql.Append(@" and a90_thurst_status = 'OK') tbl"); 
+                sql.Append(@" and a90_thurst_status = 'OK' group by a90_barcode) tbl"); 
             }
             else
             {
-                sql.Append(@" and a90_thurst_status = 'NG') tbl");
+                sql.Append(@" and a90_thurst_status = 'NG' group by a90_barcode) tbl");
             }
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());

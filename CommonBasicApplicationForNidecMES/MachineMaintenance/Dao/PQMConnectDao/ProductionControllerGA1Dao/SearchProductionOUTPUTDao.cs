@@ -19,7 +19,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            string sqlChung = " times,count(*)  from (select a90_barcode, a90_date+a90_time datetimes from t_checkpusha90 where a90_thurst_status = 'OK' and  a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto) wl where datetimes >= ";
+            //string sqlChung = " times,count(*)  from (select a90_barcode, a90_date+a90_time datetimes from t_checkpusha90 where a90_thurst_status = 'OK' and  a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto) wl where datetimes >= ";
+
+            string sqlChung = " times,count(*)  from (select distinct a90_barcode,max(a90_date+a90_time) datetimes,a90_thurst_status from t_checkpusha90 where a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto group by a90_barcode,a90_thurst_status order by datetimes) tbl where a90_thurst_status = 'OK' and datetimes >= ";
+
             sql.Append(@"select '06:00:00' " + sqlChung + " '" + inVo.Date + " 06:00:00' and datetimes <= '" + inVo.Date + " 06:00:00'");
             sql.Append(" union ");
             sql.Append(@"select '07:00:00' " + sqlChung + " '" + inVo.Date + " 06:00:00' and datetimes <= '" + inVo.Date + " 07:00:00'");

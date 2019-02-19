@@ -12,6 +12,8 @@ using System.Text;
 using System.Windows.Forms;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
+using System.IO.Ports;
+using System.Threading;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
@@ -21,13 +23,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             InitializeComponent();
         }
+        public string[] portName;
         public static readonly string connection = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=mesdb;Database=pqmdb;;";
         public static readonly string connectionmes = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=mesdb;Database=mesdb;;";
         public string tablename;
 
         private void ProducionControllerGA1Form_Load(object sender, EventArgs e)
         {
-            search_cmb.Text = "Time";
+            cmbSeriport.DataSource = SerialPort.GetPortNames();
+            cmbSeriport.Text = "";
             callModel();
         }
         void callModel()
@@ -73,8 +77,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void btn_SearchData_Click(object sender, EventArgs e)
         {
             funtion();
+            alarmNG();
             btn_Run.Enabled = false;
             btnStop.Enabled = true;
+            timer1.Interval = int.Parse(txtTimer.Text);
             timer1.Enabled = true;
         }
         private void btnStop_Click(object sender, EventArgs e)
@@ -189,14 +195,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             chart_pie.ResumeLayout();
             chart_pie.Series.Clear();
 
-            chart_pie.Titles[0].Text = "Process Comparison"; //ten
+            chart_pie.Titles[0].Text = "Process Comparison (pcs)"; //ten
             chart_pie.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
             chart_pie.Series.Add("Pie");
             chart_pie.Series["Pie"].ChartType = SeriesChartType.Pie;
             chart_pie.Series["Pie"].IsValueShownAsLabel = true;
 
             string header = "";
-            for (int j = 6; j < dgv.ColumnCount; j++)
+            for (int j = 10; j < dgv.ColumnCount; j++)
             {
                 int value = 0;
                 if (dgv.Columns[j].HeaderText != "FA_IP" && dgv.Columns[j].HeaderText != "FA_OP" && dgv.Columns[j].HeaderText != "GC_IP" && dgv.Columns[j].HeaderText != "GC_OP" && dgv.Columns[j].HeaderText != "MC_IP" && dgv.Columns[j].HeaderText != "OUTPUT")
@@ -210,108 +216,100 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
-        void showchartLine(bool dt)
+        void showchartLine(string input, string output, string rateNG_, Chart chr)
         {
-            chr_main.ResetAutoValues();
-            chr_main.ResumeLayout();
-            chr_main.Series.Clear();
+            chr.ResetAutoValues();
+            chr.ResumeLayout();
+            chr.Series.Clear();
 
-            chr_main.Titles[0].Text = "CHART SHOW PROGRESS DATA"; //ten
-            chr_main.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
-            chr_main.ChartAreas[0].AxisX.LabelStyle.Format = "dd-MM HH:mm";
-            chr_main.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chr_main.ChartAreas[0].AxisX2.MajorGrid.Enabled = false;
-            chr_main.ChartAreas[0].AxisY.MajorGrid.Enabled = true;
-            chr_main.ChartAreas[0].AxisY2.MajorGrid.Enabled = false;
-            chr_main.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-            chr_main.ChartAreas[0].AxisY.Title = "TOTAL[PCS]"; //sua ten truc
-            chr_main.ChartAreas[0].AxisX.LabelStyle.Angle = -60;
+            chr.Titles[0].Text = "CHART SHOW PROGRESS DATA"; //ten
+            chr.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
+            chr.ChartAreas[0].AxisX.LabelStyle.Format = "dd-MM HH:mm";
+            chr.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chr.ChartAreas[0].AxisX2.MajorGrid.Enabled = false;
+            chr.ChartAreas[0].AxisY.MajorGrid.Enabled = true;
+            chr.ChartAreas[0].AxisY2.MajorGrid.Enabled = false;
+            chr.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            chr.ChartAreas[0].AxisY.Title = "TOTAL[PCS]"; //sua ten truc
+            chr.ChartAreas[0].AxisX.LabelStyle.Angle = -60;
 
-            chr_main.Series.Add("Output");
-            chr_main.Series["Output"].XValueType = ChartValueType.Date;
-            chr_main.Series["Output"].ChartType = SeriesChartType.Line;
-            chr_main.Series["Output"].Color = Color.FromArgb(0, 192, 0); //green
-            chr_main.Series["Output"].BorderWidth = 5;
-            chr_main.Series["Output"].CustomProperties = "LabelStyle=Bottom"; //chua nhu chó
-            chr_main.Series["Output"].IsValueShownAsLabel = true;
+            chr.Series.Add("Output (pcs)");
+            chr.Series["Output (pcs)"].XValueType = ChartValueType.Date;
+            chr.Series["Output (pcs)"].ChartType = SeriesChartType.Line;
+            chr.Series["Output (pcs)"].Color = Color.FromArgb(0, 192, 0); //green
+            chr.Series["Output (pcs)"].BorderWidth = 5;
+            chr.Series["Output (pcs)"].CustomProperties = "LabelStyle=Bottom"; //chua nhu chó
+            chr.Series["Output (pcs)"].IsValueShownAsLabel = true;
 
-            chr_main.Series.Add("Input");
-            chr_main.Series["Input"].XValueType = ChartValueType.Date;
-            chr_main.Series["Input"].ChartType = SeriesChartType.Line;
-            chr_main.Series["Input"].Color = Color.FromArgb(192, 192, 0); //green
-            chr_main.Series["Input"].BorderWidth = 5;
-            chr_main.Series["Input"].CustomProperties = "LabelStyle=Bottom"; //chua nhu chó
-            chr_main.Series["Input"].IsValueShownAsLabel = true;
+            chr.Series.Add("Input (pcs)");
+            chr.Series["Input (pcs)"].XValueType = ChartValueType.Date;
+            chr.Series["Input (pcs)"].ChartType = SeriesChartType.Line;
+            chr.Series["Input (pcs)"].Color = Color.FromArgb(192, 192, 0); //green
+            chr.Series["Input (pcs)"].BorderWidth = 5;
+            chr.Series["Input (pcs)"].CustomProperties = "LabelStyle=Bottom"; //chua nhu chó
+            chr.Series["Input (pcs)"].IsValueShownAsLabel = true;
 
-            chr_main.Series.Add("YEILD");
-            chr_main.Series["YEILD"].ChartType = SeriesChartType.Line;
-            chr_main.Series["YEILD"].Color = Color.FromArgb(192, 100, 0); //yellow    
-            chr_main.Series["YEILD"].BorderWidth = 1;
-            chr_main.Series["YEILD"].IsValueShownAsLabel = true;
-            chr_main.ChartAreas[0].AxisY2.Enabled = AxisEnabled.True;
-            chr_main.Series["YEILD"].YAxisType = AxisType.Secondary;
-            chr_main.ChartAreas[0].AxisX2.Enabled = AxisEnabled.True;
-            chr_main.Series["YEILD"].XAxisType = AxisType.Secondary;
-            chr_main.Series["YEILD"].XValueType = ChartValueType.DateTime;
-            chr_main.ChartAreas[0].AxisX2.LabelStyle.Format = "HH:mm";
-            chr_main.ChartAreas[0].AxisX2.LabelStyle.Angle = 0;
-            chr_main.ChartAreas[0].AxisY2.Maximum = 100;
-            chr_main.ChartAreas[0].AxisY2.Title = "YEILD [%]";
+            chr.Series.Add("YEILD (%)");
+            chr.Series["YEILD (%)"].ChartType = SeriesChartType.Line;
+            chr.Series["YEILD (%)"].Color = Color.FromArgb(192, 100, 0); //yellow    
+            chr.Series["YEILD (%)"].BorderWidth = 1;
+            chr.Series["YEILD (%)"].IsValueShownAsLabel = true;
+            chr.ChartAreas[0].AxisY2.Enabled = AxisEnabled.True;
+            chr.Series["YEILD (%)"].YAxisType = AxisType.Secondary;
+            chr.ChartAreas[0].AxisX2.Enabled = AxisEnabled.True;
+            chr.Series["YEILD (%)"].XAxisType = AxisType.Secondary;
+            chr.Series["YEILD (%)"].XValueType = ChartValueType.DateTime;
+            chr.ChartAreas[0].AxisX2.LabelStyle.Format = "HH:mm";
+            chr.ChartAreas[0].AxisX2.LabelStyle.Angle = 0;
+            chr.ChartAreas[0].AxisY2.Maximum = 100;
+            chr.ChartAreas[0].AxisY2.Title = "YEILD [%]";
 
-            if (dt)//time
+            //if (dt)//time
+            //{
+            //    if (dgv.RowCount > 8)
+            //    {
+            //        int refa = dgv.RowCount / 8;
+            //        double dataOut = 0;
+            //        double dataIn = 0;
+            //        double dataNG = 0;
+            //        for (int i = 0; i < dgv.RowCount; i++)
+            //        {
+            //            if (dgv.Columns.Contains("OUTPUT")) { dataOut += double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString()); }
+            //            if (dgv.Columns.Contains("INPUT")) { dataOut += double.Parse(dgv.Rows[i].Cells["INPUT"].Value.ToString()); }
+            //            dataNG = double.Parse(dgv.Rows[i].Cells["Total_NG"].Value.ToString());
+            //            if (i % refa == 0)
+            //            {
+            //                chr.Series["Output"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
+            //                chr.Series["Input"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
+            //                chr.Series["YEILD"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), Math.Round((100 - (dataNG / dataOut) * 100), 2));
+            //            }
+            //        }
+            //    }
+            //}
+            if (dgv.RowCount > 0)
             {
-                if (dgv.RowCount > 8)
+                double dataOut = 0;
+                double dataIn = 0;
+                double rateNG = 0;
+                for (int i = 0; i < dgv.RowCount - 1; i++)
                 {
-                    int refa = dgv.RowCount / 8;
-                    double dataOut = 0;
-                    double dataIn = 0;
-                    double dataNG = 0;
-                    for (int i = 0; i < dgv.RowCount; i++)
+                    if (dgv.Columns.Contains(output))
                     {
-                        if (dgv.Columns.Contains("OUTPUT")) { dataOut += double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString()); }
-                        if (dgv.Columns.Contains("INPUT")) { dataOut += double.Parse(dgv.Rows[i].Cells["INPUT"].Value.ToString()); }
-                        dataNG = double.Parse(dgv.Rows[i].Cells["Total_NG"].Value.ToString());
-                        if (i % refa == 0)
+                        if (dgv.Rows[i].Cells[output].Value.ToString() != "")
                         {
-                            chr_main.Series["Output"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
-                            chr_main.Series["Input"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
-                            chr_main.Series["YEILD"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), Math.Round((100 - (dataNG / dataOut) * 100), 2));
+                            dataOut += double.Parse(dgv.Rows[i].Cells[output].Value.ToString());
                         }
                     }
-                }
-            }
-            else//date
-            {
-                if (dgv.RowCount > 0)
-                {
-                    double dataOut = 0;
-                    double dataIn = 0;
-                    for (int i = 0; i < dgv.RowCount-1; i++)
-                    {
-                        if (dgv.Columns.Contains("OUTPUT"))
-                        {
-                            if (dgv.Rows[i].Cells["OUTPUT"].Value.ToString() != "")
-                            {
-                                dataOut += double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString());
-                            }
-                        }
-                        if (dgv.Columns.Contains("FA_IP")) { dataIn += double.Parse(dgv.Rows[i].Cells["FA_IP"].Value.ToString()); }
-                        double dataNG = double.Parse(dgv.Rows[i].Cells["Total_NG"].Value.ToString());
-                        chr_main.Series["Output"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
-                        chr_main.Series["Input"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
-                        chr_main.Series["YEILD"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), Math.Round(((dataNG / dataOut) * 100) < 100 ? ((dataNG / dataOut) * 100) : 100, 2));
-
-                    }
+                    if (dgv.Columns.Contains(input)) { dataIn += double.Parse(dgv.Rows[i].Cells[input].Value.ToString()); }
+                    rateNG = double.Parse(dgv.Rows[i].Cells[rateNG_].Value.ToString());
+                    chr.Series["Output (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
+                    chr.Series["Input (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
+                    if (rateNG > 100) { rateNG = 0; }
+                    chr.Series["YEILD (%)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), 100 - rateNG);
                 }
             }
         }
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            GridBind();
-            showchartLine(false);
-            showchartProcess();
-            //GridBindByDate();
-        }
+
         private void GridBind()
         {
             tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
@@ -337,9 +335,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dt.Columns.Add("Model");
                 dt.Columns.Add("Line");
                 dt.Columns.Add("Date");
-                dt.Columns.Add("Total_NG");
+                dt.Columns.Add("Total_NG_Frame");
+                dt.Columns.Add("Total_NG_Gear");
+                dt.Columns.Add("Total_NG_Motor");
                 dt.Columns.Add("OUTPUT");
-                dt.Columns.Add("RateNG");
+                dt.Columns.Add("RateNG_Frame");
+                dt.Columns.Add("RateNG_Gear");
+                dt.Columns.Add("RateNG_Motor");
                 foreach (var a in distinctProcess)
                 {
                     dt.Columns.Add(a.ToString());
@@ -360,21 +362,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         dr[1] = info[0]["line"].ToString();
                         dr[2] = info[0]["times"].ToString();
                         int j = 0;
-                        for (int i = 0; i < dt.Columns.Count - 6; i++)
+                        for (int i = 0; i < dt.Columns.Count - 10; i++)
                         {
                             if (j < inspectdata.Count)
                             {
-                                if (dt.Columns[i + 6].ColumnName == inspectdata[j]["process"].ToString())
+                                if (dt.Columns[i + 10].ColumnName == inspectdata[j]["process"].ToString())
                                 {
-                                    dr[i + 6] = inspectdata[j]["inspectdata"].ToString();
+                                    dr[i + 10] = inspectdata[j]["inspectdata"].ToString();
                                     j++;
                                 }
                                 else
                                 {
-                                    dr[i + 6] = "0";
+                                    dr[i + 10] = "0";
                                 }
                             }
-                            else dr[i + 6] = "0";
+                            else dr[i + 10] = "0";
                         }
                         dt.Rows.Add(dr);
                     }
@@ -382,7 +384,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 //sum hang cuoi
                 DataRow dr1 = dt.NewRow();
-                for (int i = 6; i < dt.Columns.Count; i++)
+                for (int i = 10; i < dt.Columns.Count; i++)
                 {
                     double sum = 0;
                     for (int j = 0; j < dt.Rows.Count; j++)
@@ -393,36 +395,68 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 dt.Rows.Add(dr1);
 
-                    dgv.DataSource = dt;
+                dgv.DataSource = dt;
                 //int t = 0;
-                for (int i = 0; i < dgv.RowCount-1; i++)
+                for (int i = 0; i < dgv.RowCount - 1; i++)
                 {
-                    double totalNG = 0;
-                    double rateNG = 0;
+                    double totalNGFrame = 0;
+                    double rateNGFrame = 0;
+                    double totalNGGear = 0;
+                    double rateNGGear = 0;
+                    double totalNGMoTor = 0;
+                    double rateNGMotor = 0;
+                    double outputRow = 0;
                     for (int t = 0; t < outputvo.dt.Rows.Count; t++)
                     {
                         if (dgv.Rows[i].Cells["Date"].Value.ToString() == outputvo.dt.Rows[t]["times"].ToString())
                         {
-                            dgv.Rows[i].Cells["OUTPUT"].Value = outputvo.dt.Rows[t]["count"].ToString();
+                            outputRow = double.Parse(outputvo.dt.Rows[t]["count"].ToString());
+                            if (dgv.Columns.Contains("MC_APPCHK")) { outputRow = outputRow - double.Parse(dgv.Rows[i].Cells["MC_APPCHK"].Value.ToString()); }
+                            if (dgv.Columns.Contains("MC_NOICHK")) { outputRow = outputRow - double.Parse(dgv.Rows[i].Cells["MC_NOICHK"].Value.ToString()); }
+                            if (outputRow < 0) { outputRow = 0; }
+                            dgv.Rows[i].Cells["OUTPUT"].Value = outputRow;
                         }
                     }
-                    for (int j = 6; j < dgv.ColumnCount; j++)
+                    for (int j = 10; j < dgv.ColumnCount; j++)
                     {
-                        string b = dgv[j, i].Value.ToString();
                         if (dgv.Columns[j].HeaderText != "FA_IP" && dgv.Columns[j].HeaderText != "FA_OP" && dgv.Columns[j].HeaderText != "GC_IP" && dgv.Columns[j].HeaderText != "GC_OP" && dgv.Columns[j].HeaderText != "MC_IP" && dgv.Columns[j].HeaderText != "OUTPUT")
                         {
-                            if (dgv[j, i].Value.ToString() != "")
-                            {
-                                totalNG += double.Parse(dgv[j, i].Value.ToString());
-                            }
+                            if (dgv.Columns[j].HeaderText == "FA_APP" || dgv.Columns[j].HeaderText == "FA_BallB" || dgv.Columns[j].HeaderText == "FA_Caulk")
+                            { totalNGFrame += double.Parse(dgv[j, i].Value.ToString()); }
+
+                            if (dgv.Columns[j].HeaderText == "GC_Bear" || dgv.Columns[j].HeaderText == "GC_C" || dgv.Columns[j].HeaderText == "GC_FGASS"
+                                || dgv.Columns[j].HeaderText == "GC_FGCHK" || dgv.Columns[j].HeaderText == "GC_OSW" || dgv.Columns[j].HeaderText == "GC_PD" || dgv.Columns[j].HeaderText == "GC_PU")
+                            { totalNGGear += double.Parse(dgv[j, i].Value.ToString()); }
+
+                            if (dgv.Columns[j].HeaderText == "MC_FWCHK" || dgv.Columns[j].HeaderText == "MC_STMASS" || dgv.Columns[j].HeaderText == "MC_FPC"
+                                || dgv.Columns[j].HeaderText == "MC_Mark" || dgv.Columns[j].HeaderText == "MC_THUCHK" || dgv.Columns[j].HeaderText == "MC_NOICHK" || dgv.Columns[j].HeaderText == "MC_APPCHK")
+                            { totalNGMoTor += double.Parse(dgv[j, i].Value.ToString()); }
+                            //    if (dgv[j, i].Value.ToString() != "")//
+                            //{
+                            //    totalNG += double.Parse(dgv[j, i].Value.ToString());
+                            //}
                         }
                     }
+                    double outputFrame = 0;
+                    double outputGear = 0;
+                    double outputMotor = 0;
+                    if (dgv.Columns.Contains("FA_OP")) { outputFrame = double.Parse(dgv.Rows[i].Cells["FA_OP"].Value.ToString()); }
+                    if (dgv.Columns.Contains("GC_OP")) { outputGear = double.Parse(dgv.Rows[i].Cells["GC_OP"].Value.ToString()); }
+                    if (dgv.Columns.Contains("OUTPUT")) { outputMotor = double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString()); }
 
-                    double output = double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString());
-                    if(output == 0) { rateNG = 0; } else rateNG = (totalNG / output) * 100;
+                    if (outputFrame == 0) { rateNGFrame = 0; } else rateNGFrame = Math.Round((totalNGFrame / outputFrame) * 100, 3);
+                    if (outputGear == 0) { rateNGGear = 0; } else rateNGGear = Math.Round((totalNGGear / outputGear) * 100, 3);
+                    if (outputMotor == 0) { rateNGMotor = 0; } else rateNGMotor = Math.Round((totalNGMoTor / outputMotor) * 100, 3);
+                    //if (rateNGFrame > 100) { rateNGFrame = 0; }
+                    //if (rateNGGear > 100) { rateNGGear = 0; }
+                    //if (rateNGMotor > 100) { rateNGMotor = 0; }
 
-                    dgv["RateNG", i].Value = rateNG;
-                    dgv["Total_NG", i].Value = totalNG;
+                    dgv["RateNG_Frame", i].Value = rateNGFrame;
+                    dgv["Total_NG_Frame", i].Value = totalNGFrame;
+                    dgv["RateNG_Gear", i].Value = rateNGGear;
+                    dgv["Total_NG_Gear", i].Value = totalNGGear;
+                    dgv["RateNG_Motor", i].Value = rateNGMotor;
+                    dgv["Total_NG_Motor", i].Value = totalNGMoTor;
                 }
             }
             catch (Framework.ApplicationException exception)
@@ -678,17 +712,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void search_cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (search_cmb.Text == "Time")
-            {
-                dtp_from.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-                dtp_to.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            }
-            else if (search_cmb.Text == "Date")
-            {
-                cmb_process.ResetText();
-                dtp_from.CustomFormat = "yyyy-MM-dd 00:00:00";
-                dtp_to.CustomFormat = "yyyy-MM-dd 23:59:59";
-            }
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -698,7 +721,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = int.Parse(txtTimer.Text);
             funtion();
         }
 
@@ -740,10 +762,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             try
             {
                 tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
-                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_from.Value, DateTo = dtp_to.Value,change =t}, connectionmes);
-                //cmb_item.DisplayMember = "ItemCode";
-                //cmb_item.DataSource = assetvoinvoice.GetList();
-                //cmb_item.Text = "";
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_from.Value, DateTo = dtp_to.Value, change = t }, connectionmes);
                 if (inspecdata.GetList()[0].InspecData != "")
                 {
                     return inspecdata.GetList()[0].InspecData;
@@ -767,6 +786,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             try
             {
+                lblLine.Text = cmb_line.Text;
                 tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
                 ValueObjectList<ProductionControllerGA1Vo> assetvoinvoice = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new GetProductionProcessCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename }, connection);
                 cmb_process.DisplayMember = "ProcessCode";
@@ -791,6 +811,148 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void btnSearchData_Click(object sender, EventArgs e)
         {
             funtion();
+        }
+
+        private void timerChart_Tick(object sender, EventArgs e)
+        {
+            GridBind();
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor); // motor
+            showchartProcess();
+            alarmNG();
+        }
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            GridBind();
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor); // motor
+            alarmNG();
+            showchartProcess();
+        }
+        public void alarmNG()
+        {
+            double rateNGFrame = 0;
+            double rateNGGear = 0;
+            double rateNGMotor = 0;
+            double rateNGFrametxt = 0;
+            double rateNGGeartxt = 0;
+            double rateNGMotortxt = 0;
+            if (double.TryParse(txtrateNGAlarmFrame.Text, out rateNGFrametxt)) { rateNGFrametxt = double.Parse(txtrateNGAlarmFrame.Text); }
+            if (double.TryParse(txtrateNGAlarmGear.Text, out rateNGGeartxt)) { rateNGGeartxt = double.Parse(txtrateNGAlarmGear.Text); }
+            if (double.TryParse(txtrateNGAlarmMotor.Text, out rateNGMotortxt)) { rateNGMotortxt = double.Parse(txtrateNGAlarmMotor.Text); }
+
+            if (dgv.RowCount > 1)
+            {
+                rateNGFrame = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Frame"].Value.ToString());
+                rateNGGear = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Gear"].Value.ToString());
+                rateNGMotor = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Motor"].Value.ToString());
+            }
+            int a = 0;
+            if (rateNGFrame > rateNGFrametxt || rateNGGear > rateNGGeartxt || rateNGMotor > rateNGMotortxt)//rateNG > rateNG text box => bao red
+            {
+                a = 1;
+                led("5", "2", "7");
+            }
+            else if ((((rateNGFrame >= rateNGFrametxt * (0.7)) && rateNGFrame <= rateNGFrametxt) || ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt) || ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt)) && a == 0)//bao vang
+            {
+                a = 2;
+                led("5", "6", "3");
+            }
+            else
+            {
+                a = 3;
+                led("1", "6", "7");
+            }
+
+
+            //if (rateNGGear > rateNGGeartxt)//rateNG > rateNG text box => bao red
+            //{
+            //    MessageBox.Show("red");
+            //    red++;
+            //    led("5", "2", "7");
+            //}
+            //else if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt)//bao vang
+            //{
+            //    MessageBox.Show("vang");
+            //    yellow++;
+            //    led("5", "6", "3");
+            //}
+            //else if (rateNGGear >= 0 && rateNGGear < (rateNGGeartxt * (0.7)))//bao xanh
+            //{
+            //    MessageBox.Show("xanh");
+            //    green++;
+            //    led("1", "6", "7");
+            //}
+
+
+            //if (rateNGMotor > rateNGMotortxt)//rateNG > rateNG text box => bao red
+            //{
+            //    MessageBox.Show("red");
+            //    red++;
+            //    led("5", "2", "7");
+            //}
+            //else if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt)//bao vang
+            //{
+            //    MessageBox.Show("vang");
+            //    yellow++;
+            //    led("5", "6", "3");
+            //}
+            //else if (rateNGMotor >= 0 && rateNGMotortxt < (rateNGMotortxt * (0.7)))//bao xanh
+            //{
+            //    MessageBox.Show("xanh");
+            //    green++;
+            //    led("1", "6", "7");
+            //}
+
+
+        }
+        public void led(string green, string red, string yellow)
+        {
+            if (cmbSeriport.Text != "")
+            {
+                serialCom.Write(green);//1on 5off
+                serialCom.Write(red);//2on 6off
+                serialCom.Write(yellow);//3on 7off
+            }
+        }
+        private void btnRunChart_Click(object sender, EventArgs e)
+        {
+            timerChart.Interval = int.Parse(txtTimerChart.Text);
+            btnRunChart.Enabled = false;
+            btnStop.Enabled = true;
+            timerChart.Enabled = true;
+            GridBind();
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor); // motor
+            showchartProcess();
+        }
+
+        private void btnStopChart_Click(object sender, EventArgs e)
+        {
+            btnRunChart.Enabled = true;
+            btnStop.Enabled = false;
+            timerChart.Enabled = false;
+        }
+
+        private void cmbSeriport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!serialCom.IsOpen)
+            {
+                serialCom.PortName = cmbSeriport.Text;
+                serialCom.Open();
+            }
+        }
+
+        private void cmbSeriport_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (!serialCom.IsOpen)
+            {
+                serialCom.PortName = cmbSeriport.Text;
+                serialCom.Open();
+            }
         }
     }
 }
