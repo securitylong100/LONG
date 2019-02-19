@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chr_main = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -124,10 +124,12 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cmbSeriport = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.txtTimerChart = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.btnStopChart = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnRunChart = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.dtp_from = new System.Windows.Forms.DateTimePicker();
             this.btn_searchChart = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -138,17 +140,38 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblTotalNGFrame = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon22 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblOutputFrame = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon20 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblInputFrame = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon10 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.grbFrame = new System.Windows.Forms.GroupBox();
             this.txtrateNGAlarmFrame = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.labelCommon16 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon17 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lblTotalNGGear = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon19 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblOutputGear = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon23 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblInputGear = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon25 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.grbGear = new System.Windows.Forms.GroupBox();
             this.txtrateNGAlarmGear = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.labelCommon14 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon15 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.chartGear = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lblTotalNGMotor = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon27 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblOutputMotor = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon29 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblInputMotor = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon31 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.grbMotor = new System.Windows.Forms.GroupBox();
             this.txtrateNGAlarmMotor = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.labelCommon12 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon13 = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -174,8 +197,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerChart = new System.Windows.Forms.Timer(this.components);
             this.serialCom = new System.IO.Ports.SerialPort(this.components);
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.cmbSeriport = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -194,77 +215,80 @@
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_pie)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.grbFrame.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.grbGear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGear)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.grbMotor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMotor)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // chr_main
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chr_main.ChartAreas.Add(chartArea5);
+            chartArea1.Name = "ChartArea1";
+            this.chr_main.ChartAreas.Add(chartArea1);
             this.chr_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chr_main.Legends.Add(legend5);
+            legend1.Name = "Legend1";
+            this.chr_main.Legends.Add(legend1);
             this.chr_main.Location = new System.Drawing.Point(3, 3);
             this.chr_main.Name = "chr_main";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chr_main.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chr_main.Series.Add(series1);
             this.chr_main.Size = new System.Drawing.Size(824, 398);
             this.chr_main.TabIndex = 7;
             this.chr_main.Text = "chart1";
-            title5.Name = "Title1";
-            this.chr_main.Titles.Add(title5);
+            title1.Name = "Title1";
+            this.chr_main.Titles.Add(title1);
             // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ControlId = null;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv.Location = new System.Drawing.Point(854, 5);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv.Location = new System.Drawing.Point(852, 5);
             this.dgv.Name = "dgv";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(465, 50);
+            this.dgv.Size = new System.Drawing.Size(467, 41);
             this.dgv.TabIndex = 9;
             this.dgv.Visible = false;
             // 
@@ -1208,18 +1232,28 @@
             this.tabPage2.Text = "Chart";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
+            // cmbSeriport
             // 
-            this.groupBox6.Controls.Add(this.labelCommon1);
-            this.groupBox6.Controls.Add(this.dtp_from);
-            this.groupBox6.Controls.Add(this.btn_searchChart);
-            this.groupBox6.Controls.Add(this.dtp_to);
-            this.groupBox6.Controls.Add(this.labelCommon2);
-            this.groupBox6.Location = new System.Drawing.Point(3, -2);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(432, 57);
-            this.groupBox6.TabIndex = 106;
-            this.groupBox6.TabStop = false;
+            this.cmbSeriport.ControlId = null;
+            this.cmbSeriport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeriport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSeriport.FormattingEnabled = true;
+            this.cmbSeriport.Location = new System.Drawing.Point(726, 15);
+            this.cmbSeriport.Name = "cmbSeriport";
+            this.cmbSeriport.Size = new System.Drawing.Size(120, 24);
+            this.cmbSeriport.TabIndex = 117;
+            this.cmbSeriport.SelectedIndexChanged += new System.EventHandler(this.cmbSeriport_SelectedIndexChanged_1);
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.txtTimerChart);
+            this.groupBox12.Controls.Add(this.btnStopChart);
+            this.groupBox12.Controls.Add(this.btnRunChart);
+            this.groupBox12.Location = new System.Drawing.Point(441, -2);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(278, 57);
+            this.groupBox12.TabIndex = 107;
+            this.groupBox12.TabStop = false;
             // 
             // txtTimerChart
             // 
@@ -1259,6 +1293,19 @@
             this.btnRunChart.Text = "Run";
             this.btnRunChart.UseVisualStyleBackColor = false;
             this.btnRunChart.Click += new System.EventHandler(this.btnRunChart_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.labelCommon1);
+            this.groupBox6.Controls.Add(this.dtp_from);
+            this.groupBox6.Controls.Add(this.btn_searchChart);
+            this.groupBox6.Controls.Add(this.dtp_to);
+            this.groupBox6.Controls.Add(this.labelCommon2);
+            this.groupBox6.Location = new System.Drawing.Point(3, -2);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(432, 57);
+            this.groupBox6.TabIndex = 106;
+            this.groupBox6.TabStop = false;
             // 
             // labelCommon1
             // 
@@ -1336,22 +1383,22 @@
             // 
             // chart_pie
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart_pie.ChartAreas.Add(chartArea6);
+            chartArea2.Name = "ChartArea1";
+            this.chart_pie.ChartAreas.Add(chartArea2);
             this.chart_pie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend6.Name = "Legend1";
-            this.chart_pie.Legends.Add(legend6);
+            legend2.Name = "Legend1";
+            this.chart_pie.Legends.Add(legend2);
             this.chart_pie.Location = new System.Drawing.Point(851, 5);
             this.chart_pie.Name = "chart_pie";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart_pie.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart_pie.Series.Add(series2);
             this.chart_pie.Size = new System.Drawing.Size(460, 430);
             this.chart_pie.TabIndex = 8;
             this.chart_pie.Text = "chart_pie";
-            title6.Name = "Title1";
-            this.chart_pie.Titles.Add(title6);
+            title2.Name = "Title1";
+            this.chart_pie.Titles.Add(title2);
             // 
             // tabControl2
             // 
@@ -1368,6 +1415,7 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox8);
+            this.tabPage4.Controls.Add(this.grbFrame);
             this.tabPage4.Controls.Add(this.chr_main);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -1379,15 +1427,103 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox8.Controls.Add(this.txtrateNGAlarmFrame);
-            this.groupBox8.Controls.Add(this.labelCommon16);
-            this.groupBox8.Controls.Add(this.labelCommon17);
-            this.groupBox8.Location = new System.Drawing.Point(3, -4);
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.BackColor = System.Drawing.Color.White;
+            this.groupBox8.Controls.Add(this.lblTotalNGFrame);
+            this.groupBox8.Controls.Add(this.labelCommon22);
+            this.groupBox8.Controls.Add(this.lblOutputFrame);
+            this.groupBox8.Controls.Add(this.labelCommon20);
+            this.groupBox8.Controls.Add(this.lblInputFrame);
+            this.groupBox8.Controls.Add(this.labelCommon10);
+            this.groupBox8.Location = new System.Drawing.Point(714, 294);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(85, 46);
-            this.groupBox8.TabIndex = 124;
+            this.groupBox8.Size = new System.Drawing.Size(110, 107);
+            this.groupBox8.TabIndex = 128;
             this.groupBox8.TabStop = false;
+            // 
+            // lblTotalNGFrame
+            // 
+            this.lblTotalNGFrame.AutoSize = true;
+            this.lblTotalNGFrame.ControlId = null;
+            this.lblTotalNGFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNGFrame.Location = new System.Drawing.Point(63, 77);
+            this.lblTotalNGFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblTotalNGFrame.Name = "lblTotalNGFrame";
+            this.lblTotalNGFrame.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalNGFrame.TabIndex = 133;
+            this.lblTotalNGFrame.Text = "0";
+            // 
+            // labelCommon22
+            // 
+            this.labelCommon22.AutoSize = true;
+            this.labelCommon22.ControlId = null;
+            this.labelCommon22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon22.Location = new System.Drawing.Point(8, 77);
+            this.labelCommon22.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon22.Name = "labelCommon22";
+            this.labelCommon22.Size = new System.Drawing.Size(58, 15);
+            this.labelCommon22.TabIndex = 132;
+            this.labelCommon22.Text = "Total NG:";
+            // 
+            // lblOutputFrame
+            // 
+            this.lblOutputFrame.AutoSize = true;
+            this.lblOutputFrame.ControlId = null;
+            this.lblOutputFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputFrame.Location = new System.Drawing.Point(63, 49);
+            this.lblOutputFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblOutputFrame.Name = "lblOutputFrame";
+            this.lblOutputFrame.Size = new System.Drawing.Size(14, 15);
+            this.lblOutputFrame.TabIndex = 131;
+            this.lblOutputFrame.Text = "0";
+            // 
+            // labelCommon20
+            // 
+            this.labelCommon20.AutoSize = true;
+            this.labelCommon20.ControlId = null;
+            this.labelCommon20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon20.Location = new System.Drawing.Point(19, 49);
+            this.labelCommon20.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon20.Name = "labelCommon20";
+            this.labelCommon20.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon20.TabIndex = 130;
+            this.labelCommon20.Text = "Output:";
+            // 
+            // lblInputFrame
+            // 
+            this.lblInputFrame.AutoSize = true;
+            this.lblInputFrame.ControlId = null;
+            this.lblInputFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputFrame.Location = new System.Drawing.Point(63, 21);
+            this.lblInputFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblInputFrame.Name = "lblInputFrame";
+            this.lblInputFrame.Size = new System.Drawing.Size(14, 15);
+            this.lblInputFrame.TabIndex = 129;
+            this.lblInputFrame.Text = "0";
+            // 
+            // labelCommon10
+            // 
+            this.labelCommon10.AutoSize = true;
+            this.labelCommon10.ControlId = null;
+            this.labelCommon10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon10.Location = new System.Drawing.Point(27, 21);
+            this.labelCommon10.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon10.Name = "labelCommon10";
+            this.labelCommon10.Size = new System.Drawing.Size(37, 15);
+            this.labelCommon10.TabIndex = 128;
+            this.labelCommon10.Text = "Input:";
+            // 
+            // grbFrame
+            // 
+            this.grbFrame.BackColor = System.Drawing.Color.LightGreen;
+            this.grbFrame.Controls.Add(this.txtrateNGAlarmFrame);
+            this.grbFrame.Controls.Add(this.labelCommon16);
+            this.grbFrame.Controls.Add(this.labelCommon17);
+            this.grbFrame.Location = new System.Drawing.Point(3, -4);
+            this.grbFrame.Name = "grbFrame";
+            this.grbFrame.Size = new System.Drawing.Size(85, 46);
+            this.grbFrame.TabIndex = 124;
+            this.grbFrame.TabStop = false;
             // 
             // txtrateNGAlarmFrame
             // 
@@ -1427,6 +1563,7 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox9);
+            this.tabPage5.Controls.Add(this.grbGear);
             this.tabPage5.Controls.Add(this.chartGear);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -1438,15 +1575,103 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox9.Controls.Add(this.txtrateNGAlarmGear);
-            this.groupBox9.Controls.Add(this.labelCommon14);
-            this.groupBox9.Controls.Add(this.labelCommon15);
-            this.groupBox9.Location = new System.Drawing.Point(3, -4);
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.BackColor = System.Drawing.Color.White;
+            this.groupBox9.Controls.Add(this.lblTotalNGGear);
+            this.groupBox9.Controls.Add(this.labelCommon19);
+            this.groupBox9.Controls.Add(this.lblOutputGear);
+            this.groupBox9.Controls.Add(this.labelCommon23);
+            this.groupBox9.Controls.Add(this.lblInputGear);
+            this.groupBox9.Controls.Add(this.labelCommon25);
+            this.groupBox9.Location = new System.Drawing.Point(714, 294);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(85, 46);
-            this.groupBox9.TabIndex = 125;
+            this.groupBox9.Size = new System.Drawing.Size(110, 107);
+            this.groupBox9.TabIndex = 129;
             this.groupBox9.TabStop = false;
+            // 
+            // lblTotalNGGear
+            // 
+            this.lblTotalNGGear.AutoSize = true;
+            this.lblTotalNGGear.ControlId = null;
+            this.lblTotalNGGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNGGear.Location = new System.Drawing.Point(63, 77);
+            this.lblTotalNGGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblTotalNGGear.Name = "lblTotalNGGear";
+            this.lblTotalNGGear.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalNGGear.TabIndex = 133;
+            this.lblTotalNGGear.Text = "0";
+            // 
+            // labelCommon19
+            // 
+            this.labelCommon19.AutoSize = true;
+            this.labelCommon19.ControlId = null;
+            this.labelCommon19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon19.Location = new System.Drawing.Point(8, 77);
+            this.labelCommon19.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon19.Name = "labelCommon19";
+            this.labelCommon19.Size = new System.Drawing.Size(58, 15);
+            this.labelCommon19.TabIndex = 132;
+            this.labelCommon19.Text = "Total NG:";
+            // 
+            // lblOutputGear
+            // 
+            this.lblOutputGear.AutoSize = true;
+            this.lblOutputGear.ControlId = null;
+            this.lblOutputGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputGear.Location = new System.Drawing.Point(63, 49);
+            this.lblOutputGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblOutputGear.Name = "lblOutputGear";
+            this.lblOutputGear.Size = new System.Drawing.Size(14, 15);
+            this.lblOutputGear.TabIndex = 131;
+            this.lblOutputGear.Text = "0";
+            // 
+            // labelCommon23
+            // 
+            this.labelCommon23.AutoSize = true;
+            this.labelCommon23.ControlId = null;
+            this.labelCommon23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon23.Location = new System.Drawing.Point(19, 49);
+            this.labelCommon23.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon23.Name = "labelCommon23";
+            this.labelCommon23.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon23.TabIndex = 130;
+            this.labelCommon23.Text = "Output:";
+            // 
+            // lblInputGear
+            // 
+            this.lblInputGear.AutoSize = true;
+            this.lblInputGear.ControlId = null;
+            this.lblInputGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputGear.Location = new System.Drawing.Point(63, 21);
+            this.lblInputGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblInputGear.Name = "lblInputGear";
+            this.lblInputGear.Size = new System.Drawing.Size(14, 15);
+            this.lblInputGear.TabIndex = 129;
+            this.lblInputGear.Text = "0";
+            // 
+            // labelCommon25
+            // 
+            this.labelCommon25.AutoSize = true;
+            this.labelCommon25.ControlId = null;
+            this.labelCommon25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon25.Location = new System.Drawing.Point(27, 21);
+            this.labelCommon25.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon25.Name = "labelCommon25";
+            this.labelCommon25.Size = new System.Drawing.Size(37, 15);
+            this.labelCommon25.TabIndex = 128;
+            this.labelCommon25.Text = "Input:";
+            // 
+            // grbGear
+            // 
+            this.grbGear.BackColor = System.Drawing.Color.LightGreen;
+            this.grbGear.Controls.Add(this.txtrateNGAlarmGear);
+            this.grbGear.Controls.Add(this.labelCommon14);
+            this.grbGear.Controls.Add(this.labelCommon15);
+            this.grbGear.Location = new System.Drawing.Point(3, -4);
+            this.grbGear.Name = "grbGear";
+            this.grbGear.Size = new System.Drawing.Size(85, 46);
+            this.grbGear.TabIndex = 125;
+            this.grbGear.TabStop = false;
             // 
             // txtrateNGAlarmGear
             // 
@@ -1485,26 +1710,27 @@
             // 
             // chartGear
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartGear.ChartAreas.Add(chartArea7);
+            chartArea3.Name = "ChartArea1";
+            this.chartGear.ChartAreas.Add(chartArea3);
             this.chartGear.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            this.chartGear.Legends.Add(legend7);
+            legend3.Name = "Legend1";
+            this.chartGear.Legends.Add(legend3);
             this.chartGear.Location = new System.Drawing.Point(3, 3);
             this.chartGear.Name = "chartGear";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartGear.Series.Add(series7);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartGear.Series.Add(series3);
             this.chartGear.Size = new System.Drawing.Size(824, 398);
             this.chartGear.TabIndex = 8;
             this.chartGear.Text = "chart1";
-            title7.Name = "Title1";
-            this.chartGear.Titles.Add(title7);
+            title3.Name = "Title1";
+            this.chartGear.Titles.Add(title3);
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.groupBox10);
+            this.tabPage6.Controls.Add(this.grbMotor);
             this.tabPage6.Controls.Add(this.chartMotor);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
@@ -1516,15 +1742,103 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox10.Controls.Add(this.txtrateNGAlarmMotor);
-            this.groupBox10.Controls.Add(this.labelCommon12);
-            this.groupBox10.Controls.Add(this.labelCommon13);
-            this.groupBox10.Location = new System.Drawing.Point(3, -4);
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox10.BackColor = System.Drawing.Color.White;
+            this.groupBox10.Controls.Add(this.lblTotalNGMotor);
+            this.groupBox10.Controls.Add(this.labelCommon27);
+            this.groupBox10.Controls.Add(this.lblOutputMotor);
+            this.groupBox10.Controls.Add(this.labelCommon29);
+            this.groupBox10.Controls.Add(this.lblInputMotor);
+            this.groupBox10.Controls.Add(this.labelCommon31);
+            this.groupBox10.Location = new System.Drawing.Point(714, 294);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(85, 46);
-            this.groupBox10.TabIndex = 125;
+            this.groupBox10.Size = new System.Drawing.Size(110, 107);
+            this.groupBox10.TabIndex = 129;
             this.groupBox10.TabStop = false;
+            // 
+            // lblTotalNGMotor
+            // 
+            this.lblTotalNGMotor.AutoSize = true;
+            this.lblTotalNGMotor.ControlId = null;
+            this.lblTotalNGMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNGMotor.Location = new System.Drawing.Point(63, 77);
+            this.lblTotalNGMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblTotalNGMotor.Name = "lblTotalNGMotor";
+            this.lblTotalNGMotor.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalNGMotor.TabIndex = 133;
+            this.lblTotalNGMotor.Text = "0";
+            // 
+            // labelCommon27
+            // 
+            this.labelCommon27.AutoSize = true;
+            this.labelCommon27.ControlId = null;
+            this.labelCommon27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon27.Location = new System.Drawing.Point(8, 77);
+            this.labelCommon27.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon27.Name = "labelCommon27";
+            this.labelCommon27.Size = new System.Drawing.Size(58, 15);
+            this.labelCommon27.TabIndex = 132;
+            this.labelCommon27.Text = "Total NG:";
+            // 
+            // lblOutputMotor
+            // 
+            this.lblOutputMotor.AutoSize = true;
+            this.lblOutputMotor.ControlId = null;
+            this.lblOutputMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputMotor.Location = new System.Drawing.Point(63, 49);
+            this.lblOutputMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblOutputMotor.Name = "lblOutputMotor";
+            this.lblOutputMotor.Size = new System.Drawing.Size(14, 15);
+            this.lblOutputMotor.TabIndex = 131;
+            this.lblOutputMotor.Text = "0";
+            // 
+            // labelCommon29
+            // 
+            this.labelCommon29.AutoSize = true;
+            this.labelCommon29.ControlId = null;
+            this.labelCommon29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon29.Location = new System.Drawing.Point(19, 49);
+            this.labelCommon29.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon29.Name = "labelCommon29";
+            this.labelCommon29.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon29.TabIndex = 130;
+            this.labelCommon29.Text = "Output:";
+            // 
+            // lblInputMotor
+            // 
+            this.lblInputMotor.AutoSize = true;
+            this.lblInputMotor.ControlId = null;
+            this.lblInputMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputMotor.Location = new System.Drawing.Point(63, 21);
+            this.lblInputMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblInputMotor.Name = "lblInputMotor";
+            this.lblInputMotor.Size = new System.Drawing.Size(14, 15);
+            this.lblInputMotor.TabIndex = 129;
+            this.lblInputMotor.Text = "0";
+            // 
+            // labelCommon31
+            // 
+            this.labelCommon31.AutoSize = true;
+            this.labelCommon31.ControlId = null;
+            this.labelCommon31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon31.Location = new System.Drawing.Point(27, 21);
+            this.labelCommon31.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon31.Name = "labelCommon31";
+            this.labelCommon31.Size = new System.Drawing.Size(37, 15);
+            this.labelCommon31.TabIndex = 128;
+            this.labelCommon31.Text = "Input:";
+            // 
+            // grbMotor
+            // 
+            this.grbMotor.BackColor = System.Drawing.Color.LightGreen;
+            this.grbMotor.Controls.Add(this.txtrateNGAlarmMotor);
+            this.grbMotor.Controls.Add(this.labelCommon12);
+            this.grbMotor.Controls.Add(this.labelCommon13);
+            this.grbMotor.Location = new System.Drawing.Point(3, -4);
+            this.grbMotor.Name = "grbMotor";
+            this.grbMotor.Size = new System.Drawing.Size(85, 46);
+            this.grbMotor.TabIndex = 125;
+            this.grbMotor.TabStop = false;
             // 
             // txtrateNGAlarmMotor
             // 
@@ -1563,22 +1877,22 @@
             // 
             // chartMotor
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartMotor.ChartAreas.Add(chartArea8);
+            chartArea4.Name = "ChartArea1";
+            this.chartMotor.ChartAreas.Add(chartArea4);
             this.chartMotor.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Legend1";
-            this.chartMotor.Legends.Add(legend8);
+            legend4.Name = "Legend1";
+            this.chartMotor.Legends.Add(legend4);
             this.chartMotor.Location = new System.Drawing.Point(3, 3);
             this.chartMotor.Name = "chartMotor";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartMotor.Series.Add(series8);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartMotor.Series.Add(series4);
             this.chartMotor.Size = new System.Drawing.Size(824, 398);
             this.chartMotor.TabIndex = 8;
             this.chartMotor.Text = "chart1";
-            title8.Name = "Title1";
-            this.chartMotor.Titles.Add(title8);
+            title4.Name = "Title1";
+            this.chartMotor.Titles.Add(title4);
             // 
             // tabPage3
             // 
@@ -1810,29 +2124,6 @@
             this.timerChart.Interval = 300000;
             this.timerChart.Tick += new System.EventHandler(this.timerChart_Tick);
             // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.txtTimerChart);
-            this.groupBox12.Controls.Add(this.btnStopChart);
-            this.groupBox12.Controls.Add(this.btnRunChart);
-            this.groupBox12.Location = new System.Drawing.Point(441, -2);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(278, 57);
-            this.groupBox12.TabIndex = 107;
-            this.groupBox12.TabStop = false;
-            // 
-            // cmbSeriport
-            // 
-            this.cmbSeriport.ControlId = null;
-            this.cmbSeriport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSeriport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSeriport.FormattingEnabled = true;
-            this.cmbSeriport.Location = new System.Drawing.Point(726, 15);
-            this.cmbSeriport.Name = "cmbSeriport";
-            this.cmbSeriport.Size = new System.Drawing.Size(120, 24);
-            this.cmbSeriport.TabIndex = 117;
-            this.cmbSeriport.SelectedIndexChanged += new System.EventHandler(this.cmbSeriport_SelectedIndexChanged_1);
-            // 
             // ProducionControllerGA1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1868,6 +2159,8 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1876,13 +2169,19 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.grbFrame.ResumeLayout(false);
+            this.grbFrame.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.grbGear.ResumeLayout(false);
+            this.grbGear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGear)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            this.grbMotor.ResumeLayout(false);
+            this.grbMotor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMotor)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -1890,8 +2189,6 @@
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2007,11 +2304,11 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMotor;
         private Framework.LabelCommon labelCommon16;
         private Framework.LabelCommon labelCommon17;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox grbFrame;
+        private System.Windows.Forms.GroupBox grbGear;
         private Framework.LabelCommon labelCommon14;
         private Framework.LabelCommon labelCommon15;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.GroupBox grbMotor;
         private Framework.LabelCommon labelCommon12;
         private Framework.LabelCommon labelCommon13;
         private Framework.TextBoxCommon txtrateNGAlarmMotor;
@@ -2025,5 +2322,26 @@
         private Framework.LabelCommon labelCommon6;
         private System.Windows.Forms.GroupBox groupBox12;
         private Framework.ComboBoxCommon cmbSeriport;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private Framework.LabelCommon lblTotalNGFrame;
+        private Framework.LabelCommon labelCommon22;
+        private Framework.LabelCommon lblOutputFrame;
+        private Framework.LabelCommon labelCommon20;
+        private Framework.LabelCommon lblInputFrame;
+        private Framework.LabelCommon labelCommon10;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private Framework.LabelCommon lblTotalNGGear;
+        private Framework.LabelCommon labelCommon19;
+        private Framework.LabelCommon lblOutputGear;
+        private Framework.LabelCommon labelCommon23;
+        private Framework.LabelCommon lblInputGear;
+        private Framework.LabelCommon labelCommon25;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private Framework.LabelCommon lblTotalNGMotor;
+        private Framework.LabelCommon labelCommon27;
+        private Framework.LabelCommon lblOutputMotor;
+        private Framework.LabelCommon labelCommon29;
+        private Framework.LabelCommon lblInputMotor;
+        private Framework.LabelCommon labelCommon31;
     }
 }
