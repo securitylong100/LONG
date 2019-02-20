@@ -29,32 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.chr_main = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -62,7 +65,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chbViData = new System.Windows.Forms.CheckBox();
-            this.btnShowgrbData = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.grbSearchData = new System.Windows.Forms.GroupBox();
             this.txtTimer = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.btnSearchData = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -186,7 +188,7 @@
             this.chartMotor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chbViProcess = new System.Windows.Forms.CheckBox();
-            this.grbProcess = new System.Windows.Forms.GroupBox();
+            this.grbSearchProcess = new System.Windows.Forms.GroupBox();
             this.txtTimerProcess = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.btnStopProcess = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnRunProcess = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -198,8 +200,11 @@
             this.labelCommon11 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.tblLayoutProcess = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvProcess = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.chartProcess = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grbdgvProcess = new System.Windows.Forms.GroupBox();
+            this.dgvProcess = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCommon5 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.cmb_item = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -223,6 +228,20 @@
             this.serialCom = new System.IO.Ports.SerialPort(this.components);
             this.timerProcess = new System.Windows.Forms.Timer(this.components);
             this.timerDateTimeNow = new System.Windows.Forms.Timer(this.components);
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.linksave_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.labelCommon18 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.dtpFromExport = new System.Windows.Forms.DateTimePicker();
+            this.dtpToExport = new System.Windows.Forms.DateTimePicker();
+            this.labelCommon21 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.dataGridViewCommon1 = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -256,65 +275,69 @@
             this.grbMotor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMotor)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.grbProcess.SuspendLayout();
+            this.grbSearchProcess.SuspendLayout();
             this.tblLayoutProcess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProcess)).BeginInit();
+            this.grbdgvProcess.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBoxCommon2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCommon1)).BeginInit();
             this.SuspendLayout();
             // 
             // chr_main
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chr_main.ChartAreas.Add(chartArea1);
+            chartArea6.Name = "ChartArea1";
+            this.chr_main.ChartAreas.Add(chartArea6);
             this.chr_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chr_main.Legends.Add(legend1);
+            legend6.Name = "Legend1";
+            this.chr_main.Legends.Add(legend6);
             this.chr_main.Location = new System.Drawing.Point(3, 3);
             this.chr_main.Name = "chr_main";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chr_main.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chr_main.Series.Add(series6);
             this.chr_main.Size = new System.Drawing.Size(824, 398);
             this.chr_main.TabIndex = 7;
             this.chr_main.Text = "chart1";
-            title1.Name = "Title1";
-            this.chr_main.Titles.Add(title1);
+            title6.Name = "Title1";
+            this.chr_main.Titles.Add(title6);
             // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ControlId = null;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv.Location = new System.Drawing.Point(852, 5);
             this.dgv.Name = "dgv";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv.RowHeadersVisible = false;
             this.dgv.Size = new System.Drawing.Size(347, 41);
             this.dgv.TabIndex = 9;
@@ -355,6 +378,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Location = new System.Drawing.Point(3, 59);
             this.tabControl1.Name = "tabControl1";
@@ -365,7 +389,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.chbViData);
-            this.tabPage1.Controls.Add(this.btnShowgrbData);
             this.tabPage1.Controls.Add(this.grbSearchData);
             this.tabPage1.Controls.Add(this.tblLayoutData);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -382,29 +405,13 @@
             this.chbViData.AutoSize = true;
             this.chbViData.Checked = true;
             this.chbViData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbViData.Location = new System.Drawing.Point(1262, 2);
+            this.chbViData.Location = new System.Drawing.Point(1259, 2);
             this.chbViData.Name = "chbViData";
-            this.chbViData.Size = new System.Drawing.Size(56, 17);
+            this.chbViData.Size = new System.Drawing.Size(59, 17);
             this.chbViData.TabIndex = 134;
-            this.chbViData.Text = "Visible";
+            this.chbViData.Text = "Setting";
             this.chbViData.UseVisualStyleBackColor = true;
             this.chbViData.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // btnShowgrbData
-            // 
-            this.btnShowgrbData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowgrbData.BackColor = System.Drawing.SystemColors.Control;
-            this.btnShowgrbData.ControlId = null;
-            this.btnShowgrbData.Font = new System.Drawing.Font("Arial", 6F);
-            this.btnShowgrbData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnShowgrbData.Location = new System.Drawing.Point(1234, 3);
-            this.btnShowgrbData.Name = "btnShowgrbData";
-            this.btnShowgrbData.Size = new System.Drawing.Size(16, 16);
-            this.btnShowgrbData.TabIndex = 129;
-            this.btnShowgrbData.Text = "O";
-            this.btnShowgrbData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnShowgrbData.UseVisualStyleBackColor = false;
-            this.btnShowgrbData.Click += new System.EventHandler(this.btnShowgrbData_Click);
             // 
             // grbSearchData
             // 
@@ -1288,11 +1295,11 @@
             this.chbViChart.AutoSize = true;
             this.chbViChart.Checked = true;
             this.chbViChart.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbViChart.Location = new System.Drawing.Point(1262, 2);
+            this.chbViChart.Location = new System.Drawing.Point(1259, 2);
             this.chbViChart.Name = "chbViChart";
-            this.chbViChart.Size = new System.Drawing.Size(56, 17);
+            this.chbViChart.Size = new System.Drawing.Size(59, 17);
             this.chbViChart.TabIndex = 133;
-            this.chbViChart.Text = "Visible";
+            this.chbViChart.Text = "Setting";
             this.chbViChart.UseVisualStyleBackColor = true;
             this.chbViChart.CheckedChanged += new System.EventHandler(this.chbViChart_CheckedChanged);
             // 
@@ -1440,22 +1447,22 @@
             // 
             // chart_pie
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart_pie.ChartAreas.Add(chartArea2);
+            chartArea7.Name = "ChartArea1";
+            this.chart_pie.ChartAreas.Add(chartArea7);
             this.chart_pie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend2.Name = "Legend1";
-            this.chart_pie.Legends.Add(legend2);
-            this.chart_pie.Location = new System.Drawing.Point(851, 5);
+            legend7.Name = "Legend1";
+            this.chart_pie.Legends.Add(legend7);
+            this.chart_pie.Location = new System.Drawing.Point(851, 27);
             this.chart_pie.Name = "chart_pie";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart_pie.Series.Add(series2);
-            this.chart_pie.Size = new System.Drawing.Size(460, 430);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart_pie.Series.Add(series7);
+            this.chart_pie.Size = new System.Drawing.Size(460, 408);
             this.chart_pie.TabIndex = 8;
             this.chart_pie.Text = "chart_pie";
-            title2.Name = "Title1";
-            this.chart_pie.Titles.Add(title2);
+            title7.Name = "Title1";
+            this.chart_pie.Titles.Add(title7);
             // 
             // tabControl2
             // 
@@ -1492,6 +1499,7 @@
             this.groupBox8.Controls.Add(this.labelCommon20);
             this.groupBox8.Controls.Add(this.lblInputFrame);
             this.groupBox8.Controls.Add(this.labelCommon10);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(714, 294);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(110, 107);
@@ -1502,23 +1510,24 @@
             // 
             this.lblTotalNGFrame.AutoSize = true;
             this.lblTotalNGFrame.ControlId = null;
-            this.lblTotalNGFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNGFrame.Location = new System.Drawing.Point(63, 77);
+            this.lblTotalNGFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNGFrame.Location = new System.Drawing.Point(69, 77);
             this.lblTotalNGFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblTotalNGFrame.Name = "lblTotalNGFrame";
-            this.lblTotalNGFrame.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalNGFrame.Size = new System.Drawing.Size(15, 15);
             this.lblTotalNGFrame.TabIndex = 133;
             this.lblTotalNGFrame.Text = "0";
             // 
             // labelCommon22
             // 
             this.labelCommon22.AutoSize = true;
+            this.labelCommon22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.labelCommon22.ControlId = null;
-            this.labelCommon22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon22.Location = new System.Drawing.Point(8, 77);
+            this.labelCommon22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon22.Location = new System.Drawing.Point(4, 77);
             this.labelCommon22.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon22.Name = "labelCommon22";
-            this.labelCommon22.Size = new System.Drawing.Size(58, 15);
+            this.labelCommon22.Size = new System.Drawing.Size(67, 15);
             this.labelCommon22.TabIndex = 132;
             this.labelCommon22.Text = "Total NG:";
             // 
@@ -1526,23 +1535,24 @@
             // 
             this.lblOutputFrame.AutoSize = true;
             this.lblOutputFrame.ControlId = null;
-            this.lblOutputFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputFrame.Location = new System.Drawing.Point(63, 49);
+            this.lblOutputFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputFrame.Location = new System.Drawing.Point(69, 49);
             this.lblOutputFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblOutputFrame.Name = "lblOutputFrame";
-            this.lblOutputFrame.Size = new System.Drawing.Size(14, 15);
+            this.lblOutputFrame.Size = new System.Drawing.Size(15, 15);
             this.lblOutputFrame.TabIndex = 131;
             this.lblOutputFrame.Text = "0";
             // 
             // labelCommon20
             // 
             this.labelCommon20.AutoSize = true;
+            this.labelCommon20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelCommon20.ControlId = null;
-            this.labelCommon20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon20.Location = new System.Drawing.Point(19, 49);
+            this.labelCommon20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon20.Location = new System.Drawing.Point(15, 49);
             this.labelCommon20.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon20.Name = "labelCommon20";
-            this.labelCommon20.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon20.Size = new System.Drawing.Size(53, 15);
             this.labelCommon20.TabIndex = 130;
             this.labelCommon20.Text = "Output:";
             // 
@@ -1550,24 +1560,24 @@
             // 
             this.lblInputFrame.AutoSize = true;
             this.lblInputFrame.ControlId = null;
-            this.lblInputFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputFrame.Location = new System.Drawing.Point(63, 21);
+            this.lblInputFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputFrame.Location = new System.Drawing.Point(69, 21);
             this.lblInputFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblInputFrame.Name = "lblInputFrame";
-            this.lblInputFrame.Size = new System.Drawing.Size(14, 15);
+            this.lblInputFrame.Size = new System.Drawing.Size(15, 15);
             this.lblInputFrame.TabIndex = 129;
             this.lblInputFrame.Text = "0";
             // 
             // labelCommon10
             // 
             this.labelCommon10.AutoSize = true;
-            this.labelCommon10.BackColor = System.Drawing.SystemColors.Window;
+            this.labelCommon10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelCommon10.ControlId = null;
-            this.labelCommon10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon10.Location = new System.Drawing.Point(27, 21);
+            this.labelCommon10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon10.Location = new System.Drawing.Point(23, 21);
             this.labelCommon10.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon10.Name = "labelCommon10";
-            this.labelCommon10.Size = new System.Drawing.Size(37, 15);
+            this.labelCommon10.Size = new System.Drawing.Size(43, 15);
             this.labelCommon10.TabIndex = 128;
             this.labelCommon10.Text = "Input:";
             // 
@@ -1651,23 +1661,24 @@
             // 
             this.lblTotalNGGear.AutoSize = true;
             this.lblTotalNGGear.ControlId = null;
-            this.lblTotalNGGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNGGear.Location = new System.Drawing.Point(63, 77);
+            this.lblTotalNGGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNGGear.Location = new System.Drawing.Point(69, 77);
             this.lblTotalNGGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblTotalNGGear.Name = "lblTotalNGGear";
-            this.lblTotalNGGear.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalNGGear.Size = new System.Drawing.Size(15, 15);
             this.lblTotalNGGear.TabIndex = 133;
             this.lblTotalNGGear.Text = "0";
             // 
             // labelCommon19
             // 
             this.labelCommon19.AutoSize = true;
+            this.labelCommon19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.labelCommon19.ControlId = null;
-            this.labelCommon19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon19.Location = new System.Drawing.Point(8, 77);
+            this.labelCommon19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon19.Location = new System.Drawing.Point(4, 77);
             this.labelCommon19.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon19.Name = "labelCommon19";
-            this.labelCommon19.Size = new System.Drawing.Size(58, 15);
+            this.labelCommon19.Size = new System.Drawing.Size(67, 15);
             this.labelCommon19.TabIndex = 132;
             this.labelCommon19.Text = "Total NG:";
             // 
@@ -1675,23 +1686,24 @@
             // 
             this.lblOutputGear.AutoSize = true;
             this.lblOutputGear.ControlId = null;
-            this.lblOutputGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputGear.Location = new System.Drawing.Point(63, 49);
+            this.lblOutputGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputGear.Location = new System.Drawing.Point(69, 49);
             this.lblOutputGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblOutputGear.Name = "lblOutputGear";
-            this.lblOutputGear.Size = new System.Drawing.Size(14, 15);
+            this.lblOutputGear.Size = new System.Drawing.Size(15, 15);
             this.lblOutputGear.TabIndex = 131;
             this.lblOutputGear.Text = "0";
             // 
             // labelCommon23
             // 
             this.labelCommon23.AutoSize = true;
+            this.labelCommon23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelCommon23.ControlId = null;
-            this.labelCommon23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon23.Location = new System.Drawing.Point(19, 49);
+            this.labelCommon23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon23.Location = new System.Drawing.Point(15, 49);
             this.labelCommon23.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon23.Name = "labelCommon23";
-            this.labelCommon23.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon23.Size = new System.Drawing.Size(53, 15);
             this.labelCommon23.TabIndex = 130;
             this.labelCommon23.Text = "Output:";
             // 
@@ -1699,23 +1711,24 @@
             // 
             this.lblInputGear.AutoSize = true;
             this.lblInputGear.ControlId = null;
-            this.lblInputGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputGear.Location = new System.Drawing.Point(63, 21);
+            this.lblInputGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputGear.Location = new System.Drawing.Point(69, 21);
             this.lblInputGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblInputGear.Name = "lblInputGear";
-            this.lblInputGear.Size = new System.Drawing.Size(14, 15);
+            this.lblInputGear.Size = new System.Drawing.Size(15, 15);
             this.lblInputGear.TabIndex = 129;
             this.lblInputGear.Text = "0";
             // 
             // labelCommon25
             // 
             this.labelCommon25.AutoSize = true;
+            this.labelCommon25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelCommon25.ControlId = null;
-            this.labelCommon25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon25.Location = new System.Drawing.Point(27, 21);
+            this.labelCommon25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon25.Location = new System.Drawing.Point(23, 21);
             this.labelCommon25.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon25.Name = "labelCommon25";
-            this.labelCommon25.Size = new System.Drawing.Size(37, 15);
+            this.labelCommon25.Size = new System.Drawing.Size(43, 15);
             this.labelCommon25.TabIndex = 128;
             this.labelCommon25.Text = "Input:";
             // 
@@ -1768,22 +1781,22 @@
             // 
             // chartGear
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartGear.ChartAreas.Add(chartArea3);
+            chartArea8.Name = "ChartArea1";
+            this.chartGear.ChartAreas.Add(chartArea8);
             this.chartGear.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chartGear.Legends.Add(legend3);
+            legend8.Name = "Legend1";
+            this.chartGear.Legends.Add(legend8);
             this.chartGear.Location = new System.Drawing.Point(3, 3);
             this.chartGear.Name = "chartGear";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartGear.Series.Add(series3);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartGear.Series.Add(series8);
             this.chartGear.Size = new System.Drawing.Size(824, 398);
             this.chartGear.TabIndex = 8;
             this.chartGear.Text = "chart1";
-            title3.Name = "Title1";
-            this.chartGear.Titles.Add(title3);
+            title8.Name = "Title1";
+            this.chartGear.Titles.Add(title8);
             // 
             // tabPage6
             // 
@@ -1818,23 +1831,24 @@
             // 
             this.lblTotalNGMotor.AutoSize = true;
             this.lblTotalNGMotor.ControlId = null;
-            this.lblTotalNGMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNGMotor.Location = new System.Drawing.Point(63, 77);
+            this.lblTotalNGMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNGMotor.Location = new System.Drawing.Point(69, 77);
             this.lblTotalNGMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblTotalNGMotor.Name = "lblTotalNGMotor";
-            this.lblTotalNGMotor.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalNGMotor.Size = new System.Drawing.Size(15, 15);
             this.lblTotalNGMotor.TabIndex = 133;
             this.lblTotalNGMotor.Text = "0";
             // 
             // labelCommon27
             // 
             this.labelCommon27.AutoSize = true;
+            this.labelCommon27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.labelCommon27.ControlId = null;
-            this.labelCommon27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon27.Location = new System.Drawing.Point(8, 77);
+            this.labelCommon27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon27.Location = new System.Drawing.Point(4, 77);
             this.labelCommon27.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon27.Name = "labelCommon27";
-            this.labelCommon27.Size = new System.Drawing.Size(58, 15);
+            this.labelCommon27.Size = new System.Drawing.Size(67, 15);
             this.labelCommon27.TabIndex = 132;
             this.labelCommon27.Text = "Total NG:";
             // 
@@ -1842,23 +1856,24 @@
             // 
             this.lblOutputMotor.AutoSize = true;
             this.lblOutputMotor.ControlId = null;
-            this.lblOutputMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputMotor.Location = new System.Drawing.Point(63, 49);
+            this.lblOutputMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputMotor.Location = new System.Drawing.Point(69, 49);
             this.lblOutputMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblOutputMotor.Name = "lblOutputMotor";
-            this.lblOutputMotor.Size = new System.Drawing.Size(14, 15);
+            this.lblOutputMotor.Size = new System.Drawing.Size(15, 15);
             this.lblOutputMotor.TabIndex = 131;
             this.lblOutputMotor.Text = "0";
             // 
             // labelCommon29
             // 
             this.labelCommon29.AutoSize = true;
+            this.labelCommon29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelCommon29.ControlId = null;
-            this.labelCommon29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon29.Location = new System.Drawing.Point(19, 49);
+            this.labelCommon29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon29.Location = new System.Drawing.Point(15, 49);
             this.labelCommon29.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon29.Name = "labelCommon29";
-            this.labelCommon29.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon29.Size = new System.Drawing.Size(53, 15);
             this.labelCommon29.TabIndex = 130;
             this.labelCommon29.Text = "Output:";
             // 
@@ -1866,23 +1881,24 @@
             // 
             this.lblInputMotor.AutoSize = true;
             this.lblInputMotor.ControlId = null;
-            this.lblInputMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputMotor.Location = new System.Drawing.Point(63, 21);
+            this.lblInputMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputMotor.Location = new System.Drawing.Point(69, 21);
             this.lblInputMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblInputMotor.Name = "lblInputMotor";
-            this.lblInputMotor.Size = new System.Drawing.Size(14, 15);
+            this.lblInputMotor.Size = new System.Drawing.Size(15, 15);
             this.lblInputMotor.TabIndex = 129;
             this.lblInputMotor.Text = "0";
             // 
             // labelCommon31
             // 
             this.labelCommon31.AutoSize = true;
+            this.labelCommon31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelCommon31.ControlId = null;
-            this.labelCommon31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommon31.Location = new System.Drawing.Point(27, 21);
+            this.labelCommon31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon31.Location = new System.Drawing.Point(23, 21);
             this.labelCommon31.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon31.Name = "labelCommon31";
-            this.labelCommon31.Size = new System.Drawing.Size(37, 15);
+            this.labelCommon31.Size = new System.Drawing.Size(43, 15);
             this.labelCommon31.TabIndex = 128;
             this.labelCommon31.Text = "Input:";
             // 
@@ -1935,27 +1951,27 @@
             // 
             // chartMotor
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartMotor.ChartAreas.Add(chartArea4);
+            chartArea9.Name = "ChartArea1";
+            this.chartMotor.ChartAreas.Add(chartArea9);
             this.chartMotor.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chartMotor.Legends.Add(legend4);
+            legend9.Name = "Legend1";
+            this.chartMotor.Legends.Add(legend9);
             this.chartMotor.Location = new System.Drawing.Point(3, 3);
             this.chartMotor.Name = "chartMotor";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartMotor.Series.Add(series4);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartMotor.Series.Add(series9);
             this.chartMotor.Size = new System.Drawing.Size(824, 398);
             this.chartMotor.TabIndex = 8;
             this.chartMotor.Text = "chart1";
-            title4.Name = "Title1";
-            this.chartMotor.Titles.Add(title4);
+            title9.Name = "Title1";
+            this.chartMotor.Titles.Add(title9);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.chbViProcess);
-            this.tabPage3.Controls.Add(this.grbProcess);
+            this.tabPage3.Controls.Add(this.grbSearchProcess);
             this.tabPage3.Controls.Add(this.tblLayoutProcess);
             this.tabPage3.Controls.Add(this.labelCommon5);
             this.tabPage3.Controls.Add(this.cmb_item);
@@ -1972,31 +1988,31 @@
             this.chbViProcess.AutoSize = true;
             this.chbViProcess.Checked = true;
             this.chbViProcess.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbViProcess.Location = new System.Drawing.Point(1265, 2);
+            this.chbViProcess.Location = new System.Drawing.Point(1262, 2);
             this.chbViProcess.Name = "chbViProcess";
-            this.chbViProcess.Size = new System.Drawing.Size(56, 17);
+            this.chbViProcess.Size = new System.Drawing.Size(59, 17);
             this.chbViProcess.TabIndex = 132;
-            this.chbViProcess.Text = "Visible";
+            this.chbViProcess.Text = "Setting";
             this.chbViProcess.UseVisualStyleBackColor = true;
             this.chbViProcess.CheckedChanged += new System.EventHandler(this.chbViProcess_CheckedChanged);
             // 
-            // grbProcess
+            // grbSearchProcess
             // 
-            this.grbProcess.Controls.Add(this.txtTimerProcess);
-            this.grbProcess.Controls.Add(this.btnStopProcess);
-            this.grbProcess.Controls.Add(this.btnRunProcess);
-            this.grbProcess.Controls.Add(this.cmb_process);
-            this.grbProcess.Controls.Add(this.labelCommon9);
-            this.grbProcess.Controls.Add(this.dtpFromProcess);
-            this.grbProcess.Controls.Add(this.btnSearchProcess);
-            this.grbProcess.Controls.Add(this.dtpToProcess);
-            this.grbProcess.Controls.Add(this.labelCommon11);
-            this.grbProcess.Controls.Add(this.labelCommon3);
-            this.grbProcess.Location = new System.Drawing.Point(3, 3);
-            this.grbProcess.Name = "grbProcess";
-            this.grbProcess.Size = new System.Drawing.Size(899, 57);
-            this.grbProcess.TabIndex = 107;
-            this.grbProcess.TabStop = false;
+            this.grbSearchProcess.Controls.Add(this.txtTimerProcess);
+            this.grbSearchProcess.Controls.Add(this.btnStopProcess);
+            this.grbSearchProcess.Controls.Add(this.btnRunProcess);
+            this.grbSearchProcess.Controls.Add(this.cmb_process);
+            this.grbSearchProcess.Controls.Add(this.labelCommon9);
+            this.grbSearchProcess.Controls.Add(this.dtpFromProcess);
+            this.grbSearchProcess.Controls.Add(this.btnSearchProcess);
+            this.grbSearchProcess.Controls.Add(this.dtpToProcess);
+            this.grbSearchProcess.Controls.Add(this.labelCommon11);
+            this.grbSearchProcess.Controls.Add(this.labelCommon3);
+            this.grbSearchProcess.Location = new System.Drawing.Point(3, 3);
+            this.grbSearchProcess.Name = "grbSearchProcess";
+            this.grbSearchProcess.Size = new System.Drawing.Size(899, 57);
+            this.grbSearchProcess.TabIndex = 107;
+            this.grbSearchProcess.TabStop = false;
             // 
             // txtTimerProcess
             // 
@@ -2021,6 +2037,7 @@
             this.btnStopProcess.TabIndex = 118;
             this.btnStopProcess.Text = "Stop";
             this.btnStopProcess.UseVisualStyleBackColor = false;
+            this.btnStopProcess.Click += new System.EventHandler(this.btnStopProcess_Click);
             // 
             // btnRunProcess
             // 
@@ -2122,72 +2139,96 @@
             this.tblLayoutProcess.ColumnCount = 2;
             this.tblLayoutProcess.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.51515F));
             this.tblLayoutProcess.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.48485F));
-            this.tblLayoutProcess.Controls.Add(this.dgvProcess, 0, 0);
             this.tblLayoutProcess.Controls.Add(this.chartProcess, 0, 0);
+            this.tblLayoutProcess.Controls.Add(this.grbdgvProcess, 1, 0);
             this.tblLayoutProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tblLayoutProcess.Location = new System.Drawing.Point(0, 107);
             this.tblLayoutProcess.Name = "tblLayoutProcess";
             this.tblLayoutProcess.RowCount = 1;
             this.tblLayoutProcess.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutProcess.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
             this.tblLayoutProcess.Size = new System.Drawing.Size(1322, 440);
             this.tblLayoutProcess.TabIndex = 108;
+            // 
+            // chartProcess
+            // 
+            chartArea10.Name = "ChartArea1";
+            this.chartProcess.ChartAreas.Add(chartArea10);
+            this.chartProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend10.Name = "Legend1";
+            this.chartProcess.Legends.Add(legend10);
+            this.chartProcess.Location = new System.Drawing.Point(5, 5);
+            this.chartProcess.Name = "chartProcess";
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartProcess.Series.Add(series10);
+            this.chartProcess.Size = new System.Drawing.Size(935, 430);
+            this.chartProcess.TabIndex = 8;
+            this.chartProcess.Text = "chart1";
+            title10.Name = "Title1";
+            this.chartProcess.Titles.Add(title10);
+            // 
+            // grbdgvProcess
+            // 
+            this.grbdgvProcess.Controls.Add(this.dgvProcess);
+            this.grbdgvProcess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grbdgvProcess.Location = new System.Drawing.Point(948, 5);
+            this.grbdgvProcess.Name = "grbdgvProcess";
+            this.grbdgvProcess.Size = new System.Drawing.Size(369, 430);
+            this.grbdgvProcess.TabIndex = 9;
+            this.grbdgvProcess.TabStop = false;
             // 
             // dgvProcess
             // 
             this.dgvProcess.AllowUserToAddRows = false;
             this.dgvProcess.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcess.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcess.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvProcess.ColumnHeadersHeight = 35;
+            this.dgvProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvProcess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
             this.dgvProcess.ControlId = null;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProcess.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvProcess.Location = new System.Drawing.Point(948, 87);
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProcess.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvProcess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProcess.Location = new System.Drawing.Point(3, 16);
             this.dgvProcess.Name = "dgvProcess";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcess.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcess.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvProcess.RowHeadersVisible = false;
-            this.dgvProcess.Size = new System.Drawing.Size(369, 348);
+            this.dgvProcess.Size = new System.Drawing.Size(363, 411);
             this.dgvProcess.TabIndex = 10;
-            this.dgvProcess.Visible = false;
             // 
-            // chartProcess
+            // Column1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartProcess.ChartAreas.Add(chartArea5);
-            this.chartProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend5.Name = "Legend1";
-            this.chartProcess.Legends.Add(legend5);
-            this.chartProcess.Location = new System.Drawing.Point(5, 5);
-            this.chartProcess.Name = "chartProcess";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartProcess.Series.Add(series5);
-            this.chartProcess.Size = new System.Drawing.Size(935, 430);
-            this.chartProcess.TabIndex = 8;
-            this.chartProcess.Text = "chart1";
-            title5.Name = "Title1";
-            this.chartProcess.Titles.Add(title5);
+            this.Column1.HeaderText = "inspect";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "inspectdata";
+            this.Column2.Name = "Column2";
             // 
             // labelCommon5
             // 
@@ -2438,11 +2479,186 @@
             // timerProcess
             // 
             this.timerProcess.Interval = 300000;
+            this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
             // 
             // timerDateTimeNow
             // 
             this.timerDateTimeNow.Interval = 1000;
             this.timerDateTimeNow.Tick += new System.EventHandler(this.timerDateTimeNow_Tick);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dataGridViewCommon1);
+            this.tabPage7.Controls.Add(this.groupBoxCommon2);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1322, 547);
+            this.tabPage7.TabIndex = 3;
+            this.tabPage7.Text = "Export Excel";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxCommon2
+            // 
+            this.groupBoxCommon2.ControlId = null;
+            this.groupBoxCommon2.Controls.Add(this.labelCommon18);
+            this.groupBoxCommon2.Controls.Add(this.linksave_txt);
+            this.groupBoxCommon2.Controls.Add(this.dtpFromExport);
+            this.groupBoxCommon2.Controls.Add(this.browser_btn);
+            this.groupBoxCommon2.Controls.Add(this.dtpToExport);
+            this.groupBoxCommon2.Controls.Add(this.labelCommon21);
+            this.groupBoxCommon2.Controls.Add(this.exportexcel_btn);
+            this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBoxCommon2.Location = new System.Drawing.Point(5, 6);
+            this.groupBoxCommon2.Name = "groupBoxCommon2";
+            this.groupBoxCommon2.Size = new System.Drawing.Size(746, 76);
+            this.groupBoxCommon2.TabIndex = 78;
+            this.groupBoxCommon2.TabStop = false;
+            this.groupBoxCommon2.Text = "Export";
+            // 
+            // linksave_txt
+            // 
+            this.linksave_txt.ControlId = null;
+            this.linksave_txt.Font = new System.Drawing.Font("Arial", 9F);
+            this.linksave_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.linksave_txt.Location = new System.Drawing.Point(435, 30);
+            this.linksave_txt.Name = "linksave_txt";
+            this.linksave_txt.Size = new System.Drawing.Size(202, 21);
+            this.linksave_txt.TabIndex = 55;
+            // 
+            // browser_btn
+            // 
+            this.browser_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.browser_btn.ControlId = null;
+            this.browser_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.browser_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.browser_btn.Location = new System.Drawing.Point(351, 24);
+            this.browser_btn.Name = "browser_btn";
+            this.browser_btn.Size = new System.Drawing.Size(80, 33);
+            this.browser_btn.TabIndex = 10;
+            this.browser_btn.Text = "Browser:";
+            this.browser_btn.UseVisualStyleBackColor = false;
+            this.browser_btn.Click += new System.EventHandler(this.browser_btn_Click);
+            // 
+            // exportexcel_btn
+            // 
+            this.exportexcel_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.exportexcel_btn.ControlId = null;
+            this.exportexcel_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.exportexcel_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exportexcel_btn.Location = new System.Drawing.Point(642, 24);
+            this.exportexcel_btn.Name = "exportexcel_btn";
+            this.exportexcel_btn.Size = new System.Drawing.Size(91, 33);
+            this.exportexcel_btn.TabIndex = 10;
+            this.exportexcel_btn.Text = "Export Excel";
+            this.exportexcel_btn.UseVisualStyleBackColor = false;
+            this.exportexcel_btn.Click += new System.EventHandler(this.exportexcel_btn_Click);
+            // 
+            // labelCommon18
+            // 
+            this.labelCommon18.AutoSize = true;
+            this.labelCommon18.ControlId = null;
+            this.labelCommon18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon18.Location = new System.Drawing.Point(9, 20);
+            this.labelCommon18.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon18.Name = "labelCommon18";
+            this.labelCommon18.Size = new System.Drawing.Size(82, 13);
+            this.labelCommon18.TabIndex = 107;
+            this.labelCommon18.Text = "From DateTime:";
+            // 
+            // dtpFromExport
+            // 
+            this.dtpFromExport.Checked = false;
+            this.dtpFromExport.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtpFromExport.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromExport.Location = new System.Drawing.Point(9, 36);
+            this.dtpFromExport.Name = "dtpFromExport";
+            this.dtpFromExport.Size = new System.Drawing.Size(149, 21);
+            this.dtpFromExport.TabIndex = 105;
+            // 
+            // dtpToExport
+            // 
+            this.dtpToExport.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtpToExport.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToExport.Location = new System.Drawing.Point(179, 35);
+            this.dtpToExport.Name = "dtpToExport";
+            this.dtpToExport.Size = new System.Drawing.Size(148, 21);
+            this.dtpToExport.TabIndex = 109;
+            // 
+            // labelCommon21
+            // 
+            this.labelCommon21.AutoSize = true;
+            this.labelCommon21.ControlId = null;
+            this.labelCommon21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon21.Location = new System.Drawing.Point(176, 20);
+            this.labelCommon21.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon21.Name = "labelCommon21";
+            this.labelCommon21.Size = new System.Drawing.Size(72, 13);
+            this.labelCommon21.TabIndex = 108;
+            this.labelCommon21.Text = "To DateTime:";
+            // 
+            // dataGridViewCommon1
+            // 
+            this.dataGridViewCommon1.AllowUserToAddRows = false;
+            this.dataGridViewCommon1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCommon1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewCommon1.ColumnHeadersHeight = 35;
+            this.dataGridViewCommon1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewCommon1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.Column3,
+            this.Data});
+            this.dataGridViewCommon1.ControlId = null;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCommon1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewCommon1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewCommon1.Location = new System.Drawing.Point(3, 88);
+            this.dataGridViewCommon1.Name = "dataGridViewCommon1";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCommon1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewCommon1.RowHeadersVisible = false;
+            this.dataGridViewCommon1.Size = new System.Drawing.Size(1316, 456);
+            this.dataGridViewCommon1.TabIndex = 79;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Process";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Process Detail";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Inspect";
+            this.Column3.Name = "Column3";
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
             // 
             // ProducionControllerGA1Form
             // 
@@ -2504,15 +2720,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartMotor)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.grbProcess.ResumeLayout(false);
-            this.grbProcess.PerformLayout();
+            this.grbSearchProcess.ResumeLayout(false);
+            this.grbSearchProcess.PerformLayout();
             this.tblLayoutProcess.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProcess)).EndInit();
+            this.grbdgvProcess.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.groupBoxCommon2.ResumeLayout(false);
+            this.groupBoxCommon2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCommon1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2612,7 +2833,7 @@
         private Framework.ButtonCommon btnStop;
         private Framework.ButtonCommon btnSearchData;
         private System.Windows.Forms.Timer timerChart;
-        private System.Windows.Forms.GroupBox grbProcess;
+        private System.Windows.Forms.GroupBox grbSearchProcess;
         private Framework.LabelCommon labelCommon9;
         private System.Windows.Forms.DateTimePicker dtpFromProcess;
         private Framework.ButtonCommon btnSearchProcess;
@@ -2665,7 +2886,6 @@
         private Framework.LabelCommon labelCommon29;
         private Framework.LabelCommon lblInputMotor;
         private Framework.LabelCommon labelCommon31;
-        private Framework.ButtonCommon btnShowgrbData;
         private System.Windows.Forms.TableLayoutPanel tblLayoutProcess;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProcess;
         private Framework.DataGridViewCommon dgvProcess;
@@ -2686,5 +2906,22 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerDateTimeNow;
         private System.Windows.Forms.CheckBox chbViData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.GroupBox grbdgvProcess;
+        private System.Windows.Forms.TabPage tabPage7;
+        private Framework.GroupBoxCommon groupBoxCommon2;
+        private Framework.TextBoxCommon linksave_txt;
+        private Framework.ButtonCommon browser_btn;
+        private Framework.ButtonCommon exportexcel_btn;
+        private Framework.LabelCommon labelCommon18;
+        private System.Windows.Forms.DateTimePicker dtpFromExport;
+        private System.Windows.Forms.DateTimePicker dtpToExport;
+        private Framework.LabelCommon labelCommon21;
+        private Framework.DataGridViewCommon dataGridViewCommon1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
 }

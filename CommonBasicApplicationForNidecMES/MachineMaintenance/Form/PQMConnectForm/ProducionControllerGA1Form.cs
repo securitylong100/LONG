@@ -87,11 +87,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
-        private void btn_SearchData_Click(object sender, EventArgs e)
+        private void btn_SearchData_Click(object sender, EventArgs e)//button Run
         {
+            funtion();
             grbSearchData.Visible = false;
             tblLayoutData.Dock = DockStyle.Fill;
-            funtion();
+            chbViData.Text = "Online";
+            chbViData.Checked = false;
+
             alarmNG();
             btn_Run.Enabled = false;
             btnStop.Enabled = true;
@@ -908,6 +911,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         private void btnRunChart_Click(object sender, EventArgs e)
         {
+            grbSearchChart.Visible = false;
+            tblLayoutChart.Dock = DockStyle.Fill;
+            chbViChart.Text = "Online";
+            chbViChart.Checked = false;
+
             timerChart.Interval = int.Parse(txtTimerChart.Text);
             btnRunChart.Enabled = false;
             btnStop.Enabled = true;
@@ -922,7 +930,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void btnStopChart_Click(object sender, EventArgs e)
         {
             btnRunChart.Enabled = true;
-            btnStop.Enabled = false;
+            btnStopChart.Enabled = false;
             timerChart.Enabled = false;
         }
 
@@ -949,12 +957,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnSearchProcess_Click(object sender, EventArgs e)
         {
-
+            GrindByProcess();
+            showchartInspect();
         }
-        private void GrindByProcess(string process_)
+        private void GrindByProcess()
         {
-
             tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+            grbdgvProcess.Text = cmb_process.Text;
             try
             {
                 ProductionControllerGA1Vo dgvVo = new ProductionControllerGA1Vo()
@@ -964,14 +973,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     LineCode = cmb_line.Text,
                     ProcessCode = cmb_process.Text,
                     ItemCode = cmb_item.Text,
-                    DateFrom = DateTime.Parse(dtp_from.Text),
-                    DateTo = DateTime.Parse(dtp_to.Text),
-                    grDate = false,
-                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                    DateFrom = DateTime.Parse(dtpFromProcess.Text),
+                    DateTo = DateTime.Parse(dtpToProcess.Text),
                 };
 
-                ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionProcessCbm(), dgvVo, connection);
-
+                ProductionControllerGA1Vo processvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionProcessCbm(), dgvVo, connection);
+                dgvProcess.Columns.Clear();
+                dgvProcess.DataSource = processvo.dt;
             }
             catch (Framework.ApplicationException exception)
             {
@@ -979,30 +987,59 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
+        public void showchartInspect()
+        {
+            chartProcess.ResetAutoValues();
+            chartProcess.ResumeLayout();
+            chartProcess.Series.Clear();
 
+            chartProcess.Titles[0].Text = cmb_process.Text + " Process Comparison (pcs)"; //ten
+            chartProcess.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
+            chartProcess.Series.Add("Pie");
+            chartProcess.Series["Pie"].ChartType = SeriesChartType.Pie;
+            chartProcess.Series["Pie"].IsValueShownAsLabel = true;
+
+            string inspect = "";
+            string data = "";
+            for (int i = 0; i < dgvProcess.RowCount; i++)
+            {
+                inspect = dgvProcess.Rows[i].Cells["inspect"].Value.ToString();
+                data = dgvProcess.Rows[i].Cells["inspectdata"].Value.ToString();
+                chartProcess.Series["Pie"].Points.AddXY(inspect, data);
+            }
+        }
         private void chbViProcess_CheckedChanged(object sender, EventArgs e)
         {
             if (chbViProcess.Checked)//hien
             {
-                grbProcess.Visible = true;
+                grbSearchProcess.Visible = true;
                 tblLayoutProcess.Dock = DockStyle.Bottom;
+                chbViProcess.Text = "Setting";
             }
-            else { grbProcess.Visible = false; tblLayoutProcess.Dock = DockStyle.Fill; }
+            else//false
+            {
+                btnRunProcess_Click(sender, e);
+                grbSearchProcess.Visible = false;
+                tblLayoutProcess.Dock = DockStyle.Fill;
+                chbViProcess.Text = "Online";
             }
-
-        private void btnShowgrbProcess_Click(object sender, EventArgs e)
-        {
-
         }
-
+        
         private void chbViChart_CheckedChanged(object sender, EventArgs e)
         {
             if (chbViChart.Checked)//hien
             {
                 grbSearchChart.Visible = true;
                 tblLayoutChart.Dock = DockStyle.Bottom;
+                chbViChart.Text = "Setting";
             }
-            else { grbSearchChart.Visible = false; tblLayoutChart.Dock = DockStyle.Fill; }
+            else//false
+            {
+                btnRunChart_Click(sender, e);
+                grbSearchChart.Visible = false;
+                tblLayoutChart.Dock = DockStyle.Fill;
+                chbViChart.Text = "Online";
+            }
         }
 
         private void ProducionControllerGA1Form_FormClosing(object sender, FormClosingEventArgs e)
@@ -1020,11 +1057,59 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 grbSearchData.Visible = true;
                 tblLayoutData.Dock = DockStyle.Bottom;
+                chbViData.Text = "Setting";
             }
-            else { grbSearchData.Visible = false; tblLayoutData.Dock = DockStyle.Fill; }
+            else//false
+            {
+                btn_SearchData_Click(sender, e);
+                grbSearchData.Visible = false;
+                tblLayoutData.Dock = DockStyle.Fill;
+                chbViData.Text = "Online";
+            }
         }
 
         private void btnRunProcess_Click(object sender, EventArgs e)
+        {
+            grbSearchProcess.Visible = false;
+            tblLayoutProcess.Dock = DockStyle.Fill;
+            chbViProcess.Text = "Online";
+            chbViProcess.Checked = false;
+
+            timerProcess.Interval = int.Parse(txtTimerProcess.Text);
+            btnRunProcess.Enabled = false;
+            btnStopProcess.Enabled = true;
+            timerProcess.Enabled = true;
+
+            GrindByProcess();
+            showchartInspect();
+        }
+
+        private void timerProcess_Tick(object sender, EventArgs e)
+        {
+            GrindByProcess();
+            showchartInspect();
+        }
+
+        private void btnStopProcess_Click(object sender, EventArgs e)
+        {
+            btnRunProcess.Enabled = true;
+            btnStopProcess.Enabled = false;
+            timerProcess.Enabled = false;
+        }
+        private string directorySave = "";
+        private void browser_btn_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fl = new FolderBrowserDialog();
+            fl.SelectedPath = "D:\\";
+            fl.ShowNewFolderButton = true;
+            if (fl.ShowDialog() == DialogResult.OK)
+            {
+                linksave_txt.Text = fl.SelectedPath;
+                directorySave = linksave_txt.Text;
+            }
+        }
+
+        private void exportexcel_btn_Click(object sender, EventArgs e)
         {
 
         }
