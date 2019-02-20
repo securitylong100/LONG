@@ -61,24 +61,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             ShowRowNumber(dgvBoxId);
         }
 
-        private void selectdata()
-        {
-            GA1ModelVo getList = null;
-            try
-            {
-                getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new GetBoxIDCbm(), new GA1ModelVo
-                {
-                    PrintDate = DateTime.Today
-                });
-            }
-            catch (Framework.ApplicationException ex)
-            {
-                logger.Error(ex.GetMessageData());
-                popUpMessage.ApplicationError(ex.GetMessageData(), Text);
-                return;
-            }
-            dgvBoxId.DataSource = getList.dt;
-        }
+        #region CLICK EVENT
 
         private void btnSearchBoxId_Click(object sender, EventArgs e)
         {
@@ -158,6 +141,208 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
         }
 
+        private void btnAddBox_Click(object sender, EventArgs e)
+        {
+            dtOverall = new DataTable();
+            defineDataTable(ref dtOverall);
+            splMain.Panel2.Enabled = true;
+            txtProduct.Enabled = true;
+            txtUser.Enabled = true;
+            splMain.Panel1Collapsed = true;
+            txtLimit.Text = "100";
+            txtBoxId.Text = getNewBoxId();
+            res = true;
+        }
+
+        private void btnRegisterBoxId_Click(object sender, EventArgs e)
+        {
+                if (String.IsNullOrEmpty(txtUser.Text))
+                {
+                    messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lblUser.Text);
+                    popUpMessage.Warning(messageData, Text);
+                    txtUser.Focus();
+                    return;
+                }
+
+                GA1ModelVo outVo = new GA1ModelVo();
+                outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddBoxIDCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text,
+                    User = txtUser.Text
+                });
+
+                for (int i = 0; i < dgvProductSerial.Rows.Count; i++)
+                {
+                    outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddProductCbm(), new GA1ModelVo
+                    {
+                        BoxID = txtBoxId.Text,
+                        A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
+                        LineCode = dgvProductSerial["Line", i].Value.ToString(),
+                        ModelCode = dgvProductSerial["Model", i].Value.ToString(),
+                        A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString()
+                        //A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
+                    });
+                }
+
+                // Issue new box id
+                string boxIdNew;
+                if (btnRegisterBoxId.Text == "Register Box ID")
+                {
+                    boxIdNew = getNewBoxId();
+                }
+                else boxIdNew = txtBoxId.Text;
+
+                // Print barcode
+                printBarcode(directory, txtBoxId.Text, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
+
+                // Clear the datatable
+                dtOverall.Clear();
+
+                txtBoxId.Text = boxIdNew;
+                dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 6, 6), "yyMMdd", CultureInfo.InvariantCulture);
+                MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+        // Delete all records on datagridview, by the user's click on the delete all button
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            int rowCount = dgvProductSerial.Rows.Count;
+            if (rowCount != 0)
+            {
+                DialogResult result = MessageBox.Show("Do you really want to delete all the record?",
+                    "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (result == DialogResult.Yes)
+                {
+                    dtOverall.Clear();
+                    dtOverall.AcceptChanges();
+                    //dgvProductSerial.Rows.Clear();
+                    txtProduct.Focus();
+                    //defineDataTable(ref dtOverall);
+                    updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
+                }
+            }
+        }
+
+        // Delete records on datagridview selected by the user
+        private void btnDeleteSelection_Click(object sender, EventArgs e)
+        {
+            if (dgvProductSerial.Columns.GetColumnCount(DataGridViewElementStates.Selected) >= 2)
+            {
+                MessageBox.Show("Please select range with only one columns.", "Notice",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Do you really want to delete the selected rows ?",
+                "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.Yes)
+            {
+                foreach (DataGridViewCell cell in dgvProductSerial.SelectedCells)
+                {
+                    int i = cell.RowIndex;
+                    dtOverall.Rows[i].Delete();
+                }
+                dtOverall.AcceptChanges();
+                //dgvProductSerial.Rows.Clear();
+                txtProduct.Focus();
+                //defineDataTable(ref dtOverall);
+                updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
+            }
+        }
+
+        private void dgvBoxId_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int currentRow = int.Parse(e.RowIndex.ToString());
+
+            // OPEN button generate frmModule by view mode without delegate event
+            if (dgvBoxId.Columns[e.ColumnIndex] == openBoxId && currentRow >= 0)
+            {
+                txtBoxId.Text = dgvBoxId["boxid", currentRow].Value.ToString();
+                dtpPrint.Value = DateTime.Parse(dgvBoxId["printdate", currentRow].Value.ToString());
+                txtUser.Text = dgvBoxId["suser", currentRow].Value.ToString();
+
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new GetSerialBoxCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text
+                });
+                DataTable dt_temp = new DataTable();
+                defineDataTable(ref dt_temp);
+                dt_temp = getList.dt;
+                dgvProductSerial.DataSource = dt_temp;
+                splMain.Panel2.Enabled = true;
+                txtProduct.Enabled = false;
+                txtUser.Enabled = false;
+                btnDeleteAll.Enabled = false;
+                btnDeleteSelection.Enabled = false;
+                btnDeleteBoxId.Enabled = true;
+                btnRegisterBoxId.Text = "Re-Print";
+                res = false;
+            }
+
+            // SHIP button edit the shipping date for box id
+            if (dgvBoxId.Columns[e.ColumnIndex] == editShipDate && currentRow >= 0)
+            {
+                string boxId = dgvBoxId["boxid", currentRow].Value.ToString();
+                DateTime shipdate = dtpShipDate.Value;
+
+                DialogResult result1 = MessageBox.Show("Do you want to update the shipping date of as follows:" + System.Environment.NewLine +
+                    boxId + ": " + shipdate, "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (result1 == DialogResult.Yes)
+                {
+                    GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new UpdateShipdateCbm(), new GA1ModelVo
+                    {
+                        BoxID = dgvBoxId["boxid", currentRow].Value.ToString(),
+                        ShipDate = DateTime.Parse(dgvBoxId["shipdate", currentRow].Value.ToString())
+                    });
+                    selectdata();
+                }
+            }
+            updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
+        }
+
+        private void btnDeleteBoxId_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Do you want to delete this box ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                GA1ModelVo deleteBox = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteBoxIDCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text
+                });
+
+                GA1ModelVo delProduct = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteProductCbm(), new GA1ModelVo
+                {
+                    BoxID = txtBoxId.Text
+                });
+                MessageBox.Show("Delete successful!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
+        }
+
+        #endregion
+
+        #region VOID
+
+        private void selectdata()
+        {
+            GA1ModelVo getList = null;
+            try
+            {
+                getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new GetBoxIDCbm(), new GA1ModelVo
+                {
+                    PrintDate = DateTime.Today
+                });
+            }
+            catch (Framework.ApplicationException ex)
+            {
+                logger.Error(ex.GetMessageData());
+                popUpMessage.ApplicationError(ex.GetMessageData(), Text);
+                return;
+            }
+            dgvBoxId.DataSource = getList.dt;
+        }
+
         private void limitOkChange()
         {
             // Store the OK record count to the variable and show in the text box
@@ -175,19 +360,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 btnRegisterBoxId.Enabled = true;
             else
                 btnRegisterBoxId.Enabled = false;
-        }
-
-        private void btnAddBox_Click(object sender, EventArgs e)
-        {
-            dtOverall = new DataTable();
-            defineDataTable(ref dtOverall);
-            splMain.Panel2.Enabled = true;
-            txtProduct.Enabled = true;
-            txtUser.Enabled = true;
-            splMain.Panel1Collapsed = true;
-            txtLimit.Text = "100";
-            txtBoxId.Text = getNewBoxId();
-            res = true;
         }
 
         // Sub procedure: Issue new box id
@@ -219,92 +391,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             return boxIdNew;
         }
 
-        private void btnRegisterBoxId_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtUser.Text))
-            {
-                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lblUser.Text);
-                popUpMessage.Warning(messageData, Text);
-                txtUser.Focus();
-                return;
-            }
-
-            GA1ModelVo outVo = new GA1ModelVo();
-            outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddBoxIDCbm(), new GA1ModelVo
-            {
-                BoxID = txtBoxId.Text,
-                User = txtUser.Text
-            });
-
-            for (int i = 0; i < dgvProductSerial.Rows.Count; i++)
-            {
-                outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddProductCbm(), new GA1ModelVo
-                {
-                    BoxID = txtBoxId.Text,
-                    A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
-                    LineCode = dgvProductSerial["Line", i].Value.ToString(),
-                    ModelCode = dgvProductSerial["Model", i].Value.ToString(),
-                    A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString()
-                    //A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
-                });
-            }
-
-            // Print barcode
-            printBarcode(directory, txtBoxId.Text, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
-            MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         // Sub procedure: Print barcode, by generating a text file in shared folder and let another application print it
         private void printBarcode(string dir, string id, string m_model, DataGridView dgv1, ref DataGridView dgv2, ref TextBox txt)
         {
             PrintLabel tf = new PrintLabel();
             tf.createBoxidFiles(dir, id, m_model, dgv1, ref dgv2, ref txt);
-        }
-
-        private void txtProduct_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Disenalbe the textbox to block scanning
-                //txtProduct.Enabled = false;
-
-                DataTable dt1 = new DataTable();
-                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProductCbm(), new GA1ModelVo
-                {
-                    A90Barcode = txtProduct.Text
-                });
-                dt1 = getList.dt;
-
-                // Even when no tester data is found, the module have to appear in the datagridview
-                DataRow newrow = dtOverall.NewRow();
-
-                // If tester data exists, show it in the datagridview
-                if (dt1.Rows.Count != 0)
-                {
-                    string serial = txtProduct.Text;
-                    string model = dt1.Rows[0][1].ToString();
-                    string line = dt1.Rows[0][2].ToString();
-                    string thurst = dt1.Rows[0][3].ToString();
-                    //string noise = dt1.Rows[0][4].ToString();
-
-                    newrow["Serial"] = serial;
-                    newrow["Model"] = model;
-                    newrow["Line"] = line;
-                    newrow["Thurst"] = thurst;
-                    //newrow["Noise"] = noise;
-                }
-
-                // Add the row to the datatable
-                dtOverall.Rows.Add(newrow);
-                dgvProductSerial.DataSource = dtOverall;
-                txtProduct.SelectAll();
-                ShowRowNumber(dgvProductSerial);
-                colorViewForFailAndBlank(ref dgvProductSerial);
-                colorViewForDuplicateSerial(ref dgvProductSerial);
-                colorMixedConfig(dtOverall, ref dgvProductSerial);
-
-                limitOkChange();
-            }
         }
 
         // Sub procedure: Mark the test results with FAIL or missing test records
@@ -401,6 +492,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dt.Columns.Add("Serial", Type.GetType("System.String"));
             dt.Columns.Add("Model", Type.GetType("System.String"));
             dt.Columns.Add("Line", Type.GetType("System.String"));
+            dt.Columns.Add("Lot", Type.GetType("System.String"));
             dt.Columns.Add("Thurst", Type.GetType("System.String"));
             //dt.Columns.Add("Noise", Type.GetType("System.String"));
         }
@@ -415,99 +507,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dgv.FirstDisplayedScrollingRowIndex = dgv.Rows.Count - 1;
         }
 
-        // Delete all records on datagridview, by the user's click on the delete all button
-        private void btnDeleteAll_Click(object sender, EventArgs e)
-        {
-            int rowCount = dgvProductSerial.Rows.Count;
-            if (rowCount != 0)
-            {
-                DialogResult result = MessageBox.Show("Do you really want to delete all the record?",
-                    "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                if (result == DialogResult.Yes)
-                {
-                    dtOverall.Clear();
-                    dtOverall.AcceptChanges();
-                    //dgvProductSerial.Rows.Clear();
-                    txtProduct.Focus();
-                    //defineDataTable(ref dtOverall);
-                }
-            }
-        }
-
-        // Delete records on datagridview selected by the user
-        private void btnDeleteSelection_Click(object sender, EventArgs e)
-        {
-            if (dgvProductSerial.Columns.GetColumnCount(DataGridViewElementStates.Selected) >= 2)
-            {
-                MessageBox.Show("Please select range with only one columns.", "Notice",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                return;
-            }
-
-            DialogResult result = MessageBox.Show("Do you really want to delete the selected rows ?",
-                "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (result == DialogResult.Yes)
-            {
-                foreach (DataGridViewCell cell in dgvProductSerial.SelectedCells)
-                {
-                    int i = cell.RowIndex;
-                    dtOverall.Rows[i].Delete();
-                }
-                dtOverall.AcceptChanges();
-                //dgvProductSerial.Rows.Clear();
-                txtProduct.Focus();
-                //defineDataTable(ref dtOverall);
-            }
-        }
-
-        private void dgvBoxId_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int currentRow = int.Parse(e.RowIndex.ToString());
-
-            // OPEN button generate frmModule by view mode without delegate event
-            if (dgvBoxId.Columns[e.ColumnIndex] == openBoxId && currentRow >= 0)
-            {
-                txtBoxId.Text = dgvBoxId["boxid", currentRow].Value.ToString();
-                dtpPrint.Value = DateTime.Parse(dgvBoxId["printdate", currentRow].Value.ToString());
-                txtUser.Text = dgvBoxId["suser", currentRow].Value.ToString();
-
-                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new GetSerialBoxCbm(), new GA1ModelVo
-                {
-                    BoxID = txtBoxId.Text
-                });
-                DataTable dt_temp = new DataTable();
-                defineDataTable(ref dt_temp);
-                dt_temp = getList.dt;
-                dgvProductSerial.DataSource = dt_temp;
-                splMain.Panel2.Enabled = true;
-                txtProduct.Enabled = false;
-                txtUser.Enabled = false;
-                btnDeleteAll.Enabled = false;
-                btnDeleteSelection.Enabled = false;
-                btnDeleteBoxId.Enabled = true;
-                res = false;
-            }
-
-            // SHIP button edit the shipping date for box id
-            if (dgvBoxId.Columns[e.ColumnIndex] == editShipDate && currentRow >= 0)
-            {
-                string boxId = dgvBoxId["boxid", currentRow].Value.ToString();
-                DateTime shipdate = dtpShipDate.Value;
-
-                DialogResult result1 = MessageBox.Show("Do you want to update the shipping date of as follows:" + System.Environment.NewLine +
-                    boxId + ": " + shipdate, "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (result1 == DialogResult.Yes)
-                {
-                    GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new UpdateShipdateCbm(), new GA1ModelVo
-                    {
-                        BoxID = dgvBoxId["boxid", currentRow].Value.ToString(),
-                        ShipDate = DateTime.Parse(dgvBoxId["shipdate", currentRow].Value.ToString())
-                    });
-                    selectdata();
-                }
-            }
-        }
-
         // Sub procedure: Count the without-duplicate OK records
         private int getOkCount(DataTable dt)
         {
@@ -518,21 +517,107 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             return dist;
         }
 
-        private void btnDeleteBoxId_Click(object sender, EventArgs e)
+        // Sub procedure: Bind main datatable to the datagridview and make summary datatables
+        private void updateDataGripViewsSub(DataTable dt1, ref DataGridView dgv1)
         {
-            DialogResult res = MessageBox.Show("Do you want to delete this box ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (res == DialogResult.Yes)
-            {
-                GA1ModelVo deleteBox = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteBoxIDCbm(), new GA1ModelVo
-                {
-                    BoxID = txtBoxId.Text
-                });
+            string[] criteriaDateCode = getLotArray(dt1);
+            makeDatatableSummary(dt1, ref dgvDateCode, criteriaDateCode, "Lot");
+        }
 
-                GA1ModelVo delProduct = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteProductCbm(), new GA1ModelVo
+        // Sub procedure: Make lot summary
+        private string[] getLotArray(DataTable dt0)
+        {
+            DataTable dt1 = dt0.Copy();
+            DataView dv = dt1.DefaultView;
+            dv.Sort = "Lot";
+            DataTable dt2 = dv.ToTable(true, "Lot");
+            string[] array = new string[dt2.Rows.Count + 1];
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                array[i] = dt2.Rows[i]["Lot"].ToString();
+            }
+            array[dt2.Rows.Count] = "Total";
+            return array;
+        }
+
+        // Sub procedure: Make the summary datatables and bind them to the summary datagridviews
+        public void makeDatatableSummary(DataTable dt0, ref DataGridView dgv, string[] criteria, string header)
+        {
+            DataTable dt1 = new DataTable();
+            DataRow dr = dt1.NewRow();
+            Int32 count;
+            Int32 total = 0;
+            string condition;
+
+            for (int i = 0; i < criteria.Length; i++)
+            {
+                dt1.Columns.Add(criteria[i], typeof(Int32));
+                condition = header + " = '" + criteria[i] + "'";
+                count = dt0.Select(condition).Length;
+                total += count;
+                dr[criteria[i]] = (i != criteria.Length - 1 ? count : total);
+                if (criteria[i] == "Total" && header == "Lot")
                 {
-                    BoxID = txtBoxId.Text
+                    dr[criteria[i]] = dgvProductSerial.Rows.Count;
+                    dr[criteria[i - 1]] = dgvProductSerial.Rows.Count - total;
+                }
+            }
+            dt1.Rows.Add(dr);
+
+            dgv.Columns.Clear();
+            dgv.DataSource = dt1;
+            dgv.AllowUserToAddRows = false; // remove the null line
+            dgv.ReadOnly = true;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        #endregion
+
+        private void txtProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Disenalbe the textbox to block scanning
+                //txtProduct.Enabled = false;
+
+                DataTable dt1 = new DataTable();
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProductCbm(), new GA1ModelVo
+                {
+                    A90Barcode = txtProduct.Text
                 });
-                MessageBox.Show("Delete successful!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dt1 = getList.dt;
+
+                // Even when no tester data is found, the module have to appear in the datagridview
+                DataRow newrow = dtOverall.NewRow();
+
+                // If tester data exists, show it in the datagridview
+                if (dt1.Rows.Count != 0)
+                {
+                    string serial = txtProduct.Text;
+                    string lot = VBStrings.Left(txtProduct.Text, 5);
+                    string model = dt1.Rows[0][1].ToString();
+                    string line = dt1.Rows[0][2].ToString();
+                    string thurst = dt1.Rows[0][3].ToString();
+                    //string noise = dt1.Rows[0][4].ToString();
+
+                    newrow["Serial"] = serial;
+                    newrow["Model"] = model;
+                    newrow["Lot"] = lot;
+                    newrow["Line"] = line;
+                    newrow["Thurst"] = thurst;
+                    //newrow["Noise"] = noise;
+                }
+
+                // Add the row to the datatable
+                dtOverall.Rows.Add(newrow);
+                dgvProductSerial.DataSource = dtOverall;
+                txtProduct.SelectAll();
+                ShowRowNumber(dgvProductSerial);
+                colorViewForFailAndBlank(ref dgvProductSerial);
+                colorViewForDuplicateSerial(ref dgvProductSerial);
+                colorMixedConfig(dtOverall, ref dgvProductSerial);
+
+                limitOkChange();
+                updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
             }
         }
 
@@ -542,50 +627,50 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-        //    if (!System.IO.Directory.Exists(directory)) return;
-            
-        //    string[] files = System.IO.Directory.GetFiles(directory, "*", System.IO.SearchOption.AllDirectories);
+            //    if (!System.IO.Directory.Exists(directory)) return;
 
-        //    for (int i = 0; i < files.Length; i++)
-        //    {
-        //        string fname = System.IO.Path.GetFileName(files[i]);
-        //        if (VBStrings.Right(fname.ToLower(), 4) == ".txt")
-        //        {
-        //            string boxid = VBStrings.Left(fname, fname.Length - 4);
+            //    string[] files = System.IO.Directory.GetFiles(directory, "*", System.IO.SearchOption.AllDirectories);
 
-        //            PrintLabelTool.printBarCode(boxid);
-        //            PrintLabelTool.printBarCode(boxid);
-        //            if (boxid != String.Empty) barcodeNumber = boxid;
-        //            pnlBarcode.Refresh();
-        //            System.IO.File.Delete(files[i]);
-        //            lblTime.Text = DateTime.Now.ToString();
-        //        }
-        //        else if (VBStrings.Right(fname.ToLower(), 4) == ".bmp")
-        //        {
-        //            string datecdFile = files[i];
+            //    for (int i = 0; i < files.Length; i++)
+            //    {
+            //        string fname = System.IO.Path.GetFileName(files[i]);
+            //        if (VBStrings.Right(fname.ToLower(), 4) == ".txt")
+            //        {
+            //            string boxid = VBStrings.Left(fname, fname.Length - 4);
 
-        //            PrintLabelTool.printBitmap(datecdFile);
-        //            PrintLabelTool.printBitmap(datecdFile);
-        //            System.IO.File.Delete(files[i]);
-        //        }
-        //    }
+            //            PrintLabelTool.printBarCode(boxid);
+            //            PrintLabelTool.printBarCode(boxid);
+            //            if (boxid != String.Empty) barcodeNumber = boxid;
+            //            pnlBarcode.Refresh();
+            //            System.IO.File.Delete(files[i]);
+            //            lblTime.Text = DateTime.Now.ToString();
+            //        }
+            //        else if (VBStrings.Right(fname.ToLower(), 4) == ".bmp")
+            //        {
+            //            string datecdFile = files[i];
+
+            //            PrintLabelTool.printBitmap(datecdFile);
+            //            PrintLabelTool.printBitmap(datecdFile);
+            //            System.IO.File.Delete(files[i]);
+            //        }
+            //    }
         }
 
         private void pnlBarcode_Paint(object sender, PaintEventArgs e)
         {
-        //    DotNetBarcode barCode = new DotNetBarcode();
-        //    Single x1;
-        //    Single y1;
-        //    Single x2;
-        //    Single y2;
-        //    x1 = 0;
-        //    y1 = 0;
-        //    x2 = pnlBarcode.Size.Width;
-        //    y2 = pnlBarcode.Size.Height;
-        //    barCode.Type = DotNetBarcode.Types.Code39;
+            //    DotNetBarcode barCode = new DotNetBarcode();
+            //    Single x1;
+            //    Single y1;
+            //    Single x2;
+            //    Single y2;
+            //    x1 = 0;
+            //    y1 = 0;
+            //    x2 = pnlBarcode.Size.Width;
+            //    y2 = pnlBarcode.Size.Height;
+            //    barCode.Type = DotNetBarcode.Types.Code39;
 
-        //    if (barcodeNumber != String.Empty)
-        //        barCode.WriteBar(barcodeNumber, x1, y1, x2, y2, e.Graphics);
+            //    if (barcodeNumber != String.Empty)
+            //        barCode.WriteBar(barcodeNumber, x1, y1, x2, y2, e.Graphics);
         }
         #endregion
     }
