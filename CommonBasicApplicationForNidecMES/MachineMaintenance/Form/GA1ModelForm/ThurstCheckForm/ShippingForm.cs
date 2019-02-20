@@ -149,6 +149,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             txtProduct.Enabled = true;
             txtUser.Enabled = true;
             splMain.Panel1Collapsed = true;
+            btnDeleteAll.Enabled = true;
+            btnDeleteSelection.Enabled = true;
             txtLimit.Text = "100";
             txtBoxId.Text = getNewBoxId();
             res = true;
@@ -156,6 +158,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnRegisterBoxId_Click(object sender, EventArgs e)
         {
+            string boxIdNew;
+            if (btnRegisterBoxId.Text == "Register Box ID")
+            {
                 if (String.IsNullOrEmpty(txtUser.Text))
                 {
                     messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lblUser.Text);
@@ -178,6 +183,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         BoxID = txtBoxId.Text,
                         A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
                         LineCode = dgvProductSerial["Line", i].Value.ToString(),
+                        Lot = dgvProductSerial["Lot", i].Value.ToString(),
                         ModelCode = dgvProductSerial["Model", i].Value.ToString(),
                         A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString()
                         //A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
@@ -185,12 +191,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
 
                 // Issue new box id
-                string boxIdNew;
-                if (btnRegisterBoxId.Text == "Register Box ID")
-                {
-                    boxIdNew = getNewBoxId();
-                }
-                else boxIdNew = txtBoxId.Text;
+                
+                boxIdNew = getNewBoxId();
 
                 // Print barcode
                 printBarcode(directory, txtBoxId.Text, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
@@ -199,10 +201,22 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dtOverall.Clear();
 
                 txtBoxId.Text = boxIdNew;
-                dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 6, 6), "yyMMdd", CultureInfo.InvariantCulture);
+                dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
                 MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            }
+            else
+            {
+                boxIdNew = txtBoxId.Text;
+                // Print barcode
+                printBarcode(directory, boxIdNew, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
 
+                // Clear the datatable
+                dtOverall.Clear();
+
+                txtBoxId.Text = boxIdNew;
+                dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
+            }
+        }
 
         // Delete all records on datagridview, by the user's click on the delete all button
         private void btnDeleteAll_Click(object sender, EventArgs e)
@@ -254,7 +268,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void dgvBoxId_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int currentRow = int.Parse(e.RowIndex.ToString());
-
+            DataTable dt_temp = new DataTable();
             // OPEN button generate frmModule by view mode without delegate event
             if (dgvBoxId.Columns[e.ColumnIndex] == openBoxId && currentRow >= 0)
             {
@@ -266,7 +280,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     BoxID = txtBoxId.Text
                 });
-                DataTable dt_temp = new DataTable();
                 defineDataTable(ref dt_temp);
                 dt_temp = getList.dt;
                 dgvProductSerial.DataSource = dt_temp;
@@ -277,7 +290,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 btnDeleteSelection.Enabled = false;
                 btnDeleteBoxId.Enabled = true;
                 btnRegisterBoxId.Text = "Re-Print";
+                btnRegisterBoxId.Enabled = true;
+                //getOkCount(dt_temp);
+                txtLimit.Text = dgvProductSerial.RowCount.ToString();
                 res = false;
+                updateDataGripViewsSub(dt_temp, ref dgvProductSerial);
             }
 
             // SHIP button edit the shipping date for box id
@@ -297,8 +314,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     });
                     selectdata();
                 }
+                updateDataGripViewsSub(dt_temp, ref dgvProductSerial);
             }
-            updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
         }
 
         private void btnDeleteBoxId_Click(object sender, EventArgs e)
@@ -559,7 +576,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 if (criteria[i] == "Total" && header == "Lot")
                 {
                     dr[criteria[i]] = dgvProductSerial.Rows.Count;
-                    dr[criteria[i - 1]] = dgvProductSerial.Rows.Count - total;
+                    //dr[criteria[i - 1]] = dgvProductSerial.Rows.Count - total;
                 }
             }
             dt1.Rows.Add(dr);
@@ -578,6 +595,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 // Disenalbe the textbox to block scanning
                 //txtProduct.Enabled = false;
+                if (txtProduct.Text.Length != 8) return;
 
                 DataTable dt1 = new DataTable();
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDProductCbm(), new GA1ModelVo

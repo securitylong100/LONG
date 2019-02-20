@@ -126,6 +126,5 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
         {
             return ((uint)(b & 255)) | ((uint)((r & 255) << 8)) | ((uint)((g & 255) << 16));
         }
-
     }
 }
