@@ -51,6 +51,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         //common
         public string RegistrationUserCode { get; set; }
         public DateTime RegistrationDateTime { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime Time { get; set; }
         public string FactoryCode { get; set; }
         public int AffectedCount { get; set; }
 

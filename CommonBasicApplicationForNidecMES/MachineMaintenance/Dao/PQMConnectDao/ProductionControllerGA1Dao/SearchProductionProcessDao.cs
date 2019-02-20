@@ -19,22 +19,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            string line = "";
-            string grline = "";
 
-            if (!string.IsNullOrEmpty(inVo.LineCode))
-            {
-                line = ",a.line";
-                grline = ",a.line";
-            }
-            else
-            {
-                line = ",'All Line' line";
-            }
-
-            sql.Append(@"select a.model" + line + ", a.process, inspect, sum(inspectdata) inspectdata  from  " + inVo.TableName);
+            sql.Append(@"select inspect, sum(inspectdata) inspectdata  from  " + inVo.TableName);
             sql.Append(" a left join " + inVo.TableName + "data b on a.serno = b.serno where a.inspectdate = b.inspectdate ");
-            sql.Append(@" and a.inspectdate >= :datefrom and a.inspectdate <= :dateto");
+            sql.Append(@" and a.inspectdate >= :datefrom and a.inspectdate <= :dateto ");
             sqlParameter.AddParameter("datefrom", inVo.DateFrom);
             sqlParameter.AddParameter("dateto", inVo.DateTo);
 
@@ -45,13 +33,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             }
             if (!string.IsNullOrEmpty(inVo.LineCode))
             {
-                line = ",a.line";
                 sql.Append(@" and a.line  =:line");
                 sqlParameter.AddParameterString("line", inVo.LineCode);
-            }
-            else
-            {
-                line = ",'All Line' line";
             }
             if (!string.IsNullOrEmpty(inVo.ProcessCode))
             {
@@ -59,7 +42,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sqlParameter.AddParameterString("process", inVo.ProcessCode);
             }
 
-            sql.Append(@" group by a.model" + grline + ", a.process,inspect order by inspect");
+            sql.Append(@" group by inspect order by inspect");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DataSet ds = sqlCommandAdapter.ExecuteDataSet(sqlParameter);

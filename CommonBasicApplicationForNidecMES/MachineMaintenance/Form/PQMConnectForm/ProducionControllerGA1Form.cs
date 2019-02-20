@@ -27,12 +27,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         public static readonly string connection = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=mesdb;Database=pqmdb;;";
         public static readonly string connectionmes = "Server=192.168.145.12;Port=5432;UserId=pqm;Password=mesdb;Database=mesdb;;";
         public string tablename;
-
+        public void loadTime()
+        {
+            Yearlbl.Text = DateTime.Now.Year.ToString();
+            monthlbl.Text = DateTime.Now.Month.ToString();
+            daylbl.Text = DateTime.Now.Day.ToString();
+            timelbl.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
         private void ProducionControllerGA1Form_Load(object sender, EventArgs e)
         {
             cmbSeriport.DataSource = SerialPort.GetPortNames();
             cmbSeriport.Text = "";
             callModel();
+            loadTime();
+            timerDateTimeNow.Enabled = true;
+        }
+
+        private void timerDateTimeNow_Tick(object sender, EventArgs e)
+        {
+            loadTime();
         }
         void callModel()
         {
@@ -76,6 +89,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         private void btn_SearchData_Click(object sender, EventArgs e)
         {
+            grbSearchData.Visible = false;
+            tblLayoutData.Dock = DockStyle.Fill;
             funtion();
             alarmNG();
             btn_Run.Enabled = false;
@@ -216,7 +231,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
         }
-        void showchartLine(string input, string output, string rateNG_, Chart chr, Label lblinput,Label lbloutput, Label lbltotalNG)
+        void showchartLine(string input, string output, string rateNG_,string totalNG_, Chart chr, Label lblinput,Label lbloutput, Label lbltotalNG)
         {
             chr.ResetAutoValues();
             chr.ResumeLayout();
@@ -291,6 +306,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 double dataOut = 0;
                 double dataIn = 0;
                 double rateNG = 0;
+                double totalNG = 0;
                 for (int i = 0; i < dgv.RowCount - 1; i++)
                 {
                     if (dgv.Columns.Contains(output))
@@ -301,14 +317,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         }
                     }
                     if (dgv.Columns.Contains(input)) { dataIn += double.Parse(dgv.Rows[i].Cells[input].Value.ToString()); }
-                    rateNG = double.Parse(dgv.Rows[i].Cells[rateNG_].Value.ToString());
+                    if (dgv.Columns.Contains(totalNG_)) { totalNG += double.Parse(dgv.Rows[i].Cells[totalNG_].Value.ToString()); }
+
+                    if (dataOut > 0 && dataOut > totalNG) { rateNG = (totalNG / dataOut) * 100; }////////quan trong
+                    else rateNG = 0;
+
                     chr.Series["Output (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
                     chr.Series["Input (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataIn);
                     //if (rateNG > 100) { rateNG = 0; }
-                    chr.Series["YEILD (%)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), 100 - rateNG);
+                    chr.Series["YEILD (%)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), 100 - Math.Round(rateNG, 2));
                     lblinput.Text = dataIn.ToString();
                     lbloutput.Text = dataOut.ToString();
-                    lbltotalNG.Text = rateNG.ToString();
+                    lbltotalNG.Text = totalNG.ToString();
                 }
             }
         }
@@ -434,10 +454,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             if (dgv.Columns[j].HeaderText == "MC_FWCHK" || dgv.Columns[j].HeaderText == "MC_STMASS" || dgv.Columns[j].HeaderText == "MC_FPC"
                                 || dgv.Columns[j].HeaderText == "MC_Mark" || dgv.Columns[j].HeaderText == "MC_THUCHK" || dgv.Columns[j].HeaderText == "MC_NOICHK" || dgv.Columns[j].HeaderText == "MC_APPCHK")
                             { totalNGMoTor += double.Parse(dgv[j, i].Value.ToString()); }
-                            //    if (dgv[j, i].Value.ToString() != "")//
-                            //{
-                            //    totalNG += double.Parse(dgv[j, i].Value.ToString());
-                            //}
                         }
                     }
                     double outputFrame = 0;
@@ -450,9 +466,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     if (outputFrame == 0) { rateNGFrame = 0; } else rateNGFrame = Math.Round((totalNGFrame / outputFrame) * 100, 3);
                     if (outputGear == 0) { rateNGGear = 0; } else rateNGGear = Math.Round((totalNGGear / outputGear) * 100, 3);
                     if (outputMotor == 0) { rateNGMotor = 0; } else rateNGMotor = Math.Round((totalNGMoTor / outputMotor) * 100, 3);
-                    //if (rateNGFrame > 100) { rateNGFrame = 0; }
-                    //if (rateNGGear > 100) { rateNGGear = 0; }
-                    //if (rateNGMotor > 100) { rateNGMotor = 0; }
 
                     dgv["RateNG_Frame", i].Value = rateNGFrame;
                     dgv["Total_NG_Frame", i].Value = totalNGFrame;
@@ -819,18 +832,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void timerChart_Tick(object sender, EventArgs e)
         {
             GridBind();
-            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main,lblInputFrame,lblOutputFrame,lblTotalNGFrame); // frame
-            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
-            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
+            //dgv["RateNG_Frame", i].Value = rateNGFrame;
+            //dgv["Total_NG_Frame", i].Value = totalNGFrame;
+            //dgv["RateNG_Gear", i].Value = rateNGGear;
+            //dgv["Total_NG_Gear", i].Value = totalNGGear;
+            //dgv["RateNG_Motor", i].Value = rateNGMotor;
+            //dgv["Total_NG_Motor", i].Value = totalNGMoTor;
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", "Total_NG_Frame", chr_main,lblInputFrame,lblOutputFrame,lblTotalNGFrame); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", "Total_NG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", "Total_NG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
             showchartProcess();
             alarmNG();
         }
         private void btn_search_Click(object sender, EventArgs e)
         {
             GridBind();
-            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main, lblInputFrame, lblOutputFrame, lblTotalNGFrame); // frame
-            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
-            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", "Total_NG_Frame", chr_main, lblInputFrame, lblOutputFrame, lblTotalNGFrame); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", "Total_NG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", "Total_NG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
             alarmNG();
             showchartProcess();
         }
@@ -894,9 +913,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             btnStop.Enabled = true;
             timerChart.Enabled = true;
             GridBind();
-            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", chr_main, lblInputFrame, lblOutputFrame, lblTotalNGFrame); // frame
-            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
-            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
+            showchartLine("FA_IP", "FA_OP", "RateNG_Frame", "Total_NG_Frame", chr_main, lblInputFrame, lblOutputFrame, lblTotalNGFrame); // frame
+            showchartLine("GC_IP", "GC_OP", "RateNG_Gear", "Total_NG_Gear", chartGear, lblInputGear, lblOutputGear, lblTotalNGGear); // gear 
+            showchartLine("MC_IP", "OUTPUT", "RateNG_Motor", "Total_NG_Motor", chartMotor, lblInputMotor, lblOutputMotor, lblTotalNGMotor); // motor
             showchartProcess();
         }
 
@@ -915,5 +934,100 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 serialCom.Open();
             }
         }
+
+        private void btnShowgrbData_Click(object sender, EventArgs e)
+        {
+            grbSearchData.Visible = true;
+            tblLayoutData.Dock = DockStyle.Bottom;
+        }
+
+        private void btnShowgrbChart_Click(object sender, EventArgs e)
+        {
+            grbSearchChart.Visible = true;
+            tblLayoutChart.Dock = DockStyle.Bottom;
+        }
+
+        private void btnSearchProcess_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void GrindByProcess(string process_)
+        {
+
+            tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+            try
+            {
+                ProductionControllerGA1Vo dgvVo = new ProductionControllerGA1Vo()
+                {
+                    TableName = tablename,
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    ProcessCode = cmb_process.Text,
+                    ItemCode = cmb_item.Text,
+                    DateFrom = DateTime.Parse(dtp_from.Text),
+                    DateTo = DateTime.Parse(dtp_to.Text),
+                    grDate = false,
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                };
+
+                ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionProcessCbm(), dgvVo, connection);
+
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
+        }
+
+        private void chbViProcess_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbViProcess.Checked)//hien
+            {
+                grbProcess.Visible = true;
+                tblLayoutProcess.Dock = DockStyle.Bottom;
+            }
+            else { grbProcess.Visible = false; tblLayoutProcess.Dock = DockStyle.Fill; }
+            }
+
+        private void btnShowgrbProcess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbViChart_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbViChart.Checked)//hien
+            {
+                grbSearchChart.Visible = true;
+                tblLayoutChart.Dock = DockStyle.Bottom;
+            }
+            else { grbSearchChart.Visible = false; tblLayoutChart.Dock = DockStyle.Fill; }
+        }
+
+        private void ProducionControllerGA1Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
+            timerChart.Enabled = false;
+            timerProcess.Enabled = false;
+            timerDateTimeNow.Enabled = false;
+            serialCom.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbViData.Checked)//hien
+            {
+                grbSearchData.Visible = true;
+                tblLayoutData.Dock = DockStyle.Bottom;
+            }
+            else { grbSearchData.Visible = false; tblLayoutData.Dock = DockStyle.Fill; }
+        }
+
+        private void btnRunProcess_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 }

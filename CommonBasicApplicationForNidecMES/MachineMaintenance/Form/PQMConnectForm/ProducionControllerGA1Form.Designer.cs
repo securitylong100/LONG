@@ -48,23 +48,31 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chr_main = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.chbViData = new System.Windows.Forms.CheckBox();
+            this.btnShowgrbData = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.grbSearchData = new System.Windows.Forms.GroupBox();
             this.txtTimer = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.btnStop = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.btn_Run = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearchData = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnStop = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.labelCommon8 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.btn_Run = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.dtp_dateFromdata = new System.Windows.Forms.DateTimePicker();
             this.dtp_dateTodata = new System.Windows.Forms.DateTimePicker();
             this.labelCommon7 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblLayoutData = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblInput3 = new System.Windows.Forms.Label();
@@ -124,18 +132,18 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chbViChart = new System.Windows.Forms.CheckBox();
+            this.grbSearchChart = new System.Windows.Forms.GroupBox();
             this.cmbSeriport = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.txtTimerChart = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.dtp_from = new System.Windows.Forms.DateTimePicker();
             this.btnStopChart = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.btnRunChart = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.dtp_from = new System.Windows.Forms.DateTimePicker();
             this.btn_searchChart = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.dtp_to = new System.Windows.Forms.DateTimePicker();
             this.labelCommon2 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblLayoutChart = new System.Windows.Forms.TableLayoutPanel();
             this.chart_pie = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -177,17 +185,33 @@
             this.labelCommon13 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.chartMotor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.chbViProcess = new System.Windows.Forms.CheckBox();
+            this.grbProcess = new System.Windows.Forms.GroupBox();
+            this.txtTimerProcess = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.btnStopProcess = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.btnRunProcess = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.cmb_process = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon9 = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.buttonCommon1 = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromProcess = new System.Windows.Forms.DateTimePicker();
+            this.btnSearchProcess = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.dtpToProcess = new System.Windows.Forms.DateTimePicker();
             this.labelCommon11 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.tblLayoutProcess = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvProcess = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.chartProcess = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelCommon5 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.cmb_item = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.timelbl = new System.Windows.Forms.Label();
+            this.daylbl = new System.Windows.Forms.Label();
+            this.monthlbl = new System.Windows.Forms.Label();
+            this.Yearlbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblLine = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon6 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon4 = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -197,6 +221,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerChart = new System.Windows.Forms.Timer(this.components);
             this.serialCom = new System.IO.Ports.SerialPort(this.components);
+            this.timerProcess = new System.Windows.Forms.Timer(this.components);
+            this.timerDateTimeNow = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -205,9 +231,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.grbSearchData.SuspendLayout();
+            this.tblLayoutData.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -215,9 +240,8 @@
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.grbSearchChart.SuspendLayout();
+            this.tblLayoutChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_pie)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -232,8 +256,12 @@
             this.grbMotor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMotor)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.grbProcess.SuspendLayout();
+            this.tblLayoutProcess.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProcess)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // chr_main
@@ -288,7 +316,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(467, 41);
+            this.dgv.Size = new System.Drawing.Size(347, 41);
             this.dgv.TabIndex = 9;
             this.dgv.Visible = false;
             // 
@@ -336,9 +364,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox11);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel3);
+            this.tabPage1.Controls.Add(this.chbViData);
+            this.tabPage1.Controls.Add(this.btnShowgrbData);
+            this.tabPage1.Controls.Add(this.grbSearchData);
+            this.tabPage1.Controls.Add(this.tblLayoutData);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -347,68 +376,62 @@
             this.tabPage1.Text = "Data";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox11
+            // chbViData
             // 
-            this.groupBox11.Controls.Add(this.txtTimer);
-            this.groupBox11.Controls.Add(this.btnStop);
-            this.groupBox11.Controls.Add(this.btn_Run);
-            this.groupBox11.Location = new System.Drawing.Point(441, -2);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(286, 55);
-            this.groupBox11.TabIndex = 112;
-            this.groupBox11.TabStop = false;
+            this.chbViData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbViData.AutoSize = true;
+            this.chbViData.Checked = true;
+            this.chbViData.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbViData.Location = new System.Drawing.Point(1262, 2);
+            this.chbViData.Name = "chbViData";
+            this.chbViData.Size = new System.Drawing.Size(56, 17);
+            this.chbViData.TabIndex = 134;
+            this.chbViData.Text = "Visible";
+            this.chbViData.UseVisualStyleBackColor = true;
+            this.chbViData.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // btnShowgrbData
+            // 
+            this.btnShowgrbData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowgrbData.BackColor = System.Drawing.SystemColors.Control;
+            this.btnShowgrbData.ControlId = null;
+            this.btnShowgrbData.Font = new System.Drawing.Font("Arial", 6F);
+            this.btnShowgrbData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnShowgrbData.Location = new System.Drawing.Point(1234, 3);
+            this.btnShowgrbData.Name = "btnShowgrbData";
+            this.btnShowgrbData.Size = new System.Drawing.Size(16, 16);
+            this.btnShowgrbData.TabIndex = 129;
+            this.btnShowgrbData.Text = "O";
+            this.btnShowgrbData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnShowgrbData.UseVisualStyleBackColor = false;
+            this.btnShowgrbData.Click += new System.EventHandler(this.btnShowgrbData_Click);
+            // 
+            // grbSearchData
+            // 
+            this.grbSearchData.Controls.Add(this.txtTimer);
+            this.grbSearchData.Controls.Add(this.btnSearchData);
+            this.grbSearchData.Controls.Add(this.btnStop);
+            this.grbSearchData.Controls.Add(this.labelCommon8);
+            this.grbSearchData.Controls.Add(this.btn_Run);
+            this.grbSearchData.Controls.Add(this.dtp_dateFromdata);
+            this.grbSearchData.Controls.Add(this.dtp_dateTodata);
+            this.grbSearchData.Controls.Add(this.labelCommon7);
+            this.grbSearchData.Location = new System.Drawing.Point(3, -2);
+            this.grbSearchData.Name = "grbSearchData";
+            this.grbSearchData.Size = new System.Drawing.Size(710, 55);
+            this.grbSearchData.TabIndex = 111;
+            this.grbSearchData.TabStop = false;
             // 
             // txtTimer
             // 
             this.txtTimer.ControlId = null;
             this.txtTimer.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimer.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.Numeric;
-            this.txtTimer.Location = new System.Drawing.Point(199, 22);
+            this.txtTimer.Location = new System.Drawing.Point(622, 22);
             this.txtTimer.Name = "txtTimer";
             this.txtTimer.Size = new System.Drawing.Size(75, 21);
             this.txtTimer.TabIndex = 128;
             this.txtTimer.Text = "180000";
-            // 
-            // btnStop
-            // 
-            this.btnStop.BackColor = System.Drawing.SystemColors.Control;
-            this.btnStop.ControlId = null;
-            this.btnStop.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnStop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnStop.Location = new System.Drawing.Point(103, 14);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(80, 36);
-            this.btnStop.TabIndex = 111;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = false;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // btn_Run
-            // 
-            this.btn_Run.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Run.ControlId = null;
-            this.btn_Run.Font = new System.Drawing.Font("Arial", 9F);
-            this.btn_Run.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Run.Location = new System.Drawing.Point(12, 14);
-            this.btn_Run.Name = "btn_Run";
-            this.btn_Run.Size = new System.Drawing.Size(80, 36);
-            this.btn_Run.TabIndex = 106;
-            this.btn_Run.Text = "Run";
-            this.btn_Run.UseVisualStyleBackColor = false;
-            this.btn_Run.Click += new System.EventHandler(this.btn_SearchData_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnSearchData);
-            this.groupBox1.Controls.Add(this.labelCommon8);
-            this.groupBox1.Controls.Add(this.dtp_dateFromdata);
-            this.groupBox1.Controls.Add(this.dtp_dateTodata);
-            this.groupBox1.Controls.Add(this.labelCommon7);
-            this.groupBox1.Location = new System.Drawing.Point(3, -2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(432, 55);
-            this.groupBox1.TabIndex = 111;
-            this.groupBox1.TabStop = false;
             // 
             // btnSearchData
             // 
@@ -424,6 +447,20 @@
             this.btnSearchData.UseVisualStyleBackColor = false;
             this.btnSearchData.Click += new System.EventHandler(this.btnSearchData_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.BackColor = System.Drawing.SystemColors.Control;
+            this.btnStop.ControlId = null;
+            this.btnStop.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnStop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnStop.Location = new System.Drawing.Point(526, 14);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(80, 36);
+            this.btnStop.TabIndex = 111;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // labelCommon8
             // 
             this.labelCommon8.AutoSize = true;
@@ -435,6 +472,20 @@
             this.labelCommon8.Size = new System.Drawing.Size(82, 13);
             this.labelCommon8.TabIndex = 107;
             this.labelCommon8.Text = "From DateTime:";
+            // 
+            // btn_Run
+            // 
+            this.btn_Run.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Run.ControlId = null;
+            this.btn_Run.Font = new System.Drawing.Font("Arial", 9F);
+            this.btn_Run.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_Run.Location = new System.Drawing.Point(435, 14);
+            this.btn_Run.Name = "btn_Run";
+            this.btn_Run.Size = new System.Drawing.Size(80, 36);
+            this.btn_Run.TabIndex = 106;
+            this.btn_Run.Text = "Run";
+            this.btn_Run.UseVisualStyleBackColor = false;
+            this.btn_Run.Click += new System.EventHandler(this.btn_SearchData_Click);
             // 
             // dtp_dateFromdata
             // 
@@ -467,23 +518,23 @@
             this.labelCommon7.TabIndex = 108;
             this.labelCommon7.Text = "To DateTime:";
             // 
-            // tableLayoutPanel3
+            // tblLayoutData
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox4, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.groupBox3, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.groupBox2, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 83);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 461F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1316, 461);
-            this.tableLayoutPanel3.TabIndex = 10;
+            this.tblLayoutData.ColumnCount = 3;
+            this.tblLayoutData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblLayoutData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tblLayoutData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tblLayoutData.Controls.Add(this.groupBox4, 2, 0);
+            this.tblLayoutData.Controls.Add(this.groupBox3, 1, 0);
+            this.tblLayoutData.Controls.Add(this.groupBox2, 0, 0);
+            this.tblLayoutData.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tblLayoutData.Location = new System.Drawing.Point(3, 87);
+            this.tblLayoutData.Name = "tblLayoutData";
+            this.tblLayoutData.RowCount = 1;
+            this.tblLayoutData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 457F));
+            this.tblLayoutData.Size = new System.Drawing.Size(1316, 457);
+            this.tblLayoutData.TabIndex = 10;
             // 
             // groupBox4
             // 
@@ -491,7 +542,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(879, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(434, 455);
+            this.groupBox4.Size = new System.Drawing.Size(434, 451);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MOTOR ASSY";
@@ -538,7 +589,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999101F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(428, 436);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(428, 432);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lblInput3
@@ -767,7 +818,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(441, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(432, 455);
+            this.groupBox3.Size = new System.Drawing.Size(432, 451);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "GEAR CASE ASSY";
@@ -814,7 +865,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999101F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(426, 436);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(426, 432);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // lblInput2
@@ -1043,7 +1094,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(432, 455);
+            this.groupBox2.Size = new System.Drawing.Size(432, 451);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FRAME ASSY";
@@ -1082,7 +1133,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999101F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(426, 436);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(426, 432);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // lblInput1
@@ -1219,11 +1270,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.cmbSeriport);
-            this.tabPage2.Controls.Add(this.groupBox12);
+            this.tabPage2.Controls.Add(this.chbViChart);
             this.tabPage2.Controls.Add(this.dgv);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage2.Controls.Add(this.grbSearchChart);
+            this.tabPage2.Controls.Add(this.tblLayoutChart);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -1232,80 +1282,48 @@
             this.tabPage2.Text = "Chart";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // chbViChart
+            // 
+            this.chbViChart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbViChart.AutoSize = true;
+            this.chbViChart.Checked = true;
+            this.chbViChart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbViChart.Location = new System.Drawing.Point(1262, 2);
+            this.chbViChart.Name = "chbViChart";
+            this.chbViChart.Size = new System.Drawing.Size(56, 17);
+            this.chbViChart.TabIndex = 133;
+            this.chbViChart.Text = "Visible";
+            this.chbViChart.UseVisualStyleBackColor = true;
+            this.chbViChart.CheckedChanged += new System.EventHandler(this.chbViChart_CheckedChanged);
+            // 
+            // grbSearchChart
+            // 
+            this.grbSearchChart.Controls.Add(this.cmbSeriport);
+            this.grbSearchChart.Controls.Add(this.labelCommon1);
+            this.grbSearchChart.Controls.Add(this.txtTimerChart);
+            this.grbSearchChart.Controls.Add(this.dtp_from);
+            this.grbSearchChart.Controls.Add(this.btnStopChart);
+            this.grbSearchChart.Controls.Add(this.btnRunChart);
+            this.grbSearchChart.Controls.Add(this.btn_searchChart);
+            this.grbSearchChart.Controls.Add(this.dtp_to);
+            this.grbSearchChart.Controls.Add(this.labelCommon2);
+            this.grbSearchChart.Location = new System.Drawing.Point(3, -2);
+            this.grbSearchChart.Name = "grbSearchChart";
+            this.grbSearchChart.Size = new System.Drawing.Size(843, 57);
+            this.grbSearchChart.TabIndex = 106;
+            this.grbSearchChart.TabStop = false;
+            // 
             // cmbSeriport
             // 
             this.cmbSeriport.ControlId = null;
             this.cmbSeriport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeriport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSeriport.FormattingEnabled = true;
-            this.cmbSeriport.Location = new System.Drawing.Point(726, 15);
+            this.cmbSeriport.Location = new System.Drawing.Point(709, 19);
             this.cmbSeriport.Name = "cmbSeriport";
             this.cmbSeriport.Size = new System.Drawing.Size(120, 24);
             this.cmbSeriport.TabIndex = 117;
             this.cmbSeriport.SelectedIndexChanged += new System.EventHandler(this.cmbSeriport_SelectedIndexChanged_1);
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.txtTimerChart);
-            this.groupBox12.Controls.Add(this.btnStopChart);
-            this.groupBox12.Controls.Add(this.btnRunChart);
-            this.groupBox12.Location = new System.Drawing.Point(441, -2);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(278, 57);
-            this.groupBox12.TabIndex = 107;
-            this.groupBox12.TabStop = false;
-            // 
-            // txtTimerChart
-            // 
-            this.txtTimerChart.ControlId = null;
-            this.txtTimerChart.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimerChart.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.Numeric;
-            this.txtTimerChart.Location = new System.Drawing.Point(195, 18);
-            this.txtTimerChart.Name = "txtTimerChart";
-            this.txtTimerChart.Size = new System.Drawing.Size(75, 21);
-            this.txtTimerChart.TabIndex = 116;
-            this.txtTimerChart.Text = "180000";
-            // 
-            // btnStopChart
-            // 
-            this.btnStopChart.BackColor = System.Drawing.SystemColors.Control;
-            this.btnStopChart.ControlId = null;
-            this.btnStopChart.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnStopChart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnStopChart.Location = new System.Drawing.Point(97, 10);
-            this.btnStopChart.Name = "btnStopChart";
-            this.btnStopChart.Size = new System.Drawing.Size(80, 36);
-            this.btnStopChart.TabIndex = 114;
-            this.btnStopChart.Text = "Stop";
-            this.btnStopChart.UseVisualStyleBackColor = false;
-            this.btnStopChart.Click += new System.EventHandler(this.btnStopChart_Click);
-            // 
-            // btnRunChart
-            // 
-            this.btnRunChart.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRunChart.ControlId = null;
-            this.btnRunChart.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnRunChart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRunChart.Location = new System.Drawing.Point(6, 10);
-            this.btnRunChart.Name = "btnRunChart";
-            this.btnRunChart.Size = new System.Drawing.Size(80, 36);
-            this.btnRunChart.TabIndex = 112;
-            this.btnRunChart.Text = "Run";
-            this.btnRunChart.UseVisualStyleBackColor = false;
-            this.btnRunChart.Click += new System.EventHandler(this.btnRunChart_Click);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.labelCommon1);
-            this.groupBox6.Controls.Add(this.dtp_from);
-            this.groupBox6.Controls.Add(this.btn_searchChart);
-            this.groupBox6.Controls.Add(this.dtp_to);
-            this.groupBox6.Controls.Add(this.labelCommon2);
-            this.groupBox6.Location = new System.Drawing.Point(3, -2);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(432, 57);
-            this.groupBox6.TabIndex = 106;
-            this.groupBox6.TabStop = false;
             // 
             // labelCommon1
             // 
@@ -1319,6 +1337,17 @@
             this.labelCommon1.TabIndex = 68;
             this.labelCommon1.Text = "From DateTime:";
             // 
+            // txtTimerChart
+            // 
+            this.txtTimerChart.ControlId = null;
+            this.txtTimerChart.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimerChart.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.Numeric;
+            this.txtTimerChart.Location = new System.Drawing.Point(623, 20);
+            this.txtTimerChart.Name = "txtTimerChart";
+            this.txtTimerChart.Size = new System.Drawing.Size(75, 21);
+            this.txtTimerChart.TabIndex = 116;
+            this.txtTimerChart.Text = "180000";
+            // 
             // dtp_from
             // 
             this.dtp_from.Checked = false;
@@ -1328,6 +1357,34 @@
             this.dtp_from.Name = "dtp_from";
             this.dtp_from.Size = new System.Drawing.Size(157, 20);
             this.dtp_from.TabIndex = 7;
+            // 
+            // btnStopChart
+            // 
+            this.btnStopChart.BackColor = System.Drawing.SystemColors.Control;
+            this.btnStopChart.ControlId = null;
+            this.btnStopChart.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnStopChart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnStopChart.Location = new System.Drawing.Point(525, 12);
+            this.btnStopChart.Name = "btnStopChart";
+            this.btnStopChart.Size = new System.Drawing.Size(80, 36);
+            this.btnStopChart.TabIndex = 114;
+            this.btnStopChart.Text = "Stop";
+            this.btnStopChart.UseVisualStyleBackColor = false;
+            this.btnStopChart.Click += new System.EventHandler(this.btnStopChart_Click);
+            // 
+            // btnRunChart
+            // 
+            this.btnRunChart.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRunChart.ControlId = null;
+            this.btnRunChart.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnRunChart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRunChart.Location = new System.Drawing.Point(434, 12);
+            this.btnRunChart.Name = "btnRunChart";
+            this.btnRunChart.Size = new System.Drawing.Size(80, 36);
+            this.btnRunChart.TabIndex = 112;
+            this.btnRunChart.Text = "Run";
+            this.btnRunChart.UseVisualStyleBackColor = false;
+            this.btnRunChart.Click += new System.EventHandler(this.btnRunChart_Click);
             // 
             // btn_searchChart
             // 
@@ -1364,22 +1421,22 @@
             this.labelCommon2.TabIndex = 69;
             this.labelCommon2.Text = "To DateTime:";
             // 
-            // tableLayoutPanel2
+            // tblLayoutChart
             // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.45966F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.54034F));
-            this.tableLayoutPanel2.Controls.Add(this.chart_pie, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tabControl2, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 104);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1316, 440);
-            this.tableLayoutPanel2.TabIndex = 105;
+            this.tblLayoutChart.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tblLayoutChart.ColumnCount = 2;
+            this.tblLayoutChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.45966F));
+            this.tblLayoutChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.54034F));
+            this.tblLayoutChart.Controls.Add(this.chart_pie, 1, 0);
+            this.tblLayoutChart.Controls.Add(this.tabControl2, 0, 0);
+            this.tblLayoutChart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tblLayoutChart.Location = new System.Drawing.Point(3, 104);
+            this.tblLayoutChart.Name = "tblLayoutChart";
+            this.tblLayoutChart.RowCount = 1;
+            this.tblLayoutChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
+            this.tblLayoutChart.Size = new System.Drawing.Size(1316, 440);
+            this.tblLayoutChart.TabIndex = 105;
             // 
             // chart_pie
             // 
@@ -1504,6 +1561,7 @@
             // labelCommon10
             // 
             this.labelCommon10.AutoSize = true;
+            this.labelCommon10.BackColor = System.Drawing.SystemColors.Window;
             this.labelCommon10.ControlId = null;
             this.labelCommon10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon10.Location = new System.Drawing.Point(27, 21);
@@ -1896,7 +1954,9 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Controls.Add(this.chbViProcess);
+            this.tabPage3.Controls.Add(this.grbProcess);
+            this.tabPage3.Controls.Add(this.tblLayoutProcess);
             this.tabPage3.Controls.Add(this.labelCommon5);
             this.tabPage3.Controls.Add(this.cmb_item);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -1906,20 +1966,75 @@
             this.tabPage3.Text = "Process";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
+            // chbViProcess
             // 
-            this.groupBox7.Controls.Add(this.cmb_process);
-            this.groupBox7.Controls.Add(this.labelCommon9);
-            this.groupBox7.Controls.Add(this.dateTimePicker1);
-            this.groupBox7.Controls.Add(this.buttonCommon1);
-            this.groupBox7.Controls.Add(this.dateTimePicker2);
-            this.groupBox7.Controls.Add(this.labelCommon11);
-            this.groupBox7.Controls.Add(this.labelCommon3);
-            this.groupBox7.Location = new System.Drawing.Point(3, 3);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(726, 57);
-            this.groupBox7.TabIndex = 107;
-            this.groupBox7.TabStop = false;
+            this.chbViProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbViProcess.AutoSize = true;
+            this.chbViProcess.Checked = true;
+            this.chbViProcess.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbViProcess.Location = new System.Drawing.Point(1265, 2);
+            this.chbViProcess.Name = "chbViProcess";
+            this.chbViProcess.Size = new System.Drawing.Size(56, 17);
+            this.chbViProcess.TabIndex = 132;
+            this.chbViProcess.Text = "Visible";
+            this.chbViProcess.UseVisualStyleBackColor = true;
+            this.chbViProcess.CheckedChanged += new System.EventHandler(this.chbViProcess_CheckedChanged);
+            // 
+            // grbProcess
+            // 
+            this.grbProcess.Controls.Add(this.txtTimerProcess);
+            this.grbProcess.Controls.Add(this.btnStopProcess);
+            this.grbProcess.Controls.Add(this.btnRunProcess);
+            this.grbProcess.Controls.Add(this.cmb_process);
+            this.grbProcess.Controls.Add(this.labelCommon9);
+            this.grbProcess.Controls.Add(this.dtpFromProcess);
+            this.grbProcess.Controls.Add(this.btnSearchProcess);
+            this.grbProcess.Controls.Add(this.dtpToProcess);
+            this.grbProcess.Controls.Add(this.labelCommon11);
+            this.grbProcess.Controls.Add(this.labelCommon3);
+            this.grbProcess.Location = new System.Drawing.Point(3, 3);
+            this.grbProcess.Name = "grbProcess";
+            this.grbProcess.Size = new System.Drawing.Size(899, 57);
+            this.grbProcess.TabIndex = 107;
+            this.grbProcess.TabStop = false;
+            // 
+            // txtTimerProcess
+            // 
+            this.txtTimerProcess.ControlId = null;
+            this.txtTimerProcess.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimerProcess.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.Numeric;
+            this.txtTimerProcess.Location = new System.Drawing.Point(810, 20);
+            this.txtTimerProcess.Name = "txtTimerProcess";
+            this.txtTimerProcess.Size = new System.Drawing.Size(75, 21);
+            this.txtTimerProcess.TabIndex = 119;
+            this.txtTimerProcess.Text = "180000";
+            // 
+            // btnStopProcess
+            // 
+            this.btnStopProcess.BackColor = System.Drawing.SystemColors.Control;
+            this.btnStopProcess.ControlId = null;
+            this.btnStopProcess.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnStopProcess.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnStopProcess.Location = new System.Drawing.Point(712, 12);
+            this.btnStopProcess.Name = "btnStopProcess";
+            this.btnStopProcess.Size = new System.Drawing.Size(80, 36);
+            this.btnStopProcess.TabIndex = 118;
+            this.btnStopProcess.Text = "Stop";
+            this.btnStopProcess.UseVisualStyleBackColor = false;
+            // 
+            // btnRunProcess
+            // 
+            this.btnRunProcess.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRunProcess.ControlId = null;
+            this.btnRunProcess.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnRunProcess.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRunProcess.Location = new System.Drawing.Point(621, 12);
+            this.btnRunProcess.Name = "btnRunProcess";
+            this.btnRunProcess.Size = new System.Drawing.Size(80, 36);
+            this.btnRunProcess.TabIndex = 117;
+            this.btnRunProcess.Text = "Run";
+            this.btnRunProcess.UseVisualStyleBackColor = false;
+            this.btnRunProcess.Click += new System.EventHandler(this.btnRunProcess_Click);
             // 
             // cmb_process
             // 
@@ -1943,37 +2058,38 @@
             this.labelCommon9.TabIndex = 68;
             this.labelCommon9.Text = "From DateTime:";
             // 
-            // dateTimePicker1
+            // dtpFromProcess
             // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpFromProcess.Checked = false;
+            this.dtpFromProcess.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtpFromProcess.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromProcess.Location = new System.Drawing.Point(6, 28);
+            this.dtpFromProcess.Name = "dtpFromProcess";
+            this.dtpFromProcess.Size = new System.Drawing.Size(157, 20);
+            this.dtpFromProcess.TabIndex = 7;
             // 
-            // buttonCommon1
+            // btnSearchProcess
             // 
-            this.buttonCommon1.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon1.ControlId = null;
-            this.buttonCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon1.Location = new System.Drawing.Point(643, 19);
-            this.buttonCommon1.Name = "buttonCommon1";
-            this.buttonCommon1.Size = new System.Drawing.Size(77, 29);
-            this.buttonCommon1.TabIndex = 63;
-            this.buttonCommon1.Text = "Search";
-            this.buttonCommon1.UseVisualStyleBackColor = false;
+            this.btnSearchProcess.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSearchProcess.ControlId = null;
+            this.btnSearchProcess.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnSearchProcess.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearchProcess.Location = new System.Drawing.Point(531, 12);
+            this.btnSearchProcess.Name = "btnSearchProcess";
+            this.btnSearchProcess.Size = new System.Drawing.Size(77, 36);
+            this.btnSearchProcess.TabIndex = 63;
+            this.btnSearchProcess.Text = "Search";
+            this.btnSearchProcess.UseVisualStyleBackColor = false;
+            this.btnSearchProcess.Click += new System.EventHandler(this.btnSearchProcess_Click);
             // 
-            // dateTimePicker2
+            // dtpToProcess
             // 
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(178, 28);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker2.TabIndex = 70;
+            this.dtpToProcess.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtpToProcess.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToProcess.Location = new System.Drawing.Point(178, 28);
+            this.dtpToProcess.Name = "dtpToProcess";
+            this.dtpToProcess.Size = new System.Drawing.Size(157, 20);
+            this.dtpToProcess.TabIndex = 70;
             // 
             // labelCommon11
             // 
@@ -2000,13 +2116,86 @@
             this.labelCommon3.TabIndex = 98;
             this.labelCommon3.Text = "Process:";
             // 
+            // tblLayoutProcess
+            // 
+            this.tblLayoutProcess.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tblLayoutProcess.ColumnCount = 2;
+            this.tblLayoutProcess.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.51515F));
+            this.tblLayoutProcess.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.48485F));
+            this.tblLayoutProcess.Controls.Add(this.dgvProcess, 0, 0);
+            this.tblLayoutProcess.Controls.Add(this.chartProcess, 0, 0);
+            this.tblLayoutProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tblLayoutProcess.Location = new System.Drawing.Point(0, 107);
+            this.tblLayoutProcess.Name = "tblLayoutProcess";
+            this.tblLayoutProcess.RowCount = 1;
+            this.tblLayoutProcess.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutProcess.Size = new System.Drawing.Size(1322, 440);
+            this.tblLayoutProcess.TabIndex = 108;
+            // 
+            // dgvProcess
+            // 
+            this.dgvProcess.AllowUserToAddRows = false;
+            this.dgvProcess.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcess.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProcess.ControlId = null;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProcess.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvProcess.Location = new System.Drawing.Point(948, 87);
+            this.dgvProcess.Name = "dgvProcess";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcess.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvProcess.RowHeadersVisible = false;
+            this.dgvProcess.Size = new System.Drawing.Size(369, 348);
+            this.dgvProcess.TabIndex = 10;
+            this.dgvProcess.Visible = false;
+            // 
+            // chartProcess
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chartProcess.ChartAreas.Add(chartArea5);
+            this.chartProcess.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend5.Name = "Legend1";
+            this.chartProcess.Legends.Add(legend5);
+            this.chartProcess.Location = new System.Drawing.Point(5, 5);
+            this.chartProcess.Name = "chartProcess";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartProcess.Series.Add(series5);
+            this.chartProcess.Size = new System.Drawing.Size(935, 430);
+            this.chartProcess.TabIndex = 8;
+            this.chartProcess.Text = "chart1";
+            title5.Name = "Title1";
+            this.chartProcess.Titles.Add(title5);
+            // 
             // labelCommon5
             // 
             this.labelCommon5.AutoSize = true;
             this.labelCommon5.ControlId = null;
             this.labelCommon5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon5.Location = new System.Drawing.Point(646, 31);
+            this.labelCommon5.Location = new System.Drawing.Point(544, 31);
             this.labelCommon5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon5.Name = "labelCommon5";
             this.labelCommon5.Size = new System.Drawing.Size(68, 13);
@@ -2019,7 +2208,7 @@
             this.cmb_item.ControlId = null;
             this.cmb_item.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_item.FormattingEnabled = true;
-            this.cmb_item.Location = new System.Drawing.Point(559, 14);
+            this.cmb_item.Location = new System.Drawing.Point(457, 14);
             this.cmb_item.Name = "cmb_item";
             this.cmb_item.Size = new System.Drawing.Size(121, 23);
             this.cmb_item.TabIndex = 101;
@@ -2027,6 +2216,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.tableLayoutPanel2);
             this.groupBox5.Controls.Add(this.lblLine);
             this.groupBox5.Controls.Add(this.labelCommon6);
             this.groupBox5.Controls.Add(this.labelCommon4);
@@ -2041,29 +2231,150 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tableLayoutPanel2.Controls.Add(this.timelbl, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.daylbl, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.monthlbl, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Yearlbl, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(805, 8);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(260, 39);
+            this.tableLayoutPanel2.TabIndex = 118;
+            // 
+            // timelbl
+            // 
+            this.timelbl.AutoSize = true;
+            this.timelbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timelbl.Location = new System.Drawing.Point(176, 20);
+            this.timelbl.Name = "timelbl";
+            this.timelbl.Size = new System.Drawing.Size(79, 17);
+            this.timelbl.TabIndex = 7;
+            this.timelbl.Text = "12:00:00";
+            this.timelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // daylbl
+            // 
+            this.daylbl.AutoSize = true;
+            this.daylbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.daylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daylbl.Location = new System.Drawing.Point(119, 20);
+            this.daylbl.Name = "daylbl";
+            this.daylbl.Size = new System.Drawing.Size(49, 17);
+            this.daylbl.TabIndex = 6;
+            this.daylbl.Text = "19";
+            this.daylbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // monthlbl
+            // 
+            this.monthlbl.AutoSize = true;
+            this.monthlbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monthlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthlbl.Location = new System.Drawing.Point(62, 20);
+            this.monthlbl.Name = "monthlbl";
+            this.monthlbl.Size = new System.Drawing.Size(49, 17);
+            this.monthlbl.TabIndex = 5;
+            this.monthlbl.Text = "02";
+            this.monthlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Yearlbl
+            // 
+            this.Yearlbl.AutoSize = true;
+            this.Yearlbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Yearlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Yearlbl.Location = new System.Drawing.Point(5, 20);
+            this.Yearlbl.Name = "Yearlbl";
+            this.Yearlbl.Size = new System.Drawing.Size(49, 17);
+            this.Yearlbl.TabIndex = 4;
+            this.Yearlbl.Text = "2019";
+            this.Yearlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(176, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 16);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Time";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(119, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Day";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(62, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 16);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Month";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Year";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblLine
             // 
             this.lblLine.AutoSize = true;
             this.lblLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblLine.ControlId = null;
-            this.lblLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLine.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblLine.Location = new System.Drawing.Point(1292, 19);
+            this.lblLine.Location = new System.Drawing.Point(1232, 12);
             this.lblLine.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(0, 17);
+            this.lblLine.Size = new System.Drawing.Size(66, 32);
             this.lblLine.TabIndex = 109;
+            this.lblLine.Text = "L01";
             // 
             // labelCommon6
             // 
             this.labelCommon6.AutoSize = true;
             this.labelCommon6.ControlId = null;
-            this.labelCommon6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommon6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelCommon6.Location = new System.Drawing.Point(1242, 19);
+            this.labelCommon6.Location = new System.Drawing.Point(1141, 12);
             this.labelCommon6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.labelCommon6.Name = "labelCommon6";
-            this.labelCommon6.Size = new System.Drawing.Size(44, 17);
+            this.labelCommon6.Size = new System.Drawing.Size(83, 32);
             this.labelCommon6.TabIndex = 108;
             this.labelCommon6.Text = "Line:";
             // 
@@ -2124,6 +2435,15 @@
             this.timerChart.Interval = 300000;
             this.timerChart.Tick += new System.EventHandler(this.timerChart_Tick);
             // 
+            // timerProcess
+            // 
+            this.timerProcess.Interval = 300000;
+            // 
+            // timerDateTimeNow
+            // 
+            this.timerDateTimeNow.Interval = 1000;
+            this.timerDateTimeNow.Tick += new System.EventHandler(this.timerDateTimeNow_Tick);
+            // 
             // ProducionControllerGA1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2134,6 +2454,7 @@
             this.Text = "Production Data Controller";
             this.TitleText = "Production Data Controller";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProducionControllerGA1Form_FormClosing);
             this.Load += new System.EventHandler(this.ProducionControllerGA1Form_Load);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.chr_main)).EndInit();
@@ -2144,11 +2465,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.grbSearchData.ResumeLayout(false);
+            this.grbSearchData.PerformLayout();
+            this.tblLayoutData.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -2159,11 +2479,10 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.grbSearchChart.ResumeLayout(false);
+            this.grbSearchChart.PerformLayout();
+            this.tblLayoutChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_pie)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -2185,10 +2504,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartMotor)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.grbProcess.ResumeLayout(false);
+            this.grbProcess.PerformLayout();
+            this.tblLayoutProcess.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProcess)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2206,7 +2530,7 @@
         private System.Windows.Forms.DateTimePicker dtp_dateFromdata;
         private Framework.LabelCommon labelCommon7;
         private Framework.LabelCommon labelCommon8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutData;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lblInput3;
@@ -2280,19 +2604,19 @@
         private System.Windows.Forms.Label lbl_model;
         private Framework.LabelCommon labelCommon3;
         private Framework.ComboBoxCommon cmb_line;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox grbSearchData;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_pie;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox grbSearchChart;
         private System.Windows.Forms.TabPage tabPage3;
         private Framework.ButtonCommon btnStop;
         private Framework.ButtonCommon btnSearchData;
         private System.Windows.Forms.Timer timerChart;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox grbProcess;
         private Framework.LabelCommon labelCommon9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private Framework.ButtonCommon buttonCommon1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFromProcess;
+        private Framework.ButtonCommon btnSearchProcess;
+        private System.Windows.Forms.DateTimePicker dtpToProcess;
         private Framework.LabelCommon labelCommon11;
         private Framework.ButtonCommon btnStopChart;
         private Framework.ButtonCommon btnRunChart;
@@ -2316,11 +2640,9 @@
         private Framework.TextBoxCommon txtrateNGAlarmFrame;
         private Framework.TextBoxCommon txtrateNGAlarmGear;
         private System.IO.Ports.SerialPort serialCom;
-        private System.Windows.Forms.GroupBox groupBox11;
         private Framework.TextBoxCommon txtTimer;
         private Framework.LabelCommon lblLine;
         private Framework.LabelCommon labelCommon6;
-        private System.Windows.Forms.GroupBox groupBox12;
         private Framework.ComboBoxCommon cmbSeriport;
         private System.Windows.Forms.GroupBox groupBox8;
         private Framework.LabelCommon lblTotalNGFrame;
@@ -2343,5 +2665,26 @@
         private Framework.LabelCommon labelCommon29;
         private Framework.LabelCommon lblInputMotor;
         private Framework.LabelCommon labelCommon31;
+        private Framework.ButtonCommon btnShowgrbData;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutProcess;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProcess;
+        private Framework.DataGridViewCommon dgvProcess;
+        private Framework.TextBoxCommon txtTimerProcess;
+        private Framework.ButtonCommon btnStopProcess;
+        private Framework.ButtonCommon btnRunProcess;
+        private System.Windows.Forms.Timer timerProcess;
+        private System.Windows.Forms.CheckBox chbViProcess;
+        private System.Windows.Forms.CheckBox chbViChart;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label timelbl;
+        private System.Windows.Forms.Label daylbl;
+        private System.Windows.Forms.Label monthlbl;
+        private System.Windows.Forms.Label Yearlbl;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timerDateTimeNow;
+        private System.Windows.Forms.CheckBox chbViData;
     }
 }
