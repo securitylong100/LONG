@@ -781,7 +781,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             try
             {
                 tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
-                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_from.Value, DateTo = dtp_to.Value, change = t }, connectionmes);
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_dateFromdata.Value, DateTo = dtp_dateTodata.Value, change = t }, connectionmes);
                 if (inspecdata.GetList()[0].InspecData != "")
                 {
                     return inspecdata.GetList()[0].InspecData;
@@ -1111,7 +1111,60 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void exportexcel_btn_Click(object sender, EventArgs e)
         {
+            Common.Excel_Class ex = new Common.Excel_Class();
+            ex.exportexcel(ref dgvExport, directorySave, "Report");
+        }
 
+        private void btnSearchExcel_Click(object sender, EventArgs e)
+        {
+            GrindExcel();
+        }
+        private void GrindExcel()
+        {
+            tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+            try
+            {
+                ProductionControllerGA1Vo dgvVo = new ProductionControllerGA1Vo()
+                {
+                    TableName = tablename,
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    ProcessCode = cmb_process.Text,
+                    ItemCode = cmb_item.Text,
+                    DateFrom = DateTime.Parse(dtpFromExport.Text),
+                    DateTo = DateTime.Parse(dtpToExport.Text),
+                };
+
+                ProductionControllerGA1Vo Exportvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionExportDataCbm(), dgvVo, connection);
+
+                ValueObjectList<ProductionControllerGA1Vo> OutputExportvo = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo {
+                    change = true,
+                    LineCode = cmb_line.Text,
+                    DateFrom = DateTime.Parse(dtpFromExport.Text),
+                    DateTo = DateTime.Parse(dtpToExport.Text),
+                }, connectionmes);//lấy output bên mes
+
+                ValueObjectList<ProductionControllerGA1Vo> ThuchkExportvo = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo
+                {
+                    change = false,
+                    LineCode = cmb_line.Text,
+                    DateFrom = DateTime.Parse(dtpFromExport.Text),
+                    DateTo = DateTime.Parse(dtpToExport.Text),
+                }, connectionmes);//lấy ng thurst bên mes
+                
+                dgvExport.Columns.Clear();
+                dgvExport.DataSource = Exportvo.dt;
+                for (int i = 0; i < dgvExport.RowCount; i++)
+                {
+                    if (dgvExport.Rows[i].Cells["process"].Value.ToString() == "OUTPUT") { dgvExport.Rows[i].Cells["inspectdata"].Value = OutputExportvo.GetList()[0].InspecData; }
+                    if (dgvExport.Rows[i].Cells["process"].Value.ToString() == "MC_THUCHK") { dgvExport.Rows[i].Cells["inspectdata"].Value = ThuchkExportvo.GetList()[0].InspecData; }
+                }
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
         }
     }
     

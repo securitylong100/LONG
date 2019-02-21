@@ -421,9 +421,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             int rowCount = dgv.BindingContext[dgv.DataSource, dgv.DataMember].Count;
             for (int i = 0; i < rowCount; i++)
             {
-                if (dgv[3, i].Value.ToString() == "NG" || dgv[3, i].Value.ToString() == String.Empty)
+                if (dgv["Thurst", i].Value.ToString() == "NG" || dgv["Thurst", i].Value.ToString() == String.Empty)
                 {
-                    dgv[3, i].Style.BackColor = Color.Red;
+                    dgv["Thurst", i].Style.BackColor = Color.Red;
                 }
                 //if (dgv[4, i].Value.ToString() == "NG" || dgv[4, i].Value.ToString() == String.Empty)
                 //{
@@ -435,7 +435,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 //}
                 else
                 {
-                    dgv[3, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
+                    dgv["Thurst", i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
                     //dgv[4, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
                     //dgv[5, i].Style.BackColor = Color.FromKnownColor(KnownColor.Window);
                 }

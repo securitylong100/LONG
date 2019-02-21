@@ -232,6 +232,7 @@
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionModelCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionLineCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionProcessCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionExportDataCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionoOutputMotorCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionInputByDateCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionOUTPUTCbm.cs" />

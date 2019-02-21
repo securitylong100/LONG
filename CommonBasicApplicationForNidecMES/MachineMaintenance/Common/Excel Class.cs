@@ -46,7 +46,41 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 return;
             }
         }
+        public void exportexcelGA1(ref DataGridViewCommon dgv, string link, string filename)
+        {
+            try
+            {
+                Excel.Application excelApp = new Excel.Application();
+                excelApp.Workbooks.Add();
+                Excel.Worksheet ws = excelApp.ActiveSheet;
+                // column headings
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    ws.Cells[4, (i + 1)] = dgv.Columns[i].HeaderText;
+                }
+                // rows
 
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    for (int i = 0; i < dgv.Rows.Count; i++)
+                    {
+                        ws.Cells[(i + 5), (j + 1)] = dgv[j, i].Value.ToString();
+                        if (j == 0)
+                        {
+
+                        }                            
+                    }
+                }
+                excelApp.Visible = true;
+
+                ws.SaveAs(link + @"\" + filename + ".xlsx");
+            }
+            catch
+            {
+                MessageBox.Show("ERROR. Please create folder " + link + " to save as...");
+                return;
+            }
+        }
         public void Export(ref DataGridViewCommon dgv, string filename)
         {
             try
