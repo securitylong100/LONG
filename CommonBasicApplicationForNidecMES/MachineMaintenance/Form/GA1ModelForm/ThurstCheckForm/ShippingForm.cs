@@ -12,7 +12,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
     public partial class ShippingForm : FormCommonNCVP
     {
-        string directory = @"C:\Users\mt-qc20\Desktop\print\"; //@"\\192.168.145.7\ncvp\print\";
+        string directory = @"Z:\(01)Motor\(00)Public\11-Suka-Sugawara\LD model\printer\print\";
 
         public ShippingForm()
         {
@@ -70,7 +70,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
                 {
-                    PrintDate = dtpPrintDate.Value.Date
+                    PrintDate = DateTime.Parse(dtpPrintDate.Value.ToShortDateString()),
+                    Format = true
                 });
                 dgvBoxId.DataSource = getList.dt;
             }
@@ -79,7 +80,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
                 {
-                    ShipDate = dtpShipDate.Value.Date
+                    ShipDate = dtpShipDate.Value.Date,
+                    Format = false
                 });
                 dgvBoxId.DataSource = getList.dt;
             }
@@ -97,14 +99,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            defineDataTable(ref dt);
             if (res)
             {
                 ResetControlValues.ResetControlValue(tableLayoutPanel2);
                 ResetControlValues.ResetControlValue(tableLayoutPanel3);
-                dtOverall.Reset();
-                dtOverall.AcceptChanges();
+                dgvProductSerial.DataSource = dt;
+                dgvDateCode.DataSource = null;
                 //dgvProductSerial.Rows.Clear();
-                btnDeleteAll.PerformClick();
+                //btnDeleteAll.PerformClick();
                 txtLimit.Text = "100";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
@@ -113,8 +117,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 ResetControlValues.ResetControlValue(tableLayoutPanel2);
                 ResetControlValues.ResetControlValue(tableLayoutPanel3);
-                btnDeleteAll.PerformClick();
+                //btnDeleteAll.PerformClick();
                 //dgvProductSerial.Rows.Clear();
+                dgvProductSerial.DataSource = dt;
+                dgvDateCode.DataSource = null;
                 txtLimit.Text = "100";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
@@ -146,6 +152,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             splMain.Panel1Collapsed = true;
             btnDeleteAll.Enabled = true;
             btnDeleteSelection.Enabled = true;
+            btnRegisterBoxId.Text = "Register Box ID";
             txtLimit.Text = "100";
             txtBoxId.Text = getNewBoxId();
             res = true;
@@ -393,7 +400,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             if (dateOld != DateTime.Today)
             {
-                boxIdNew = "GA1" + "-" + DateTime.Today.ToString("yyMMdd") + "01";
+                boxIdNew = "GA1" + "-" + DateTime.Today.ToString("yyMMdd") + "001";
             }
             else
             {
@@ -583,7 +590,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         #endregion
-
         private void txtProduct_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

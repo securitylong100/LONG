@@ -347,7 +347,6 @@ D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj
 D:\NIDEC MES\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShippingForm.resources
 D:\NIDEC MES\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
 D:\NCVP_GIT\FW\NidecMES\Dll\MachineMaintenance.dll.config
-D:\NCVP_GIT\FW\NidecMES\Dll\MachineMaintenance.dll
 D:\NCVP_GIT\FW\NidecMES\Dll\MachineMaintenance.pdb
 D:\NCVP_GIT\FW\NidecMES\Dll\vi\MachineMaintenance.resources.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csproj.ResolveComReference.cache

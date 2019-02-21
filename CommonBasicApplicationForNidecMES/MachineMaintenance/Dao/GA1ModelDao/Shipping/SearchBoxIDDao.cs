@@ -21,17 +21,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sql.Append("select boxid, printdate, user_cd as User, shipdate from t_box_id where 1 = 1");
 
-            if (inVo.PrintDate.ToString() != "0001/01/01 00:00:00")
+            if (inVo.Format)
             {
-                sql.Append(" and printdate >= :printdate and printdate < :printdate1");
-                sqlParameter.AddParameterDateTime("printdate", inVo.PrintDate);
-                sqlParameter.AddParameterDateTime("printdate1", inVo.PrintDate.AddDays(1));
+                sql.Append(" and printdate >= '" + inVo.PrintDate.ToString("yyyy/MM/dd") + " 00:00:00' and printdate < '" + inVo.PrintDate.ToString("yyyy/MM/dd") + " 23:59:59'");
+                //sqlParameter.AddParameter("printdate", inVo.PrintDate.ToString("yyyy/MM/dd"));
+                //sqlParameter.AddParameterDateTime("printdate1", inVo.PrintDate.AddDays(1));
             }
-            if (inVo.ShipDate.ToString() != "0001/01/01 00:00:00")
+            else
             {
-                sql.Append(@" and shipdate >= :shipdate and shipdate < :shipdate1");
-                sqlParameter.AddParameterDateTime("shipdate", inVo.ShipDate);
-                sqlParameter.AddParameterDateTime("shipdate1", inVo.ShipDate.AddDays(1));
+                sql.Append(" and shipdate >= '" + inVo.ShipDate.ToString("yyyy/MM/dd") + " 00:00:00' and shipdate < '" + inVo.ShipDate.ToString("yyyy/MM/dd") + " 23:59:59'");
+                //sql.Append(@" and shipdate >= :shipdate and shipdate < :shipdate1");
+                //sqlParameter.AddParameterDateTime("shipdate", inVo.ShipDate);
+                //sqlParameter.AddParameterDateTime("shipdate1", inVo.ShipDate.AddDays(1));
             }
 
             sql.Append(@" order by boxid");

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splMain = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -84,12 +84,12 @@
             this.dgvDateCode2 = new System.Windows.Forms.DataGridView();
             this.txtBoxIdPrint = new System.Windows.Forms.TextBox();
             this.dgvProductSerial = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Line = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_lot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thurst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splMain)).BeginInit();
             this.splMain.Panel1.SuspendLayout();
             this.splMain.Panel2.SuspendLayout();
@@ -145,6 +145,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -218,7 +219,7 @@
             // 
             this.dtpPrintDate.CustomFormat = "yyyy/MM/dd";
             this.dtpPrintDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpPrintDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPrintDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPrintDate.Location = new System.Drawing.Point(107, 3);
             this.dtpPrintDate.Name = "dtpPrintDate";
             this.dtpPrintDate.Size = new System.Drawing.Size(244, 20);
@@ -374,6 +375,7 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -388,12 +390,13 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtBoxIdPrint);
             this.splitContainer3.Panel2.Controls.Add(this.dgvProductSerial);
             this.splitContainer3.Size = new System.Drawing.Size(806, 643);
-            this.splitContainer3.SplitterDistance = 136;
+            this.splitContainer3.SplitterDistance = 154;
             this.splitContainer3.TabIndex = 0;
             // 
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.IsSplitterFixed = true;
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
             this.splitContainer5.Name = "splitContainer5";
             // 
@@ -404,7 +407,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(806, 136);
+            this.splitContainer5.Size = new System.Drawing.Size(806, 154);
             this.splitContainer5.SplitterDistance = 319;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -429,7 +432,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.27273F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(319, 136);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(319, 154);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtBoxId
@@ -456,7 +459,7 @@
             this.dtpPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpPrint.Enabled = false;
             this.dtpPrint.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPrint.Location = new System.Drawing.Point(78, 30);
+            this.dtpPrint.Location = new System.Drawing.Point(78, 35);
             this.dtpPrint.Name = "dtpPrint";
             this.dtpPrint.Size = new System.Drawing.Size(238, 20);
             this.dtpPrint.TabIndex = 15;
@@ -464,7 +467,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 30);
+            this.label5.Location = new System.Drawing.Point(3, 35);
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
@@ -474,7 +477,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 106);
+            this.label3.Location = new System.Drawing.Point(3, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 26);
@@ -489,18 +492,18 @@
             this.dgvDateCode.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dgvDateCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDateCode.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvDateCode.Location = new System.Drawing.Point(78, 57);
+            this.dgvDateCode.Location = new System.Drawing.Point(78, 67);
             this.dgvDateCode.Name = "dgvDateCode";
             this.dgvDateCode.ReadOnly = true;
             this.dgvDateCode.RowTemplate.Height = 21;
             this.dgvDateCode.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDateCode.Size = new System.Drawing.Size(238, 43);
+            this.dgvDateCode.Size = new System.Drawing.Size(238, 52);
             this.dgvDateCode.TabIndex = 22;
             // 
             // txtProduct
             // 
             this.txtProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProduct.Location = new System.Drawing.Point(78, 106);
+            this.txtProduct.Location = new System.Drawing.Point(78, 125);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(238, 20);
             this.txtProduct.TabIndex = 13;
@@ -520,8 +523,8 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.tableLayoutPanel4);
-            this.splitContainer6.Size = new System.Drawing.Size(483, 136);
-            this.splitContainer6.SplitterDistance = 88;
+            this.splitContainer6.Size = new System.Drawing.Size(483, 154);
+            this.splitContainer6.SplitterDistance = 99;
             this.splitContainer6.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -545,7 +548,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.52174F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.47826F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 88);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 99);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lblUser
@@ -561,7 +564,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 30);
+            this.label6.Location = new System.Drawing.Point(3, 34);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
@@ -579,9 +582,9 @@
             // btnChangeLimit
             // 
             this.btnChangeLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnChangeLimit.Location = new System.Drawing.Point(205, 30);
+            this.btnChangeLimit.Location = new System.Drawing.Point(205, 34);
             this.btnChangeLimit.Name = "btnChangeLimit";
-            this.btnChangeLimit.Size = new System.Drawing.Size(52, 55);
+            this.btnChangeLimit.Size = new System.Drawing.Size(52, 62);
             this.btnChangeLimit.TabIndex = 25;
             this.btnChangeLimit.Text = "Change Limit";
             this.btnChangeLimit.UseVisualStyleBackColor = true;
@@ -591,7 +594,7 @@
             // 
             this.txtOkCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOkCount.Enabled = false;
-            this.txtOkCount.Location = new System.Drawing.Point(69, 30);
+            this.txtOkCount.Location = new System.Drawing.Point(69, 34);
             this.txtOkCount.Name = "txtOkCount";
             this.txtOkCount.Size = new System.Drawing.Size(130, 20);
             this.txtOkCount.TabIndex = 18;
@@ -611,7 +614,7 @@
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(263, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 27);
+            this.label7.Size = new System.Drawing.Size(79, 31);
             this.label7.TabIndex = 26;
             this.label7.Text = "Last printed: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -620,9 +623,9 @@
             // 
             this.pnlBarcode.BackColor = System.Drawing.Color.White;
             this.pnlBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBarcode.Location = new System.Drawing.Point(263, 30);
+            this.pnlBarcode.Location = new System.Drawing.Point(263, 34);
             this.pnlBarcode.Name = "pnlBarcode";
-            this.pnlBarcode.Size = new System.Drawing.Size(217, 55);
+            this.pnlBarcode.Size = new System.Drawing.Size(217, 62);
             this.pnlBarcode.TabIndex = 27;
             this.pnlBarcode.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarcode_Paint);
             // 
@@ -645,7 +648,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(483, 44);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(483, 51);
             this.tableLayoutPanel4.TabIndex = 29;
             // 
             // btnRegisterBoxId
@@ -655,7 +658,7 @@
             this.btnRegisterBoxId.Enabled = false;
             this.btnRegisterBoxId.Location = new System.Drawing.Point(3, 3);
             this.btnRegisterBoxId.Name = "btnRegisterBoxId";
-            this.btnRegisterBoxId.Size = new System.Drawing.Size(154, 38);
+            this.btnRegisterBoxId.Size = new System.Drawing.Size(154, 45);
             this.btnRegisterBoxId.TabIndex = 22;
             this.btnRegisterBoxId.Text = "Register Box ID";
             this.btnRegisterBoxId.UseVisualStyleBackColor = true;
@@ -666,7 +669,7 @@
             this.btnDeleteAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteAll.Location = new System.Drawing.Point(323, 3);
             this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.Size = new System.Drawing.Size(74, 38);
+            this.btnDeleteAll.Size = new System.Drawing.Size(74, 45);
             this.btnDeleteAll.TabIndex = 24;
             this.btnDeleteAll.Text = "Delete All";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
@@ -678,7 +681,7 @@
             this.btnDeleteBoxId.Enabled = false;
             this.btnDeleteBoxId.Location = new System.Drawing.Point(163, 3);
             this.btnDeleteBoxId.Name = "btnDeleteBoxId";
-            this.btnDeleteBoxId.Size = new System.Drawing.Size(74, 38);
+            this.btnDeleteBoxId.Size = new System.Drawing.Size(74, 45);
             this.btnDeleteBoxId.TabIndex = 28;
             this.btnDeleteBoxId.Text = "Delete Box ID";
             this.btnDeleteBoxId.UseVisualStyleBackColor = true;
@@ -690,7 +693,7 @@
             this.btnDeleteSelection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteSelection.Location = new System.Drawing.Point(243, 3);
             this.btnDeleteSelection.Name = "btnDeleteSelection";
-            this.btnDeleteSelection.Size = new System.Drawing.Size(74, 38);
+            this.btnDeleteSelection.Size = new System.Drawing.Size(74, 45);
             this.btnDeleteSelection.TabIndex = 23;
             this.btnDeleteSelection.Text = "Delete Selection";
             this.btnDeleteSelection.UseVisualStyleBackColor = true;
@@ -704,7 +707,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(403, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(77, 38);
+            this.btnClose.Size = new System.Drawing.Size(77, 45);
             this.btnClose.TabIndex = 24;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -714,46 +717,46 @@
             // 
             this.dgvDateCode2.AllowUserToAddRows = false;
             this.dgvDateCode2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDateCode2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDateCode2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            this.dgvDateCode2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDateCode2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDateCode2.ColumnHeadersHeight = 18;
             this.dgvDateCode2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDateCode2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDateCode2.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvDateCode2.EnableHeadersVisualStyles = false;
             this.dgvDateCode2.GridColor = System.Drawing.Color.White;
             this.dgvDateCode2.Location = new System.Drawing.Point(459, 97);
             this.dgvDateCode2.Name = "dgvDateCode2";
             this.dgvDateCode2.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDateCode2.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDateCode2.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvDateCode2.RowHeadersVisible = false;
             this.dgvDateCode2.RowHeadersWidth = 40;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDateCode2.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDateCode2.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvDateCode2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.dgvDateCode2.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
             this.dgvDateCode2.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
@@ -786,7 +789,7 @@
             this.Serial,
             this.Model,
             this.Line,
-            this.col_lot,
+            this.Lot,
             this.Thurst});
             this.dgvProductSerial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductSerial.Location = new System.Drawing.Point(0, 0);
@@ -795,8 +798,12 @@
             this.dgvProductSerial.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvProductSerial.RowTemplate.Height = 21;
             this.dgvProductSerial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvProductSerial.Size = new System.Drawing.Size(806, 503);
+            this.dgvProductSerial.Size = new System.Drawing.Size(806, 485);
             this.dgvProductSerial.TabIndex = 10;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Serial
             // 
@@ -819,12 +826,12 @@
             this.Line.Name = "Line";
             this.Line.ReadOnly = true;
             // 
-            // col_lot
+            // Lot
             // 
-            this.col_lot.DataPropertyName = "Lot";
-            this.col_lot.HeaderText = "Lot";
-            this.col_lot.Name = "col_lot";
-            this.col_lot.ReadOnly = true;
+            this.Lot.DataPropertyName = "Lot";
+            this.Lot.HeaderText = "Lot";
+            this.Lot.Name = "Lot";
+            this.Lot.ReadOnly = true;
             // 
             // Thurst
             // 
@@ -832,10 +839,6 @@
             this.Thurst.HeaderText = "Thurst";
             this.Thurst.Name = "Thurst";
             this.Thurst.ReadOnly = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ShippingForm
             // 
@@ -948,7 +951,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Serial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Model;
         private System.Windows.Forms.DataGridViewTextBoxColumn Line;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_lot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lot;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thurst;
     }
 }

@@ -25,6 +25,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string User { get; set; }
         public DateTime PrintDate { get; set; }
         public DateTime ShipDate { get; set; }
+        public bool Format { get; set; }
 
         // m_line
         public int LineId { get; set; }
