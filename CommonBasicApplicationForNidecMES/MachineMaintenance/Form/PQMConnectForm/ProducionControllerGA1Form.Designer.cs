@@ -223,6 +223,10 @@
             this.labelCommon21 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblAlarmMotor = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblAlarmGear = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon24 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblAlarmFrame = new Com.Nidec.Mes.Framework.LabelCommon();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.timelbl = new System.Windows.Forms.Label();
             this.daylbl = new System.Windows.Forms.Label();
@@ -439,7 +443,7 @@
             this.txtTimer.Name = "txtTimer";
             this.txtTimer.Size = new System.Drawing.Size(75, 21);
             this.txtTimer.TabIndex = 128;
-            this.txtTimer.Text = "180000";
+            this.txtTimer.Text = "60000";
             // 
             // btnSearchData
             // 
@@ -1354,7 +1358,7 @@
             this.txtTimerChart.Name = "txtTimerChart";
             this.txtTimerChart.Size = new System.Drawing.Size(75, 21);
             this.txtTimerChart.TabIndex = 116;
-            this.txtTimerChart.Text = "180000";
+            this.txtTimerChart.Text = "60000";
             // 
             // dtp_from
             // 
@@ -2024,7 +2028,7 @@
             this.txtTimerProcess.Name = "txtTimerProcess";
             this.txtTimerProcess.Size = new System.Drawing.Size(75, 21);
             this.txtTimerProcess.TabIndex = 119;
-            this.txtTimerProcess.Text = "180000";
+            this.txtTimerProcess.Text = "60000";
             // 
             // btnStopProcess
             // 
@@ -2063,6 +2067,7 @@
             this.cmb_process.Name = "cmb_process";
             this.cmb_process.Size = new System.Drawing.Size(120, 23);
             this.cmb_process.TabIndex = 108;
+            this.cmb_process.DropDownClosed += new System.EventHandler(this.cmb_process_DropDownClosed);
             // 
             // labelCommon9
             // 
@@ -2447,6 +2452,10 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.lblAlarmMotor);
+            this.groupBox5.Controls.Add(this.lblAlarmGear);
+            this.groupBox5.Controls.Add(this.labelCommon24);
+            this.groupBox5.Controls.Add(this.lblAlarmFrame);
             this.groupBox5.Controls.Add(this.tableLayoutPanel2);
             this.groupBox5.Controls.Add(this.lblLine);
             this.groupBox5.Controls.Add(this.labelCommon6);
@@ -2461,6 +2470,58 @@
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // lblAlarmMotor
+            // 
+            this.lblAlarmMotor.AutoSize = true;
+            this.lblAlarmMotor.ControlId = null;
+            this.lblAlarmMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlarmMotor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblAlarmMotor.Location = new System.Drawing.Point(632, 19);
+            this.lblAlarmMotor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblAlarmMotor.Name = "lblAlarmMotor";
+            this.lblAlarmMotor.Size = new System.Drawing.Size(65, 17);
+            this.lblAlarmMotor.TabIndex = 122;
+            this.lblAlarmMotor.Text = "MOTOR";
+            // 
+            // lblAlarmGear
+            // 
+            this.lblAlarmGear.AutoSize = true;
+            this.lblAlarmGear.ControlId = null;
+            this.lblAlarmGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlarmGear.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblAlarmGear.Location = new System.Drawing.Point(573, 19);
+            this.lblAlarmGear.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblAlarmGear.Name = "lblAlarmGear";
+            this.lblAlarmGear.Size = new System.Drawing.Size(51, 17);
+            this.lblAlarmGear.TabIndex = 121;
+            this.lblAlarmGear.Text = "GEAR";
+            // 
+            // labelCommon24
+            // 
+            this.labelCommon24.AutoSize = true;
+            this.labelCommon24.ControlId = null;
+            this.labelCommon24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelCommon24.Location = new System.Drawing.Point(380, 19);
+            this.labelCommon24.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelCommon24.Name = "labelCommon24";
+            this.labelCommon24.Size = new System.Drawing.Size(117, 17);
+            this.labelCommon24.TabIndex = 120;
+            this.labelCommon24.Text = "Process Alarm:";
+            // 
+            // lblAlarmFrame
+            // 
+            this.lblAlarmFrame.AutoSize = true;
+            this.lblAlarmFrame.ControlId = null;
+            this.lblAlarmFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlarmFrame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblAlarmFrame.Location = new System.Drawing.Point(504, 19);
+            this.lblAlarmFrame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblAlarmFrame.Name = "lblAlarmFrame";
+            this.lblAlarmFrame.Size = new System.Drawing.Size(60, 17);
+            this.lblAlarmFrame.TabIndex = 119;
+            this.lblAlarmFrame.Text = "FRAME";
             // 
             // tableLayoutPanel2
             // 
@@ -2940,5 +3001,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private Framework.ButtonCommon btnSearchExcel;
+        private Framework.LabelCommon lblAlarmFrame;
+        private Framework.LabelCommon labelCommon24;
+        private Framework.LabelCommon lblAlarmMotor;
+        private Framework.LabelCommon lblAlarmGear;
     }
 }

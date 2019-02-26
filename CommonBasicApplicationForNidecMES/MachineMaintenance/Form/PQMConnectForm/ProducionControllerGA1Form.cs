@@ -890,15 +890,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 a = 3;
                 led("1", "6", "7");
             }
-            if (rateNGFrame > rateNGFrametxt) { grbFrame.BackColor = Color.Red; }
-            if (rateNGGear > rateNGGeartxt) { grbGear.BackColor = Color.Red; }
-            if (rateNGMotor > rateNGMotortxt) { grbMotor.BackColor = Color.Red; }
-            if ((rateNGFrame >= rateNGFrametxt * (0.7)) && rateNGFrame <= rateNGFrametxt) { grbFrame.BackColor = Color.Yellow; }
-            if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt) { grbGear.BackColor = Color.Yellow; }
-            if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt) { grbMotor.BackColor = Color.Yellow; }
-            if (rateNGFrame >= 0 && (rateNGFrame < rateNGFrametxt * (0.7))) { grbFrame.BackColor = Color.LightGreen; }
-            if (rateNGGear >= 0 && (rateNGGear < rateNGGeartxt * (0.7))) { grbGear.BackColor = Color.LightGreen; }
-            if (rateNGMotor >= 0 && (rateNGMotor < rateNGMotortxt * (0.7))) { grbMotor.BackColor = Color.LightGreen; }
+            if (rateNGFrame >= 0 && (rateNGFrame < rateNGFrametxt * (0.7))) { grbFrame.BackColor = Color.LightGreen; lblAlarmFrame.Visible = false; }
+            else lblAlarmFrame.Visible = true;
+            if (rateNGGear >= 0 && (rateNGGear < rateNGGeartxt * (0.7))) { grbGear.BackColor = Color.LightGreen; lblAlarmGear.Visible = false; }
+            else lblAlarmGear.Visible = true;
+            if (rateNGMotor >= 0 && (rateNGMotor < rateNGMotortxt * (0.7))) { grbMotor.BackColor = Color.LightGreen; lblAlarmMotor.Visible = false; }
+            else lblAlarmMotor.Visible = true;
+
+            if (rateNGFrame > rateNGFrametxt) { grbFrame.BackColor = Color.Red; lblAlarmFrame.BackColor = Color.Red; }
+            if (rateNGGear > rateNGGeartxt) { grbGear.BackColor = Color.Red; lblAlarmGear.BackColor = Color.Red; }
+            if (rateNGMotor > rateNGMotortxt) { grbMotor.BackColor = Color.Red; lblAlarmMotor.BackColor = Color.Red; }
+            if ((rateNGFrame >= rateNGFrametxt * (0.7)) && rateNGFrame <= rateNGFrametxt) { grbFrame.BackColor = Color.Yellow; lblAlarmFrame.BackColor = Color.Yellow; }
+            if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt) { grbGear.BackColor = Color.Yellow; lblAlarmGear.BackColor = Color.Yellow; }
+            if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt) { grbMotor.BackColor = Color.Yellow; lblAlarmMotor.BackColor = Color.Yellow; }
         }
         public void led(string green, string red, string yellow)
         {
@@ -1083,9 +1087,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             GrindByProcess();
             showchartInspect();
         }
-
+        int intRunTimerProcess = 0;
         private void timerProcess_Tick(object sender, EventArgs e)
         {
+            if (intRunTimerProcess < cmb_process.Items.Count)
+            {
+                cmb_process.SelectedIndex = intRunTimerProcess;
+                intRunTimerProcess++;
+            }
+            else intRunTimerProcess = 0;
+
             GrindByProcess();
             showchartInspect();
         }
@@ -1112,7 +1123,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void exportexcel_btn_Click(object sender, EventArgs e)
         {
             Common.Excel_Class ex = new Common.Excel_Class();
-            ex.exportexcel(ref dgvExport, directorySave, "Report");
+            ex.exportexcelGA1(ref dgvExport, directorySave, "Report", cmb_model.Text, cmb_line.Text, dtpFromExport.Text, dtpToExport.Text);
         }
 
         private void btnSearchExcel_Click(object sender, EventArgs e)
@@ -1154,17 +1165,40 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 
                 dgvExport.Columns.Clear();
                 dgvExport.DataSource = Exportvo.dt;
+                int dm = 0;
                 for (int i = 0; i < dgvExport.RowCount; i++)
                 {
                     if (dgvExport.Rows[i].Cells["process"].Value.ToString() == "OUTPUT") { dgvExport.Rows[i].Cells["inspectdata"].Value = OutputExportvo.GetList()[0].InspecData; }
                     if (dgvExport.Rows[i].Cells["process"].Value.ToString() == "MC_THUCHK") { dgvExport.Rows[i].Cells["inspectdata"].Value = ThuchkExportvo.GetList()[0].InspecData; }
-                }
+                    if (i < dgvExport.RowCount - 1)
+                    {
+                        int x = 0; int y = 0; int z = 0;
+                        if (dm % 2 == 0) { x = 255; y = 255; z = 192; } //vang nhạt
+                        else if (dm % 2 == 1) { x = 192; y = 255; z = 192; }//xanh nhạt
+
+                        if (dgvExport.Rows[i].Cells["process"].Value.ToString() == dgvExport.Rows[i + 1].Cells["process"].Value.ToString())
+                        {
+                            dgvExport.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(x, y, z);
+                        }
+                        else
+                        {
+                            dgvExport.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(x, y, z);
+                            dm++;
+                        }
+                    }
+                }                
             }
             catch (Framework.ApplicationException exception)
             {
                 popUpMessage.ApplicationError(exception.GetMessageData(), Text);
                 logger.Error(exception.GetMessageData());
             }
+        }
+
+        private void cmb_process_DropDownClosed(object sender, EventArgs e)
+        {
+            GrindByProcess();
+            showchartInspect();
         }
     }
     

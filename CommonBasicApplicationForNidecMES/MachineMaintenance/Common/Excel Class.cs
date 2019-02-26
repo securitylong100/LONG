@@ -46,13 +46,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 return;
             }
         }
-        public void exportexcelGA1(ref DataGridViewCommon dgv, string link, string filename)
+        public void exportexcelGA1(ref DataGridViewCommon dgv, string link, string filename, string model, string line, string dateFrom, string dateTo)
         {
             try
             {
                 Excel.Application excelApp = new Excel.Application();
                 excelApp.Workbooks.Add();
                 Excel.Worksheet ws = excelApp.ActiveSheet;
+
+                ws.Cells[1, 1] = "Model:"; ws.Cells[1, 2] = model;
+                ws.Cells[1, 3] = "Line:"; ws.Cells[1, 4] = line;
+                ws.Cells[2, 1] = "From;"; ws.Cells[2, 2] = dateFrom;
+                ws.Cells[2, 3] = "To:"; ws.Cells[2, 4] = dateTo;
                 // column headings
                 for (int i = 0; i < dgv.Columns.Count; i++)
                 {
@@ -65,15 +70,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                     for (int i = 0; i < dgv.Rows.Count; i++)
                     {
                         ws.Cells[(i + 5), (j + 1)] = dgv[j, i].Value.ToString();
-                        if (j == 0)
+                        if (i < dgv.RowCount - 1)
                         {
-
-                        }                            
+                            if (dgv.Rows[i].Cells["process"].Value.ToString() == dgv.Rows[i + 1].Cells["process"].Value.ToString())
+                            {
+                                ws.Range[ws.Cells[i + 5, 1], ws.Cells[i + 6, 1]].Merge();
+                            }
+                        }
                     }
                 }
                 excelApp.Visible = true;
-
-                ws.SaveAs(link + @"\" + filename + ".xlsx");
+                if (link.Length == 3)
+                {
+                    ws.SaveAs(link + filename + ".xlsx");
+                }
+                else ws.SaveAs(link + @"\" + filename + ".xlsx");
             }
             catch
             {
