@@ -2028,7 +2028,7 @@
             this.txtTimerProcess.Name = "txtTimerProcess";
             this.txtTimerProcess.Size = new System.Drawing.Size(75, 21);
             this.txtTimerProcess.TabIndex = 119;
-            this.txtTimerProcess.Text = "60000";
+            this.txtTimerProcess.Text = "3000";
             // 
             // btnStopProcess
             // 
