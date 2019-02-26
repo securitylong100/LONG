@@ -193,7 +193,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
 
                 // Issue new box id
-                
+
                 boxIdNew = getNewBoxId();
 
                 // Print barcode
@@ -211,9 +211,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 boxIdNew = txtBoxId.Text;
                 // Print barcode
                 printBarcode(directory, boxIdNew, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
-
-                // Clear the datatable
-                dtOverall.Clear();
 
                 txtBoxId.Text = boxIdNew;
                 dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
@@ -404,7 +401,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             }
             else
             {
-                boxIdNew = "GA1" + "-" + DateTime.Today.ToString("yyMMdd") + (numberOld + 1).ToString("00");
+                boxIdNew = "GA1" + "-" + DateTime.Today.ToString("yyMMdd") + (numberOld + 1).ToString("000");
             }
 
             return boxIdNew;
@@ -608,23 +605,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 // Even when no tester data is found, the module have to appear in the datagridview
                 DataRow newrow = dtOverall.NewRow();
 
+                string serial = txtProduct.Text;
+                string lot = VBStrings.Left(txtProduct.Text, 5);
                 // If tester data exists, show it in the datagridview
                 if (dt1.Rows.Count != 0)
                 {
-                    string serial = txtProduct.Text;
-                    string lot = VBStrings.Left(txtProduct.Text, 5);
-                    string model = dt1.Rows[0][1].ToString();
-                    string line = dt1.Rows[0][2].ToString();
-                    string thurst = dt1.Rows[0][3].ToString();
+                    string model = dt1.Rows[0][0].ToString();
+                    string line = dt1.Rows[0][1].ToString();
+                    string thurst = dt1.Rows[0][2].ToString();
                     //string noise = dt1.Rows[0][4].ToString();
 
-                    newrow["Serial"] = serial;
+                    
                     newrow["Model"] = model;
-                    newrow["Lot"] = lot;
                     newrow["Line"] = line;
                     newrow["Thurst"] = thurst;
                     //newrow["Noise"] = noise;
                 }
+
+                newrow["Serial"] = serial;
+                newrow["Lot"] = lot;
 
                 // Add the row to the datatable
                 dtOverall.Rows.Add(newrow);
@@ -639,58 +638,5 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
             }
         }
-
-        #region PRINTTING LABEL TOOL
-
-        //string barcodeNumber = String.Empty;
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //    if (!System.IO.Directory.Exists(directory)) return;
-
-            //    string[] files = System.IO.Directory.GetFiles(directory, "*", System.IO.SearchOption.AllDirectories);
-
-            //    for (int i = 0; i < files.Length; i++)
-            //    {
-            //        string fname = System.IO.Path.GetFileName(files[i]);
-            //        if (VBStrings.Right(fname.ToLower(), 4) == ".txt")
-            //        {
-            //            string boxid = VBStrings.Left(fname, fname.Length - 4);
-
-            //            PrintLabelTool.printBarCode(boxid);
-            //            PrintLabelTool.printBarCode(boxid);
-            //            if (boxid != String.Empty) barcodeNumber = boxid;
-            //            pnlBarcode.Refresh();
-            //            System.IO.File.Delete(files[i]);
-            //            lblTime.Text = DateTime.Now.ToString();
-            //        }
-            //        else if (VBStrings.Right(fname.ToLower(), 4) == ".bmp")
-            //        {
-            //            string datecdFile = files[i];
-
-            //            PrintLabelTool.printBitmap(datecdFile);
-            //            PrintLabelTool.printBitmap(datecdFile);
-            //            System.IO.File.Delete(files[i]);
-            //        }
-            //    }
-        }
-
-        private void pnlBarcode_Paint(object sender, PaintEventArgs e)
-        {
-            //    DotNetBarcode barCode = new DotNetBarcode();
-            //    Single x1;
-            //    Single y1;
-            //    Single x2;
-            //    Single y2;
-            //    x1 = 0;
-            //    y1 = 0;
-            //    x2 = pnlBarcode.Size.Width;
-            //    y2 = pnlBarcode.Size.Height;
-            //    barCode.Type = DotNetBarcode.Types.Code39;
-
-            //    if (barcodeNumber != String.Empty)
-            //        barCode.WriteBar(barcodeNumber, x1, y1, x2, y2, e.Graphics);
-        }
-        #endregion
-    }
+    }   
 }
