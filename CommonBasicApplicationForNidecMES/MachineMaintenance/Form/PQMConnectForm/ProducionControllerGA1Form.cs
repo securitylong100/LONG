@@ -355,7 +355,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 };
 
                 ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionINPUTCbm(), dgvVo, connection);
-                ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), dgvVo, connectionmes);
+                ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), new ProductionControllerGA1Vo()
+                {
+                    TableName = tablename,
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    ProcessCode = cmb_process.Text,
+                    DateFrom = DateTime.Parse(dtp_from.Text),
+                    DateTo = DateTime.Parse(dtp_to.Text),
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                    change = true,
+                }, connectionmes);
+                ProductionControllerGA1Vo ngThurstVo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), new ProductionControllerGA1Vo()
+                {
+                    TableName = tablename,
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    ProcessCode = cmb_process.Text,
+                    DateFrom = DateTime.Parse(dtp_from.Text),
+                    DateTo = DateTime.Parse(dtp_to.Text),
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                    change = false,
+                }, connectionmes);
                 var distinctProcess = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row.Field<string>("process")).Distinct();
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Model");
@@ -368,6 +389,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dt.Columns.Add("RateNG_Frame");
                 dt.Columns.Add("RateNG_Gear");
                 dt.Columns.Add("RateNG_Motor");
+                dt.Columns.Add("MC_THUCHK");
                 foreach (var a in distinctProcess)
                 {
                     dt.Columns.Add(a.ToString());
@@ -388,21 +410,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         dr[1] = info[0]["line"].ToString();
                         dr[2] = info[0]["times"].ToString();
                         int j = 0;
-                        for (int i = 0; i < dt.Columns.Count - 10; i++)
+                        for (int i = 0; i < dt.Columns.Count - 11; i++)
                         {
                             if (j < inspectdata.Count)
                             {
-                                if (dt.Columns[i + 10].ColumnName == inspectdata[j]["process"].ToString())
+                                if (dt.Columns[i + 11].ColumnName == inspectdata[j]["process"].ToString())
                                 {
-                                    dr[i + 10] = inspectdata[j]["inspectdata"].ToString();
+                                    dr[i + 11] = inspectdata[j]["inspectdata"].ToString();
                                     j++;
                                 }
                                 else
                                 {
-                                    dr[i + 10] = "0";
+                                    dr[i + 11] = "0";
                                 }
                             }
-                            else dr[i + 10] = "0";
+                            else dr[i + 11] = "0";
                         }
                         dt.Rows.Add(dr);
                     }
@@ -410,7 +432,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 //sum hang cuoi
                 DataRow dr1 = dt.NewRow();
-                for (int i = 10; i < dt.Columns.Count; i++)
+                for (int i = 11; i < dt.Columns.Count; i++)
                 {
                     double sum = 0;
                     for (int j = 0; j < dt.Rows.Count; j++)
@@ -432,7 +454,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     double totalNGMoTor = 0;
                     double rateNGMotor = 0;
                     double outputRow = 0;
-                    for (int t = 0; t < outputvo.dt.Rows.Count; t++)
+                    for (int t = 0; t < outputvo.dt.Rows.Count; t++)//insert output motor tu mesdb
                     {
                         if (dgv.Rows[i].Cells["Date"].Value.ToString() == outputvo.dt.Rows[t]["times"].ToString())
                         {
@@ -443,7 +465,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             dgv.Rows[i].Cells["OUTPUT"].Value = outputRow;
                         }
                     }
-                    for (int j = 10; j < dgv.ColumnCount; j++)
+                    for (int t = 0; t < ngThurstVo.dt.Rows.Count; t++)//insert ngThurst tu mesdb
+                    {
+                        if (dgv.Rows[i].Cells["Date"].Value.ToString() == ngThurstVo.dt.Rows[t]["times"].ToString())
+                        {
+                            outputRow = double.Parse(ngThurstVo.dt.Rows[t]["count"].ToString());
+                            dgv.Rows[i].Cells["MC_THUCHK"].Value = outputRow;
+                        }
+                    }
+                    for (int j = 0; j < dgv.ColumnCount; j++)
                     {
                         if (dgv.Columns[j].HeaderText != "FA_IP" && dgv.Columns[j].HeaderText != "FA_OP" && dgv.Columns[j].HeaderText != "GC_IP" && dgv.Columns[j].HeaderText != "GC_OP" && dgv.Columns[j].HeaderText != "MC_IP" && dgv.Columns[j].HeaderText != "OUTPUT")
                         {

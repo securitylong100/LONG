@@ -21,8 +21,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             //string sqlChung = " times,count(*)  from (select a90_barcode, a90_date+a90_time datetimes from t_checkpusha90 where a90_thurst_status = 'OK' and  a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto) wl where datetimes >= ";
 
-            string sqlChung = " times,count(*)  from (select distinct a90_barcode,max(a90_date+a90_time) datetimes,a90_thurst_status from t_checkpusha90 where a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto and a90_line = :line group by a90_barcode,a90_thurst_status order by datetimes) tbl where a90_thurst_status = 'OK' and  datetimes >= ";
+            string sqlChung = " times,count(*)  from (select a.a90_barcode,a.datetimes,a.a90_thurst_status from (select row_number() over(partition by a90_barcode order by a90_date+a90_time) id, a90_barcode,a90_date+a90_time datetimes,a90_thurst_status from t_checkpusha90 where a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto and a90_line = :line order by a90_barcode,datetimes) a,(select max(id) id,a90_barcode from (select row_number() over(partition by a90_barcode order by a90_date+a90_time) id, a90_barcode,a90_date+a90_time datetimes,a90_thurst_status from t_checkpusha90 where a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto and a90_line = :line order by a90_barcode,datetimes) b group by a90_barcode) b where a.id = b.id and a.a90_barcode = b.a90_barcode ";
             sqlParameter.AddParameter("line", inVo.LineCode);
+            if (inVo.change) { sqlChung += " and a.a90_thurst_status = 'OK' "; }
+            else { sqlChung += " and a.a90_thurst_status = 'NG' "; }
+            sqlChung += ") tbl where datetimes >= ";
 
             sql.Append(@"select '01:00:00' " + sqlChung + " '" + inVo.Date + " 00:00:01' and datetimes <= '" + inVo.Date + " 01:00:00'");
             sql.Append(" union ");

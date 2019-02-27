@@ -344,7 +344,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(347, 41);
+            this.dgv.Size = new System.Drawing.Size(400, 50);
             this.dgv.TabIndex = 9;
             this.dgv.Visible = false;
             // 
