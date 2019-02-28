@@ -164,6 +164,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 pnlThurst.BackgroundImage = Properties.Resources.NoDaTa;
                 pnlNoise.BackgroundImageLayout = ImageLayout.Zoom;
                 pnlNoise.BackgroundImage = Properties.Resources.NoDaTa;
+                txt_barcode.ReadOnly = true;
+                txt_barcode.BackColor = Color.Red;
                 result = false;
             }
             return result;
