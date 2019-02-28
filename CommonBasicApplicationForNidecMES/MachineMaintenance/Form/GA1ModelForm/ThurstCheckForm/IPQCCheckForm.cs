@@ -102,7 +102,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                         result = true;
 
-                        txt_barcode.SelectAll();
+                        txt_barcode.ResetText();
                         break;
                     case "NG":
                         pnlThurst.BackgroundImageLayout = ImageLayout.Zoom;
@@ -135,7 +135,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                         result = true;
 
-                        txt_barcode.SelectAll();
+                        txt_barcode.ResetText();
                         break;
                     case "NG":
                         pnlNoise.BackgroundImageLayout = ImageLayout.Zoom;
