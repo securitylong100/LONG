@@ -507,6 +507,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     dgv["RateNG_Motor", i].Value = rateNGMotor;
                     dgv["Total_NG_Motor", i].Value = totalNGMoTor;
                 }
+                double sumThurst = 0;
+                for (int j = 0; j < dt.Rows.Count; j++)
+                {
+                    if (j < dt.Rows.Count - 1)
+                        sumThurst += double.Parse(dgv.Rows[j].Cells["MC_THUCHK"].Value.ToString());
+                    else if (j == dt.Rows.Count - 1)
+                        dgv.Rows[j].Cells["MC_THUCHK"].Value = sumThurst;
+                }
             }
             catch (Framework.ApplicationException exception)
             {

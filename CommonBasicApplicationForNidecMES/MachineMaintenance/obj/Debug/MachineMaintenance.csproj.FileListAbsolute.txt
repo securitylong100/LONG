@@ -375,7 +375,6 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShippingForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShowCheckForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NoiseCheckForm.resources
-D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.OQCCheckForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ThurstCheckForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddJigRepairInformationForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.JigRepairInformationForm.resources
@@ -436,6 +435,7 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\vi\MachineMaintenance.resources.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.dll
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.pdb
-D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShippingForm.resources
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.IPQCCheckForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.IPQCCheckForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
