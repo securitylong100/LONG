@@ -258,6 +258,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 dtOverall.AcceptChanges();
                 //dgvProductSerial.Rows.Clear();
+                limitOkChange();
                 txtProduct.Focus();
                 //defineDataTable(ref dtOverall);
                 updateDataGripViewsSub(dtOverall, ref dgvProductSerial);

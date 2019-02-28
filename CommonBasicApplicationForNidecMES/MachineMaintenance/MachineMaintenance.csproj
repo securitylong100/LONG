@@ -780,11 +780,11 @@
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.Designer.cs">
       <DependentUpon>NoiseCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.cs">
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.Designer.cs">
-      <DependentUpon>OQCCheckForm.cs</DependentUpon>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.Designer.cs">
+      <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.cs">
       <SubType>Form</SubType>
@@ -1117,8 +1117,8 @@
     <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.resx">
       <DependentUpon>NoiseCheckForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.resx">
-      <DependentUpon>OQCCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.resx">
+      <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.resx">
       <DependentUpon>ThurstCheckForm.cs</DependentUpon>
@@ -1336,6 +1336,9 @@
     <Content Include="Images\NG.jpg" />
     <Content Include="Images\NoDaTa.jpg" />
     <Content Include="Images\ok.jpg" />
+    <None Include="Resources\STANDBY.bmp" />
+    <None Include="Resources\OK_BEAR.png" />
+    <None Include="Resources\NG_BEAR.png" />
     <None Include="Resources\Capture.JPG" />
   </ItemGroup>
   <ItemGroup>

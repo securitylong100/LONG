@@ -337,7 +337,6 @@ D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj
 D:\GIT_HUB\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.pdb
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShowCheckForm.resources
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NoiseCheckForm.resources
-D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.OQCCheckForm.resources
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ThurstCheckForm.resources
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ProducionControllerGA1Form.resources
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.AddProcessWForm.resources
@@ -439,3 +438,4 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.pdb
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\MachineMaintenance.csprojResolveAssemblyReference.cache
 D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShippingForm.resources
+D:\NIDEC\COMMON\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.IPQCCheckForm.resources

@@ -30,8 +30,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("a90_barcode", inVo.A90Barcode);
             sqlParameter.AddParameter("a90_thurst_status", inVo.A90ThurstStatus);
             sqlParameter.AddParameter("a90_shipping", inVo.A90Shipping);
-            sqlParameter.AddParameter("a90_date", inVo.Date);
-            sqlParameter.AddParameter("a90_time", inVo.Time);
+            //sqlParameter.AddParameter("a90_date", inVo.Date);
+            //sqlParameter.AddParameter("a90_time", inVo.Time);
             sqlParameter.AddParameter("a90_user_cd", inVo.RegistrationUserCode);
            // sqlParameter.AddParameter("registration_date_time", inVo.RegistrationDateTime);
             sqlParameter.AddParameter("a90_factory", inVo.FactoryCode);

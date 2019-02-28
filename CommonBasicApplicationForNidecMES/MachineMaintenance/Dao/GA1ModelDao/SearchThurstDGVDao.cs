@@ -56,8 +56,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     A90Shipping = bool.Parse(dataReader["a90_shipping"].ToString()),
                     RegistrationUserCode = dataReader["a90_user_cd"].ToString(),
                     RegistrationDateTime = DateTime.Parse(dataReader["a90_datetime"].ToString()),
-
-
                 };
                 voList.add(outVo);
             }
