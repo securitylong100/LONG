@@ -22,15 +22,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             sql.Append("select count(*) datas from (");
             sql.Append("select * from (");
-            sql.Append("select a90_barcode,max(a90_date+a90_time) from t_checkpusha90 ");
+            sql.Append("select a90_barcode bar,max(a90_date+a90_time) from t_checkpusha90 ");
             sql.Append("where  a90_date+a90_time >= :datefrom and a90_date+a90_time <= :dateto ");
             if (!string.IsNullOrEmpty(inVo.LineCode))
             {
                 sql.Append(@" and a90_line  =:line");
                 sqlParameter.AddParameterString("line", inVo.LineCode);
             }
-            sql.Append(" group by a90_barcode) a left join t_checkpusha90 b on a.a90_barcode = b.a90_barcode and a.max = b.a90_date+b.a90_time where b.a90_barcode != '') tbl ");
-            sql.Append("where 1=1");
+            sql.Append(" group by a90_barcode) a left join t_checkpusha90 b on a.bar = b.a90_barcode and a.max = b.a90_date+b.a90_time ) tbl ");
+            sql.Append("where 1=1 and bar not like ''");
             if (inVo.change)
             {
                 sql.Append(@" and a90_thurst_status = 'OK' ");

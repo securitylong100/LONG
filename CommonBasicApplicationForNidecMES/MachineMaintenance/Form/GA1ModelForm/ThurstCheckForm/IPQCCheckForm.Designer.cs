@@ -31,6 +31,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCounter = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbl_model = new System.Windows.Forms.Label();
             this.cmb_model = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.lbl_barcode = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.pnlThurst = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlNoise = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblCounter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -110,6 +110,29 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 80);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblCounter
+            // 
+            this.lblCounter.AutoSize = true;
+            this.lblCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCounter.ForeColor = System.Drawing.Color.Blue;
+            this.lblCounter.Location = new System.Drawing.Point(63, 39);
+            this.lblCounter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblCounter.Name = "lblCounter";
+            this.lblCounter.Size = new System.Drawing.Size(25, 25);
+            this.lblCounter.TabIndex = 62;
+            this.lblCounter.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 39);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "Count";
             // 
             // lbl_model
             // 
@@ -217,7 +240,6 @@
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 55;
             this.label2.Text = "NOISE CHECK";
-            this.label2.Visible = false;
             // 
             // pnlNoise
             // 
@@ -226,30 +248,6 @@
             this.pnlNoise.Name = "pnlNoise";
             this.pnlNoise.Size = new System.Drawing.Size(285, 280);
             this.pnlNoise.TabIndex = 54;
-            this.pnlNoise.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 39);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Count";
-            // 
-            // lblCounter
-            // 
-            this.lblCounter.AutoSize = true;
-            this.lblCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCounter.ForeColor = System.Drawing.Color.Blue;
-            this.lblCounter.Location = new System.Drawing.Point(63, 39);
-            this.lblCounter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lblCounter.Name = "lblCounter";
-            this.lblCounter.Size = new System.Drawing.Size(25, 25);
-            this.lblCounter.TabIndex = 62;
-            this.lblCounter.Text = "0";
             // 
             // IPQCCheckForm
             // 

@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            string sqlChung = " times, model,line, process,sum(inspectdata) inspectdata from (select a.serno,a.model,a.line, a.process,sum(inspectdata) inspectdata,a.inspectdate from ldp_5sg201902 a left join ldp_5sg201902data b on a.serno = b.serno where model = :model and line = :line and a.inspectdate = b.inspectdate and a.inspectdate >= :datefrom and a.inspectdate <= :dateto group by a.serno,a.model,a.line, a.process,a.inspectdate order by a.inspectdate) tbl where inspectdate >= ";
+            string sqlChung = " times, model,line, process,sum(inspectdata) inspectdata from (select a.serno,a.model,a.line, a.process,sum(inspectdata) inspectdata,a.inspectdate from " + inVo.TableName + " a left join " + inVo.TableName + "data b on a.serno = b.serno where model = :model and line = :line and a.inspectdate = b.inspectdate and a.inspectdate >= :datefrom and a.inspectdate <= :dateto group by a.serno,a.model,a.line, a.process,a.inspectdate order by a.inspectdate) tbl where inspectdate >= ";
             sqlParameter.AddParameter("model", inVo.ModelCode);
             sqlParameter.AddParameter("line", inVo.LineCode);
 
