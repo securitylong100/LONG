@@ -45,6 +45,8 @@
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.lblNoise = new Com.Nidec.Mes.Framework.LabelCommon();
             this.groupBoxCommon3 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.timerOff = new System.Windows.Forms.Timer(this.components);
+            this.timerOffBarcodenull = new System.Windows.Forms.Timer(this.components);
             this.groupBoxCommon1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNoise)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -56,7 +58,8 @@
             this.txtBarcode.ControlId = null;
             this.txtBarcode.Font = new System.Drawing.Font("Arial", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBarcode.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.txtBarcode.Location = new System.Drawing.Point(132, 27);
+            this.txtBarcode.Location = new System.Drawing.Point(132, 23);
+            this.txtBarcode.MaxLength = 8;
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(212, 47);
             this.txtBarcode.TabIndex = 2;
@@ -79,7 +82,7 @@
             this.lbl.AutoSize = true;
             this.lbl.ControlId = null;
             this.lbl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(44, 47);
+            this.lbl.Location = new System.Drawing.Point(44, 40);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(72, 18);
             this.lbl.TabIndex = 4;
@@ -219,6 +222,16 @@
             this.groupBoxCommon3.TabIndex = 8;
             this.groupBoxCommon3.TabStop = false;
             // 
+            // timerOff
+            // 
+            this.timerOff.Interval = 5000;
+            this.timerOff.Tick += new System.EventHandler(this.timerOff_Tick);
+            // 
+            // timerOffBarcodenull
+            // 
+            this.timerOffBarcodenull.Interval = 5000;
+            this.timerOffBarcodenull.Tick += new System.EventHandler(this.timerOffBarcodenull_Tick);
+            // 
             // NoiseCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +244,7 @@
             this.Name = "NoiseCheckForm";
             this.Text = "Noise Check";
             this.TitleText = "FormCommon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NoiseCheckForm_FormClosing);
             this.Load += new System.EventHandler(this.NoiseCheckForm_Load);
             this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
             this.Controls.SetChildIndex(this.dgvNoise, 0);
@@ -262,5 +276,7 @@
         private Framework.LabelCommon labelCommon4;
         private Framework.LabelCommon labelCommon3;
         private Framework.LabelCommon lblNoise;
+        private System.Windows.Forms.Timer timerOff;
+        private System.Windows.Forms.Timer timerOffBarcodenull;
     }
 }

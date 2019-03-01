@@ -20,29 +20,49 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             InitializeComponent();
         }
-        
+
         private void NoiseCheckForm_Load(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            try
+            {
+                timer1.Enabled = true;
+                if (File.Exists(@"D:\Noise Check Barcode Data\login.txt"))
+                {
+                    using (var reader = new StreamReader(@"D:\Noise Check Barcode Data\login.txt"))
+                    {
+                        string path = reader.ReadLine();
+                        if (Directory.Exists(path))
+                        {
+                            txtBrowser.Text = path;
+                        }
+                    }
+                }
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
         }
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            try {
+            try
+            {
 
                 string file = DateTime.Now.ToString("yyyyMMdd") + "_InspectionResult.txt";
-                if (txtBarcode.Text.Length == 8)
+                if (File.Exists(txtBrowser.Text + "\\" + file))
                 {
-                    if (File.Exists(txtBrowser.Text + "\\" + file))
+                    string sourceFile = txtBrowser.Text + "\\" + file;
+                    string destFile = @"D:\Noise Check Barcode Data\" + "Barcode_" + txtBarcode.Text + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".txt";
+                    if (txtBarcode.Text.Length == 8)
                     {
                         Thread.Sleep(1000);
-                        string sourceFile = txtBrowser.Text + "\\" + file;
-                        string destFile = @"D:\Noise Check Barcode Data\" + "Barcode_" + txtBarcode.Text + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".txt";
                         System.IO.File.Move(sourceFile, destFile);
 
-                        if (File.Exists(@"D:\Noise Check Barcode Data\" + "Barcode_" + txtBarcode.Text + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".txt"))
+                        if (File.Exists(destFile))
                         {
                             DataTable dt = new DataTable();
-                            using (var reader = new StreamReader(@"D:\Noise Check Barcode Data\" + "Barcode_" + txtBarcode.Text + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".txt"))
+                            using (var reader = new StreamReader(destFile))
                             {
                                 string[] headers = reader.ReadLine().Split(',');
                                 foreach (string header in headers)
@@ -136,7 +156,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                     if (lblNoise.Text == "OK") { lblNoise.BackColor = System.Drawing.Color.Green; }
                                     else { lblNoise.BackColor = System.Drawing.Color.Red; }
                                 }
+                                timerOff.Enabled = true;
                             }
+                        }
+                    }
+                    else // barcode < 8 character
+                    {
+                        txtBarcode.BackColor = System.Drawing.Color.Red;
+                        System.IO.File.Move(sourceFile, destFile);
+                        if (File.Exists(destFile))
+                        {
+                            timerOffBarcodenull.Enabled = true;
                         }
                     }
                 }
@@ -146,6 +176,22 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 popUpMessage.ApplicationError(exception.GetMessageData(), Text);
                 logger.Error(exception.GetMessageData());
             }
+        }
+        private void timerOffBarcodenull_Tick(object sender, EventArgs e)
+        {
+            txtBarcode.BackColor = System.Drawing.Color.White;
+            timerOffBarcodenull.Enabled = false;
+        }
+        private void timerOff_Tick(object sender, EventArgs e)
+        {
+            lblThurst.Text = "";
+            lblThurst.BackColor = System.Drawing.Color.FromArgb(242, 247, 236);
+
+            lblNoise.Text = "";
+            lblNoise.BackColor = System.Drawing.Color.FromArgb(242, 247, 236);
+            DataTable dt = new DataTable();
+            dgvNoise.DataSource = dt;
+            timerOff.Enabled = false;
         }
         private string directorySave = "";
         private void btnBrowser_Click(object sender, EventArgs e)
@@ -159,5 +205,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 directorySave = txtBrowser.Text;
             }
         }
+
+        private void NoiseCheckForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
+            timerOff.Enabled = false;
+        }
+        
     }
 }
