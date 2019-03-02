@@ -26,7 +26,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             cmb_model.DisplayMember = "ModelCode";
             BindingSource b1 = new BindingSource(modelvolist.GetList(), null);
             cmb_model.DataSource = b1;
-            cmb_model.Text = "";
+            cmb_model.Text = "GA1";
         }
         private void IPQCCheckForm_Load(object sender, EventArgs e)
         {
@@ -85,7 +85,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 A90Model = cmb_model.Text
             };
 
-            //GA1ModelVo outVo = new GA1ModelVo()
             ValueObjectList<GA1ModelVo> outVo = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new SearchThurstDGVCbm(), inVo);
             
             bool result = false;
