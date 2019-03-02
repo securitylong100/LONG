@@ -17,8 +17,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //DataTable dtadd = new DataTable();
             GA1ModelVo inVo = (GA1ModelVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append("INSERT INTO t_product_serial(boxid, serialno, line, lot, thurst, model) " +
-                    "VALUES (:boxid, :serialno, :line, :lot, :thurst, :model)");
+            sql.Append("INSERT INTO t_product_serial(boxid, serialno, line, lot, thurst, noise model) " +
+                    "VALUES (:boxid, :serialno, :line, :lot, :thurst, :noise, :model)");
 
             //dtadd = inVo.dt;
 
@@ -33,6 +33,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("line", inVo.LineCode);
             sqlParameter.AddParameter("lot", inVo.Lot);
             sqlParameter.AddParameter("thurst", inVo.A90ThurstStatus);
+            sqlParameter.AddParameter("noise", inVo.A90NoiseStatus);
             sqlParameter.AddParameter("model", inVo.ModelCode);
 
             //execute SQL

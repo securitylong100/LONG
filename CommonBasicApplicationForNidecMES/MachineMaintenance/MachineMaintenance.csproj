@@ -236,7 +236,6 @@
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionLineCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionProcessCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionExportDataCbm.cs" />
-    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchNGNOICHKfromMesdbCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionoOutputMotorCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionInputByDateCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionOUTPUTCbm.cs" />
@@ -512,7 +511,6 @@
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionLineDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionProcessDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionExportDataDao.cs" />
-    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchNGNOICHKfromMesdbDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionoOutputMotorDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionInputByDateDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionOUTPUTDao.cs" />

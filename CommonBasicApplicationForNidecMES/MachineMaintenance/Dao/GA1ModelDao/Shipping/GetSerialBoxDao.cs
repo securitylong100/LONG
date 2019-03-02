@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("select serialno as Serial, line, model, lot, thurst from t_product_serial where 1 = 1");
+            sql.Append("select serialno as Serial, line, model, lot, thurst, noise from t_product_serial where 1 = 1");
 
             sql.Append(" and boxid >= :boxid");
             sqlParameter.AddParameterString("boxid", inVo.BoxID);
