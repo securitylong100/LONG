@@ -30,7 +30,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             selectdata();
             addButtonsToDataGridView(dgvBoxId);
-            ShowRowNumber(dgvBoxId);
+            //ShowRowNumber(dgvBoxId);
         }
 
         #region CLICK EVENT
@@ -164,8 +164,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         LineCode = dgvProductSerial["Line", i].Value.ToString(),
                         Lot = dgvProductSerial["Lot", i].Value.ToString(),
                         ModelCode = dgvProductSerial["Model", i].Value.ToString(),
-                        A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString()
-                        //A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
+                        A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString(),
+                        A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
                     });
                 }
 
@@ -287,11 +287,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new UpdateShipdateCbm(), new GA1ModelVo
                     {
                         BoxID = dgvBoxId["boxid", currentRow].Value.ToString(),
-                        ShipDate = DateTime.Parse(dgvBoxId["shipdate", currentRow].Value.ToString())
+                        ShipDate = shipdate
                     });
                     selectdata();
                 }
-                updateDataGripViewsSub(dt_temp, ref dgvProductSerial);
+                //updateDataGripViewsSub(dt_temp, ref dgvProductSerial);
             }
         }
 
