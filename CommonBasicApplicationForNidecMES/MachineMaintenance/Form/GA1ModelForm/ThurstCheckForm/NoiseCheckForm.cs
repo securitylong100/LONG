@@ -48,7 +48,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             try
             {
-
                 string file = DateTime.Now.ToString("yyyyMMdd") + "_InspectionResult.txt";
                 if (File.Exists(txtBrowser.Text + "\\" + file))
                 {
@@ -79,12 +78,20 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                     DataRow dr = dt.NewRow();
                                     for (int i = 0; i < headers.Length; i++)
                                     {
-                                        dr[i] = rows[i];
-                                        string datetimes = "";
+                                        dr[i] = rows[i].Trim();
+
+                                        if (i == 2)//cot line
+                                        {
+                                            dr[i] = "L0" + rows[i].Trim();//neu line < 10
+                                            if (rows[i].Trim().Length > 1)//neu line >= 10
+                                            {
+                                                dr[i] = "L" + rows[i].Trim();
+                                            }
+                                        }
+
                                         if (i == 5)
                                         {
-                                            datetimes = rows[i].Substring(1, 4) + "/" + rows[i].Substring(5, 2) + "/" + rows[i].Substring(7, 2) + " " + rows[i].Substring(9, 2) + ":" + rows[i].Substring(11, 2) + ":" + rows[i].Substring(13, 2);
-                                            dr[i] = datetimes;
+                                            dr[i] = rows[i].Substring(1, 4) + "/" + rows[i].Substring(5, 2) + "/" + rows[i].Substring(7, 2) + " " + rows[i].Substring(9, 2) + ":" + rows[i].Substring(11, 2) + ":" + rows[i].Substring(13, 2);
                                         }
                                     }
                                     dr["barcode"] = txtBarcode.Text;
@@ -138,12 +145,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                     {
                                         A90Barcode = txtBarcode.Text,
                                     });
-                                if (ThurtVo.GetList().Count == 0)
+                                if (ThurtVo.GetList().Count == 0)//neu barcode no data o thurst
                                 {
                                     lblThurst.Text = "No data";
-                                    lblThurst.BackColor = System.Drawing.Color.FromArgb(242, 247, 236);
+                                    lblThurst.BackColor = System.Drawing.Color.Yellow;
                                 }
-                                else
+                                else //neu barcode CO data o thurst
                                 {
                                     lblThurst.Text = ThurtVo.GetList()[0].A90ThurstStatus;
                                     if (lblThurst.Text == "OK") { lblThurst.BackColor = System.Drawing.Color.Green; }
@@ -152,7 +159,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 if (addNoiseVo.AffectedCount == 1)
                                 {
                                     txtBarcode.Clear();
-                                    lblNoise.Text = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString().Substring(1, 2);
+                                    lblNoise.Text = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString().Substring(0, 2);
                                     if (lblNoise.Text == "OK") { lblNoise.BackColor = System.Drawing.Color.Green; }
                                     else { lblNoise.BackColor = System.Drawing.Color.Red; }
                                 }
@@ -210,7 +217,56 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             timer1.Enabled = false;
             timerOff.Enabled = false;
+            timerOffBarcodenull.Enabled = false;
         }
-        
+        bool sound;
+        [System.Runtime.InteropServices.DllImport("winmm.dll")]
+        private static extern int mciSendString(String command,
+
+           StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
+        private string aliasName = "MediaFile";
+        private void soundAlarm()
+        {
+            string currentDir = System.Environment.CurrentDirectory;
+            string fileName = currentDir + @"\warning.mp3";
+            string cmd;
+
+            if (sound)
+            {
+                cmd = "stop " + aliasName;
+                mciSendString(cmd, null, 0, IntPtr.Zero);
+                cmd = "close " + aliasName;
+                mciSendString(cmd, null, 0, IntPtr.Zero);
+                sound = false;
+            }
+
+            cmd = "open \"" + fileName + "\" type mpegvideo alias " + aliasName;
+            if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0) return;
+            cmd = "play " + aliasName;
+            mciSendString(cmd, null, 0, IntPtr.Zero);
+            sound = true;
+        }
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBarcode.Text.Length == 8)
+            {
+                ValueObjectList<GA1ModelVo> ThurtVo = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new SearchThusrtByBarcodeCbm(),
+                                    new GA1ModelVo()
+                                    {
+                                        A90Barcode = txtBarcode.Text,
+                                    });
+                if (ThurtVo.GetList().Count == 0)
+                {
+                    lblThurst.Text = "No data";
+                    lblThurst.BackColor = System.Drawing.Color.Yellow;
+                }
+                else
+                {
+                    lblThurst.Text = ThurtVo.GetList()[0].A90ThurstStatus;
+                    if (lblThurst.Text == "OK") { lblThurst.BackColor = System.Drawing.Color.Green; }
+                    else { lblThurst.BackColor = System.Drawing.Color.Red; }
+                }
+            }
+        }
     }
 }

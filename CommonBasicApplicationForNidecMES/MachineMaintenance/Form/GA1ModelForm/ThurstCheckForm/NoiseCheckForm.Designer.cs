@@ -63,6 +63,7 @@
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(212, 47);
             this.txtBarcode.TabIndex = 2;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // groupBoxCommon1
             // 
