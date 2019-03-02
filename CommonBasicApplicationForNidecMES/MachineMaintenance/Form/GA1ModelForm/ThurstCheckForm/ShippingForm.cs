@@ -12,7 +12,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
     public partial class ShippingForm : FormCommonNCVP
     {
-        string directory = @"Z:\(01)Motor\(00)Public\11-Suka-Sugawara\LD model\printer\print\";
+        string directory = @"\\192.168.145.7\ncvp\print\";
 
         public ShippingForm()
         {
@@ -25,29 +25,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         DataGridViewButtonColumn editShipDate;
         DataTable dtOverall;
         bool res;
-
-        // Sub procedure: Add button to datagridview
-        private void addButtonsToDataGridView(DataGridView dgv)
-        {
-            // Set OPEN button for every user
-            openBoxId = new DataGridViewButtonColumn();
-            openBoxId.HeaderText = "Open";
-            openBoxId.Text = "Open";
-            openBoxId.UseColumnTextForButtonValue = true;
-            openBoxId.Width = 80;
-            dgv.Columns.Add(openBoxId);
-
-            // Set SHIPPING button only for the super user
-            if (txtUser.Text == "User_9")
-            {
-                editShipDate = new DataGridViewButtonColumn();
-                editShipDate.HeaderText = "Ship";
-                editShipDate.Text = "Ship";
-                editShipDate.UseColumnTextForButtonValue = true;
-                editShipDate.Width = 80;
-                dgv.Columns.Add(editShipDate);
-            }
-        }
 
         private void ShippingForm_Load(object sender, EventArgs e)
         {
@@ -320,19 +297,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void btnDeleteBoxId_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Do you want to delete this box ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult res = MessageBox.Show("Do you want to delete this box ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (res == DialogResult.Yes)
             {
-                GA1ModelVo deleteBox = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteBoxIDCbm(), new GA1ModelVo
+                DialogResult res1 = MessageBox.Show("Are you sure to delete this box ? Please click 'NO' if you are not sure!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (res1 == DialogResult.Yes)
                 {
-                    BoxID = txtBoxId.Text
-                });
+                    GA1ModelVo deleteBox = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteBoxIDCbm(), new GA1ModelVo
+                    {
+                        BoxID = txtBoxId.Text
+                    });
 
-                GA1ModelVo delProduct = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteProductCbm(), new GA1ModelVo
-                {
-                    BoxID = txtBoxId.Text
-                });
-                MessageBox.Show("Delete successful!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GA1ModelVo delProduct = (GA1ModelVo)DefaultCbmInvoker.Invoke(new DeleteProductCbm(), new GA1ModelVo
+                    {
+                        BoxID = txtBoxId.Text
+                    });
+                    MessageBox.Show("Delete successful!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
         }
@@ -341,6 +322,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         #region VOID
 
+        // Sub procedure: Add button to datagridview
+        private void addButtonsToDataGridView(DataGridView dgv)
+        {
+            // Set OPEN button for every user
+            openBoxId = new DataGridViewButtonColumn();
+            openBoxId.HeaderText = "Open";
+            openBoxId.Text = "Open";
+            openBoxId.UseColumnTextForButtonValue = true;
+            openBoxId.Width = 80;
+            dgv.Columns.Add(openBoxId);
+
+            // Set SHIPPING button only for the super user
+            //if (txtUser.Text == "User_9")
+            //{
+            editShipDate = new DataGridViewButtonColumn();
+            editShipDate.HeaderText = "Ship";
+            editShipDate.Text = "Ship";
+            editShipDate.UseColumnTextForButtonValue = true;
+            editShipDate.Width = 80;
+            dgv.Columns.Add(editShipDate);
+            //}
+        }
         private void selectdata()
         {
             GA1ModelVo getList = null;
@@ -425,10 +428,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     dgv["Thurst", i].Style.BackColor = Color.Red;
                 }
-                //if (dgv[4, i].Value.ToString() == "NG" || dgv[4, i].Value.ToString() == String.Empty)
-                //{
-                //    dgv[4, i].Style.BackColor = Color.Red;
-                //}
+                if (dgv["Noise", i].Value.ToString() == "NG" || dgv["Noise", i].Value.ToString() == String.Empty)
+                {
+                    dgv["Noise", i].Style.BackColor = Color.Red;
+                }
                 //if (dgv[5, i].Value.ToString() == "NG" || dgv[5, i].Value.ToString() == String.Empty)
                 //{
                 //    dgv[5, i].Style.BackColor = Color.Red;
@@ -511,7 +514,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dt.Columns.Add("Line", Type.GetType("System.String"));
             dt.Columns.Add("Lot", Type.GetType("System.String"));
             dt.Columns.Add("Thurst", Type.GetType("System.String"));
-            //dt.Columns.Add("Noise", Type.GetType("System.String"));
+            dt.Columns.Add("Noise", Type.GetType("System.String"));
         }
 
         public void ShowRowNumber(DataGridView dgv)
@@ -528,8 +531,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private int getOkCount(DataTable dt)
         {
             if (dt.Rows.Count <= 0) return 0;
-            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "Serial", "Thurst" });
-            DataRow[] dr = distinct.Select("Thurst = 'OK'"); //and Noise = 'OK'");
+            DataTable distinct = dt.DefaultView.ToTable(true, new string[] { "Serial", "Thurst", "Noise" });
+            DataRow[] dr = distinct.Select("Thurst = 'OK' and Noise = 'OK'");
             int dist = dr.Length;
             return dist;
         }
@@ -614,13 +617,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     string model = dt1.Rows[0][0].ToString();
                     string line = dt1.Rows[0][1].ToString();
                     string thurst = dt1.Rows[0][2].ToString();
-                    //string noise = dt1.Rows[0][4].ToString();
+                    string noise = dt1.Rows[0][3].ToString();
 
-                    
+
                     newrow["Model"] = model;
                     newrow["Line"] = line;
                     newrow["Thurst"] = thurst;
-                    //newrow["Noise"] = noise;
+                    newrow["Noise"] = noise;
                 }
 
                 newrow["Serial"] = serial;
@@ -639,5 +642,5 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
             }
         }
-    }   
+    }
 }
