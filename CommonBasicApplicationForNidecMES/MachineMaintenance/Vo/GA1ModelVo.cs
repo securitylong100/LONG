@@ -50,6 +50,35 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string STT { get; set; }
         public bool DaTa { get; set; }
 
+
+        //form noise a90
+        public string Noise_eq_id { get; set; }
+        public string Noise_model { get; set; }
+        public string Noise_line { get; set; }
+        public string Noise_serial_id { get; set; }
+        public string Noise_id { get; set; }
+        public DateTime Noise_date_check { get; set; }
+        public string Noise_judgment { get; set; }
+        public string Noise_l1_v_cw { get; set; }
+        public string Noise_l1_v_ccw { get; set; }
+        public string Noise_e1_v_cw { get; set; }
+        public string Noise_e2_v_cw { get; set; }
+        public string Noise_e3_v_cw { get; set; }
+        public string Noise_e4_v_cw { get; set; }
+        public string Noise_e5_v_cw { get; set; }
+        public string Noise_e1_v_ccw { get; set; }
+        public string Noise_e2_v_ccw { get; set; }
+        public string Noise_e3_v_ccw { get; set; }
+        public string Noise_e4_v_ccw { get; set; }
+        public string Noise_e5_v_ccw { get; set; }
+        public string Noise_barcode { get; set; }
+        public string Noise_registration_user_cd { get; set; }
+        public DateTime Noise_registration_date_time { get; set; }
+        public string Noise_factory_cd { get; set; }
+
+
+        //
+
         //common
         public string RegistrationUserCode { get; set; }
         public DateTime RegistrationDateTime { get; set; }

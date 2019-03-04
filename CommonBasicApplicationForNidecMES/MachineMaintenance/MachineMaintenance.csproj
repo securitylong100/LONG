@@ -173,8 +173,10 @@
     <Compile Include="Cbm\DrawCbm\GetDrawingModelCbm.cs" />
     <Compile Include="Cbm\DrawCbm\SearchDrawingCbm.cs" />
     <Compile Include="Cbm\DrawCbm\UpdateDrawingCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\AddGA1ModelNoiseCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\AddGA1ModelThurstCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\CheckIBarcodeDuplicateCbm.cs" />
+    <Compile Include="Cbm\GA1ModelCbm\SearchThusrtByBarcodeCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\AddProductCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\AddBoxIDCbm.cs" />
     <Compile Include="Cbm\GA1ModelCbm\Shipping\DeleteProductCbm.cs" />
@@ -233,6 +235,8 @@
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionModelCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionLineCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\GetProductionProcessCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionNGNOICHKCbm.cs" />
+    <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchQtyNOICHKfromMesdbCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionExportDataCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionoOutputMotorCbm.cs" />
     <Compile Include="Cbm\PQMConnectCbm\ProductionControllerGA1Cbm\SearchProductionInputByDateCbm.cs" />
@@ -446,8 +450,10 @@
     <Compile Include="Dao\DrawDao\GetDrawingModelDao.cs" />
     <Compile Include="Dao\DrawDao\SearchDrawingDao.cs" />
     <Compile Include="Dao\DrawDao\UpdateDrawingDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\AddGA1ModelNoiseDao.cs" />
     <Compile Include="Dao\GA1ModelDao\AddGA1ModelThurstDao.cs" />
     <Compile Include="Dao\GA1ModelDao\CheckIBarcodeDuplicateDao.cs" />
+    <Compile Include="Dao\GA1ModelDao\SearchThusrtByBarcodeDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\AddProductDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\AddBoxIDDao.cs" />
     <Compile Include="Dao\GA1ModelDao\Shipping\DeleteProductDao.cs" />
@@ -506,6 +512,8 @@
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionModelDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionLineDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\GetProductionProcessDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionNGNOICHKDao.cs" />
+    <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchQtyNOICHKfromMesdbDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionExportDataDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionoOutputMotorDao.cs" />
     <Compile Include="Dao\PQMConnectDao\ProductionControllerGA1Dao\SearchProductionInputByDateDao.cs" />
@@ -780,11 +788,11 @@
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.Designer.cs">
       <DependentUpon>NoiseCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.cs">
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.Designer.cs">
-      <DependentUpon>OQCCheckForm.cs</DependentUpon>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.Designer.cs">
+      <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.cs">
       <SubType>Form</SubType>
@@ -1129,8 +1137,8 @@
     <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\NoiseCheckForm.resx">
       <DependentUpon>NoiseCheckForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\OQCCheckForm.resx">
-      <DependentUpon>OQCCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.resx">
+      <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.resx">
       <DependentUpon>ThurstCheckForm.cs</DependentUpon>
@@ -1354,6 +1362,9 @@
     <Content Include="Images\NG.jpg" />
     <Content Include="Images\NoDaTa.jpg" />
     <Content Include="Images\ok.jpg" />
+    <None Include="Resources\STANDBY.bmp" />
+    <None Include="Resources\OK_BEAR.png" />
+    <None Include="Resources\NG_BEAR.png" />
     <None Include="Resources\Capture.JPG" />
   </ItemGroup>
   <ItemGroup>

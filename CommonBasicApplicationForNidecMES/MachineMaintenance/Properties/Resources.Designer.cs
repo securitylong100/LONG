@@ -428,6 +428,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap NG_BEAR {
+            get {
+                object obj = ResourceManager.GetObject("NG_BEAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap NoDaTa {
             get {
                 object obj = ResourceManager.GetObject("NoDaTa", resourceCulture);
@@ -448,9 +458,29 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap OK_BEAR {
+            get {
+                object obj = ResourceManager.GetObject("OK_BEAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap rejected {
             get {
                 object obj = ResourceManager.GetObject("rejected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap STANDBY {
+            get {
+                object obj = ResourceManager.GetObject("STANDBY", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

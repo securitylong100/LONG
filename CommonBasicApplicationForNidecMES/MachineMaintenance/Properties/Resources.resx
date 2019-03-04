@@ -130,12 +130,14 @@
   <data name="cpci00006" xml:space="preserve">
     <value>No data found!</value>
   </data>
-  <data name="cpci00001" xml:space="preserve">
-    <value>Do you want to issue below label?
-{0}</value>
-  </data>
   <data name="cpce00005" xml:space="preserve">
     <value>Split operation had already been done for the scanned lot.</value>
+  </data>
+  <data name="Capture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Capture.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OK_BEAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OK_BEAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mmcc00004" xml:space="preserve">
     <value>Do you want to delete : [{0}] ?</value>
@@ -143,8 +145,9 @@
   <data name="cpce00007" xml:space="preserve">
     <value>Please input [{0}]</value>
   </data>
-  <data name="approved" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\approved.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cpci00001" xml:space="preserve">
+    <value>Do you want to issue below label?
+{0}</value>
   </data>
   <data name="mmci00003" xml:space="preserve">
     <value>Record has been deleted successfully.</value>
@@ -172,6 +175,9 @@
   </data>
   <data name="mmce00001" xml:space="preserve">
     <value>Record is already registered</value>
+  </data>
+  <data name="NG_BEAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NG_BEAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ok.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -215,6 +221,9 @@
   <data name="cpce00004" xml:space="preserve">
     <value>Scanned tray count mismatch with registered lot data.</value>
   </data>
+  <data name="mmcc00006" xml:space="preserve">
+    <value>Data already exists [{0}]</value>
+  </data>
   <data name="rejected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\rejected.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -233,8 +242,8 @@
   <data name="cpce00006" xml:space="preserve">
     <value>Please select the record.</value>
   </data>
-  <data name="mmcc00006" xml:space="preserve">
-    <value>Data already exists [{0}]</value>
+  <data name="approved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\approved.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vnce00002" xml:space="preserve">
     <value>This record is waiting to confirm or added before</value>
@@ -255,7 +264,7 @@
     <value>Record is already registered
 [{0}]</value>
   </data>
-  <data name="Capture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Capture.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="STANDBY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STANDBY.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

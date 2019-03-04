@@ -32,181 +32,89 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lbl_model = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_timer = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.txt_barcode = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.lbl_timer = new System.Windows.Forms.Label();
-            this.cmb_model = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.lbl_barcode = new System.Windows.Forms.Label();
+            this.txtBarcode = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.txtBrowser = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.btnBrowser = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.dgvNoise = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pb_OK = new System.Windows.Forms.PictureBox();
-            this.pb_NG = new System.Windows.Forms.PictureBox();
-            this.lbl_status = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.dgv_thurst = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.col_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_line = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_thurst_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_noise_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_oqc_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_oqc_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_shipping = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.col_datatime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_OK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_NG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_thurst)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.lblThurst = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon4 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.lblNoise = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.groupBoxCommon3 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.timerOff = new System.Windows.Forms.Timer(this.components);
+            this.timerOffBarcodenull = new System.Windows.Forms.Timer(this.components);
+            this.groupBoxCommon1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoise)).BeginInit();
+            this.groupBoxCommon2.SuspendLayout();
+            this.groupBoxCommon3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_model
+            // txtBarcode
             // 
-            this.lbl_model.AutoSize = true;
-            this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_model.Location = new System.Drawing.Point(3, 5);
-            this.lbl_model.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lbl_model.Name = "lbl_model";
-            this.lbl_model.Size = new System.Drawing.Size(56, 20);
-            this.lbl_model.TabIndex = 3;
-            this.lbl_model.Text = "Model:";
+            this.txtBarcode.ControlId = null;
+            this.txtBarcode.Font = new System.Drawing.Font("Arial", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarcode.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.txtBarcode.Location = new System.Drawing.Point(132, 23);
+            this.txtBarcode.MaxLength = 8;
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(212, 47);
+            this.txtBarcode.TabIndex = 2;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
-            // label3
+            // groupBoxCommon1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "seconds";
+            this.groupBoxCommon1.ControlId = null;
+            this.groupBoxCommon1.Controls.Add(this.lbl);
+            this.groupBoxCommon1.Controls.Add(this.txtBarcode);
+            this.groupBoxCommon1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCommon1.Location = new System.Drawing.Point(0, 107);
+            this.groupBoxCommon1.Name = "groupBoxCommon1";
+            this.groupBoxCommon1.Size = new System.Drawing.Size(460, 101);
+            this.groupBoxCommon1.TabIndex = 4;
+            this.groupBoxCommon1.TabStop = false;
             // 
-            // txt_timer
+            // lbl
             // 
-            this.txt_timer.ControlId = null;
-            this.txt_timer.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timer.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.Numeric;
-            this.txt_timer.Location = new System.Drawing.Point(3, 3);
-            this.txt_timer.Name = "txt_timer";
-            this.txt_timer.Size = new System.Drawing.Size(48, 29);
-            this.txt_timer.TabIndex = 15;
-            this.txt_timer.Text = "5";
+            this.lbl.AutoSize = true;
+            this.lbl.ControlId = null;
+            this.lbl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Location = new System.Drawing.Point(44, 40);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(72, 18);
+            this.lbl.TabIndex = 4;
+            this.lbl.Text = "Barcode:";
             // 
-            // txt_barcode
+            // txtBrowser
             // 
-            this.txt_barcode.ControlId = null;
-            this.txt_barcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_barcode.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_barcode.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.txt_barcode.Location = new System.Drawing.Point(381, 3);
-            this.txt_barcode.MaxLength = 8;
-            this.txt_barcode.Name = "txt_barcode";
-            this.txt_barcode.Size = new System.Drawing.Size(217, 29);
-            this.txt_barcode.TabIndex = 13;
+            this.txtBrowser.ControlId = null;
+            this.txtBrowser.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrowser.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.txtBrowser.Location = new System.Drawing.Point(137, 24);
+            this.txtBrowser.Name = "txtBrowser";
+            this.txtBrowser.Size = new System.Drawing.Size(231, 21);
+            this.txtBrowser.TabIndex = 6;
             // 
-            // lbl_timer
+            // btnBrowser
             // 
-            this.lbl_timer.AutoSize = true;
-            this.lbl_timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_timer.Location = new System.Drawing.Point(3, 46);
-            this.lbl_timer.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lbl_timer.Name = "lbl_timer";
-            this.lbl_timer.Size = new System.Drawing.Size(52, 20);
-            this.lbl_timer.TabIndex = 10;
-            this.lbl_timer.Text = "Timer:";
+            this.btnBrowser.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBrowser.ControlId = null;
+            this.btnBrowser.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnBrowser.Location = new System.Drawing.Point(33, 21);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Size = new System.Drawing.Size(74, 27);
+            this.btnBrowser.TabIndex = 5;
+            this.btnBrowser.Text = "Browser";
+            this.btnBrowser.UseVisualStyleBackColor = false;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
-            // cmb_model
+            // dgvNoise
             // 
-            this.cmb_model.ControlId = null;
-            this.cmb_model.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmb_model.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_model.FormattingEnabled = true;
-            this.cmb_model.Location = new System.Drawing.Point(75, 3);
-            this.cmb_model.Name = "cmb_model";
-            this.cmb_model.Size = new System.Drawing.Size(220, 30);
-            this.cmb_model.TabIndex = 12;
-            // 
-            // lbl_barcode
-            // 
-            this.lbl_barcode.AutoSize = true;
-            this.lbl_barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_barcode.Location = new System.Drawing.Point(301, 5);
-            this.lbl_barcode.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.lbl_barcode.Name = "lbl_barcode";
-            this.lbl_barcode.Size = new System.Drawing.Size(73, 20);
-            this.lbl_barcode.TabIndex = 9;
-            this.lbl_barcode.Text = "Barcode:";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pb_OK
-            // 
-            this.pb_OK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb_OK.Image = global::Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources.ok;
-            this.pb_OK.Location = new System.Drawing.Point(0, 0);
-            this.pb_OK.Name = "pb_OK";
-            this.pb_OK.Size = new System.Drawing.Size(679, 349);
-            this.pb_OK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pb_OK.TabIndex = 5;
-            this.pb_OK.TabStop = false;
-            // 
-            // pb_NG
-            // 
-            this.pb_NG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb_NG.Image = global::Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources.NG;
-            this.pb_NG.Location = new System.Drawing.Point(0, 0);
-            this.pb_NG.Name = "pb_NG";
-            this.pb_NG.Size = new System.Drawing.Size(679, 349);
-            this.pb_NG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pb_NG.TabIndex = 6;
-            this.pb_NG.TabStop = false;
-            // 
-            // lbl_status
-            // 
-            this.lbl_status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lbl_status.AutoSize = true;
-            this.lbl_status.ControlId = null;
-            this.lbl_status.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_status.Location = new System.Drawing.Point(39, 120);
-            this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(513, 107);
-            this.lbl_status.TabIndex = 7;
-            this.lbl_status.Text = "CHECKED";
-            // 
-            // dgv_thurst
-            // 
-            this.dgv_thurst.AllowUserToAddRows = false;
-            this.dgv_thurst.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv_thurst.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvNoise.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,19 +122,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_thurst.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_thurst.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_model,
-            this.col_line,
-            this.col_barcode,
-            this.col_thurst_data,
-            this.col_noise_status,
-            this.col_oqc_status,
-            this.col_oqc_data,
-            this.col_shipping,
-            this.col_datatime,
-            this.col_user});
-            this.dgv_thurst.ControlId = null;
+            this.dgvNoise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvNoise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNoise.ControlId = null;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,290 +132,152 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_thurst.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_thurst.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_thurst.Location = new System.Drawing.Point(0, 0);
-            this.dgv_thurst.Name = "dgv_thurst";
+            this.dgvNoise.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvNoise.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvNoise.Location = new System.Drawing.Point(0, 340);
+            this.dgvNoise.Name = "dgvNoise";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_thurst.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_thurst.Size = new System.Drawing.Size(1284, 123);
-            this.dgv_thurst.TabIndex = 8;
+            this.dgvNoise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvNoise.RowHeadersVisible = false;
+            this.dgvNoise.Size = new System.Drawing.Size(460, 116);
+            this.dgvNoise.TabIndex = 5;
             // 
-            // col_model
+            // timer1
             // 
-            this.col_model.DataPropertyName = "A90Model";
-            this.col_model.HeaderText = "Model";
-            this.col_model.Name = "col_model";
-            this.col_model.Width = 65;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // col_line
+            // groupBoxCommon2
             // 
-            this.col_line.DataPropertyName = "A90Line";
-            this.col_line.HeaderText = "Line";
-            this.col_line.Name = "col_line";
-            this.col_line.Width = 56;
+            this.groupBoxCommon2.ControlId = null;
+            this.groupBoxCommon2.Controls.Add(this.lblThurst);
+            this.groupBoxCommon2.Controls.Add(this.labelCommon4);
+            this.groupBoxCommon2.Controls.Add(this.labelCommon3);
+            this.groupBoxCommon2.Controls.Add(this.lblNoise);
+            this.groupBoxCommon2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCommon2.Location = new System.Drawing.Point(0, 208);
+            this.groupBoxCommon2.Name = "groupBoxCommon2";
+            this.groupBoxCommon2.Size = new System.Drawing.Size(460, 63);
+            this.groupBoxCommon2.TabIndex = 7;
+            this.groupBoxCommon2.TabStop = false;
             // 
-            // col_barcode
+            // lblThurst
             // 
-            this.col_barcode.DataPropertyName = "A90Barcode";
-            this.col_barcode.HeaderText = "Barcode";
-            this.col_barcode.Name = "col_barcode";
-            this.col_barcode.Width = 78;
+            this.lblThurst.AutoSize = true;
+            this.lblThurst.ControlId = null;
+            this.lblThurst.Font = new System.Drawing.Font("Arial", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThurst.Location = new System.Drawing.Point(316, 16);
+            this.lblThurst.Name = "lblThurst";
+            this.lblThurst.Size = new System.Drawing.Size(0, 40);
+            this.lblThurst.TabIndex = 7;
             // 
-            // col_thurst_data
+            // labelCommon4
             // 
-            this.col_thurst_data.DataPropertyName = "A90ThurstStatus";
-            this.col_thurst_data.HeaderText = "Thurst Status";
-            this.col_thurst_data.Name = "col_thurst_data";
-            this.col_thurst_data.Width = 105;
+            this.labelCommon4.AutoSize = true;
+            this.labelCommon4.ControlId = null;
+            this.labelCommon4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon4.Location = new System.Drawing.Point(232, 17);
+            this.labelCommon4.Name = "labelCommon4";
+            this.labelCommon4.Size = new System.Drawing.Size(83, 15);
+            this.labelCommon4.TabIndex = 6;
+            this.labelCommon4.Text = "Thurst Check:";
             // 
-            // col_noise_status
+            // labelCommon3
             // 
-            this.col_noise_status.DataPropertyName = "A90NoiseStatus";
-            this.col_noise_status.HeaderText = "Noise Status";
-            this.col_noise_status.Name = "col_noise_status";
-            this.col_noise_status.Width = 103;
+            this.labelCommon3.AutoSize = true;
+            this.labelCommon3.ControlId = null;
+            this.labelCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommon3.Location = new System.Drawing.Point(6, 16);
+            this.labelCommon3.Name = "labelCommon3";
+            this.labelCommon3.Size = new System.Drawing.Size(81, 15);
+            this.labelCommon3.TabIndex = 5;
+            this.labelCommon3.Text = "Noise Check:";
             // 
-            // col_oqc_status
+            // lblNoise
             // 
-            this.col_oqc_status.DataPropertyName = "A90OQCStatus";
-            this.col_oqc_status.HeaderText = "OQC Status";
-            this.col_oqc_status.Name = "col_oqc_status";
-            this.col_oqc_status.Width = 97;
+            this.lblNoise.AutoSize = true;
+            this.lblNoise.ControlId = null;
+            this.lblNoise.Font = new System.Drawing.Font("Arial", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoise.Location = new System.Drawing.Point(90, 16);
+            this.lblNoise.Name = "lblNoise";
+            this.lblNoise.Size = new System.Drawing.Size(0, 40);
+            this.lblNoise.TabIndex = 0;
             // 
-            // col_oqc_data
+            // groupBoxCommon3
             // 
-            this.col_oqc_data.DataPropertyName = "A90OQCData";
-            this.col_oqc_data.HeaderText = "OQC Data";
-            this.col_oqc_data.Name = "col_oqc_data";
-            this.col_oqc_data.Width = 88;
+            this.groupBoxCommon3.ControlId = null;
+            this.groupBoxCommon3.Controls.Add(this.btnBrowser);
+            this.groupBoxCommon3.Controls.Add(this.txtBrowser);
+            this.groupBoxCommon3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBoxCommon3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCommon3.Location = new System.Drawing.Point(0, 277);
+            this.groupBoxCommon3.Name = "groupBoxCommon3";
+            this.groupBoxCommon3.Size = new System.Drawing.Size(460, 63);
+            this.groupBoxCommon3.TabIndex = 8;
+            this.groupBoxCommon3.TabStop = false;
             // 
-            // col_shipping
+            // timerOff
             // 
-            this.col_shipping.DataPropertyName = "A90Shipping";
-            this.col_shipping.HeaderText = "Shipping Status";
-            this.col_shipping.Name = "col_shipping";
-            this.col_shipping.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_shipping.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_shipping.Width = 119;
+            this.timerOff.Interval = 5000;
+            this.timerOff.Tick += new System.EventHandler(this.timerOff_Tick);
             // 
-            // col_datatime
+            // timerOffBarcodenull
             // 
-            this.col_datatime.DataPropertyName = "RegistrationDateTime";
-            this.col_datatime.HeaderText = "Date Time";
-            this.col_datatime.Name = "col_datatime";
-            this.col_datatime.Width = 89;
-            // 
-            // col_user
-            // 
-            this.col_user.DataPropertyName = "RegistrationUserCode";
-            this.col_user.HeaderText = "User Name";
-            this.col_user.Name = "col_user";
-            this.col_user.Width = 96;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Com.Nidec.Mes.Common.Basic.MachineMaintenance.Properties.Resources.Capture;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(679, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 107);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(1284, 563);
-            this.splitContainer1.SplitterDistance = 83;
-            this.splitContainer1.TabIndex = 10;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(1284, 83);
-            this.splitContainer2.SplitterDistance = 601;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.14642F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.77038F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.47754F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.93843F));
-            this.tableLayoutPanel1.Controls.Add(this.lbl_timer, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txt_barcode, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmb_model, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_barcode, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_model, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(601, 83);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txt_timer);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(75, 44);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 36);
-            this.panel2.TabIndex = 14;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.splitContainer4);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.dgv_thurst);
-            this.splitContainer3.Size = new System.Drawing.Size(1284, 476);
-            this.splitContainer3.SplitterDistance = 349;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.panel1);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.pb_OK);
-            this.splitContainer4.Panel2.Controls.Add(this.pb_NG);
-            this.splitContainer4.Size = new System.Drawing.Size(1284, 349);
-            this.splitContainer4.SplitterDistance = 601;
-            this.splitContainer4.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbl_status);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 349);
-            this.panel1.TabIndex = 0;
+            this.timerOffBarcodenull.Interval = 5000;
+            this.timerOffBarcodenull.Tick += new System.EventHandler(this.timerOffBarcodenull_Tick);
             // 
             // NoiseCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 670);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(460, 456);
+            this.Controls.Add(this.groupBoxCommon3);
+            this.Controls.Add(this.groupBoxCommon2);
+            this.Controls.Add(this.dgvNoise);
+            this.Controls.Add(this.groupBoxCommon1);
             this.Name = "NoiseCheckForm";
-            this.Text = "ShippingCheckForm";
+            this.Text = "Noise Check";
             this.TitleText = "FormCommon";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NoiseCheckForm_FormClosing);
             this.Load += new System.EventHandler(this.NoiseCheckForm_Load);
-            this.Controls.SetChildIndex(this.splitContainer1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_OK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_NG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_thurst)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
+            this.Controls.SetChildIndex(this.dgvNoise, 0);
+            this.Controls.SetChildIndex(this.groupBoxCommon2, 0);
+            this.Controls.SetChildIndex(this.groupBoxCommon3, 0);
+            this.groupBoxCommon1.ResumeLayout(false);
+            this.groupBoxCommon1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoise)).EndInit();
+            this.groupBoxCommon2.ResumeLayout(false);
+            this.groupBoxCommon2.PerformLayout();
+            this.groupBoxCommon3.ResumeLayout(false);
+            this.groupBoxCommon3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lbl_model;
-        private System.Windows.Forms.Label lbl_barcode;
-        private System.Windows.Forms.Label lbl_timer;
+
+        private Framework.TextBoxCommon txtBarcode;
+        private Framework.GroupBoxCommon groupBoxCommon1;
+        private Framework.TextBoxCommon txtBrowser;
+        private Framework.ButtonCommon btnBrowser;
+        private Framework.LabelCommon lbl;
+        private Framework.DataGridViewCommon dgvNoise;
         private System.Windows.Forms.Timer timer1;
-        private Framework.ComboBoxCommon cmb_model;
-        private Framework.TextBoxCommon txt_barcode;
-        private System.Windows.Forms.Label label3;
-        private Framework.TextBoxCommon txt_timer;
-        private System.Windows.Forms.PictureBox pb_OK;
-        private System.Windows.Forms.PictureBox pb_NG;
-        private Framework.LabelCommon lbl_status;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Framework.DataGridViewCommon dgv_thurst;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_line;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_barcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_thurst_data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_noise_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_oqc_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_oqc_data;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn col_shipping;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_datatime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_user;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.Panel panel1;
+        private Framework.GroupBoxCommon groupBoxCommon2;
+        private Framework.GroupBoxCommon groupBoxCommon3;
+        private Framework.LabelCommon lblThurst;
+        private Framework.LabelCommon labelCommon4;
+        private Framework.LabelCommon labelCommon3;
+        private Framework.LabelCommon lblNoise;
+        private System.Windows.Forms.Timer timerOff;
+        private System.Windows.Forms.Timer timerOffBarcodenull;
     }
 }

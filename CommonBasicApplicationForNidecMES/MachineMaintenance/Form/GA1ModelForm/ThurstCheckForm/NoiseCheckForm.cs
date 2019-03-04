@@ -8,7 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Cbm;
 using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
+using System.IO;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
+using System.Threading;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
@@ -17,148 +19,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         public NoiseCheckForm()
         {
             InitializeComponent();
-            dgv_thurst.AutoGenerateColumns = false;
         }
-        void callModel()
-        {
-            ValueObjectList<ModelVo> modelvolist = (ValueObjectList<ModelVo>)DefaultCbmInvoker.Invoke(new GetModelCbm(), new ModelVo());
-            cmb_model.DisplayMember = "ModelCode";
-            BindingSource b1 = new BindingSource(modelvolist.GetList(), null);
-            cmb_model.DataSource = b1;
-            cmb_model.Text = "";
-        }
-       
 
         private void NoiseCheckForm_Load(object sender, EventArgs e)
         {
-            callModel();
-            txt_barcode.SelectNextControl(txt_barcode, true, false, true, true);
-        }
-
-       
-        bool Checkdata()
-        {
-            if (cmb_model.SelectedItem == null)
-            {
-                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lbl_model.Text);
-                popUpMessage.Warning(messageData, Text);
-                cmb_model.Focus();
-                return false;
-            }
-            
-            if (txt_barcode.Text == "")
-            {
-                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lbl_barcode.Text);
-                popUpMessage.Warning(messageData, Text);
-                txt_barcode.Focus();
-                return false;
-            }
-            return true;
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Interval = int.Parse(txt_timer.Text) * 1000;
-            lbl_status.Text = "WAITING";
-            lbl_status.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            pb_OK.Visible = false;
-            pb_NG.Visible = false;
-            timer1.Enabled = false;
-        }
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            string check = "";
-            if (Checkdata())
-            {
-                GA1ModelVo outVo = new GA1ModelVo();
-                GA1ModelVo inVo = new GA1ModelVo();
-                GA1ModelVo checkVo = new GA1ModelVo();
-                if (e.Button == MouseButtons.Right)
-                {
-
-                    inVo = new GA1ModelVo()
-                    {
-                        A90Model = ((ModelVo)this.cmb_model.SelectedItem).ModelCode,
-                        A90Barcode = txt_barcode.Text,
-                        A90Shipping = false,
-                        RegistrationDateTime = DateTime.Now,
-                        FactoryCode = UserData.GetUserData().FactoryCode,
-                        A90ThurstStatus = "OK",
-                        A90NoiseStatus = "OK",
-                        RegistrationUserCode = UserData.GetUserData().UserName,
-                    };
-                    check = "OK";
-                }
-                if (e.Button == MouseButtons.Left)
-                {
-                    inVo = new GA1ModelVo()
-                    {
-                        A90Model = ((ModelVo)this.cmb_model.SelectedItem).ModelCode,
-                       
-                        A90Barcode = txt_barcode.Text,
-                        A90Shipping = false,
-                        RegistrationDateTime = DateTime.Now,
-                        FactoryCode = UserData.GetUserData().FactoryCode,
-                        A90ThurstStatus = "NG",
-                        A90NoiseStatus = "NG",
-                        RegistrationUserCode = UserData.GetUserData().UserName,
-                    };
-                    check = "NG";
-                }
-                checkVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new Cbm.CheckIBarcodeDuplicateCbm(), inVo);
-                if (checkVo.AffectedCount > 0)
-                {
-                    outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new Cbm.UpdateGA1ModelNoiseCbm(), inVo);
-                    GridBind();
-                }
-                else
-                {
-                    messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lbl_barcode.Text);
-                    popUpMessage.Warning(messageData, Text);
-                    txt_barcode.Focus();
-                    txt_barcode.Text = "";
-                    dgv_thurst.DataSource = null;
-                    return;
-                }
-                if (check == "OK")
-                {
-                    pb_OK.Visible = true;
-                    pb_NG.Visible = false;
-                    lbl_status.Text = "CHECKED";
-                    timer1.Enabled = true;
-                    lbl_status.ForeColor = System.Drawing.Color.Green;
-                }
-                else if (check == "NG")
-                {
-                    pb_OK.Visible = false;
-                    pb_NG.Visible = true;
-                    lbl_status.Text = "CHECKED";
-                    timer1.Enabled = true;
-                    lbl_status.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lbl_status.Text = "WAITING";
-                    messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, lbl_barcode.Text);
-                    popUpMessage.Warning(messageData, Text);
-                    txt_barcode.Focus();
-                }
-                txt_barcode.Text = "";
-            }
-        }
-        private void GridBind()
-        {
             try
             {
-                GA1ModelVo calldgv = new GA1ModelVo()
+                timer1.Enabled = true;
+                if (File.Exists(@"D:\Noise Check Barcode Data\login.txt"))
                 {
-                    A90Model = cmb_model.Text,
-                   
-                    A90Barcode = txt_barcode.Text,
-
-                };
-
-                ValueObjectList<GA1ModelVo> listvo = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchThurstDGVCbm(), calldgv);
-                dgv_thurst.DataSource = listvo.GetList();
+                    using (var reader = new StreamReader(@"D:\Noise Check Barcode Data\login.txt"))
+                    {
+                        string path = reader.ReadLine();
+                        if (Directory.Exists(path))
+                        {
+                            txtBrowser.Text = path;
+                        }
+                    }
+                }
             }
             catch (Framework.ApplicationException exception)
             {
@@ -166,7 +44,229 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string file = DateTime.Now.ToString("yyyyMMdd") + "_InspectionResult.txt";
+                if (File.Exists(txtBrowser.Text + "\\" + file))
+                {
+                    string sourceFile = txtBrowser.Text + "\\" + file;
+                    string destFile = @"D:\Noise Check Barcode Data\" + "Barcode_" + txtBarcode.Text + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".txt";
+                    if (txtBarcode.Text.Length == 8)
+                    {
+                        Thread.Sleep(1000);
+                        System.IO.File.Move(sourceFile, destFile);
 
+                        if (File.Exists(destFile))
+                        {
+                            DataTable dt = new DataTable();
+                            using (var reader = new StreamReader(destFile))
+                            {
+                                string[] headers = reader.ReadLine().Split(',');
+                                foreach (string header in headers)
+                                {
+                                    dt.Columns.Add(header);
+                                }
+                                dt.Columns.Add("barcode");
+                                dt.Columns.Add("registration_user_cd");
+                                dt.Columns.Add("registration_date_time");
+                                dt.Columns.Add("factory_cd");
+                                while (!reader.EndOfStream)
+                                {
+                                    string[] rows = reader.ReadLine().Split(',');
+                                    DataRow dr = dt.NewRow();
+                                    for (int i = 0; i < headers.Length; i++)
+                                    {
+                                        dr[i] = rows[i].Trim();
 
+                                        if (i == 2)//cot line
+                                        {
+                                            dr[i] = "L0" + rows[i].Trim();//neu line < 10
+                                            if (rows[i].Trim().Length > 1)//neu line >= 10
+                                            {
+                                                dr[i] = "L" + rows[i].Trim();
+                                            }
+                                        }
+
+                                        if (i == 5)
+                                        {
+                                            dr[i] = rows[i].Substring(1, 4) + "/" + rows[i].Substring(5, 2) + "/" + rows[i].Substring(7, 2) + " " + rows[i].Substring(9, 2) + ":" + rows[i].Substring(11, 2) + ":" + rows[i].Substring(13, 2);
+                                        }
+                                    }
+                                    dr["barcode"] = txtBarcode.Text;
+                                    dr["registration_user_cd"] = UserData.GetUserData().UserName;
+                                    dr["registration_date_time"] = DateTime.Now.ToString();
+                                    dr["factory_cd"] = UserData.GetUserData().FactoryCode; ;
+                                    dt.Rows.Add(dr);
+                                }
+                            }
+                            dgvNoise.DataSource = dt;
+
+                            if (dgvNoise.RowCount > 0)
+                            {
+                                GA1ModelVo NoiseVo = new GA1ModelVo()
+                                {
+                                    Noise_eq_id = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells["EQ_ID"].Value.ToString(),
+                                    Noise_model = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" MODEL"].Value.ToString(),
+                                    Noise_line = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" LINE_ID"].Value.ToString(),
+                                    Noise_serial_id = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" SERIAL_ID"].Value.ToString(),
+                                    Noise_id = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" ID"].Value.ToString(),
+                                    Noise_date_check = DateTime.Parse(dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" DATE"].Value.ToString()),
+                                    Noise_judgment = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString(),
+                                    Noise_l1_v_cw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" L1_V_CW"].Value.ToString(),
+                                    Noise_l1_v_ccw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" L1_V_CCW"].Value.ToString(),
+                                    Noise_e1_v_cw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E1_V_CW"].Value.ToString(),
+                                    Noise_e2_v_cw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E2_V_CW"].Value.ToString(),
+                                    Noise_e3_v_cw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E3_V_CW"].Value.ToString(),
+                                    Noise_e4_v_cw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E4_V_CW"].Value.ToString(),
+                                    Noise_e5_v_cw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E5_V_CW"].Value.ToString(),
+                                    Noise_e1_v_ccw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E1_V_CCW"].Value.ToString(),
+                                    Noise_e2_v_ccw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E2_V_CCW"].Value.ToString(),
+                                    Noise_e3_v_ccw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E3_V_CCW"].Value.ToString(),
+                                    Noise_e4_v_ccw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E4_V_CCW"].Value.ToString(),
+                                    Noise_e5_v_ccw = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" E5_V_CCW"].Value.ToString(),
+                                    Noise_barcode = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells["barcode"].Value.ToString(),
+                                    Noise_registration_user_cd = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells["registration_user_cd"].Value.ToString(),
+                                    Noise_factory_cd = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells["factory_cd"].Value.ToString(),
+                                };
+
+                                GA1ModelVo addNoiseVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddGA1ModelNoiseCbm(), NoiseVo);
+                                GA1ModelVo updateNoiseVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new UpdateGA1ModelNoiseCbm(), new GA1ModelVo()
+                                {
+                                    A90Barcode = txtBarcode.Text,
+                                    A90NoiseStatus = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString().Substring(1, 2),
+                                });
+                                int t = updateNoiseVo.AffectedCount;
+                                //UpdateGA1ModelNoiseCbm
+
+                                ValueObjectList<GA1ModelVo> ThurtVo = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new SearchThusrtByBarcodeCbm(),
+                                    new GA1ModelVo()
+                                    {
+                                        A90Barcode = txtBarcode.Text,
+                                    });
+                                if (ThurtVo.GetList().Count == 0)//neu barcode no data o thurst
+                                {
+                                    lblThurst.Text = "No data";
+                                    lblThurst.BackColor = System.Drawing.Color.Yellow;
+                                }
+                                else //neu barcode CO data o thurst
+                                {
+                                    lblThurst.Text = ThurtVo.GetList()[0].A90ThurstStatus;
+                                    if (lblThurst.Text == "OK") { lblThurst.BackColor = System.Drawing.Color.Green; }
+                                    else { lblThurst.BackColor = System.Drawing.Color.Red; }
+                                }
+                                if (addNoiseVo.AffectedCount == 1)
+                                {
+                                    txtBarcode.Clear();
+                                    lblNoise.Text = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString().Substring(0, 2);
+                                    if (lblNoise.Text == "OK") { lblNoise.BackColor = System.Drawing.Color.Green; }
+                                    else { lblNoise.BackColor = System.Drawing.Color.Red; }
+                                }
+                                timerOff.Enabled = true;
+                            }
+                        }
+                    }
+                    else // barcode < 8 character
+                    {
+                        txtBarcode.BackColor = System.Drawing.Color.Red;
+                        System.IO.File.Move(sourceFile, destFile);
+                        if (File.Exists(destFile))
+                        {
+                            timerOffBarcodenull.Enabled = true;
+                        }
+                    }
+                }
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
+        }
+        private void timerOffBarcodenull_Tick(object sender, EventArgs e)
+        {
+            txtBarcode.BackColor = System.Drawing.Color.White;
+            timerOffBarcodenull.Enabled = false;
+        }
+        private void timerOff_Tick(object sender, EventArgs e)
+        {
+            lblThurst.Text = "";
+            lblThurst.BackColor = System.Drawing.Color.FromArgb(242, 247, 236);
+
+            lblNoise.Text = "";
+            lblNoise.BackColor = System.Drawing.Color.FromArgb(242, 247, 236);
+            DataTable dt = new DataTable();
+            dgvNoise.DataSource = dt;
+            timerOff.Enabled = false;
+        }
+        private string directorySave = "";
+        private void btnBrowser_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fl = new FolderBrowserDialog();
+            fl.SelectedPath = "C:\\";
+            fl.ShowNewFolderButton = true;
+            if (fl.ShowDialog() == DialogResult.OK)
+            {
+                txtBrowser.Text = fl.SelectedPath;
+                directorySave = txtBrowser.Text;
+            }
+        }
+
+        private void NoiseCheckForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
+            timerOff.Enabled = false;
+            timerOffBarcodenull.Enabled = false;
+        }
+        bool sound;
+        [System.Runtime.InteropServices.DllImport("winmm.dll")]
+        private static extern int mciSendString(String command,
+
+           StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
+        private string aliasName = "MediaFile";
+        private void soundAlarm()
+        {
+            string currentDir = System.Environment.CurrentDirectory;
+            string fileName = currentDir + @"\warning.mp3";
+            string cmd;
+
+            if (sound)
+            {
+                cmd = "stop " + aliasName;
+                mciSendString(cmd, null, 0, IntPtr.Zero);
+                cmd = "close " + aliasName;
+                mciSendString(cmd, null, 0, IntPtr.Zero);
+                sound = false;
+            }
+
+            cmd = "open \"" + fileName + "\" type mpegvideo alias " + aliasName;
+            if (mciSendString(cmd, null, 0, IntPtr.Zero) != 0) return;
+            cmd = "play " + aliasName;
+            mciSendString(cmd, null, 0, IntPtr.Zero);
+            sound = true;
+        }
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBarcode.Text.Length == 8)
+            {
+                ValueObjectList<GA1ModelVo> ThurtVo = (ValueObjectList<GA1ModelVo>)DefaultCbmInvoker.Invoke(new SearchThusrtByBarcodeCbm(),
+                                    new GA1ModelVo()
+                                    {
+                                        A90Barcode = txtBarcode.Text,
+                                    });
+                if (ThurtVo.GetList().Count == 0)
+                {
+                    lblThurst.Text = "No data";
+                    lblThurst.BackColor = System.Drawing.Color.Yellow;
+                }
+                else
+                {
+                    lblThurst.Text = ThurtVo.GetList()[0].A90ThurstStatus;
+                    if (lblThurst.Text == "OK") { lblThurst.BackColor = System.Drawing.Color.Green; }
+                    else { lblThurst.BackColor = System.Drawing.Color.Red; }
+                }
+            }
+        }
     }
 }

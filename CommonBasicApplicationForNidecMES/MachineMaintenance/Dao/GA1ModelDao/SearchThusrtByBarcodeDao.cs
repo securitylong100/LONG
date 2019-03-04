@@ -7,7 +7,7 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 {
-    class SearchThurstDGVDao : AbstractDataAccessObject
+    class SearchThusrtByBarcodeDao : AbstractDataAccessObject
     {
         public override ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
@@ -19,23 +19,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select a90_model, a90_line, a90_barcode, a90_thurst_status, a90_noise_status, a90_oqc_status, 
-                                a90_oqc_data, a90_shipping, a90_user_cd, a90_date + a90_time as a90_datetime from t_checkpusha90
-                                where 1=1 ");
+            sql.Append(@"select bar,a90_thurst_status from (select a90_barcode bar,max(a90_date+a90_time) datetimes from t_checkpusha90 group by a90_barcode) a left join t_checkpusha90 b on a.bar = b.a90_barcode and datetimes = a90_date+a90_time where 1=1 ");
 
-            if (!string.IsNullOrEmpty(inVo.A90Model))
-            {
-                sql.Append(@" and a90_model  =:a90_model");
-                sqlParameter.AddParameterString("a90_model", inVo.A90Model);
+            //if (!string.IsNullOrEmpty(inVo.A90Line))
+            //{
+            //    sql.Append(@" and a90_line  =:a90_line");
+            //    sqlParameter.AddParameterString("a90_line", inVo.A90Line);
 
-            }
+            //}
             if (!string.IsNullOrEmpty(inVo.A90Barcode))
             {
                 sql.Append(@" and a90_barcode  =:a90_barcode");
                 sqlParameter.AddParameterString("a90_barcode", inVo.A90Barcode);
             }
-
-            sql.Append(@" order by a90_datetime desc limit 1");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
@@ -46,16 +42,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             {
                 GA1ModelVo outVo = new GA1ModelVo
                 {
-                    A90Model = dataReader["a90_model"].ToString(),
-                    A90Line = dataReader["a90_line"].ToString(),
-                    A90Barcode = dataReader["a90_barcode"].ToString(),
+                    A90Barcode = dataReader["bar"].ToString(),
                     A90ThurstStatus = dataReader["a90_thurst_status"].ToString(),
-                    A90NoiseStatus = dataReader["a90_noise_status"].ToString(),
-                    A90OQCStatus = dataReader["a90_oqc_status"].ToString(),
-                    A90OQCData = dataReader["a90_oqc_data"].ToString(),
-                    A90Shipping = bool.Parse(dataReader["a90_shipping"].ToString()),
-                    RegistrationUserCode = dataReader["a90_user_cd"].ToString(),
-                    RegistrationDateTime = DateTime.Parse(dataReader["a90_datetime"].ToString()),
                 };
                 voList.add(outVo);
             }

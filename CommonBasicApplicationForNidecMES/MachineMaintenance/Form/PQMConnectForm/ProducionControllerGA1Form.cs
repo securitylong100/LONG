@@ -110,13 +110,20 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void funtion()
         {
+            //FRAME ASSY
             lblInput1.Text = GridBindNew("FA_IP");
             lblOutput1.Text = GridBindNew("FA_OP");
             lblF1.Text = GridBindNew("FA_BallB");
             lblF2.Text = GridBindNew("FA_Caulk");
             lblF3.Text = GridBindNew("FA_APP");
             lblNg1.Text = (int.Parse(lblF1.Text) + int.Parse(lblF2.Text) + int.Parse(lblF3.Text)).ToString();
+            if (lblOutput1.Text == "0")
+            {
+                lbl_NGRateFrame.Visible = false;
+            }
+            lbl_NGRateFrame.Text = Math.Round(((double.Parse(lblNg1.Text) / (double.Parse(lblNg1.Text) + double.Parse(lblOutput1.Text))) * 100), 2).ToString() + "%";
 
+            //GEAR CASE ASSY
             lblInput2.Text = GridBindNew("GC_IP");
             lblOutput2.Text = GridBindNew("GC_OP");
             lblG1.Text = GridBindNew("GC_Bear");
@@ -127,7 +134,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             lblG6.Text = GridBindNew("GC_FGASS");
             lblG7.Text = GridBindNew("GC_FGCHK");
             lblNG2.Text = (int.Parse(lblG1.Text) + int.Parse(lblG2.Text) + int.Parse(lblG3.Text) + int.Parse(lblG4.Text) + int.Parse(lblG5.Text) + int.Parse(lblG6.Text) + int.Parse(lblG7.Text)).ToString();
+            if (lblOutput2.Text == "0")
+            {
+                lbl_NGRateGear.Visible = false;
+            }
+            lbl_NGRateGear.Text = Math.Round(((double.Parse(lblNG2.Text) / (double.Parse(lblNG2.Text) + double.Parse(lblOutput2.Text))) * 100), 2).ToString() + "%";
 
+            //MOTOR ASSY
             lblInput3.Text = GridBindNew("MC_IP");
             lblOutput3.Text = GridBindOutputMotor(true);
             lblM1.Text = GridBindNew("MC_FWCHK");
@@ -135,9 +148,55 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             lblM3.Text = GridBindNew("MC_FPC");
             lblM4.Text = GridBindNew("MC_Mark");
             lblM5.Text = GridBindOutputMotor(false);
-            lblM6.Text = GridBindNew("MC_NOICHK");
+            lblM6.Text = GridBindNG_NOICHK(false); //lay ng noise tu mesdb
             lblM7.Text = GridBindNew("MC_APPCHK");
             lblNG3.Text = (int.Parse(lblM1.Text) + int.Parse(lblM2.Text) + int.Parse(lblM3.Text) + int.Parse(lblM4.Text) + int.Parse(lblM5.Text) + int.Parse(lblM6.Text) + int.Parse(lblM7.Text)).ToString();
+            if (lblOutput3.Text == "0")
+            {
+                lbl_NGRateMotor.Visible = false;
+            }
+            lbl_NGRateMotor.Text = Math.Round(((double.Parse(lblNG3.Text) / (double.Parse(lblNG3.Text) + double.Parse(lblOutput3.Text))) * 100), 2).ToString() + "%";
+
+            //TOTAL
+            lblTotalNoiModel.Text = GridBindQtyNOICHK(false);
+            lblTotalNoiLine.Text = GridBindQtyNOICHK(true);
+        }
+        private string GridBindNG_NOICHK(bool t)
+        {
+            try
+            {
+                tablename = cmb_model.Text + DateTime.Now.ToString("yyyyMM");
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchNGNOICHKfromMesdbCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, DateFrom = dtp_dateFromdata.Value, DateTo = dtp_dateTodata.Value, change = t }, connectionmes);
+                if (inspecdata.GetList()[0].InspecData != "")
+                {
+                    return inspecdata.GetList()[0].InspecData;
+                }
+                else return "0";
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+                return "0";
+            }
+        }
+        private string GridBindQtyNOICHK(bool t)
+        {
+            try
+            {
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchQtyNOICHKfromMesdbCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, DateFrom = dtp_dateFromdata.Value, DateTo = dtp_dateTodata.Value, change = t }, connectionmes);
+                if (inspecdata.GetList()[0].InspecData != "")
+                {
+                    return inspecdata.GetList()[0].InspecData;
+                }
+                else return "0";
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+                return "0";
+            }
         }
         void showchart()
         {
@@ -322,7 +381,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     if (dgv.Columns.Contains(input)) { dataIn += double.Parse(dgv.Rows[i].Cells[input].Value.ToString()); }
                     if (dgv.Columns.Contains(totalNG_)) { totalNG += double.Parse(dgv.Rows[i].Cells[totalNG_].Value.ToString()); }
 
-                    if (dataOut > 0 && dataOut > totalNG) { rateNG = (totalNG / dataOut) * 100; }////////quan trong
+                    if (dataOut > 0 && dataOut > totalNG) { rateNG = (totalNG / (dataOut + totalNG)) * 100; }////////quan trong
                     else rateNG = 0;
 
                     chr.Series["Output (pcs)"].Points.AddXY(dgv.Rows[i].Cells["Date"].Value.ToString(), dataOut);
@@ -355,7 +414,35 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 };
 
                 ProductionControllerGA1Vo listvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionINPUTCbm(), dgvVo, connection);
-                ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), dgvVo, connectionmes);
+                ProductionControllerGA1Vo outputvo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), new ProductionControllerGA1Vo()
+                {
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    DateFrom = DateTime.Parse(dtp_from.Text),
+                    DateTo = DateTime.Parse(dtp_to.Text),
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                    change = true,
+                }, connectionmes);
+                ProductionControllerGA1Vo ngThurstVo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), new ProductionControllerGA1Vo()
+                {
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    DateFrom = DateTime.Parse(dtp_from.Text),
+                    DateTo = DateTime.Parse(dtp_to.Text),
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                    change = false,
+                }, connectionmes);
+
+                ProductionControllerGA1Vo ngNOICHKVo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionNGNOICHKCbm(), new ProductionControllerGA1Vo()
+                {
+                    ModelCode = cmb_model.Text,
+                    LineCode = cmb_line.Text,
+                    DateFrom = DateTime.Parse(dtp_from.Text),
+                    DateTo = DateTime.Parse(dtp_to.Text),
+                    Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
+                    change = false,
+                }, connectionmes);
+
                 var distinctProcess = (from row in listvo.dt.AsEnumerable() orderby row["process"] select row.Field<string>("process")).Distinct();
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Model");
@@ -368,6 +455,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dt.Columns.Add("RateNG_Frame");
                 dt.Columns.Add("RateNG_Gear");
                 dt.Columns.Add("RateNG_Motor");
+                dt.Columns.Add("MC_THUCHK");
+                dt.Columns.Add("MC_NOICHK");
                 foreach (var a in distinctProcess)
                 {
                     dt.Columns.Add(a.ToString());
@@ -388,21 +477,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         dr[1] = info[0]["line"].ToString();
                         dr[2] = info[0]["times"].ToString();
                         int j = 0;
-                        for (int i = 0; i < dt.Columns.Count - 10; i++)
+                        for (int i = 0; i < dt.Columns.Count - 11; i++)
                         {
                             if (j < inspectdata.Count)
                             {
-                                if (dt.Columns[i + 10].ColumnName == inspectdata[j]["process"].ToString())
+                                if (dt.Columns[i + 11].ColumnName == inspectdata[j]["process"].ToString())
                                 {
-                                    dr[i + 10] = inspectdata[j]["inspectdata"].ToString();
+                                    dr[i + 11] = inspectdata[j]["inspectdata"].ToString();
                                     j++;
                                 }
                                 else
                                 {
-                                    dr[i + 10] = "0";
+                                    dr[i + 11] = "0";
                                 }
                             }
-                            else dr[i + 10] = "0";
+                            else dr[i + 11] = "0";
                         }
                         dt.Rows.Add(dr);
                     }
@@ -410,7 +499,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 //sum hang cuoi
                 DataRow dr1 = dt.NewRow();
-                for (int i = 10; i < dt.Columns.Count; i++)
+                for (int i = 11; i < dt.Columns.Count; i++)
                 {
                     double sum = 0;
                     for (int j = 0; j < dt.Rows.Count; j++)
@@ -432,7 +521,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     double totalNGMoTor = 0;
                     double rateNGMotor = 0;
                     double outputRow = 0;
-                    for (int t = 0; t < outputvo.dt.Rows.Count; t++)
+                    for (int t = 0; t < outputvo.dt.Rows.Count; t++)//insert output motor tu mesdb
                     {
                         if (dgv.Rows[i].Cells["Date"].Value.ToString() == outputvo.dt.Rows[t]["times"].ToString())
                         {
@@ -443,7 +532,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             dgv.Rows[i].Cells["OUTPUT"].Value = outputRow;
                         }
                     }
-                    for (int j = 10; j < dgv.ColumnCount; j++)
+                    for (int t = 0; t < ngThurstVo.dt.Rows.Count; t++)//insert ngThurst tu mesdb
+                    {
+                        if (dgv.Rows[i].Cells["Date"].Value.ToString() == ngThurstVo.dt.Rows[t]["times"].ToString())
+                        {
+                            outputRow = double.Parse(ngThurstVo.dt.Rows[t]["count"].ToString());
+                            dgv.Rows[i].Cells["MC_THUCHK"].Value = outputRow;
+                        }
+                    }
+                    for (int t = 0; t < ngNOICHKVo.dt.Rows.Count; t++)//insert ngNOICHK tu mesdb
+                    {
+                        if (dgv.Rows[i].Cells["Date"].Value.ToString() == ngNOICHKVo.dt.Rows[t]["times"].ToString())
+                        {
+                            outputRow = double.Parse(ngNOICHKVo.dt.Rows[t]["count"].ToString());
+                            dgv.Rows[i].Cells["MC_NOICHK"].Value = outputRow;
+                        }
+                    }
+                    for (int j = 0; j < dgv.ColumnCount; j++)
                     {
                         if (dgv.Columns[j].HeaderText != "FA_IP" && dgv.Columns[j].HeaderText != "FA_OP" && dgv.Columns[j].HeaderText != "GC_IP" && dgv.Columns[j].HeaderText != "GC_OP" && dgv.Columns[j].HeaderText != "MC_IP" && dgv.Columns[j].HeaderText != "OUTPUT")
                         {
@@ -476,6 +581,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     dgv["Total_NG_Gear", i].Value = totalNGGear;
                     dgv["RateNG_Motor", i].Value = rateNGMotor;
                     dgv["Total_NG_Motor", i].Value = totalNGMoTor;
+                }
+                double sumThurst = 0;
+                double sumNoichk = 0;
+                for (int j = 0; j < dt.Rows.Count; j++)
+                {
+                    if (j < dt.Rows.Count - 1)
+                    {
+                        sumThurst += double.Parse(dgv.Rows[j].Cells["MC_THUCHK"].Value.ToString());
+                        sumNoichk += double.Parse(dgv.Rows[j].Cells["MC_NOICHK"].Value.ToString());
+                    }
+                    else if (j == dt.Rows.Count - 1)
+                    {
+                        dgv.Rows[j].Cells["MC_THUCHK"].Value = sumThurst;
+                        dgv.Rows[j].Cells["MC_NOICHK"].Value = sumNoichk;
+                    }
                 }
             }
             catch (Framework.ApplicationException exception)
@@ -890,15 +1010,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 a = 3;
                 led("1", "6", "7");
             }
-            if (rateNGFrame > rateNGFrametxt) { grbFrame.BackColor = Color.Red; }
-            if (rateNGGear > rateNGGeartxt) { grbGear.BackColor = Color.Red; }
-            if (rateNGMotor > rateNGMotortxt) { grbMotor.BackColor = Color.Red; }
-            if ((rateNGFrame >= rateNGFrametxt * (0.7)) && rateNGFrame <= rateNGFrametxt) { grbFrame.BackColor = Color.Yellow; }
-            if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt) { grbGear.BackColor = Color.Yellow; }
-            if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt) { grbMotor.BackColor = Color.Yellow; }
-            if (rateNGFrame >= 0 && (rateNGFrame < rateNGFrametxt * (0.7))) { grbFrame.BackColor = Color.LightGreen; }
-            if (rateNGGear >= 0 && (rateNGGear < rateNGGeartxt * (0.7))) { grbGear.BackColor = Color.LightGreen; }
-            if (rateNGMotor >= 0 && (rateNGMotor < rateNGMotortxt * (0.7))) { grbMotor.BackColor = Color.LightGreen; }
+            if (rateNGFrame >= 0 && (rateNGFrame < rateNGFrametxt * (0.7))) { grbFrame.BackColor = Color.LightGreen; lblAlarmFrame.Visible = false; }
+            else lblAlarmFrame.Visible = true;
+            if (rateNGGear >= 0 && (rateNGGear < rateNGGeartxt * (0.7))) { grbGear.BackColor = Color.LightGreen; lblAlarmGear.Visible = false; }
+            else lblAlarmGear.Visible = true;
+            if (rateNGMotor >= 0 && (rateNGMotor < rateNGMotortxt * (0.7))) { grbMotor.BackColor = Color.LightGreen; lblAlarmMotor.Visible = false; }
+            else lblAlarmMotor.Visible = true;
+
+            if (rateNGFrame > rateNGFrametxt) { grbFrame.BackColor = Color.Red; lblAlarmFrame.BackColor = Color.Red; }
+            if (rateNGGear > rateNGGeartxt) { grbGear.BackColor = Color.Red; lblAlarmGear.BackColor = Color.Red; }
+            if (rateNGMotor > rateNGMotortxt) { grbMotor.BackColor = Color.Red; lblAlarmMotor.BackColor = Color.Red; }
+            if ((rateNGFrame >= rateNGFrametxt * (0.7)) && rateNGFrame <= rateNGFrametxt) { grbFrame.BackColor = Color.Yellow; lblAlarmFrame.BackColor = Color.Yellow; }
+            if ((rateNGGear >= rateNGGeartxt * (0.7)) && rateNGGear <= rateNGGeartxt) { grbGear.BackColor = Color.Yellow; lblAlarmGear.BackColor = Color.Yellow; }
+            if ((rateNGMotor >= rateNGMotortxt * (0.7)) && rateNGMotor <= rateNGMotortxt) { grbMotor.BackColor = Color.Yellow; lblAlarmMotor.BackColor = Color.Yellow; }
         }
         public void led(string green, string red, string yellow)
         {
@@ -1083,9 +1207,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             GrindByProcess();
             showchartInspect();
         }
-
+        int intRunTimerProcess = 0;
         private void timerProcess_Tick(object sender, EventArgs e)
         {
+            if (intRunTimerProcess < cmb_process.Items.Count)
+            {
+                cmb_process.SelectedIndex = intRunTimerProcess;
+                intRunTimerProcess++;
+            }
+            else intRunTimerProcess = 0;
+
             GrindByProcess();
             showchartInspect();
         }
@@ -1112,7 +1243,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void exportexcel_btn_Click(object sender, EventArgs e)
         {
             Common.Excel_Class ex = new Common.Excel_Class();
-            ex.exportexcel(ref dgvExport, directorySave, "Report");
+            ex.exportexcelGA1(ref dgvExport, directorySave, "Report", cmb_model.Text, cmb_line.Text, dtpFromExport.Text, dtpToExport.Text);
         }
 
         private void btnSearchExcel_Click(object sender, EventArgs e)
@@ -1154,11 +1285,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 
                 dgvExport.Columns.Clear();
                 dgvExport.DataSource = Exportvo.dt;
+                int dm = 0;
                 for (int i = 0; i < dgvExport.RowCount; i++)
                 {
                     if (dgvExport.Rows[i].Cells["process"].Value.ToString() == "OUTPUT") { dgvExport.Rows[i].Cells["inspectdata"].Value = OutputExportvo.GetList()[0].InspecData; }
                     if (dgvExport.Rows[i].Cells["process"].Value.ToString() == "MC_THUCHK") { dgvExport.Rows[i].Cells["inspectdata"].Value = ThuchkExportvo.GetList()[0].InspecData; }
-                }
+                    if (i < dgvExport.RowCount - 1)
+                    {
+                        int x = 0; int y = 0; int z = 0;
+                        if (dm % 2 == 0) { x = 255; y = 255; z = 192; } //vang nhạt
+                        else if (dm % 2 == 1) { x = 192; y = 255; z = 192; }//xanh nhạt
+
+                        if (dgvExport.Rows[i].Cells["process"].Value.ToString() == dgvExport.Rows[i + 1].Cells["process"].Value.ToString())
+                        {
+                            dgvExport.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(x, y, z);
+                        }
+                        else
+                        {
+                            dgvExport.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(x, y, z);
+                            dm++;
+                        }
+                    }
+                }                
             }
             catch (Framework.ApplicationException exception)
             {
@@ -1166,6 +1314,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
-    }
-    
+
+        private void cmb_process_DropDownClosed(object sender, EventArgs e)
+        {
+            GrindByProcess();
+            showchartInspect();
+        }
+    } 
 }
