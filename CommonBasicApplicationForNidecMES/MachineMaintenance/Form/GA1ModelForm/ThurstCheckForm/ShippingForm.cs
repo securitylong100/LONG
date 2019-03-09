@@ -163,9 +163,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
                         LineCode = dgvProductSerial["Line", i].Value.ToString(),
                         Lot = dgvProductSerial["Lot", i].Value.ToString(),
-                        ModelCode = dgvProductSerial["Model", i].Value.ToString(),
                         A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString(),
-                        A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString()
+                        A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString(),
+                        ModelCode = dgvProductSerial["Model", i].Value.ToString()
                     });
                 }
 
