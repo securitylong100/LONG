@@ -18,15 +18,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select distinct a.process from " +  inVo.TableName);
-            sql.Append(" a left join " + inVo.TableName +"data b on a.serno = b.serno where a.inspectdate = b.inspectdate ");
+            sql.Append(@"select distinct process from " +  inVo.TableName);
+            sql.Append(" where 1=1 ");
 
             if (!string.IsNullOrEmpty(inVo.LineCode))
             {
-                sql.Append(@" and a.line  =:line");
+                sql.Append(@" and line  =:line");
                 sqlParameter.AddParameterString("line", inVo.LineCode);
             }
-            sql.Append(@" order by a.process");
+            sql.Append(@" order by process");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
