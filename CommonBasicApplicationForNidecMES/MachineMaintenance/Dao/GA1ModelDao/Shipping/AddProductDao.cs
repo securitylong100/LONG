@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Com.Nidec.Mes.Framework;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
-using System.Data;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 {
@@ -17,7 +11,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //DataTable dtadd = new DataTable();
             GA1ModelVo inVo = (GA1ModelVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append("INSERT INTO t_product_serial(boxid, serialno, line, lot, thurst, noise model) " +
+            sql.Append("INSERT INTO t_product_serial(boxid, serialno, line, lot, thurst, noise, model) " +
                     "VALUES (:boxid, :serialno, :line, :lot, :thurst, :noise, :model)");
 
             //dtadd = inVo.dt;

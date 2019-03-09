@@ -658,6 +658,7 @@
             this.btnDeleteBoxId.TabIndex = 28;
             this.btnDeleteBoxId.Text = "Delete Box ID";
             this.btnDeleteBoxId.UseVisualStyleBackColor = true;
+            this.btnDeleteBoxId.Visible = false;
             this.btnDeleteBoxId.Click += new System.EventHandler(this.btnDeleteBoxId_Click);
             // 
             // btnDeleteSelection
