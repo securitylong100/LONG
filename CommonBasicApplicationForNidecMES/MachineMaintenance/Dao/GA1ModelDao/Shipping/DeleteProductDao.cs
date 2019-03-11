@@ -19,8 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append("delete from t_product_serial where boxid = :boxid");
-            sqlParameter.AddParameter("boxid", inVo.BoxID);
+            sql.Append("delete from t_product_serial where boxid = '" + inVo.BoxID + "'");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
             DataSet ds = new DataSet();

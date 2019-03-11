@@ -86,9 +86,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dgvDateCode.DataSource = null;
                 //dgvProductSerial.Rows.Clear();
                 //btnDeleteAll.PerformClick();
-                txtLimit.Text = "100";
+                txtLimit.Text = "300";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
+                {
+                    PrintDate = DateTime.Today,
+                    Format = true
+                });
+                dgvBoxId.DataSource = getList.dt;
             }
             else
             {
@@ -98,9 +104,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 //dgvProductSerial.Rows.Clear();
                 dgvProductSerial.DataSource = dt;
                 dgvDateCode.DataSource = null;
-                txtLimit.Text = "100";
+                txtLimit.Text = "300";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
+                GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
+                {
+                    PrintDate = DateTime.Today,
+                    Format = true
+                });
+                dgvBoxId.DataSource = getList.dt;
             }
         }
 
@@ -130,7 +142,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             btnDeleteAll.Enabled = true;
             btnDeleteSelection.Enabled = true;
             btnRegisterBoxId.Text = "Register Box ID";
-            txtLimit.Text = "100";
+            txtLimit.Text = "300";
             txtBoxId.Text = getNewBoxId();
             res = true;
         }
@@ -165,6 +177,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         Lot = dgvProductSerial["Lot", i].Value.ToString(),
                         A90ThurstStatus = dgvProductSerial["Thurst", i].Value.ToString(),
                         A90NoiseStatus = dgvProductSerial["Noise", i].Value.ToString(),
+                        Thurst_MC = dgvProductSerial["Thurst_MC", i].Value.ToString(),
+                        Noise_eq_id = dgvProductSerial["Noise_MC", i].Value.ToString(),
                         ModelCode = dgvProductSerial["Model", i].Value.ToString()
                     });
                 }
@@ -174,7 +188,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 boxIdNew = getNewBoxId();
 
                 // Print barcode
-                printBarcode(directory, txtBoxId.Text, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
+                printBarcode(directory, txtBoxId.Text, "GR1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
 
                 // Clear the datatable
                 dtOverall.Clear();
@@ -182,12 +196,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 txtBoxId.Text = boxIdNew;
                 dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
                 MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvDateCode.DataSource = null;
+                txtLimit.Text = "300";
+                txtOkCount.Text = "0/300";
             }
             else
             {
                 boxIdNew = txtBoxId.Text;
                 // Print barcode
-                printBarcode(directory, boxIdNew, "GA1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
+                printBarcode(directory, boxIdNew, "GR1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
 
                 txtBoxId.Text = boxIdNew;
                 dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
@@ -234,7 +251,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     dtOverall.Rows[i].Delete();
                 }
                 dtOverall.AcceptChanges();
-                //dgvProductSerial.Rows.Clear();
+                colorViewForDuplicateSerial(ref dgvProductSerial);
+                colorViewForFailAndBlank(ref dgvProductSerial);//dgvProductSerial.Rows.Clear();
                 limitOkChange();
                 txtProduct.Focus();
                 //defineDataTable(ref dtOverall);
@@ -401,11 +419,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             if (dateOld != DateTime.Today)
             {
-                boxIdNew = "GA1" + "-" + DateTime.Today.ToString("yyMMdd") + "001";
+                boxIdNew = "GR1" + "-" + DateTime.Today.ToString("yyMMdd") + "001";
             }
             else
             {
-                boxIdNew = "GA1" + "-" + DateTime.Today.ToString("yyMMdd") + (numberOld + 1).ToString("000");
+                boxIdNew = "GR1" + "-" + DateTime.Today.ToString("yyMMdd") + (numberOld + 1).ToString("000");
             }
 
             return boxIdNew;
@@ -514,7 +532,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             dt.Columns.Add("Line", Type.GetType("System.String"));
             dt.Columns.Add("Lot", Type.GetType("System.String"));
             dt.Columns.Add("Thurst", Type.GetType("System.String"));
+            dt.Columns.Add("Thurst_MC", Type.GetType("System.String"));
             dt.Columns.Add("Noise", Type.GetType("System.String"));
+            dt.Columns.Add("Noise_MC", Type.GetType("System.String"));
         }
 
         public void ShowRowNumber(DataGridView dgv)
@@ -617,13 +637,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     string model = dt1.Rows[0][0].ToString();
                     string line = dt1.Rows[0][1].ToString();
                     string thurst = dt1.Rows[0][2].ToString();
-                    string noise = dt1.Rows[0][3].ToString();
+                    string thurst_mc = dt1.Rows[0][3].ToString();
+                    string noise = dt1.Rows[0][4].ToString();
+                    string noise_mc = dt1.Rows[0][5].ToString();
 
 
                     newrow["Model"] = model;
                     newrow["Line"] = line;
                     newrow["Thurst"] = thurst;
+                    newrow["Thurst_MC"] = thurst_mc;
                     newrow["Noise"] = noise;
+                    newrow["Noise_MC"] = noise_mc;
                 }
 
                 newrow["Serial"] = serial;
@@ -636,7 +660,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ShowRowNumber(dgvProductSerial);
                 colorViewForFailAndBlank(ref dgvProductSerial);
                 colorViewForDuplicateSerial(ref dgvProductSerial);
-                colorMixedConfig(dtOverall, ref dgvProductSerial);
+                //colorMixedConfig(dtOverall, ref dgvProductSerial);
 
                 limitOkChange();
                 updateDataGripViewsSub(dtOverall, ref dgvProductSerial);
