@@ -86,7 +86,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dgvDateCode.DataSource = null;
                 //dgvProductSerial.Rows.Clear();
                 //btnDeleteAll.PerformClick();
-                txtLimit.Text = "300";
+                txtLimit.Text = "350";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
@@ -104,7 +104,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 //dgvProductSerial.Rows.Clear();
                 dgvProductSerial.DataSource = dt;
                 dgvDateCode.DataSource = null;
-                txtLimit.Text = "300";
+                txtLimit.Text = "350";
                 splMain.Panel2.Enabled = false;
                 splMain.Panel1Collapsed = false;
                 GA1ModelVo getList = (GA1ModelVo)DefaultCbmInvoker.Invoke(new SearchBoxIDCbm(), new GA1ModelVo
@@ -142,7 +142,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             btnDeleteAll.Enabled = true;
             btnDeleteSelection.Enabled = true;
             btnRegisterBoxId.Text = "Register Box ID";
-            txtLimit.Text = "300";
+            txtLimit.Text = "350";
             txtBoxId.Text = getNewBoxId();
             res = true;
         }
@@ -197,7 +197,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
                 MessageBox.Show("BoxID is registered", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvDateCode.DataSource = null;
-                txtLimit.Text = "300";
+                txtLimit.Text = "350";
                 txtOkCount.Text = "0/300";
             }
             else
