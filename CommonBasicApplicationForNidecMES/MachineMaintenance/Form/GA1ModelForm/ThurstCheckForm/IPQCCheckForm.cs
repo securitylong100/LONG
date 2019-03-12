@@ -26,7 +26,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             cmb_model.DisplayMember = "ModelCode";
             BindingSource b1 = new BindingSource(modelvolist.GetList(), null);
             cmb_model.DataSource = b1;
-            cmb_model.Text = "GA1";
+          //  cmb_model.Text = "GA1";
         }
         private void IPQCCheckForm_Load(object sender, EventArgs e)
         {
