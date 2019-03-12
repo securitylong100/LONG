@@ -143,7 +143,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             btnDeleteSelection.Enabled = true;
             btnRegisterBoxId.Text = "Register Box ID";
             txtLimit.Text = "350";
-            txtBoxId.Text = getNewBoxId();
+            //txtBoxId.Text = getNewBoxId();
             res = true;
         }
 
@@ -159,11 +159,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     txtUser.Focus();
                     return;
                 }
+                // Issue new box id
+                boxIdNew = getNewBoxId();
 
                 GA1ModelVo outVo = new GA1ModelVo();
                 outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddBoxIDCbm(), new GA1ModelVo
                 {
-                    BoxID = txtBoxId.Text,
+                    BoxID = boxIdNew,
                     User = txtUser.Text
                 });
 
@@ -171,7 +173,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     outVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new AddProductCbm(), new GA1ModelVo
                     {
-                        BoxID = txtBoxId.Text,
+                        BoxID = boxIdNew,
                         A90Barcode = dgvProductSerial["Serial", i].Value.ToString(),
                         LineCode = dgvProductSerial["Line", i].Value.ToString(),
                         Lot = dgvProductSerial["Lot", i].Value.ToString(),
@@ -183,12 +185,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     });
                 }
 
-                // Issue new box id
-
-                boxIdNew = getNewBoxId();
-
                 // Print barcode
-                printBarcode(directory, txtBoxId.Text, "GR1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
+                printBarcode(directory, boxIdNew, "GR1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
 
                 // Clear the datatable
                 dtOverall.Clear();
@@ -199,6 +197,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 dgvDateCode.DataSource = null;
                 txtLimit.Text = "350";
                 txtOkCount.Text = "0/300";
+                txtProduct.Enabled = true;
             }
             else
             {
@@ -206,7 +205,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 // Print barcode
                 printBarcode(directory, boxIdNew, "GR1", dgvDateCode, ref dgvDateCode2, ref txtBoxIdPrint);
 
-                txtBoxId.Text = boxIdNew;
+                //txtBoxId.Text = boxIdNew;
                 dtpPrintDate.Value = DateTime.ParseExact(VBStrings.Mid(boxIdNew, 5, 6), "yyMMdd", CultureInfo.InvariantCulture);
             }
         }
