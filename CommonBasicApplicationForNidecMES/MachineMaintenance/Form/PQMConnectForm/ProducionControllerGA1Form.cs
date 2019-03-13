@@ -142,7 +142,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             //MOTOR ASSY
             lblInput3.Text = GridBindNew("MC_IP");
-            lblOutput3.Text = GridBindOutputMotor(true);//lay output thurst tu mesdb
+            lblOutputThurst.Text = GridBindOutputMotor(true);//lay output thurst tu mesdb
             lblM1.Text = GridBindNew("MC_FWCHK");
             lblM2.Text = GridBindNew("MC_STMASS");
             lblM3.Text = GridBindNew("MC_FPC");
@@ -161,6 +161,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             //TOTAL
             lblTotalNoiModel.Text = GridBindQtyNOICHK(false);//lay tong ng noise tu mesdb
             lblTotalNoiLine.Text = GridBindQtyNOICHK(true);//lay ng noise theo line tu mesdb
+
+            lblOutput3.Text = (int.Parse(lblTotalNoiLine.Text) - int.Parse(lblM7.Text)).ToString();
         }
         private string GridBindNG_NOICHK(bool t)
         {
