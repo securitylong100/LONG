@@ -77,6 +77,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string NGM5 { get; set; }
         public string NGM7 { get; set; }
         public string NGM6 { get; set; }
+        public string NGThurst { get; set; }
 
         public List<ProductionControllerGA1Vo> volist = new List<ProductionControllerGA1Vo>();
     }

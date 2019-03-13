@@ -78,26 +78,28 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblInput3 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.lblOutput3 = new System.Windows.Forms.Label();
-            this.lblNG3 = new System.Windows.Forms.Label();
-            this.lblM1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblM2 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblM3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblM4 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblM5 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblM6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.lblM7 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblM6 = new System.Windows.Forms.Label();
+            this.lblM4 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblM3 = new System.Windows.Forms.Label();
+            this.lblM2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblM1 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblNG3 = new System.Windows.Forms.Label();
             this.lbl_NGRateMotor = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblNGThurst = new System.Windows.Forms.Label();
+            this.lblM5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblInput2 = new System.Windows.Forms.Label();
@@ -355,7 +357,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(401, 41);
+            this.dgv.Size = new System.Drawing.Size(401, 50);
             this.dgv.TabIndex = 9;
             this.dgv.Visible = false;
             // 
@@ -578,32 +580,34 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.82153F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.17847F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.tableLayoutPanel4.Controls.Add(this.lblInput3, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label26, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label25, 0, 9);
             this.tableLayoutPanel4.Controls.Add(this.lblOutput3, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.lblNG3, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.lblM1, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label14, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.lblM2, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label16, 0, 5);
-            this.tableLayoutPanel4.Controls.Add(this.lblM3, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label18, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.lblM4, 1, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label20, 0, 7);
-            this.tableLayoutPanel4.Controls.Add(this.lblM5, 1, 7);
-            this.tableLayoutPanel4.Controls.Add(this.label24, 0, 8);
-            this.tableLayoutPanel4.Controls.Add(this.lblM6, 1, 8);
             this.tableLayoutPanel4.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label10, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.lblM7, 1, 9);
-            this.tableLayoutPanel4.Controls.Add(this.lbl_NGRateMotor, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label25, 0, 10);
+            this.tableLayoutPanel4.Controls.Add(this.lblM7, 1, 10);
+            this.tableLayoutPanel4.Controls.Add(this.label24, 0, 9);
+            this.tableLayoutPanel4.Controls.Add(this.lblM6, 1, 9);
+            this.tableLayoutPanel4.Controls.Add(this.lblM4, 1, 7);
+            this.tableLayoutPanel4.Controls.Add(this.label20, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.label18, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.label16, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.lblM3, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.lblM2, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label14, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.lblM1, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label26, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.lblNG3, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.lbl_NGRateMotor, 2, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label8, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblNGThurst, 1, 8);
+            this.tableLayoutPanel4.Controls.Add(this.lblM5, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 10;
+            this.tableLayoutPanel4.RowCount = 11;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
@@ -616,6 +620,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999101F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(445, 372);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
@@ -624,185 +629,24 @@
             this.lblInput3.AutoSize = true;
             this.lblInput3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblInput3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblInput3.Location = new System.Drawing.Point(252, 5);
+            this.lblInput3.Location = new System.Drawing.Point(244, 5);
             this.lblInput3.Margin = new System.Windows.Forms.Padding(3);
             this.lblInput3.Name = "lblInput3";
             this.lblInput3.Size = new System.Drawing.Size(24, 25);
             this.lblInput3.TabIndex = 22;
             this.lblInput3.Text = "0";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(5, 76);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(118, 29);
-            this.label26.TabIndex = 7;
-            this.label26.Text = "Total NG";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(5, 335);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(106, 20);
-            this.label25.TabIndex = 20;
-            this.label25.Text = "Appearance";
-            // 
             // lblOutput3
             // 
             this.lblOutput3.AutoSize = true;
             this.lblOutput3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblOutput3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblOutput3.Location = new System.Drawing.Point(252, 42);
+            this.lblOutput3.Location = new System.Drawing.Point(244, 39);
             this.lblOutput3.Margin = new System.Windows.Forms.Padding(3);
             this.lblOutput3.Name = "lblOutput3";
             this.lblOutput3.Size = new System.Drawing.Size(24, 25);
             this.lblOutput3.TabIndex = 3;
             this.lblOutput3.Text = "0";
-            // 
-            // lblNG3
-            // 
-            this.lblNG3.AutoSize = true;
-            this.lblNG3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNG3.ForeColor = System.Drawing.Color.Red;
-            this.lblNG3.Location = new System.Drawing.Point(252, 79);
-            this.lblNG3.Margin = new System.Windows.Forms.Padding(3);
-            this.lblNG3.Name = "lblNG3";
-            this.lblNG3.Size = new System.Drawing.Size(24, 25);
-            this.lblNG3.TabIndex = 5;
-            this.lblNG3.Text = "0";
-            // 
-            // lblM1
-            // 
-            this.lblM1.AutoSize = true;
-            this.lblM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM1.ForeColor = System.Drawing.Color.Black;
-            this.lblM1.Location = new System.Drawing.Point(252, 116);
-            this.lblM1.Margin = new System.Windows.Forms.Padding(3);
-            this.lblM1.Name = "lblM1";
-            this.lblM1.Size = new System.Drawing.Size(24, 25);
-            this.lblM1.TabIndex = 7;
-            this.lblM1.Text = "0";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(5, 150);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 20);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "STM Assy";
-            // 
-            // lblM2
-            // 
-            this.lblM2.AutoSize = true;
-            this.lblM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM2.ForeColor = System.Drawing.Color.Black;
-            this.lblM2.Location = new System.Drawing.Point(252, 153);
-            this.lblM2.Margin = new System.Windows.Forms.Padding(3);
-            this.lblM2.Name = "lblM2";
-            this.lblM2.Size = new System.Drawing.Size(24, 25);
-            this.lblM2.TabIndex = 9;
-            this.lblM2.Text = "0";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(5, 187);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(100, 20);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "FPC Solder";
-            // 
-            // lblM3
-            // 
-            this.lblM3.AutoSize = true;
-            this.lblM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM3.ForeColor = System.Drawing.Color.Black;
-            this.lblM3.Location = new System.Drawing.Point(252, 190);
-            this.lblM3.Margin = new System.Windows.Forms.Padding(3);
-            this.lblM3.Name = "lblM3";
-            this.lblM3.Size = new System.Drawing.Size(24, 25);
-            this.lblM3.TabIndex = 11;
-            this.lblM3.Text = "0";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(5, 224);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 20);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "Marking";
-            // 
-            // lblM4
-            // 
-            this.lblM4.AutoSize = true;
-            this.lblM4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM4.ForeColor = System.Drawing.Color.Black;
-            this.lblM4.Location = new System.Drawing.Point(252, 227);
-            this.lblM4.Margin = new System.Windows.Forms.Padding(3);
-            this.lblM4.Name = "lblM4";
-            this.lblM4.Size = new System.Drawing.Size(24, 25);
-            this.lblM4.TabIndex = 13;
-            this.lblM4.Text = "0";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(5, 261);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(115, 20);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "Thurst Check";
-            // 
-            // lblM5
-            // 
-            this.lblM5.AutoSize = true;
-            this.lblM5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM5.ForeColor = System.Drawing.Color.Black;
-            this.lblM5.Location = new System.Drawing.Point(252, 264);
-            this.lblM5.Margin = new System.Windows.Forms.Padding(3);
-            this.lblM5.Name = "lblM5";
-            this.lblM5.Size = new System.Drawing.Size(24, 25);
-            this.lblM5.TabIndex = 15;
-            this.lblM5.Text = "0";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(5, 298);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(54, 20);
-            this.label24.TabIndex = 18;
-            this.label24.Text = "Noise";
-            // 
-            // lblM6
-            // 
-            this.lblM6.AutoSize = true;
-            this.lblM6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM6.ForeColor = System.Drawing.Color.Black;
-            this.lblM6.Location = new System.Drawing.Point(252, 301);
-            this.lblM6.Margin = new System.Windows.Forms.Padding(3);
-            this.lblM6.Name = "lblM6";
-            this.lblM6.Size = new System.Drawing.Size(24, 25);
-            this.lblM6.TabIndex = 17;
-            this.lblM6.Text = "0";
             // 
             // label9
             // 
@@ -820,46 +664,230 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(5, 39);
+            this.label10.Location = new System.Drawing.Point(5, 36);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(239, 29);
+            this.label10.Size = new System.Drawing.Size(127, 32);
             this.label10.TabIndex = 4;
             this.label10.Text = "OUTPUT THURST:";
             // 
-            // label12
+            // label25
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(5, 113);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(235, 20);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Gear Case + Frame Welding";
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(5, 342);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(106, 20);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "Appearance";
             // 
             // lblM7
             // 
             this.lblM7.AutoSize = true;
             this.lblM7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblM7.ForeColor = System.Drawing.Color.Black;
-            this.lblM7.Location = new System.Drawing.Point(252, 338);
+            this.lblM7.Location = new System.Drawing.Point(244, 345);
             this.lblM7.Margin = new System.Windows.Forms.Padding(3);
             this.lblM7.Name = "lblM7";
-            this.lblM7.Size = new System.Drawing.Size(24, 25);
+            this.lblM7.Size = new System.Drawing.Size(24, 22);
             this.lblM7.TabIndex = 21;
             this.lblM7.Text = "0";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(5, 308);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(54, 20);
+            this.label24.TabIndex = 18;
+            this.label24.Text = "Noise";
+            // 
+            // lblM6
+            // 
+            this.lblM6.AutoSize = true;
+            this.lblM6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM6.ForeColor = System.Drawing.Color.Black;
+            this.lblM6.Location = new System.Drawing.Point(244, 311);
+            this.lblM6.Margin = new System.Windows.Forms.Padding(3);
+            this.lblM6.Name = "lblM6";
+            this.lblM6.Size = new System.Drawing.Size(24, 25);
+            this.lblM6.TabIndex = 17;
+            this.lblM6.Text = "0";
+            // 
+            // lblM4
+            // 
+            this.lblM4.AutoSize = true;
+            this.lblM4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM4.ForeColor = System.Drawing.Color.Black;
+            this.lblM4.Location = new System.Drawing.Point(244, 243);
+            this.lblM4.Margin = new System.Windows.Forms.Padding(3);
+            this.lblM4.Name = "lblM4";
+            this.lblM4.Size = new System.Drawing.Size(24, 25);
+            this.lblM4.TabIndex = 13;
+            this.lblM4.Text = "0";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(5, 274);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(115, 20);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "Thurst Check";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(5, 240);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 20);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Marking";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(5, 206);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 20);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "FPC Solder";
+            // 
+            // lblM3
+            // 
+            this.lblM3.AutoSize = true;
+            this.lblM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM3.ForeColor = System.Drawing.Color.Black;
+            this.lblM3.Location = new System.Drawing.Point(244, 209);
+            this.lblM3.Margin = new System.Windows.Forms.Padding(3);
+            this.lblM3.Name = "lblM3";
+            this.lblM3.Size = new System.Drawing.Size(24, 25);
+            this.lblM3.TabIndex = 11;
+            this.lblM3.Text = "0";
+            // 
+            // lblM2
+            // 
+            this.lblM2.AutoSize = true;
+            this.lblM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM2.ForeColor = System.Drawing.Color.Black;
+            this.lblM2.Location = new System.Drawing.Point(244, 175);
+            this.lblM2.Margin = new System.Windows.Forms.Padding(3);
+            this.lblM2.Name = "lblM2";
+            this.lblM2.Size = new System.Drawing.Size(24, 25);
+            this.lblM2.TabIndex = 9;
+            this.lblM2.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(5, 172);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 20);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "STM Assy";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(5, 138);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(171, 32);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Gear Case + Frame Welding";
+            // 
+            // lblM1
+            // 
+            this.lblM1.AutoSize = true;
+            this.lblM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM1.ForeColor = System.Drawing.Color.Black;
+            this.lblM1.Location = new System.Drawing.Point(244, 141);
+            this.lblM1.Margin = new System.Windows.Forms.Padding(3);
+            this.lblM1.Name = "lblM1";
+            this.lblM1.Size = new System.Drawing.Size(24, 25);
+            this.lblM1.TabIndex = 7;
+            this.lblM1.Text = "0";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(5, 104);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(118, 29);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Total NG";
+            // 
+            // lblNG3
+            // 
+            this.lblNG3.AutoSize = true;
+            this.lblNG3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNG3.ForeColor = System.Drawing.Color.Red;
+            this.lblNG3.Location = new System.Drawing.Point(244, 107);
+            this.lblNG3.Margin = new System.Windows.Forms.Padding(3);
+            this.lblNG3.Name = "lblNG3";
+            this.lblNG3.Size = new System.Drawing.Size(24, 25);
+            this.lblNG3.TabIndex = 5;
+            this.lblNG3.Text = "0";
             // 
             // lbl_NGRateMotor
             // 
             this.lbl_NGRateMotor.AutoSize = true;
             this.lbl_NGRateMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_NGRateMotor.ForeColor = System.Drawing.Color.Red;
-            this.lbl_NGRateMotor.Location = new System.Drawing.Point(355, 79);
+            this.lbl_NGRateMotor.Location = new System.Drawing.Point(343, 107);
             this.lbl_NGRateMotor.Margin = new System.Windows.Forms.Padding(3);
             this.lbl_NGRateMotor.Name = "lbl_NGRateMotor";
-            this.lbl_NGRateMotor.Size = new System.Drawing.Size(85, 25);
+            this.lbl_NGRateMotor.Size = new System.Drawing.Size(43, 25);
             this.lbl_NGRateMotor.TabIndex = 23;
-            this.lbl_NGRateMotor.Text = "99.99%";
+            this.lbl_NGRateMotor.Text = "0%";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(5, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 29);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "AGING";
+            // 
+            // lblNGThurst
+            // 
+            this.lblNGThurst.AutoSize = true;
+            this.lblNGThurst.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNGThurst.ForeColor = System.Drawing.Color.Black;
+            this.lblNGThurst.Location = new System.Drawing.Point(244, 277);
+            this.lblNGThurst.Margin = new System.Windows.Forms.Padding(3);
+            this.lblNGThurst.Name = "lblNGThurst";
+            this.lblNGThurst.Size = new System.Drawing.Size(24, 25);
+            this.lblNGThurst.TabIndex = 25;
+            this.lblNGThurst.Text = "0";
+            // 
+            // lblM5
+            // 
+            this.lblM5.AutoSize = true;
+            this.lblM5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM5.ForeColor = System.Drawing.Color.Black;
+            this.lblM5.Location = new System.Drawing.Point(244, 73);
+            this.lblM5.Margin = new System.Windows.Forms.Padding(3);
+            this.lblM5.Name = "lblM5";
+            this.lblM5.Size = new System.Drawing.Size(24, 25);
+            this.lblM5.TabIndex = 15;
+            this.lblM5.Text = "0";
             // 
             // groupBox3
             // 
@@ -878,7 +906,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.11628F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.88372F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel5.Controls.Add(this.lblInput2, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label29, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.label30, 0, 9);
@@ -924,7 +952,7 @@
             this.lblInput2.AutoSize = true;
             this.lblInput2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblInput2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblInput2.Location = new System.Drawing.Point(199, 5);
+            this.lblInput2.Location = new System.Drawing.Point(191, 5);
             this.lblInput2.Margin = new System.Windows.Forms.Padding(3);
             this.lblInput2.Name = "lblInput2";
             this.lblInput2.Size = new System.Drawing.Size(24, 25);
@@ -949,7 +977,7 @@
             this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(5, 335);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(180, 35);
+            this.label30.Size = new System.Drawing.Size(175, 35);
             this.label30.TabIndex = 20;
             this.label30.Text = "Pinion & Flange + App Check";
             // 
@@ -958,7 +986,7 @@
             this.lblOutput2.AutoSize = true;
             this.lblOutput2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblOutput2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblOutput2.Location = new System.Drawing.Point(199, 42);
+            this.lblOutput2.Location = new System.Drawing.Point(191, 42);
             this.lblOutput2.Margin = new System.Windows.Forms.Padding(3);
             this.lblOutput2.Name = "lblOutput2";
             this.lblOutput2.Size = new System.Drawing.Size(24, 25);
@@ -970,7 +998,7 @@
             this.lblNG2.AutoSize = true;
             this.lblNG2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblNG2.ForeColor = System.Drawing.Color.Red;
-            this.lblNG2.Location = new System.Drawing.Point(199, 79);
+            this.lblNG2.Location = new System.Drawing.Point(191, 79);
             this.lblNG2.Margin = new System.Windows.Forms.Padding(3);
             this.lblNG2.Name = "lblNG2";
             this.lblNG2.Size = new System.Drawing.Size(24, 25);
@@ -982,7 +1010,7 @@
             this.lblG1.AutoSize = true;
             this.lblG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG1.ForeColor = System.Drawing.Color.Black;
-            this.lblG1.Location = new System.Drawing.Point(199, 116);
+            this.lblG1.Location = new System.Drawing.Point(191, 116);
             this.lblG1.Margin = new System.Windows.Forms.Padding(3);
             this.lblG1.Name = "lblG1";
             this.lblG1.Size = new System.Drawing.Size(24, 25);
@@ -994,7 +1022,7 @@
             this.lblG2.AutoSize = true;
             this.lblG2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG2.ForeColor = System.Drawing.Color.Black;
-            this.lblG2.Location = new System.Drawing.Point(199, 153);
+            this.lblG2.Location = new System.Drawing.Point(191, 153);
             this.lblG2.Margin = new System.Windows.Forms.Padding(3);
             this.lblG2.Name = "lblG2";
             this.lblG2.Size = new System.Drawing.Size(24, 25);
@@ -1017,7 +1045,7 @@
             this.lblG3.AutoSize = true;
             this.lblG3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG3.ForeColor = System.Drawing.Color.Black;
-            this.lblG3.Location = new System.Drawing.Point(199, 190);
+            this.lblG3.Location = new System.Drawing.Point(191, 190);
             this.lblG3.Margin = new System.Windows.Forms.Padding(3);
             this.lblG3.Name = "lblG3";
             this.lblG3.Size = new System.Drawing.Size(24, 25);
@@ -1062,7 +1090,7 @@
             this.lblG4.AutoSize = true;
             this.lblG4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG4.ForeColor = System.Drawing.Color.Black;
-            this.lblG4.Location = new System.Drawing.Point(199, 227);
+            this.lblG4.Location = new System.Drawing.Point(191, 227);
             this.lblG4.Margin = new System.Windows.Forms.Padding(3);
             this.lblG4.Name = "lblG4";
             this.lblG4.Size = new System.Drawing.Size(24, 25);
@@ -1085,7 +1113,7 @@
             this.lblG5.AutoSize = true;
             this.lblG5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG5.ForeColor = System.Drawing.Color.Black;
-            this.lblG5.Location = new System.Drawing.Point(199, 264);
+            this.lblG5.Location = new System.Drawing.Point(191, 264);
             this.lblG5.Margin = new System.Windows.Forms.Padding(3);
             this.lblG5.Name = "lblG5";
             this.lblG5.Size = new System.Drawing.Size(24, 25);
@@ -1108,7 +1136,7 @@
             this.lblG6.AutoSize = true;
             this.lblG6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG6.ForeColor = System.Drawing.Color.Black;
-            this.lblG6.Location = new System.Drawing.Point(199, 301);
+            this.lblG6.Location = new System.Drawing.Point(191, 301);
             this.lblG6.Margin = new System.Windows.Forms.Padding(3);
             this.lblG6.Name = "lblG6";
             this.lblG6.Size = new System.Drawing.Size(24, 25);
@@ -1142,7 +1170,7 @@
             this.lblG7.AutoSize = true;
             this.lblG7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG7.ForeColor = System.Drawing.Color.Black;
-            this.lblG7.Location = new System.Drawing.Point(199, 338);
+            this.lblG7.Location = new System.Drawing.Point(191, 338);
             this.lblG7.Margin = new System.Windows.Forms.Padding(3);
             this.lblG7.Name = "lblG7";
             this.lblG7.Size = new System.Drawing.Size(24, 25);
@@ -1154,7 +1182,7 @@
             this.lbl_NGRateGear.AutoSize = true;
             this.lbl_NGRateGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_NGRateGear.ForeColor = System.Drawing.Color.Red;
-            this.lbl_NGRateGear.Location = new System.Drawing.Point(303, 79);
+            this.lbl_NGRateGear.Location = new System.Drawing.Point(291, 79);
             this.lbl_NGRateGear.Margin = new System.Windows.Forms.Padding(3);
             this.lbl_NGRateGear.Name = "lbl_NGRateGear";
             this.lbl_NGRateGear.Size = new System.Drawing.Size(43, 25);
@@ -1178,7 +1206,7 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.05732F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.94268F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel6.Controls.Add(this.lblInput1, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.lblOutput1, 1, 1);
@@ -1214,7 +1242,7 @@
             this.lblInput1.AutoSize = true;
             this.lblInput1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblInput1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblInput1.Location = new System.Drawing.Point(201, 5);
+            this.lblInput1.Location = new System.Drawing.Point(193, 5);
             this.lblInput1.Margin = new System.Windows.Forms.Padding(3);
             this.lblInput1.Name = "lblInput1";
             this.lblInput1.Size = new System.Drawing.Size(24, 25);
@@ -1238,7 +1266,7 @@
             this.lblOutput1.AutoSize = true;
             this.lblOutput1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblOutput1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblOutput1.Location = new System.Drawing.Point(201, 42);
+            this.lblOutput1.Location = new System.Drawing.Point(193, 42);
             this.lblOutput1.Margin = new System.Windows.Forms.Padding(3);
             this.lblOutput1.Name = "lblOutput1";
             this.lblOutput1.Size = new System.Drawing.Size(24, 25);
@@ -1250,7 +1278,7 @@
             this.lblNg1.AutoSize = true;
             this.lblNg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblNg1.ForeColor = System.Drawing.Color.Red;
-            this.lblNg1.Location = new System.Drawing.Point(201, 79);
+            this.lblNg1.Location = new System.Drawing.Point(193, 79);
             this.lblNg1.Margin = new System.Windows.Forms.Padding(3);
             this.lblNg1.Name = "lblNg1";
             this.lblNg1.Size = new System.Drawing.Size(24, 25);
@@ -1262,7 +1290,7 @@
             this.lblF1.AutoSize = true;
             this.lblF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblF1.ForeColor = System.Drawing.Color.Black;
-            this.lblF1.Location = new System.Drawing.Point(201, 116);
+            this.lblF1.Location = new System.Drawing.Point(193, 116);
             this.lblF1.Margin = new System.Windows.Forms.Padding(3);
             this.lblF1.Name = "lblF1";
             this.lblF1.Size = new System.Drawing.Size(24, 25);
@@ -1285,7 +1313,7 @@
             this.lblF2.AutoSize = true;
             this.lblF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblF2.ForeColor = System.Drawing.Color.Black;
-            this.lblF2.Location = new System.Drawing.Point(201, 153);
+            this.lblF2.Location = new System.Drawing.Point(193, 153);
             this.lblF2.Margin = new System.Windows.Forms.Padding(3);
             this.lblF2.Name = "lblF2";
             this.lblF2.Size = new System.Drawing.Size(24, 25);
@@ -1308,7 +1336,7 @@
             this.lblF3.AutoSize = true;
             this.lblF3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblF3.ForeColor = System.Drawing.Color.Black;
-            this.lblF3.Location = new System.Drawing.Point(201, 190);
+            this.lblF3.Location = new System.Drawing.Point(193, 190);
             this.lblF3.Margin = new System.Windows.Forms.Padding(3);
             this.lblF3.Name = "lblF3";
             this.lblF3.Size = new System.Drawing.Size(24, 25);
@@ -1353,7 +1381,7 @@
             this.lbl_NGRateFrame.AutoSize = true;
             this.lbl_NGRateFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_NGRateFrame.ForeColor = System.Drawing.Color.Red;
-            this.lbl_NGRateFrame.Location = new System.Drawing.Point(316, 79);
+            this.lbl_NGRateFrame.Location = new System.Drawing.Point(304, 79);
             this.lbl_NGRateFrame.Margin = new System.Windows.Forms.Padding(3);
             this.lbl_NGRateFrame.Name = "lbl_NGRateFrame";
             this.lbl_NGRateFrame.Size = new System.Drawing.Size(43, 25);
@@ -2567,7 +2595,7 @@
             this.lblTotalNoiModel.AutoSize = true;
             this.lblTotalNoiModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalNoiModel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTotalNoiModel.Location = new System.Drawing.Point(780, 9);
+            this.lblTotalNoiModel.Location = new System.Drawing.Point(791, 9);
             this.lblTotalNoiModel.Name = "lblTotalNoiModel";
             this.lblTotalNoiModel.Size = new System.Drawing.Size(27, 29);
             this.lblTotalNoiModel.TabIndex = 126;
@@ -2580,9 +2608,9 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label13.Location = new System.Drawing.Point(524, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(250, 29);
+            this.label13.Size = new System.Drawing.Size(267, 29);
             this.label13.TabIndex = 125;
-            this.label13.Text = "Total Noise All Line:";
+            this.label13.Text = "Output Noise All Line:";
             // 
             // tableLayoutPanel2
             // 
@@ -2754,7 +2782,7 @@
             this.lblTotalNoiLine.AutoSize = true;
             this.lblTotalNoiLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalNoiLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTotalNoiLine.Location = new System.Drawing.Point(963, 12);
+            this.lblTotalNoiLine.Location = new System.Drawing.Point(978, 12);
             this.lblTotalNoiLine.Name = "lblTotalNoiLine";
             this.lblTotalNoiLine.Size = new System.Drawing.Size(27, 29);
             this.lblTotalNoiLine.TabIndex = 124;
@@ -2767,9 +2795,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(761, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(191, 29);
+            this.label6.Size = new System.Drawing.Size(214, 29);
             this.label6.TabIndex = 123;
-            this.label6.Text = "TOTAL NOISE:";
+            this.label6.Text = "OUTPUT NOISE:";
             // 
             // lblAlarmMotor
             // 
@@ -3174,5 +3202,7 @@
         private System.Windows.Forms.Label lbl_NGRateMotor;
         private System.Windows.Forms.Label lbl_NGRateGear;
         private System.Windows.Forms.Label lbl_NGRateFrame;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNGThurst;
     }
 }

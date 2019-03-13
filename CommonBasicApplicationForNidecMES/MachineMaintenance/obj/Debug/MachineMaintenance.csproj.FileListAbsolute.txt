@@ -379,6 +379,7 @@ D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ShowCheckForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NoiseCheckForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.IPQCCheckForm.resources
+D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.NGThurstForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.ThurstCheckForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.AddJigRepairInformationForm.resources
 D:\NCVP_GIT\LONG\CommonBasicApplicationForNidecMES\MachineMaintenance\obj\Debug\Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form.JigRepairInformationForm.resources

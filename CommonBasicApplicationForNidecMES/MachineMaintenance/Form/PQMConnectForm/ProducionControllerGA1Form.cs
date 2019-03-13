@@ -148,9 +148,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             lblM3.Text = GridBindNew("MC_FPC");
             lblM4.Text = GridBindNew("MC_Mark");
             lblM5.Text = GridBindOutputMotor(false);//lay ng thurst tu mesdb
+            lblNGThurst.Text = GridBindNGThurst();
             lblM6.Text = GridBindNG_NOICHK(false); //lay ng noise tu mesdb
             lblM7.Text = GridBindNew("MC_APPCHK");
-            lblNG3.Text = (int.Parse(lblM1.Text) + int.Parse(lblM2.Text) + int.Parse(lblM3.Text) + int.Parse(lblM4.Text) + int.Parse(lblM5.Text) + int.Parse(lblM6.Text) + int.Parse(lblM7.Text)).ToString();
+            lblNG3.Text = (int.Parse(lblM1.Text) + int.Parse(lblM2.Text) + int.Parse(lblM3.Text) + int.Parse(lblM4.Text) + int.Parse(lblNGThurst.Text) + int.Parse(lblM6.Text) + int.Parse(lblM7.Text)).ToString();
             if (lblOutput3.Text == "0")
             {
                 lbl_NGRateMotor.Visible = false;
@@ -423,15 +424,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
                     change = true,
                 }, connectionmes);
-                ProductionControllerGA1Vo ngThurstVo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionOUTPUTCbm(), new ProductionControllerGA1Vo()
+                ProductionControllerGA1Vo ngThurstVo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchNGThurstChartCbm(), new ProductionControllerGA1Vo()
                 {
                     ModelCode = cmb_model.Text,
                     LineCode = cmb_line.Text,
                     DateFrom = DateTime.Parse(dtp_from.Text),
                     DateTo = DateTime.Parse(dtp_to.Text),
                     Date = DateTime.Parse(dtp_to.Text).ToShortDateString(),
-                    change = false,
-                }, connectionmes);
+                }, connectionmes);//lay ng thurst tu mesdb
 
                 ProductionControllerGA1Vo ngNOICHKVo = (ProductionControllerGA1Vo)DefaultCbmInvoker.Invoke(new Cbm.SearchProductionNGNOICHKCbm(), new ProductionControllerGA1Vo()
                 {
@@ -904,6 +904,25 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionoOutputMotorCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, TableName = tablename, DateFrom = dtp_dateFromdata.Value, DateTo = dtp_dateTodata.Value, change = t }, connectionmes);
                 if (inspecdata.GetList()[0].InspecData != "")
                 {
+                    return inspecdata.GetList()[0].InspecData;
+                }
+                else return "0";
+            }
+            catch (Framework.ApplicationException exception)
+            {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+                return "0";
+            }
+        }
+        private string GridBindNGThurst()//lay ng thúrst from mesdb
+        {
+            try
+            {
+                ValueObjectList<ProductionControllerGA1Vo> inspecdata = (ValueObjectList<ProductionControllerGA1Vo>)DefaultCbmInvoker.Invoke(new SearchProductionNGThurstCbm(), new ProductionControllerGA1Vo { ModelCode = cmb_model.Text, LineCode = cmb_line.Text, DateFrom = dtp_dateFromdata.Value, DateTo = dtp_dateTodata.Value }, connectionmes);
+                if (inspecdata.GetList()[0].InspecData != "")
+                {
+                    string a = inspecdata.GetList()[0].InspecData;
                     return inspecdata.GetList()[0].InspecData;
                 }
                 else return "0";
