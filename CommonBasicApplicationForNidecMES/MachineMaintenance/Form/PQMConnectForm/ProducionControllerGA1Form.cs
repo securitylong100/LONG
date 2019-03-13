@@ -152,17 +152,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             lblM6.Text = GridBindNG_NOICHK(false); //lay ng noise tu mesdb
             lblM7.Text = GridBindNew("MC_APPCHK");
             lblNG3.Text = (int.Parse(lblM1.Text) + int.Parse(lblM2.Text) + int.Parse(lblM3.Text) + int.Parse(lblM4.Text) + int.Parse(lblNGThurst.Text) + int.Parse(lblM6.Text) + int.Parse(lblM7.Text)).ToString();
-            if (lblOutput3.Text == "0")
-            {
-                lbl_NGRateMotor.Visible = false;
-            }
-            lbl_NGRateMotor.Text = Math.Round(((double.Parse(lblNG3.Text) / (double.Parse(lblNG3.Text) + double.Parse(lblOutput3.Text))) * 100), 2).ToString() + "%";
-
+            
             //TOTAL
             lblTotalNoiModel.Text = GridBindQtyNOICHK(false);//lay tong ng noise tu mesdb
             lblTotalNoiLine.Text = GridBindQtyNOICHK(true);//lay ng noise theo line tu mesdb
 
             lblOutput3.Text = (int.Parse(lblTotalNoiLine.Text) - int.Parse(lblM7.Text)).ToString();
+            lbl_NGRateMotor.Text = Math.Round(((double.Parse(lblNG3.Text) / (double.Parse(lblNG3.Text) + double.Parse(lblOutput3.Text))) * 100), 2).ToString() + "%";
         }
         private string GridBindNG_NOICHK(bool t)
         {
