@@ -35,8 +35,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             // コンボボックスへ候補をセットする（モデルＮＯ）
             string sql = "select model_no FROM t_model_sub_assy group by model_no order by model_no";
-            TfSQL tf = new TfSQL();
-            tf.getComboBoxData(sql, ref cmbModelNo);
+
+            //tf.getComboBoxData(sql, ref cmbModelNo);
 
             string permiss = tf.sqlExecuteScalarString("select permission from t_leader_id where leader_id = '" + txtLeaderId.Text + "'");
 
@@ -100,23 +100,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             // コンボボックスへ候補をセットする（サブ組ＮＯ）
             sql = "select sub_assy_no FROM t_model_sub_assy where model_no ='" + model + "'";
             System.Diagnostics.Debug.Print(sql);
-            tf.getComboBoxData(sql, ref cmbSubAssyNo);
-            cmbSubAssyNo.Enabled = true;
+            tf.getComboBoxData(sql, ref cmbSubAssy);
+            cmbSubAssy.Enabled = true;
 
             // コンボボックスへ候補をセットする（ライン）
             sql = "select line FROM t_model_line where model_no ='" + model + "'";
             System.Diagnostics.Debug.Print(sql);
             tf.getComboBoxData(sql, ref cmbLine);
             cmbLine.Enabled = true;
-        }
-
-        // コンボボックス項目選択時の処理（サブ組ＮＯ）
-        private void cmbSubAssyNo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string subAssy = cmbSubAssyNo.Text;
-            string sql = "select sub_assy_name FROM t_model_sub_assy where sub_assy_no ='" + subAssy + "'";
-            TfSQL tf = new TfSQL();
-            txtSubAssyName.Text = tf.sqlExecuteScalarString(sql);
         }
 
         // サブプロシージャ：データグリットビューの更新。親フォームで呼び出し、親フォームの情報を引き継ぐ
@@ -156,8 +147,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             string batchNo = txtBatchNo.Text;
             string modelNo = cmbModelNo.Text;
             string modelName = txtModelName.Text;
-            string subAssyNo = cmbSubAssyNo.Text;
-            string subAssyName = txtSubAssyName.Text;
+            string subAssyName = cmbSubAssy.Text;
             DateTime batchDate = dtpBatchDate.Value.Date;
             DateTime batchNextDate = dtpBatchDate.Value.Date.AddDays(1);
             string shift = cmbShift.Text;
@@ -324,7 +314,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             string batchNo = string.Empty;
             string modelNo = cmbModelNo.Text;
             string modelName = txtModelName.Text;
-            string subAssyNo = cmbSubAssyNo.Text;
+            string subAssyNo = cmbSubAssy.Text;
             string subAssyName = txtSubAssyName.Text;
             DateTime batchDate = DateTime.Now;
             string shift = cmbShift.Text;

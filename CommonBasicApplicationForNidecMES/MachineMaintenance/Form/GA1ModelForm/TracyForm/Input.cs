@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Security.Permissions;
 using System.Runtime.InteropServices;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {

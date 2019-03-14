@@ -47,10 +47,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtModelName = new System.Windows.Forms.TextBox();
-            this.cmbSubAssyNo = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.cmbSubAssy = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtSubAssyName = new System.Windows.Forms.TextBox();
             this.cmbLine = new System.Windows.Forms.ComboBox();
             this.cmbShift = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -204,7 +202,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.cmbModelNo.FormattingEnabled = true;
             this.cmbModelNo.Location = new System.Drawing.Point(111, 158);
             this.cmbModelNo.Name = "cmbModelNo";
-            this.cmbModelNo.Size = new System.Drawing.Size(104, 21);
+            this.cmbModelNo.Size = new System.Drawing.Size(188, 21);
             this.cmbModelNo.TabIndex = 52;
             this.cmbModelNo.SelectedIndexChanged += new System.EventHandler(this.cmbModelNo_SelectedIndexChanged);
             // 
@@ -234,42 +232,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.txtModelName.Size = new System.Drawing.Size(188, 20);
             this.txtModelName.TabIndex = 49;
             // 
-            // cmbSubAssyNo
+            // cmbSubAssy
             // 
-            this.cmbSubAssyNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubAssyNo.Enabled = false;
-            this.cmbSubAssyNo.FormattingEnabled = true;
-            this.cmbSubAssyNo.Location = new System.Drawing.Point(111, 212);
-            this.cmbSubAssyNo.Name = "cmbSubAssyNo";
-            this.cmbSubAssyNo.Size = new System.Drawing.Size(96, 21);
-            this.cmbSubAssyNo.TabIndex = 56;
-            this.cmbSubAssyNo.SelectedIndexChanged += new System.EventHandler(this.cmbSubAssyNo_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 243);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 13);
-            this.label17.TabIndex = 54;
-            this.label17.Text = "Sub Assy Name: ";
+            this.cmbSubAssy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubAssy.Enabled = false;
+            this.cmbSubAssy.FormattingEnabled = true;
+            this.cmbSubAssy.Location = new System.Drawing.Point(111, 212);
+            this.cmbSubAssy.Name = "cmbSubAssy";
+            this.cmbSubAssy.Size = new System.Drawing.Size(188, 21);
+            this.cmbSubAssy.TabIndex = 56;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(16, 215);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 13);
+            this.label14.Size = new System.Drawing.Size(57, 13);
             this.label14.TabIndex = 55;
-            this.label14.Text = "Sub Assy No: ";
-            // 
-            // txtSubAssyName
-            // 
-            this.txtSubAssyName.Enabled = false;
-            this.txtSubAssyName.Location = new System.Drawing.Point(111, 240);
-            this.txtSubAssyName.Name = "txtSubAssyName";
-            this.txtSubAssyName.Size = new System.Drawing.Size(188, 20);
-            this.txtSubAssyName.TabIndex = 53;
+            this.label14.Text = "Sub Assy: ";
             // 
             // cmbLine
             // 
@@ -415,10 +395,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.Controls.Add(this.cmbShift);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.cmbSubAssyNo);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.cmbSubAssy);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtSubAssyName);
             this.Controls.Add(this.cmbModelNo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -465,10 +443,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label9, 0);
             this.Controls.SetChildIndex(this.cmbModelNo, 0);
-            this.Controls.SetChildIndex(this.txtSubAssyName, 0);
             this.Controls.SetChildIndex(this.label14, 0);
-            this.Controls.SetChildIndex(this.label17, 0);
-            this.Controls.SetChildIndex(this.cmbSubAssyNo, 0);
+            this.Controls.SetChildIndex(this.cmbSubAssy, 0);
             this.Controls.SetChildIndex(this.label10, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.cmbShift, 0);
@@ -507,10 +483,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtModelName;
-        private System.Windows.Forms.ComboBox cmbSubAssyNo;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cmbSubAssy;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtSubAssyName;
         private System.Windows.Forms.ComboBox cmbLine;
         private System.Windows.Forms.ComboBox cmbShift;
         private System.Windows.Forms.Label label8;

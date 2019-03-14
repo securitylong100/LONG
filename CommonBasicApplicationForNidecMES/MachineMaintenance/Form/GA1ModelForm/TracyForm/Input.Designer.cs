@@ -31,12 +31,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Input));
             this.btnUpdateBatch = new System.Windows.Forms.Button();
             this.txtLeaderId = new System.Windows.Forms.TextBox();
-            this.dgvOperator = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBatchNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpInputTime = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbShift = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -61,8 +59,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.cmbSubAssyNo = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dtpBatchDate = new System.Windows.Forms.DateTimePicker();
-            this.dgvSubMaterial = new System.Windows.Forms.DataGridView();
-            this.label16 = new System.Windows.Forms.Label();
             this.txtSubAssyName = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtModelName = new System.Windows.Forms.TextBox();
@@ -71,35 +67,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabOperator = new System.Windows.Forms.TabPage();
-            this.grbOP = new System.Windows.Forms.GroupBox();
-            this.txtOperator = new System.Windows.Forms.TextBox();
-            this.btnResetOperator = new System.Windows.Forms.Button();
-            this.btnOperatorCancel = new System.Windows.Forms.Button();
-            this.btnOperatorRegister = new System.Windows.Forms.Button();
             this.tabParts = new System.Windows.Forms.TabPage();
             this.grbPart = new System.Windows.Forms.GroupBox();
             this.btnPartCancel = new System.Windows.Forms.Button();
             this.btnPartRegister = new System.Windows.Forms.Button();
-            this.tabSubMaterial = new System.Windows.Forms.TabPage();
-            this.grbSub = new System.Windows.Forms.GroupBox();
-            this.btnSubMaterialCancel = new System.Windows.Forms.Button();
-            this.btnSubMaterialRegister = new System.Windows.Forms.Button();
-            this.txtSubMaterial = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.rdCheck = new System.Windows.Forms.RadioButton();
             this.rdApprove = new System.Windows.Forms.RadioButton();
             this.txtLink = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOperator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubMaterial)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabOperator.SuspendLayout();
-            this.grbOP.SuspendLayout();
             this.tabParts.SuspendLayout();
             this.grbPart.SuspendLayout();
-            this.tabSubMaterial.SuspendLayout();
-            this.grbSub.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpdateBatch
@@ -120,20 +99,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.txtLeaderId.Size = new System.Drawing.Size(129, 20);
             this.txtLeaderId.TabIndex = 50;
             this.txtLeaderId.TabStop = false;
-            // 
-            // dgvOperator
-            // 
-            this.dgvOperator.AllowUserToOrderColumns = true;
-            this.dgvOperator.BackgroundColor = System.Drawing.Color.Pink;
-            this.dgvOperator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOperator.Location = new System.Drawing.Point(33, 61);
-            this.dgvOperator.MultiSelect = false;
-            this.dgvOperator.Name = "dgvOperator";
-            this.dgvOperator.RowTemplate.Height = 21;
-            this.dgvOperator.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvOperator.Size = new System.Drawing.Size(1059, 360);
-            this.dgvOperator.TabIndex = 7;
-            this.dgvOperator.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvOperator_EditingControlShowing);
             // 
             // label1
             // 
@@ -171,15 +136,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.dtpInputTime.ShowUpDown = true;
             this.dtpInputTime.Size = new System.Drawing.Size(118, 20);
             this.dtpInputTime.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Operator Info: ";
             // 
             // label10
             // 
@@ -244,12 +200,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.dgvParts.AllowUserToOrderColumns = true;
             this.dgvParts.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParts.Location = new System.Drawing.Point(33, 61);
+            this.dgvParts.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvParts.Location = new System.Drawing.Point(3, 66);
             this.dgvParts.MultiSelect = false;
             this.dgvParts.Name = "dgvParts";
             this.dgvParts.RowTemplate.Height = 21;
             this.dgvParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvParts.Size = new System.Drawing.Size(1059, 360);
+            this.dgvParts.Size = new System.Drawing.Size(1118, 360);
             this.dgvParts.TabIndex = 9;
             // 
             // label6
@@ -409,29 +366,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.dtpBatchDate.TabIndex = 50;
             this.dtpBatchDate.TabStop = false;
             // 
-            // dgvSubMaterial
-            // 
-            this.dgvSubMaterial.AllowUserToAddRows = false;
-            this.dgvSubMaterial.AllowUserToOrderColumns = true;
-            this.dgvSubMaterial.BackgroundColor = System.Drawing.Color.NavajoWhite;
-            this.dgvSubMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubMaterial.Location = new System.Drawing.Point(33, 61);
-            this.dgvSubMaterial.MultiSelect = false;
-            this.dgvSubMaterial.Name = "dgvSubMaterial";
-            this.dgvSubMaterial.RowTemplate.Height = 21;
-            this.dgvSubMaterial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSubMaterial.Size = new System.Drawing.Size(1059, 360);
-            this.dgvSubMaterial.TabIndex = 9;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 13);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Sub Material Info: ";
-            // 
             // txtSubAssyName
             // 
             this.txtSubAssyName.Enabled = false;
@@ -497,78 +431,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabOperator);
             this.tabControl1.Controls.Add(this.tabParts);
-            this.tabControl1.Controls.Add(this.tabSubMaterial);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Location = new System.Drawing.Point(0, 286);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1132, 455);
             this.tabControl1.TabIndex = 6;
-            // 
-            // tabOperator
-            // 
-            this.tabOperator.Controls.Add(this.grbOP);
-            this.tabOperator.Controls.Add(this.dgvOperator);
-            this.tabOperator.Location = new System.Drawing.Point(4, 22);
-            this.tabOperator.Name = "tabOperator";
-            this.tabOperator.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOperator.Size = new System.Drawing.Size(1124, 429);
-            this.tabOperator.TabIndex = 0;
-            this.tabOperator.Text = "Operator Info";
-            this.tabOperator.UseVisualStyleBackColor = true;
-            // 
-            // grbOP
-            // 
-            this.grbOP.Controls.Add(this.txtOperator);
-            this.grbOP.Controls.Add(this.btnResetOperator);
-            this.grbOP.Controls.Add(this.label3);
-            this.grbOP.Controls.Add(this.btnOperatorCancel);
-            this.grbOP.Controls.Add(this.btnOperatorRegister);
-            this.grbOP.Location = new System.Drawing.Point(33, 6);
-            this.grbOP.Name = "grbOP";
-            this.grbOP.Size = new System.Drawing.Size(939, 40);
-            this.grbOP.TabIndex = 51;
-            this.grbOP.TabStop = false;
-            // 
-            // txtOperator
-            // 
-            this.txtOperator.Location = new System.Drawing.Point(117, 14);
-            this.txtOperator.Name = "txtOperator";
-            this.txtOperator.Size = new System.Drawing.Size(357, 20);
-            this.txtOperator.TabIndex = 14;
-            this.txtOperator.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOperator_KeyDown);
-            // 
-            // btnResetOperator
-            // 
-            this.btnResetOperator.Location = new System.Drawing.Point(809, 12);
-            this.btnResetOperator.Name = "btnResetOperator";
-            this.btnResetOperator.Size = new System.Drawing.Size(110, 24);
-            this.btnResetOperator.TabIndex = 15;
-            this.btnResetOperator.Text = "Reset Operator";
-            this.btnResetOperator.UseVisualStyleBackColor = true;
-            this.btnResetOperator.Click += new System.EventHandler(this.btnResetOperator_Click);
-            // 
-            // btnOperatorCancel
-            // 
-            this.btnOperatorCancel.Location = new System.Drawing.Point(664, 12);
-            this.btnOperatorCancel.Name = "btnOperatorCancel";
-            this.btnOperatorCancel.Size = new System.Drawing.Size(110, 24);
-            this.btnOperatorCancel.TabIndex = 9;
-            this.btnOperatorCancel.Text = "Cancel Edit";
-            this.btnOperatorCancel.UseVisualStyleBackColor = true;
-            this.btnOperatorCancel.Click += new System.EventHandler(this.btnOperatorCancel_Click);
-            // 
-            // btnOperatorRegister
-            // 
-            this.btnOperatorRegister.Location = new System.Drawing.Point(529, 12);
-            this.btnOperatorRegister.Name = "btnOperatorRegister";
-            this.btnOperatorRegister.Size = new System.Drawing.Size(110, 24);
-            this.btnOperatorRegister.TabIndex = 8;
-            this.btnOperatorRegister.Text = "Register Operator";
-            this.btnOperatorRegister.UseVisualStyleBackColor = true;
-            this.btnOperatorRegister.Click += new System.EventHandler(this.btnOperatorRegister_Click);
             // 
             // tabParts
             // 
@@ -613,57 +482,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.btnPartRegister.Text = "Register Parts";
             this.btnPartRegister.UseVisualStyleBackColor = true;
             this.btnPartRegister.Click += new System.EventHandler(this.btnPartRegister_Click);
-            // 
-            // tabSubMaterial
-            // 
-            this.tabSubMaterial.Controls.Add(this.grbSub);
-            this.tabSubMaterial.Controls.Add(this.dgvSubMaterial);
-            this.tabSubMaterial.Location = new System.Drawing.Point(4, 22);
-            this.tabSubMaterial.Name = "tabSubMaterial";
-            this.tabSubMaterial.Size = new System.Drawing.Size(1124, 429);
-            this.tabSubMaterial.TabIndex = 2;
-            this.tabSubMaterial.Text = "Sub Material Info";
-            this.tabSubMaterial.UseVisualStyleBackColor = true;
-            // 
-            // grbSub
-            // 
-            this.grbSub.Controls.Add(this.btnSubMaterialCancel);
-            this.grbSub.Controls.Add(this.label16);
-            this.grbSub.Controls.Add(this.btnSubMaterialRegister);
-            this.grbSub.Controls.Add(this.txtSubMaterial);
-            this.grbSub.Location = new System.Drawing.Point(33, 3);
-            this.grbSub.Name = "grbSub";
-            this.grbSub.Size = new System.Drawing.Size(772, 40);
-            this.grbSub.TabIndex = 51;
-            this.grbSub.TabStop = false;
-            // 
-            // btnSubMaterialCancel
-            // 
-            this.btnSubMaterialCancel.Location = new System.Drawing.Point(656, 13);
-            this.btnSubMaterialCancel.Name = "btnSubMaterialCancel";
-            this.btnSubMaterialCancel.Size = new System.Drawing.Size(110, 24);
-            this.btnSubMaterialCancel.TabIndex = 15;
-            this.btnSubMaterialCancel.Text = "Cancel Edit";
-            this.btnSubMaterialCancel.UseVisualStyleBackColor = true;
-            this.btnSubMaterialCancel.Click += new System.EventHandler(this.btnSubMaterialCancel_Click);
-            // 
-            // btnSubMaterialRegister
-            // 
-            this.btnSubMaterialRegister.Location = new System.Drawing.Point(521, 13);
-            this.btnSubMaterialRegister.Name = "btnSubMaterialRegister";
-            this.btnSubMaterialRegister.Size = new System.Drawing.Size(110, 24);
-            this.btnSubMaterialRegister.TabIndex = 14;
-            this.btnSubMaterialRegister.Text = "Register Sub Mat";
-            this.btnSubMaterialRegister.UseVisualStyleBackColor = true;
-            this.btnSubMaterialRegister.Click += new System.EventHandler(this.btnSubMaterialRegister_Click);
-            // 
-            // txtSubMaterial
-            // 
-            this.txtSubMaterial.Location = new System.Drawing.Point(109, 15);
-            this.txtSubMaterial.Name = "txtSubMaterial";
-            this.txtSubMaterial.Size = new System.Drawing.Size(357, 20);
-            this.txtSubMaterial.TabIndex = 13;
-            this.txtSubMaterial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSubMaterial_KeyDown);
             // 
             // btnCheck
             // 
@@ -756,7 +574,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.MaximizeBox = false;
             this.Name = "Input";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Operator / Parts / Sub Materials";
+            this.Text = "Parts Info";
             this.TitleText = "FormCommon";
             this.Load += new System.EventHandler(this.Input_Load);
             this.Controls.SetChildIndex(this.txtRemark, 0);
@@ -798,19 +616,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.txtLink, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOperator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubMaterial)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabOperator.ResumeLayout(false);
-            this.grbOP.ResumeLayout(false);
-            this.grbOP.PerformLayout();
             this.tabParts.ResumeLayout(false);
             this.grbPart.ResumeLayout(false);
             this.grbPart.PerformLayout();
-            this.tabSubMaterial.ResumeLayout(false);
-            this.grbSub.ResumeLayout(false);
-            this.grbSub.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,12 +630,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private System.Windows.Forms.TextBox txtLeaderId;
         private System.Windows.Forms.Button btnUpdateBatch;
-        private System.Windows.Forms.DataGridView dgvOperator;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBatchNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpInputTime;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbShift;
         private System.Windows.Forms.Button btnClose;
@@ -850,8 +658,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private System.Windows.Forms.ComboBox cmbSubAssyNo;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker dtpBatchDate;
-        private System.Windows.Forms.DataGridView dgvSubMaterial;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtSubAssyName;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtModelName;
@@ -860,24 +666,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private System.Windows.Forms.TextBox txtRemark;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabOperator;
         private System.Windows.Forms.TabPage tabParts;
-        private System.Windows.Forms.TabPage tabSubMaterial;
         private System.Windows.Forms.Button btnPartCancel;
         private System.Windows.Forms.Button btnPartRegister;
-        private System.Windows.Forms.Button btnOperatorCancel;
-        private System.Windows.Forms.Button btnOperatorRegister;
-        private System.Windows.Forms.TextBox txtOperator;
-        private System.Windows.Forms.Button btnSubMaterialCancel;
-        private System.Windows.Forms.Button btnSubMaterialRegister;
-        private System.Windows.Forms.TextBox txtSubMaterial;
-        private System.Windows.Forms.Button btnResetOperator;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.RadioButton rdCheck;
         private System.Windows.Forms.RadioButton rdApprove;
-        private System.Windows.Forms.GroupBox grbOP;
         private System.Windows.Forms.GroupBox grbPart;
-        private System.Windows.Forms.GroupBox grbSub;
         private System.Windows.Forms.TextBox txtLink;
     }
 }
