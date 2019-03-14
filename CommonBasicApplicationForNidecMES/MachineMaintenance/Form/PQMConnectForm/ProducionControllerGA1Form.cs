@@ -14,6 +14,7 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 using System.IO.Ports;
 using System.Threading;
+using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {
@@ -120,8 +121,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (lblOutput1.Text == "0")
             {
                 lbl_NGRateFrame.Visible = false;
+                lblNGRateF1.Visible = false;
+                lblNGRateF2.Visible = false;
+                lblNGRateF3.Visible = false;
+                lblYF.Visible = false;
             }
+            else
+            {
+                lbl_NGRateFrame.Visible = true;
+                lblNGRateF1.Visible = true;
+                lblNGRateF2.Visible = true;
+                lblNGRateF3.Visible = true;
+                lblYF.Visible = true;
+            }
+            lblNGRateF1.Text = Math.Round(((double.Parse(lblF1.Text) / double.Parse(lblNg1.Text)) * 100), 2).ToString() + "%";
+            lblNGRateF2.Text = Math.Round(((double.Parse(lblF2.Text) / double.Parse(lblNg1.Text)) * 100), 2).ToString() + "%";
+            lblNGRateF3.Text = Math.Round(((double.Parse(lblF3.Text) / double.Parse(lblNg1.Text)) * 100), 2).ToString() + "%";
             lbl_NGRateFrame.Text = Math.Round(((double.Parse(lblNg1.Text) / (double.Parse(lblNg1.Text) + double.Parse(lblOutput1.Text))) * 100), 2).ToString() + "%";
+            lblYF.Text = (100 - double.Parse(VBStrings.Left(lbl_NGRateFrame.Text, lbl_NGRateFrame.Text.Length - 1))).ToString() + "%";
 
             //GEAR CASE ASSY
             lblInput2.Text = GridBindNew("GC_IP");
@@ -137,8 +154,36 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (lblOutput2.Text == "0")
             {
                 lbl_NGRateGear.Visible = false;
+                lblNGRateG1.Visible = false;
+                lblNGRateG2.Visible = false;
+                lblNGRateG3.Visible = false;
+                lblNGRateG4.Visible = false;
+                lblNGRateG5.Visible = false;
+                lblNGRateG6.Visible = false;
+                lblNGRateG7.Visible = false;
+                lblYG.Visible = false;
             }
+            else
+            {
+                lbl_NGRateGear.Visible = true;
+                lblNGRateG1.Visible = true;
+                lblNGRateG2.Visible = true;
+                lblNGRateG3.Visible = true;
+                lblNGRateG4.Visible = true;
+                lblNGRateG5.Visible = true;
+                lblNGRateG6.Visible = true;
+                lblNGRateG7.Visible = true;
+                lblYG.Visible = true;
+            }
+            lblNGRateG1.Text = Math.Round(((double.Parse(lblG1.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
+            lblNGRateG2.Text = Math.Round(((double.Parse(lblG2.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
+            lblNGRateG3.Text = Math.Round(((double.Parse(lblG3.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
+            lblNGRateG4.Text = Math.Round(((double.Parse(lblG4.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
+            lblNGRateG5.Text = Math.Round(((double.Parse(lblG5.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
+            lblNGRateG6.Text = Math.Round(((double.Parse(lblG6.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
+            lblNGRateG7.Text = Math.Round(((double.Parse(lblG7.Text) / double.Parse(lblNG2.Text)) * 100), 2).ToString() + "%";
             lbl_NGRateGear.Text = Math.Round(((double.Parse(lblNG2.Text) / (double.Parse(lblNG2.Text) + double.Parse(lblOutput2.Text))) * 100), 2).ToString() + "%";
+            lblYG.Text = (100 - double.Parse(VBStrings.Left(lbl_NGRateGear.Text, lbl_NGRateGear.Text.Length - 1))).ToString() + "%";
 
             //MOTOR ASSY
             lblInput3.Text = GridBindNew("MC_IP");
@@ -151,14 +196,49 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             lblNGThurst.Text = GridBindNGThurst();
             lblM6.Text = GridBindNG_NOICHK(false); //lay ng noise tu mesdb
             lblM7.Text = GridBindNew("MC_APPCHK");
+
+
             lblNG3.Text = (int.Parse(lblM1.Text) + int.Parse(lblM2.Text) + int.Parse(lblM3.Text) + int.Parse(lblM4.Text) + int.Parse(lblNGThurst.Text) + int.Parse(lblM6.Text) + int.Parse(lblM7.Text)).ToString();
-            
+
             //TOTAL
             lblTotalNoiModel.Text = GridBindQtyNOICHK(false);//lay tong ng noise tu mesdb
             lblTotalNoiLine.Text = GridBindQtyNOICHK(true);//lay ng noise theo line tu mesdb
 
             lblOutput3.Text = (int.Parse(lblTotalNoiLine.Text) - int.Parse(lblM7.Text)).ToString();
+
+            if (lblOutput3.Text == "0")
+            {
+                lbl_NGRateMotor.Visible = false;
+                lblNGRateM1.Visible = false;
+                lblNGRateM2.Visible = false;
+                lblNGRateM3.Visible = false;
+                lblNGRateM4.Visible = false;
+                lblNGRateM5.Visible = false;
+                lblNGRateM6.Visible = false;
+                lblNGRateM7.Visible = false;
+                lblYM.Visible = false;
+            }
+            else
+            {
+                lbl_NGRateMotor.Visible = true;
+                lblNGRateM1.Visible = true;
+                lblNGRateM2.Visible = true;
+                lblNGRateM3.Visible = true;
+                lblNGRateM4.Visible = true;
+                lblNGRateM5.Visible = true;
+                lblNGRateM6.Visible = true;
+                lblNGRateM7.Visible = true;
+                lblYM.Visible = true;
+            }
+            lblNGRateM1.Text = Math.Round(((double.Parse(lblM1.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
+            lblNGRateM2.Text = Math.Round(((double.Parse(lblM2.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
+            lblNGRateM3.Text = Math.Round(((double.Parse(lblM3.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
+            lblNGRateM4.Text = Math.Round(((double.Parse(lblM4.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
+            lblNGRateM5.Text = Math.Round(((double.Parse(lblNGThurst.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
+            lblNGRateM6.Text = Math.Round(((double.Parse(lblM6.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
+            lblNGRateM7.Text = Math.Round(((double.Parse(lblM7.Text) / double.Parse(lblNG3.Text)) * 100), 2).ToString() + "%";
             lbl_NGRateMotor.Text = Math.Round(((double.Parse(lblNG3.Text) / (double.Parse(lblNG3.Text) + double.Parse(lblOutput3.Text))) * 100), 2).ToString() + "%";
+            lblYM.Text = (100 - double.Parse(VBStrings.Left(lbl_NGRateMotor.Text, lbl_NGRateMotor.Text.Length - 1))).ToString() + "%";
         }
         private string GridBindNG_NOICHK(bool t)
         {
@@ -998,6 +1078,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             double rateNGFrame = 0;
             double rateNGGear = 0;
             double rateNGMotor = 0;
+            double outputF = 0;
+            double outputG = 0;
+            double outputM = 0;
+            double NGF = 0;
+            double NGG = 0;
+            double NGM = 0;
             double rateNGFrametxt = 0;
             double rateNGGeartxt = 0;
             double rateNGMotortxt = 0;
@@ -1007,9 +1093,22 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             if (dgv.RowCount > 1)
             {
-                rateNGFrame = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Frame"].Value.ToString());
-                rateNGGear = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Gear"].Value.ToString());
-                rateNGMotor = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Motor"].Value.ToString());
+                //rateNGFrame = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Frame"].Value.ToString());
+                //rateNGGear = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Gear"].Value.ToString());
+                //rateNGMotor = double.Parse(dgv.Rows[dgv.RowCount - 2].Cells["RateNG_Motor"].Value.ToString());
+                for (int i = 0; i < dgv.RowCount - 1; i++)
+                {
+                    NGF += double.Parse(dgv.Rows[i].Cells["Total_NG_Frame"].Value.ToString());
+                    NGG += double.Parse(dgv.Rows[i].Cells["Total_NG_Gear"].Value.ToString());
+                    NGM += double.Parse(dgv.Rows[i].Cells["Total_NG_Motor"].Value.ToString());
+
+                    outputF += double.Parse(dgv.Rows[i].Cells["FA_OP"].Value.ToString());
+                    outputG += double.Parse(dgv.Rows[i].Cells["GC_OP"].Value.ToString());
+                    outputM += double.Parse(dgv.Rows[i].Cells["OUTPUT"].Value.ToString());
+                }
+                if (outputF > 0 || NGF > 0) { rateNGFrame = ((NGF / (outputF + NGF)) * 100); }
+                if (outputG > 0 || NGG > 0) { rateNGGear = ((NGG / (outputG + NGF)) * 100); }
+                if (outputM > 0 || NGM > 0) { rateNGMotor = ((NGM / (outputM + NGM)) * 100); }
             }
             int a = 0;
             if (rateNGFrame > rateNGFrametxt || rateNGGear > rateNGGeartxt || rateNGMotor > rateNGMotortxt)//rateNG > rateNG text box => bao red
