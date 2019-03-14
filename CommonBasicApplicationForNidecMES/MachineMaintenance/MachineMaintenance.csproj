@@ -802,9 +802,7 @@
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\IPQCCheckForm.Designer.cs">
       <DependentUpon>IPQCCheckForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NGThurstForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NGThurstForm.cs" />
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\NGThurstForm.Designer.cs">
       <DependentUpon>NGThurstForm.cs</DependentUpon>
     </Compile>
@@ -813,18 +811,6 @@
     </Compile>
     <Compile Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.Designer.cs">
       <DependentUpon>ThurstCheckForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\GA1ModelForm\TracyForm\Input.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\GA1ModelForm\TracyForm\Input.Designer.cs">
-      <DependentUpon>Input.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\GA1ModelForm\TracyForm\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\GA1ModelForm\TracyForm\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\JigRepairInformationForm\AddJigRepairInformationForm.cs">
       <SubType>Form</SubType>
@@ -1159,12 +1145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\GA1ModelForm\ThurstCheckForm\ThurstCheckForm.resx">
       <DependentUpon>ThurstCheckForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\TracyForm\Input.resx">
-      <DependentUpon>Input.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\GA1ModelForm\TracyForm\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\JigRepairInformationForm\AddJigRepairInformationForm.resx">
       <DependentUpon>AddJigRepairInformationForm.cs</DependentUpon>
