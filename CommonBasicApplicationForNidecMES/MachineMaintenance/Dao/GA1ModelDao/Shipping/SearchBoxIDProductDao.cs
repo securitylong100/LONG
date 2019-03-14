@@ -19,7 +19,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select a90_model as Model, a90_line as Line, a90_thurst_status as Thurst, a90_noise_status as Noise from t_checkpusha90 where a90_barcode = :a90_barcode order by a90_date + a90_time desc limit 1");
+            sql.Append(@"select a.a90_model as Model, a.a90_line as Line, a.a90_thurst_status as Thurst, a.a90_factory as Thurst_MC, a.a90_noise_status as Noise, b.eq_id as Noise_MC from t_checkpusha90 a left join t_noisecheck_a90 b on a.a90_barcode = b.barcode where a.a90_barcode = :a90_barcode order by a.a90_date + a.a90_time desc limit 1");
 
             sqlParameter.AddParameterString("a90_barcode", inVo.A90Barcode);
 

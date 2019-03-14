@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Com.Nidec.Mes.Framework;
-using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo;
-using System.Data;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 {
@@ -17,8 +11,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //DataTable dtadd = new DataTable();
             GA1ModelVo inVo = (GA1ModelVo)vo;
             StringBuilder sql = new StringBuilder();
-            sql.Append("INSERT INTO t_product_serial(boxid, serialno, line, lot, thurst, noise model) " +
-                    "VALUES (:boxid, :serialno, :line, :lot, :thurst, :noise, :model)");
+            sql.Append("INSERT INTO t_product_serial(boxid, serialno, line, lot, thurst, thurst_mc, noise, noise_mc, model) " +
+                    "VALUES (:boxid, :serialno, :line, :lot, :thurst, :thurst_mc, :noise, :noise_mc, :model)");
 
             //dtadd = inVo.dt;
 
@@ -33,7 +27,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("line", inVo.LineCode);
             sqlParameter.AddParameter("lot", inVo.Lot);
             sqlParameter.AddParameter("thurst", inVo.A90ThurstStatus);
+            sqlParameter.AddParameter("thurst_mc", inVo.Thurst_MC);
             sqlParameter.AddParameter("noise", inVo.A90NoiseStatus);
+            sqlParameter.AddParameter("noise_mc", inVo.Noise_eq_id);
             sqlParameter.AddParameter("model", inVo.ModelCode);
 
             //execute SQL

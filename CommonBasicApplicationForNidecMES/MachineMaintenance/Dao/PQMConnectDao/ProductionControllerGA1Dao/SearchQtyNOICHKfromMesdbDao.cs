@@ -23,6 +23,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sql.Append("select count (*) datas from (");
             sql.Append("select distinct barcode from t_noisecheck_a90 ");
             sql.Append("where  date_check >= :datefrom and date_check <= :dateto ");
+           if (!string.IsNullOrEmpty(inVo.ModelCode))
+            {
+                sql.Append(@" and model  =:model");
+                sqlParameter.AddParameterString("model", inVo.ModelCode);
+            }
             if (inVo.change)//search theo line
             {
                 sql.Append(@" and line  =:line");

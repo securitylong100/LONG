@@ -157,7 +157,6 @@
             this.cmb_model.Name = "cmb_model";
             this.cmb_model.Size = new System.Drawing.Size(117, 30);
             this.cmb_model.TabIndex = 12;
-            this.cmb_model.Text = "GA1";
             // 
             // lbl_barcode
             // 

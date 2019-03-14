@@ -18,7 +18,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select distinct model from modeltbl where model like 'LDP%' order by model");
+            sql.Append(@"select distinct model from modeltbl where model like 'LDP%' or model like 'GR%' order by model desc");
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 

@@ -29,6 +29,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(@" and a90_line  =:line");
                 sqlParameter.AddParameterString("line", inVo.LineCode);
             }
+            if (!string.IsNullOrEmpty(inVo.ModelCode))
+            {
+                sql.Append(@" and a90_model  =:a90_model");
+                sqlParameter.AddParameterString("a90_model", inVo.ModelCode);
+            }
             sql.Append(" group by a90_barcode) a left join t_checkpusha90 b on a.bar = b.a90_barcode and a.max = b.a90_date+b.a90_time ) tbl ");
             sql.Append("where 1=1 and bar not like ''");
             if (inVo.change)

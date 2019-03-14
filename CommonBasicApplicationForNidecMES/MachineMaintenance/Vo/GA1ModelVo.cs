@@ -43,7 +43,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string A90OQCData { get; set; }
         public bool A90Shipping { get; set; }
         public string Lot { get; set; }
-
+        public string Thurst_MC { get; set; }
         public DateTime DateTimeTo { get; set; }
         public DateTime DateTimeFrom { get; set; }
 

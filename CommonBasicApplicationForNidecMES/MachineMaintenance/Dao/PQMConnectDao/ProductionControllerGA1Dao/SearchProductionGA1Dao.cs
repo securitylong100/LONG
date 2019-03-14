@@ -21,7 +21,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sql.Append(@"select case when sum(inspectdata) = null then 0 else sum(inspectdata) end inspectdata from " + inVo.TableName + " a left join " + inVo.TableName + "data b on a.serno = b.serno where ");
             //inspectdata != 0 and a.process ='FA_IP' and line = 'L01'
-            sql.Append(@" a.inspectdate >= :datefrom and a.inspectdate <= :dateto and inspectdata != 0 ");
+            sql.Append(@" a.inspectdate >= :datefrom and a.inspectdate <= :dateto and inspectdata != 0 and b.inspectdate >= :datefrom and b.inspectdate <= :dateto ");
             sqlParameter.AddParameter("datefrom", inVo.DateFrom);
             sqlParameter.AddParameter("dateto", inVo.DateTo);
 

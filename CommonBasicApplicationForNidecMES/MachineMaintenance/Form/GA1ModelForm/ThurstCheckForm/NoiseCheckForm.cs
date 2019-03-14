@@ -135,7 +135,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 GA1ModelVo updateNoiseVo = (GA1ModelVo)DefaultCbmInvoker.Invoke(new UpdateGA1ModelNoiseCbm(), new GA1ModelVo()
                                 {
                                     A90Barcode = txtBarcode.Text,
-                                    A90NoiseStatus = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString().Substring(1, 2),
+                                    A90NoiseStatus = dgvNoise.Rows[dgvNoise.RowCount - 1].Cells[" JUDGMENT"].Value.ToString().Substring(0, 2),
                                 });
                                 int t = updateNoiseVo.AffectedCount;
                                 //UpdateGA1ModelNoiseCbm
